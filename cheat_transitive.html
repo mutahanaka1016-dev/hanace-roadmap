@@ -1,0 +1,1554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transitive & Intransitive Verbs | Hana Banana Japanese</title>
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500;700;800&family=Quicksand:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #ff751f;
+            --secondary-color: #535353;
+            --bg-color: #F8F9FA;
+            --white: #FFFFFF;
+            --in-color: #4CAF50;
+            --tr-color: #2196F3;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Quicksand', 'M PLUS Rounded 1c', sans-serif;
+            background-color: var(--bg-color);
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='500' height='500'%3E%3Cstyle%3Etext%7Bfont-family:'M PLUS Rounded 1c',sans-serif;fill:rgba(83,83,83,0.06);font-weight:700;%7D%3C/style%3E<text x='136' y='103' font-size='28' transform='rotate(18 136 103)'>僕</text><text x='111' y='28' font-size='24' transform='rotate(27 111 28)'>は</text><text x='431' y='191' font-size='27' transform='rotate(20 431 191)'>三</text><text x='303' y='225' font-size='31' transform='rotate(2 303 225)'>十</text><text x='196' y='216' font-size='27' transform='rotate(19 196 216)'>七</text><text x='389' y='50' font-size='20' transform='rotate(12 389 50)'>歳</text><text x='438' y='285' font-size='22' transform='rotate(-25 438 285)'>で</text><text x='265' y='34' font-size='24' transform='rotate(8 265 34)'>、</text><text x='279' y='281' font-size='31' transform='rotate(-13 279 281)'>そ</text><text x='461' y='385' font-size='28' transform='rotate(-19 461 385)'>の</text><text x='268' y='456' font-size='27' transform='rotate(29 268 456)'>と</text><text x='206' y='56' font-size='29' transform='rotate(20 206 56)'>き</text><text x='22' y='271' font-size='23' transform='rotate(-11 22 271)'>ボ</text><text x='104' y='236' font-size='23' transform='rotate(22 104 236)'>ー</text><text x='378' y='457' font-size='25' transform='rotate(24 378 457)'>イ</text><text x='24' y='33' font-size='23' transform='rotate(3 24 33)'>ン</text><text x='41' y='401' font-size='22' transform='rotate(-6 41 401)'>グ</text><text x='63' y='130' font-size='20' transform='rotate(-24 63 130)'>7</text><text x='432' y='470' font-size='25' transform='rotate(17 432 470)'>4</text><text x='346' y='207' font-size='26' transform='rotate(29 346 207)'>7</text><text x='228' y='315' font-size='28' transform='rotate(-29 228 315)'>の</text><text x='213' y='131' font-size='27' transform='rotate(-13 213 131)'>シ</text><text x='349' y='376' font-size='31' transform='rotate(-2 349 376)'>ー</text><text x='473' y='117' font-size='22' transform='rotate(0 473 117)'>ト</text><text x='392' y='149' font-size='27' transform='rotate(-12 392 149)'>に</text><text x='125' y='444' font-size='26' transform='rotate(15 125 444)'>座</text><text x='218' y='381' font-size='23' transform='rotate(-29 218 381)'>っ</text><text x='344' y='319' font-size='29' transform='rotate(22 344 319)'>て</text><text x='109' y='356' font-size='31' transform='rotate(22 109 356)'>い</text><text x='14' y='462' font-size='29' transform='rotate(-25 14 462)'>た</text><text x='134' y='276' font-size='26' transform='rotate(-1 134 276)'>。</text>%3C/svg%3E");
+            background-repeat: repeat;
+            color: #333;
+        }
+
+        /* HEADER STYLES OMITTED FOR BREVITY, WILL INJECT FROM INDEX.HTML */
+        /* Unified Navigation Styles */
+        :root {
+            --primary-color: #ff751f;
+            --secondary-color: #535353;
+            --bg-color: #F8F9FA;
+            --white: #FFFFFF;
+        }
+
+        header.global-header {
+            text-align: center;
+            padding: 40px 20px;
+            background: #FFFFFF;
+            border-bottom: 4px solid var(--primary-color);
+            margin-bottom: 40px;
+            position: relative;
+            font-family: 'Quicksand', 'M PLUS Rounded 1c', sans-serif;
+        }
+
+        .header-actions {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            gap: 10px;
+        }
+
+        .header-action-btn {
+            background: #fcfcfc;
+            border: 1px solid #eee;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            color: var(--secondary-color);
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            text-decoration: none;
+            font-family: 'Quicksand', 'M PLUS Rounded 1c', sans-serif;
+        }
+
+        .header-action-btn:hover {
+            background: #fff;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transform: translateY(-1px);
+        }
+
+        .logo-trigger {
+            cursor: pointer;
+            display: inline-block;
+            transition: all 0.3s ease;
+            padding: 10px 20px;
+            border-radius: 15px;
+            user-select: none;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .logo-trigger:hover {
+            background-color: transparent;
+            transform: translateY(-2px);
+        }
+
+        .logo-trigger h1 {
+            margin: 0;
+            font-size: 2.2rem;
+            letter-spacing: 2px;
+            color: var(--primary-color);
+        }
+
+        .logo-trigger p {
+            font-weight: bold;
+            opacity: 0.8;
+            color: var(--secondary-color);
+            margin-top: 5px;
+            font-size: 0.9rem;
+        }
+
+        .tabs {
+            display: flex;
+            justify-content: center;
+            flex-wrap: nowrap;
+            gap: 20px;
+            margin-bottom: 50px;
+            font-family: 'Quicksand', 'M PLUS Rounded 1c', sans-serif;
+        }
+
+        @media (max-width: 850px) {
+            .tabs {
+                flex-wrap: wrap;
+                gap: 15px;
+            }
+        }
+
+        .tab-btn {
+            display: inline-block;
+            box-sizing: border-box;
+            background: #FFFFFF;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+            padding: 12px 30px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            outline: none;
+            text-decoration: none;
+            font-family: 'Quicksand', 'M PLUS Rounded 1c', sans-serif;
+            text-align: center;
+        }
+
+        .tab-btn:hover {
+            background: #ffe6e6;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 10px rgba(255, 117, 31, 0.1);
+        }
+
+        .tab-btn.active {
+            background: var(--primary-color);
+            color: #FFFFFF;
+            box-shadow: 0 6px 12px rgba(255, 117, 31, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .nav-item {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%) translateY(10px);
+            background: #ffffff;
+            min-width: 220px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            border-radius: 15px;
+            padding: 10px;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            z-index: 1000;
+            border: 1px solid #eee;
+            max-height: 450px;
+            overflow-y: auto;
+        }
+
+        .nav-item:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(-50%) translateY(5px);
+        }
+
+        .dropdown-item {
+            display: block;
+            padding: 12px 15px;
+            color: var(--secondary-color);
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 10px;
+            transition: background 0.2s, color 0.2s;
+            text-align: left;
+            font-size: 0.95rem;
+            cursor: pointer;
+            border: none;
+            background: none;
+            width: 100%;
+        }
+
+        .dropdown-item:hover {
+            background: #fff5f5;
+            color: var(--primary-color);
+        }
+
+        .dropdown-divider {
+            height: 1px;
+            background: #eee;
+            margin: 8px 0;
+        }
+    
+
+        .page-container {
+            max-width: 1100px;
+            margin: 0 auto 100px;
+            background: #fff;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            border-top: 15px solid var(--primary-color);
+        }
+
+        .header-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .header-title h1 {
+            color: var(--primary-color);
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .header-title p {
+            color: #666;
+            font-size: 1.1rem;
+        }
+
+        .audio-tip {
+            text-align: center;
+            background: #FFF3E0;
+            color: #E65100;
+            padding: 12px 20px;
+            border-radius: 30px;
+            display: inline-block;
+            margin-bottom: 30px;
+            font-weight: bold;
+            font-size: 1rem;
+            border: 2px dashed #FFB74D;
+        }
+
+        .group-section {
+            margin-bottom: 60px;
+        }
+
+        .group-header {
+            background-color: #333;
+            color: #fff;
+            padding: 15px 25px;
+            border-radius: 15px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .group-header h2 {
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+        }
+
+        .group-header p {
+            font-size: 0.95rem;
+            color: #ccc;
+        }
+
+        .verb-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        @media (max-width: 800px) {
+            .verb-grid {
+                grid-template-columns: 1fr;
+            }
+            .page-container {
+                padding: 20px;
+            }
+            .pair-card {
+                flex-direction: column;
+            }
+            .vs-badge {
+                transform: rotate(90deg);
+                margin: 10px auto !important;
+            }
+        }
+
+        .pair-card {
+            background: #fff;
+            border: 2px solid #eee;
+            border-radius: 15px;
+            padding: 20px;
+            display: flex;
+            align-items: stretch;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+            position: relative;
+        }
+
+        .pair-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(255, 117, 31, 0.15);
+            border-color: var(--primary-color);
+        }
+
+        .pair-card:active {
+            transform: translateY(0);
+        }
+
+        .verb-side {
+            flex: 1;
+            text-align: center;
+            padding: 15px;
+            border-radius: 12px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .verb-side.in {
+            background-color: rgba(76, 175, 80, 0.05);
+            border: 1px solid rgba(76, 175, 80, 0.2);
+        }
+
+        .verb-side.tr {
+            background-color: rgba(33, 150, 243, 0.05);
+            border: 1px solid rgba(33, 150, 243, 0.2);
+        }
+
+        .vs-badge {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #333;
+            color: #fff;
+            font-weight: bold;
+            font-size: 0.9rem;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            margin: auto 15px;
+            flex-shrink: 0;
+            z-index: 1;
+        }
+
+        .verb-type {
+            font-size: 0.8rem;
+            font-weight: bold;
+            display: inline-block;
+            padding: 4px 10px;
+            border-radius: 10px;
+            margin-bottom: 10px;
+            color: #fff;
+        }
+
+        .in .verb-type { background-color: var(--in-color); }
+        .tr .verb-type { background-color: var(--tr-color); }
+
+        .jp-char {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        .particle {
+            font-size: 1.2rem;
+            color: #e74c3c;
+            font-weight: bold;
+            margin-right: 5px;
+        }
+
+        .romaji {
+            font-size: 0.9rem;
+            color: #888;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .english {
+            font-size: 1rem;
+            color: #555;
+            border-top: 1px dashed #ccc;
+            padding-top: 10px;
+        }
+
+        /* Modal Styles */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 9999;
+            backdrop-filter: blur(5px);
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .modal-content {
+            background: #fff;
+            width: 90%;
+            max-width: 600px;
+            border-radius: 20px;
+            padding: 30px;
+            position: relative;
+            transform: scale(0.9);
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        }
+
+        .modal-overlay.active .modal-content {
+            transform: scale(1);
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 1.8rem;
+            cursor: pointer;
+            color: #999;
+            transition: color 0.2s;
+        }
+
+        .close-btn:hover { color: #333; }
+
+        .modal-pair-title {
+            text-align: center;
+            font-size: 1.6rem;
+            color: #333;
+            margin-bottom: 25px;
+            font-weight: bold;
+        }
+
+        .example-box {
+            background: #f9f9f9;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .example-box.in { border-left: 5px solid var(--in-color); }
+        .example-box.tr { border-left: 5px solid var(--tr-color); }
+
+        .example-type {
+            font-size: 0.85rem;
+            font-weight: bold;
+            color: #666;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .example-jp {
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .example-en {
+            font-size: 1.05rem;
+            color: #666;
+        }
+
+        .play-btn {
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            color: var(--primary-color);
+            transition: all 0.2s;
+            flex-shrink: 0;
+            margin-left: 15px;
+        }
+
+        .play-btn:hover {
+            background: var(--primary-color);
+            color: #fff;
+            border-color: var(--primary-color);
+        }
+
+    
+
+
+        /* =========================================
+           📱 Global Mobile Optimization 
+           ========================================= */
+        @media (max-width: 768px) {
+            /* Header */
+            header.global-header {
+                padding: 20px 10px !important;
+            }
+            .header-actions {
+                position: relative !important;
+                top: 0 !important;
+                right: 0 !important;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+                margin-bottom: 20px;
+                width: 100%;
+            }
+            .header-action-btn {
+                width: 90%;
+                justify-content: center;
+                padding: 12px 15px !important;
+                font-size: 1rem !important;
+            }
+            .logo-trigger {
+                padding: 5px !important;
+            }
+            .logo-trigger img {
+                max-height: 100px !important;
+                width: auto !important;
+                max-width: 100% !important;
+                object-fit: contain;
+            }
+            .logo-trigger h1 {
+                font-size: 1.8rem !important;
+            }
+            .logo-trigger p {
+                font-size: 0.9rem !important;
+                padding: 0 10px;
+            }
+            
+            /* Tabs & Navigation */
+            .tabs {
+                flex-direction: column !important;
+                gap: 12px !important;
+                padding: 0 15px !important;
+                margin-bottom: 30px !important;
+            }
+            .tab-btn {
+                width: 100% !important;
+                text-align: center;
+            }
+            .sub-tabs {
+                flex-direction: column !important;
+                gap: 10px !important;
+            }
+            .sub-tab-btn {
+                width: 100% !important;
+            }
+            .dropdown-menu {
+                width: 100% !important;
+                position: static !important;
+                box-shadow: none !important;
+                border: 1px solid #eee;
+                margin-top: 5px;
+                display: flex !important;
+                flex-direction: column !important;
+                opacity: 1 !important;
+                visibility: visible !important;
+                transform: none !important;
+            }
+            
+            /* General Containers */
+            .container {
+                padding: 0 15px !important;
+                width: 100% !important;
+                box-sizing: border-box !important;
+            }
+            
+            /* Typography */
+            body { font-size: 16px !important; }
+            h1 { font-size: 1.8rem !important; }
+            h2 { font-size: 1.5rem !important; }
+            h3 { font-size: 1.3rem !important; }
+            
+            /* Roadmap / Steps */
+            .step.left, .step.right {
+                width: 100% !important;
+                float: none !important;
+                margin-left: 0 !important;
+                margin-right: 0 !important;
+                margin-top: 20px !important;
+            }
+            .roadmap::before {
+                display: none !important;
+            }
+            
+            /* Grids and Flex layouts */
+            .cycle-grid {
+                grid-template-columns: 1fr !important;
+            }
+            .cycle-grid::before { display: none !important; }
+            .cycle-item {
+                margin-left: 0 !important;
+                width: 100% !important;
+            }
+            
+            /* Profiles and Cards */
+            #booking > div, .starthere-card {
+                padding: 25px 15px !important;
+                flex-direction: column !important;
+                text-align: center !important;
+            }
+            #booking > div img {
+                width: 150px !important;
+                height: 150px !important;
+            }
+            
+            /* Tables */
+            table {
+                display: block !important;
+                overflow-x: auto !important;
+                white-space: nowrap !important;
+                width: 100% !important;
+            }
+            
+            /* Modals and Today's Vocab */
+            .modal-content, .search-modal-content {
+                width: 95% !important;
+                padding: 20px 15px !important;
+                margin: 20px auto !important;
+                box-sizing: border-box !important;
+                overflow-x: hidden !important;
+            }
+            .vocab-list {
+                display: flex !important;
+                flex-direction: column !important;
+                gap: 10px !important;
+            }
+            .vocab-item {
+                flex-direction: column !important;
+                align-items: flex-start !important;
+                padding: 10px !important;
+                width: 100% !important;
+                box-sizing: border-box !important;
+            }
+            .vocab-item .kana, .vocab-item .kanji, .vocab-item .meaning {
+                width: 100% !important;
+                text-align: left !important;
+                white-space: normal !important;
+                word-wrap: break-word !important;
+            }
+            
+            /* Buttons */
+            .cta-btn-premium, .learn-btn, .download-btn {
+                padding: 15px 20px !important;
+                font-size: 1.1rem !important;
+                width: 100% !important;
+                box-sizing: border-box !important;
+                text-align: center !important;
+            }
+            
+            /* Cheat Sheet Lists */
+            ul.vocab-list, .cheat-sheet-list {
+                padding: 0 !important;
+                width: 100% !important;
+            }
+            .cheat-sheet-checkbox + a {
+                white-space: normal !important;
+            }
+        }
+
+        /* Unified Mobile Optimization */
+        @media (max-width: 768px) {
+            header.global-header {
+                padding: 20px 10px !important;
+            }
+            .header-actions {
+                position: relative !important;
+                top: 0 !important;
+                right: 0 !important;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+                margin-bottom: 20px;
+                width: 100%;
+            }
+            .header-action-btn {
+                width: 90%;
+                justify-content: center;
+                padding: 12px 15px !important;
+                font-size: 1rem !important;
+            }
+            .logo-trigger h1 {
+                font-size: 2.2rem !important;
+                letter-spacing: -1px !important;
+            }
+            .logo-trigger p {
+                font-size: 0.85rem !important;
+                padding: 0 10px;
+            }
+            .tabs {
+                flex-direction: column !important;
+                gap: 10px !important;
+                padding: 0 15px !important;
+            }
+            .tab-btn {
+                width: 100% !important;
+                padding: 12px !important;
+                font-size: 1rem !important;
+            }
+            .container {
+                padding: 0 15px !important;
+                width: 100% !important;
+                box-sizing: border-box !important;
+            }
+            /* Roadmap Fixes */
+            .roadmap::before { display: none !important; }
+            .step.left, .step.right {
+                width: 100% !important;
+                float: none !important;
+                margin: 0 0 20px 0 !important;
+                padding: 20px !important;
+            }
+            /* Table Fixes */
+            table {
+                display: block !important;
+                overflow-x: auto !important;
+                -webkit-overflow-scrolling: touch;
+                width: 100% !important;
+            }
+            /* Modal Fixes */
+            .modal-content, .search-modal-content {
+                width: 95% !important;
+                margin: 10px auto !important;
+                padding: 20px 15px !important;
+            }
+            /* Grid Fixes */
+            .cycle-grid {
+                grid-template-columns: 1fr !important;
+                gap: 20px !important;
+            }
+            .cycle-item {
+                width: 100% !important;
+                margin: 0 !important;
+                padding: 20px !important;
+            }
+            .starthere-card {
+                padding: 30px 15px !important;
+            }
+            .starthere-title {
+                font-size: 1.8rem !important;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <header class="global-header">
+        <div class="header-actions">
+            <a href="index.html?search=true" class="header-action-btn" style="text-decoration: none;">🔍 Search</a>
+            <a href="myvocab.html" class="header-action-btn" style="text-decoration: none;"><svg style="width: 18px; height: 18px; margin-right: 6px; vertical-align: text-bottom;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>Saved Words</a>
+            <a href="https://discord.gg/ZgkKXdpt" target="_blank" class="header-action-btn" style="text-decoration: none;">💬 24/7 Chat Support</a>
+        </div>
+        <a href="index.html" class="logo-trigger">
+            <h1 style="font-size: 4rem; font-weight: 800; color: var(--primary-color); font-family: 'Quicksand', 'M PLUS Rounded 1c', sans-serif; letter-spacing: -2px; margin-bottom: 5px; margin-top: 10px; text-shadow: 2px 2px 4px rgba(0,0,0,0.05);">Hanace</h1>
+            <p>Hanace [Ha-na-su]-Trace your path to bloom, Speak with confidence.</p>
+        </a>
+    </header>
+
+    <div class="tabs">
+        <a href="index.html?tab=roadmap" class="tab-btn">Roadmap</a>
+        <a href="index.html?tab=resources" class="tab-btn active">Resources</a>
+        <a href="index.html?tab=booking" class="tab-btn">Book a Lesson</a>
+    </div>
+
+    
+
+    <div class="page-container">
+        <div class="header-title">
+            <h1>40 Confusing Verb Pairs</h1>
+            <p>Intransitive (自動詞) vs Transitive (他動詞) Verbs</p>
+        </div>
+
+        <div style="text-align: center;">
+            <div class="audio-tip">👆 Tap on any card to see example sentences and hear pronunciation!</div>
+        </div>
+
+        
+        <div class="group-section">
+            <div class="group-header">
+                <h2>Group A: Verbs ending in ~su (Transitive ends in ~su)</h2>
+                <p>Most transitive verbs in this group end in ~す (su).</p>
+            </div>
+            <div class="verb-grid">
+
+                <div class="pair-card" onclick="openModal(1)">
+                    <div class="verb-side in">
+                        <span class="verb-type">Intransitive</span>
+                        <div class="jp-char"><span class="particle">が</span>消える</div>
+                        <div class="romaji">kieru</div>
+                        <div class="english">Goes off</div>
+                    </div>
+                    <div class="vs-badge">VS</div>
+                    <div class="verb-side tr">
+                        <span class="verb-type">Transitive</span>
+                        <div class="jp-char"><span class="particle">を</span>消す</div>
+                        <div class="romaji">kesu</div>
+                        <div class="english">Turn off</div>
+                    </div>
+                </div>
+
+                <div class="pair-card" onclick="openModal(2)">
+                    <div class="verb-side in">
+                        <span class="verb-type">Intransitive</span>
+                        <div class="jp-char"><span class="particle">が/から</span>出る</div>
+                        <div class="romaji">deru</div>
+                        <div class="english">Comes out</div>
+                    </div>
+                    <div class="vs-badge">VS</div>
+                    <div class="verb-side tr">
+                        <span class="verb-type">Transitive</span>
+                        <div class="jp-char"><span class="particle">を</span>出す</div>
+                        <div class="romaji">dasu</div>
+                        <div class="english">Take out</div>
+                    </div>
+                </div>
+
+                <div class="pair-card" onclick="openModal(3)">
+                    <div class="verb-side in">
+                        <span class="verb-type">Intransitive</span>
+                        <div class="jp-char"><span class="particle">が</span>落ちる</div>
+                        <div class="romaji">ochiru</div>
+                        <div class="english">Falls</div>
+                    </div>
+                    <div class="vs-badge">VS</div>
+                    <div class="verb-side tr">
+                        <span class="verb-type">Transitive</span>
+                        <div class="jp-char"><span class="particle">を</span>落とす</div>
+                        <div class="romaji">otosu</div>
+                        <div class="english">Drop</div>
+                    </div>
+                </div>
+
+                <div class="pair-card" onclick="openModal(4)">
+                    <div class="verb-side in">
+                        <span class="verb-type">Intransitive</span>
+                        <div class="jp-char"><span class="particle">が</span>壊れる</div>
+                        <div class="romaji">kowareru</div>
+                        <div class="english">Breaks</div>
+                    </div>
+                    <div class="vs-badge">VS</div>
+                    <div class="verb-side tr">
+                        <span class="verb-type">Transitive</span>
+                        <div class="jp-char"><span class="particle">を</span>壊す</div>
+                        <div class="romaji">kowasu</div>
+                        <div class="english">Break something</div>
+                    </div>
+                </div>
+
+                <div class="pair-card" onclick="openModal(5)">
+                    <div class="verb-side in">
+                        <span class="verb-type">Intransitive</span>
+                        <div class="jp-char"><span class="particle">が</span>倒れる</div>
+                        <div class="romaji">taoreru</div>
+                        <div class="english">Falls down</div>
+                    </div>
+                    <div class="vs-badge">VS</div>
+                    <div class="verb-side tr">
+                        <span class="verb-type">Transitive</span>
+                        <div class="jp-char"><span class="particle">を</span>倒す</div>
+                        <div class="romaji">taosu</div>
+                        <div class="english">Knock down</div>
+                    </div>
+                </div>
+
+                <div class="pair-card" onclick="openModal(6)">
+                    <div class="verb-side in">
+                        <span class="verb-type">Intransitive</span>
+                        <div class="jp-char"><span class="particle">が</span>汚れる</div>
+                        <div class="romaji">yogoreru</div>
+                        <div class="english">Gets dirty</div>
+                    </div>
+                    <div class="vs-badge">VS</div>
+                    <div class="verb-side tr">
+                        <span class="verb-type">Transitive</span>
+                        <div class="jp-char"><span class="particle">を</span>汚す</div>
+                        <div class="romaji">yogosu</div>
+                        <div class="english">Make dirty</div>
+                    </div>
+                </div>
+
+                <div class="pair-card" onclick="openModal(7)">
+                    <div class="verb-side in">
+                        <span class="verb-type">Intransitive</span>
+                        <div class="jp-char"><span class="particle">が</span>破れる</div>
+                        <div class="romaji">yabureru</div>
+                        <div class="english">Tears</div>
+                    </div>
+                    <div class="vs-badge">VS</div>
+                    <div class="verb-side tr">
+                        <span class="verb-type">Transitive</span>
+                        <div class="jp-char"><span class="particle">を</span>破る</div>
+                        <div class="romaji">yaburu</div>
+                        <div class="english">Tear something</div>
+                    </div>
+                </div>
+
+                <div class="pair-card" onclick="openModal(8)">
+                    <div class="verb-side in">
+                        <span class="verb-type">Intransitive</span>
+                        <div class="jp-char"><span class="particle">が</span>揺れる</div>
+                        <div class="romaji">yureru</div>
+                        <div class="english">Shakes</div>
+                    </div>
+                    <div class="vs-badge">VS</div>
+                    <div class="verb-side tr">
+                        <span class="verb-type">Transitive</span>
+                        <div class="jp-char"><span class="particle">を</span>揺らす</div>
+                        <div class="romaji">yurasu</div>
+                        <div class="english">Shake something</div>
+                    </div>
+                </div>
+
+                <div class="pair-card" onclick="openModal(9)">
+                    <div class="verb-side in">
+                        <span class="verb-type">Intransitive</span>
+                        <div class="jp-char"><span class="particle">が</span>冷える</div>
+                        <div class="romaji">hieru</div>
+                        <div class="english">Gets cold</div>
+                    </div>
+                    <div class="vs-badge">VS</div>
+                    <div class="verb-side tr">
+                        <span class="verb-type">Transitive</span>
+                        <div class="jp-char"><span class="particle">を</span>冷やす</div>
+                        <div class="romaji">hiyasu</div>
+                        <div class="english">Cool down</div>
+                    </div>
+                </div>
+
+                <div class="pair-card" onclick="openModal(10)">
+                    <div class="verb-side in">
+                        <span class="verb-type">Intransitive</span>
+                        <div class="jp-char"><span class="particle">が</span>増える</div>
+                        <div class="romaji">fueru</div>
+                        <div class="english">Increases</div>
+                    </div>
+                    <div class="vs-badge">VS</div>
+                    <div class="verb-side tr">
+                        <span class="verb-type">Transitive</span>
+                        <div class="jp-char"><span class="particle">を</span>増やす</div>
+                        <div class="romaji">fuyasu</div>
+                        <div class="english">Increase</div>
+                    </div>
+                </div>
+
+                <div class="pair-card" onclick="openModal(11)">
+                    <div class="verb-side in">
+                        <span class="verb-type">Intransitive</span>
+                        <div class="jp-char"><span class="particle">が</span>減る</div>
+                        <div class="romaji">heru</div>
+                        <div class="english">Decreases</div>
+                    </div>
+                    <div class="vs-badge">VS</div>
+                    <div class="verb-side tr">
+                        <span class="verb-type">Transitive</span>
+                        <div class="jp-char"><span class="particle">を</span>減らす</div>
+                        <div class="romaji">herasu</div>
+                        <div class="english">Decrease</div>
+                    </div>
+                </div>
+
+                <div class="pair-card" onclick="openModal(12)">
+                    <div class="verb-side in">
+                        <span class="verb-type">Intransitive</span>
+                        <div class="jp-char"><span class="particle">が</span>沸く</div>
+                        <div class="romaji">waku</div>
+                        <div class="english">Boils</div>
+                    </div>
+                    <div class="vs-badge">VS</div>
+                    <div class="verb-side tr">
+                        <span class="verb-type">Transitive</span>
+                        <div class="jp-char"><span class="particle">を</span>沸かす</div>
+                        <div class="romaji">wakasu</div>
+                        <div class="english">Boil water</div>
+                    </div>
+                </div>
+
+                <div class="pair-card" onclick="openModal(13)">
+                    <div class="verb-side in">
+                        <span class="verb-type">Intransitive</span>
+                        <div class="jp-char"><span class="particle">が</span>乾く</div>
+                        <div class="romaji">kawaku</div>
+                        <div class="english">Dries</div>
+                    </div>
+                    <div class="vs-badge">VS</div>
+                    <div class="verb-side tr">
+                        <span class="verb-type">Transitive</span>
+                        <div class="jp-char"><span class="particle">を</span>乾かす</div>
+                        <div class="romaji">kawakasu</div>
+                        <div class="english">Dry something</div>
+                    </div>
+                </div>
+
+                <div class="pair-card" onclick="openModal(14)">
+                    <div class="verb-side in">
+                        <span class="verb-type">Intransitive</span>
+                        <div class="jp-char"><span class="particle">が</span>動く</div>
+                        <div class="romaji">ugoku</div>
+                        <div class="english">Moves</div>
+                    </div>
+                    <div class="vs-badge">VS</div>
+                    <div class="verb-side tr">
+                        <span class="verb-type">Transitive</span>
+                        <div class="jp-char"><span class="particle">を</span>動かす</div>
+                        <div class="romaji">ugokasu</div>
+                        <div class="english">Move something</div>
+                    </div>
+                </div>
+
+                <div class="pair-card" onclick="openModal(15)">
+                    <div class="verb-side in">
+                        <span class="verb-type">Intransitive</span>
+                        <div class="jp-char"><span class="particle">が</span>直る/治る</div>
+                        <div class="romaji">naoru</div>
+                        <div class="english">Gets repaired/cured</div>
+                    </div>
+                    <div class="vs-badge">VS</div>
+                    <div class="verb-side tr">
+                        <span class="verb-type">Transitive</span>
+                        <div class="jp-char"><span class="particle">を</span>直す/治す</div>
+                        <div class="romaji">naosu</div>
+                        <div class="english">Repair/Cure</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="group-section">
+            <div class="group-header">
+                <h2>Group B: Verbs with ~aru sound (Intransitive ends in ~aru)</h2>
+                <p>Most intransitive verbs in this group have the ~ある (aru) sound.</p>
+            </div>
+            <div class="verb-grid">
+
+                <div class="pair-card" onclick="openModal(16)">
+                    <div class="verb-side in">
+                        <span class="verb-type">Intransitive</span>
+                        <div class="jp-char"><span class="particle">が</span>閉まる</div>
+                        <div class="romaji">shimaru</div>
+                        <div class="english">Closes</div>
+                    </div>
+                    <div class="vs-badge">VS</div>
+                    <div class="verb-side tr">
+                        <span class="verb-type">Transitive</span>
+                        <div class="jp-char"><span class="particle">を</span>閉める</div>
+                        <div class="romaji">shimeru</div>
+                        <div class="english">Close</div>
+                    </div>
+                </div>
+
+                <div class="pair-card" onclick="openModal(17)">
+                    <div class="verb-side in">
+                        <span class="verb-type">Intransitive</span>
+                        <div class="jp-char"><span class="particle">が</span>始まる</div>
+                        <div class="romaji">hajimaru</div>
+                        <div class="english">Starts</div>
+                    </div>
+                    <div class="vs-badge">VS</div>
+                    <div class="verb-side tr">
+                        <span class="verb-type">Transitive</span>
+                        <div class="jp-char"><span class="particle">を</span>始める</div>
+                        <div class="romaji">hajimeru</div>
+                        <div class="english">Start</div>
+                    </div>
+                </div>
+
+                <div class="pair-card" onclick="openModal(18)">
+                    <div class="verb-side in">
+                        <span class="verb-type">Intransitive</span>
+                        <div class="jp-char"><span class="particle">が</span>変わる</div>
+                        <div class="romaji">kawaru</div>
+                        <div class="english">Changes</div>
+                    </div>
+                    <div class="vs-badge">VS</div>
+                    <div class="verb-side tr">
+                        <span class="verb-type">Transitive</span>
+                        <div class="jp-char"><span class="particle">を</span>変える</div>
+                        <div class="romaji">kaeru</div>
+                        <div class="english">Change</div>
+                    </div>
+                </div>
+
+                <div class="pair-card" onclick="openModal(19)">
+                    <div class="verb-side in">
+                        <span class="verb-type">Intransitive</span>
+                        <div class="jp-char"><span class="particle">が</span>集まる</div>
+                        <div class="romaji">atsumaru</div>
+                        <div class="english">Gather</div>
+                    </div>
+                    <div class="vs-badge">VS</div>
+                    <div class="verb-side tr">
+                        <span class="verb-type">Transitive</span>
+                        <div class="jp-char"><span class="particle">を</span>集める</div>
+                        <div class="romaji">atsumeru</div>
+                        <div class="english">Collect</div>
+                    </div>
+                </div>
+
+                <div class="pair-card" onclick="openModal(20)">
+                    <div class="verb-side in">
+                        <span class="verb-type">Intransitive</span>
+                        <div class="jp-char"><span class="particle">が</span>決まる</div>
+                        <div class="romaji">kimaru</div>
+                        <div class="english">Is decided</div>
+                    </div>
+                    <div class="vs-badge">VS</div>
+                    <div class="verb-side tr">
+                        <span class="verb-type">Transitive</span>
+                        <div class="jp-char"><span class="particle">を</span>決める</div>
+                        <div class="romaji">kimeru</div>
+                        <div class="english">Decide</div>
+                    </div>
+                </div>
+
+                <div class="pair-card" onclick="openModal(21)">
+                    <div class="verb-side in">
+                        <span class="verb-type">Intransitive</span>
+                        <div class="jp-char"><span class="particle">が</span>見つかる</div>
+                        <div class="romaji">mitsukaru</div>
+                        <div class="english">Is found</div>
+                    </div>
+                    <div class="vs-badge">VS</div>
+                    <div class="verb-side tr">
+                        <span class="verb-type">Transitive</span>
+                        <div class="jp-char"><span class="particle">を</span>見つける</div>
+                        <div class="romaji">mitsukeru</div>
+                        <div class="english">Find</div>
+                    </div>
+                </div>
+
+                <div class="pair-card" onclick="openModal(22)">
+                    <div class="verb-side in">
+                        <span class="verb-type">Intransitive</span>
+                        <div class="jp-char"><span class="particle">が</span>かかる</div>
+                        <div class="romaji">kakaru</div>
+                        <div class="english">Takes time/Hangs</div>
+                    </div>
+                    <div class="vs-badge">VS</div>
+                    <div class="verb-side tr">
+                        <span class="verb-type">Transitive</span>
+                        <div class="jp-char"><span class="particle">を</span>かける</div>
+                        <div class="romaji">kakeru</div>
+                        <div class="english">Spend/Hang</div>
+                    </div>
+                </div>
+
+                <div class="pair-card" onclick="openModal(23)">
+                    <div class="verb-side in">
+                        <span class="verb-type">Intransitive</span>
+                        <div class="jp-char"><span class="particle">が</span>つながる</div>
+                        <div class="romaji">tsunagaru</div>
+                        <div class="english">Is connected</div>
+                    </div>
+                    <div class="vs-badge">VS</div>
+                    <div class="verb-side tr">
+                        <span class="verb-type">Transitive</span>
+                        <div class="jp-char"><span class="particle">を</span>つなぐ</div>
+                        <div class="romaji">tsunagu</div>
+                        <div class="english">Connect</div>
+                    </div>
+                </div>
+
+                <div class="pair-card" onclick="openModal(24)">
+                    <div class="verb-side in">
+                        <span class="verb-type">Intransitive</span>
+                        <div class="jp-char"><span class="particle">が</span>伝わる</div>
+                        <div class="romaji">tsutawaru</div>
+                        <div class="english">Is conveyed</div>
+                    </div>
+                    <div class="vs-badge">VS</div>
+                    <div class="verb-side tr">
+                        <span class="verb-type">Transitive</span>
+                        <div class="jp-char"><span class="particle">を</span>伝える</div>
+                        <div class="romaji">tsutaeru</div>
+                        <div class="english">Convey/Tell</div>
+                    </div>
+                </div>
+
+                <div class="pair-card" onclick="openModal(25)">
+                    <div class="verb-side in">
+                        <span class="verb-type">Intransitive</span>
+                        <div class="jp-char"><span class="particle">が</span>助かる</div>
+                        <div class="romaji">tasukaru</div>
+                        <div class="english">Is saved</div>
+                    </div>
+                    <div class="vs-badge">VS</div>
+                    <div class="verb-side tr">
+                        <span class="verb-type">Transitive</span>
+                        <div class="jp-char"><span class="particle">を</span>助ける</div>
+                        <div class="romaji">tasukeru</div>
+                        <div class="english">Save/Help</div>
+                    </div>
+                </div>
+
+                <div class="pair-card" onclick="openModal(26)">
+                    <div class="verb-side in">
+                        <span class="verb-type">Intransitive</span>
+                        <div class="jp-char"><span class="particle">が</span>重なる</div>
+                        <div class="romaji">kasanaru</div>
+                        <div class="english">Overlaps</div>
+                    </div>
+                    <div class="vs-badge">VS</div>
+                    <div class="verb-side tr">
+                        <span class="verb-type">Transitive</span>
+                        <div class="jp-char"><span class="particle">を</span>重ねる</div>
+                        <div class="romaji">kasaneru</div>
+                        <div class="english">Pile up</div>
+                    </div>
+                </div>
+
+                <div class="pair-card" onclick="openModal(27)">
+                    <div class="verb-side in">
+                        <span class="verb-type">Intransitive</span>
+                        <div class="jp-char"><span class="particle">が/に</span>曲がる</div>
+                        <div class="romaji">magaru</div>
+                        <div class="english">Turns/Bends</div>
+                    </div>
+                    <div class="vs-badge">VS</div>
+                    <div class="verb-side tr">
+                        <span class="verb-type">Transitive</span>
+                        <div class="jp-char"><span class="particle">を</span>曲げる</div>
+                        <div class="romaji">mageru</div>
+                        <div class="english">Bend something</div>
+                    </div>
+                </div>
+
+                <div class="pair-card" onclick="openModal(28)">
+                    <div class="verb-side in">
+                        <span class="verb-type">Intransitive</span>
+                        <div class="jp-char"><span class="particle">が</span>片付く</div>
+                        <div class="romaji">katazuku</div>
+                        <div class="english">Gets tidied up</div>
+                    </div>
+                    <div class="vs-badge">VS</div>
+                    <div class="verb-side tr">
+                        <span class="verb-type">Transitive</span>
+                        <div class="jp-char"><span class="particle">を</span>片付ける</div>
+                        <div class="romaji">katazukeru</div>
+                        <div class="english">Tidy up</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="group-section">
+            <div class="group-header">
+                <h2>Group C: Intransitive ends in ~reru</h2>
+                <p>These verbs usually have their intransitive form ending in ~れる (reru).</p>
+            </div>
+            <div class="verb-grid">
+
+                <div class="pair-card" onclick="openModal(29)">
+                    <div class="verb-side in">
+                        <span class="verb-type">Intransitive</span>
+                        <div class="jp-char"><span class="particle">が</span>開く</div>
+                        <div class="romaji">aku</div>
+                        <div class="english">Opens</div>
+                    </div>
+                    <div class="vs-badge">VS</div>
+                    <div class="verb-side tr">
+                        <span class="verb-type">Transitive</span>
+                        <div class="jp-char"><span class="particle">を</span>開ける</div>
+                        <div class="romaji">akeru</div>
+                        <div class="english">Open</div>
+                    </div>
+                </div>
+
+                <div class="pair-card" onclick="openModal(30)">
+                    <div class="verb-side in">
+                        <span class="verb-type">Intransitive</span>
+                        <div class="jp-char"><span class="particle">が</span>売れる</div>
+                        <div class="romaji">ureru</div>
+                        <div class="english">Sells well</div>
+                    </div>
+                    <div class="vs-badge">VS</div>
+                    <div class="verb-side tr">
+                        <span class="verb-type">Transitive</span>
+                        <div class="jp-char"><span class="particle">を</span>売る</div>
+                        <div class="romaji">uru</div>
+                        <div class="english">Sell</div>
+                    </div>
+                </div>
+
+                <div class="pair-card" onclick="openModal(31)">
+                    <div class="verb-side in">
+                        <span class="verb-type">Intransitive</span>
+                        <div class="jp-char"><span class="particle">が</span>切れる</div>
+                        <div class="romaji">kireru</div>
+                        <div class="english">Cuts/Snaps</div>
+                    </div>
+                    <div class="vs-badge">VS</div>
+                    <div class="verb-side tr">
+                        <span class="verb-type">Transitive</span>
+                        <div class="jp-char"><span class="particle">を</span>切る</div>
+                        <div class="romaji">kiru</div>
+                        <div class="english">Cut</div>
+                    </div>
+                </div>
+
+                <div class="pair-card" onclick="openModal(32)">
+                    <div class="verb-side in">
+                        <span class="verb-type">Intransitive</span>
+                        <div class="jp-char"><span class="particle">が</span>外れる</div>
+                        <div class="romaji">hazureru</div>
+                        <div class="english">Comes off</div>
+                    </div>
+                    <div class="vs-badge">VS</div>
+                    <div class="verb-side tr">
+                        <span class="verb-type">Transitive</span>
+                        <div class="jp-char"><span class="particle">を</span>外す</div>
+                        <div class="romaji">hazusu</div>
+                        <div class="english">Remove/Take off</div>
+                    </div>
+                </div>
+
+                <div class="pair-card" onclick="openModal(33)">
+                    <div class="verb-side in">
+                        <span class="verb-type">Intransitive</span>
+                        <div class="jp-char"><span class="particle">が</span>折れる</div>
+                        <div class="romaji">oreru</div>
+                        <div class="english">Snaps/Breaks</div>
+                    </div>
+                    <div class="vs-badge">VS</div>
+                    <div class="verb-side tr">
+                        <span class="verb-type">Transitive</span>
+                        <div class="jp-char"><span class="particle">を</span>折る</div>
+                        <div class="romaji">oru</div>
+                        <div class="english">Fold/Break</div>
+                    </div>
+                </div>
+
+                <div class="pair-card" onclick="openModal(34)">
+                    <div class="verb-side in">
+                        <span class="verb-type">Intransitive</span>
+                        <div class="jp-char"><span class="particle">が</span>抜ける</div>
+                        <div class="romaji">nukeru</div>
+                        <div class="english">Falls out</div>
+                    </div>
+                    <div class="vs-badge">VS</div>
+                    <div class="verb-side tr">
+                        <span class="verb-type">Transitive</span>
+                        <div class="jp-char"><span class="particle">を</span>抜く</div>
+                        <div class="romaji">nuku</div>
+                        <div class="english">Pull out</div>
+                    </div>
+                </div>
+
+                <div class="pair-card" onclick="openModal(35)">
+                    <div class="verb-side in">
+                        <span class="verb-type">Intransitive</span>
+                        <div class="jp-char"><span class="particle">が</span>割れる</div>
+                        <div class="romaji">wareru</div>
+                        <div class="english">Cracks/Breaks</div>
+                    </div>
+                    <div class="vs-badge">VS</div>
+                    <div class="verb-side tr">
+                        <span class="verb-type">Transitive</span>
+                        <div class="jp-char"><span class="particle">を</span>割る</div>
+                        <div class="romaji">waru</div>
+                        <div class="english">Crack/Divide</div>
+                    </div>
+                </div>
+
+                <div class="pair-card" onclick="openModal(36)">
+                    <div class="verb-side in">
+                        <span class="verb-type">Intransitive</span>
+                        <div class="jp-char"><span class="particle">が</span>破れる</div>
+                        <div class="romaji">yabureru</div>
+                        <div class="english">Gets torn (Rules)</div>
+                    </div>
+                    <div class="vs-badge">VS</div>
+                    <div class="verb-side tr">
+                        <span class="verb-type">Transitive</span>
+                        <div class="jp-char"><span class="particle">を</span>破る</div>
+                        <div class="romaji">yaburu</div>
+                        <div class="english">Break rules/Tear</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="group-section">
+            <div class="group-header">
+                <h2>Group D: Other Common Pairs</h2>
+                <p>Common pairs that don't fit perfectly into the above rules.</p>
+            </div>
+            <div class="verb-grid">
+
+                <div class="pair-card" onclick="openModal(37)">
+                    <div class="verb-side in">
+                        <span class="verb-type">Intransitive</span>
+                        <div class="jp-char"><span class="particle">に</span>入る</div>
+                        <div class="romaji">hairu</div>
+                        <div class="english">Enter/Get in</div>
+                    </div>
+                    <div class="vs-badge">VS</div>
+                    <div class="verb-side tr">
+                        <span class="verb-type">Transitive</span>
+                        <div class="jp-char"><span class="particle">を</span>入れる</div>
+                        <div class="romaji">ireru</div>
+                        <div class="english">Put in</div>
+                    </div>
+                </div>
+
+                <div class="pair-card" onclick="openModal(38)">
+                    <div class="verb-side in">
+                        <span class="verb-type">Intransitive</span>
+                        <div class="jp-char"><span class="particle">に</span>乗る</div>
+                        <div class="romaji">noru</div>
+                        <div class="english">Ride/Get on</div>
+                    </div>
+                    <div class="vs-badge">VS</div>
+                    <div class="verb-side tr">
+                        <span class="verb-type">Transitive</span>
+                        <div class="jp-char"><span class="particle">を</span>乗せる</div>
+                        <div class="romaji">noseru</div>
+                        <div class="english">Give a ride</div>
+                    </div>
+                </div>
+
+                <div class="pair-card" onclick="openModal(39)">
+                    <div class="verb-side in">
+                        <span class="verb-type">Intransitive</span>
+                        <div class="jp-char"><span class="particle">が/に</span>起きる</div>
+                        <div class="romaji">okiru</div>
+                        <div class="english">Wake up</div>
+                    </div>
+                    <div class="vs-badge">VS</div>
+                    <div class="verb-side tr">
+                        <span class="verb-type">Transitive</span>
+                        <div class="jp-char"><span class="particle">を</span>起こす</div>
+                        <div class="romaji">okosu</div>
+                        <div class="english">Wake someone up</div>
+                    </div>
+                </div>
+
+                <div class="pair-card" onclick="openModal(40)">
+                    <div class="verb-side in">
+                        <span class="verb-type">Intransitive</span>
+                        <div class="jp-char"><span class="particle">が</span>並ぶ</div>
+                        <div class="romaji">narabu</div>
+                        <div class="english">Line up</div>
+                    </div>
+                    <div class="vs-badge">VS</div>
+                    <div class="verb-side tr">
+                        <span class="verb-type">Transitive</span>
+                        <div class="jp-char"><span class="particle">を</span>並べる</div>
+                        <div class="romaji">naraberu</div>
+                        <div class="english">Line things up</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for Example Sentences -->
+    <div id="example-modal" class="modal-overlay" onclick="closeModal(event)">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <span class="close-btn" onclick="closeModal(event)">&times;</span>
+            <div class="modal-pair-title" id="modal-title">消える vs 消す</div>
+            
+            <div class="example-box in">
+                <div class="example-type"><span style="color: var(--in-color)">Intransitive (自動詞)</span></div>
+                <div class="example-jp">
+                    <span id="modal-in-jp">電気が消える。</span>
+                    <button class="play-btn" onclick="speakText(document.getElementById('modal-in-jp').innerText)"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg></button>
+                </div>
+                <div class="example-en" id="modal-in-en">The light goes off.</div>
+            </div>
+
+            <div class="example-box tr">
+                <div class="example-type"><span style="color: var(--tr-color)">Transitive (他動詞)</span></div>
+                <div class="example-jp">
+                    <span id="modal-tr-jp">電気を消す。</span>
+                    <button class="play-btn" onclick="speakText(document.getElementById('modal-tr-jp').innerText)"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg></button>
+                </div>
+                <div class="example-en" id="modal-tr-en">Turn off the light.</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const verbData = [{"group": "Group A: Verbs ending in ~su (Transitive ends in ~su)", "desc": "Most transitive verbs in this group end in ~す (su).", "pairs": [{"id": 1, "in": "消える", "in_r": "kieru", "in_e": "Goes off", "in_ex": "電気が消える。(The light goes off.)", "in_p": "が", "tr": "消す", "tr_r": "kesu", "tr_e": "Turn off", "tr_ex": "電気を消す。(Turn off the light.)", "tr_p": "を"}, {"id": 2, "in": "出る", "in_r": "deru", "in_e": "Comes out", "in_ex": "部屋から出る。(Come out of the room.)", "in_p": "が/から", "tr": "出す", "tr_r": "dasu", "tr_e": "Take out", "tr_ex": "ゴミを出す。(Take out the trash.)", "tr_p": "を"}, {"id": 3, "in": "落ちる", "in_r": "ochiru", "in_e": "Falls", "in_ex": "スマホが落ちる。(The smartphone falls.)", "in_p": "が", "tr": "落とす", "tr_r": "otosu", "tr_e": "Drop", "tr_ex": "スマホを落とす。(I drop my smartphone.)", "tr_p": "を"}, {"id": 4, "in": "壊れる", "in_r": "kowareru", "in_e": "Breaks", "in_ex": "パソコンが壊れる。(The computer breaks.)", "in_p": "が", "tr": "壊す", "tr_r": "kowasu", "tr_e": "Break something", "tr_ex": "パソコンを壊す。(I break the computer.)", "tr_p": "を"}, {"id": 5, "in": "倒れる", "in_r": "taoreru", "in_e": "Falls down", "in_ex": "木が倒れる。(The tree falls down.)", "in_p": "が", "tr": "倒す", "tr_r": "taosu", "tr_e": "Knock down", "tr_ex": "木を倒す。(Knock down the tree.)", "tr_p": "を"}, {"id": 6, "in": "汚れる", "in_r": "yogoreru", "in_e": "Gets dirty", "in_ex": "服が汚れる。(The clothes get dirty.)", "in_p": "が", "tr": "汚す", "tr_r": "yogosu", "tr_e": "Make dirty", "tr_ex": "服を汚す。(I make my clothes dirty.)", "tr_p": "を"}, {"id": 7, "in": "破れる", "in_r": "yabureru", "in_e": "Tears", "in_ex": "紙が破れる。(The paper tears.)", "in_p": "が", "tr": "破る", "tr_r": "yaburu", "tr_e": "Tear something", "tr_ex": "紙を破る。(Tear the paper.)", "tr_p": "を"}, {"id": 8, "in": "揺れる", "in_r": "yureru", "in_e": "Shakes", "in_ex": "家が揺れる。(The house shakes.)", "in_p": "が", "tr": "揺らす", "tr_r": "yurasu", "tr_e": "Shake something", "tr_ex": "体を揺らす。(Shake your body.)", "tr_p": "を"}, {"id": 9, "in": "冷える", "in_r": "hieru", "in_e": "Gets cold", "in_ex": "ビールが冷える。(The beer gets cold.)", "in_p": "が", "tr": "冷やす", "tr_r": "hiyasu", "tr_e": "Cool down", "tr_ex": "ビールを冷やす。(Cool down the beer.)", "tr_p": "を"}, {"id": 10, "in": "増える", "in_r": "fueru", "in_e": "Increases", "in_ex": "お金が増える。(Money increases.)", "in_p": "が", "tr": "増やす", "tr_r": "fuyasu", "tr_e": "Increase", "tr_ex": "お金を増やす。(Increase money.)", "tr_p": "を"}, {"id": 11, "in": "減る", "in_r": "heru", "in_e": "Decreases", "in_ex": "体重が減る。(Weight decreases.)", "in_p": "が", "tr": "減らす", "tr_r": "herasu", "tr_e": "Decrease", "tr_ex": "体重を減らす。(Decrease weight.)", "tr_p": "を"}, {"id": 12, "in": "沸く", "in_r": "waku", "in_e": "Boils", "in_ex": "お湯が沸く。(The water boils.)", "in_p": "が", "tr": "沸かす", "tr_r": "wakasu", "tr_e": "Boil water", "tr_ex": "お湯を沸かす。(Boil the water.)", "tr_p": "を"}, {"id": 13, "in": "乾く", "in_r": "kawaku", "in_e": "Dries", "in_ex": "服が乾く。(The clothes dry.)", "in_p": "が", "tr": "乾かす", "tr_r": "kawakasu", "tr_e": "Dry something", "tr_ex": "服を乾かす。(Dry the clothes.)", "tr_p": "を"}, {"id": 14, "in": "動く", "in_r": "ugoku", "in_e": "Moves", "in_ex": "車が動く。(The car moves.)", "in_p": "が", "tr": "動かす", "tr_r": "ugokasu", "tr_e": "Move something", "tr_ex": "車を動かす。(Move the car.)", "tr_p": "を"}, {"id": 15, "in": "直る/治る", "in_r": "naoru", "in_e": "Gets repaired/cured", "in_ex": "風邪が治る。(The cold is cured.)", "in_p": "が", "tr": "直す/治す", "tr_r": "naosu", "tr_e": "Repair/Cure", "tr_ex": "時計を直す。(Repair the watch.)", "tr_p": "を"}]}, {"group": "Group B: Verbs with ~aru sound (Intransitive ends in ~aru)", "desc": "Most intransitive verbs in this group have the ~ある (aru) sound.", "pairs": [{"id": 16, "in": "閉まる", "in_r": "shimaru", "in_e": "Closes", "in_ex": "ドアが閉まる。(The door closes.)", "in_p": "が", "tr": "閉める", "tr_r": "shimeru", "tr_e": "Close", "tr_ex": "ドアを閉める。(Close the door.)", "tr_p": "を"}, {"id": 17, "in": "始まる", "in_r": "hajimaru", "in_e": "Starts", "in_ex": "映画が始まる。(The movie starts.)", "in_p": "が", "tr": "始める", "tr_r": "hajimeru", "tr_e": "Start", "tr_ex": "会議を始める。(Start the meeting.)", "tr_p": "を"}, {"id": 18, "in": "変わる", "in_r": "kawaru", "in_e": "Changes", "in_ex": "色が変わる。(The color changes.)", "in_p": "が", "tr": "変える", "tr_r": "kaeru", "tr_e": "Change", "tr_ex": "予定を変える。(Change the plan.)", "tr_p": "を"}, {"id": 19, "in": "集まる", "in_r": "atsumaru", "in_e": "Gather", "in_ex": "人が集まる。(People gather.)", "in_p": "が", "tr": "集める", "tr_r": "atsumeru", "tr_e": "Collect", "tr_ex": "切手を集める。(Collect stamps.)", "tr_p": "を"}, {"id": 20, "in": "決まる", "in_r": "kimaru", "in_e": "Is decided", "in_ex": "日にちが決まる。(The date is decided.)", "in_p": "が", "tr": "決める", "tr_r": "kimeru", "tr_e": "Decide", "tr_ex": "メニューを決める。(Decide the menu.)", "tr_p": "を"}, {"id": 21, "in": "見つかる", "in_r": "mitsukaru", "in_e": "Is found", "in_ex": "鍵が見つかる。(The key is found.)", "in_p": "が", "tr": "見つける", "tr_r": "mitsukeru", "tr_e": "Find", "tr_ex": "仕事を見つける。(Find a job.)", "tr_p": "を"}, {"id": 22, "in": "かかる", "in_r": "kakaru", "in_e": "Takes time/Hangs", "in_ex": "時間がかかる。(It takes time.)", "in_p": "が", "tr": "かける", "tr_r": "kakeru", "tr_e": "Spend/Hang", "tr_ex": "壁に絵をかける。(Hang a picture on the wall.)", "tr_p": "を"}, {"id": 23, "in": "つながる", "in_r": "tsunagaru", "in_e": "Is connected", "in_ex": "インターネットがつながる。(The internet is connected.)", "in_p": "が", "tr": "つなぐ", "tr_r": "tsunagu", "tr_e": "Connect", "tr_ex": "手をつなぐ。(Hold hands.)", "tr_p": "を"}, {"id": 24, "in": "伝わる", "in_r": "tsutawaru", "in_e": "Is conveyed", "in_ex": "気持ちが伝わる。(Feelings are conveyed.)", "in_p": "が", "tr": "伝える", "tr_r": "tsutaeru", "tr_e": "Convey/Tell", "tr_ex": "メッセージを伝える。(Convey a message.)", "tr_p": "を"}, {"id": 25, "in": "助かる", "in_r": "tasukaru", "in_e": "Is saved", "in_ex": "命が助かる。(A life is saved.)", "in_p": "が", "tr": "助ける", "tr_r": "tasukeru", "tr_e": "Save/Help", "tr_ex": "友達を助ける。(Help a friend.)", "tr_p": "を"}, {"id": 26, "in": "重なる", "in_r": "kasanaru", "in_e": "Overlaps", "in_ex": "予定が重なる。(Schedules overlap.)", "in_p": "が", "tr": "重ねる", "tr_r": "kasaneru", "tr_e": "Pile up", "tr_ex": "本を重ねる。(Pile up books.)", "tr_p": "を"}, {"id": 27, "in": "曲がる", "in_r": "magaru", "in_e": "Turns/Bends", "in_ex": "右に曲がる。(Turn right.)", "in_p": "が/に", "tr": "曲げる", "tr_r": "mageru", "tr_e": "Bend something", "tr_ex": "膝を曲げる。(Bend your knees.)", "tr_p": "を"}, {"id": 28, "in": "片付く", "in_r": "katazuku", "in_e": "Gets tidied up", "in_ex": "部屋が片付く。(The room gets tidied up.)", "in_p": "が", "tr": "片付ける", "tr_r": "katazukeru", "tr_e": "Tidy up", "tr_ex": "部屋を片付ける。(Tidy up the room.)", "tr_p": "を"}]}, {"group": "Group C: Intransitive ends in ~reru", "desc": "These verbs usually have their intransitive form ending in ~れる (reru).", "pairs": [{"id": 29, "in": "開く", "in_r": "aku", "in_e": "Opens", "in_ex": "ドアが開く。(The door opens.)", "in_p": "が", "tr": "開ける", "tr_r": "akeru", "tr_e": "Open", "tr_ex": "ドアを開ける。(Open the door.)", "tr_p": "を"}, {"id": 30, "in": "売れる", "in_r": "ureru", "in_e": "Sells well", "in_ex": "本が売れる。(The book sells well.)", "in_p": "が", "tr": "売る", "tr_r": "uru", "tr_e": "Sell", "tr_ex": "車を売る。(Sell a car.)", "tr_p": "を"}, {"id": 31, "in": "切れる", "in_r": "kireru", "in_e": "Cuts/Snaps", "in_ex": "ひもが切れる。(The string snaps.)", "in_p": "が", "tr": "切る", "tr_r": "kiru", "tr_e": "Cut", "tr_ex": "野菜を切る。(Cut vegetables.)", "tr_p": "を"}, {"id": 32, "in": "外れる", "in_r": "hazureru", "in_e": "Comes off", "in_ex": "ボタンが外れる。(The button comes off.)", "in_p": "が", "tr": "外す", "tr_r": "hazusu", "tr_e": "Remove/Take off", "tr_ex": "時計を外す。(Take off the watch.)", "tr_p": "を"}, {"id": 33, "in": "折れる", "in_r": "oreru", "in_e": "Snaps/Breaks", "in_ex": "枝が折れる。(The branch snaps.)", "in_p": "が", "tr": "折る", "tr_r": "oru", "tr_e": "Fold/Break", "tr_ex": "紙を折る。(Fold the paper.)", "tr_p": "を"}, {"id": 34, "in": "抜ける", "in_r": "nukeru", "in_e": "Falls out", "in_ex": "髪の毛が抜ける。(Hair falls out.)", "in_p": "が", "tr": "抜く", "tr_r": "nuku", "tr_e": "Pull out", "tr_ex": "草を抜く。(Pull out weeds.)", "tr_p": "を"}, {"id": 35, "in": "割れる", "in_r": "wareru", "in_e": "Cracks/Breaks", "in_ex": "グラスが割れる。(The glass breaks.)", "in_p": "が", "tr": "割る", "tr_r": "waru", "tr_e": "Crack/Divide", "tr_ex": "卵を割る。(Crack an egg.)", "tr_p": "を"}, {"id": 36, "in": "破れる", "in_r": "yabureru", "in_e": "Gets torn (Rules)", "in_ex": "服が破れる。(The clothes get torn.)", "in_p": "が", "tr": "破る", "tr_r": "yaburu", "tr_e": "Break rules/Tear", "tr_ex": "約束を破る。(Break a promise.)", "tr_p": "を"}]}, {"group": "Group D: Other Common Pairs", "desc": "Common pairs that don't fit perfectly into the above rules.", "pairs": [{"id": 37, "in": "入る", "in_r": "hairu", "in_e": "Enter/Get in", "in_ex": "お風呂に入る。(Take a bath.)", "in_p": "に", "tr": "入れる", "tr_r": "ireru", "tr_e": "Put in", "tr_ex": "カバンに本を入れる。(Put a book in the bag.)", "tr_p": "を"}, {"id": 38, "in": "乗る", "in_r": "noru", "in_e": "Ride/Get on", "in_ex": "電車に乗る。(Get on a train.)", "in_p": "に", "tr": "乗せる", "tr_r": "noseru", "tr_e": "Give a ride", "tr_ex": "荷物を車に乗せる。(Put luggage in the car.)", "tr_p": "を"}, {"id": 39, "in": "起きる", "in_r": "okiru", "in_e": "Wake up", "in_ex": "朝7時に起きる。(Wake up at 7 AM.)", "in_p": "が/に", "tr": "起こす", "tr_r": "okosu", "tr_e": "Wake someone up", "tr_ex": "子供を起こす。(Wake the child up.)", "tr_p": "を"}, {"id": 40, "in": "並ぶ", "in_r": "narabu", "in_e": "Line up", "in_ex": "人が並ぶ。(People line up.)", "in_p": "が", "tr": "並べる", "tr_r": "naraberu", "tr_e": "Line things up", "tr_ex": "机を並べる。(Line up the desks.)", "tr_p": "を"}]}];
+
+        function openModal(id) {
+            let pair = null;
+            for (let g of verbData) {
+                for (let p of g.pairs) {
+                    if (p.id === id) {
+                        pair = p;
+                        break;
+                    }
+                }
+            }
+            if (!pair) return;
+
+            document.getElementById('modal-title').innerText = pair.in + " vs " + pair.tr;
+            document.getElementById('modal-in-jp').innerText = pair.in_ex;
+            document.getElementById('modal-in-en').innerText = pair.in_e + " (Intransitive)";
+            document.getElementById('modal-tr-jp').innerText = pair.tr_ex;
+            document.getElementById('modal-tr-en').innerText = pair.tr_e + " (Transitive)";
+
+            document.getElementById('example-modal').classList.add('active');
+        }
+
+        function closeModal(e) {
+            document.getElementById('example-modal').classList.remove('active');
+        }
+
+        function speakText(text) {
+            if ('speechSynthesis' in window) {
+                const utterance = new SpeechSynthesisUtterance(text);
+                utterance.lang = 'ja-JP';
+                utterance.rate = 0.9;
+                window.speechSynthesis.speak(utterance);
+            } else {
+                alert('Text-to-speech is not supported in your browser.');
+            }
+        }
+    </script>
+</body>
+</html>
