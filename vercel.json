@@ -1,3 +1,7 @@
 {
-  "passwordProtection": { "password": "hanace.nihongo", "deploymentType": "all" }
+  "crons": [],
+  "cleanUrls": true,
+  "deploymentProtection": {
+    "passwordProtection": true
+  }
 }
