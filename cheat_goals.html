@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Grammar by Goal | Hana Banana Japanese</title>
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500;700;800&family=Quicksand:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-red: #ff751f;
+            --light-red: #ffc8a2;
+            --dark-red: #cc5c14;
+            --text-main: #2f3542;
+            --text-sub: #747d8c;
+            --glass-bg: rgba(255, 255, 255, 0.9);
+            --shadow-premium: 0 10px 30px rgba(0, 0, 0, 0.05);
+            --primary-color: #ff751f;
+            --secondary-color: #535353;
+            --bg-color: #F8F9FA;
+            --white: #FFFFFF;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Quicksand', 'M PLUS Rounded 1c', sans-serif;
+            background-color: #f7f7f7;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='500' height='500'%3E%3Cstyle%3Etext%7Bfont-family:'M PLUS Rounded 1c',sans-serif;fill:rgba(83,83,83,0.06);font-weight:700;%7D%3C/style%3E<text x='136' y='103' font-size='28' transform='rotate(18 136 103)'>僕</text><text x='111' y='28' font-size='24' transform='rotate(27 111 28)'>は</text><text x='431' y='191' font-size='27' transform='rotate(20 431 191)'>三</text><text x='303' y='225' font-size='31' transform='rotate(2 303 225)'>十</text><text x='196' y='216' font-size='27' transform='rotate(19 196 216)'>七</text><text x='389' y='50' font-size='20' transform='rotate(12 389 50)'>歳</text><text x='438' y='285' font-size='22' transform='rotate(-25 438 285)'>で</text><text x='265' y='34' font-size='24' transform='rotate(8 265 34)'>、</text><text x='279' y='281' font-size='31' transform='rotate(-13 279 281)'>そ</text><text x='461' y='385' font-size='28' transform='rotate(-19 461 385)'>の</text><text x='268' y='456' font-size='27' transform='rotate(29 268 456)'>と</text><text x='206' y='56' font-size='29' transform='rotate(20 206 56)'>き</text><text x='22' y='271' font-size='23' transform='rotate(-11 22 271)'>ボ</text><text x='104' y='236' font-size='23' transform='rotate(22 104 236)'>ー</text><text x='378' y='457' font-size='25' transform='rotate(24 378 457)'>イ</text><text x='24' y='33' font-size='23' transform='rotate(3 24 33)'>ン</text><text x='41' y='401' font-size='22' transform='rotate(-6 41 401)'>グ</text><text x='63' y='130' font-size='20' transform='rotate(-24 63 130)'>7</text><text x='432' y='470' font-size='25' transform='rotate(17 432 470)'>4</text><text x='346' y='207' font-size='26' transform='rotate(29 346 207)'>7</text><text x='228' y='315' font-size='28' transform='rotate(-29 228 315)'>の</text><text x='213' y='131' font-size='27' transform='rotate(-13 213 131)'>シ</text><text x='349' y='376' font-size='31' transform='rotate(-2 349 376)'>ー</text><text x='473' y='117' font-size='22' transform='rotate(0 473 117)'>ト</text><text x='392' y='149' font-size='27' transform='rotate(-12 392 149)'>に</text><text x='125' y='444' font-size='26' transform='rotate(15 125 444)'>座</text><text x='218' y='381' font-size='23' transform='rotate(-29 218 381)'>っ</text><text x='344' y='319' font-size='29' transform='rotate(22 344 319)'>て</text><text x='109' y='356' font-size='31' transform='rotate(22 109 356)'>い</text><text x='14' y='462' font-size='29' transform='rotate(-25 14 462)'>た</text><text x='134' y='276' font-size='26' transform='rotate(-1 134 276)'>。</text>%3C/svg%3E");
+            background-repeat: repeat;
+            color: var(--text-main);
+            padding: 20px;
+        }
+
+        /* Unified Navigation Styles */
+        header.global-header {
+            text-align: center;
+            padding: 40px 20px;
+            background: #FFFFFF;
+            border-bottom: 4px solid var(--primary-color);
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .header-actions {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            gap: 10px;
+        }
+
+        .header-action-btn {
+            background: #fcfcfc;
+            border: 1px solid #eee;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            color: var(--secondary-color);
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            text-decoration: none;
+        }
+
+        .header-action-btn:hover {
+            background: #fff;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transform: translateY(-1px);
+        }
+
+        .logo-trigger {
+            text-decoration: none;
+            color: inherit;
+            display: inline-block;
+        }
+
+        .logo-trigger h1 {
+            margin: 0;
+            font-size: 2.2rem;
+            letter-spacing: 2px;
+            color: var(--primary-color);
+        }
+
+        .logo-trigger p {
+            font-weight: bold;
+            opacity: 0.8;
+            color: var(--secondary-color);
+            margin-top: 5px;
+            font-size: 0.9rem;
+        }
+
+        .tabs {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 50px;
+        }
+
+        .tab-btn {
+            background: #FFFFFF;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+            padding: 12px 30px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .tab-btn:hover, .tab-btn.active {
+            background: var(--primary-color);
+            color: #FFFFFF;
+        }
+
+        .page-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 40px;
+            border-radius: 24px;
+            box-shadow: var(--shadow-premium);
+            border-top: 15px solid var(--primary-red);
+            text-align: center;
+        }
+
+        .page-header h1 {
+            color: var(--primary-red);
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            font-weight: 800;
+        }
+
+        .subtitle {
+            color: #666;
+            font-size: 1.1rem;
+            margin-bottom: 40px;
+        }
+
+        /* 目的別逆引きガイド Grid */
+        .goal-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .goal-card {
+            background: #fff;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+            border: 1px solid #f0f0f0;
+            text-align: left;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .goal-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(255, 117, 31, 0.12);
+            border-color: var(--primary-color);
+        }
+
+        .goal-card h3 {
+            margin-top: 0;
+            margin-bottom: 20px;
+            font-size: 1.4rem;
+            color: var(--text-color);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .goal-links {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .goal-links li {
+            margin-bottom: 12px;
+        }
+
+        .goal-link-item {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.05rem;
+            display: block;
+            padding: 12px 15px;
+            background: #fffafa;
+            border-radius: 12px;
+            transition: all 0.2s;
+            cursor: pointer;
+            border: 1px solid transparent;
+        }
+
+        .goal-link-item:hover {
+            background: var(--primary-color);
+            color: #fff;
+            transform: translateX(8px);
+            border-color: var(--primary-color);
+        }
+
+        .goal-link-item::after {
+            content: ' ›';
+            float: right;
+            opacity: 0.6;
+        }
+
+        @media (max-width: 600px) {
+            .page-container { padding: 25px; }
+            .page-header h1 { font-size: 1.8rem; }
+            .goal-grid { grid-template-columns: 1fr; }
+        }
+
+        .modal-overlay {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.5); display: none; align-items: center; justify-content: center; z-index: 9999;
+            backdrop-filter: blur(5px);
+        }
+        .modal-content {
+            background: #fff; padding: 30px; border-radius: 20px; width: 90%; max-width: 500px;
+            position: relative; box-shadow: 0 10px 40px rgba(0,0,0,0.2); text-align: left;
+            border-top: 5px solid var(--primary-color);
+        }
+        .modal-close {
+            position: absolute; top: 15px; right: 15px; background: none; border: none; font-size: 1.8rem; cursor: pointer; color: #999;
+        }
+        .modal-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 5px; }
+        .modal-header h2 { font-size: 1.4rem; color: var(--primary-color); margin: 0; }
+        .modal-meaning { font-weight: bold; color: #777; margin-bottom: 20px; font-size: 1.1rem; }
+        .example-box { background: #fcfcfc; padding: 15px; border-radius: 10px; margin-bottom: 10px; border-left: 4px solid var(--primary-color); font-size: 1.05rem;}
+        .modal-link-btn {
+            display: inline-block; background: var(--primary-color); color: #fff; padding: 10px 20px; border-radius: 20px; text-decoration: none; font-weight: bold; margin-top: 20px; width: 100%; text-align: center;
+        }
+    
+
+
+        /* =========================================
+           📱 Global Mobile Optimization 
+           ========================================= */
+        @media (max-width: 768px) {
+            /* Header */
+            header.global-header {
+                padding: 20px 10px !important;
+            }
+            .header-actions {
+                position: relative !important;
+                top: 0 !important;
+                right: 0 !important;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+                margin-bottom: 20px;
+                width: 100%;
+            }
+            .header-action-btn {
+                width: 90%;
+                justify-content: center;
+                padding: 12px 15px !important;
+                font-size: 1rem !important;
+            }
+            .logo-trigger {
+                padding: 5px !important;
+            }
+            .logo-trigger img {
+                max-height: 100px !important;
+                width: auto !important;
+                max-width: 100% !important;
+                object-fit: contain;
+            }
+            .logo-trigger h1 {
+                font-size: 1.8rem !important;
+            }
+            .logo-trigger p {
+                font-size: 0.9rem !important;
+                padding: 0 10px;
+            }
+            
+            /* Tabs & Navigation */
+            .tabs {
+                flex-direction: column !important;
+                gap: 12px !important;
+                padding: 0 15px !important;
+                margin-bottom: 30px !important;
+            }
+            .tab-btn {
+                width: 100% !important;
+                text-align: center;
+            }
+            .sub-tabs {
+                flex-direction: column !important;
+                gap: 10px !important;
+            }
+            .sub-tab-btn {
+                width: 100% !important;
+            }
+            .dropdown-menu {
+                width: 100% !important;
+                position: static !important;
+                box-shadow: none !important;
+                border: 1px solid #eee;
+                margin-top: 5px;
+                display: flex !important;
+                flex-direction: column !important;
+                opacity: 1 !important;
+                visibility: visible !important;
+                transform: none !important;
+            }
+            
+            /* General Containers */
+            .container {
+                padding: 0 15px !important;
+                width: 100% !important;
+                box-sizing: border-box !important;
+            }
+            
+            /* Typography */
+            body { font-size: 16px !important; }
+            h1 { font-size: 1.8rem !important; }
+            h2 { font-size: 1.5rem !important; }
+            h3 { font-size: 1.3rem !important; }
+            
+            /* Roadmap / Steps */
+            .step.left, .step.right {
+                width: 100% !important;
+                float: none !important;
+                margin-left: 0 !important;
+                margin-right: 0 !important;
+                margin-top: 20px !important;
+            }
+            .roadmap::before {
+                display: none !important;
+            }
+            
+            /* Grids and Flex layouts */
+            .cycle-grid {
+                grid-template-columns: 1fr !important;
+            }
+            .cycle-grid::before { display: none !important; }
+            .cycle-item {
+                margin-left: 0 !important;
+                width: 100% !important;
+            }
+            
+            /* Profiles and Cards */
+            #booking > div, .starthere-card {
+                padding: 25px 15px !important;
+                flex-direction: column !important;
+                text-align: center !important;
+            }
+            #booking > div img {
+                width: 150px !important;
+                height: 150px !important;
+            }
+            
+            /* Tables */
+            table {
+                display: block !important;
+                overflow-x: auto !important;
+                white-space: nowrap !important;
+                width: 100% !important;
+            }
+            
+            /* Modals and Today's Vocab */
+            .modal-content, .search-modal-content {
+                width: 95% !important;
+                padding: 20px 15px !important;
+                margin: 20px auto !important;
+                box-sizing: border-box !important;
+                overflow-x: hidden !important;
+            }
+            .vocab-list {
+                display: flex !important;
+                flex-direction: column !important;
+                gap: 10px !important;
+            }
+            .vocab-item {
+                flex-direction: column !important;
+                align-items: flex-start !important;
+                padding: 10px !important;
+                width: 100% !important;
+                box-sizing: border-box !important;
+            }
+            .vocab-item .kana, .vocab-item .kanji, .vocab-item .meaning {
+                width: 100% !important;
+                text-align: left !important;
+                white-space: normal !important;
+                word-wrap: break-word !important;
+            }
+            
+            /* Buttons */
+            .cta-btn-premium, .learn-btn, .download-btn {
+                padding: 15px 20px !important;
+                font-size: 1.1rem !important;
+                width: 100% !important;
+                box-sizing: border-box !important;
+                text-align: center !important;
+            }
+            
+            /* Cheat Sheet Lists */
+            ul.vocab-list, .cheat-sheet-list {
+                padding: 0 !important;
+                width: 100% !important;
+            }
+            .cheat-sheet-checkbox + a {
+                white-space: normal !important;
+            }
+        }
+
+        /* Unified Mobile Optimization */
+        @media (max-width: 768px) {
+            header.global-header {
+                padding: 20px 10px !important;
+            }
+            .header-actions {
+                position: relative !important;
+                top: 0 !important;
+                right: 0 !important;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+                margin-bottom: 20px;
+                width: 100%;
+            }
+            .header-action-btn {
+                width: 90%;
+                justify-content: center;
+                padding: 12px 15px !important;
+                font-size: 1rem !important;
+            }
+            .logo-trigger h1 {
+                font-size: 2.2rem !important;
+                letter-spacing: -1px !important;
+            }
+            .logo-trigger p {
+                font-size: 0.85rem !important;
+                padding: 0 10px;
+            }
+            .tabs {
+                flex-direction: column !important;
+                gap: 10px !important;
+                padding: 0 15px !important;
+            }
+            .tab-btn {
+                width: 100% !important;
+                padding: 12px !important;
+                font-size: 1rem !important;
+            }
+            .container {
+                padding: 0 15px !important;
+                width: 100% !important;
+                box-sizing: border-box !important;
+            }
+            /* Roadmap Fixes */
+            .roadmap::before { display: none !important; }
+            .step.left, .step.right {
+                width: 100% !important;
+                float: none !important;
+                margin: 0 0 20px 0 !important;
+                padding: 20px !important;
+            }
+            /* Table Fixes */
+            table {
+                display: block !important;
+                overflow-x: auto !important;
+                -webkit-overflow-scrolling: touch;
+                width: 100% !important;
+            }
+            /* Modal Fixes */
+            .modal-content, .search-modal-content {
+                width: 95% !important;
+                margin: 10px auto !important;
+                padding: 20px 15px !important;
+            }
+            /* Grid Fixes */
+            .cycle-grid {
+                grid-template-columns: 1fr !important;
+                gap: 20px !important;
+            }
+            .cycle-item {
+                width: 100% !important;
+                margin: 0 !important;
+                padding: 20px !important;
+            }
+            .starthere-card {
+                padding: 30px 15px !important;
+            }
+            .starthere-title {
+                font-size: 1.8rem !important;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <header class="global-header">
+        <div class="header-actions">
+            <a href="index.html?search=true" class="header-action-btn">🔍 Search</a>
+            <a href="myvocab.html" class="header-action-btn"><svg style="width: 18px; height: 18px; margin-right: 6px; vertical-align: text-bottom;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>Saved Words</a>
+        </div>
+        <a href="index.html" class="logo-trigger">
+            <h1 style="font-size: 4rem; font-weight: 800; color: var(--primary-color); font-family: 'Quicksand', 'M PLUS Rounded 1c', sans-serif; letter-spacing: -2px; margin-bottom: 5px; margin-top: 10px; text-shadow: 2px 2px 4px rgba(0,0,0,0.05);">Hanace</h1>
+            <p>Hanace [Ha-na-su]-Trace your path to bloom, Speak with confidence.</p>
+        </a>
+    </header>
+
+    <div class="tabs">
+        <a href="index.html?tab=roadmap" class="tab-btn">Roadmap</a>
+        <a href="index.html?tab=resources" class="tab-btn active">Resources</a>
+        <a href="index.html?tab=booking" class="tab-btn">Book a Lesson</a>
+    </div>
+
+    <div class="page-container">
+        <header class="page-header">
+            <h1>Find Grammar by Goal</h1>
+            <p class="subtitle">What do you want to say? Discover the right grammar patterns for your needs.</p>
+        </header>
+
+        <div class="goal-grid">
+            <!-- Making Requests -->
+            <div class="goal-card">
+                <h3>Making Requests</h3>
+                <ul class="goal-links">
+                    <li><div class="goal-link-item" onclick="openModal('〜てください (Please do)')">〜てください (Please do)</div></li>
+                    <li><div class="goal-link-item" onclick="openModal('〜ていただけませんか (Polite request)')">〜ていただけませんか (Polite request)</div></li>
+                </ul>
+            </div>
+
+            <!-- Describing Hobbies -->
+            <div class="goal-card">
+                <h3>Describing Hobbies</h3>
+                <ul class="goal-links">
+                    <li><div class="goal-link-item" onclick="openModal('しゅみは〜ことです (My hobby is...)')">しゅみは〜ことです (My hobby is...)</div></li>
+                    <li><div class="goal-link-item" onclick="openModal('〜のがすきです (I like...)')">〜のがすきです (I like...)</div></li>
+                </ul>
+            </div>
+
+            <!-- Sharing Opinions -->
+            <div class="goal-card">
+                <h3>Sharing Opinions</h3>
+                <ul class="goal-links">
+                    <li><div class="goal-link-item" onclick="openModal('〜とおもいます (I think...)')">〜とおもいます (I think...)</div></li>
+                    <li><div class="goal-link-item" onclick="openModal('〜といっていました (They were saying...)')">〜といっていました (They were saying...)</div></li>
+                </ul>
+            </div>
+
+            <!-- Apologizing & Greetings -->
+            <div class="goal-card">
+                <h3>Apologizing & Greetings</h3>
+                <ul class="goal-links">
+                    <li><div class="goal-link-item" onclick="openModal('あいさつ・あやまる (Common Phrases)')">あいさつ・あやまる (Common Phrases)</div></li>
+                    <li><div class="goal-link-item" onclick="openModal('〜てすみません (Sorry for...)')">〜てすみません (Sorry for...)</div></li>
+                </ul>
+            </div>
+
+            <!-- Expressing Regret -->
+            <div class="goal-card">
+                <h3>Expressing Regret</h3>
+                <ul class="goal-links">
+                    <li><div class="goal-link-item" onclick="openModal('〜てしまう (Regretful action)')">〜てしまう (Regretful action)</div></li>
+                    <li><div class="goal-link-item" onclick="openModal('〜なければよかった (I wish I hadn\'t...)')">〜なければよかった (I wish I hadn\'t...)</div></li>
+                </ul>
+            </div>
+        </div>
+
+        <footer style="margin-top: 60px; color: #999; font-size: 0.9rem;">
+            &copy; 2026 Hana Banana Japanese. All rights reserved.
+        </footer>
+    </div>
+
+    <div id="grammarModal" class="modal-overlay" onclick="closeModal(event)">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <button class="modal-close" onclick="closeModal()">×</button>
+            <div class="modal-header">
+                <h2 id="modalTitle">Phrase</h2>
+            </div>
+            <p id="modalMeaning" class="modal-meaning">Meaning</p>
+            <div class="modal-examples" id="modalExamples">
+                <!-- Examples injected here -->
+            </div>
+            <a id="modalLink" href="#" class="modal-link-btn">Go to Lesson</a>
+        </div>
+    </div>
+
+    <script>
+    const grammarData = {
+        '〜てください (Please do)': {
+            kanji: '〜てください',
+            meaning: 'Please do',
+            examples: [
+                'ここに<ruby>名前<rt>なまえ</rt></ruby>を<ruby>書<rt>か</rt></ruby>いてください。<br><span style="font-size:0.9rem;color:#777">Please write your name here.</span>',
+                '<ruby>少<rt>すコ</rt></ruby>し<ruby>待<rt>ま</rt></ruby>ってください。<br><span style="font-size:0.9rem;color:#777">Please wait a moment.</span>',
+                'ゆっくり<ruby>話<rt>はな</rt></ruby>してください。<br><span style="font-size:0.9rem;color:#777">Please speak slowly.</span>'
+            ],
+            link: 'index.html?step=step11'
+        },
+        '〜ていただけませんか (Polite request)': {
+            kanji: '〜ていただけませんか',
+            meaning: 'Could you please...?',
+            examples: [
+                '<ruby>写真<rt>しゃしん</rt></ruby>を<ruby>撮<rt>と</rt></ruby>っていただけませんか。<br><span style="font-size:0.9rem;color:#777">Could you please take a picture?</span>',
+                '<ruby>駅<rt>えき</rt></ruby>までの<ruby>道<rt>みち</rt></ruby>を<ruby>教<rt>おし</rt></ruby>えていただけませんか。<br><span style="font-size:0.9rem;color:#777">Could you tell me the way to the station?</span>',
+                'これを<ruby>手伝<rt>てつだ</rt></ruby>っていただけませんか。<br><span style="font-size:0.9rem;color:#777">Could you help me with this?</span>'
+            ],
+            link: 'index.html?step=intStep05'
+        },
+        'しゅみは〜ことです (My hobby is...)': {
+            kanji: '<ruby>趣味<rt>しゅみ</rt></ruby>は〜ことです',
+            meaning: 'My hobby is...',
+            examples: [
+                '<ruby>趣味<rt>しゅみ</rt></ruby>は<ruby>映画<rt>えいが</rt></ruby>を<ruby>見<rt>み</rt></ruby>ることです。<br><span style="font-size:0.9rem;color:#777">My hobby is watching movies.</span>',
+                '<ruby>趣味<rt>しゅみ</rt></ruby>は<ruby>音楽<rt>おんがく</rt></ruby>を<ruby>聴<rt>き</rt></ruby>くことです。<br><span style="font-size:0.9rem;color:#777">My hobby is listening to music.</span>',
+                '<ruby>趣味<rt>しゅみ</rt></ruby>は<ruby>写真<rt>しゃしん</rt></ruby>を<ruby>撮<rt>と</rt></ruby>ることです。<br><span style="font-size:0.9rem;color:#777">My hobby is taking pictures.</span>'
+            ],
+            link: 'index.html?step=intStep11'
+        },
+        '〜のがすきです (I like...)': {
+            kanji: '〜のが<ruby>好<rt>す</rt></ruby>きです',
+            meaning: 'I like doing...',
+            examples: [
+                '<ruby>本<rt>ほん</rt></ruby>を<ruby>読<rt>よ</rt></ruby>むのが<ruby>好<rt>す</rt></ruby>きです。<br><span style="font-size:0.9rem;color:#777">I like reading books.</span>',
+                'スポーツをするのが<ruby>好<rt>す</rt></ruby>きです。<br><span style="font-size:0.9rem;color:#777">I like playing sports.</span>',
+                '<ruby>料理<rt>りょうり</rt></ruby>を<ruby>作<rt>つく</rt></ruby>るのが<ruby>好<rt>す</rt></ruby>きです。<br><span style="font-size:0.9rem;color:#777">I like cooking.</span>'
+            ],
+            link: 'index.html?step=intStep11'
+        },
+        '〜とおおもいます (I think...)': {
+            kanji: '〜と<ruby>思<rt>おも</rt></ruby>います',
+            meaning: 'I think that...',
+            examples: [
+                '<ruby>明日<rt>あした</rt></ruby>は<ruby>雨<rt>あめ</rt></ruby>が<ruby>降<rt>ふ</rt></ruby>ると<ruby>思<rt>おも</rt></ruby>います。<br><span style="font-size:0.9rem;color:#777">I think it will rain tomorrow.</span>',
+                'この<ruby>映画<rt>えいが</rt></ruby>は<ruby>面白<rt>おもしろ</rt></ruby>いと<ruby>思<rt>おも</rt></ruby>います。<br><span style="font-size:0.9rem;color:#777">I think this movie is interesting.</span>',
+                '<ruby>彼<rt>かれ</rt></ruby>は<ruby>来<rt>こ</rt></ruby>ないと<ruby>思<rt>おも</rt></ruby>います。<br><span style="font-size:0.9rem;color:#777">I think he will not come.</span>'
+            ],
+            link: 'index.html?step=intStep08'
+        },
+        '〜といっていました (They were saying...)': {
+            kanji: '〜と<ruby>言<rt>い</rt></ruby>っていました',
+            meaning: 'They said that...',
+            examples: [
+                '<ruby>田中<rt>たなか</rt></ruby>さんは<ruby>明日<rt>あした</rt></ruby><ruby>休<rt>やす</rt></ruby>むと<ruby>言<rt>い</rt></ruby>っていました。<br><span style="font-size:0.9rem;color:#777">Tanaka-san said he will be absent tomorrow.</span>',
+                '<ruby>先生<rt>せんせい</rt></ruby>はテストが<ruby>難<rt>むずか</rt></ruby>しいと<ruby>言<rt>い</rt></ruby>っていました。<br><span style="font-size:0.9rem;color:#777">The teacher said the test will be difficult.</span>',
+                '<ruby>彼女<rt>かのじょ</rt></ruby>は<ruby>日本<rt>にほん</rt></ruby>へ<ruby>行<rt>い</rt></ruby>きたいと<ruby>言<rt>い</rt></ruby>っていました。<br><span style="font-size:0.9rem;color:#777">She said she wants to go to Japan.</span>'
+            ],
+            link: 'index.html?step=intStep08'
+        },
+        'あいさつ・あやまる (Common Phrases)': {
+            kanji: '<ruby>挨拶<rt>あいさつ</rt></ruby>・<ruby>謝<rt>あやま</rt></ruby>る',
+            meaning: 'Greetings / Apologies',
+            examples: [
+                'おはようございます。<br><span style="font-size:0.9rem;color:#777">Good morning.</span>',
+                'ごめんなさい。<br><span style="font-size:0.9rem;color:#777">I am sorry.</span>',
+                'ありがとうございます。<br><span style="font-size:0.9rem;color:#777">Thank you very much.</span>'
+            ],
+            link: 'cheat_greetings.html'
+        },
+        '〜てすみません (Sorry for...)': {
+            kanji: '〜てすみません',
+            meaning: 'I am sorry for...',
+            examples: [
+                '<ruby>遅<rt>おそ</rt></ruby>くなってすみません。<br><span style="font-size:0.9rem;color:#777">Sorry for being late.</span>',
+                '<ruby>返事<rt>へんじ</rt></ruby>が<ruby>遅<rt>おそ</rt></ruby>くなってすみません。<br><span style="font-size:0.9rem;color:#777">Sorry for the late reply.</span>',
+                '<ruby>約束<rt>やくそく</rt></ruby>を<ruby>忘<rt>わす</rt></ruby>れてすみません。<br><span style="font-size:0.9rem;color:#777">Sorry for forgetting the promise.</span>'
+            ],
+            link: 'index.html?step=intStep05'
+        },
+        '〜てしまう (Regretful action)': {
+            kanji: '〜てしまう',
+            meaning: 'To do something by accident / to finish completely',
+            examples: [
+                '<ruby>財布<rt>さいふ</rt></ruby>を<ruby>忘<rt>わす</rt></ruby>れてしまいました。<br><span style="font-size:0.9rem;color:#777">I completely forgot my wallet (regretfully).</span>',
+                'パソコンが<ruby>壊<rt>こわ</rt></ruby>れてしまいました。<br><span style="font-size:0.9rem;color:#777">My computer broke.</span>',
+                'ケーキを<ruby>全部<rt>ぜんぶ</rt></ruby><ruby>食<rt>た</rt></ruby>べてしまった。<br><span style="font-size:0.9rem;color:#777">I ended up eating all the cake.</span>'
+            ],
+            link: 'index.html?step=intStep05'
+        },
+        '〜なければよかった (I wish I hadn\'t...)': {
+            kanji: '〜なければよかった',
+            meaning: 'I wish I had not...',
+            examples: [
+                'あんなこと<ruby>言<rt>い</rt></ruby>わなければよかった。<br><span style="font-size:0.9rem;color:#777">I wish I hadn\'t said that.</span>',
+                '<ruby>買<rt>か</rt></ruby>わなければよかった。<br><span style="font-size:0.9rem;color:#777">I wish I hadn\'t bought it.</span>',
+                '<ruby>行<rt>い</rt></ruby>かなければよかった。<br><span style="font-size:0.9rem;color:#777">I wish I hadn\'t gone.</span>'
+            ],
+            link: 'index.html?step=intStep06'
+        }
+    };
+
+    let currentItem = null;
+
+    function openModal(key) {
+        const data = grammarData[key];
+        if(!data) return;
+        currentItem = data;
+        
+        document.getElementById('modalTitle').innerHTML = data.kanji;
+        document.getElementById('modalMeaning').textContent = data.meaning;
+        document.getElementById('modalLink').href = data.link;
+        
+        const examplesHtml = data.examples.map(ex => `<div class="example-box">${ex}</div>`).join('');
+        document.getElementById('modalExamples').innerHTML = examplesHtml;
+        
+        document.getElementById('grammarModal').style.display = 'flex';
+    }
+
+    function closeModal(e) {
+        if(e && e.target.id !== 'grammarModal' && !e.target.classList.contains('modal-close')) return;
+        document.getElementById('grammarModal').style.display = 'none';
+    }
+    </script>
+</body>
+</html>

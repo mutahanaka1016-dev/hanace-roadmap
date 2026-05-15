@@ -1,0 +1,1004 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Kanji 500 | Hana Banana Japanese</title>
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500;700;800&family=Quicksand:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #ff751f;
+            --primary-light: #ffc8a2;
+            --text-main: #2d3436;
+            --text-sub: #636e72;
+            --bg-body: #f8f9fa;
+            
+            /* Category Colors */
+            --cat1: #ff4757; /* Super Basic - Red/Pink */
+            --cat2: #2ed573; /* Nature - Green */
+            --cat3: #1e90ff; /* Society - Blue */
+            --cat4: #a55eea; /* States - Purple */
+            --cat5: #ffa502; /* Work - Orange */
+            
+            --glass-bg: rgba(255, 255, 255, 0.7);
+            --glass-border: rgba(255, 255, 255, 0.4);
+            --shadow-premium: 0 20px 40px rgba(0, 0, 0, 0.05);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Quicksand', 'M PLUS Rounded 1c', sans-serif;
+            background: var(--bg-body);
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='500' height='500'%3E%3Cstyle%3Etext%7Bfont-family:'M PLUS Rounded 1c',sans-serif;fill:rgba(83,83,83,0.06);font-weight:700;%7D%3C/style%3E<text x='136' y='103' font-size='28' transform='rotate(18 136 103)'>僕</text><text x='111' y='28' font-size='24' transform='rotate(27 111 28)'>は</text><text x='431' y='191' font-size='27' transform='rotate(20 431 191)'>三</text><text x='303' y='225' font-size='31' transform='rotate(2 303 225)'>十</text><text x='196' y='216' font-size='27' transform='rotate(19 196 216)'>七</text><text x='389' y='50' font-size='20' transform='rotate(12 389 50)'>歳</text><text x='438' y='285' font-size='22' transform='rotate(-25 438 285)'>で</text><text x='265' y='34' font-size='24' transform='rotate(8 265 34)'>、</text><text x='279' y='281' font-size='31' transform='rotate(-13 279 281)'>そ</text><text x='461' y='385' font-size='28' transform='rotate(-19 461 385)'>の</text><text x='268' y='456' font-size='27' transform='rotate(29 268 456)'>と</text><text x='206' y='56' font-size='29' transform='rotate(20 206 56)'>き</text><text x='22' y='271' font-size='23' transform='rotate(-11 22 271)'>ボ</text><text x='104' y='236' font-size='23' transform='rotate(22 104 236)'>ー</text><text x='378' y='457' font-size='25' transform='rotate(24 378 457)'>イ</text><text x='24' y='33' font-size='23' transform='rotate(3 24 33)'>ン</text><text x='41' y='401' font-size='22' transform='rotate(-6 41 401)'>グ</text><text x='63' y='130' font-size='20' transform='rotate(-24 63 130)'>7</text><text x='432' y='470' font-size='25' transform='rotate(17 432 470)'>4</text><text x='346' y='207' font-size='26' transform='rotate(29 346 207)'>7</text><text x='228' y='315' font-size='28' transform='rotate(-29 228 315)'>の</text><text x='213' y='131' font-size='27' transform='rotate(-13 213 131)'>シ</text><text x='349' y='376' font-size='31' transform='rotate(-2 349 376)'>ー</text><text x='473' y='117' font-size='22' transform='rotate(0 473 117)'>ト</text><text x='392' y='149' font-size='27' transform='rotate(-12 392 149)'>に</text><text x='125' y='444' font-size='26' transform='rotate(15 125 444)'>座</text><text x='218' y='381' font-size='23' transform='rotate(-29 218 381)'>っ</text><text x='344' y='319' font-size='29' transform='rotate(22 344 319)'>て</text><text x='109' y='356' font-size='31' transform='rotate(22 109 356)'>い</text><text x='14' y='462' font-size='29' transform='rotate(-25 14 462)'>た</text><text x='134' y='276' font-size='26' transform='rotate(-1 134 276)'>。</text>%3C/svg%3E");
+            background-repeat: repeat;
+            color: var(--text-main);
+            min-height: 100vh;
+            padding-bottom: 50px;
+        }
+
+        /* Header Section */
+        header {
+            padding: 40px 20px;
+            text-align: center;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .back-home {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: transform 0.2s;
+        }
+        .back-home:hover { transform: translateX(-5px); }
+
+        h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            letter-spacing: -1px;
+            background: linear-gradient(135deg, var(--primary), #ff4d5a);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 15px;
+        }
+
+        .subtitle {
+            color: var(--text-sub);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto 30px;
+        }
+
+        /* Search & Filter Bar */
+        .controls {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            max-width: 1000px;
+            margin: 0 auto 40px;
+            padding: 0 20px;
+            position: sticky;
+            top: 20px;
+            z-index: 100;
+        }
+
+        .search-container {
+            position: relative;
+            width: 100%;
+        }
+
+        #searchKanji {
+            width: 100%;
+            padding: 18px 25px 18px 50px;
+            border-radius: 20px;
+            border: 1px solid var(--glass-border);
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            font-size: 1.1rem;
+            box-shadow: var(--shadow-premium);
+            outline: none;
+            transition: all 0.3s ease;
+        }
+
+        #searchKanji:focus {
+            border-color: var(--primary);
+            box-shadow: 0 15px 30px rgba(255, 117, 31, 0.1);
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            opacity: 0.4;
+        }
+
+        .filter-tabs {
+            display: flex;
+            gap: 10px;
+            overflow-x: auto;
+            padding: 5px 0 15px;
+            scrollbar-width: none;
+        }
+        .filter-tabs::-webkit-scrollbar { display: none; }
+
+        .filter-btn {
+            white-space: nowrap;
+            padding: 10px 20px;
+            border-radius: 30px;
+            border: 1px solid var(--glass-border);
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            cursor: pointer;
+            font-weight: 600;
+            color: var(--text-sub);
+            transition: all 0.3s;
+            font-family: inherit;
+        }
+
+        .filter-btn.active {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+            box-shadow: 0 10px 20px rgba(255, 117, 31, 0.2);
+        }
+
+        /* Kanji Grid */
+        .kanji-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .category-section {
+            margin-bottom: 60px;
+        }
+
+        .category-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .category-title::before {
+            content: '';
+            width: 8px;
+            height: 30px;
+            border-radius: 4px;
+        }
+
+        #cat-title-1::before { background: var(--cat1); }
+        #cat-title-2::before { background: var(--cat2); }
+        #cat-title-3::before { background: var(--cat3); }
+        #cat-title-4::before { background: var(--cat4); }
+        #cat-title-5::before { background: var(--cat5); }
+
+        .kanji-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        /* Kanji Card */
+        .kanji-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(8px);
+            border: 1px solid var(--glass-border);
+            border-radius: 24px;
+            padding: 24px;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+        }
+
+        .kanji-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 30px 50px rgba(0, 0, 0, 0.08);
+            background: white;
+            border-color: rgba(255, 117, 31, 0.2);
+        }
+
+        .char {
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: var(--text-main);
+            margin-bottom: 5px;
+            line-height: 1;
+            font-family: 'Quicksand', 'M PLUS Rounded 1c', sans-serif;
+        }
+
+        .meanings {
+            font-weight: 700;
+            color: var(--primary);
+            font-size: 1rem;
+            margin-bottom: 12px;
+            text-transform: capitalize;
+        }
+
+        .readings {
+            width: 100%;
+            margin-bottom: 12px;
+            font-size: 0.85rem;
+            color: var(--text-sub);
+            padding: 10px 0;
+            border-top: 1px dashed #eee;
+        }
+
+        .readings .label {
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: block;
+            margin-bottom: 2px;
+            opacity: 0.6;
+        }
+
+        .onyomi { margin-bottom: 8px; }
+
+        .examples {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            margin-top: auto;
+        }
+
+        .example-item {
+            font-size: 0.75rem;
+            background: #f1f2f6;
+            padding: 6px 10px;
+            border-radius: 8px;
+            text-align: left;
+            transition: background 0.2s;
+        }
+
+        .example-item:hover { background: #e8eaed; }
+
+        .ex-word { font-weight: 700; color: #333; }
+        .ex-read { color: var(--text-sub); font-size: 0.7rem;}
+        .ex-mean { display: block; font-size: 0.7rem; color: var(--text-sub); font-weight: normal; margin-top: 2px;}
+
+        /* Audio Indicator */
+        .audio-btn {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            opacity: 0.1;
+            transition: opacity 0.3s;
+            font-size: 1.2rem;
+        }
+        .kanji-card:hover .audio-btn { opacity: 0.6; }
+        .audio-btn:hover { opacity: 1 !important; }
+
+        /* Print Style */
+        @media print {
+            .controls, .back-home, .audio-btn { display: none !important; }
+            body { background: white; padding: 0; }
+            .kanji-grid { grid-template-columns: repeat(4, 1fr); gap: 10px; }
+            .kanji-card { box-shadow: none; border: 1px solid #ccc; break-inside: avoid; }
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            h1 { font-size: 2rem; }
+            .kanji-grid { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); }
+            .char { font-size: 2.5rem; }
+            .kanji-card { padding: 15px; }
+        }
+
+        /* Save Button */
+        .save-btn {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            opacity: 0.3;
+            transition: all 0.3s;
+            font-size: 1.2rem;
+            cursor: pointer;
+            z-index: 5;
+            filter: grayscale(1);
+        }
+        .kanji-card:hover .save-btn { opacity: 0.8; }
+        .save-btn:hover { 
+            opacity: 1 !important; 
+            transform: scale(1.2);
+            filter: grayscale(0);
+        }
+        .save-btn.active {
+            opacity: 1 !important;
+            filter: grayscale(0);
+            color: #ffb800; /* Gold */
+        }
+
+        /* Saved Feedback */
+        .save-btn::after {
+            content: 'Saved!';
+            position: absolute;
+            top: -25px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--text-main);
+            color: white;
+            padding: 4px 8px;
+            border-radius: 6px;
+            font-size: 0.6rem;
+            opacity: 0;
+            pointer-events: none;
+            transition: all 0.3s;
+        }
+        .save-btn.flash::after {
+            opacity: 1;
+            top: -35px;
+        }
+
+        /* Empty state */
+        .no-results {
+            text-align: center;
+            padding: 100px 0;
+            font-size: 1.2rem;
+            color: var(--text-sub);
+            display: none;
+        }
+
+        /* Unified Navigation Styles */
+        :root {
+            --primary-color: #ff751f;
+            --secondary-color: #535353;
+            --bg-color: #F8F9FA;
+            --white: #FFFFFF;
+        }
+
+        header.global-header {
+            text-align: center;
+            padding: 40px 20px;
+            background: #FFFFFF;
+            border-bottom: 4px solid var(--primary-color);
+            margin-bottom: 40px;
+            position: relative;
+            font-family: 'Quicksand', 'M PLUS Rounded 1c', sans-serif;
+            -webkit-text-fill-color: initial; /* Reset for kanji page gradient */
+            max-width: none !important;
+        }
+
+        .header-actions {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            gap: 10px;
+        }
+
+        .header-action-btn {
+            background: #fcfcfc;
+            border: 1px solid #eee;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            color: var(--secondary-color);
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            text-decoration: none;
+            font-family: 'Quicksand', 'M PLUS Rounded 1c', sans-serif;
+        }
+
+        .header-action-btn:hover {
+            background: #fff;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transform: translateY(-1px);
+        }
+
+        .logo-trigger {
+            cursor: pointer;
+            display: inline-block;
+            transition: all 0.3s ease;
+            padding: 10px 20px;
+            border-radius: 15px;
+            user-select: none;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .logo-trigger:hover {
+            background-color: transparent;
+            transform: translateY(-2px);
+        }
+
+        .logo-trigger h1 {
+            margin: 0;
+            font-size: 2.2rem;
+            letter-spacing: 2px;
+            color: var(--primary-color);
+            background: none; /* Reset gradient */
+            -webkit-background-clip: initial;
+            -webkit-text-fill-color: var(--primary-color);
+        }
+
+        .logo-trigger p {
+            font-weight: bold;
+            opacity: 0.8;
+            color: var(--secondary-color);
+            margin-top: 5px;
+            font-size: 0.9rem;
+        }
+
+        .tabs {
+            display: flex;
+            justify-content: center;
+            flex-wrap: nowrap;
+            gap: 20px;
+            margin-bottom: 50px;
+            font-family: 'Quicksand', 'M PLUS Rounded 1c', sans-serif;
+        }
+
+        @media (max-width: 850px) {
+            .tabs {
+                flex-wrap: wrap;
+                gap: 15px;
+            }
+        }
+
+        .tab-btn {
+            display: inline-block;
+            box-sizing: border-box;
+            background: #FFFFFF;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+            padding: 12px 30px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            outline: none;
+            text-decoration: none;
+            font-family: 'Quicksand', 'M PLUS Rounded 1c', sans-serif;
+            text-align: center;
+        }
+
+        .tab-btn:hover {
+            background: #ffe6e6;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 10px rgba(255, 117, 31, 0.1);
+        }
+
+        .tab-btn.active {
+            background: var(--primary-color);
+            color: #FFFFFF;
+            box-shadow: 0 6px 12px rgba(255, 117, 31, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .nav-item {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%) translateY(10px);
+            background: #ffffff;
+            min-width: 220px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            border-radius: 15px;
+            padding: 10px;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            z-index: 1000;
+            border: 1px solid #eee;
+            max-height: 450px;
+            overflow-y: auto;
+        }
+
+        .nav-item:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(-50%) translateY(5px);
+        }
+
+        .dropdown-item {
+            display: block;
+            padding: 12px 15px;
+            color: var(--secondary-color);
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 10px;
+            transition: background 0.2s, color 0.2s;
+            text-align: left;
+            font-size: 0.95rem;
+            cursor: pointer;
+            border: none;
+            background: none;
+            width: 100%;
+        }
+
+        .dropdown-item:hover {
+            background: #fff5f5;
+            color: var(--primary-color);
+        }
+
+        .dropdown-divider {
+            height: 1px;
+            background: #eee;
+            margin: 8px 0;
+        }
+    
+
+
+        /* =========================================
+           📱 Global Mobile Optimization 
+           ========================================= */
+        @media (max-width: 768px) {
+            /* Header */
+            header.global-header {
+                padding: 20px 10px !important;
+            }
+            .header-actions {
+                position: relative !important;
+                top: 0 !important;
+                right: 0 !important;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+                margin-bottom: 20px;
+                width: 100%;
+            }
+            .header-action-btn {
+                width: 90%;
+                justify-content: center;
+                padding: 12px 15px !important;
+                font-size: 1rem !important;
+            }
+            .logo-trigger {
+                padding: 5px !important;
+            }
+            .logo-trigger img {
+                max-height: 100px !important;
+                width: auto !important;
+                max-width: 100% !important;
+                object-fit: contain;
+            }
+            .logo-trigger h1 {
+                font-size: 1.8rem !important;
+            }
+            .logo-trigger p {
+                font-size: 0.9rem !important;
+                padding: 0 10px;
+            }
+            
+            /* Tabs & Navigation */
+            .tabs {
+                flex-direction: column !important;
+                gap: 12px !important;
+                padding: 0 15px !important;
+                margin-bottom: 30px !important;
+            }
+            .tab-btn {
+                width: 100% !important;
+                text-align: center;
+            }
+            .sub-tabs {
+                flex-direction: column !important;
+                gap: 10px !important;
+            }
+            .sub-tab-btn {
+                width: 100% !important;
+            }
+            .dropdown-menu {
+                width: 100% !important;
+                position: static !important;
+                box-shadow: none !important;
+                border: 1px solid #eee;
+                margin-top: 5px;
+                display: flex !important;
+                flex-direction: column !important;
+                opacity: 1 !important;
+                visibility: visible !important;
+                transform: none !important;
+            }
+            
+            /* General Containers */
+            .container {
+                padding: 0 15px !important;
+                width: 100% !important;
+                box-sizing: border-box !important;
+            }
+            
+            /* Typography */
+            body { font-size: 16px !important; }
+            h1 { font-size: 1.8rem !important; }
+            h2 { font-size: 1.5rem !important; }
+            h3 { font-size: 1.3rem !important; }
+            
+            /* Roadmap / Steps */
+            .step.left, .step.right {
+                width: 100% !important;
+                float: none !important;
+                margin-left: 0 !important;
+                margin-right: 0 !important;
+                margin-top: 20px !important;
+            }
+            .roadmap::before {
+                display: none !important;
+            }
+            
+            /* Grids and Flex layouts */
+            .cycle-grid {
+                grid-template-columns: 1fr !important;
+            }
+            .cycle-grid::before { display: none !important; }
+            .cycle-item {
+                margin-left: 0 !important;
+                width: 100% !important;
+            }
+            
+            /* Profiles and Cards */
+            #booking > div, .starthere-card {
+                padding: 25px 15px !important;
+                flex-direction: column !important;
+                text-align: center !important;
+            }
+            #booking > div img {
+                width: 150px !important;
+                height: 150px !important;
+            }
+            
+            /* Tables */
+            table {
+                display: block !important;
+                overflow-x: auto !important;
+                white-space: nowrap !important;
+                width: 100% !important;
+            }
+            
+            /* Modals and Today's Vocab */
+            .modal-content, .search-modal-content {
+                width: 95% !important;
+                padding: 20px 15px !important;
+                margin: 20px auto !important;
+                box-sizing: border-box !important;
+                overflow-x: hidden !important;
+            }
+            .vocab-list {
+                display: flex !important;
+                flex-direction: column !important;
+                gap: 10px !important;
+            }
+            .vocab-item {
+                flex-direction: column !important;
+                align-items: flex-start !important;
+                padding: 10px !important;
+                width: 100% !important;
+                box-sizing: border-box !important;
+            }
+            .vocab-item .kana, .vocab-item .kanji, .vocab-item .meaning {
+                width: 100% !important;
+                text-align: left !important;
+                white-space: normal !important;
+                word-wrap: break-word !important;
+            }
+            
+            /* Buttons */
+            .cta-btn-premium, .learn-btn, .download-btn {
+                padding: 15px 20px !important;
+                font-size: 1.1rem !important;
+                width: 100% !important;
+                box-sizing: border-box !important;
+                text-align: center !important;
+            }
+            
+            /* Cheat Sheet Lists */
+            ul.vocab-list, .cheat-sheet-list {
+                padding: 0 !important;
+                width: 100% !important;
+            }
+            .cheat-sheet-checkbox + a {
+                white-space: normal !important;
+            }
+        }
+
+        /* Unified Mobile Optimization */
+        @media (max-width: 768px) {
+            header.global-header {
+                padding: 20px 10px !important;
+            }
+            .header-actions {
+                position: relative !important;
+                top: 0 !important;
+                right: 0 !important;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+                margin-bottom: 20px;
+                width: 100%;
+            }
+            .header-action-btn {
+                width: 90%;
+                justify-content: center;
+                padding: 12px 15px !important;
+                font-size: 1rem !important;
+            }
+            .logo-trigger h1 {
+                font-size: 2.2rem !important;
+                letter-spacing: -1px !important;
+            }
+            .logo-trigger p {
+                font-size: 0.85rem !important;
+                padding: 0 10px;
+            }
+            .tabs {
+                flex-direction: column !important;
+                gap: 10px !important;
+                padding: 0 15px !important;
+            }
+            .tab-btn {
+                width: 100% !important;
+                padding: 12px !important;
+                font-size: 1rem !important;
+            }
+            .container {
+                padding: 0 15px !important;
+                width: 100% !important;
+                box-sizing: border-box !important;
+            }
+            /* Roadmap Fixes */
+            .roadmap::before { display: none !important; }
+            .step.left, .step.right {
+                width: 100% !important;
+                float: none !important;
+                margin: 0 0 20px 0 !important;
+                padding: 20px !important;
+            }
+            /* Table Fixes */
+            table {
+                display: block !important;
+                overflow-x: auto !important;
+                -webkit-overflow-scrolling: touch;
+                width: 100% !important;
+            }
+            /* Modal Fixes */
+            .modal-content, .search-modal-content {
+                width: 95% !important;
+                margin: 10px auto !important;
+                padding: 20px 15px !important;
+            }
+            /* Grid Fixes */
+            .cycle-grid {
+                grid-template-columns: 1fr !important;
+                gap: 20px !important;
+            }
+            .cycle-item {
+                width: 100% !important;
+                margin: 0 !important;
+                padding: 20px !important;
+            }
+            .starthere-card {
+                padding: 30px 15px !important;
+            }
+            .starthere-title {
+                font-size: 1.8rem !important;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <header class="global-header">
+        <div class="header-actions">
+            <a href="index.html?search=true" class="header-action-btn" style="text-decoration: none;">🔍 Search</a>
+            <a href="myvocab.html" class="header-action-btn" style="text-decoration: none;"><svg style="width: 18px; height: 18px; margin-right: 6px; vertical-align: text-bottom;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>Saved Words</a>
+            <a href="https://discord.gg/ZgkKXdpt" target="_blank" class="header-action-btn" style="text-decoration: none;">💬 24/7 Chat Support</a>
+        </div>
+        <a href="index.html" class="logo-trigger">
+            <h1 style="font-size: 4rem; font-weight: 800; color: var(--primary-color); font-family: 'Quicksand', 'M PLUS Rounded 1c', sans-serif; letter-spacing: -2px; margin-bottom: 5px; margin-top: 10px; text-shadow: 2px 2px 4px rgba(0,0,0,0.05);">Hanace</h1>
+            <p>Hanace [Ha-na-su]-Trace your path to bloom, Speak with confidence.</p>
+        </a>
+    </header>
+
+    <div class="tabs">
+        <a href="index.html?tab=roadmap" class="tab-btn">Roadmap</a>
+        <a href="index.html?tab=resources" class="tab-btn active">Resources</a>
+        <a href="index.html?tab=booking" class="tab-btn">Book a Lesson</a>
+    </div>
+
+    <header>
+        <h1>Daily Kanji 500</h1>
+        <p class="subtitle">Categorized roadmap to mastering 500 essential Japanese characters for daily life. Search, learn, and master! ✨</p>
+    </header>
+
+    <div class="controls">
+        <div class="search-container">
+            <span class="search-icon">🔍</span>
+            <input type="text" id="searchKanji" placeholder="Search by Kanji, Reading, or Meaning...">
+        </div>
+        <div class="filter-tabs">
+            <button class="filter-btn active" data-filter="all">All Kanji</button>
+            <button class="filter-btn" data-filter="1">1. Super Basic</button>
+            <button class="filter-btn" data-filter="2">2. Nature & Life</button>
+            <button class="filter-btn" data-filter="3">3. Society & Emotion</button>
+            <button class="filter-btn" data-filter="4">4. States & Property</button>
+            <button class="filter-btn" data-filter="5">5. Work & Abstract</button>
+        </div>
+    </div>
+
+    <div class="kanji-container" id="kanjiContainer">
+        <!-- Rendered by JS -->
+    </div>
+
+    <div class="no-results" id="noResults">
+        No kanji found matching your search. Try something else! 🌸
+    </div>
+
+    <!-- Data is loaded from resources/kanji_data.js -->
+    <script src="resources/kanji_data.js"></script>
+    <script>
+        const container = document.getElementById('kanjiContainer');
+        const searchInput = document.getElementById('searchKanji');
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const noResults = document.getElementById('noResults');
+
+        const catNames = {
+            1: "超基本 (Super Basic)",
+            2: "自然・生活・動作 (Nature & Life)",
+            3: "社会・学校・感情 (Society & Emotion)",
+            4: "状態・性質 (States & Properties)",
+            5: "仕事・経済・抽象 (Work & Economy)"
+        };
+
+        function renderKanji(filter = 'all', search = '') {
+            container.innerHTML = '';
+            let hasResults = false;
+            search = search.toLowerCase();
+
+            // Create category sections
+            const categories = filter === 'all' ? [1, 2, 3, 4, 5] : [parseInt(filter)];
+
+            categories.forEach(catId => {
+                const sectionItems = kanjiData.filter(item => {
+                    const matchesCat = item.category === catId;
+                    const matchesSearch = !search || 
+                        item.kanji.includes(search) || 
+                        item.onyomi.toLowerCase().includes(search) || 
+                        item.kunyomi.toLowerCase().includes(search) || 
+                        item.meaning.toLowerCase().includes(search);
+                    return matchesCat && matchesSearch;
+                });
+
+                if (sectionItems.length > 0) {
+                    hasResults = true;
+                    const section = document.createElement('div');
+                    section.className = 'category-section';
+                    section.innerHTML = `
+                        <h2 class="category-title" id="cat-title-${catId}">${catNames[catId]}</h2>
+                        <div class="kanji-grid"></div>
+                    `;
+                    const grid = section.querySelector('.kanji-grid');
+                    
+                    sectionItems.forEach(item => {
+                        const saved = isSaved(item.kanji);
+                        const card = document.createElement('div');
+                        card.className = 'kanji-card';
+                        card.innerHTML = `
+                            <div class="save-btn ${saved ? 'active' : ''}" onclick="event.stopPropagation(); toggleSave(this, '${item.kanji}', '${item.meaning}', '${item.onyomi}', '${item.kunyomi}')"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--primary-color, #ff751f)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg></div>
+                            <div class="audio-btn" onclick="event.stopPropagation(); speak('${item.kanji}')"><svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: text-bottom;"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg></div>
+                            <div class="char">${item.kanji}</div>
+                            <div class="meanings">${item.meaning}</div>
+                            <div class="readings">
+                                <div class="onyomi"><span class="label">On</span>${item.onyomi}</div>
+                                <div class="kunyomi"><span class="label">Kun</span>${item.kunyomi}</div>
+                            </div>
+                            <div class="examples">
+                                ${item.examples.map(ex => `
+                                    <div class="example-item">
+                                        <span class="ex-word">${ex.word}</span> <span class="ex-read">(${ex.reading})</span>
+                                        <span class="ex-mean">${ex.meaning}</span>
+                                    </div>
+                                `).join('')}
+                            </div>
+                        `;
+                        card.onclick = () => speak(item.kanji);
+                        card.style.borderTop = `5px solid var(--cat${catId})`;
+                        grid.appendChild(card);
+                    });
+                    container.appendChild(section);
+                }
+            });
+
+            noResults.style.display = hasResults ? 'none' : 'block';
+        }
+
+        searchInput.addEventListener('input', (e) => {
+            const activeFilter = document.querySelector('.filter-btn.active').dataset.filter;
+            renderKanji(activeFilter, e.target.value);
+        });
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                renderKanji(btn.dataset.filter, searchInput.value);
+            });
+        });
+
+        function speak(text) {
+            if ('speechSynthesis' in window) {
+                window.speechSynthesis.cancel();
+                const msg = new SpeechSynthesisUtterance(text);
+                msg.lang = 'ja-JP';
+                window.speechSynthesis.speak(msg);
+            }
+        }
+
+        // SAVE LOGIC
+        function isSaved(kanji) {
+            const saved = JSON.parse(localStorage.getItem('hanaBananaSavedVocab') || '[]');
+            return saved.some(item => item.word === kanji);
+        }
+
+        function toggleSave(btn, kanji, meaning, onyomi, kunyomi) {
+            let saved = JSON.parse(localStorage.getItem('hanaBananaSavedVocab') || '[]');
+            const existsIndex = saved.findIndex(item => item.word === kanji);
+
+            if (existsIndex > -1) {
+                // Remove
+                saved.splice(existsIndex, 1);
+                btn.classList.remove('active');
+            } else {
+                // Add
+                const formattedMeaning = `${meaning} (On: ${onyomi} / Kun: ${kunyomi})`;
+                saved.push({
+                    word: kanji,
+                    meaning: formattedMeaning,
+                    date: new Date().toISOString()
+                });
+                btn.classList.add('active');
+                
+                // Flash feedback
+                btn.classList.add('flash');
+                setTimeout(() => btn.classList.remove('flash'), 1500);
+            }
+
+            localStorage.setItem('hanaBananaSavedVocab', JSON.stringify(saved));
+        }
+
+        window.onload = () => {
+            if (typeof kanjiData !== 'undefined') {
+                renderKanji();
+            } else {
+                console.warn('kanjiData not loaded yet');
+                // Retry in case of slow load
+                setTimeout(renderKanji, 500);
+            }
+        };
+    </script>
+</body>
+</html>

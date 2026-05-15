@@ -1,0 +1,1130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Essential Particles Cheat Sheet</title>
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500;700;800&family=Quicksand:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-red: #ff751f;
+            --light-red: #ffc8a2;
+            --dark-red: #cc5c14;
+        }
+
+        .interaction-tip {
+            text-align: center;
+            background: var(--light-red);
+            color: var(--dark-red);
+            padding: 12px 25px;
+            border-radius: 50px;
+            display: block;
+            margin: 0 auto 30px;
+            font-weight: bold;
+            font-size: 1rem;
+            width: fit-content;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Quicksand', 'M PLUS Rounded 1c', sans-serif;
+            background-color: #f7f7f7;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='500' height='500'%3E%3Cstyle%3Etext%7Bfont-family:'M PLUS Rounded 1c',sans-serif;fill:rgba(83,83,83,0.06);font-weight:700;%7D%3C/style%3E<text x='136' y='103' font-size='28' transform='rotate(18 136 103)'>僕</text><text x='111' y='28' font-size='24' transform='rotate(27 111 28)'>は</text><text x='431' y='191' font-size='27' transform='rotate(20 431 191)'>三</text><text x='303' y='225' font-size='31' transform='rotate(2 303 225)'>十</text><text x='196' y='216' font-size='27' transform='rotate(19 196 216)'>七</text><text x='389' y='50' font-size='20' transform='rotate(12 389 50)'>歳</text><text x='438' y='285' font-size='22' transform='rotate(-25 438 285)'>で</text><text x='265' y='34' font-size='24' transform='rotate(8 265 34)'>、</text><text x='279' y='281' font-size='31' transform='rotate(-13 279 281)'>そ</text><text x='461' y='385' font-size='28' transform='rotate(-19 461 385)'>の</text><text x='268' y='456' font-size='27' transform='rotate(29 268 456)'>と</text><text x='206' y='56' font-size='29' transform='rotate(20 206 56)'>き</text><text x='22' y='271' font-size='23' transform='rotate(-11 22 271)'>ボ</text><text x='104' y='236' font-size='23' transform='rotate(22 104 236)'>ー</text><text x='378' y='457' font-size='25' transform='rotate(24 378 457)'>イ</text><text x='24' y='33' font-size='23' transform='rotate(3 24 33)'>ン</text><text x='41' y='401' font-size='22' transform='rotate(-6 41 401)'>グ</text><text x='63' y='130' font-size='20' transform='rotate(-24 63 130)'>7</text><text x='432' y='470' font-size='25' transform='rotate(17 432 470)'>4</text><text x='346' y='207' font-size='26' transform='rotate(29 346 207)'>7</text><text x='228' y='315' font-size='28' transform='rotate(-29 228 315)'>の</text><text x='213' y='131' font-size='27' transform='rotate(-13 213 131)'>シ</text><text x='349' y='376' font-size='31' transform='rotate(-2 349 376)'>ー</text><text x='473' y='117' font-size='22' transform='rotate(0 473 117)'>ト</text><text x='392' y='149' font-size='27' transform='rotate(-12 392 149)'>に</text><text x='125' y='444' font-size='26' transform='rotate(15 125 444)'>座</text><text x='218' y='381' font-size='23' transform='rotate(-29 218 381)'>っ</text><text x='344' y='319' font-size='29' transform='rotate(22 344 319)'>て</text><text x='109' y='356' font-size='31' transform='rotate(22 109 356)'>い</text><text x='14' y='462' font-size='29' transform='rotate(-25 14 462)'>た</text><text x='134' y='276' font-size='26' transform='rotate(-1 134 276)'>。</text>%3C/svg%3E");
+            background-repeat: repeat;
+            color: #333;
+            padding: 20px;
+        }
+
+        .page-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            border-top: 15px solid var(--primary-red);
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        h1 {
+            color: var(--primary-red);
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        p.subtitle {
+            color: #666;
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+        }
+
+        .chart-section {
+            margin-bottom: 50px;
+        }
+
+        h2 {
+            color: #fff;
+            background-color: var(--primary-red);
+            display: inline-block;
+            padding: 8px 25px;
+            border-radius: 30px;
+            margin-bottom: 25px;
+            font-size: 1.5rem;
+            box-shadow: 0 4px 6px rgba(255, 117, 31,0.2);
+        }
+
+        .particle-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .particle-card {
+            background-color: #fff;
+            border: 2px solid #eee;
+            border-radius: 12px;
+            padding: 25px;
+            text-align: left;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.03);
+            border-left: 8px solid var(--primary-red);
+            position: relative;
+        }
+
+        .particle-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(255, 117, 31,0.1);
+            border-color: var(--light-red);
+        }
+
+        .particle-symbol {
+            font-size: 2.5rem;
+            color: var(--primary-red);
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .particle-name {
+            font-size: 0.9rem;
+            color: #888;
+            margin-bottom: 15px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .particle-meaning {
+            font-size: 1.1rem;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .particle-example {
+            background: #fafafa;
+            padding: 12px;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            color: #555;
+            line-height: 1.4;
+        }
+
+        .jp-ex {
+            font-weight: bold;
+            color: #333;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .en-ex {
+            font-style: italic;
+            color: #777;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 50px;
+            color: #999;
+            font-size: 0.9rem;
+        }
+
+        .back-btn {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: var(--primary-red);
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1rem;
+        }
+        
+        .back-btn:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 600px) {
+            .page-container { padding: 20px; }
+            h1 { font-size: 1.8rem; }
+            .particle-grid { grid-template-columns: 1fr; }
+        }
+
+        /* Unified Navigation Styles */
+        :root {
+            --primary-color: #ff751f;
+            --secondary-color: #535353;
+            --bg-color: #F8F9FA;
+            --white: #FFFFFF;
+        }
+
+        header.global-header {
+            text-align: center;
+            padding: 40px 20px;
+            background: #FFFFFF;
+            border-bottom: 4px solid var(--primary-color);
+            margin-bottom: 40px;
+            position: relative;
+            font-family: 'Quicksand', 'M PLUS Rounded 1c', sans-serif;
+        }
+
+        .header-actions {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            gap: 10px;
+        }
+
+        .header-action-btn {
+            background: #fcfcfc;
+            border: 1px solid #eee;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            color: var(--secondary-color);
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            text-decoration: none;
+            font-family: 'Quicksand', 'M PLUS Rounded 1c', sans-serif;
+        }
+
+        .header-action-btn:hover {
+            background: #fff;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transform: translateY(-1px);
+        }
+
+        .logo-trigger {
+            cursor: pointer;
+            display: inline-block;
+            transition: all 0.3s ease;
+            padding: 10px 20px;
+            border-radius: 15px;
+            user-select: none;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .logo-trigger:hover {
+            background-color: transparent;
+            transform: translateY(-2px);
+        }
+
+        .logo-trigger h1 {
+            margin: 0;
+            font-size: 2.2rem;
+            letter-spacing: 2px;
+            color: var(--primary-color);
+        }
+
+        .logo-trigger p {
+            font-weight: bold;
+            opacity: 0.8;
+            color: var(--secondary-color);
+            margin-top: 5px;
+            font-size: 0.9rem;
+        }
+
+        .tabs {
+            display: flex;
+            justify-content: center;
+            flex-wrap: nowrap;
+            gap: 20px;
+            margin-bottom: 50px;
+            font-family: 'Quicksand', 'M PLUS Rounded 1c', sans-serif;
+        }
+
+        @media (max-width: 850px) {
+            .tabs {
+                flex-wrap: wrap;
+                gap: 15px;
+            }
+        }
+
+        .tab-btn {
+            display: inline-block;
+            box-sizing: border-box;
+            background: #FFFFFF;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+            padding: 12px 30px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            outline: none;
+            text-decoration: none;
+            font-family: 'Quicksand', 'M PLUS Rounded 1c', sans-serif;
+            text-align: center;
+        }
+
+        .tab-btn:hover {
+            background: #ffe6e6;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 10px rgba(255, 117, 31, 0.1);
+        }
+
+        .tab-btn.active {
+            background: var(--primary-color);
+            color: #FFFFFF;
+            box-shadow: 0 6px 12px rgba(255, 117, 31, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .nav-item {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%) translateY(10px);
+            background: #ffffff;
+            min-width: 220px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            border-radius: 15px;
+            padding: 10px;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            z-index: 1000;
+            border: 1px solid #eee;
+            max-height: 450px;
+            overflow-y: auto;
+        }
+
+        .nav-item:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(-50%) translateY(5px);
+        }
+
+        .dropdown-item {
+            display: block;
+            padding: 12px 15px;
+            color: var(--secondary-color);
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 10px;
+            transition: background 0.2s, color 0.2s;
+            text-align: left;
+            font-size: 0.95rem;
+            cursor: pointer;
+            border: none;
+            background: none;
+            width: 100%;
+        }
+
+        .dropdown-item:hover {
+            background: #fff5f5;
+            color: var(--primary-color);
+        }
+
+        .dropdown-divider {
+            height: 1px;
+            background: #eee;
+            margin: 8px 0;
+        }
+
+        /* Modal Styles */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(8px);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .modal-content {
+            background: white;
+            width: 90%;
+            max-width: 500px;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+            position: relative;
+            transform: translateY(20px);
+            transition: all 0.3s ease;
+        }
+
+        .modal-overlay.active .modal-content {
+            transform: translateY(0);
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #999;
+            transition: color 0.2s;
+        }
+
+        .close-btn:hover {
+            color: var(--primary-red);
+        }
+
+        .modal-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .modal-header .symbol {
+            font-size: 3rem;
+            color: var(--primary-red);
+            font-weight: bold;
+            display: block;
+        }
+
+        .modal-header .name {
+            font-size: 1rem;
+            color: #888;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .example-list {
+            list-style: none;
+        }
+
+        .example-item {
+            margin-bottom: 25px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 15px;
+        }
+
+        .example-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+
+        .ex-jp {
+            font-size: 1.25rem;
+            font-weight: bold;
+            color: #333;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .ex-romaji {
+            font-size: 0.9rem;
+            color: #888;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .ex-en {
+            font-size: 1rem;
+            color: var(--primary-red);
+            font-weight: bold;
+        }
+    
+
+
+        /* =========================================
+           📱 Global Mobile Optimization 
+           ========================================= */
+        @media (max-width: 768px) {
+            /* Header */
+            header.global-header {
+                padding: 20px 10px !important;
+            }
+            .header-actions {
+                position: relative !important;
+                top: 0 !important;
+                right: 0 !important;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+                margin-bottom: 20px;
+                width: 100%;
+            }
+            .header-action-btn {
+                width: 90%;
+                justify-content: center;
+                padding: 12px 15px !important;
+                font-size: 1rem !important;
+            }
+            .logo-trigger {
+                padding: 5px !important;
+            }
+            .logo-trigger img {
+                max-height: 100px !important;
+                width: auto !important;
+                max-width: 100% !important;
+                object-fit: contain;
+            }
+            .logo-trigger h1 {
+                font-size: 1.8rem !important;
+            }
+            .logo-trigger p {
+                font-size: 0.9rem !important;
+                padding: 0 10px;
+            }
+            
+            /* Tabs & Navigation */
+            .tabs {
+                flex-direction: column !important;
+                gap: 12px !important;
+                padding: 0 15px !important;
+                margin-bottom: 30px !important;
+            }
+            .tab-btn {
+                width: 100% !important;
+                text-align: center;
+            }
+            .sub-tabs {
+                flex-direction: column !important;
+                gap: 10px !important;
+            }
+            .sub-tab-btn {
+                width: 100% !important;
+            }
+            .dropdown-menu {
+                width: 100% !important;
+                position: static !important;
+                box-shadow: none !important;
+                border: 1px solid #eee;
+                margin-top: 5px;
+                display: flex !important;
+                flex-direction: column !important;
+                opacity: 1 !important;
+                visibility: visible !important;
+                transform: none !important;
+            }
+            
+            /* General Containers */
+            .container {
+                padding: 0 15px !important;
+                width: 100% !important;
+                box-sizing: border-box !important;
+            }
+            
+            /* Typography */
+            body { font-size: 16px !important; }
+            h1 { font-size: 1.8rem !important; }
+            h2 { font-size: 1.5rem !important; }
+            h3 { font-size: 1.3rem !important; }
+            
+            /* Roadmap / Steps */
+            .step.left, .step.right {
+                width: 100% !important;
+                float: none !important;
+                margin-left: 0 !important;
+                margin-right: 0 !important;
+                margin-top: 20px !important;
+            }
+            .roadmap::before {
+                display: none !important;
+            }
+            
+            /* Grids and Flex layouts */
+            .cycle-grid {
+                grid-template-columns: 1fr !important;
+            }
+            .cycle-grid::before { display: none !important; }
+            .cycle-item {
+                margin-left: 0 !important;
+                width: 100% !important;
+            }
+            
+            /* Profiles and Cards */
+            #booking > div, .starthere-card {
+                padding: 25px 15px !important;
+                flex-direction: column !important;
+                text-align: center !important;
+            }
+            #booking > div img {
+                width: 150px !important;
+                height: 150px !important;
+            }
+            
+            /* Tables */
+            table {
+                display: block !important;
+                overflow-x: auto !important;
+                white-space: nowrap !important;
+                width: 100% !important;
+            }
+            
+            /* Modals and Today's Vocab */
+            .modal-content, .search-modal-content {
+                width: 95% !important;
+                padding: 20px 15px !important;
+                margin: 20px auto !important;
+                box-sizing: border-box !important;
+                overflow-x: hidden !important;
+            }
+            .vocab-list {
+                display: flex !important;
+                flex-direction: column !important;
+                gap: 10px !important;
+            }
+            .vocab-item {
+                flex-direction: column !important;
+                align-items: flex-start !important;
+                padding: 10px !important;
+                width: 100% !important;
+                box-sizing: border-box !important;
+            }
+            .vocab-item .kana, .vocab-item .kanji, .vocab-item .meaning {
+                width: 100% !important;
+                text-align: left !important;
+                white-space: normal !important;
+                word-wrap: break-word !important;
+            }
+            
+            /* Buttons */
+            .cta-btn-premium, .learn-btn, .download-btn {
+                padding: 15px 20px !important;
+                font-size: 1.1rem !important;
+                width: 100% !important;
+                box-sizing: border-box !important;
+                text-align: center !important;
+            }
+            
+            /* Cheat Sheet Lists */
+            ul.vocab-list, .cheat-sheet-list {
+                padding: 0 !important;
+                width: 100% !important;
+            }
+            .cheat-sheet-checkbox + a {
+                white-space: normal !important;
+            }
+        }
+
+        /* Unified Mobile Optimization */
+        @media (max-width: 768px) {
+            header.global-header {
+                padding: 20px 10px !important;
+            }
+            .header-actions {
+                position: relative !important;
+                top: 0 !important;
+                right: 0 !important;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+                margin-bottom: 20px;
+                width: 100%;
+            }
+            .header-action-btn {
+                width: 90%;
+                justify-content: center;
+                padding: 12px 15px !important;
+                font-size: 1rem !important;
+            }
+            .logo-trigger h1 {
+                font-size: 2.2rem !important;
+                letter-spacing: -1px !important;
+            }
+            .logo-trigger p {
+                font-size: 0.85rem !important;
+                padding: 0 10px;
+            }
+            .tabs {
+                flex-direction: column !important;
+                gap: 10px !important;
+                padding: 0 15px !important;
+            }
+            .tab-btn {
+                width: 100% !important;
+                padding: 12px !important;
+                font-size: 1rem !important;
+            }
+            .container {
+                padding: 0 15px !important;
+                width: 100% !important;
+                box-sizing: border-box !important;
+            }
+            /* Roadmap Fixes */
+            .roadmap::before { display: none !important; }
+            .step.left, .step.right {
+                width: 100% !important;
+                float: none !important;
+                margin: 0 0 20px 0 !important;
+                padding: 20px !important;
+            }
+            /* Table Fixes */
+            table {
+                display: block !important;
+                overflow-x: auto !important;
+                -webkit-overflow-scrolling: touch;
+                width: 100% !important;
+            }
+            /* Modal Fixes */
+            .modal-content, .search-modal-content {
+                width: 95% !important;
+                margin: 10px auto !important;
+                padding: 20px 15px !important;
+            }
+            /* Grid Fixes */
+            .cycle-grid {
+                grid-template-columns: 1fr !important;
+                gap: 20px !important;
+            }
+            .cycle-item {
+                width: 100% !important;
+                margin: 0 !important;
+                padding: 20px !important;
+            }
+            .starthere-card {
+                padding: 30px 15px !important;
+            }
+            .starthere-title {
+                font-size: 1.8rem !important;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <header class="global-header">
+        <div class="header-actions">
+            <a href="index.html?search=true" class="header-action-btn" style="text-decoration: none;">🔍 Search</a>
+            <a href="myvocab.html" class="header-action-btn" style="text-decoration: none;"><svg style="width: 18px; height: 18px; margin-right: 6px; vertical-align: text-bottom;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>Saved Words</a>
+            <a href="https://discord.gg/ZgkKXdpt" target="_blank" class="header-action-btn" style="text-decoration: none;">💬 24/7 Chat Support</a>
+        </div>
+        <a href="index.html" class="logo-trigger">
+            <h1 style="font-size: 4rem; font-weight: 800; color: var(--primary-color); font-family: 'Quicksand', 'M PLUS Rounded 1c', sans-serif; letter-spacing: -2px; margin-bottom: 5px; margin-top: 10px; text-shadow: 2px 2px 4px rgba(0,0,0,0.05);">Hanace</h1>
+            <p>Hanace [Ha-na-su]-Trace your path to bloom, Speak with confidence.</p>
+        </a>
+    </header>
+
+    <div class="tabs">
+        <a href="index.html?tab=roadmap" class="tab-btn">Roadmap</a>
+        <a href="index.html?tab=resources" class="tab-btn active">Resources</a>
+        <a href="index.html?tab=booking" class="tab-btn">Book a Lesson</a>
+    </div>
+
+<div class="page-container">
+    
+    <header>
+        <h1>Essential Particles</h1>
+        <p class="subtitle">Quick reference guide for the 13 most common Japanese particles (助詞).</p>
+    </header>
+
+    <div style="text-align: center;">
+        <div class="interaction-tip">✨ Tap any particle or example sentence to hear the pronunciation!</div>
+    </div>
+
+    <div class="chart-section">
+        <h2>Core Markers</h2>
+        <div class="particle-grid">
+            <!-- は -->
+            <div class="particle-card" onclick="showExamples('は')" style="cursor: pointer;">
+                <div class="particle-symbol">は</div>
+                <div class="particle-name">Topic (wa)</div>
+                <div class="particle-meaning">Introduces the main topic of the sentence.</div>
+                <div class="particle-example">
+                    <span class="jp-ex">これは本です。</span>
+                    <span class="en-ex">As for this, it is a book.</span>
+                </div>
+            </div>
+
+            <!-- が -->
+            <div class="particle-card" onclick="showExamples('が')" style="cursor: pointer;">
+                <div class="particle-symbol">が</div>
+                <div class="particle-name">Subject (ga)</div>
+                <div class="particle-meaning">Focuses on the specific subject/actor.</div>
+                <div class="particle-example">
+                    <span class="jp-ex">雨が降っています。</span>
+                    <span class="en-ex">It is raining. (Focus on 'rain')</span>
+                </div>
+            </div>
+
+            <!-- を -->
+            <div class="particle-card" onclick="showExamples('を')" style="cursor: pointer;">
+                <div class="particle-symbol">を</div>
+                <div class="particle-name">Direct Object (o)</div>
+                <div class="particle-meaning">Marks the direct object of a verb.</div>
+                <div class="particle-example">
+                    <span class="jp-ex">水を飲みます。</span>
+                    <span class="en-ex">I drink water.</span>
+                </div>
+            </div>
+
+            <!-- に -->
+            <div class="particle-card" onclick="showExamples('に')" style="cursor: pointer;">
+                <div class="particle-symbol">に</div>
+                <div class="particle-name">Destination/Time (ni)</div>
+                <div class="particle-meaning">Marks target, destination, or specific time.</div>
+                <div class="particle-example">
+                    <span class="jp-ex">日本に行きます。</span>
+                    <span class="en-ex">I am going to Japan.</span>
+                </div>
+            </div>
+
+            <!-- で -->
+            <div class="particle-card" onclick="showExamples('で')" style="cursor: pointer;">
+                <div class="particle-symbol">で</div>
+                <div class="particle-name">Location/Method (de)</div>
+                <div class="particle-meaning">Where an action happens or the tool used.</div>
+                <div class="particle-example">
+                    <span class="jp-ex">バスで学校へ行きます。</span>
+                    <span class="en-ex">I go to school by bus.</span>
+                </div>
+            </div>
+
+            <!-- も -->
+            <div class="particle-card" onclick="showExamples('も')" style="cursor: pointer;">
+                <div class="particle-symbol">も</div>
+                <div class="particle-name">Too / Also (mo)</div>
+                <div class="particle-meaning">Indicates addition (replaces wa, ga, o).</div>
+                <div class="particle-example">
+                    <span class="jp-ex">私も学生です。</span>
+                    <span class="en-ex">I am also a student.</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="chart-section">
+        <h2>Logic & Connection</h2>
+        <div class="particle-grid">
+            <!-- から -->
+            <div class="particle-card" onclick="showExamples('から')" style="cursor: pointer;">
+                <div class="particle-symbol">から</div>
+                <div class="particle-name">From / Because (kara)</div>
+                <div class="particle-meaning">Marks start point or states a reason.</div>
+                <div class="particle-example">
+                    <span class="jp-ex">忙しいから行けません。</span>
+                    <span class="en-ex">Because I'm busy, I can't go.</span>
+                </div>
+            </div>
+
+            <!-- ので -->
+            <div class="particle-card" onclick="showExamples('ので')" style="cursor: pointer;">
+                <div class="particle-symbol">ので</div>
+                <div class="particle-name">Because / Since (node)</div>
+                <div class="particle-meaning">Logical reason (more polite than kara).</div>
+                <div class="particle-example">
+                    <span class="jp-ex">雨なので遅れました。</span>
+                    <span class="en-ex">Since it was raining, I was late.</span>
+                </div>
+            </div>
+
+            <!-- だけ -->
+            <div class="particle-card" onclick="showExamples('だけ')" style="cursor: pointer;">
+                <div class="particle-symbol">だけ</div>
+                <div class="particle-name">Only / Just (dake)</div>
+                <div class="particle-meaning">Sets a limit to the quantity or scope.</div>
+                <div class="particle-example">
+                    <span class="jp-ex">日本語だけ話せます。</span>
+                    <span class="en-ex">I only speak Japanese.</span>
+                </div>
+            </div>
+
+            <!-- て -->
+            <div class="particle-card" onclick="showExamples('て')" style="cursor: pointer;">
+                <div class="particle-symbol">て</div>
+                <div class="particle-name">Connector (te)</div>
+                <div class="particle-meaning">Te-form used to link actions together.</div>
+                <div class="particle-example">
+                    <span class="jp-ex">食べて寝ます。</span>
+                    <span class="en-ex">I eat and (then) sleep.</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="chart-section">
+        <h2>Questions & Nuance</h2>
+        <div class="particle-grid">
+            <!-- か -->
+            <div class="particle-card" onclick="showExamples('か')" style="cursor: pointer;">
+                <div class="particle-symbol">か</div>
+                <div class="particle-name">Question / Or (ka)</div>
+                <div class="particle-meaning">Marks a question or provides an alternative.</div>
+                <div class="particle-example">
+                    <span class="jp-ex">本か雑誌を買います。</span>
+                    <span class="en-ex">I buy a book or a magazine.</span>
+                </div>
+            </div>
+
+            <!-- ね -->
+            <div class="particle-card" onclick="showExamples('ね')" style="cursor: pointer;">
+                <div class="particle-symbol">ね</div>
+                <div class="particle-name">Agreement (ne)</div>
+                <div class="particle-meaning">Seeking agreement. Like "..., isn't it?".</div>
+                <div class="particle-example">
+                    <span class="jp-ex">いい天気ですね。</span>
+                    <span class="en-ex">Nice weather, isn't it?</span>
+                </div>
+            </div>
+
+            <!-- よ -->
+            <div class="particle-card" onclick="showExamples('よ')" style="cursor: pointer;">
+                <div class="particle-symbol">よ</div>
+                <div class="particle-name">Emphasis (yo)</div>
+                <div class="particle-meaning">Asserting new info or strong opinion.</div>
+                <div class="particle-example">
+                    <span class="jp-ex">明日休みだよ！</span>
+                    <span class="en-ex">Tomorrow is a holiday (I'm tellin' ya)!</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!-- Modal Structure -->
+<div id="example-modal" class="modal-overlay">
+    <div class="modal-content">
+        <span class="close-btn" onclick="closeModal()">&times;</span>
+        <div class="modal-header">
+            <span id="modal-symbol" class="symbol">は</span>
+            <span id="modal-name" class="name">Topic (wa)</span>
+        </div>
+        <ul id="modal-list" class="example-list">
+            <!-- Items will be injected here -->
+        </ul>
+    </div>
+</div>
+
+<script>
+    const particleExamples = {
+        'は': {
+            name: 'Topic (wa)',
+            examples: [
+                { jp: '私は学生です。', romaji: 'Watashi wa gakusei desu.', en: "I am a student." },
+                { jp: 'これはペンです。', romaji: 'Kore wa pen desu.', en: "This is a pen." },
+                { jp: '彼は医者です。', romaji: 'Kare wa isha desu.', en: "He is a doctor." },
+                { jp: '日本は暑いです。', romaji: 'Nihon wa atsui desu.', en: "Japan is hot." },
+                { jp: '今日は日曜日です。', romaji: 'Kyou wa nichiyoubi desu.', en: "Today is Sunday." }
+            ]
+        },
+        'が': {
+            name: 'Subject (ga)',
+            examples: [
+                { jp: '雨が降っています。', romaji: 'Ame ga futte imasu.', en: "It is raining." },
+                { jp: '誰が来ましたか？', romaji: 'Dare ga kimashita ka?', en: "Who came?" },
+                { jp: '猫が好きです。', romaji: 'Neko ga suki desu.', en: "I like cats." },
+                { jp: 'お金がありません。', romaji: 'Okane ga arimasen.', en: "I have no money." },
+                { jp: 'バスが来ました。', romaji: 'Basu ga kimashita.', en: "The bus arrived." }
+            ]
+        },
+        'を': {
+            name: 'Direct Object (o)',
+            examples: [
+                { jp: 'りんごを食べます。', romaji: 'Ringo o tabemasu.', en: "I eat an apple." },
+                { jp: '水を飲みます。', romaji: 'Mizu o nomimasu.', en: "I drink water." },
+                { jp: 'テレビを見ます。', romaji: 'Terebi o mimasu.', en: "I watch TV." },
+                { jp: '本を読みます。', romaji: 'Hon o yonde imasu.', en: "I read a book." },
+                { jp: '日本語を勉強します。', romaji: 'Nihongo o benkyou shimasu.', en: "I study Japanese." }
+            ]
+        },
+        'に': {
+            name: 'Destination/Time (ni)',
+            examples: [
+                { jp: '日本に行きます。', romaji: 'Nihon ni ikimasu.', en: "I go to Japan." },
+                { jp: '七時に起きます。', romaji: 'Shichiji ni okimasu.', en: "I wake up at 7:00." },
+                { jp: '友達に会います。', romaji: 'Tomodachi ni aimasu.', en: "I meet a friend." },
+                { jp: '椅子に座ります。', romaji: 'Isu ni suwarimasu.', en: "I sit on a chair." },
+                { jp: '月曜日にテストがあります。', romaji: 'Getsuyoubi ni tesuto ga arimasu.', en: "There is a test on Monday." }
+            ]
+        },
+        'で': {
+            name: 'Location/Method (de)',
+            examples: [
+                { jp: '図書館で勉強します。', romaji: 'Toshokan de benkyou shimasu.', en: "I study at the library." },
+                { jp: 'バスで帰ります。', romaji: 'Basu de kaerimasu.', en: "I go home by bus." },
+                { jp: '箸で食べます。', romaji: 'Hashi de tabemasu.', en: "I eat with chopsticks." },
+                { jp: '日本語で話します。', romaji: 'Nihongo de hanashimasu.', en: "I speak in Japanese." },
+                { jp: 'レストランで食べました。', romaji: 'Resutoran de tabemashita.', en: "I ate at a restaurant." }
+            ]
+        },
+        'も': {
+            name: 'Too / Also (mo)',
+            examples: [
+                { jp: '私も行きます。', romaji: 'Watashi mo ikimasu.', en: "I'm going too." },
+                { jp: 'りんごも好きです。', romaji: 'Ringo mo suki desu.', en: "I also like apples." },
+                { jp: '本も雑誌も買いました。', romaji: 'Hon mo zasshi mo kaimashita.', en: "I bought both a book and a magazine." },
+                { jp: '昨日も雨でした。', romaji: 'Kinou mo ame deshita.', en: "It was raining yesterday too." },
+                { jp: '田中さんも学生です。', romaji: 'Tanaka-san mo gakusei desu.', en: "Mr. Tanaka is also a student." }
+            ]
+        },
+        'から': {
+            name: 'From / Because (kara)',
+            examples: [
+                { jp: '三時から始まります。', romaji: 'Sanji kara hajimarimasu.', en: "It starts from 3:00." },
+                { jp: 'アメリカから来ました。', romaji: 'Amerika kara kimashita.', en: "I came from America." },
+                { jp: '危ないから気をつけて。', romaji: 'Abunai kara ki o tsukete.', en: "It's dangerous, so be careful." },
+                { jp: '明日休みだから嬉しい。', romaji: 'Ashita yasumi dakara ureshii.', en: "I'm happy because tomorrow is a holiday." },
+                { jp: 'ここから近いです。', romaji: 'Koko kara chikai desu.', en: "It's near from here." }
+            ]
+        },
+        'ので': {
+            name: 'Because / Since (node)',
+            examples: [
+                { jp: '忙しいので行けません。', romaji: 'Isogashii node ikemasen.', en: "Since I'm busy, I can't go." },
+                { jp: '雨なので傘を持ってください。', romaji: 'Ame na node kasa o motte kudasai.', en: "Since it's raining, please take an umbrella." },
+                { jp: '日曜日なので休みです。', romaji: 'Nichiyoubi na node yasumi desu.', en: "Since it's Sunday, it's a holiday." },
+                { jp: '頭が痛いので帰ります。', romaji: 'Atama ga itai node kaerimasu.', en: "Since my head hurts, I'll go home." },
+                { jp: '好きなので買いました。', romaji: 'Suki na node kaimashita.', en: "Since I like it, I bought it." }
+            ]
+        },
+        'だけ': {
+            name: 'Only / Just (dake)',
+            examples: [
+                { jp: '私だけ行きます。', romaji: 'Watashi dake ikimasu.', en: "Only I will go." },
+                { jp: '一つだけください。', romaji: 'Hitotsu dake kudasai.', en: "Just one, please." },
+                { jp: '日本語だけ話せます。', romaji: 'Nihongo dake hanashimasu.', en: "I only speak Japanese." },
+                { jp: '五分だけ待ってください。', romaji: 'Gofun dake matte kudasai.', en: "Please wait just 5 minutes." },
+                { jp: 'これだけ知っています。', romaji: 'Kore dake shitte imasu.', en: "I only know this." }
+            ]
+        },
+        'て': {
+            name: 'Connector (te)',
+            examples: [
+                { jp: '食べて寝ます。', romaji: 'Tabete nemasu.', en: "I'll eat and then sleep." },
+                { jp: '行ってきます。', romaji: 'Itte kimasu.', en: "I'm off!" },
+                { jp: '座って待ってください。', romaji: 'Suwatte matte kudasai.', en: "Please sit and wait." },
+                { jp: '本を読んでいます。', romaji: 'Hon o yonde imasu.', en: "I'm reading a book." },
+                { jp: '開けてください。', romaji: 'Akete kudasai.', en: "Please open it." }
+            ]
+        },
+        'か': {
+            name: 'Question / Or (ka)',
+            examples: [
+                { jp: '日本語がわかりますか？', romaji: 'Nihongo ga wakarimasu ka?', en: "Do you understand Japanese?" },
+                { jp: '紅茶かコーヒーを飲みます。', romaji: 'Koucha ka koohii o nomimasu.', en: "I drink black tea or coffee." },
+                { jp: 'これ、いくらですか？', romaji: 'Kore, ikura desu ka?', en: "How much is this?" },
+                { jp: '行くか行かないか決めます。', romaji: 'Iku ka ikanai ka kimemasu.', en: "I'll decide whether to go or not." },
+                { jp: '誰かいますか？', romaji: 'Dareka imasu ka?', en: "Is anyone there?" }
+            ]
+        },
+        'ね': {
+            name: 'Agreement (ne)',
+            examples: [
+                { jp: 'いい天気ですね。', romaji: 'Ii tenki desu ne.', en: "Nice weather, isn't it?" },
+                { jp: 'そうですね。', romaji: 'Sou desu ne.', en: "That's right / I agree." },
+                { jp: '難しいですね。', romaji: 'Muzukashii desu ne.', en: "It's difficult, right?" },
+                { jp: '本を読みますね。', romaji: 'Hon o yomimasu ne.', en: "I'll read the book, okay?" },
+                { jp: '楽しみですね。', romaji: 'Tanoshimi desu ne.', en: "We're looking forward to it, aren't we?" }
+            ]
+        },
+        'よ': {
+            name: 'Emphasis (yo)',
+            examples: [
+                { jp: '美味しいですよ！', romaji: 'Oishii desu yo!', en: "It's delicious, I tell you!" },
+                { jp: '危ないよ。', romaji: 'Abunai yo.', en: "Watch out!" },
+                { jp: '明日は休みだよ。', romaji: 'Ashita wa yasumi da yo.', en: "Tomorrow is a holiday, you know." },
+                { jp: 'すぐ行きますよ。', romaji: 'Sugu ikimasu yo!', en: "I'm going right now!" },
+                { jp: '本当だよ。', romaji: 'Hontou da yo.', en: "It's true!" }
+            ]
+        }
+    };
+
+
+    function showExamples(symbol) {
+        const data = particleExamples[symbol];
+        if (!data) return;
+
+        document.getElementById('modal-symbol').innerText = symbol;
+        document.getElementById('modal-name').innerText = data.name;
+
+        const listEl = document.getElementById('modal-list');
+        listEl.innerHTML = '';
+
+        data.examples.forEach(ex => {
+            const li = document.createElement('li');
+            li.className = 'example-item';
+            li.style.cursor = 'pointer';
+            li.title = 'Click to hear pronunciation';
+            li.onclick = () => {
+                if ('speechSynthesis' in window) {
+                    window.speechSynthesis.cancel();
+                    const utterance = new SpeechSynthesisUtterance(ex.jp);
+                    utterance.lang = 'ja-JP';
+                    window.speechSynthesis.speak(utterance);
+                }
+            };
+            li.innerHTML = `
+                <span class="ex-jp">${ex.jp}</span>
+                <span class="ex-romaji">${ex.romaji}</span>
+                <span class="ex-en">${ex.en}</span>
+            `;
+            listEl.appendChild(li);
+        });
+
+        document.getElementById('example-modal').classList.add('active');
+        document.body.style.overflow = 'hidden';
+
+        // Play audio for the particle symbol
+        if ('speechSynthesis' in window) {
+            window.speechSynthesis.cancel();
+            let textToSpeak = symbol;
+            if (symbol === 'は') textToSpeak = 'わ';
+            if (symbol === 'を') textToSpeak = 'お';
+            if (symbol === 'へ') textToSpeak = 'え';
+            
+            const utterance = new SpeechSynthesisUtterance(textToSpeak);
+            utterance.lang = 'ja-JP';
+            window.speechSynthesis.speak(utterance);
+        }
+    }
+
+    function closeModal() {
+        document.getElementById('example-modal').classList.remove('active');
+        document.body.style.overflow = 'auto';
+    }
+
+    // Close modal on background click
+    document.getElementById('example-modal').addEventListener('click', function(e) {
+        if (e.target === this) closeModal();
+    });
+</script>
+
+</body>
+</html>

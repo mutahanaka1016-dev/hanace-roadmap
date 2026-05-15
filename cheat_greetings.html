@@ -1,0 +1,1121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Essential Greetings & Aizuchi Cheat Sheet</title>
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500;700;800&family=Quicksand:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-red: #ff751f;
+            --light-red: #ffc8a2;
+            --dark-red: #cc5c14;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Quicksand', 'M PLUS Rounded 1c', sans-serif;
+            background-color: #f7f7f7;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='500' height='500'%3E%3Cstyle%3Etext%7Bfont-family:'M PLUS Rounded 1c',sans-serif;fill:rgba(83,83,83,0.06);font-weight:700;%7D%3C/style%3E<text x='136' y='103' font-size='28' transform='rotate(18 136 103)'>僕</text><text x='111' y='28' font-size='24' transform='rotate(27 111 28)'>は</text><text x='431' y='191' font-size='27' transform='rotate(20 431 191)'>三</text><text x='303' y='225' font-size='31' transform='rotate(2 303 225)'>十</text><text x='196' y='216' font-size='27' transform='rotate(19 196 216)'>七</text><text x='389' y='50' font-size='20' transform='rotate(12 389 50)'>歳</text><text x='438' y='285' font-size='22' transform='rotate(-25 438 285)'>で</text><text x='265' y='34' font-size='24' transform='rotate(8 265 34)'>、</text><text x='279' y='281' font-size='31' transform='rotate(-13 279 281)'>そ</text><text x='461' y='385' font-size='28' transform='rotate(-19 461 385)'>の</text><text x='268' y='456' font-size='27' transform='rotate(29 268 456)'>と</text><text x='206' y='56' font-size='29' transform='rotate(20 206 56)'>き</text><text x='22' y='271' font-size='23' transform='rotate(-11 22 271)'>ボ</text><text x='104' y='236' font-size='23' transform='rotate(22 104 236)'>ー</text><text x='378' y='457' font-size='25' transform='rotate(24 378 457)'>イ</text><text x='24' y='33' font-size='23' transform='rotate(3 24 33)'>ン</text><text x='41' y='401' font-size='22' transform='rotate(-6 41 401)'>グ</text><text x='63' y='130' font-size='20' transform='rotate(-24 63 130)'>7</text><text x='432' y='470' font-size='25' transform='rotate(17 432 470)'>4</text><text x='346' y='207' font-size='26' transform='rotate(29 346 207)'>7</text><text x='228' y='315' font-size='28' transform='rotate(-29 228 315)'>の</text><text x='213' y='131' font-size='27' transform='rotate(-13 213 131)'>シ</text><text x='349' y='376' font-size='31' transform='rotate(-2 349 376)'>ー</text><text x='473' y='117' font-size='22' transform='rotate(0 473 117)'>ト</text><text x='392' y='149' font-size='27' transform='rotate(-12 392 149)'>に</text><text x='125' y='444' font-size='26' transform='rotate(15 125 444)'>座</text><text x='218' y='381' font-size='23' transform='rotate(-29 218 381)'>っ</text><text x='344' y='319' font-size='29' transform='rotate(22 344 319)'>て</text><text x='109' y='356' font-size='31' transform='rotate(22 109 356)'>い</text><text x='14' y='462' font-size='29' transform='rotate(-25 14 462)'>た</text><text x='134' y='276' font-size='26' transform='rotate(-1 134 276)'>。</text>%3C/svg%3E");
+            background-repeat: repeat;
+            color: #333;
+            padding: 20px;
+        }
+
+        .page-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            border-top: 15px solid var(--primary-red);
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            color: var(--primary-red);
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        p.subtitle {
+            color: #666;
+            font-size: 1.1rem;
+        }
+
+        .audio-tip {
+            text-align: center;
+            background: var(--light-red);
+            color: var(--dark-red);
+            padding: 10px;
+            border-radius: 20px;
+            display: inline-block;
+            margin-bottom: 30px;
+            font-weight: bold;
+            font-size: 1rem;
+        }
+
+        .chart-section {
+            margin-bottom: 50px;
+        }
+
+        h2 {
+            color: #fff;
+            background-color: var(--primary-red);
+            display: inline-block;
+            padding: 8px 25px;
+            border-radius: 30px;
+            margin-bottom: 25px;
+            font-size: 1.5rem;
+            box-shadow: 0 4px 6px rgba(255, 117, 31,0.2);
+        }
+
+        .greeting-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 20px;
+        }
+
+        .greeting-card {
+            background-color: #fff;
+            border: 2px solid #eee;
+            border-radius: 12px;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            border-left: 8px solid var(--primary-red);
+        }
+
+        .greeting-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(255, 117, 31,0.15);
+            border-color: #fdd;
+        }
+
+        .greeting-card:active {
+            transform: translateY(0) scale(0.98);
+        }
+
+        .card-content {
+            flex-grow: 1;
+        }
+
+        .jp-char {
+            display: block;
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--dark-red);
+            margin-bottom: 5px;
+            line-height: 1.3;
+        }
+
+        .romaji {
+            display: block;
+            font-size: 1rem;
+            color: #888;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .meaning {
+            display: block;
+            font-size: 1.1rem;
+            color: #444;
+            font-family: 'Quicksand', 'M PLUS Rounded 1c', sans-serif;
+        }
+
+        .audio-icon {
+            font-size: 2rem;
+            color: var(--primary-red);
+            padding-left: 15px;
+            opacity: 0.5;
+            transition: opacity 0.2s;
+        }
+
+        .greeting-card:hover .audio-icon {
+            opacity: 1;
+        }
+
+        .print-btn-container {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .print-btn {
+            background-color: var(--primary-red);
+            color: #fff;
+            border: none;
+            padding: 15px 40px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            border-radius: 30px;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(255, 117, 31,0.3);
+            font-family: inherit;
+        }
+
+        @media print {
+            body {
+                background: #fff;
+                padding: 0;
+            }
+            .page-container {
+                box-shadow: none;
+                max-width: 100%;
+                border-top: none;
+                padding: 0;
+            }
+            .print-btn-container, .audio-tip {
+                display: none;
+            }
+            .chart-section {
+                page-break-inside: avoid;
+            }
+            .greeting-card {
+                border: 2px solid #ccc; /* Printer friendly borders */
+                border-left: 8px solid #333;
+                box-shadow: none;
+                break-inside: avoid;
+                margin-bottom: 10px;
+            }
+            @page {
+                margin: 0.5cm;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .jp-char { font-size: 1.4rem; }
+            .romaji { font-size: 0.9rem; }
+            .meaning { font-size: 1rem; }
+            .greeting-grid { grid-template-columns: 1fr; }
+            .page-container { padding: 20px; }
+            h1 { font-size: 2rem; }
+        }
+
+        /* Unified Navigation Styles */
+        :root {
+            --primary-color: #ff751f;
+            --secondary-color: #535353;
+            --bg-color: #F8F9FA;
+            --white: #FFFFFF;
+        }
+
+        header.global-header {
+            text-align: center;
+            padding: 40px 20px;
+            background: #FFFFFF;
+            border-bottom: 4px solid var(--primary-color);
+            margin-bottom: 40px;
+            position: relative;
+            font-family: 'Quicksand', 'M PLUS Rounded 1c', sans-serif;
+        }
+
+        .header-actions {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            gap: 10px;
+        }
+
+        .header-action-btn {
+            background: #fcfcfc;
+            border: 1px solid #eee;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            color: var(--secondary-color);
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            text-decoration: none;
+            font-family: 'Quicksand', 'M PLUS Rounded 1c', sans-serif;
+        }
+
+        .header-action-btn:hover {
+            background: #fff;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transform: translateY(-1px);
+        }
+
+        .logo-trigger {
+            cursor: pointer;
+            display: inline-block;
+            transition: all 0.3s ease;
+            padding: 10px 20px;
+            border-radius: 15px;
+            user-select: none;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .logo-trigger:hover {
+            background-color: transparent;
+            transform: translateY(-2px);
+        }
+
+        .logo-trigger h1 {
+            margin: 0;
+            font-size: 2.2rem;
+            letter-spacing: 2px;
+            color: var(--primary-color);
+        }
+
+        .logo-trigger p {
+            font-weight: bold;
+            opacity: 0.8;
+            color: var(--secondary-color);
+            margin-top: 5px;
+            font-size: 0.9rem;
+        }
+
+        .tabs {
+            display: flex;
+            justify-content: center;
+            flex-wrap: nowrap;
+            gap: 20px;
+            margin-bottom: 50px;
+            font-family: 'Quicksand', 'M PLUS Rounded 1c', sans-serif;
+        }
+
+        @media (max-width: 850px) {
+            .tabs {
+                flex-wrap: wrap;
+                gap: 15px;
+            }
+        }
+
+        .tab-btn {
+            display: inline-block;
+            box-sizing: border-box;
+            background: #FFFFFF;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+            padding: 12px 30px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            outline: none;
+            text-decoration: none;
+            font-family: 'Quicksand', 'M PLUS Rounded 1c', sans-serif;
+            text-align: center;
+        }
+
+        .tab-btn:hover {
+            background: #ffe6e6;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 10px rgba(255, 117, 31, 0.1);
+        }
+
+        .tab-btn.active {
+            background: var(--primary-color);
+            color: #FFFFFF;
+            box-shadow: 0 6px 12px rgba(255, 117, 31, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .nav-item {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%) translateY(10px);
+            background: #ffffff;
+            min-width: 220px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            border-radius: 15px;
+            padding: 10px;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            z-index: 1000;
+            border: 1px solid #eee;
+            max-height: 450px;
+            overflow-y: auto;
+        }
+
+        .nav-item:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(-50%) translateY(5px);
+        }
+
+        .dropdown-item {
+            display: block;
+            padding: 12px 15px;
+            color: var(--secondary-color);
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 10px;
+            transition: background 0.2s, color 0.2s;
+            text-align: left;
+            font-size: 0.95rem;
+            cursor: pointer;
+            border: none;
+            background: none;
+            width: 100%;
+        }
+
+        .dropdown-item:hover {
+            background: #fff5f5;
+            color: var(--primary-color);
+        }
+
+        .dropdown-divider {
+            height: 1px;
+            background: #eee;
+            margin: 8px 0;
+        }
+    
+
+
+        /* =========================================
+           📱 Global Mobile Optimization 
+           ========================================= */
+        @media (max-width: 768px) {
+            /* Header */
+            header.global-header {
+                padding: 20px 10px !important;
+            }
+            .header-actions {
+                position: relative !important;
+                top: 0 !important;
+                right: 0 !important;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+                margin-bottom: 20px;
+                width: 100%;
+            }
+            .header-action-btn {
+                width: 90%;
+                justify-content: center;
+                padding: 12px 15px !important;
+                font-size: 1rem !important;
+            }
+            .logo-trigger {
+                padding: 5px !important;
+            }
+            .logo-trigger img {
+                max-height: 100px !important;
+                width: auto !important;
+                max-width: 100% !important;
+                object-fit: contain;
+            }
+            .logo-trigger h1 {
+                font-size: 1.8rem !important;
+            }
+            .logo-trigger p {
+                font-size: 0.9rem !important;
+                padding: 0 10px;
+            }
+            
+            /* Tabs & Navigation */
+            .tabs {
+                flex-direction: column !important;
+                gap: 12px !important;
+                padding: 0 15px !important;
+                margin-bottom: 30px !important;
+            }
+            .tab-btn {
+                width: 100% !important;
+                text-align: center;
+            }
+            .sub-tabs {
+                flex-direction: column !important;
+                gap: 10px !important;
+            }
+            .sub-tab-btn {
+                width: 100% !important;
+            }
+            .dropdown-menu {
+                width: 100% !important;
+                position: static !important;
+                box-shadow: none !important;
+                border: 1px solid #eee;
+                margin-top: 5px;
+                display: flex !important;
+                flex-direction: column !important;
+                opacity: 1 !important;
+                visibility: visible !important;
+                transform: none !important;
+            }
+            
+            /* General Containers */
+            .container {
+                padding: 0 15px !important;
+                width: 100% !important;
+                box-sizing: border-box !important;
+            }
+            
+            /* Typography */
+            body { font-size: 16px !important; }
+            h1 { font-size: 1.8rem !important; }
+            h2 { font-size: 1.5rem !important; }
+            h3 { font-size: 1.3rem !important; }
+            
+            /* Roadmap / Steps */
+            .step.left, .step.right {
+                width: 100% !important;
+                float: none !important;
+                margin-left: 0 !important;
+                margin-right: 0 !important;
+                margin-top: 20px !important;
+            }
+            .roadmap::before {
+                display: none !important;
+            }
+            
+            /* Grids and Flex layouts */
+            .cycle-grid {
+                grid-template-columns: 1fr !important;
+            }
+            .cycle-grid::before { display: none !important; }
+            .cycle-item {
+                margin-left: 0 !important;
+                width: 100% !important;
+            }
+            
+            /* Profiles and Cards */
+            #booking > div, .starthere-card {
+                padding: 25px 15px !important;
+                flex-direction: column !important;
+                text-align: center !important;
+            }
+            #booking > div img {
+                width: 150px !important;
+                height: 150px !important;
+            }
+            
+            /* Tables */
+            table {
+                display: block !important;
+                overflow-x: auto !important;
+                white-space: nowrap !important;
+                width: 100% !important;
+            }
+            
+            /* Modals and Today's Vocab */
+            .modal-content, .search-modal-content {
+                width: 95% !important;
+                padding: 20px 15px !important;
+                margin: 20px auto !important;
+                box-sizing: border-box !important;
+                overflow-x: hidden !important;
+            }
+            .vocab-list {
+                display: flex !important;
+                flex-direction: column !important;
+                gap: 10px !important;
+            }
+            .vocab-item {
+                flex-direction: column !important;
+                align-items: flex-start !important;
+                padding: 10px !important;
+                width: 100% !important;
+                box-sizing: border-box !important;
+            }
+            .vocab-item .kana, .vocab-item .kanji, .vocab-item .meaning {
+                width: 100% !important;
+                text-align: left !important;
+                white-space: normal !important;
+                word-wrap: break-word !important;
+            }
+            
+            /* Buttons */
+            .cta-btn-premium, .learn-btn, .download-btn {
+                padding: 15px 20px !important;
+                font-size: 1.1rem !important;
+                width: 100% !important;
+                box-sizing: border-box !important;
+                text-align: center !important;
+            }
+            
+            /* Cheat Sheet Lists */
+            ul.vocab-list, .cheat-sheet-list {
+                padding: 0 !important;
+                width: 100% !important;
+            }
+            .cheat-sheet-checkbox + a {
+                white-space: normal !important;
+            }
+        }
+
+        /* Unified Mobile Optimization */
+        @media (max-width: 768px) {
+            header.global-header {
+                padding: 20px 10px !important;
+            }
+            .header-actions {
+                position: relative !important;
+                top: 0 !important;
+                right: 0 !important;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+                margin-bottom: 20px;
+                width: 100%;
+            }
+            .header-action-btn {
+                width: 90%;
+                justify-content: center;
+                padding: 12px 15px !important;
+                font-size: 1rem !important;
+            }
+            .logo-trigger h1 {
+                font-size: 2.2rem !important;
+                letter-spacing: -1px !important;
+            }
+            .logo-trigger p {
+                font-size: 0.85rem !important;
+                padding: 0 10px;
+            }
+            .tabs {
+                flex-direction: column !important;
+                gap: 10px !important;
+                padding: 0 15px !important;
+            }
+            .tab-btn {
+                width: 100% !important;
+                padding: 12px !important;
+                font-size: 1rem !important;
+            }
+            .container {
+                padding: 0 15px !important;
+                width: 100% !important;
+                box-sizing: border-box !important;
+            }
+            /* Roadmap Fixes */
+            .roadmap::before { display: none !important; }
+            .step.left, .step.right {
+                width: 100% !important;
+                float: none !important;
+                margin: 0 0 20px 0 !important;
+                padding: 20px !important;
+            }
+            /* Table Fixes */
+            table {
+                display: block !important;
+                overflow-x: auto !important;
+                -webkit-overflow-scrolling: touch;
+                width: 100% !important;
+            }
+            /* Modal Fixes */
+            .modal-content, .search-modal-content {
+                width: 95% !important;
+                margin: 10px auto !important;
+                padding: 20px 15px !important;
+            }
+            /* Grid Fixes */
+            .cycle-grid {
+                grid-template-columns: 1fr !important;
+                gap: 20px !important;
+            }
+            .cycle-item {
+                width: 100% !important;
+                margin: 0 !important;
+                padding: 20px !important;
+            }
+            .starthere-card {
+                padding: 30px 15px !important;
+            }
+            .starthere-title {
+                font-size: 1.8rem !important;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <header class="global-header">
+        <div class="header-actions">
+            <a href="index.html?search=true" class="header-action-btn" style="text-decoration: none;">🔍 Search</a>
+            <a href="myvocab.html" class="header-action-btn" style="text-decoration: none;"><svg style="width: 18px; height: 18px; margin-right: 6px; vertical-align: text-bottom;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>Saved Words</a>
+            <a href="https://discord.gg/ZgkKXdpt" target="_blank" class="header-action-btn" style="text-decoration: none;">💬 24/7 Chat Support</a>
+        </div>
+        <a href="index.html" class="logo-trigger">
+            <h1 style="font-size: 4rem; font-weight: 800; color: var(--primary-color); font-family: 'Quicksand', 'M PLUS Rounded 1c', sans-serif; letter-spacing: -2px; margin-bottom: 5px; margin-top: 10px; text-shadow: 2px 2px 4px rgba(0,0,0,0.05);">Hanace</h1>
+            <p>Hanace [Ha-na-su]-Trace your path to bloom, Speak with confidence.</p>
+        </a>
+    </header>
+
+    <div class="tabs">
+        <a href="index.html?tab=roadmap" class="tab-btn">Roadmap</a>
+        <a href="index.html?tab=resources" class="tab-btn active">Resources</a>
+        <a href="index.html?tab=booking" class="tab-btn">Book a Lesson</a>
+    </div>
+
+    <div class="page-container">
+        
+        <header>
+            <h1>Essential Phrases</h1>
+            <p class="subtitle">Daily Japanese for real life by Hana Banana</p>
+        </header>
+
+        <div style="text-align: center;">
+            <div class="audio-tip"><svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: text-bottom;"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg> Click on any phrase to hear the pronunciation!</div>
+        </div>
+
+        <!-- Greetings Section -->
+        <div class="chart-section">
+            <h2 style="font-family: 'Quicksand', 'M PLUS Rounded 1c', sans-serif;">あいさつ GREETINGS</h2>
+            <div class="greeting-grid">
+                
+                <div class="greeting-card" onclick="speakKana('おはようございます')">
+                    <div class="card-content">
+                        <span class="jp-char">おはようございます</span>
+                        <span class="romaji">Ohayō gozaimasu</span>
+                        <span class="meaning">Good morning</span>
+                    </div>
+                    <div class="audio-icon"><svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: text-bottom;"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg></div>
+                </div>
+
+                <div class="greeting-card" onclick="speakKana('こんにちは')">
+                    <div class="card-content">
+                        <span class="jp-char">こんにちは</span>
+                        <span class="romaji">Konnichiwa</span>
+                        <span class="meaning">Hello / Good afternoon</span>
+                    </div>
+                    <div class="audio-icon"><svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: text-bottom;"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg></div>
+                </div>
+
+                <div class="greeting-card" onclick="speakKana('こんばんは')">
+                    <div class="card-content">
+                        <span class="jp-char">こんばんは</span>
+                        <span class="romaji">Konbanwa</span>
+                        <span class="meaning">Good evening</span>
+                    </div>
+                    <div class="audio-icon"><svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: text-bottom;"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg></div>
+                </div>
+
+                <div class="greeting-card" onclick="speakKana('おやすみなさい')">
+                    <div class="card-content">
+                        <span class="jp-char">おやすみなさい</span>
+                        <span class="romaji">Oyasumi nasai</span>
+                        <span class="meaning">Good night</span>
+                    </div>
+                    <div class="audio-icon"><svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: text-bottom;"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg></div>
+                </div>
+
+                <div class="greeting-card" onclick="speakKana('ありがとうございます')">
+                    <div class="card-content">
+                        <span class="jp-char">ありがとうございます</span>
+                        <span class="romaji">Arigatō gozaimasu</span>
+                        <span class="meaning">Thank you (Polite)</span>
+                    </div>
+                    <div class="audio-icon"><svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: text-bottom;"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg></div>
+                </div>
+
+                <div class="greeting-card" onclick="speakKana('すみません')">
+                    <div class="card-content">
+                        <span class="jp-char">すみません</span>
+                        <span class="romaji">Sumimasen</span>
+                        <span class="meaning">Excuse me / I'm sorry</span>
+                    </div>
+                    <div class="audio-icon"><svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: text-bottom;"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg></div>
+                </div>
+
+                <div class="greeting-card" onclick="speakKana('ごめんなさい')">
+                    <div class="card-content">
+                        <span class="jp-char">ごめんなさい</span>
+                        <span class="romaji">Gomen nasai</span>
+                        <span class="meaning">I'm sorry (Casual/Polite)</span>
+                    </div>
+                    <div class="audio-icon"><svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: text-bottom;"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg></div>
+                </div>
+
+                <div class="greeting-card" onclick="speakKana('よろしくお願いします')">
+                    <div class="card-content">
+                        <span class="jp-char">よろしくお願いします</span>
+                        <span class="romaji">Yoroshiku onegaishimasu</span>
+                        <span class="meaning">Please treat me well</span>
+                    </div>
+                    <div class="audio-icon"><svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: text-bottom;"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg></div>
+                </div>
+
+                <div class="greeting-card" onclick="speakKana('さようなら')">
+                    <div class="card-content">
+                        <span class="jp-char">さようなら</span>
+                        <span class="romaji">Sayōnara</span>
+                        <span class="meaning">Goodbye</span>
+                    </div>
+                    <div class="audio-icon"><svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: text-bottom;"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg></div>
+                </div>
+
+                <div class="greeting-card" onclick="speakKana('またね')">
+                    <div class="card-content">
+                        <span class="jp-char">またね！</span>
+                        <span class="romaji">Mata ne!</span>
+                        <span class="meaning">See you! (Casual)</span>
+                    </div>
+                    <div class="audio-icon"><svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: text-bottom;"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg></div>
+                </div>
+                
+            </div>
+        </div>
+
+        <!-- Aizuchi Section -->
+        <div class="chart-section" style="margin-top: 60px;">
+            <h2 style="font-family: 'Quicksand', 'M PLUS Rounded 1c', sans-serif;">相槌 AIZUCHI (Conversational Fillers)</h2>
+            <div style="bottom: 20px; color: #555; margin-bottom: 20px;">Support the flow of conversation with these short responses.</div>
+            
+            <div class="greeting-grid">
+                
+                <div class="greeting-card" onclick="speakKana('そうですね')">
+                    <div class="card-content">
+                        <span class="jp-char">そうですね</span>
+                        <span class="romaji">Sō desu ne</span>
+                        <span class="meaning">That's right / I agree</span>
+                    </div>
+                    <div class="audio-icon"><svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: text-bottom;"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg></div>
+                </div>
+
+                <div class="greeting-card" onclick="speakKana('なるほど')">
+                    <div class="card-content">
+                        <span class="jp-char">なるほど</span>
+                        <span class="romaji">Naruhodo</span>
+                        <span class="meaning">I see / That makes sense</span>
+                    </div>
+                    <div class="audio-icon"><svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: text-bottom;"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg></div>
+                </div>
+
+                <div class="greeting-card" onclick="speakKana('本当ですか')">
+                    <div class="card-content">
+                        <span class="jp-char">本当ですか？</span>
+                        <span class="romaji">Hontō desu ka?</span>
+                        <span class="meaning">Really? / Are you serious?</span>
+                    </div>
+                    <div class="audio-icon"><svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: text-bottom;"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg></div>
+                </div>
+
+                <div class="greeting-card" onclick="speakKana('そうなんですか')">
+                    <div class="card-content">
+                        <span class="jp-char">そうなんですか？</span>
+                        <span class="romaji">Sō nan desu ka?</span>
+                        <span class="meaning">Is that so? (Showing interest)</span>
+                    </div>
+                    <div class="audio-icon"><svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: text-bottom;"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg></div>
+                </div>
+
+                <div class="greeting-card" onclick="speakKana('すごい')">
+                    <div class="card-content">
+                        <span class="jp-char">すごい！</span>
+                        <span class="romaji">Sugoi!</span>
+                        <span class="meaning">Amazing! / Great!</span>
+                    </div>
+                    <div class="audio-icon"><svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: text-bottom;"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg></div>
+                </div>
+
+                <div class="greeting-card" onclick="speakKana('たしかに')">
+                    <div class="card-content">
+                        <span class="jp-char">たしかに</span>
+                        <span class="romaji">Tashikani</span>
+                        <span class="meaning">Certainly / For sure</span>
+                    </div>
+                    <div class="audio-icon"><svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: text-bottom;"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg></div>
+                </div>
+
+                <div class="greeting-card" onclick="speakKana('大丈夫です')">
+                    <div class="card-content">
+                        <span class="jp-char">大丈夫です</span>
+                        <span class="romaji">Daijōbu desu</span>
+                        <span class="meaning">It's okay / I'm fine</span>
+                    </div>
+                    <div class="audio-icon"><svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: text-bottom;"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg></div>
+                </div>
+
+                <div class="greeting-card" onclick="speakKana('ええと')">
+                    <div class="card-content">
+                        <span class="jp-char">ええと…</span>
+                        <span class="romaji">Eeto...</span>
+                        <span class="meaning">Umm... / Let me see...</span>
+                    </div>
+                    <div class="audio-icon"><svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: text-bottom;"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg></div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Useful Phrases Section -->
+        <div class="chart-section" style="margin-top: 60px;">
+            <h2 style="font-family: 'Quicksand', 'M PLUS Rounded 1c', sans-serif;">便利な表現 USEFUL PHRASES</h2>
+            <div style="bottom: 20px; color: #555; margin-bottom: 20px;">Practical phrases for shopping, dining, and asking for help.</div>
+            
+            <div class="greeting-grid">
+                
+                <div class="greeting-card" onclick="speakKana('これをお願いします')">
+                    <div class="card-content">
+                        <span class="jp-char">これをお願いします</span>
+                        <span class="romaji">Kore o onegai shimasu</span>
+                        <span class="meaning">This one, please</span>
+                    </div>
+                    <div class="audio-icon"><svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: text-bottom;"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg></div>
+                </div>
+
+                <div class="greeting-card" onclick="speakKana('いくらですか')">
+                    <div class="card-content">
+                        <span class="jp-char">いくらですか？</span>
+                        <span class="romaji">Ikura desu ka?</span>
+                        <span class="meaning">How much is it?</span>
+                    </div>
+                    <div class="audio-icon"><svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: text-bottom;"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg></div>
+                </div>
+
+                <div class="greeting-card" onclick="speakKana('わかりません')">
+                    <div class="card-content">
+                        <span class="jp-char">わかりません</span>
+                        <span class="romaji">Wakarimasen</span>
+                        <span class="meaning">I don't understand</span>
+                    </div>
+                    <div class="audio-icon"><svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: text-bottom;"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg></div>
+                </div>
+
+                <div class="greeting-card" onclick="speakKana('もう一度お願いします')">
+                    <div class="card-content">
+                        <span class="jp-char">もう一度お願いします</span>
+                        <span class="romaji">Mō ichido onegai shimasu</span>
+                        <span class="meaning">One more time, please</span>
+                    </div>
+                    <div class="audio-icon"><svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: text-bottom;"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg></div>
+                </div>
+
+                <div class="greeting-card" onclick="speakKana('ゆっくりお願いします')">
+                    <div class="card-content">
+                        <span class="jp-char">ゆっくりお願いします</span>
+                        <span class="romaji">Yukkuri onegai shimasu</span>
+                        <span class="meaning">Slowly, please</span>
+                    </div>
+                    <div class="audio-icon"><svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: text-bottom;"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg></div>
+                </div>
+
+                <div class="greeting-card" onclick="speakKana('トイレはどこですか')">
+                    <div class="card-content">
+                        <span class="jp-char">トイレはどこですか？</span>
+                        <span class="romaji">Toire wa doko desu ka?</span>
+                        <span class="meaning">Where is the toilet?</span>
+                    </div>
+                    <div class="audio-icon"><svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: text-bottom;"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg></div>
+                </div>
+
+                <div class="greeting-card" onclick="speakKana('助けてください')">
+                    <div class="card-content">
+                        <span class="jp-char">助けてください</span>
+                        <span class="romaji">Tasukete kudasai</span>
+                        <span class="meaning">Please help me</span>
+                    </div>
+                    <div class="audio-icon"><svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: text-bottom;"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg></div>
+                </div>
+
+                <div class="greeting-card" onclick="speakKana('クレジットカードは使えますか')">
+                    <div class="card-content">
+                        <span class="jp-char">カードは使えますか？</span>
+                        <span class="romaji">Kādo wa tsukaemasu ka?</span>
+                        <span class="meaning">Can I use a credit card?</span>
+                    </div>
+                    <div class="audio-icon"><svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: text-bottom;"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg></div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="print-btn-container" style="margin-top: 60px; padding-top: 40px; border-top: 2px dashed #eee;">
+            <button class="print-btn" onclick="window.print()">🖨️ Print to PDF</button>
+            <p style="margin-top: 15px; color: #666; font-size: 0.95rem;">Tip: Use your browser's print function and select <strong>"Save as PDF"</strong>.</p>
+        </div>
+
+    </div>
+
+    <script>
+        let jpVoices = [];
+
+        window.speechSynthesis.onvoiceschanged = () => {
+            jpVoices = window.speechSynthesis.getVoices().filter(v => v.lang.includes('ja'));
+        };
+
+        function speakKana(text) {
+            if ('speechSynthesis' in window) {
+                window.speechSynthesis.cancel();
+                
+                const utterance = new SpeechSynthesisUtterance(text);
+                utterance.lang = 'ja-JP';
+                utterance.rate = 0.85; 
+                
+                if (jpVoices.length === 0) {
+                    jpVoices = window.speechSynthesis.getVoices().filter(v => v.lang.includes('ja'));
+                }
+
+                if (jpVoices.length > 0) {
+                    let bestVoice = jpVoices.find(v => v.name.includes('Google') || v.name.includes('Premium') || v.name.includes('Kyoko') || v.name.includes('O-ren'));
+                    if (bestVoice) {
+                        utterance.voice = bestVoice;
+                    } else {
+                        utterance.voice = jpVoices[0];
+                    }
+                }
+
+                window.speechSynthesis.speak(utterance);
+            }
+        }
+    </script>
+
+<script>
+    // Universal Save Function
+    function toggleSave(btn, word, meaning) {
+        let saved = JSON.parse(localStorage.getItem('hanaBananaSavedVocab') || '[]');
+        const index = saved.findIndex(item => item.word === word);
+        
+        if (index === -1) {
+            saved.push({ word: word, meaning: meaning, date: new Date().toISOString() });
+            btn.classList.add('active');
+            
+            const flash = document.createElement('div');
+            flash.textContent = 'Saved!';
+            flash.style.position = 'absolute';
+            flash.style.top = '-20px';
+            flash.style.right = '0';
+            flash.style.color = '#ff9800';
+            flash.style.fontWeight = 'bold';
+            flash.style.fontSize = '0.9rem';
+            flash.style.animation = 'floatUp 1s ease-out forwards';
+            btn.appendChild(flash);
+            setTimeout(() => flash.remove(), 1000);
+        } else {
+            saved.splice(index, 1);
+            btn.classList.remove('active');
+        }
+        localStorage.setItem('hanaBananaSavedVocab', JSON.stringify(saved));
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        const style = document.createElement('style');
+        style.textContent = `
+            .save-btn {
+                position: absolute;
+                top: 10px;
+                right: 10px;
+                font-size: 1.5rem;
+                cursor: pointer;
+                opacity: 0.2;
+                transition: opacity 0.2s, transform 0.2s;
+                user-select: none;
+                z-index: 10;
+            }
+            .save-btn:hover { opacity: 1 !important; transform: scale(1.2); }
+            .save-btn.active { opacity: 1; filter: drop-shadow(0 0 5px gold); }
+            @keyframes floatUp { 0% { opacity: 1; transform: translateY(0); } 100% { opacity: 0; transform: translateY(-20px); } }
+            
+            .greeting-card, .onomato-card, .radical-card, td.jp-col { position: relative; }
+            .kanji-item { position: relative; cursor: pointer; }
+            
+            .greeting-card:hover .save-btn, .onomato-card:hover .save-btn, .radical-card:hover .save-btn, td.jp-col:hover .save-btn, .kanji-item:hover .save-btn { opacity: 0.8; }
+        `;
+        document.head.appendChild(style);
+
+        const saved = JSON.parse(localStorage.getItem('hanaBananaSavedVocab') || '[]');
+
+        // 1. Greetings & Onomatopoeia
+        document.querySelectorAll('.greeting-card, .onomato-card').forEach(card => {
+            let word = '', meaning = '';
+            
+            if (card.classList.contains('greeting-card')) {
+                word = card.querySelector('.jp-char')?.textContent.trim();
+                meaning = card.querySelector('.meaning')?.textContent.trim();
+            } else if (card.classList.contains('onomato-card')) {
+                word = card.querySelector('.word-ja-text')?.textContent.trim();
+                meaning = card.querySelector('.word-en')?.textContent.trim();
+            }
+
+            if (word && meaning) {
+                const isSaved = saved.some(item => item.word === word);
+                const btn = document.createElement('div');
+                btn.className = 'save-btn' + (isSaved ? ' active' : '');
+                btn.innerHTML = '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--primary-color, #ff751f)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>';
+                btn.onclick = (e) => {
+                    e.stopPropagation();
+                    toggleSave(btn, word, meaning);
+                };
+                card.appendChild(btn);
+            }
+        });
+
+        // 2. Conjunctions (Table)
+        document.querySelectorAll('td.jp-col').forEach(td => {
+            const tr = td.parentElement;
+            const wordElem = td.querySelector('strong');
+            const word = wordElem ? wordElem.textContent.trim() : '';
+            
+            const enCol = tr.querySelector('.en-col');
+            let meaning = '';
+            if (enCol) {
+                const htmlStr = enCol.innerHTML;
+                meaning = htmlStr.split('<br>')[0].replace(/<[^>]+>/g, '').trim();
+            }
+
+            if (word && meaning) {
+                const isSaved = saved.some(item => item.word === word);
+                const btn = document.createElement('div');
+                btn.className = 'save-btn' + (isSaved ? ' active' : '');
+                btn.innerHTML = '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--primary-color, #ff751f)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>';
+                btn.style.top = '5px';
+                btn.style.right = '5px';
+                btn.style.fontSize = '1.2rem';
+                btn.onclick = (e) => {
+                    e.stopPropagation();
+                    toggleSave(btn, word, meaning);
+                };
+                td.appendChild(btn);
+            }
+        });
+
+        // 3. Radicals (Kanji examples)
+        document.querySelectorAll('.kanji-item').forEach(item => {
+            const title = item.getAttribute('title');
+            if (title) {
+                const kanji = item.textContent.trim();
+                const meaning = title;
+                
+                const isSaved = saved.some(s => s.word === kanji);
+                const btn = document.createElement('div');
+                btn.className = 'save-btn' + (isSaved ? ' active' : '');
+                btn.innerHTML = '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--primary-color, #ff751f)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>';
+                btn.style.top = '-8px';
+                btn.style.right = '-8px';
+                btn.style.fontSize = '0.9rem';
+                btn.onclick = (e) => {
+                    e.stopPropagation();
+                    toggleSave(btn, kanji, meaning);
+                };
+                item.appendChild(btn);
+            }
+        });
+    });
+</script>
+
+</body>
+</html>
