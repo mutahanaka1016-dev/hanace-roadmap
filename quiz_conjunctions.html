@@ -1,0 +1,898 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connection Puzzle Quiz</title>
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500;700;800&family=Quicksand:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-red: #ff751f;
+            --light-red: #ffc8a2;
+            --dark-red: #cc5c14;
+            --beginner-color: #2ed573;
+            --intermediate-color: #ffa502;
+            --advanced-color: #ff4757;
+            --text-main: #2f3542;
+            --text-sub: #747d8c;
+            --glass-bg: rgba(255, 255, 255, 0.9);
+            --shadow-premium: 0 10px 30px rgba(0, 0, 0, 0.05);
+            --primary-color: #ff751f;
+            --secondary-color: #535353;
+            --bg-color: #F8F9FA;
+            --white: #FFFFFF;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Quicksand', 'M PLUS Rounded 1c', sans-serif;
+            background-color: #f7f7f7;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='500' height='500'%3E%3Cstyle%3Etext%7Bfont-family:'M PLUS Rounded 1c',sans-serif;fill:rgba(83,83,83,0.06);font-weight:700;%7D%3C/style%3E<text x='136' y='103' font-size='28' transform='rotate(18 136 103)'>僕</text><text x='111' y='28' font-size='24' transform='rotate(27 111 28)'>は</text><text x='431' y='191' font-size='27' transform='rotate(20 431 191)'>三</text><text x='303' y='225' font-size='31' transform='rotate(2 303 225)'>十</text><text x='196' y='216' font-size='27' transform='rotate(19 196 216)'>七</text><text x='389' y='50' font-size='20' transform='rotate(12 389 50)'>歳</text><text x='438' y='285' font-size='22' transform='rotate(-25 438 285)'>で</text><text x='265' y='34' font-size='24' transform='rotate(8 265 34)'>、</text><text x='279' y='281' font-size='31' transform='rotate(-13 279 281)'>そ</text><text x='461' y='385' font-size='28' transform='rotate(-19 461 385)'>の</text><text x='268' y='456' font-size='27' transform='rotate(29 268 456)'>と</text><text x='206' y='56' font-size='29' transform='rotate(20 206 56)'>き</text><text x='22' y='271' font-size='23' transform='rotate(-11 22 271)'>ボ</text><text x='104' y='236' font-size='23' transform='rotate(22 104 236)'>ー</text><text x='378' y='457' font-size='25' transform='rotate(24 378 457)'>イ</text><text x='24' y='33' font-size='23' transform='rotate(3 24 33)'>ン</text><text x='41' y='401' font-size='22' transform='rotate(-6 41 401)'>グ</text><text x='63' y='130' font-size='20' transform='rotate(-24 63 130)'>7</text><text x='432' y='470' font-size='25' transform='rotate(17 432 470)'>4</text><text x='346' y='207' font-size='26' transform='rotate(29 346 207)'>7</text><text x='228' y='315' font-size='28' transform='rotate(-29 228 315)'>の</text><text x='213' y='131' font-size='27' transform='rotate(-13 213 131)'>シ</text><text x='349' y='376' font-size='31' transform='rotate(-2 349 376)'>ー</text><text x='473' y='117' font-size='22' transform='rotate(0 473 117)'>ト</text><text x='392' y='149' font-size='27' transform='rotate(-12 392 149)'>に</text><text x='125' y='444' font-size='26' transform='rotate(15 125 444)'>座</text><text x='218' y='381' font-size='23' transform='rotate(-29 218 381)'>っ</text><text x='344' y='319' font-size='29' transform='rotate(22 344 319)'>て</text><text x='109' y='356' font-size='31' transform='rotate(22 109 356)'>い</text><text x='14' y='462' font-size='29' transform='rotate(-25 14 462)'>た</text><text x='134' y='276' font-size='26' transform='rotate(-1 134 276)'>。</text>%3C/svg%3E");
+            background-repeat: repeat;
+            color: var(--text-main);
+            padding: 20px;
+        }
+
+        /* Unified Navigation Styles */
+        header.global-header {
+            text-align: center;
+            padding: 40px 20px;
+            background: #FFFFFF;
+            border-bottom: 4px solid var(--primary-color);
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .header-actions {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            gap: 10px;
+        }
+
+        .header-action-btn {
+            background: #fcfcfc;
+            border: 1px solid #eee;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            color: var(--secondary-color);
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            text-decoration: none;
+        }
+
+        .header-action-btn:hover {
+            background: #fff;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transform: translateY(-1px);
+        }
+
+        .logo-trigger {
+            cursor: pointer;
+            display: inline-block;
+            transition: all 0.3s ease;
+            padding: 10px 20px;
+            border-radius: 15px;
+            user-select: none;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .logo-trigger:hover {
+            background-color: transparent;
+            transform: translateY(-2px);
+        }
+
+        .logo-trigger h1 {
+            margin: 0;
+            font-size: 2.2rem;
+            letter-spacing: 2px;
+            color: var(--primary-color);
+        }
+
+        .logo-trigger p {
+            font-weight: bold;
+            opacity: 0.8;
+            color: var(--secondary-color);
+            margin-top: 5px;
+            font-size: 0.9rem;
+        }
+
+        .tabs {
+            display: flex;
+            justify-content: center;
+            flex-wrap: nowrap;
+            gap: 20px;
+            margin-bottom: 50px;
+        }
+
+        .tab-btn {
+            display: inline-block;
+            box-sizing: border-box;
+            background: #FFFFFF;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+            padding: 12px 30px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            text-decoration: none;
+            text-align: center;
+        }
+
+        .tab-btn:hover {
+            background: #ffe6e6;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 10px rgba(255, 117, 31, 0.1);
+        }
+
+        .tab-btn.active {
+            background: var(--primary-color);
+            color: #FFFFFF;
+            box-shadow: 0 6px 12px rgba(255, 117, 31, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .nav-item {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%) translateY(10px);
+            background: #ffffff;
+            min-width: 230px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            border-radius: 15px;
+            padding: 10px;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            z-index: 1000;
+            border: 1px solid #eee;
+        }
+
+        .nav-item:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(-50%) translateY(5px);
+        }
+
+        .dropdown-item {
+            display: block;
+            padding: 12px 15px;
+            color: var(--secondary-color);
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 10px;
+            transition: background 0.2s, color 0.2s;
+        }
+
+        .dropdown-item:hover {
+            background: #fff5f5;
+            color: var(--primary-color);
+        }
+
+        /* Page Content Styles */
+        .page-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            border-top: 15px solid var(--primary-red);
+        }
+
+        .page-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .page-header h1 {
+            color: var(--primary-red);
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            font-weight: 800;
+        }
+
+        p.subtitle {
+            color: #666;
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: var(--text-sub);
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--primary-color);
+        }
+
+        /* Puzzle Quiz Styles */
+        .quiz-container {
+            background: var(--glass-bg);
+            border: 3px dashed var(--light-red);
+            padding: 40px 30px;
+            border-radius: 20px;
+            margin-bottom: 20px;
+            text-align: center;
+            box-shadow: var(--shadow-premium);
+        }
+        .quiz-container h3 {
+            color: var(--primary-red);
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+        .quiz-container > p {
+            color: var(--text-sub);
+            margin-bottom: 35px;
+            font-size: 1.2rem;
+        }
+        .puzzle-piece {
+            display: inline-flex;
+            align-items: center;
+            padding: 15px 30px;
+            border-radius: 12px;
+            font-weight: bold;
+            color: white;
+            position: relative;
+            margin: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+            cursor: pointer;
+            user-select: none;
+            transition: all 0.2s ease;
+            font-size: 1.2rem;
+        }
+        .puzzle-piece:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+        }
+        .puzzle-piece::after {
+            content: "🧩";
+            margin-left: 12px;
+            font-size: 1.4rem;
+        }
+        .piece-noun { background-color: #f1c40f; color: #333; }
+        .piece-verb-te { background-color: #3498db; }
+        .piece-verb-plain { background-color: #9b59b6; }
+        .piece-i-adj { background-color: #e74c3c; }
+        .piece-conj { background-color: var(--primary-color); cursor: default; }
+        .piece-conj:hover { transform: none; box-shadow: 0 4px 10px rgba(0,0,0,0.15); }
+
+        .quiz-target {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+        .puzzle-slot {
+            width: 200px;
+            height: 65px;
+            border: 3px dashed #cbd5e1;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #94a3b8;
+            font-weight: bold;
+            font-size: 1.3rem;
+            background: #f8fafc;
+            transition: all 0.3s ease;
+        }
+        .quiz-options {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+            min-height: 80px;
+        }
+        .quiz-feedback {
+            min-height: 30px;
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+        .next-quiz-btn {
+            background: var(--beginner-color);
+            color: white;
+            border: none;
+            border-radius: 30px;
+            padding: 12px 35px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(46, 213, 115, 0.3);
+            transition: all 0.2s;
+            display: inline-block;
+        }
+        .next-quiz-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(46, 213, 115, 0.4);
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 50px;
+            color: #999;
+            font-size: 0.9rem;
+        }
+    
+                    .header-actions {
+                position: relative !important;
+                top: 0 !important;
+                right: 0 !important;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+                margin-bottom: 20px;
+                width: 100%;
+            }
+            .header-action-btn {
+                width: 90%;
+                justify-content: center;
+                padding: 12px 15px !important;
+                font-size: 1rem !important;
+            }
+            .logo-trigger {
+                padding: 5px !important;
+            }
+            .logo-trigger img {
+                max-height: 120px !important;
+            }
+            .logo-trigger h1 {
+                font-size: 1.8rem !important;
+            }
+            .logo-trigger p {
+                font-size: 0.9rem !important;
+                padding: 0 10px;
+            }
+            
+            /* Tabs & Navigation */
+            .tabs {
+                flex-direction: column !important;
+                gap: 12px !important;
+                padding: 0 15px !important;
+                margin-bottom: 30px !important;
+            }
+            .tab-btn {
+                width: 100% !important;
+                text-align: center;
+            }
+            .sub-tabs {
+                flex-direction: column !important;
+                gap: 10px !important;
+            }
+            .sub-tab-btn {
+                width: 100% !important;
+            }
+            .dropdown-menu {
+                width: 100% !important;
+                position: static !important;
+                box-shadow: none !important;
+                border: 1px solid #eee;
+                margin-top: 5px;
+                display: none;
+            }
+            .nav-item:hover .dropdown-menu {
+                display: block;
+            }
+            
+            /* General Containers */
+            .container {
+                padding: 0 15px !important;
+                width: 100% !important;
+                box-sizing: border-box !important;
+            }
+            
+            /* Typography */
+            body { font-size: 16px !important; }
+            h1 { font-size: 1.8rem !important; }
+            h2 { font-size: 1.5rem !important; }
+            h3 { font-size: 1.3rem !important; }
+            
+            /* Roadmap / Steps */
+            .step.left, .step.right {
+                width: 100% !important;
+                float: none !important;
+                margin-left: 0 !important;
+                margin-right: 0 !important;
+                margin-top: 20px !important;
+            }
+            .roadmap::before {
+                display: none !important;
+            }
+            
+            /* Grids and Flex layouts */
+            .cycle-grid {
+                grid-template-columns: 1fr !important;
+            }
+            .cycle-grid::before { display: none !important; }
+            .cycle-item {
+                margin-left: 0 !important;
+                width: 100% !important;
+            }
+            
+            /* Profiles and Cards */
+            #booking > div, .starthere-card {
+                padding: 25px 15px !important;
+                flex-direction: column !important;
+                text-align: center !important;
+            }
+            #booking > div img {
+                width: 150px !important;
+                height: 150px !important;
+            }
+            
+            /* Tables */
+            table {
+                display: block !important;
+                overflow-x: auto !important;
+                white-space: nowrap !important;
+                width: 100% !important;
+            }
+            
+            /* Modals */
+            .modal-content, .search-modal-content {
+                width: 95% !important;
+                padding: 20px 15px !important;
+                margin: 20px auto !important;
+            }
+            
+            /* Buttons */
+            .cta-btn-premium, .learn-btn, .download-btn {
+                padding: 15px 20px !important;
+                font-size: 1.1rem !important;
+                width: 100% !important;
+                box-sizing: border-box !important;
+                text-align: center !important;
+            }
+            
+            /* Cheat Sheet Lists */
+            ul.vocab-list, .cheat-sheet-list {
+                padding: 0 !important;
+            }
+            .vocab-item {
+                flex-direction: column !important;
+                align-items: flex-start !important;
+                padding: 15px !important;
+                gap: 5px !important;
+            }
+            .vocab-item .kana, .vocab-item .kanji, .vocab-item .meaning {
+                width: 100% !important;
+                text-align: left !important;
+            }
+        }
+
+        /* =========================================
+           📱 Global Mobile Optimization 
+           ========================================= */
+        @media (max-width: 768px) {
+            /* Header */
+            header.global-header {
+                padding: 20px 10px !important;
+            }
+            .header-actions {
+                position: relative !important;
+                top: 0 !important;
+                right: 0 !important;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+                margin-bottom: 20px;
+                width: 100%;
+            }
+            .header-action-btn {
+                width: 90%;
+                justify-content: center;
+                padding: 12px 15px !important;
+                font-size: 1rem !important;
+            }
+            .logo-trigger {
+                padding: 5px !important;
+            }
+            .logo-trigger img {
+                max-height: 100px !important;
+                width: auto !important;
+                max-width: 100% !important;
+                object-fit: contain;
+            }
+            .logo-trigger h1 {
+                font-size: 1.8rem !important;
+            }
+            .logo-trigger p {
+                font-size: 0.9rem !important;
+                padding: 0 10px;
+            }
+            
+            /* Tabs & Navigation */
+            .tabs {
+                flex-direction: column !important;
+                gap: 12px !important;
+                padding: 0 15px !important;
+                margin-bottom: 30px !important;
+            }
+            .tab-btn {
+                width: 100% !important;
+                text-align: center;
+            }
+            .sub-tabs {
+                flex-direction: column !important;
+                gap: 10px !important;
+            }
+            .sub-tab-btn {
+                width: 100% !important;
+            }
+            .dropdown-menu {
+                width: 100% !important;
+                position: static !important;
+                box-shadow: none !important;
+                border: 1px solid #eee;
+                margin-top: 5px;
+                display: flex !important;
+                flex-direction: column !important;
+                opacity: 1 !important;
+                visibility: visible !important;
+                transform: none !important;
+            }
+            
+            /* General Containers */
+            .container {
+                padding: 0 15px !important;
+                width: 100% !important;
+                box-sizing: border-box !important;
+            }
+            
+            /* Typography */
+            body { font-size: 16px !important; }
+            h1 { font-size: 1.8rem !important; }
+            h2 { font-size: 1.5rem !important; }
+            h3 { font-size: 1.3rem !important; }
+            
+            /* Roadmap / Steps */
+            .step.left, .step.right {
+                width: 100% !important;
+                float: none !important;
+                margin-left: 0 !important;
+                margin-right: 0 !important;
+                margin-top: 20px !important;
+            }
+            .roadmap::before {
+                display: none !important;
+            }
+            
+            /* Grids and Flex layouts */
+            .cycle-grid {
+                grid-template-columns: 1fr !important;
+            }
+            .cycle-grid::before { display: none !important; }
+            .cycle-item {
+                margin-left: 0 !important;
+                width: 100% !important;
+            }
+            
+            /* Profiles and Cards */
+            #booking > div, .starthere-card {
+                padding: 25px 15px !important;
+                flex-direction: column !important;
+                text-align: center !important;
+            }
+            #booking > div img {
+                width: 150px !important;
+                height: 150px !important;
+            }
+            
+            /* Tables */
+            table {
+                display: block !important;
+                overflow-x: auto !important;
+                white-space: nowrap !important;
+                width: 100% !important;
+            }
+            
+            /* Modals and Today's Vocab */
+            .modal-content, .search-modal-content {
+                width: 95% !important;
+                padding: 20px 15px !important;
+                margin: 20px auto !important;
+                box-sizing: border-box !important;
+                overflow-x: hidden !important;
+            }
+            .vocab-list {
+                display: flex !important;
+                flex-direction: column !important;
+                gap: 10px !important;
+            }
+            .vocab-item {
+                flex-direction: column !important;
+                align-items: flex-start !important;
+                padding: 10px !important;
+                width: 100% !important;
+                box-sizing: border-box !important;
+            }
+            .vocab-item .kana, .vocab-item .kanji, .vocab-item .meaning {
+                width: 100% !important;
+                text-align: left !important;
+                white-space: normal !important;
+                word-wrap: break-word !important;
+            }
+            
+            /* Buttons */
+            .cta-btn-premium, .learn-btn, .download-btn {
+                padding: 15px 20px !important;
+                font-size: 1.1rem !important;
+                width: 100% !important;
+                box-sizing: border-box !important;
+                text-align: center !important;
+            }
+            
+            /* Cheat Sheet Lists */
+            ul.vocab-list, .cheat-sheet-list {
+                padding: 0 !important;
+                width: 100% !important;
+            }
+            .cheat-sheet-checkbox + a {
+                white-space: normal !important;
+            }
+        }
+
+        /* Unified Mobile Optimization */
+        @media (max-width: 768px) {
+            header.global-header {
+                padding: 20px 10px !important;
+            }
+            .header-actions {
+                position: relative !important;
+                top: 0 !important;
+                right: 0 !important;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+                margin-bottom: 20px;
+                width: 100%;
+            }
+            .header-action-btn {
+                width: 90%;
+                justify-content: center;
+                padding: 12px 15px !important;
+                font-size: 1rem !important;
+            }
+            .logo-trigger h1 {
+                font-size: 2.2rem !important;
+                letter-spacing: -1px !important;
+            }
+            .logo-trigger p {
+                font-size: 0.85rem !important;
+                padding: 0 10px;
+            }
+            .tabs {
+                flex-direction: column !important;
+                gap: 10px !important;
+                padding: 0 15px !important;
+            }
+            .tab-btn {
+                width: 100% !important;
+                padding: 12px !important;
+                font-size: 1rem !important;
+            }
+            .container {
+                padding: 0 15px !important;
+                width: 100% !important;
+                box-sizing: border-box !important;
+            }
+            /* Roadmap Fixes */
+            .roadmap::before { display: none !important; }
+            .step.left, .step.right {
+                width: 100% !important;
+                float: none !important;
+                margin: 0 0 20px 0 !important;
+                padding: 20px !important;
+            }
+            /* Table Fixes */
+            table {
+                display: block !important;
+                overflow-x: auto !important;
+                -webkit-overflow-scrolling: touch;
+                width: 100% !important;
+            }
+            /* Modal Fixes */
+            .modal-content, .search-modal-content {
+                width: 95% !important;
+                margin: 10px auto !important;
+                padding: 20px 15px !important;
+            }
+            /* Grid Fixes */
+            .cycle-grid {
+                grid-template-columns: 1fr !important;
+                gap: 20px !important;
+            }
+            .cycle-item {
+                width: 100% !important;
+                margin: 0 !important;
+                padding: 20px !important;
+            }
+            .starthere-card {
+                padding: 30px 15px !important;
+            }
+            .starthere-title {
+                font-size: 1.8rem !important;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <header class="global-header">
+        <div class="header-actions">
+            <a href="index.html?search=true" class="header-action-btn">🔍 Search</a>
+            <a href="myvocab.html" class="header-action-btn"><svg style="width: 18px; height: 18px; margin-right: 6px; vertical-align: text-bottom;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>Saved Words</a>
+            <a href="https://discord.gg/ZgkKXdpt" target="_blank" class="header-action-btn">💬 24/7 Chat Support</a>
+        </div>
+        <a href="index.html" class="logo-trigger">
+            <h1 style="font-size: 4rem; font-weight: 800; color: var(--primary-color); font-family: 'Quicksand', 'M PLUS Rounded 1c', sans-serif; letter-spacing: -2px; margin-bottom: 5px; margin-top: 10px; text-shadow: 2px 2px 4px rgba(0,0,0,0.05);">Hanace</h1>
+            <p>Hanace [Ha-na-su]-Trace your path to bloom, Speak with confidence.</p>
+        </a>
+    </header>
+
+    <div class="tabs">
+        <a href="index.html?tab=roadmap" class="tab-btn">Roadmap</a>
+        <a href="index.html?tab=resources" class="tab-btn active">Resources</a>
+        <a href="index.html?tab=booking" class="tab-btn">Book a Lesson</a>
+    </div>
+
+    <div class="page-container">
+    <a href="cheat_conjunctions.html" class="back-link">⬅️ Back to Essential Conjunctions</a>
+    
+    <div class="quiz-container" id="puzzle-quiz">
+        <h3>🧩 Connection Puzzle Quiz</h3>
+        <p>Select the correct grammar piece to complete the connection!</p>
+        
+        <div class="quiz-target" id="quiz-target">
+            <!-- Target will be injected here by JS -->
+        </div>
+
+        <div class="quiz-options" id="quiz-options">
+            <!-- Options will be injected here by JS -->
+        </div>
+        
+        <div class="quiz-feedback" id="quiz-feedback"></div>
+        <button id="next-quiz-btn" class="next-quiz-btn" style="display:none;">Next Puzzle ➡️</button>
+    </div>
+
+    <div class="footer">
+        <p>Keep connecting your ideas! 🌱 Happy Learning!</p>
+    </div>
+</div>
+
+<script>
+    const puzzleData = [
+        {
+            targetConj: { text: "だから (Therefore)", class: "piece-conj" },
+            correctType: "noun",
+            options: [
+                { id: "noun", text: "Noun / Na-Adj", class: "piece-noun" },
+                { id: "verb-te", text: "Verb Te", class: "piece-verb-te" },
+                { id: "i-adj", text: "I-Adj", class: "piece-i-adj" }
+            ],
+            explanation: "Correct! 'だから' comes after a Noun or Na-Adjective."
+        },
+        {
+            targetConj: { text: "から (Because)", class: "piece-conj" },
+            correctType: "verb-plain",
+            options: [
+                { id: "noun", text: "Noun", class: "piece-noun" },
+                { id: "verb-plain", text: "Verb Plain", class: "piece-verb-plain" },
+                { id: "verb-te", text: "Verb Te", class: "piece-verb-te" }
+            ],
+            explanation: "Correct! 'から' directly follows the Plain Form of verbs or adjectives."
+        },
+        {
+            targetConj: { text: "ても / でも (Even if)", class: "piece-conj" },
+            correctType: "verb-te",
+            options: [
+                { id: "verb-plain", text: "Verb Plain", class: "piece-verb-plain" },
+                { id: "i-adj", text: "I-Adj", class: "piece-i-adj" },
+                { id: "verb-te", text: "Verb Te", class: "piece-verb-te" }
+            ],
+            explanation: "Correct! Use the Te-form + も to mean 'even if' (e.g., 食べても - even if I eat)."
+        }
+    ];
+
+    let currentPuzzleIdx = 0;
+
+    function loadPuzzle() {
+        const quiz = puzzleData[currentPuzzleIdx];
+        const targetDiv = document.getElementById('quiz-target');
+        const optionsDiv = document.getElementById('quiz-options');
+        const feedbackDiv = document.getElementById('quiz-feedback');
+        const nextBtn = document.getElementById('next-quiz-btn');
+        
+        feedbackDiv.textContent = "";
+        nextBtn.style.display = "none";
+        
+        targetDiv.innerHTML = `
+            <div class="puzzle-slot" id="puzzle-slot">?</div>
+            <div style="font-size: 2rem; font-weight: bold; color: #ccc;">+</div>
+            <div class="puzzle-piece ${quiz.targetConj.class}">${quiz.targetConj.text}</div>
+        `;
+        
+        optionsDiv.innerHTML = "";
+        quiz.options.forEach(opt => {
+            const btn = document.createElement('div');
+            btn.className = `puzzle-piece ${opt.class}`;
+            btn.textContent = opt.text;
+            btn.onclick = () => checkPuzzle(opt.id, btn);
+            optionsDiv.appendChild(btn);
+        });
+    }
+
+    function checkPuzzle(selectedId, btnElement) {
+        const quiz = puzzleData[currentPuzzleIdx];
+        const feedbackDiv = document.getElementById('quiz-feedback');
+        const nextBtn = document.getElementById('next-quiz-btn');
+        const slot = document.getElementById('puzzle-slot');
+        
+        if (selectedId === quiz.correctType) {
+            slot.className = btnElement.className;
+            slot.textContent = btnElement.textContent;
+            slot.style.border = "none";
+            slot.style.width = "auto";
+            slot.style.padding = "15px 30px";
+            
+            feedbackDiv.textContent = "🎉 " + quiz.explanation;
+            feedbackDiv.style.color = "var(--beginner-color)";
+            
+            document.querySelectorAll('#quiz-options .puzzle-piece').forEach(el => {
+                el.style.pointerEvents = 'none';
+                if (el !== btnElement) el.style.opacity = '0.5';
+            });
+            
+            nextBtn.style.display = "inline-block";
+        } else {
+            feedbackDiv.textContent = "❌ Try again! That piece doesn't fit here.";
+            feedbackDiv.style.color = "var(--advanced-color)";
+            
+            btnElement.style.transform = "translateX(-5px)";
+            setTimeout(() => btnElement.style.transform = "translateX(5px)", 100);
+            setTimeout(() => btnElement.style.transform = "translateX(0)", 200);
+        }
+    }
+
+    document.getElementById('next-quiz-btn').addEventListener('click', () => {
+        currentPuzzleIdx = (currentPuzzleIdx + 1) % puzzleData.length;
+        loadPuzzle();
+    });
+
+    document.addEventListener('DOMContentLoaded', loadPuzzle);
+</script>
+</body>
+</html>

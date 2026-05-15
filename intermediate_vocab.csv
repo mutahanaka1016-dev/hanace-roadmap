@@ -1,0 +1,101 @@
+Kanji,Kana,English,Type
+家族,かぞく,family,Noun
+両親,りょうしん,parents,Noun
+兄弟,きょうだい,siblings,Noun
+仕事,しごと,job / work,Noun
+会社,かいしゃ,company,Noun
+経済,けいざい,economy,Noun
+政治,せいじ,politics,Noun
+文化,ぶんか,culture,Noun
+科学,かがく,science,Noun
+自然,しぜん,nature,Noun
+社会,しゃかい,society,Noun
+歴史,れきし,history,Noun
+理由,りゆう,reason,Noun
+原因,げんいん,cause,Noun
+結果,けっか,result,Noun
+目的,もくてき,purpose,Noun
+方法,ほうほう,method,Noun
+問題,もんだい,problem,Noun
+質問,しつもん,question,Noun
+答え,こたえ,answer,Noun
+試合,しあい,match / game,Noun
+練習,れんしゅう,practice,Noun
+勉強,べんきょう,study,Noun
+研究,けんきゅう,research,Noun
+旅行,りょこう,travel / trip,Noun
+会議,かいぎ,meeting,Noun
+予定,よてい,schedule / plan,Noun
+約束,やくそく,promise / appointment,Noun
+経験,けいけん,experience,Noun
+関係,かんけい,relationship,Noun
+意見,いけん,opinion,Noun
+意味,いみ,meaning,Noun
+準備,じゅんび,preparation,Noun
+食事,しょくじ,meal,Noun
+生活,せいかつ,lifestyle / daily life,Noun
+人生,じんせい,life,Noun
+世界,せかい,world,Noun
+未来,みらい,future,Noun
+平和,へいわ,peace,Noun
+自由,じゆう,freedom (noun),Noun
+素晴らしい,すばらしい,wonderful,I-Adjective
+恥ずかしい,はずかしい,embarrassing,I-Adjective
+珍しい,めずらしい,rare,I-Adjective
+厳しい,きびしい,strict,I-Adjective
+詳しい,くわしい,detailed,I-Adjective
+悲しい,かなしい,sad,I-Adjective
+嬉しい,うれしい,glad/happy,I-Adjective
+寂しい,さびしい,lonely,I-Adjective
+眠い,ねむい,sleepy,I-Adjective
+正しい,ただしい,correct,I-Adjective
+大切,たいせつ,important,Na-Adjective
+複雑,ふくざつ,complex,Na-Adjective
+簡単,かんたん,simple/easy,Na-Adjective
+安全,あんぜん,safe,Na-Adjective
+危険,きけん,dangerous,Na-Adjective
+特別,とくべつ,special,Na-Adjective
+自由,じゆう,free (na-adj),Na-Adjective
+熱心,ねっしん,enthusiastic,Na-Adjective
+丁寧,ていねい,polite/careful,Na-Adjective
+十分,じゅうぶん,enough / sufficient,Na-Adjective
+食べる,たべる,to eat,Verb
+飲む,のむ,to drink,Verb
+行く,いく,to go,Verb
+来る,くる,to come,Verb
+見る,みる,to see/watch,Verb
+聞く,きく,to listen/hear,Verb
+話す,はなす,to speak,Verb
+読む,よむ,to read,Verb
+書く,かく,to write,Verb
+買う,かう,to buy,Verb
+会う,あう,to meet,Verb
+待つ,まつ,to wait,Verb
+持つ,もつ,to have/hold,Verb
+分かる,わかる,to understand,Verb
+知る,しる,to know,Verb
+作る,つくる,to make,Verb
+使う,つかう,to use,Verb
+教える,おしえる,to teach,Verb
+覚える,おぼえる,to remember/memorize,Verb
+忘れる,わすれる,to forget,Verb
+働く,はたらく,to work,Verb
+休む,やすむ,to rest/take a break,Verb
+遊ぶ,あそぶ,to play,Verb
+歩く,あるく,to walk,Verb
+走る,はしる,to run,Verb
+泳ぐ,およぐ,to swim,Verb
+寝る,ねる,to sleep,Verb
+起きる,おきる,to wake up,Verb
+乗る,のる,to ride,Verb
+降りる,おりる,to get off,Verb
+乗換える,のりかえる,to transfer (trains),Verb
+帰る,かえる,to return home,Verb
+出る,でる,to leave/exit,Verb
+入る,はいる,to enter,Verb
+終わる,おわる,to end/finish,Verb
+始まる,はじまる,to begin/start,Verb
+開ける,あける,to open,Verb
+閉める,しめる,to close,Verb
+送る,おくる,to send,Verb
+払う,はらう,to pay,Verb

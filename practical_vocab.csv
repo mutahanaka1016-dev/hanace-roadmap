@@ -1,0 +1,101 @@
+Kanji,Kana,English,Type
+連絡,れんらく,contact/communication,Noun
+情報,じょうほう,information,Noun
+説明,せつめい,explanation,Noun
+注意,ちゅうい,attention/caution,Noun
+気持ち,きもち,feeling,Noun
+興味,きょうみ,interest,Noun
+種類,しゅるい,kind/type,Noun
+最近,さいきん,recently,Noun
+昔,むかし,old days/past,Noun
+将来,しょうらい,future (personal),Noun
+機械,きかい,machine,Noun
+技術,ぎじゅつ,technology/skill,Noun
+教育,きょういく,education,Noun
+法律,ほうりつ,law,Noun
+環境,かんきょう,environment,Noun
+記事,きじ,article/news,Noun
+番組,ばんぐみ,TV program,Noun
+広告,こうこく,advertisement,Noun
+事故,じこ,accident,Noun
+事件,じけん,incident/case,Noun
+失敗,しっぱい,failure/mistake,Noun
+成功,せいこう,success,Noun
+健康,けんこう,health,Noun
+病気,びょうき,illness/disease,Noun
+薬局,やっきょく,pharmacy,Noun
+交通,こうつう,traffic/transportation,Noun
+景色,けしき,scenery,Noun
+季節,きせつ,season,Noun
+温度,おんど,temperature,Noun
+空気,くうき,air/atmosphere,Noun
+細かい,こまかい,detailed/fine,I-Adjective
+深い,ふかい,deep,I-Adjective
+浅い,あさい,shallow,I-Adjective
+厳しい,きびしい,strict/severe,I-Adjective
+悔しい,くやしい,frustrating/regrettable,I-Adjective
+複雑,ふくざつ,complicated,Na-Adjective
+丁寧,ていねい,polite/courteous,Na-Adjective
+邪魔,じゃま,hindrance/nuisance,Na-Adjective
+立派,りっぱ,splendid/excellent,Na-Adjective
+熱心,ねっしん,enthusiastic/eager,Na-Adjective
+決める,きめる,to decide,Verb
+比べる,くらべる,to compare,Verb
+調べる,しらべる,to investigate/look up,Verb
+続ける,つづける,to continue,Verb
+集める,あつめる,to collect/gather,Verb
+直す,なおす,to fix/repair,Verb
+思い出す,おもいだす,to remember/recall,Verb
+落ちる,おちる,to fall/drop,Verb
+喜ぶ,よろこぶ,to rejoice/be glad,Verb
+怒る,おこる,to get angry,Verb
+泣く,なく,to cry,Verb
+笑う,わらう,to laugh/smile,Verb
+驚く,おどろく,to be surprised,Verb
+慣れる,なれる,to get used to,Verb
+信じる,しんじる,to believe,Verb
+伝える,つたえる,to convey/report,Verb
+変わる,かわる,to change,Verb
+探す,さがす,to look for,Verb
+選ぶ,えらぶ,to choose,Verb
+通う,かよう,to commute,Verb
+祈る,いのる,to pray,Verb
+勝つ,かつ,to win,Verb
+負ける,まける,to lose,Verb
+間に合う,まにあう,to be in time,Verb
+役に立つ,やくにたつ,to be useful,Verb
+気がつく,きがつく,to notice,Verb
+頑張る,がんばる,to do one's best,Verb
+楽しむ,たのしむ,to enjoy,Verb
+片付ける,かたづける,to tidy up,Verb
+残る,のこる,to remain,Verb
+〜てほしい,〜てほしい,want someone to do,Idiom
+〜なければいけない,〜なければいけない,must do / have to do,Idiom
+〜たい,〜たい,want to do,Idiom
+〜てください,〜てください,please do ~,Idiom
+〜てもいいですか,〜てもいいですか,may I do ~?,Idiom
+〜てはいけない,〜てはいけない,must not do ~,Idiom
+〜たことがある,〜たことがある,have done ~ before,Idiom
+〜ほうがいい,〜ほうがいい,had better do ~,Idiom
+〜つもりだ,〜つもりだ,plan to do ~,Idiom
+〜かもしれない,〜かもしれない,might be,Idiom
+〜でしょう,〜でしょう,probably,Idiom
+〜ために,〜ために,in order to / for,Idiom
+〜ながら,〜ながら,while doing ~,Idiom
+〜前に,〜まえに,before doing ~,Idiom
+〜後で,〜あとで,after doing ~,Idiom
+〜時,〜とき,when ~,Idiom
+〜と,〜と,if / when (natural consequence),Idiom
+〜ば,〜ば,if ~ (conditional),Idiom
+〜たら,〜たら,if / when (after),Idiom
+〜なら,〜なら,if it is the case that ~,Idiom
+〜ことにする,〜ことにする,decide to do ~,Idiom
+〜ことになっている,〜ことになっている,it is a rule/scheduled that ~,Idiom
+〜ようになる,〜ようになる,reach the point where ~,Idiom
+〜ようにする,〜ようにする,make an effort to ~,Idiom
+〜すぎる,〜すぎる,too much ~,Idiom
+〜やすい,〜やすい,easy to ~,Idiom
+〜にくい,〜にくい,difficult to ~,Idiom
+〜んです,〜んです,explanatory/emphasis,Idiom
+〜かどうか,〜かどうか,whether or not,Idiom
+〜という,〜という,called / named ~,Idiom

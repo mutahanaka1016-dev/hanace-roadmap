@@ -1,0 +1,982 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vocabulary Lists | Hana Banana Japanese</title>
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500;700;800&family=Quicksand:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #ff751f; /* 赤 */
+            --secondary-color: #555555; /* サブテキスト */
+            --text-color: #535353;
+            --bg-color: #FAFAFA;
+            --card-bg: #FFFFFF;
+        }
+        body { font-family: 'Quicksand', 'M PLUS Rounded 1c', sans-serif; background-color: var(--bg-color);
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='500' height='500'%3E%3Cstyle%3Etext%7Bfont-family:'M PLUS Rounded 1c',sans-serif;fill:rgba(83,83,83,0.06);font-weight:700;%7D%3C/style%3E<text x='136' y='103' font-size='28' transform='rotate(18 136 103)'>僕</text><text x='111' y='28' font-size='24' transform='rotate(27 111 28)'>は</text><text x='431' y='191' font-size='27' transform='rotate(20 431 191)'>三</text><text x='303' y='225' font-size='31' transform='rotate(2 303 225)'>十</text><text x='196' y='216' font-size='27' transform='rotate(19 196 216)'>七</text><text x='389' y='50' font-size='20' transform='rotate(12 389 50)'>歳</text><text x='438' y='285' font-size='22' transform='rotate(-25 438 285)'>で</text><text x='265' y='34' font-size='24' transform='rotate(8 265 34)'>、</text><text x='279' y='281' font-size='31' transform='rotate(-13 279 281)'>そ</text><text x='461' y='385' font-size='28' transform='rotate(-19 461 385)'>の</text><text x='268' y='456' font-size='27' transform='rotate(29 268 456)'>と</text><text x='206' y='56' font-size='29' transform='rotate(20 206 56)'>き</text><text x='22' y='271' font-size='23' transform='rotate(-11 22 271)'>ボ</text><text x='104' y='236' font-size='23' transform='rotate(22 104 236)'>ー</text><text x='378' y='457' font-size='25' transform='rotate(24 378 457)'>イ</text><text x='24' y='33' font-size='23' transform='rotate(3 24 33)'>ン</text><text x='41' y='401' font-size='22' transform='rotate(-6 41 401)'>グ</text><text x='63' y='130' font-size='20' transform='rotate(-24 63 130)'>7</text><text x='432' y='470' font-size='25' transform='rotate(17 432 470)'>4</text><text x='346' y='207' font-size='26' transform='rotate(29 346 207)'>7</text><text x='228' y='315' font-size='28' transform='rotate(-29 228 315)'>の</text><text x='213' y='131' font-size='27' transform='rotate(-13 213 131)'>シ</text><text x='349' y='376' font-size='31' transform='rotate(-2 349 376)'>ー</text><text x='473' y='117' font-size='22' transform='rotate(0 473 117)'>ト</text><text x='392' y='149' font-size='27' transform='rotate(-12 392 149)'>に</text><text x='125' y='444' font-size='26' transform='rotate(15 125 444)'>座</text><text x='218' y='381' font-size='23' transform='rotate(-29 218 381)'>っ</text><text x='344' y='319' font-size='29' transform='rotate(22 344 319)'>て</text><text x='109' y='356' font-size='31' transform='rotate(22 109 356)'>い</text><text x='14' y='462' font-size='29' transform='rotate(-25 14 462)'>た</text><text x='134' y='276' font-size='26' transform='rotate(-1 134 276)'>。</text>%3C/svg%3E");
+            background-repeat: repeat; color: var(--text-color); margin: 0; padding: 0; line-height: 1.6; }
+        header { text-align: center; padding: 60px 20px; background: #FFFFFF; border-bottom: 4px solid var(--primary-color); margin-bottom: 40px; }
+        header h1 { margin: 0; font-size: 2.5rem; letter-spacing: 2px; }
+        header p { font-weight: bold; opacity: 0.8; color: var(--secondary-color); margin-top: 10px; }
+        .container { max-width: 1000px; margin: 0 auto 100px; padding: 20px; }
+        .back-link { display: inline-flex; align-items: center; background: #FFFFFF; border: 2px solid var(--primary-color); color: var(--primary-color); padding: 10px 20px; border-radius: 25px; text-decoration: none; font-weight: bold; transition: all 0.2s; margin-bottom: 30px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
+        .back-link:hover { background: var(--primary-color); color: #FFF; transform: translateY(-2px); }
+        .vocab-level { background: var(--card-bg); border-radius: 15px; padding: 30px; margin-bottom: 40px; box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
+        .vocab-level h2 { color: var(--primary-color); border-bottom: 2px solid #efefef; padding-bottom: 15px; margin-top: 0; font-size: 1.5rem; }
+        .vocab-list { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 15px; }
+        .vocab-item { background: #f9f9f9; padding: 15px; border-radius: 8px; border-left: 5px solid var(--primary-color); transition: transform 0.2s; }
+        .vocab-item:hover { transform: translateY(-2px); box-shadow: 0 5px 10px rgba(0,0,0,0.05); }
+        .vocab-item .kana { font-size: 0.85rem; color: var(--secondary-color); margin-bottom: 2px; }
+        .vocab-item .kanji { font-size: 1.4rem; font-weight: bold; line-height: 1.2; margin-bottom: 5px; color: var(--text-color); }
+        .vocab-item .meaning { font-size: 0.95rem; font-weight: bold; }
+        
+        @media (max-width: 768px) {
+            .vocab-list { grid-template-columns: 1fr; }
+        }
+
+        .download-btn {
+            display: inline-block;
+            padding: 10px 20px;
+            margin-left: 10px;
+            background: #FFFFFF;
+            color: var(--primary-color);
+            border: 2px solid var(--primary-color);
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            text-decoration: none;
+            transition: all 0.2s;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+        .download-btn:hover {
+            background: var(--primary-color);
+            color: #FFFFFF;
+            transform: translateY(-2px);
+        }
+
+        /* Unified Navigation Styles */
+        :root {
+            --primary-color: #ff751f;
+            --secondary-color: #535353;
+            --bg-color: #F8F9FA;
+            --white: #FFFFFF;
+        }
+
+        header.global-header {
+            text-align: center;
+            padding: 40px 20px;
+            background: #FFFFFF;
+            border-bottom: 4px solid var(--primary-color);
+            margin-bottom: 40px;
+            position: relative;
+            font-family: 'Quicksand', 'M PLUS Rounded 1c', sans-serif;
+            line-height: 1.2;
+        }
+
+        .header-actions {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            gap: 10px;
+        }
+
+        .header-action-btn {
+            background: #fcfcfc;
+            border: 1px solid #eee;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            color: var(--secondary-color);
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            text-decoration: none;
+            font-family: 'Quicksand', 'M PLUS Rounded 1c', sans-serif;
+        }
+
+        .header-action-btn:hover {
+            background: #fff;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transform: translateY(-1px);
+        }
+
+        .logo-trigger {
+            cursor: pointer;
+            display: inline-block;
+            transition: all 0.3s ease;
+            padding: 10px 20px;
+            border-radius: 15px;
+            user-select: none;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .logo-trigger:hover {
+            background-color: transparent;
+            transform: translateY(-2px);
+        }
+
+        .logo-trigger h1 {
+            margin: 0;
+            font-size: 2.2rem;
+            letter-spacing: 2px;
+            color: var(--primary-color);
+            border-bottom: none;
+            padding: 0;
+        }
+
+        .logo-trigger p {
+            font-weight: bold;
+            opacity: 0.8;
+            color: var(--secondary-color);
+            margin-top: 5px;
+            font-size: 0.9rem;
+        }
+
+        .tabs {
+            display: flex;
+            justify-content: center;
+            flex-wrap: nowrap;
+            gap: 20px;
+            margin-bottom: 50px;
+            font-family: 'Quicksand', 'M PLUS Rounded 1c', sans-serif;
+        }
+
+        @media (max-width: 850px) {
+            .tabs {
+                flex-wrap: wrap;
+                gap: 15px;
+            }
+        }
+
+        .tab-btn {
+            display: inline-block;
+            box-sizing: border-box;
+            background: #FFFFFF;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+            padding: 12px 30px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            outline: none;
+            text-decoration: none;
+            font-family: 'Quicksand', 'M PLUS Rounded 1c', sans-serif;
+            text-align: center;
+        }
+
+        .tab-btn:hover {
+            background: #ffe6e6;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 10px rgba(255, 117, 31, 0.1);
+        }
+
+        .tab-btn.active {
+            background: var(--primary-color);
+            color: #FFFFFF;
+            box-shadow: 0 6px 12px rgba(255, 117, 31, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .nav-item {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%) translateY(10px);
+            background: #ffffff;
+            min-width: 220px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            border-radius: 15px;
+            padding: 10px;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            z-index: 1000;
+            border: 1px solid #eee;
+            max-height: 450px;
+            overflow-y: auto;
+        }
+
+        .nav-item:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(-50%) translateY(5px);
+        }
+
+        .dropdown-item {
+            display: block;
+            padding: 12px 15px;
+            color: var(--secondary-color);
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 10px;
+            transition: background 0.2s, color 0.2s;
+            text-align: left;
+            font-size: 0.95rem;
+            cursor: pointer;
+            border: none;
+            background: none;
+            width: 100%;
+        }
+
+        .dropdown-item:hover {
+            background: #fff5f5;
+            color: var(--primary-color);
+        }
+
+        .dropdown-divider {
+            height: 1px;
+            background: #eee;
+            margin: 8px 0;
+        }
+
+        .save-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            opacity: 0.2;
+            transition: opacity 0.2s, transform 0.2s;
+            user-select: none;
+            z-index: 10;
+        }
+        .save-btn:hover { opacity: 1 !important; transform: scale(1.2); }
+        .save-btn.active { opacity: 1; filter: drop-shadow(0 0 5px gold); }
+    
+
+
+        /* =========================================
+           📱 Global Mobile Optimization 
+           ========================================= */
+        @media (max-width: 768px) {
+            /* Header */
+            header.global-header {
+                padding: 20px 10px !important;
+            }
+            .header-actions {
+                position: relative !important;
+                top: 0 !important;
+                right: 0 !important;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+                margin-bottom: 20px;
+                width: 100%;
+            }
+            .header-action-btn {
+                width: 90%;
+                justify-content: center;
+                padding: 12px 15px !important;
+                font-size: 1rem !important;
+            }
+            .logo-trigger {
+                padding: 5px !important;
+            }
+            .logo-trigger img {
+                max-height: 100px !important;
+                width: auto !important;
+                max-width: 100% !important;
+                object-fit: contain;
+            }
+            .logo-trigger h1 {
+                font-size: 1.8rem !important;
+            }
+            .logo-trigger p {
+                font-size: 0.9rem !important;
+                padding: 0 10px;
+            }
+            
+            /* Tabs & Navigation */
+            .tabs {
+                flex-direction: column !important;
+                gap: 12px !important;
+                padding: 0 15px !important;
+                margin-bottom: 30px !important;
+            }
+            .tab-btn {
+                width: 100% !important;
+                text-align: center;
+            }
+            .sub-tabs {
+                flex-direction: column !important;
+                gap: 10px !important;
+            }
+            .sub-tab-btn {
+                width: 100% !important;
+            }
+            .dropdown-menu {
+                width: 100% !important;
+                position: static !important;
+                box-shadow: none !important;
+                border: 1px solid #eee;
+                margin-top: 5px;
+                display: flex !important;
+                flex-direction: column !important;
+                opacity: 1 !important;
+                visibility: visible !important;
+                transform: none !important;
+            }
+            
+            /* General Containers */
+            .container {
+                padding: 0 15px !important;
+                width: 100% !important;
+                box-sizing: border-box !important;
+            }
+            
+            /* Typography */
+            body { font-size: 16px !important; }
+            h1 { font-size: 1.8rem !important; }
+            h2 { font-size: 1.5rem !important; }
+            h3 { font-size: 1.3rem !important; }
+            
+            /* Roadmap / Steps */
+            .step.left, .step.right {
+                width: 100% !important;
+                float: none !important;
+                margin-left: 0 !important;
+                margin-right: 0 !important;
+                margin-top: 20px !important;
+            }
+            .roadmap::before {
+                display: none !important;
+            }
+            
+            /* Grids and Flex layouts */
+            .cycle-grid {
+                grid-template-columns: 1fr !important;
+            }
+            .cycle-grid::before { display: none !important; }
+            .cycle-item {
+                margin-left: 0 !important;
+                width: 100% !important;
+            }
+            
+            /* Profiles and Cards */
+            #booking > div, .starthere-card {
+                padding: 25px 15px !important;
+                flex-direction: column !important;
+                text-align: center !important;
+            }
+            #booking > div img {
+                width: 150px !important;
+                height: 150px !important;
+            }
+            
+            /* Tables */
+            table {
+                display: block !important;
+                overflow-x: auto !important;
+                white-space: nowrap !important;
+                width: 100% !important;
+            }
+            
+            /* Modals and Today's Vocab */
+            .modal-content, .search-modal-content {
+                width: 95% !important;
+                padding: 20px 15px !important;
+                margin: 20px auto !important;
+                box-sizing: border-box !important;
+                overflow-x: hidden !important;
+            }
+            .vocab-list {
+                display: flex !important;
+                flex-direction: column !important;
+                gap: 10px !important;
+            }
+            .vocab-item {
+                flex-direction: column !important;
+                align-items: flex-start !important;
+                padding: 10px !important;
+                width: 100% !important;
+                box-sizing: border-box !important;
+            }
+            .vocab-item .kana, .vocab-item .kanji, .vocab-item .meaning {
+                width: 100% !important;
+                text-align: left !important;
+                white-space: normal !important;
+                word-wrap: break-word !important;
+            }
+            
+            /* Buttons */
+            .cta-btn-premium, .learn-btn, .download-btn {
+                padding: 15px 20px !important;
+                font-size: 1.1rem !important;
+                width: 100% !important;
+                box-sizing: border-box !important;
+                text-align: center !important;
+            }
+            
+            /* Cheat Sheet Lists */
+            ul.vocab-list, .cheat-sheet-list {
+                padding: 0 !important;
+                width: 100% !important;
+            }
+            .cheat-sheet-checkbox + a {
+                white-space: normal !important;
+            }
+        }
+
+        /* Unified Mobile Optimization */
+        @media (max-width: 768px) {
+            header.global-header {
+                padding: 20px 10px !important;
+            }
+            .header-actions {
+                position: relative !important;
+                top: 0 !important;
+                right: 0 !important;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+                margin-bottom: 20px;
+                width: 100%;
+            }
+            .header-action-btn {
+                width: 90%;
+                justify-content: center;
+                padding: 12px 15px !important;
+                font-size: 1rem !important;
+            }
+            .logo-trigger h1 {
+                font-size: 2.2rem !important;
+                letter-spacing: -1px !important;
+            }
+            .logo-trigger p {
+                font-size: 0.85rem !important;
+                padding: 0 10px;
+            }
+            .tabs {
+                flex-direction: column !important;
+                gap: 10px !important;
+                padding: 0 15px !important;
+            }
+            .tab-btn {
+                width: 100% !important;
+                padding: 12px !important;
+                font-size: 1rem !important;
+            }
+            .container {
+                padding: 0 15px !important;
+                width: 100% !important;
+                box-sizing: border-box !important;
+            }
+            /* Roadmap Fixes */
+            .roadmap::before { display: none !important; }
+            .step.left, .step.right {
+                width: 100% !important;
+                float: none !important;
+                margin: 0 0 20px 0 !important;
+                padding: 20px !important;
+            }
+            /* Table Fixes */
+            table {
+                display: block !important;
+                overflow-x: auto !important;
+                -webkit-overflow-scrolling: touch;
+                width: 100% !important;
+            }
+            /* Modal Fixes */
+            .modal-content, .search-modal-content {
+                width: 95% !important;
+                margin: 10px auto !important;
+                padding: 20px 15px !important;
+            }
+            /* Grid Fixes */
+            .cycle-grid {
+                grid-template-columns: 1fr !important;
+                gap: 20px !important;
+            }
+            .cycle-item {
+                width: 100% !important;
+                margin: 0 !important;
+                padding: 20px !important;
+            }
+            .starthere-card {
+                padding: 30px 15px !important;
+            }
+            .starthere-title {
+                font-size: 1.8rem !important;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <header class="global-header">
+        <div class="header-actions">
+            <a href="index.html?search=true" class="header-action-btn" style="text-decoration: none;">🔍 Search</a>
+            <a href="myvocab.html" class="header-action-btn" style="text-decoration: none;"><svg style="width: 18px; height: 18px; margin-right: 6px; vertical-align: text-bottom;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>Saved Words</a>
+            <a href="https://discord.gg/ZgkKXdpt" target="_blank" class="header-action-btn" style="text-decoration: none;">💬 24/7 Chat Support</a>
+        </div>
+        <a href="index.html" class="logo-trigger">
+            <h1 style="font-size: 4rem; font-weight: 800; color: var(--primary-color); font-family: 'Quicksand', 'M PLUS Rounded 1c', sans-serif; letter-spacing: -2px; margin-bottom: 5px; margin-top: 10px; text-shadow: 2px 2px 4px rgba(0,0,0,0.05);">Hanace</h1>
+            <p>Hanace [Ha-na-su]-Trace your path to bloom, Speak with confidence.</p>
+        </a>
+    </header>
+
+    <div class="tabs">
+        <a href="index.html?tab=roadmap" class="tab-btn">Roadmap</a>
+        <a href="index.html?tab=resources" class="tab-btn active">Resources</a>
+        <a href="index.html?tab=booking" class="tab-btn">Book a Lesson</a>
+    </div>
+
+<header style="padding: 40px 20px;">
+    <h1>Vocabulary Lists</h1>
+    <p>Essential Vocabulary Lists</p>
+</header>
+
+<div class="container">
+
+    <div class="vocab-level" id="beginner-vocab">
+        <h2>🍌 Beginner Step</h2>
+        
+        <div style="text-align: right; margin-bottom: 20px;">
+            <a href="beginner_vocab.pdf" class="download-btn" download>📥 Download PDF</a>
+            <a href="beginner_vocab.csv" class="download-btn" download>📥 Download CSV for Anki</a>
+        </div>
+
+        <h3 style="color: var(--primary-color); border-bottom: 2px solid #efefef; padding-bottom: 10px; font-size: 1.2rem; margin-top: 20px; margin-bottom: 15px;">Nouns</h3>
+        <ul class="vocab-list">
+            <li class="vocab-item"><div class="kana">わたし</div><div class="kanji">私</div><div class="meaning">I / myself</div></li>
+            <li class="vocab-item"><div class="kana">ひと</div><div class="kanji">人</div><div class="meaning">person</div></li>
+            <li class="vocab-item"><div class="kana">おとこ</div><div class="kanji">男</div><div class="meaning">man</div></li>
+            <li class="vocab-item"><div class="kana">おんな</div><div class="kanji">女</div><div class="meaning">woman</div></li>
+            <li class="vocab-item"><div class="kana">こ</div><div class="kanji">子</div><div class="meaning">child</div></li>
+            <li class="vocab-item"><div class="kana">ともだち</div><div class="kanji">友達</div><div class="meaning">friend</div></li>
+            <li class="vocab-item"><div class="kana">がくせい</div><div class="kanji">学生</div><div class="meaning">student</div></li>
+            <li class="vocab-item"><div class="kana">せんせい</div><div class="kanji">先生</div><div class="meaning">teacher</div></li>
+            <li class="vocab-item"><div class="kana">がっこう</div><div class="kanji">学校</div><div class="meaning">school</div></li>
+            <li class="vocab-item"><div class="kana">ほん</div><div class="kanji">本</div><div class="meaning">book</div></li>
+            <li class="vocab-item"><div class="kana">じしょ</div><div class="kanji">辞書</div><div class="meaning">dictionary</div></li>
+            <li class="vocab-item"><div class="kana">ざっし</div><div class="kanji">雑誌</div><div class="meaning">magazine</div></li>
+            <li class="vocab-item"><div class="kana">しんぶん</div><div class="kanji">新聞</div><div class="meaning">newspaper</div></li>
+            <li class="vocab-item"><div class="kana">のーと</div><div class="kanji">ノート</div><div class="meaning">notebook</div></li>
+            <li class="vocab-item"><div class="kana">てちょう</div><div class="kanji">手帳</div><div class="meaning">pocket notebook</div></li>
+            <li class="vocab-item"><div class="kana">めいし</div><div class="kanji">名刺</div><div class="meaning">business card</div></li>
+            <li class="vocab-item"><div class="kana">えんぴつ</div><div class="kanji">鉛筆</div><div class="meaning">pencil</div></li>
+            <li class="vocab-item"><div class="kana">とけい</div><div class="kanji">時計</div><div class="meaning">watch / clock</div></li>
+            <li class="vocab-item"><div class="kana">かさ</div><div class="kanji">傘</div><div class="meaning">umbrella</div></li>
+            <li class="vocab-item"><div class="kana">かばん</div><div class="kanji">鞄</div><div class="meaning">bag</div></li>
+            <li class="vocab-item"><div class="kana">くつ</div><div class="kanji">靴</div><div class="meaning">shoes</div></li>
+            <li class="vocab-item"><div class="kana">めがね</div><div class="kanji">眼鏡</div><div class="meaning">glasses</div></li>
+            <li class="vocab-item"><div class="kana">みず</div><div class="kanji">水</div><div class="meaning">water</div></li>
+            <li class="vocab-item"><div class="kana">おちゃ</div><div class="kanji">お茶</div><div class="meaning">tea</div></li>
+            <li class="vocab-item"><div class="kana">ごはん</div><div class="kanji">ご飯</div><div class="meaning">cooked rice / meal</div></li>
+            <li class="vocab-item"><div class="kana">ぱん</div><div class="kanji">パン</div><div class="meaning">bread</div></li>
+            <li class="vocab-item"><div class="kana">にく</div><div class="kanji">肉</div><div class="meaning">meat</div></li>
+            <li class="vocab-item"><div class="kana">さかな</div><div class="kanji">魚</div><div class="meaning">fish</div></li>
+            <li class="vocab-item"><div class="kana">たまご</div><div class="kanji">卵</div><div class="meaning">egg</div></li>
+            <li class="vocab-item"><div class="kana">やさい</div><div class="kanji">野菜</div><div class="meaning">vegetable</div></li>
+            <li class="vocab-item"><div class="kana">くだもの</div><div class="kanji">果物</div><div class="meaning">fruit</div></li>
+            <li class="vocab-item"><div class="kana">りょうり</div><div class="kanji">料理</div><div class="meaning">cooking / cuisine</div></li>
+            <li class="vocab-item"><div class="kana">へや</div><div class="kanji">部屋</div><div class="meaning">room</div></li>
+            <li class="vocab-item"><div class="kana">まど</div><div class="kanji">窓</div><div class="meaning">window</div></li>
+            <li class="vocab-item"><div class="kana">どあ</div><div class="kanji">ドア</div><div class="meaning">door</div></li>
+            <li class="vocab-item"><div class="kana">つくえ</div><div class="kanji">机</div><div class="meaning">desk</div></li>
+            <li class="vocab-item"><div class="kana">いす</div><div class="kanji">椅子</div><div class="meaning">chair</div></li>
+            <li class="vocab-item"><div class="kana">べっど</div><div class="kanji">ベッド</div><div class="meaning">bed</div></li>
+            <li class="vocab-item"><div class="kana">いえ</div><div class="kanji">家</div><div class="meaning">house</div></li>
+            <li class="vocab-item"><div class="kana">にわ</div><div class="kanji">庭</div><div class="meaning">garden</div></li>
+            <li class="vocab-item"><div class="kana">いぬ</div><div class="kanji">犬</div><div class="meaning">dog</div></li>
+            <li class="vocab-item"><div class="kana">ねこ</div><div class="kanji">猫</div><div class="meaning">cat</div></li>
+            <li class="vocab-item"><div class="kana">くるま</div><div class="kanji">車</div><div class="meaning">car</div></li>
+            <li class="vocab-item"><div class="kana">じてんしゃ</div><div class="kanji">自転車</div><div class="meaning">bicycle</div></li>
+            <li class="vocab-item"><div class="kana">でんしゃ</div><div class="kanji">電車</div><div class="meaning">train</div></li>
+            <li class="vocab-item"><div class="kana">ちかてつ</div><div class="kanji">地下鉄</div><div class="meaning">subway</div></li>
+            <li class="vocab-item"><div class="kana">ひこうき</div><div class="kanji">飛行機</div><div class="meaning">airplane</div></li>
+            <li class="vocab-item"><div class="kana">ふね</div><div class="kanji">船</div><div class="meaning">ship / boat</div></li>
+            <li class="vocab-item"><div class="kana">えき</div><div class="kanji">駅</div><div class="meaning">station</div></li>
+            <li class="vocab-item"><div class="kana">びょういん</div><div class="kanji">病院</div><div class="meaning">hospital</div></li>
+            <li class="vocab-item"><div class="kana">くすり</div><div class="kanji">薬</div><div class="meaning">medicine</div></li>
+            <li class="vocab-item"><div class="kana">みせ</div><div class="kanji">店</div><div class="meaning">shop / store</div></li>
+            <li class="vocab-item"><div class="kana">ぎんこう</div><div class="kanji">銀行</div><div class="meaning">bank</div></li>
+            <li class="vocab-item"><div class="kana">ゆうびんきょく</div><div class="kanji">郵便局</div><div class="meaning">post office</div></li>
+            <li class="vocab-item"><div class="kana">としょかん</div><div class="kanji">図書館</div><div class="meaning">library</div></li>
+            <li class="vocab-item"><div class="kana">こうえん</div><div class="kanji">公園</div><div class="meaning">park</div></li>
+            <li class="vocab-item"><div class="kana">いろ</div><div class="kanji">色</div><div class="meaning">color</div></li>
+            <li class="vocab-item"><div class="kana">あか</div><div class="kanji">赤</div><div class="meaning">red</div></li>
+            <li class="vocab-item"><div class="kana">あお</div><div class="kanji">青</div><div class="meaning">blue</div></li>
+            <li class="vocab-item"><div class="kana">しろ</div><div class="kanji">白</div><div class="meaning">white</div></li>
+            <li class="vocab-item"><div class="kana">くろ</div><div class="kanji">黒</div><div class="meaning">black</div></li>
+        </ul>
+
+        <h3 style="color: var(--primary-color); border-bottom: 2px solid #efefef; padding-bottom: 10px; font-size: 1.2rem; margin-top: 30px; margin-bottom: 15px;">I-Adjectives</h3>
+        <ul class="vocab-list">
+            <li class="vocab-item"><div class="kana">おおきい</div><div class="kanji">大きい</div><div class="meaning">big</div></li>
+            <li class="vocab-item"><div class="kana">ちいさい</div><div class="kanji">小さい</div><div class="meaning">small</div></li>
+            <li class="vocab-item"><div class="kana">あたらしい</div><div class="kanji">新しい</div><div class="meaning">new</div></li>
+            <li class="vocab-item"><div class="kana">ふるい</div><div class="kanji">古い</div><div class="meaning">old</div></li>
+            <li class="vocab-item"><div class="kana">よい</div><div class="kanji">良い</div><div class="meaning">good</div></li>
+            <li class="vocab-item"><div class="kana">わるい</div><div class="kanji">悪い</div><div class="meaning">bad</div></li>
+            <li class="vocab-item"><div class="kana">あつい</div><div class="kanji">暑い</div><div class="meaning">hot (weather)</div></li>
+            <li class="vocab-item"><div class="kana">さむい</div><div class="kanji">寒い</div><div class="meaning">cold (weather)</div></li>
+            <li class="vocab-item"><div class="kana">つめたい</div><div class="kanji">冷たい</div><div class="meaning">cold (things)</div></li>
+            <li class="vocab-item"><div class="kana">むずかしい</div><div class="kanji">難しい</div><div class="meaning">difficult</div></li>
+            <li class="vocab-item"><div class="kana">やさしい</div><div class="kanji">易しい</div><div class="meaning">easy</div></li>
+            <li class="vocab-item"><div class="kana">たかい</div><div class="kanji">高い</div><div class="meaning">expensive / high</div></li>
+            <li class="vocab-item"><div class="kana">やすい</div><div class="kanji">安い</div><div class="meaning">cheap</div></li>
+            <li class="vocab-item"><div class="kana">ひくい</div><div class="kanji">低い</div><div class="meaning">low</div></li>
+            <li class="vocab-item"><div class="kana">おもしろい</div><div class="kanji">面白い</div><div class="meaning">interesting</div></li>
+            <li class="vocab-item"><div class="kana">おいしい</div><div class="kanji">美味しい</div><div class="meaning">delicious</div></li>
+            <li class="vocab-item"><div class="kana">いそがしい</div><div class="kanji">忙しい</div><div class="meaning">busy</div></li>
+            <li class="vocab-item"><div class="kana">たのしい</div><div class="kanji">楽しい</div><div class="meaning">fun</div></li>
+            <li class="vocab-item"><div class="kana">いたい</div><div class="kanji">痛い</div><div class="meaning">painful</div></li>
+            <li class="vocab-item"><div class="kana">ちかい</div><div class="kanji">近い</div><div class="meaning">close / near</div></li>
+            <li class="vocab-item"><div class="kana">とおい</div><div class="kanji">遠い</div><div class="meaning">far</div></li>
+            <li class="vocab-item"><div class="kana">はやい</div><div class="kanji">早い</div><div class="meaning">early / fast</div></li>
+            <li class="vocab-item"><div class="kana">おそい</div><div class="kanji">遅い</div><div class="meaning">late / slow</div></li>
+            <li class="vocab-item"><div class="kana">おもい</div><div class="kanji">重い</div><div class="meaning">heavy</div></li>
+            <li class="vocab-item"><div class="kana">かるい</div><div class="kanji">軽い</div><div class="meaning">light (weight)</div></li>
+            <li class="vocab-item"><div class="kana">あまい</div><div class="kanji">甘い</div><div class="meaning">sweet</div></li>
+            <li class="vocab-item"><div class="kana">からい</div><div class="kanji">辛い</div><div class="meaning">spicy</div></li>
+        </ul>
+
+        <h3 style="color: var(--primary-color); border-bottom: 2px solid #efefef; padding-bottom: 10px; font-size: 1.2rem; margin-top: 30px; margin-bottom: 15px;">Na-Adjectives</h3>
+        <ul class="vocab-list">
+            <li class="vocab-item"><div class="kana">しずか</div><div class="kanji">静か</div><div class="meaning">quiet</div></li>
+            <li class="vocab-item"><div class="kana">ゆうめい</div><div class="kanji">有名</div><div class="meaning">famous</div></li>
+            <li class="vocab-item"><div class="kana">しんせつ</div><div class="kanji">親切</div><div class="meaning">kind</div></li>
+            <li class="vocab-item"><div class="kana">げんき</div><div class="kanji">元気</div><div class="meaning">healthy / energetic</div></li>
+            <li class="vocab-item"><div class="kana">ひま</div><div class="kanji">暇</div><div class="meaning">free time</div></li>
+            <li class="vocab-item"><div class="kana">べんり</div><div class="kanji">便利</div><div class="meaning">convenient</div></li>
+            <li class="vocab-item"><div class="kana">きれい</div><div class="kanji">綺麗</div><div class="meaning">beautiful / clean</div></li>
+            <li class="vocab-item"><div class="kana">すき</div><div class="kanji">好き</div><div class="meaning">to like</div></li>
+            <li class="vocab-item"><div class="kana">きらい</div><div class="kanji">嫌い</div><div class="meaning">to dislike</div></li>
+            <li class="vocab-item"><div class="kana">じょうず</div><div class="kanji">上手</div><div class="meaning">skillful / good at</div></li>
+            <li class="vocab-item"><div class="kana">へた</div><div class="kanji">下手</div><div class="meaning">unskillful / bad at</div></li>
+            <li class="vocab-item"><div class="kana">たいへん</div><div class="kanji">大変</div><div class="meaning">tough / hard</div></li>
+        </ul>
+    </div>
+
+    <div class="vocab-level" id="intermediate-vocab">
+        <h2>🍌🍌 Intermediate Step</h2>
+        
+        <div style="text-align: right; margin-bottom: 20px;">
+            <a href="intermediate_vocab.pdf" class="download-btn" download>📥 Download PDF</a>
+            <a href="intermediate_vocab.csv" class="download-btn" download>📥 Download CSV for Anki</a>
+        </div>
+
+        <h3 style="color: var(--primary-color); border-bottom: 2px solid #efefef; padding-bottom: 10px; font-size: 1.2rem; margin-top: 20px; margin-bottom: 15px;">Nouns</h3>
+        <ul class="vocab-list">
+            <li class="vocab-item"><div class="kana">かぞく</div><div class="kanji">家族</div><div class="meaning">family</div></li>
+            <li class="vocab-item"><div class="kana">りょうしん</div><div class="kanji">両親</div><div class="meaning">parents</div></li>
+            <li class="vocab-item"><div class="kana">きょうだい</div><div class="kanji">兄弟</div><div class="meaning">siblings</div></li>
+            <li class="vocab-item"><div class="kana">しごと</div><div class="kanji">仕事</div><div class="meaning">job / work</div></li>
+            <li class="vocab-item"><div class="kana">かいしゃ</div><div class="kanji">会社</div><div class="meaning">company</div></li>
+            <li class="vocab-item"><div class="kana">けいざい</div><div class="kanji">経済</div><div class="meaning">economy</div></li>
+            <li class="vocab-item"><div class="kana">せいじ</div><div class="kanji">政治</div><div class="meaning">politics</div></li>
+            <li class="vocab-item"><div class="kana">ぶんか</div><div class="kanji">文化</div><div class="meaning">culture</div></li>
+            <li class="vocab-item"><div class="kana">かがく</div><div class="kanji">科学</div><div class="meaning">science</div></li>
+            <li class="vocab-item"><div class="kana">しぜん</div><div class="kanji">自然</div><div class="meaning">nature</div></li>
+            <li class="vocab-item"><div class="kana">しゃかい</div><div class="kanji">社会</div><div class="meaning">society</div></li>
+            <li class="vocab-item"><div class="kana">れきし</div><div class="kanji">歴史</div><div class="meaning">history</div></li>
+            <li class="vocab-item"><div class="kana">りゆう</div><div class="kanji">理由</div><div class="meaning">reason</div></li>
+            <li class="vocab-item"><div class="kana">げんいん</div><div class="kanji">原因</div><div class="meaning">cause</div></li>
+            <li class="vocab-item"><div class="kana">けっか</div><div class="kanji">結果</div><div class="meaning">result</div></li>
+            <li class="vocab-item"><div class="kana">もくてき</div><div class="kanji">目的</div><div class="meaning">purpose</div></li>
+            <li class="vocab-item"><div class="kana">ほうほう</div><div class="kanji">方法</div><div class="meaning">method</div></li>
+            <li class="vocab-item"><div class="kana">もんだい</div><div class="kanji">問題</div><div class="meaning">problem</div></li>
+            <li class="vocab-item"><div class="kana">しつもん</div><div class="kanji">質問</div><div class="meaning">question</div></li>
+            <li class="vocab-item"><div class="kana">こたえ</div><div class="kanji">答え</div><div class="meaning">answer</div></li>
+            <li class="vocab-item"><div class="kana">しあい</div><div class="kanji">試合</div><div class="meaning">match / game</div></li>
+            <li class="vocab-item"><div class="kana">れんしゅう</div><div class="kanji">練習</div><div class="meaning">practice</div></li>
+            <li class="vocab-item"><div class="kana">べんきょう</div><div class="kanji">勉強</div><div class="meaning">study</div></li>
+            <li class="vocab-item"><div class="kana">けんきゅう</div><div class="kanji">研究</div><div class="meaning">research</div></li>
+            <li class="vocab-item"><div class="kana">りょこう</div><div class="kanji">旅行</div><div class="meaning">travel / trip</div></li>
+            <li class="vocab-item"><div class="kana">かいぎ</div><div class="kanji">会議</div><div class="meaning">meeting</div></li>
+            <li class="vocab-item"><div class="kana">よてい</div><div class="kanji">予定</div><div class="meaning">schedule / plan</div></li>
+            <li class="vocab-item"><div class="kana">やくそく</div><div class="kanji">約束</div><div class="meaning">promise / appointment</div></li>
+            <li class="vocab-item"><div class="kana">けいけん</div><div class="kanji">経験</div><div class="meaning">experience</div></li>
+            <li class="vocab-item"><div class="kana">かんけい</div><div class="kanji">関係</div><div class="meaning">relationship</div></li>
+            <li class="vocab-item"><div class="kana">いけん</div><div class="kanji">意見</div><div class="meaning">opinion</div></li>
+            <li class="vocab-item"><div class="kana">いみ</div><div class="kanji">意味</div><div class="meaning">meaning</div></li>
+            <li class="vocab-item"><div class="kana">じゅんび</div><div class="kanji">準備</div><div class="meaning">preparation</div></li>
+            <li class="vocab-item"><div class="kana">しょくじ</div><div class="kanji">食事</div><div class="meaning">meal</div></li>
+            <li class="vocab-item"><div class="kana">せいかつ</div><div class="kanji">生活</div><div class="meaning">lifestyle / daily life</div></li>
+            <li class="vocab-item"><div class="kana">じんせい</div><div class="kanji">人生</div><div class="meaning">life</div></li>
+            <li class="vocab-item"><div class="kana">せかい</div><div class="kanji">世界</div><div class="meaning">world</div></li>
+            <li class="vocab-item"><div class="kana">みらい</div><div class="kanji">未来</div><div class="meaning">future</div></li>
+            <li class="vocab-item"><div class="kana">へいわ</div><div class="kanji">平和</div><div class="meaning">peace</div></li>
+            <li class="vocab-item"><div class="kana">じゆう</div><div class="kanji">自由</div><div class="meaning">freedom (noun)</div></li>
+        </ul>
+
+        <h3 style="color: var(--primary-color); border-bottom: 2px solid #efefef; padding-bottom: 10px; font-size: 1.2rem; margin-top: 30px; margin-bottom: 15px;">I-Adjectives</h3>
+        <ul class="vocab-list">
+            <li class="vocab-item"><div class="kana">すばらしい</div><div class="kanji">素晴らしい</div><div class="meaning">wonderful</div></li>
+            <li class="vocab-item"><div class="kana">はずかしい</div><div class="kanji">恥ずかしい</div><div class="meaning">embarrassing</div></li>
+            <li class="vocab-item"><div class="kana">めずらしい</div><div class="kanji">珍しい</div><div class="meaning">rare</div></li>
+            <li class="vocab-item"><div class="kana">きびしい</div><div class="kanji">厳しい</div><div class="meaning">strict</div></li>
+            <li class="vocab-item"><div class="kana">くわしい</div><div class="kanji">詳しい</div><div class="meaning">detailed</div></li>
+            <li class="vocab-item"><div class="kana">かなしい</div><div class="kanji">悲しい</div><div class="meaning">sad</div></li>
+            <li class="vocab-item"><div class="kana">うれしい</div><div class="kanji">嬉しい</div><div class="meaning">glad/happy</div></li>
+            <li class="vocab-item"><div class="kana">さびしい</div><div class="kanji">寂しい</div><div class="meaning">lonely</div></li>
+            <li class="vocab-item"><div class="kana">ねむい</div><div class="kanji">眠い</div><div class="meaning">sleepy</div></li>
+            <li class="vocab-item"><div class="kana">ただしい</div><div class="kanji">正しい</div><div class="meaning">correct</div></li>
+        </ul>
+
+        <h3 style="color: var(--primary-color); border-bottom: 2px solid #efefef; padding-bottom: 10px; font-size: 1.2rem; margin-top: 30px; margin-bottom: 15px;">Na-Adjectives</h3>
+        <ul class="vocab-list">
+            <li class="vocab-item"><div class="kana">たいせつ</div><div class="kanji">大切</div><div class="meaning">important</div></li>
+            <li class="vocab-item"><div class="kana">ふくざつ</div><div class="kanji">複雑</div><div class="meaning">complex</div></li>
+            <li class="vocab-item"><div class="kana">かんたん</div><div class="kanji">簡単</div><div class="meaning">simple/easy</div></li>
+            <li class="vocab-item"><div class="kana">あんぜん</div><div class="kanji">安全</div><div class="meaning">safe</div></li>
+            <li class="vocab-item"><div class="kana">きけん</div><div class="kanji">危険</div><div class="meaning">dangerous</div></li>
+            <li class="vocab-item"><div class="kana">とくべつ</div><div class="kanji">特別</div><div class="meaning">special</div></li>
+            <li class="vocab-item"><div class="kana">じゆう</div><div class="kanji">自由</div><div class="meaning">free (na-adj)</div></li>
+            <li class="vocab-item"><div class="kana">ねっしん</div><div class="kanji">熱心</div><div class="meaning">enthusiastic</div></li>
+            <li class="vocab-item"><div class="kana">ていねい</div><div class="kanji">丁寧</div><div class="meaning">polite/careful</div></li>
+            <li class="vocab-item"><div class="kana">じゅうぶん</div><div class="kanji">十分</div><div class="meaning">enough / sufficient</div></li>
+        </ul>
+
+        <h3 style="color: var(--primary-color); border-bottom: 2px solid #efefef; padding-bottom: 10px; font-size: 1.2rem; margin-top: 30px; margin-bottom: 15px;">Verbs</h3>
+        <ul class="vocab-list">
+            <li class="vocab-item"><div class="kana">たべる</div><div class="kanji">食べる</div><div class="meaning">to eat</div></li>
+            <li class="vocab-item"><div class="kana">のむ</div><div class="kanji">飲む</div><div class="meaning">to drink</div></li>
+            <li class="vocab-item"><div class="kana">いく</div><div class="kanji">行く</div><div class="meaning">to go</div></li>
+            <li class="vocab-item"><div class="kana">くる</div><div class="kanji">来る</div><div class="meaning">to come</div></li>
+            <li class="vocab-item"><div class="kana">みる</div><div class="kanji">見る</div><div class="meaning">to see/watch</div></li>
+            <li class="vocab-item"><div class="kana">きく</div><div class="kanji">聞く</div><div class="meaning">to listen/hear</div></li>
+            <li class="vocab-item"><div class="kana">はなす</div><div class="kanji">話す</div><div class="meaning">to speak</div></li>
+            <li class="vocab-item"><div class="kana">よむ</div><div class="kanji">読む</div><div class="meaning">to read</div></li>
+            <li class="vocab-item"><div class="kana">かく</div><div class="kanji">書く</div><div class="meaning">to write</div></li>
+            <li class="vocab-item"><div class="kana">かう</div><div class="kanji">買う</div><div class="meaning">to buy</div></li>
+            <li class="vocab-item"><div class="kana">あう</div><div class="kanji">会う</div><div class="meaning">to meet</div></li>
+            <li class="vocab-item"><div class="kana">まつ</div><div class="kanji">待つ</div><div class="meaning">to wait</div></li>
+            <li class="vocab-item"><div class="kana">もつ</div><div class="kanji">持つ</div><div class="meaning">to have/hold</div></li>
+            <li class="vocab-item"><div class="kana">わかる</div><div class="kanji">分かる</div><div class="meaning">to understand</div></li>
+            <li class="vocab-item"><div class="kana">しる</div><div class="kanji">知る</div><div class="meaning">to know</div></li>
+            <li class="vocab-item"><div class="kana">つくる</div><div class="kanji">作る</div><div class="meaning">to make</div></li>
+            <li class="vocab-item"><div class="kana">つかう</div><div class="kanji">使う</div><div class="meaning">to use</div></li>
+            <li class="vocab-item"><div class="kana">おしえる</div><div class="kanji">教える</div><div class="meaning">to teach</div></li>
+            <li class="vocab-item"><div class="kana">おぼえる</div><div class="kanji">覚える</div><div class="meaning">to remember/memorize</div></li>
+            <li class="vocab-item"><div class="kana">わすれる</div><div class="kanji">忘れる</div><div class="meaning">to forget</div></li>
+            <li class="vocab-item"><div class="kana">はたらく</div><div class="kanji">働く</div><div class="meaning">to work</div></li>
+            <li class="vocab-item"><div class="kana">やすむ</div><div class="kanji">休む</div><div class="meaning">to rest/take a break</div></li>
+            <li class="vocab-item"><div class="kana">あそぶ</div><div class="kanji">遊ぶ</div><div class="meaning">to play</div></li>
+            <li class="vocab-item"><div class="kana">あるく</div><div class="kanji">歩く</div><div class="meaning">to walk</div></li>
+            <li class="vocab-item"><div class="kana">はしる</div><div class="kanji">走る</div><div class="meaning">to run</div></li>
+            <li class="vocab-item"><div class="kana">およぐ</div><div class="kanji">泳ぐ</div><div class="meaning">to swim</div></li>
+            <li class="vocab-item"><div class="kana">ねる</div><div class="kanji">寝る</div><div class="meaning">to sleep</div></li>
+            <li class="vocab-item"><div class="kana">おきる</div><div class="kanji">起きる</div><div class="meaning">to wake up</div></li>
+            <li class="vocab-item"><div class="kana">のる</div><div class="kanji">乗る</div><div class="meaning">to ride</div></li>
+            <li class="vocab-item"><div class="kana">おりる</div><div class="kanji">降りる</div><div class="meaning">to get off</div></li>
+            <li class="vocab-item"><div class="kana">のりかえる</div><div class="kanji">乗換える</div><div class="meaning">to transfer (trains)</div></li>
+            <li class="vocab-item"><div class="kana">かえる</div><div class="kanji">帰る</div><div class="meaning">to return home</div></li>
+            <li class="vocab-item"><div class="kana">でる</div><div class="kanji">出る</div><div class="meaning">to leave/exit</div></li>
+            <li class="vocab-item"><div class="kana">はいる</div><div class="kanji">入る</div><div class="meaning">to enter</div></li>
+            <li class="vocab-item"><div class="kana">おわる</div><div class="kanji">終わる</div><div class="meaning">to end/finish</div></li>
+            <li class="vocab-item"><div class="kana">はじまる</div><div class="kanji">始まる</div><div class="meaning">to begin/start</div></li>
+            <li class="vocab-item"><div class="kana">あける</div><div class="kanji">開ける</div><div class="meaning">to open</div></li>
+            <li class="vocab-item"><div class="kana">しめる</div><div class="kanji">閉める</div><div class="meaning">to close</div></li>
+            <li class="vocab-item"><div class="kana">おくる</div><div class="kanji">送る</div><div class="meaning">to send</div></li>
+            <li class="vocab-item"><div class="kana">はらう</div><div class="kanji">払う</div><div class="meaning">to pay</div></li>
+        </ul>
+    </div>
+
+    <div class="vocab-level" id="practical-vocab">
+        <h2>🍌🍌🍌 Practical Step</h2>
+        
+        <div style="text-align: right; margin-bottom: 20px;">
+            <a href="practical_vocab.pdf" class="download-btn" download>📥 Download PDF</a>
+            <a href="practical_vocab.csv" class="download-btn" download>📥 Download CSV for Anki</a>
+        </div>
+
+        <h3 style="color: var(--primary-color); border-bottom: 2px solid #efefef; padding-bottom: 10px; font-size: 1.2rem; margin-top: 20px; margin-bottom: 15px;">Nouns</h3>
+        <ul class="vocab-list">
+            <li class="vocab-item"><div class="kana">れんらく</div><div class="kanji">連絡</div><div class="meaning">contact/communication</div></li>
+            <li class="vocab-item"><div class="kana">じょうほう</div><div class="kanji">情報</div><div class="meaning">information</div></li>
+            <li class="vocab-item"><div class="kana">せつめい</div><div class="kanji">説明</div><div class="meaning">explanation</div></li>
+            <li class="vocab-item"><div class="kana">ちゅうい</div><div class="kanji">注意</div><div class="meaning">attention/caution</div></li>
+            <li class="vocab-item"><div class="kana">きもち</div><div class="kanji">気持ち</div><div class="meaning">feeling</div></li>
+            <li class="vocab-item"><div class="kana">きょうみ</div><div class="kanji">興味</div><div class="meaning">interest</div></li>
+            <li class="vocab-item"><div class="kana">しゅるい</div><div class="kanji">種類</div><div class="meaning">kind/type</div></li>
+            <li class="vocab-item"><div class="kana">さいきん</div><div class="kanji">最近</div><div class="meaning">recently</div></li>
+            <li class="vocab-item"><div class="kana">むかし</div><div class="kanji">昔</div><div class="meaning">old days/past</div></li>
+            <li class="vocab-item"><div class="kana">しょうらい</div><div class="kanji">将来</div><div class="meaning">future (personal)</div></li>
+            <li class="vocab-item"><div class="kana">きかい</div><div class="kanji">機械</div><div class="meaning">machine</div></li>
+            <li class="vocab-item"><div class="kana">ぎじゅつ</div><div class="kanji">技術</div><div class="meaning">technology/skill</div></li>
+            <li class="vocab-item"><div class="kana">きょういく</div><div class="kanji">教育</div><div class="meaning">education</div></li>
+            <li class="vocab-item"><div class="kana">ほうりつ</div><div class="kanji">法律</div><div class="meaning">law</div></li>
+            <li class="vocab-item"><div class="kana">かんきょう</div><div class="kanji">環境</div><div class="meaning">environment</div></li>
+            <li class="vocab-item"><div class="kana">きじ</div><div class="kanji">記事</div><div class="meaning">article/news</div></li>
+            <li class="vocab-item"><div class="kana">ばんぐみ</div><div class="kanji">番組</div><div class="meaning">TV program</div></li>
+            <li class="vocab-item"><div class="kana">こうこく</div><div class="kanji">広告</div><div class="meaning">advertisement</div></li>
+            <li class="vocab-item"><div class="kana">じこ</div><div class="kanji">事故</div><div class="meaning">accident</div></li>
+            <li class="vocab-item"><div class="kana">じけん</div><div class="kanji">事件</div><div class="meaning">incident/case</div></li>
+            <li class="vocab-item"><div class="kana">しっぱい</div><div class="kanji">失敗</div><div class="meaning">failure/mistake</div></li>
+            <li class="vocab-item"><div class="kana">せいこう</div><div class="kanji">成功</div><div class="meaning">success</div></li>
+            <li class="vocab-item"><div class="kana">けんこう</div><div class="kanji">健康</div><div class="meaning">health</div></li>
+            <li class="vocab-item"><div class="kana">びょうき</div><div class="kanji">病気</div><div class="meaning">illness/disease</div></li>
+            <li class="vocab-item"><div class="kana">やっきょく</div><div class="kanji">薬局</div><div class="meaning">pharmacy</div></li>
+            <li class="vocab-item"><div class="kana">こうつう</div><div class="kanji">交通</div><div class="meaning">traffic/transportation</div></li>
+            <li class="vocab-item"><div class="kana">けしき</div><div class="kanji">景色</div><div class="meaning">scenery</div></li>
+            <li class="vocab-item"><div class="kana">きせつ</div><div class="kanji">季節</div><div class="meaning">season</div></li>
+            <li class="vocab-item"><div class="kana">おんど</div><div class="kanji">温度</div><div class="meaning">temperature</div></li>
+            <li class="vocab-item"><div class="kana">くうき</div><div class="kanji">空気</div><div class="meaning">air/atmosphere</div></li>
+        </ul>
+
+        <h3 style="color: var(--primary-color); border-bottom: 2px solid #efefef; padding-bottom: 10px; font-size: 1.2rem; margin-top: 30px; margin-bottom: 15px;">I-Adjectives</h3>
+        <ul class="vocab-list">
+            <li class="vocab-item"><div class="kana">こまかい</div><div class="kanji">細かい</div><div class="meaning">detailed/fine</div></li>
+            <li class="vocab-item"><div class="kana">ふかい</div><div class="kanji">深い</div><div class="meaning">deep</div></li>
+            <li class="vocab-item"><div class="kana">あさい</div><div class="kanji">浅い</div><div class="meaning">shallow</div></li>
+            <li class="vocab-item"><div class="kana">きびしい</div><div class="kanji">厳しい</div><div class="meaning">strict/severe</div></li>
+            <li class="vocab-item"><div class="kana">くやしい</div><div class="kanji">悔しい</div><div class="meaning">frustrating/regrettable</div></li>
+        </ul>
+
+        <h3 style="color: var(--primary-color); border-bottom: 2px solid #efefef; padding-bottom: 10px; font-size: 1.2rem; margin-top: 30px; margin-bottom: 15px;">Na-Adjectives</h3>
+        <ul class="vocab-list">
+            <li class="vocab-item"><div class="kana">ふくざつ</div><div class="kanji">複雑</div><div class="meaning">complicated</div></li>
+            <li class="vocab-item"><div class="kana">ていねい</div><div class="kanji">丁寧</div><div class="meaning">polite/courteous</div></li>
+            <li class="vocab-item"><div class="kana">じゃま</div><div class="kanji">邪魔</div><div class="meaning">hindrance/nuisance</div></li>
+            <li class="vocab-item"><div class="kana">りっぱ</div><div class="kanji">立派</div><div class="meaning">splendid/excellent</div></li>
+            <li class="vocab-item"><div class="kana">ねっしん</div><div class="kanji">熱心</div><div class="meaning">enthusiastic/eager</div></li>
+        </ul>
+
+        <h3 style="color: var(--primary-color); border-bottom: 2px solid #efefef; padding-bottom: 10px; font-size: 1.2rem; margin-top: 30px; margin-bottom: 15px;">Verbs</h3>
+        <ul class="vocab-list">
+            <li class="vocab-item"><div class="kana">きめる</div><div class="kanji">決める</div><div class="meaning">to decide</div></li>
+            <li class="vocab-item"><div class="kana">くらべる</div><div class="kanji">比べる</div><div class="meaning">to compare</div></li>
+            <li class="vocab-item"><div class="kana">しらべる</div><div class="kanji">調べる</div><div class="meaning">to investigate/look up</div></li>
+            <li class="vocab-item"><div class="kana">つづける</div><div class="kanji">続ける</div><div class="meaning">to continue</div></li>
+            <li class="vocab-item"><div class="kana">あつめる</div><div class="kanji">集める</div><div class="meaning">to collect/gather</div></li>
+            <li class="vocab-item"><div class="kana">なおす</div><div class="kanji">直す</div><div class="meaning">to fix/repair</div></li>
+            <li class="vocab-item"><div class="kana">おもいだす</div><div class="kanji">思い出す</div><div class="meaning">to remember/recall</div></li>
+            <li class="vocab-item"><div class="kana">おちる</div><div class="kanji">落ちる</div><div class="meaning">to fall/drop</div></li>
+            <li class="vocab-item"><div class="kana">よろこぶ</div><div class="kanji">喜ぶ</div><div class="meaning">to rejoice/be glad</div></li>
+            <li class="vocab-item"><div class="kana">おこる</div><div class="kanji">怒る</div><div class="meaning">to get angry</div></li>
+            <li class="vocab-item"><div class="kana">なく</div><div class="kanji">泣く</div><div class="meaning">to cry</div></li>
+            <li class="vocab-item"><div class="kana">わらう</div><div class="kanji">笑う</div><div class="meaning">to laugh/smile</div></li>
+            <li class="vocab-item"><div class="kana">おどろく</div><div class="kanji">驚く</div><div class="meaning">to be surprised</div></li>
+            <li class="vocab-item"><div class="kana">なれる</div><div class="kanji">慣れる</div><div class="meaning">to get used to</div></li>
+            <li class="vocab-item"><div class="kana">しんじる</div><div class="kanji">信じる</div><div class="meaning">to believe</div></li>
+            <li class="vocab-item"><div class="kana">つたえる</div><div class="kanji">伝える</div><div class="meaning">to convey/report</div></li>
+            <li class="vocab-item"><div class="kana">かわる</div><div class="kanji">変わる</div><div class="meaning">to change</div></li>
+            <li class="vocab-item"><div class="kana">さがす</div><div class="kanji">探す</div><div class="meaning">to look for</div></li>
+            <li class="vocab-item"><div class="kana">えらぶ</div><div class="kanji">選ぶ</div><div class="meaning">to choose</div></li>
+            <li class="vocab-item"><div class="kana">かよう</div><div class="kanji">通う</div><div class="meaning">to commute</div></li>
+            <li class="vocab-item"><div class="kana">いのる</div><div class="kanji">祈る</div><div class="meaning">to pray</div></li>
+            <li class="vocab-item"><div class="kana">かつ</div><div class="kanji">勝つ</div><div class="meaning">to win</div></li>
+            <li class="vocab-item"><div class="kana">まける</div><div class="kanji">負ける</div><div class="meaning">to lose</div></li>
+            <li class="vocab-item"><div class="kana">まにあう</div><div class="kanji">間に合う</div><div class="meaning">to be in time</div></li>
+            <li class="vocab-item"><div class="kana">やくにたつ</div><div class="kanji">役に立つ</div><div class="meaning">to be useful</div></li>
+            <li class="vocab-item"><div class="kana">きがつく</div><div class="kanji">気がつく</div><div class="meaning">to notice</div></li>
+            <li class="vocab-item"><div class="kana">がんばる</div><div class="kanji">頑張る</div><div class="meaning">to do one's best</div></li>
+            <li class="vocab-item"><div class="kana">たのしむ</div><div class="kanji">楽しむ</div><div class="meaning">to enjoy</div></li>
+            <li class="vocab-item"><div class="kana">かたづける</div><div class="kanji">片付ける</div><div class="meaning">to tidy up</div></li>
+            <li class="vocab-item"><div class="kana">のこる</div><div class="kanji">残る</div><div class="meaning">to remain</div></li>
+        </ul>
+
+        <h3 style="color: var(--primary-color); border-bottom: 2px solid #efefef; padding-bottom: 10px; font-size: 1.2rem; margin-top: 30px; margin-bottom: 15px;">Idioms</h3>
+        <ul class="vocab-list">
+            <li class="vocab-item"><div class="kana">あたまがいい</div><div class="kanji">頭がいい</div><div class="meaning">smart / clever</div></li>
+            <li class="vocab-item"><div class="kana">あたまにくる</div><div class="kanji">頭にくる</div><div class="meaning">to get mad</div></li>
+            <li class="vocab-item"><div class="kana">かおがひろい</div><div class="kanji">顔が広い</div><div class="meaning">well-connected</div></li>
+            <li class="vocab-item"><div class="kana">みみがいたい</div><div class="kanji">耳が痛い</div><div class="meaning">painful to hear</div></li>
+            <li class="vocab-item"><div class="kana">めをまるくする</div><div class="kanji">目を丸くする</div><div class="meaning">to stare in wonder</div></li>
+            <li class="vocab-item"><div class="kana">くちがかるい</div><div class="kanji">口が軽い</div><div class="meaning">cannot keep a secret</div></li>
+            <li class="vocab-item"><div class="kana">くちがかたい</div><div class="kanji">口が堅い</div><div class="meaning">can keep a secret</div></li>
+            <li class="vocab-item"><div class="kana">はらがたつ</div><div class="kanji">腹が立つ</div><div class="meaning">to be infuriated</div></li>
+            <li class="vocab-item"><div class="kana">きがする</div><div class="kanji">気がする</div><div class="meaning">to have a feeling (that)</div></li>
+            <li class="vocab-item"><div class="kana">きがあう</div><div class="kanji">気が合う</div><div class="meaning">to get along well</div></li>
+            <li class="vocab-item"><div class="kana">きをつける</div><div class="kanji">気を付ける</div><div class="meaning">to be careful</div></li>
+            <li class="vocab-item"><div class="kana">きをつかう</div><div class="kanji">気をつかう</div><div class="meaning">to pay attention to others' needs</div></li>
+            <li class="vocab-item"><div class="kana">おせわになる</div><div class="kanji">お世話になる</div><div class="meaning">to be indebted</div></li>
+            <li class="vocab-item"><div class="kana">しかたがない</div><div class="kanji">仕方がない</div><div class="meaning">it cannot be helped</div></li>
+            <li class="vocab-item"><div class="kana">しょうがない</div><div class="kanji">しょうがない</div><div class="meaning">it cannot be helped (casual)</div></li>
+            <li class="vocab-item"><div class="kana">もったいない</div><div class="kanji">もったいない</div><div class="meaning">what a waste</div></li>
+            <li class="vocab-item"><div class="kana">おかげさまで</div><div class="kanji">おかげさまで</div><div class="meaning">thanks to you</div></li>
+            <li class="vocab-item"><div class="kana">おつかれさま</div><div class="kanji">お疲れ様</div><div class="meaning">thank you for your hard work</div></li>
+            <li class="vocab-item"><div class="kana">ごちそうさま</div><div class="kanji">ごちそうさま</div><div class="meaning">thanks for the meal</div></li>
+            <li class="vocab-item"><div class="kana">いただきます</div><div class="kanji">いただきます</div><div class="meaning">let's eat</div></li>
+            <li class="vocab-item"><div class="kana">おじゃまします</div><div class="kanji">お邪魔します</div><div class="meaning">excuse me for intruding</div></li>
+            <li class="vocab-item"><div class="kana">もうしわけありません</div><div class="kanji">申し訳ありません</div><div class="meaning">I am deeply sorry</div></li>
+            <li class="vocab-item"><div class="kana">よろしくおねがいします</div><div class="kanji">よろしくお願いします</div><div class="meaning">please treat me well</div></li>
+            <li class="vocab-item"><div class="kana">おだいじに</div><div class="kanji">お大事に</div><div class="meaning">get well soon</div></li>
+            <li class="vocab-item"><div class="kana">えんりょしないで</div><div class="kanji">遠慮しないで</div><div class="meaning">don't hesitate</div></li>
+            <li class="vocab-item"><div class="kana">なるほど</div><div class="kanji">なるほど</div><div class="meaning">I see / makes sense</div></li>
+            <li class="vocab-item"><div class="kana">とんでもない</div><div class="kanji">とんでもない</div><div class="meaning">not at all</div></li>
+            <li class="vocab-item"><div class="kana">まあまあ</div><div class="kanji">まあまあ</div><div class="meaning">so-so / okay</div></li>
+            <li class="vocab-item"><div class="kana">ぺこぺこ</div><div class="kanji">ペコペコ</div><div class="meaning">starving</div></li>
+            <li class="vocab-item"><div class="kana">どきどき</div><div class="kanji">ドキドキ</div><div class="meaning">heart pounding</div></li>
+        </ul>
+    </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const items = document.querySelectorAll('.vocab-item');
+    let savedVocab = JSON.parse(localStorage.getItem('hanaBananaSavedVocab') || '[]');
+    
+    items.forEach(item => {
+        item.style.position = 'relative';
+        
+        const kana = item.querySelector('.kana') ? item.querySelector('.kana').textContent : '';
+        const kanji = item.querySelector('.kanji') ? item.querySelector('.kanji').textContent : '';
+        const meaning = item.querySelector('.meaning') ? item.querySelector('.meaning').textContent : '';
+        
+        const btn = document.createElement('div');
+        btn.className = 'save-btn';
+        
+        if (savedVocab.some(v => v.kanji === kanji)) {
+            btn.classList.add('active');
+        }
+        
+        btn.innerHTML = '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--primary-color, #ff751f)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>';
+        
+        btn.onclick = (e) => {
+            e.stopPropagation();
+            toggleSave(btn, kanji, meaning, kana, '');
+        };
+        
+        item.appendChild(btn);
+    });
+});
+
+function toggleSave(btn, kanji, meaning, kana, romaji) {
+    let savedVocab = JSON.parse(localStorage.getItem('hanaBananaSavedVocab') || '[]');
+    const index = savedVocab.findIndex(item => item.kanji === kanji);
+    
+    if (index === -1) {
+        savedVocab.push({ kanji, meaning, kana, romaji });
+        btn.classList.add('active');
+        
+        const tooltip = document.createElement('div');
+        tooltip.style.position = 'fixed';
+        tooltip.style.bottom = '20px';
+        tooltip.style.left = '50%';
+        tooltip.style.transform = 'translateX(-50%)';
+        tooltip.style.background = 'rgba(0,0,0,0.8)';
+        tooltip.style.color = '#fff';
+        tooltip.style.padding = '10px 20px';
+        tooltip.style.borderRadius = '20px';
+        tooltip.style.zIndex = '10000';
+        tooltip.innerHTML = '<svg style="width: 18px; height: 18px; margin-right: 6px; vertical-align: text-bottom;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg> Saved!';
+        document.body.appendChild(tooltip);
+        setTimeout(() => tooltip.remove(), 2000);
+    } else {
+        savedVocab.splice(index, 1);
+        btn.classList.remove('active');
+    }
+    localStorage.setItem('hanaBananaSavedVocab', JSON.stringify(savedVocab));
+}
+</script>
+</body>
+</html>
