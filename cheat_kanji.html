@@ -693,7 +693,10 @@
     </div>
 
     <div class="kanji-container" id="kanjiContainer">
-        <!-- Rendered by JS -->
+        <div style="text-align:center; padding: 50px; color: #666;" id="loadingMessage">
+            <p>Loading Kanji Data... 🌸</p>
+            <p style="font-size: 0.8rem; margin-top: 10px;">(If this takes too long, please check if 'resources/kanji_data.js' exists on your server)</p>
+        </div>
     </div>
 
     <div class="no-results" id="noResults">
@@ -833,12 +836,27 @@
         }
 
         window.onload = () => {
+            // 3秒待っても読み込まれない場合はエラーを表示
+            const timeout = setTimeout(() => {
+                if (typeof kanjiData === 'undefined') {
+                    const container = document.getElementById('kanjiContainer');
+                    container.innerHTML = '<div style="text-align:center; padding: 50px; color: #ff4757;"><h3>Error: Data not found.</h3><p>Could not load "resources/kanji_data.js". Please make sure the folder and file are uploaded to GitHub.</p></div>';
+                }
+            }, 3000);
+
             if (typeof kanjiData !== 'undefined') {
+                clearTimeout(timeout);
                 renderKanji();
             } else {
-                console.warn('kanjiData not loaded yet');
-                // Retry in case of slow load
-                setTimeout(renderKanji, 500);
+                console.warn('kanjiData not loaded yet, waiting...');
+                // データが届くまで0.5秒おきにチェック
+                let checkInterval = setInterval(() => {
+                    if (typeof kanjiData !== 'undefined') {
+                        clearInterval(checkInterval);
+                        clearTimeout(timeout);
+                        renderKanji();
+                    }
+                }, 500);
             }
         };
     </script>
