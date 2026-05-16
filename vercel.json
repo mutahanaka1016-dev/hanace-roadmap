@@ -1,7 +1,1 @@
-{
-  "crons": [],
-  "cleanUrls": true,
-  "deploymentProtection": {
-    "passwordProtection": true
-  }
-}
+{}
