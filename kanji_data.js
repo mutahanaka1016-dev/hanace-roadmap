@@ -1,516 +1,846 @@
-const kanjiData = [
-  // CATEGORY 1: Super Basic (超基本) - 100 Kanji
-  { "kanji": "一", "category": 1, "meaning": "One", "onyomi": "イチ", "kunyomi": "ひと(つ)", "examples": [{ "word": "一人", "reading": "ひとり", "meaning": "one person" }, { "word": "一番", "reading": "いちばん", "meaning": "No.1" }] },
-  { "kanji": "二", "category": 1, "meaning": "Two", "onyomi": "ニ", "kunyomi": "ふた(つ)", "examples": [{ "word": "二日", "reading": "ふつか", "meaning": "2nd day" }, { "word": "二つ", "reading": "ふたつ", "meaning": "two (count)" }] },
-  { "kanji": "三", "category": 1, "meaning": "Three", "onyomi": "サン", "kunyomi": "みっ(つ)", "examples": [{ "word": "三日", "reading": "みっか", "meaning": "3rd day" }, { "word": "三月", "reading": "さんがつ", "meaning": "March" }] },
-  { "kanji": "四", "category": 1, "meaning": "Four", "onyomi": "シ", "kunyomi": "よっ(つ)", "examples": [{ "word": "四日", "reading": "よっか", "meaning": "4th day" }, { "word": "四時", "reading": "よじ", "meaning": "4 o'clock" }] },
-  { "kanji": "五", "category": 1, "meaning": "Five", "onyomi": "ゴ", "kunyomi": "いつ(つ)", "examples": [{ "word": "五日", "reading": "いつか", "meaning": "5th day" }, { "word": "五分", "reading": "ごふん", "meaning": "5 minutes" }] },
-  { "kanji": "六", "category": 1, "meaning": "Six", "onyomi": "ロク", "kunyomi": "むっ(つ)", "examples": [{ "word": "六日", "reading": "むいか", "meaning": "6th day" }, { "word": "六本", "reading": "ろっぽん", "meaning": "6 long items" }] },
-  { "kanji": "七", "category": 1, "meaning": "Seven", "onyomi": "シチ", "kunyomi": "なな(つ)", "examples": [{ "word": "七日", "reading": "なのか", "meaning": "7th day" }, { "word": "七月", "reading": "しちがつ", "meaning": "July" }] },
-  { "kanji": "八", "category": 1, "meaning": "Eight", "onyomi": "ハチ", "kunyomi": "やっ(つ)", "examples": [{ "word": "八日", "reading": "ようか", "meaning": "8th day" }, { "word": "八本", "reading": "はっぽん", "meaning": "8 long items" }] },
-  { "kanji": "九", "category": 1, "meaning": "Nine", "onyomi": "キュウ", "kunyomi": "ここの(つ)", "examples": [{ "word": "九日", "reading": "ここのか", "meaning": "9th day" }, { "word": "九時", "reading": "くじ", "meaning": "9 o'clock" }] },
-  { "kanji": "十", "category": 1, "meaning": "Ten", "onyomi": "ジュウ", "kunyomi": "とお", "examples": [{ "word": "十日", "reading": "とおか", "meaning": "10th day" }, { "word": "十円", "reading": "じゅうえん", "meaning": "10 yen" }] },
-  { "kanji": "百", "category": 1, "meaning": "Hundred", "onyomi": "ヒャク", "kunyomi": "もも", "examples": [{ "word": "三百", "reading": "さんびゃく", "meaning": "300" }, { "word": "百貨店", "reading": "ひゃっかてん", "meaning": "dep. store" }] },
-  { "kanji": "千", "category": 1, "meaning": "Thousand", "onyomi": "セン", "kunyomi": "ち", "examples": [{ "word": "三千", "reading": "さんぜん", "meaning": "3000" }, { "word": "千円", "reading": "せんえん", "meaning": "1000 yen" }] },
-  { "kanji": "万", "category": 1, "meaning": "Ten Thousand", "onyomi": "マン", "kunyomi": "よろず", "examples": [{ "word": "一万円", "reading": "いちまんえん", "meaning": "10k yen" }, { "word": "万歳", "reading": "ばんざい", "meaning": "Banzai" }] },
-  { "kanji": "円", "category": 1, "meaning": "Yen / Round", "onyomi": "エン", "kunyomi": "まる(い)", "examples": [{ "word": "百円", "reading": "ひゃくえん", "meaning": "100 yen" }, { "word": "円い", "reading": "まるい", "meaning": "round" }] },
-  { "kanji": "日", "category": 1, "meaning": "Day / Sun", "onyomi": "ニチ", "kunyomi": "ひ", "examples": [{ "word": "本日", "reading": "ほんじつ", "meaning": "today" }, { "word": "毎日", "reading": "まいにち", "meaning": "every day" }] },
-  { "kanji": "月", "category": 1, "meaning": "Month / Moon", "onyomi": "ゲツ", "kunyomi": "つき", "examples": [{ "word": "来月", "reading": "らいげつ", "meaning": "next month" }, { "word": "お月様", "reading": "おつきさま", "meaning": "moon" }] },
-  { "kanji": "火", "category": 1, "meaning": "Fire", "onyomi": "カ", "kunyomi": "ひ", "examples": [{ "word": "火曜日", "reading": "かようび", "meaning": "Tuesday" }, { "word": "火山", "reading": "かざん", "meaning": "volcano" }] },
-  { "kanji": "水", "category": 1, "meaning": "Water", "onyomi": "スイ", "kunyomi": "みず", "examples": [{ "word": "水曜日", "reading": "すいようび", "meaning": "Wednesday" }, { "word": "水道", "reading": "すいどう", "meaning": "water supply" }] },
-  { "kanji": "木", "category": 1, "meaning": "Tree", "onyomi": "モク", "kunyomi": "き", "examples": [{ "word": "木曜日", "reading": "もくようび", "meaning": "Thursday" }, { "word": "大木", "reading": "たいぼく", "meaning": "large tree" }] },
-  { "kanji": "金", "category": 1, "meaning": "Gold / Money", "onyomi": "キン", "kunyomi": "かね", "examples": [{ "word": "金曜日", "reading": "きんようび", "meaning": "Friday" }, { "word": "お金", "reading": "おかね", "meaning": "money" }] },
-  { "kanji": "土", "category": 1, "meaning": "Soil / Earth", "onyomi": "ド", "kunyomi": "つち", "examples": [{ "word": "土曜日", "reading": "どようび", "meaning": "Saturday" }, { "word": "土地", "reading": "とち", "meaning": "land" }] },
-  { "kanji": "曜", "category": 1, "meaning": "Weekday", "onyomi": "ヨウ", "kunyomi": "-", "examples": [{ "word": "何曜日", "reading": "なんようび", "meaning": "what day?" }, { "word": "曜日", "reading": "ようび", "meaning": "day of week" }] },
-  { "kanji": "年", "category": 1, "meaning": "Year", "onyomi": "ネン", "kunyomi": "とし", "examples": [{ "word": "今年", "reading": "ことし", "meaning": "this year" }, { "word": "来年", "reading": "らいねん", "meaning": "next year" }] },
-  { "kanji": "時", "category": 1, "meaning": "Time / Hour", "onyomi": "ジ", "kunyomi": "とき", "examples": [{ "word": "時々", "reading": "ときどき", "meaning": "sometimes" }, { "word": "時計", "reading": "とけい", "meaning": "clock/watch" }] },
-  { "kanji": "分", "category": 1, "meaning": "Minute / Part", "onyomi": "フン", "kunyomi": "わ(かる)", "examples": [{ "word": "十分", "reading": "じゅっぷん", "meaning": "10 min" }, { "word": "半分", "reading": "はんぶん", "meaning": "half" }] },
-  { "kanji": "半", "category": 1, "meaning": "Half", "onyomi": "ハン", "kunyomi": "なか(ば)", "examples": [{ "word": "三時半", "reading": "さんじはん", "meaning": "3:30" }, { "word": "半年", "reading": "はんねん", "meaning": "half a year" }] },
-  { "kanji": "午", "category": 1, "meaning": "Noon", "onyomi": "ゴ", "kunyomi": "-", "examples": [{ "word": "午前", "reading": "ごぜん", "meaning": "morning/AM" }, { "word": "午後", "reading": "ごご", "meaning": "afternoon/PM" }] },
-  { "kanji": "前", "category": 1, "meaning": "Before / Front", "onyomi": "ゼン", "kunyomi": "まえ", "examples": [{ "word": "名前", "reading": "なまえ", "meaning": "name" }, { "word": "駅前", "reading": "えきまえ", "meaning": "in front of station" }] },
-  { "kanji": "後", "category": 1, "meaning": "After / Back", "onyomi": "ゴ", "kunyomi": "あと", "examples": [{ "word": "最後", "reading": "さいご", "meaning": "last" }, { "word": "後ろ", "reading": "うしろ", "meaning": "behind" }] },
-  { "kanji": "上", "category": 1, "meaning": "Up / Above", "onyomi": "ジョウ", "kunyomi": "うえ", "examples": [{ "word": "上手", "reading": "じょうず", "meaning": "skillful" }, { "word": "屋上", "reading": "おくじょう", "meaning": "rooftop" }] },
-  { "kanji": "下", "category": 1, "meaning": "Down / Below", "onyomi": "カ", "kunyomi": "した", "examples": [{ "word": "下手", "reading": "へた", "meaning": "unskillful" }, { "word": "地下鉄", "reading": "ちかてつ", "meaning": "subway" }] },
-  { "kanji": "中", "category": 1, "meaning": "Middle / Inside", "onyomi": "チュウ", "kunyomi": "なか", "examples": [{ "word": "中国", "reading": "ちゅうごく", "meaning": "China" }, { "word": "中心", "reading": "ちゅうしん", "meaning": "center" }] },
-  { "kanji": "外", "category": 1, "meaning": "Outside", "onyomi": "ガイ", "kunyomi": "そと", "examples": [{ "word": "外国", "reading": "がいこく", "meaning": "foreign country" }, { "word": "意外", "reading": "いがい", "meaning": "unexpected" }] },
-  { "kanji": "右", "category": 1, "meaning": "Right", "onyomi": "ウ", "kunyomi": "みぎ", "examples": [{ "word": "右手", "reading": "みぎて", "meaning": "right hand" }, { "word": "右側", "reading": "みぎがわ", "meaning": "right side" }] },
-  { "kanji": "左", "category": 1, "meaning": "Left", "onyomi": "サ", "kunyomi": "ひだり", "examples": [{ "word": "左手", "reading": "ひだりて", "meaning": "left hand" }, { "word": "左側", "reading": "ひだりがわ", "meaning": "left side" }] },
-  { "kanji": "本", "category": 1, "meaning": "Book / Main", "onyomi": "ホン", "kunyomi": "もと", "examples": [{ "word": "日本語", "reading": "にほんご", "meaning": "Japanese" }, { "word": "本日", "reading": "ほんじつ", "meaning": "today" }] },
-  { "kanji": "人", "category": 1, "meaning": "Person", "onyomi": "ジン", "kunyomi": "ひと", "examples": [{ "word": "日本人", "reading": "にほんじん", "meaning": "Japanese person" }, { "word": "大人", "reading": "おとな", "meaning": "adult" }] },
-  { "kanji": "子", "category": 1, "meaning": "Child", "onyomi": "シ", "kunyomi": "こ", "examples": [{ "word": "子供", "reading": "こども", "meaning": "child" }, { "word": "椅子", "reading": "いす", "meaning": "chair" }] },
-  { "kanji": "女", "category": 1, "meaning": "Woman", "onyomi": "ジョ", "kunyomi": "おんな", "examples": [{ "word": "女の子", "reading": "おんなのこ", "meaning": "girl" }, { "word": "彼女", "reading": "かのじょ", "meaning": "she/girlfriend" }] },
-  { "kanji": "男", "category": 1, "meaning": "Man", "onyomi": "ダン", "kunyomi": "おとこ", "examples": [{ "word": "男の子", "reading": "おとこのこ", "meaning": "boy" }, { "word": "長男", "reading": "ちょうなん", "meaning": "eldest son" }] },
-  { "kanji": "先", "category": 1, "meaning": "Previous", "onyomi": "セン", "kunyomi": "さき", "examples": [{ "word": "先生", "reading": "せんせい", "meaning": "teacher" }, { "word": "先日", "reading": "せんじつ", "meaning": "the other day" }] },
-  { "kanji": "生", "category": 1, "meaning": "Life / Birth", "onyomi": "セイ", "kunyomi": "う(まれる)", "examples": [{ "word": "学生", "reading": "がくせい", "meaning": "student" }, { "word": "誕生日", "reading": "たんじょうび", "meaning": "birthday" }] },
-  { "kanji": "父", "category": 1, "meaning": "Father", "onyomi": "フ", "kunyomi": "ちち", "examples": [{ "word": "お父さん", "reading": "おとうさん", "meaning": "father" }, { "word": "父母", "reading": "ふぼ", "meaning": "parents" }] },
-  { "kanji": "母", "category": 1, "meaning": "Mother", "onyomi": "ボ", "kunyomi": "はは", "examples": [{ "word": "お母さん", "reading": "おかあさん", "meaning": "mother" }, { "word": "母国", "reading": "ぼこく", "meaning": "motherland" }] },
-  { "kanji": "友", "category": 1, "meaning": "Friend", "onyomi": "ユウ", "kunyomi": "とも", "examples": [{ "word": "友達", "reading": "ともだち", "meaning": "friend" }, { "word": "親友", "reading": "しんゆう", "meaning": "best friend" }] },
-  { "kanji": "学", "category": 1, "meaning": "Study", "onyomi": "ガク", "kunyomi": "まな(ぶ)", "examples": [{ "word": "大学", "reading": "だいがく", "meaning": "university" }, { "word": "学習", "reading": "がくしゅう", "meaning": "learning" }] },
-  { "kanji": "校", "category": 1, "meaning": "School", "onyomi": "コウ", "kunyomi": "-", "examples": [{ "word": "学校", "reading": "がっこう", "meaning": "school" }, { "word": "高校", "reading": "こうこう", "meaning": "high school" }] },
-  { "kanji": "名", "category": 1, "meaning": "Name", "onyomi": "メイ", "kunyomi": "な", "examples": [{ "word": "名前", "reading": "なまえ", "meaning": "name" }, { "word": "有名", "reading": "ゆうめい", "meaning": "famous" }] },
-  { "kanji": "大", "category": 1, "meaning": "Big", "onyomi": "ダイ", "kunyomi": "おお(きい)", "examples": [{ "word": "大学", "reading": "だいがく", "meaning": "university" }, { "word": "大切", "reading": "たいせつ", "meaning": "important" }] },
-  { "kanji": "小", "category": 1, "meaning": "Small", "onyomi": "ショウ", "kunyomi": "ちい(さい)", "examples": [{ "word": "小学校", "reading": "しょうがっこう", "meaning": "elementary school" }, { "word": "小説", "reading": "しょうせつ", "meaning": "novel" }] },
-  { "kanji": "山", "category": 1, "meaning": "Mountain", "onyomi": "サン", "kunyomi": "やま", "examples": [{ "word": "富士山", "reading": "ふじさん", "meaning": "Mt. Fuji" }, { "word": "火山", "reading": "かざん", "meaning": "volcano" }] },
-  { "kanji": "川", "category": 1, "meaning": "River", "onyomi": "セン", "kunyomi": "かわ", "examples": [{ "word": "河川", "reading": "かせん", "meaning": "rivers" }, { "word": "小川", "reading": "おがわ", "meaning": "brook" }] },
-  { "kanji": "田", "category": 1, "meaning": "Rice Field", "onyomi": "デン", "kunyomi": "た", "examples": [{ "word": "水田", "reading": "すいでん", "meaning": "paddy field" }, { "word": "山田さん", "reading": "やまださん", "meaning": "Mr. Yamada" }] },
-  { "kanji": "天", "category": 1, "meaning": "Sky / Heaven", "onyomi": "テン", "kunyomi": "あま", "examples": [{ "word": "天気", "reading": "てんき", "meaning": "weather" }, { "word": "天才", "reading": "てんさい", "meaning": "genius" }] },
-  { "kanji": "気", "category": 1, "meaning": "Spirit / Air", "onyomi": "キ", "kunyomi": "-", "examples": [{ "word": "元気", "reading": "げんき", "meaning": "healthy" }, { "word": "空気", "reading": "くうき", "meaning": "air" }] },
-  { "kanji": "雨", "category": 1, "meaning": "Rain", "onyomi": "ウ", "kunyomi": "あめ", "examples": [{ "word": "大雨", "reading": "おおあめ", "meaning": "heavy rain" }, { "word": "雨天", "reading": "うてん", "meaning": "rainy weather" }] },
-  { "kanji": "花", "category": 1, "meaning": "Flower", "onyomi": "カ", "kunyomi": "はな", "examples": [{ "word": "花火", "reading": "はなび", "meaning": "fireworks" }, { "word": "花瓶", "reading": "かびん", "meaning": "vase" }] },
-  { "kanji": "草", "category": 1, "meaning": "Grass", "onyomi": "ソウ", "kunyomi": "くさ", "examples": [{ "word": "除草", "reading": "じょそう", "meaning": "weeding" }, { "word": "草原", "reading": "そうげん", "meaning": "grasslands" }] },
-  { "kanji": "竹", "category": 1, "meaning": "Bamboo", "onyomi": "チク", "kunyomi": "たけ", "examples": [{ "word": "竹林", "reading": "ちくりん", "meaning": "bamboo grove" }, { "word": "竹の子", "reading": "たけのこ", "meaning": "bamboo shoot" }] },
-  { "kanji": "石", "category": 1, "meaning": "Stone", "onyomi": "セキ", "kunyomi": "いし", "examples": [{ "word": "石油", "reading": "せきゆ", "meaning": "oil" }, { "word": "化石", "reading": "かせき", "meaning": "fossil" }] },
-  { "kanji": "貝", "category": 1, "meaning": "Shellfish", "onyomi": "バイ", "kunyomi": "かい", "examples": [{ "word": "貝殻", "reading": "かいがら", "meaning": "shell" }, { "word": "帆立貝", "reading": "ほたてがい", "meaning": "scallop" }] },
-  { "kanji": "目", "category": 1, "meaning": "Eye", "onyomi": "モク", "kunyomi": "め", "examples": [{ "word": "目的", "reading": "もくてき", "meaning": "purpose" }, { "word": "目次", "reading": "もくじ", "meaning": "table of contents" }] },
-  { "kanji": "耳", "category": 1, "meaning": "Ear", "onyomi": "ジ", "kunyomi": "みみ", "examples": [{ "word": "耳鼻科", "reading": "じびか", "meaning": "ENT clinic" }, { "word": "初耳", "reading": "はつみみ", "meaning": "first hearing" }] },
-  { "kanji": "口", "category": 1, "meaning": "Mouth", "onyomi": "コウ", "kunyomi": "くち", "examples": [{ "word": "入口", "reading": "いりぐち", "meaning": "entrance" }, { "word": "窓口", "reading": "まどぐち", "meaning": "counter" }] },
-  { "kanji": "手", "category": 1, "meaning": "Hand", "onyomi": "シュ", "kunyomi": "て", "examples": [{ "word": "手紙", "reading": "てがみ", "meaning": "letter" }, { "word": "歌手", "reading": "かしゅ", "meaning": "singer" }] },
-  { "kanji": "足", "category": 1, "meaning": "Foot / Leg", "onyomi": "ソク", "kunyomi": "あし", "examples": [{ "word": "遠足", "reading": "えんそく", "meaning": "excursion" }, { "word": "不足", "reading": "ふそく", "meaning": "shortage" }] },
-  { "kanji": "力", "category": 1, "meaning": "Power / Force", "onyomi": "リキ", "kunyomi": "ちから", "examples": [{ "word": "電力", "reading": "でんりょく", "meaning": "electricity" }, { "word": "協力", "reading": "きょうりょく", "meaning": "cooperation" }] },
-  { "kanji": "見", "category": 1, "meaning": "See", "onyomi": "ケン", "kunyomi": "み(る)", "examples": [{ "word": "見学", "reading": "けんがく", "meaning": "visit" }, { "word": "意見", "reading": "いけん", "meaning": "opinion" }] },
-  { "kanji": "聞", "category": 1, "meaning": "Hear / Listen", "onyomi": "ブン", "kunyomi": "き(く)", "examples": [{ "word": "新聞", "reading": "しんぶん", "meaning": "newspaper" }, { "word": "聞き手", "reading": "ききて", "meaning": "listener" }] },
-  { "kanji": "言", "category": 1, "meaning": "Say", "onyomi": "ゲン", "kunyomi": "い(う)", "examples": [{ "word": "言語", "reading": "げんご", "meaning": "language" }, { "word": "伝言", "reading": "でんごん", "meaning": "message" }] },
-  { "kanji": "書", "category": 1, "meaning": "Write", "onyomi": "ショ", "kunyomi": "か(く)", "examples": [{ "word": "辞書", "reading": "じしょ", "meaning": "dictionary" }, { "word": "書類", "reading": "しょるい", "meaning": "documents" }] },
-  { "kanji": "読", "category": 1, "meaning": "Read", "onyomi": "ドク", "kunyomi": "よ(む)", "examples": [{ "word": "読書", "reading": "どくしょ", "meaning": "reading" }, { "word": "句読点", "reading": "くとうてん", "meaning": "punctuation" }] },
-  { "kanji": "話", "category": 1, "meaning": "Talk / Speak", "onyomi": "ワ", "kunyomi": "はな(す)", "examples": [{ "word": "会話", "reading": "かいわ", "meaning": "conversation" }, { "word": "電話", "reading": "でんわ", "meaning": "telephone" }] },
-  { "kanji": "買", "category": 1, "meaning": "Buy", "onyomi": "バイ", "kunyomi": "か(う)", "examples": [{ "word": "買い物", "reading": "かいもの", "meaning": "shopping" }, { "word": "売買", "reading": "ばいばい", "meaning": "trading" }] },
-  { "kanji": "行", "category": 1, "meaning": "Go", "onyomi": "コウ", "kunyomi": "い(く)", "examples": [{ "word": "銀行", "reading": "ぎんこう", "meaning": "bank" }, { "word": "旅行", "reading": "りょこう", "meaning": "travel" }] },
-  { "kanji": "来", "category": 1, "meaning": "Come", "onyomi": "ライ", "kunyomi": "く(る)", "examples": [{ "word": "来週", "reading": "らいしゅう", "meaning": "next week" }, { "word": "未来", "reading": "みらい", "meaning": "future" }] },
-  { "kanji": "出", "category": 1, "meaning": "Exit / Go out", "onyomi": "シュツ", "kunyomi": "で(る)", "examples": [{ "word": "出口", "reading": "でぐち", "meaning": "exit" }, { "word": "外出", "reading": "がいしゅつ", "meaning": "going out" }] },
-  { "kanji": "入", "category": 1, "meaning": "Enter", "onyomi": "ニュウ", "kunyomi": "はい(る)", "examples": [{ "word": "入口", "reading": "いりぐち", "meaning": "entrance" }, { "word": "入学", "reading": "にゅうがく", "meaning": "admission" }] },
-  { "kanji": "立", "category": 1, "meaning": "Stand", "onyomi": "リツ", "kunyomi": "た(つ)", "examples": [{ "word": "国立", "reading": "こくりつ", "meaning": "national" }, { "word": "自立", "reading": "じりつ", "meaning": "independence" }] },
-  { "kanji": "休", "category": 1, "meaning": "Rest", "onyomi": "キュウ", "kunyomi": "やす(む)", "examples": [{ "word": "休み", "reading": "やすみ", "meaning": "rest/holiday" }, { "word": "休日", "reading": "きゅうじつ", "meaning": "day off" }] },
-  { "kanji": "多", "category": 1, "meaning": "Many", "onyomi": "タ", "kunyomi": "おお(い)", "examples": [{ "word": "多分", "reading": "たぶん", "meaning": "probably" }, { "word": "多数", "reading": "たすう", "meaning": "majority" }] },
-  { "kanji": "少", "category": 1, "meaning": "Few", "onyomi": "ショウ", "kunyomi": "すく(ない)", "examples": [{ "word": "少年", "reading": "しょうねん", "meaning": "boy" }, { "word": "少し", "reading": "すこし", "meaning": "a little" }] },
-  { "kanji": "古", "category": 1, "meaning": "Old", "onyomi": "コ", "kunyomi": "ふる(い)", "examples": [{ "word": "中古", "reading": "ちゅうこ", "meaning": "used" }, { "word": "古代", "reading": "こだい", "meaning": "ancient times" }] },
-  { "kanji": "新", "category": 1, "meaning": "New", "onyomi": "シン", "kunyomi": "あたら(しい)", "examples": [{ "word": "新年", "reading": "しんねん", "meaning": "new year" }, { "word": "新聞", "reading": "しんぶん", "meaning": "newspaper" }] },
-  { "kanji": "早", "category": 1, "meaning": "Early", "onyomi": "ソウ", "kunyomi": "はや(い)", "examples": [{ "word": "早朝", "reading": "そうちょう", "meaning": "early morning" }, { "word": "早速", "reading": "さっそく", "meaning": "immediately" }] },
-  { "kanji": "長", "category": 1, "meaning": "Long / Chief", "onyomi": "チョウ", "kunyomi": "なが(い)", "examples": [{ "word": "社長", "reading": "しゃちょう", "meaning": "president" }, { "word": "校長", "reading": "こうちょう", "meaning": "principal" }] },
-  { "kanji": "広", "category": 1, "meaning": "Wide", "onyomi": "コウ", "kunyomi": "ひろ(い)", "examples": [{ "word": "広島", "reading": "ひろしま", "meaning": "Hiroshima" }, { "word": "広大", "reading": "こうだい", "meaning": "vast" }] },
-  { "kanji": "明", "category": 1, "meaning": "Bright", "onyomi": "メイ", "kunyomi": "あか(るい)", "examples": [{ "word": "明日", "reading": "あした", "meaning": "tomorrow" }, { "word": "説明", "reading": "せつめい", "meaning": "explanation" }] },
-  { "kanji": "白", "category": 1, "meaning": "White", "onyomi": "ハク", "kunyomi": "しろ", "examples": [{ "word": "白線", "reading": "はくせん", "meaning": "white line" }, { "word": "紅白", "reading": "こうはく", "meaning": "red and white" }] },
-  { "kanji": "赤", "category": 1, "meaning": "Red", "onyomi": "セキ", "kunyomi": "あか", "examples": [{ "word": "赤ちゃん", "reading": "あかちゃん", "meaning": "baby" }, { "word": "赤道", "reading": "せきどう", "meaning": "equator" }] },
-  { "kanji": "青", "category": 1, "meaning": "Blue", "onyomi": "セイ", "kunyomi": "あお", "examples": [{ "word": "青年", "reading": "せいねん", "meaning": "youth" }, { "word": "青空", "reading": "あおぞら", "meaning": "blue sky" }] },
-  { "kanji": "正", "category": 1, "meaning": "Correct", "onyomi": "セイ", "kunyomi": "ただ(しい)", "examples": [{ "word": "正確", "reading": "せいかく", "meaning": "accurate" }, { "word": "正月", "reading": "しょうがつ", "meaning": "New Year" }] },
-  { "kanji": "同", "category": 1, "meaning": "Same", "onyomi": "ドウ", "kunyomi": "おな(じ)", "examples": [{ "word": "同意", "reading": "どうい", "meaning": "agreement" }, { "word": "同時", "reading": "どうじ", "meaning": "simultaneous" }] },
-  { "kanji": "回", "category": 1, "meaning": "Times / Turn", "onyomi": "カイ", "kunyomi": "まわ(る)", "examples": [{ "word": "今回", "reading": "こんかい", "meaning": "this time" }, { "word": "回答", "reading": "かいとう", "meaning": "answer" }] },
-  { "kanji": "何", "category": 1, "meaning": "What", "onyomi": "カ", "kunyomi": "なに", "examples": [{ "word": "何か", "reading": "なにか", "meaning": "something" }, { "word": "何時", "reading": "なんじ", "meaning": "what time?" }] },
-  { "kanji": "安", "category": 1, "meaning": "Cheap / Safe", "onyomi": "アン", "kunyomi": "やす(い)", "examples": [{ "word": "安全", "reading": "あんぜん", "meaning": "safety" }, { "word": "安心", "reading": "あんしん", "meaning": "relief" }] },
-  { "kanji": "社", "category": 1, "meaning": "Company / Shrine", "onyomi": "シャ", "kunyomi": "やしろ", "examples": [{ "word": "会社", "reading": "かいしゃ", "meaning": "company" }, { "word": "社会", "reading": "しゃかい", "meaning": "society" }] },
-  { "kanji": "会", "category": 1, "meaning": "Meet / Society", "onyomi": "カイ", "kunyomi": "あ(う)", "examples": [{ "word": "会議", "reading": "かいぎ", "meaning": "meeting" }, { "word": "会話", "reading": "かいわ", "meaning": "conversation" }] },
-  { "kanji": "店", "category": 1, "meaning": "Shop", "onyomi": "テン", "kunyomi": "みせ", "examples": [{ "word": "店員", "reading": "てんいん", "meaning": "clerk" }, { "word": "売店", "reading": "ばいてん", "meaning": "stall" }] },
-  { "kanji": "駅", "category": 1, "meaning": "Station", "onyomi": "エキ", "kunyomi": "-", "examples": [{ "word": "駅前", "reading": "えきまえ", "meaning": "in front of station" }, { "word": "東京駅", "reading": "とうきょうえき", "meaning": "Tokyo St." }] },
-  { "kanji": "国", "category": 1, "meaning": "Country", "onyomi": "コク", "kunyomi": "くに", "examples": [{ "word": "外国", "reading": "がいこく", "meaning": "foreign country" }, { "word": "国王", "reading": "こくおう", "meaning": "king" }] },
-  { "kanji": "家", "category": 1, "meaning": "House", "onyomi": "カ", "kunyomi": "いえ", "examples": [{ "word": "家族", "reading": "かぞく", "meaning": "family" }, { "word": "家庭", "reading": "かてい", "meaning": "home/household" }] },
-  { "kanji": "車", "category": 1, "meaning": "Car", "onyomi": "シャ", "kunyomi": "くるま", "examples": [{ "word": "電車", "reading": "でんしゃ", "meaning": "train" }, { "word": "自転車", "reading": "じてんしゃ", "meaning": "bicycle" }] },
-  { "kanji": "道", "category": 1, "meaning": "Road / Path", "onyomi": "ドウ", "kunyomi": "みち", "examples": [{ "word": "道路", "reading": "どうろ", "meaning": "road" }, { "word": "歩道", "reading": "ほどう", "meaning": "sidewalk" }] },
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Kanji 500 | Hana Banana Japanese</title>
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500;700;800&family=Quicksand:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #ff751f;
+            --primary-light: #ffc8a2;
+            --text-main: #2d3436;
+            --text-sub: #636e72;
+            --bg-body: #f8f9fa;
+            
+            /* Category Colors */
+            --cat1: #ff4757; /* Super Basic - Red/Pink */
+            --cat2: #2ed573; /* Nature - Green */
+            --cat3: #1e90ff; /* Society - Blue */
+            --cat4: #a55eea; /* States - Purple */
+            --cat5: #ffa502; /* Work - Orange */
+            
+            --glass-bg: rgba(255, 255, 255, 0.7);
+            --glass-border: rgba(255, 255, 255, 0.4);
+            --shadow-premium: 0 20px 40px rgba(0, 0, 0, 0.05);
+        }
 
-  // CATEGORY 2: Nature & Life (自然・生活・動作) - 100 Kanji
-  { "kanji": "海", "category": 2, "meaning": "Sea / Ocean", "onyomi": "カイ", "kunyomi": "うみ", "examples": [{ "word": "海外", "reading": "かいがい", "meaning": "overseas" }, { "word": "海水", "reading": "かいすい", "meaning": "seawater" }] },
-  { "kanji": "地", "category": 2, "meaning": "Earth / Ground", "onyomi": "チ", "kunyomi": "-", "examples": [{ "word": "地図", "reading": "ちず", "meaning": "map" }, { "word": "地下鉄", "reading": "ちかてつ", "meaning": "subway" }] },
-  { "kanji": "池", "category": 2, "meaning": "Pond", "onyomi": "チ", "kunyomi": "いke", "examples": [{ "word": "電池", "reading": "でんち", "meaning": "battery" }, { "word": "小池", "reading": "こいけ", "meaning": "small pond" }] },
-  { "kanji": "林", "category": 2, "meaning": "Grove / Woods", "onyomi": "リン", "kunyomi": "はやし", "examples": [{ "word": "森林", "reading": "しんりん", "meaning": "forest" }, { "word": "山林", "reading": "さんりん", "meaning": "mountain forest" }] },
-  { "kanji": "森", "category": 2, "meaning": "Forest", "onyomi": "シン", "kunyomi": "もり", "examples": [{ "word": "森林", "reading": "しんりん", "meaning": "forest" }, { "word": "青森", "reading": "あおもり", "meaning": "Aomori" }] },
-  { "kanji": "星", "category": 2, "meaning": "Star", "onyomi": "セイ", "kunyomi": "ほし", "examples": [{ "word": "火星", "reading": "かせい", "meaning": "Mars" }, { "word": "流れ星", "reading": "ながれぼし", "meaning": "shooting star" }] },
-  { "kanji": "雲", "category": 2, "meaning": "Cloud", "onyomi": "ウン", "kunyomi": "くも", "examples": [{ "word": "暗雲", "reading": "あんうん", "meaning": "dark clouds" }, { "word": "雲海", "reading": "うんかい", "meaning": "sea of clouds" }] },
-  { "kanji": "雪", "category": 2, "meaning": "Snow", "onyomi": "セツ", "kunyomi": "ゆき", "examples": [{ "word": "初雪", "reading": "はつゆき", "meaning": "first snow" }, { "word": "積雪", "reading": "せきせつ", "meaning": "snow depth" }] },
-  { "kanji": "氷", "category": 2, "meaning": "Ice", "onyomi": "ヒョウ", "kunyomi": "こおり", "examples": [{ "word": "氷山", "reading": "ひょうざん", "meaning": "iceberg" }, { "word": "かき氷", "reading": "かきごおり", "meaning": "shaved ice" }] },
-  { "kanji": "波", "category": 2, "meaning": "Wave", "onyomi": "ハ", "kunyomi": "なみ", "examples": [{ "word": "電波", "reading": "でんぱ", "meaning": "radio wave" }, { "word": "津波", "reading": "つなみ", "meaning": "tsunami" }] },
-  { "kanji": "風", "category": 2, "meaning": "Wind", "onyomi": "フウ", "kunyomi": "かぜ", "examples": [{ "word": "台風", "reading": "たいふう", "meaning": "typhoon" }, { "word": "強風", "reading": "きょうふう", "meaning": "strong wind" }] },
-  { "kanji": "虫", "category": 2, "meaning": "Insect", "onyomi": "チュウ", "kunyomi": "むし", "examples": [{ "word": "昆虫", "reading": "こんちゅう", "meaning": "insect" }, { "word": "弱虫", "reading": "よわむし", "meaning": "coward" }] },
-  { "kanji": "犬", "category": 2, "meaning": "Dog", "onyomi": "ケン", "kunyomi": "いぬ", "examples": [{ "word": "番犬", "reading": "ばんけん", "meaning": "watchdog" }, { "word": "野良犬", "reading": "のらいぬ", "meaning": "stray dog" }] },
-  { "kanji": "猫", "category": 2, "meaning": "Cat", "onyomi": "ビョウ", "kunyomi": "ねこ", "examples": [{ "word": "愛猫", "reading": "あいびょう", "meaning": "pet cat" }, { "word": "猫背", "reading": "ねこぜ", "meaning": "stoop" }] },
-  { "kanji": "牛", "category": 2, "meaning": "Cow / Ox", "onyomi": "ギュウ", "kunyomi": "うし", "examples": [{ "word": "牛乳", "reading": "ぎゅうにゅう", "meaning": "milk" }, { "word": "牛肉", "reading": "ぎゅうにく", "meaning": "beef" }] },
-  { "kanji": "馬", "category": 2, "meaning": "Horse", "onyomi": "バ", "kunyomi": "うま", "examples": [{ "word": "乗馬", "reading": "じょうば", "meaning": "horse riding" }, { "word": "競馬", "reading": "けいば", "meaning": "horse racing" }] },
-  { "kanji": "鳥", "category": 2, "meaning": "Bird", "onyomi": "チョウ", "kunyomi": "とり", "examples": [{ "word": "小鳥", "reading": "ことり", "meaning": "small bird" }, { "word": "白鳥", "reading": "はくちょう", "meaning": "swan" }] },
-  { "kanji": "魚", "category": 2, "meaning": "Fish", "onyomi": "ギョ", "kunyomi": "さかな", "examples": [{ "word": "金魚", "reading": "きんぎょ", "meaning": "goldfish" }, { "word": "鮮魚", "reading": "せんぎょ", "meaning": "fresh fish" }] },
-  { "kanji": "米", "category": 2, "meaning": "Rice", "onyomi": "マイ", "kunyomi": "こめ", "examples": [{ "word": "米国", "reading": "べいこく", "meaning": "USA" }, { "word": "新米", "reading": "しんまい", "meaning": "new rice" }] },
-  { "kanji": "茶", "category": 2, "meaning": "Tea", "onyomi": "チャ", "kunyomi": "-", "examples": [{ "word": "紅茶", "reading": "こうちゃ", "meaning": "black tea" }, { "word": "日本茶", "reading": "にほんちゃ", "meaning": "Japanese tea" }] },
-  { "kanji": "肉", "category": 2, "meaning": "Meat", "onyomi": "ニク", "kunyomi": "-", "examples": [{ "word": "筋肉", "reading": "きんにく", "meaning": "muscle" }, { "word": "肉屋", "reading": "にくや", "meaning": "butcher" }] },
-  { "kanji": "食", "category": 2, "meaning": "Eat", "onyomi": "ショク", "kunyomi": "た(べる)", "examples": [{ "word": "食事", "reading": "しょくじ", "meaning": "meal" }, { "word": "食べ物", "reading": "たべもの", "meaning": "food" }] },
-  { "kanji": "飲", "category": 2, "meaning": "Drink", "onyomi": "イン", "kunyomi": "の(む)", "examples": [{ "word": "飲み物", "reading": "のみもの", "meaning": "drink" }, { "word": "飲食店", "reading": "いんしょくてん", "meaning": "restaurant" }] },
-  { "kanji": "歩", "category": 2, "meaning": "Walk", "onyomi": "ホ", "kunyomi": "ある(く)", "examples": [{ "word": "散歩", "reading": "さんぽ", "meaning": "stroll" }, { "word": "歩道", "reading": "ほどう", "meaning": "sidewalk" }] },
-  { "kanji": "走", "category": 2, "meaning": "Run", "onyomi": "ソウ", "kunyomi": "はし(る)", "examples": [{ "word": "競走", "reading": "きょうそう", "meaning": "race" }, { "word": "走行", "reading": "そうこう", "meaning": "traveling" }] },
-  { "kanji": "泳", "category": 2, "meaning": "Swim", "onyomi": "エイ", "kunyomi": "およ(ぐ)", "examples": [{ "word": "水泳", "reading": "すいえい", "meaning": "swimming" }, { "word": "平泳ぎ", "reading": "ひらおよぎ", "meaning": "breaststroke" }] },
-  { "kanji": "歌", "category": 2, "meaning": "Sing", "onyomi": "カ", "kunyomi": "うた(う)", "examples": [{ "word": "歌手", "reading": "かしゅ", "meaning": "singer" }, { "word": "校歌", "reading": "こうか", "meaning": "school song" }] },
-  { "kanji": "音", "category": 2, "meaning": "Sound", "onyomi": "オン", "kunyomi": "おと", "examples": [{ "word": "音楽", "reading": "おんがく", "meaning": "music" }, { "word": "発音", "reading": "はつおん", "meaning": "pronunciation" }] },
-  { "kanji": "楽", "category": 2, "meaning": "Music / Fun", "onyomi": "ガク", "kunyomi": "たの(しい)", "examples": [{ "word": "娯楽", "reading": "ごらく", "meaning": "entertainment" }, { "word": "楽器", "reading": "がっき", "meaning": "instrument" }] },
-  { "kanji": "画", "category": 2, "meaning": "Picture", "onyomi": "ガ", "kunyomi": "-", "examples": [{ "word": "映画", "reading": "えいが", "meaning": "movie" }, { "word": "漫画", "reading": "まんが", "meaning": "manga" }] },
-  { "kanji": "映", "category": 2, "meaning": "Project", "onyomi": "エイ", "kunyomi": "うつ(る)", "examples": [{ "word": "映像", "reading": "えいぞう", "meaning": "image" }, { "word": "放映", "reading": "ほうえい", "meaning": "televising" }] },
-  { "kanji": "写", "category": 2, "meaning": "Copy / Photo", "onyomi": "シャ", "kunyomi": "うつ(す)", "examples": [{ "word": "写真", "reading": "しゃしん", "meaning": "photo" }, { "word": "描写", "reading": "びょうしゃ", "meaning": "description" }] },
-  { "kanji": "真", "category": 2, "meaning": "True", "onyomi": "シン", "kunyomi": "ま", "examples": [{ "word": "真実", "reading": "しんじつ", "meaning": "truth" }, { "word": "真剣", "reading": "しんけん", "meaning": "serious" }] },
-  { "kanji": "顔", "category": 2, "meaning": "Face", "onyomi": "ガン", "kunyomi": "かお", "examples": [{ "word": "洗顔", "reading": "せんがん", "meaning": "face wash" }, { "word": "笑顔", "reading": "えがお", "meaning": "smile" }] },
-  { "kanji": "頭", "category": 2, "meaning": "Head", "onyomi": "トウ", "kunyomi": "あたま", "examples": [{ "word": "頭痛", "reading": "ずつう", "meaning": "headache" }, { "word": "冒頭", "reading": "ぼうとう", "meaning": "beginning" }] },
-  { "kanji": "首", "category": 2, "meaning": "Neck", "onyomi": "シュ", "kunyomi": "くび", "examples": [{ "word": "首都", "reading": "しゅと", "meaning": "capital" }, { "word": "手首", "reading": "てくび", "meaning": "wrist" }] },
-  { "kanji": "肩", "category": 2, "meaning": "Shoulder", "onyomi": "ケン", "kunyomi": "かた", "examples": [{ "word": "肩書き", "reading": "かたがき", "meaning": "job title" }, { "word": "肩車", "reading": "かたぐるま", "meaning": "piggyback" }] },
-  { "kanji": "背", "category": 2, "meaning": "Back", "onyomi": "ハイ", "kunyomi": "せ", "examples": [{ "word": "背中", "reading": "せなか", "meaning": "back" }, { "word": "背景", "reading": "はいけい", "meaning": "background" }] },
-  { "kanji": "腹", "category": 2, "meaning": "Belly", "onyomi": "フク", "kunyomi": "はら", "examples": [{ "word": "空腹", "reading": "くうふく", "meaning": "hunger" }, { "word": "腹痛", "reading": "ふくつう", "meaning": "stomachache" }] },
-  { "kanji": "腕", "category": 2, "meaning": "Arm", "onyomi": "ワン", "kunyomi": "うで", "examples": [{ "word": "腕力", "reading": "わんりょく", "meaning": "arm strength" }, { "word": "腕時計", "reading": "うでどけい", "meaning": "wristwatch" }] },
-  { "kanji": "鼻", "category": 2, "meaning": "Nose", "onyomi": "ビ", "kunyomi": "はな", "examples": [{ "word": "鼻水", "reading": "はなみず", "meaning": "runny nose" }, { "word": "鼻声", "reading": "はなごえ", "meaning": "nasal voice" }] },
-  { "kanji": "歯", "category": 2, "meaning": "Tooth", "onyomi": "シ", "kunyomi": "は", "examples": [{ "word": "歯科", "reading": "しか", "meaning": "dentistry" }, { "word": "虫歯", "reading": "むしば", "meaning": "cavity" }] },
-  { "kanji": "舌", "category": 2, "meaning": "Tongue", "onyomi": "ゼツ", "kunyomi": "した", "examples": [{ "word": "毒舌", "reading": "どくぜつ", "meaning": "malice" }, { "word": "舌戦", "reading": "ぜっせん", "meaning": "war of words" }] },
-  { "kanji": "血", "category": 2, "meaning": "Blood", "onyomi": "ケツ", "kunyomi": "ち", "examples": [{ "word": "血液", "reading": "けつえき", "meaning": "blood" }, { "word": "流血", "reading": "りゅうけつ", "meaning": "bloodshed" }] },
-  { "kanji": "肉", "category": 2, "meaning": "Meat", "onyomi": "ニク", "kunyomi": "-", "examples": [{ "word": "筋肉", "reading": "きんにく", "meaning": "muscle" }, { "word": "焼肉", "reading": "やきにく", "meaning": "Yakiniku" }] },
-  { "kanji": "骨", "category": 2, "meaning": "Bone", "onyomi": "コツ", "kunyomi": "ほね", "examples": [{ "word": "骨折", "reading": "こっせつ", "meaning": "fracture" }, { "word": "骸骨", "reading": "がいこつ", "meaning": "skeleton" }] },
-  { "kanji": "身", "category": 2, "meaning": "Body / Self", "onyomi": "シン", "kunyomi": "み", "examples": [{ "word": "出身", "reading": "しゅっしん", "meaning": "hometown" }, { "word": "身長", "reading": "しんちょう", "meaning": "height" }] },
-  { "kanji": "思", "category": 2, "meaning": "Think", "onyomi": "シ", "kunyomi": "おも(う)", "examples": [{ "word": "思考", "reading": "しこう", "meaning": "thinking" }, { "word": "思い出", "reading": "おもいで", "meaning": "memory" }] },
-  { "kanji": "考", "category": 2, "meaning": "Consider", "onyomi": "コウ", "kunyomi": "かんが(える)", "examples": [{ "word": "参考", "reading": "さんこう", "meaning": "reference" }, { "word": "考古学", "reading": "こうこがく", "meaning": "archaeology" }] },
-  { "kanji": "知", "category": 2, "meaning": "Know", "onyomi": "チ", "kunyomi": "し(る)", "examples": [{ "word": "知識", "reading": "ちしき", "meaning": "knowledge" }, { "word": "通知", "reading": "つうち", "meaning": "notice" }] },
-  { "kanji": "歌", "category": 2, "meaning": "Song", "onyomi": "カ", "kunyomi": "うた", "examples": [{ "word": "校歌", "reading": "こうか", "meaning": "school song" }, { "word": "短歌", "reading": "たんか", "meaning": "Tanka" }] },
-  { "kanji": "詩", "category": 2, "meaning": "Poem", "onyomi": "シ", "kunyomi": "-", "examples": [{ "word": "詩人", "reading": "しじん", "meaning": "poet" }, { "word": "漢詩", "reading": "かんし", "meaning": "Chinese poem" }] },
-  { "kanji": "光", "category": 2, "meaning": "Light", "onyomi": "コウ", "kunyomi": "ひかり", "examples": [{ "word": "日光", "reading": "にっこう", "meaning": "sunlight" }, { "word": "光線", "reading": "こうせん", "meaning": "beam" }] },
-  { "kanji": "色", "category": 2, "meaning": "Color", "onyomi": "ショク", "kunyomi": "いろ", "examples": [{ "word": "景色", "reading": "けしき", "meaning": "scenery" }, { "word": "特色", "reading": "とくしょく", "meaning": "characteristic" }] },
-  { "kanji": "形", "category": 2, "meaning": "Shape", "onyomi": "ケイ", "kunyomi": "かたち", "examples": [{ "word": "人形", "reading": "にんぎょう", "meaning": "doll" }, { "word": "形式", "reading": "けいしき", "meaning": "format" }] },
-  { "kanji": "味", "category": 2, "meaning": "Taste", "onyomi": "ミ", "kunyomi": "あじ", "examples": [{ "word": "意味", "reading": "いみ", "meaning": "meaning" }, { "word": "趣味", "reading": "しゅみ", "meaning": "hobby" }] },
-  { "kanji": "音", "category": 2, "meaning": "Sound", "onyomi": "オン", "kunyomi": "おと", "examples": [{ "word": "録音", "reading": "ろくおん", "meaning": "recording" }, { "word": "騒音", "reading": "そうおん", "meaning": "noise" }] },
-  { "kanji": "風", "category": 2, "meaning": "Wind", "onyomi": "フウ", "kunyomi": "かぜ", "examples": [{ "word": "風車", "reading": "かざぐるま", "meaning": "pinwheel" }, { "word": "和風", "reading": "わふう", "meaning": "Japanese style" }] },
-  { "kanji": "雨", "category": 2, "meaning": "Rain", "onyomi": "ウ", "kunyomi": "あめ", "examples": [{ "word": "雨具", "reading": "あまぐ", "meaning": "rain gear" }, { "word": "小雨", "reading": "こさめ", "meaning": "drizzle" }] },
-  { "kanji": "雪", "category": 2, "meaning": "Snow", "onyomi": "セツ", "kunyomi": "ゆき", "examples": [{ "word": "新雪", "reading": "しんせつ", "meaning": "fresh snow" }, { "word": "豪雪", "reading": "ごうせつ", "meaning": "heavy snow" }] },
-  { "kanji": "火", "category": 2, "meaning": "Fire", "onyomi": "カ", "kunyomi": "ひ", "examples": [{ "word": "火事", "reading": "かじ", "meaning": "fire" }, { "word": "火力", "reading": "かりょく", "meaning": "fire power" }] },
-  { "kanji": "光", "category": 2, "meaning": "Light", "onyomi": "コウ", "kunyomi": "ひかり", "examples": [{ "word": "観光", "reading": "かんこう", "meaning": "sightseeing" }, { "word": "栄光", "reading": "えいこう", "meaning": "glory" }] },
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-  // CATEGORY 3: Society & Emotion (社会・学校・感情) - 100 Kanji
-  { "kanji": "世", "category": 3, "meaning": "World", "onyomi": "セイ", "kunyomi": "よ", "examples": [{ "word": "世界", "reading": "せかい", "meaning": "world" }, { "word": "世の中", "reading": "よのなか", "meaning": "society" }] },
-  { "kanji": "界", "category": 3, "meaning": "Boundary", "onyomi": "カイ", "kunyomi": "-", "examples": [{ "word": "限界", "reading": "げんかい", "meaning": "limit" }, { "word": "業界", "reading": "ぎょうかい", "meaning": "industry" }] },
-  { "kanji": "政", "category": 3, "meaning": "Government", "onyomi": "セイ", "kunyomi": "-", "examples": [{ "word": "政治", "reading": "せいじ", "meaning": "politics" }, { "word": "政府", "reading": "せいふ", "meaning": "govt." }] },
-  { "kanji": "治", "category": 3, "meaning": "Govern / Heal", "onyomi": "ジ", "kunyomi": "なお(す)", "examples": [{ "word": "治癒", "reading": "ちゆ", "meaning": "healing" }, { "word": "自治", "reading": "じち", "meaning": "self-govt." }] },
-  { "kanji": "経", "category": 3, "meaning": "Pass through", "onyomi": "ケイ", "kunyomi": "へ(る)", "examples": [{ "word": "経済", "reading": "けいざい", "meaning": "economy" }, { "word": "経験", "reading": "けいけん", "meaning": "experience" }] },
-  { "kanji": "済", "category": 3, "meaning": "Finish / Relieve", "onyomi": "サイ", "kunyomi": "す(む)", "examples": [{ "word": "返済", "reading": "へんさい", "meaning": "repayment" }, { "word": "共済", "reading": "きょうさい", "meaning": "mutual aid" }] },
-  { "kanji": "法", "category": 3, "meaning": "Law / Method", "onyomi": "ホウ", "kunyomi": "-", "examples": [{ "word": "法律", "reading": "ほうりつ", "meaning": "law" }, { "word": "方法", "reading": "ほうほう", "meaning": "method" }] },
-  { "kanji": "律", "category": 3, "meaning": "Law / Rhythm", "onyomi": "リツ", "kunyomi": "-", "examples": [{ "word": "規律", "reading": "きりつ", "meaning": "discipline" }, { "word": "自律", "reading": "じりつ", "meaning": "autonomy" }] },
-  { "kanji": "議", "category": 3, "meaning": "Deliberate", "onyomi": "ギ", "kunyomi": "-", "examples": [{ "word": "会議", "reading": "かいぎ", "meaning": "meeting" }, { "word": "議論", "reading": "ぎろん", "meaning": "argument" }] },
-  { "kanji": "論", "category": 3, "meaning": "Theory / Argument", "onyomi": "ロン", "kunyomi": "-", "examples": [{ "word": "論理", "reading": "ろんり", "meaning": "logic" }, { "word": "結論", "reading": "けつろん", "meaning": "conclusion" }] },
-  { "kanji": "文", "category": 3, "meaning": "Sentence / Literature", "onyomi": "ブン", "kunyomi": "ふみ", "examples": [{ "word": "文学", "reading": "ぶんがく", "meaning": "literature" }, { "word": "文法", "reading": "ぶんぽう", "meaning": "grammar" }] },
-  { "kanji": "化", "category": 3, "meaning": "Change", "onyomi": "カ", "kunyomi": "ば(ける)", "examples": [{ "word": "文化", "reading": "ぶんか", "meaning": "culture" }, { "word": "化学", "reading": "かがく", "meaning": "chemistry" }] },
-  { "kanji": "理", "category": 3, "meaning": "Logic / Physics", "onyomi": "リ", "kunyomi": "ことわり", "examples": [{ "word": "理由", "reading": "りゆう", "meaning": "reason" }, { "word": "料理", "reading": "りょうり", "meaning": "cooking" }] },
-  { "kanji": "由", "category": 3, "meaning": "Cause / Reason", "onyomi": "ユ", "kunyomi": "よし", "examples": [{ "word": "自由", "reading": "じゆう", "meaning": "freedom" }, { "word": "経由", "reading": "けいゆ", "meaning": "via" }] },
-  { "kanji": "研", "category": 3, "meaning": "Polish", "onyomi": "ケン", "kunyomi": "と(ぐ)", "examples": [{ "word": "研究", "reading": "けんきゅう", "meaning": "research" }, { "word": "研磨", "reading": "けんま", "meaning": "polishing" }] },
-  { "kanji": "究", "category": 3, "meaning": "Investigate", "onyomi": "キュウ", "kunyomi": "きわ(める)", "examples": [{ "word": "探究", "reading": "たんきゅう", "meaning": "quest" }, { "word": "究極", "reading": "きゅうきょく", "meaning": "ultimate" }] },
-  { "kanji": "質", "category": 3, "meaning": "Quality", "onyomi": "シツ", "kunyomi": "-", "examples": [{ "word": "質問", "reading": "しつもん", "meaning": "question" }, { "word": "素質", "reading": "そしつ", "meaning": "talent" }] },
-  { "kanji": "問", "category": 3, "meaning": "Question", "onyomi": "モン", "kunyomi": "と(う)", "examples": [{ "word": "問題", "reading": "もんだい", "meaning": "problem" }, { "word": "自問", "reading": "じもん", "meaning": "asking self" }] },
-  { "kanji": "題", "category": 3, "meaning": "Topic / Title", "onyomi": "ダイ", "kunyomi": "-", "examples": [{ "word": "話題", "reading": "わだい", "meaning": "topic" }, { "word": "宿題", "reading": "しゅくだい", "meaning": "homework" }] },
-  { "kanji": "答", "category": 3, "meaning": "Answer", "onyomi": "トウ", "kunyomi": "こた(える)", "examples": [{ "word": "回答", "reading": "かいとう", "meaning": "response" }, { "word": "答案", "reading": "とうあん", "meaning": "exam paper" }] },
-  { "kanji": "習", "category": 3, "meaning": "Learn", "onyomi": "シュウ", "kunyomi": "なら(う)", "examples": [{ "word": "練習", "reading": "れんしゅう", "meaning": "practice" }, { "word": "習慣", "reading": "しゅうかん", "meaning": "habit" }] },
-  { "kanji": "勉", "category": 3, "meaning": "Effort", "onyomi": "ベン", "kunyomi": "つと(める)", "examples": [{ "word": "勉強", "reading": "べんきょう", "meaning": "study" }, { "word": "勤勉", "reading": "きんべん", "meaning": "diligent" }] },
-  { "kanji": "強", "category": 3, "meaning": "Strong", "onyomi": "キョウ", "kunyomi": "つよ(い)", "examples": [{ "word": "強力", "reading": "きょうりょく", "meaning": "powerful" }, { "word": "強調", "reading": "きょうちょう", "meaning": "emphasis" }] },
-  { "kanji": "弱", "category": 3, "meaning": "Weak", "onyomi": "ジャク", "kunyomi": "よわ(い)", "examples": [{ "word": "弱点", "reading": "じゃくてん", "meaning": "weak point" }, { "word": "衰弱", "reading": "すいじゃく", "meaning": "weakness" }] },
-  { "kanji": "科", "category": 3, "meaning": "Department / Science", "onyomi": "カ", "kunyomi": "-", "examples": [{ "word": "科学", "reading": "かがく", "meaning": "science" }, { "word": "教科書", "reading": "きょうかしょ", "meaning": "textbook" }] },
-  { "kanji": "教", "category": 3, "meaning": "Teach / Religion", "onyomi": "キョウ", "kunyomi": "おし(える)", "examples": [{ "word": "教室", "reading": "きょうしつ", "meaning": "classroom" }, { "word": "宗教", "reading": "しゅうきょう", "meaning": "religion" }] },
-  { "kanji": "室", "category": 3, "meaning": "Room", "onyomi": "シツ", "kunyomi": "むろ", "examples": [{ "word": "客室", "reading": "きゃくしつ", "meaning": "guest room" }, { "word": "待合室", "reading": "まちあいしつ", "meaning": "waiting room" }] },
-  { "kanji": "宿", "category": 3, "meaning": "Inn / Lodge", "onyomi": "シュク", "kunyomi": "やど", "examples": [{ "word": "宿泊", "reading": "しゅくはく", "meaning": "staying" }, { "word": "新宿", "reading": "しんじゅく", "meaning": "Shinjuku" }] },
-  { "kanji": "校", "category": 3, "meaning": "School", "onyomi": "コウ", "kunyomi": "-", "examples": [{ "word": "校則", "reading": "こうそく", "meaning": "school rules" }, { "word": "登校", "reading": "とうこう", "meaning": "attending school" }] },
-  { "kanji": "館", "category": 3, "meaning": "Building", "onyomi": "カン", "kunyomi": "-", "examples": [{ "word": "図書館", "reading": "としょかん", "meaning": "library" }, { "word": "美術館", "reading": "びじゅつかん", "meaning": "art museum" }] },
-  { "kanji": "図", "category": 3, "meaning": "Map / Drawing", "onyomi": "ズ", "kunyomi": "はか(る)", "examples": [{ "word": "地図", "reading": "ちず", "meaning": "map" }, { "word": "意図", "reading": "いと", "meaning": "intention" }] },
-  { "kanji": "絵", "category": 3, "meaning": "Painting / Drawing", "onyomi": "カイ", "kunyomi": "え", "examples": [{ "word": "絵画", "reading": "かいが", "meaning": "painting" }, { "word": "油絵", "reading": "あぶらえ", "meaning": "oil painting" }] },
-  { "kanji": "書", "category": 3, "meaning": "Write", "onyomi": "ショ", "kunyomi": "か(く)", "examples": [{ "word": "読書", "reading": "ドクショ", "meaning": "reading" }, { "word": "教科書", "reading": "キョウカショ", "meaning": "textbook" }] },
-  { "kanji": "読", "category": 3, "meaning": "Read", "onyomi": "ドク", "kunyomi": "よ(む)", "examples": [{ "word": "速読", "reading": "そくどく", "meaning": "speed reading" }, { "word": "音読", "reading": "おんどく", "meaning": "reading aloud" }] },
-  { "kanji": "文", "category": 3, "meaning": "Writing / Art", "onyomi": "ブン", "kunyomi": "ふみ", "examples": [{ "word": "文章", "reading": "ぶんしょう", "meaning": "sentence" }, { "word": "注文", "reading": "ちゅうもん", "meaning": "order" }] },
-  { "kanji": "章", "category": 3, "meaning": "Chapter / Badge", "onyomi": "ショウ", "kunyomi": "-", "examples": [{ "word": "第一章", "reading": "だいいっしょう", "meaning": "Chapter 1" }, { "word": "勲章", "reading": "くんしょう", "meaning": "medal" }] },
-  { "kanji": "料", "category": 3, "meaning": "Fee / Material", "onyomi": "リョウ", "kunyomi": "-", "examples": [{ "word": "料金", "reading": "りょうきん", "meaning": "fee" }, { "word": "料理", "reading": "りょうり", "meaning": "cooking" }] },
-  { "kanji": "味", "category": 3, "meaning": "Taste", "onyomi": "ミ", "kunyomi": "あじ", "examples": [{ "word": "趣味", "reading": "しゅみ", "meaning": "hobby" }, { "word": "調味", "reading": "ちょうみ", "meaning": "seasoning" }] },
-  { "kanji": "心", "category": 3, "meaning": "Heart", "onyomi": "シン", "kunyomi": "こころ", "examples": [{ "word": "安心", "reading": "あんしん", "meaning": "relief" }, { "word": "関心", "reading": "かんしん", "meaning": "interest" }] },
-  { "kanji": "思", "category": 3, "meaning": "Think", "onyomi": "シ", "kunyomi": "おも(う)", "examples": [{ "word": "意思", "reading": "いし", "meaning": "intention" }, { "word": "不思議", "reading": "ふしぎ", "meaning": "mysterious" }] },
-  { "kanji": "想", "category": 3, "meaning": "Idea / Thought", "onyomi": "ソウ", "kunyomi": "-", "examples": [{ "word": "想像", "reading": "そうぞう", "meaning": "imagination" }, { "word": "感想", "reading": "かんそう", "meaning": "impression" }] },
-  { "kanji": "感", "category": 3, "meaning": "Feeling", "onyomi": "カン", "kunyomi": "-", "examples": [{ "word": "感動", "reading": "かんどう", "meaning": "moved/touched" }, { "word": "感謝", "reading": "かんしゃ", "meaning": "gratitude" }] },
-  { "kanji": "愛", "category": 3, "meaning": "Love", "onyomi": "アイ", "kunyomi": "め(でる)", "examples": [{ "word": "愛用", "reading": "あいよう", "meaning": "fav usage" }, { "word": "愛情", "reading": "あいじょう", "meaning": "affection" }] },
-  { "kanji": "情", "category": 3, "meaning": "Feeling / Information", "onyomi": "ジョウ", "kunyomi": "なさ(け)", "examples": [{ "word": "情報", "reading": "じょうほう", "meaning": "info" }, { "word": "同情", "reading": "どうじょう", "meaning": "sympathy" }] },
-  { "kanji": "信", "category": 3, "meaning": "Believe / Trust", "onyomi": "シン", "kunyomi": "まか(せる)", "examples": [{ "word": "信頼", "reading": "しんらい", "meaning": "trust" }, { "word": "自信", "reading": "じしん", "meaning": "confidence" }] },
-  { "kanji": "望", "category": 3, "meaning": "Hope / Desire", "onyomi": "ボウ", "kunyomi": "のぞ(む)", "examples": [{ "word": "希望", "reading": "きぼう", "meaning": "hope" }, { "word": "展望", "reading": "てんぼう", "meaning": "prospect" }] },
-  { "kanji": "欲", "category": 3, "meaning": "Want", "onyomi": "ヨク", "kunyomi": "ほ(しい)", "examples": [{ "word": "食欲", "reading": "しょくよく", "meaning": "appetite" }, { "word": "強欲", "reading": "ごうよく", "meaning": "greed" }] },
-  { "kanji": "悲", "category": 3, "meaning": "Sad", "onyomi": "ヒ", "kunyomi": "かな(しい)", "examples": [{ "word": "悲劇", "reading": "ひげき", "meaning": "tragedy" }, { "word": "慈悲", "reading": "じひ", "meaning": "mercy" }] },
-  { "kanji": "苦", "category": 3, "meaning": "Suffering / Bitter", "onyomi": "ク", "kunyomi": "くる(しい)", "examples": [{ "word": "苦労", "reading": "くろう", "meaning": "hardship" }, { "word": "苦手", "reading": "にがて", "meaning": "not good at" }] },
-  { "kanji": "痛", "category": 3, "meaning": "Pain", "onyomi": "ツウ", "kunyomi": "いた(い)", "examples": [{ "word": "苦痛", "reading": "くつう", "meaning": "pain" }, { "word": "痛感", "reading": "つうかん", "meaning": "fully realize" }] },
-  { "kanji": "怒", "category": 3, "meaning": "Angry", "onyomi": "ド", "kunyomi": "おこ(る)", "examples": [{ "word": "怒気", "reading": "どき", "meaning": "anger" }, { "word": "喜怒", "reading": "きど", "meaning": "joy & anger" }] },
-  { "kanji": "笑", "category": 3, "meaning": "Laugh / Smile", "onyomi": "ショウ", "kunyomi": "わら(う)", "examples": [{ "word": "爆笑", "reading": "ばくしょう", "meaning": "loud laugh" }, { "word": "失笑", "reading": "しっしょう", "meaning": "chuckle" }] },
-  { "kanji": "泣", "category": 3, "meaning": "Cry", "onyomi": "キュウ", "kunyomi": "な(く)", "examples": [{ "word": "泣き言", "reading": "なきごと", "meaning": "complaint" }, { "word": "号泣", "reading": "ごうきゅう", "meaning": "weeping" }] },
-  { "kanji": "死", "category": 3, "meaning": "Death", "onyomi": "シ", "kunyomi": "し(ぬ)", "examples": [{ "word": "死体", "reading": "したい", "meaning": "corpse" }, { "word": "必死", "reading": "ひっし", "meaning": "desperate" }] },
-  { "kanji": "亡", "category": 3, "meaning": "Deceased", "onyomi": "ボウ", "kunyomi": "な(い)", "examples": [{ "word": "死亡", "reading": "しぼう", "meaning": "death" }, { "word": "亡命", "reading": "ぼうめい", "meaning": "asylum" }] },
-  { "kanji": "育", "category": 3, "meaning": "Rear", "onyomi": "イク", "kunyomi": "そだ(つ)", "examples": [{ "word": "教育", "reading": "きょういく", "meaning": "education" }, { "word": "体育", "reading": "たいいく", "meaning": "PE" }] },
-  { "kanji": "老", "category": 3, "meaning": "Old / Aged", "onyomi": "ロウ", "kunyomi": "お(いる)", "examples": [{ "word": "老人", "reading": "ろうじん", "meaning": "elderly" }, { "word": "老後", "reading": "ろうご", "meaning": "old age" }] },
-  { "kanji": "若", "category": 3, "meaning": "Young", "onyomi": "ジャク", "kunyomi": "わか(い)", "examples": [{ "word": "若者", "reading": "わかもの", "meaning": "youth" }, { "word": "若手", "reading": "わかて", "meaning": "young talent" }] },
-  { "kanji": "福", "category": 3, "meaning": "Blessing / Luck", "onyomi": "フク", "kunyomi": "-", "examples": [{ "word": "幸福", "reading": "こうふく", "meaning": "happiness" }, { "word": "福祉", "reading": "ふくし", "meaning": "welfare" }] },
-  { "kanji": "幸", "category": 3, "meaning": "Happiness", "onyomi": "コウ", "kunyomi": "しあわ(せ)", "examples": [{ "word": "幸運", "reading": "こううん", "meaning": "good luck" }, { "word": "幸い", "reading": "さいわい", "meaning": "fortunate" }] },
-  { "kanji": "命", "category": 3, "meaning": "Life / Command", "onyomi": "メイ", "kunyomi": "いのち", "examples": [{ "word": "生命", "reading": "せいめい", "meaning": "life" }, { "word": "命令", "reading": "めいれい", "meaning": "order" }] },
-  { "kanji": "運", "category": 3, "meaning": "Luck / Carry", "onyomi": "ウン", "kunyomi": "はこ(ぶ)", "examples": [{ "word": "運転", "reading": "うんてん", "meaning": "driving" }, { "word": "不運", "reading": "ふうん", "meaning": "misfortune" }] },
-  { "kanji": "助", "category": 3, "meaning": "Help / Assist", "onyomi": "ジョ", "kunyomi": "たす(ける)", "examples": [{ "word": "助手", "reading": "じょしゅ", "meaning": "assistant" }, { "word": "救助", "reading": "きゅうじょ", "meaning": "rescue" }] },
-  { "kanji": "救", "category": 3, "meaning": "Rescue", "onyomi": "キュウ", "kunyomi": "すく(う)", "examples": [{ "word": "救急車", "reading": "きゅうきゅうしゃ", "meaning": "ambulance" }, { "word": "救済", "reading": "きゅうさい", "meaning": "relief" }] },
-  { "kanji": "護", "category": 3, "meaning": "Protect", "onyomi": "ゴ", "kunyomi": "まも(る)", "examples": [{ "word": "保護", "reading": "ほご", "meaning": "protection" }, { "word": "護衛", "reading": "ごえい", "meaning": "escort" }] },
-  { "kanji": "守", "category": 3, "meaning": "Guard / Defend", "onyomi": "シュ", "kunyomi": "まも(る)", "examples": [{ "word": "留守", "reading": "るす", "meaning": "away from home" }, { "word": "遵守", "reading": "じゅんしゅ", "meaning": "compliance" }] },
-  { "kanji": "警", "category": 3, "meaning": "Warn / Police", "onyomi": "ケイ", "kunyomi": "-", "examples": [{ "word": "警官", "reading": "けいかん", "meaning": "police" }, { "word": "警告", "reading": "けいこく", "meaning": "warning" }] },
-  { "kanji": "防", "category": 3, "meaning": "Defend / Prevent", "onyomi": "ボウ", "kunyomi": "ふせ(ぐ)", "examples": [{ "word": "予防", "reading": "よぼう", "meaning": "prevention" }, { "word": "国防", "reading": "こくぼう", "meaning": "defense" }] },
-  { "kanji": "犯", "category": 3, "meaning": "Crime / Offense", "onyomi": "ハン", "kunyomi": "おか(す)", "examples": [{ "word": "犯罪", "reading": "はんざい", "meaning": "crime" }, { "word": "犯人", "reading": "はんにん", "meaning": "criminal" }] },
-  { "kanji": "罪", "category": 3, "meaning": "Guilt / Sin", "onyomi": "ザイ", "kunyomi": "つみ", "examples": [{ "word": "謝罪", "reading": "しゃざい", "meaning": "apology" }, { "word": "有罪", "reading": "ゆうざい", "meaning": "guilty" }] },
-  { "kanji": "憲", "category": 3, "meaning": "Constitution", "onyomi": "ケン", "kunyomi": "-", "examples": [{ "word": "憲法", "reading": "けんぽう", "meaning": "constitution" }, { "word": "違憲", "reading": "いけん", "meaning": "unconstit." }] },
-  { "kanji": "民", "category": 3, "meaning": "People / Nation", "onyomi": "ミン", "kunyomi": "たみ", "examples": [{ "word": "国民", "reading": "こくみん", "meaning": "national people" }, { "word": "民主主義", "reading": "みんしゅしゅぎ", "meaning": "democracy" }] },
-  { "kanji": "軍", "category": 3, "meaning": "Military", "onyomi": "グン", "kunyomi": "-", "examples": [{ "word": "軍隊", "reading": "ぐんたい", "meaning": "military" }, { "word": "陸軍", "reading": "りくぐん", "meaning": "army" }] },
-  { "kanji": "兵", "category": 3, "meaning": "Soldier", "onyomi": "ヘイ", "kunyomi": "つわもの", "examples": [{ "word": "兵士", "reading": "へいし", "meaning": "soldier" }, { "word": "歩兵", "reading": "ほへい", "meaning": "infantry" }] },
-  { "kanji": "戦", "category": 3, "meaning": "War", "onyomi": "セン", "kunyomi": "たたか(う)", "examples": [{ "word": "戦争", "reading": "せんそう", "meaning": "war" }, { "word": "作戦", "reading": "さくせん", "meaning": "strategy" }] },
-  { "kanji": "争", "category": 3, "meaning": "Contention", "onyomi": "ソウ", "kunyomi": "あらそ(う)", "examples": [{ "word": "紛争", "reading": "ふんそう", "meaning": "dispute" }, { "word": "論争", "reading": "ろんそう", "meaning": "controversy" }] },
-  { "kanji": "和", "category": 3, "meaning": "Peace / Harmony", "onyomi": "ワ", "kunyomi": "やわ(らぐ)", "examples": [{ "word": "平和", "reading": "へいわ", "meaning": "peace" }, { "word": "和食", "reading": "わしょく", "meaning": "Japanese food" }] },
-  { "kanji": "都", "category": 3, "meaning": "Metropolis", "onyomi": "ト", "kunyomi": "みやこ", "examples": [{ "word": "都会", "reading": "とかい", "meaning": "city" }, { "word": "東京都", "reading": "とうきょうと", "meaning": "Tokyo" }] },
-  { "kanji": "府", "category": 3, "meaning": "Prefecture", "onyomi": "フ", "kunyomi": "-", "examples": [{ "word": "京都府", "reading": "きょうとふ", "meaning": "Kyoto Pref." }, { "word": "政府", "reading": "せいふ", "meaning": "government" }] },
-  { "kanji": "県", "category": 3, "meaning": "Prefecture", "onyomi": "ケン", "kunyomi": "-", "examples": [{ "word": "県知事", "reading": "けんちじ", "meaning": "Governor" }, { "word": "県立", "reading": "けんりつ", "meaning": "pref. established" }] },
-  { "kanji": "市", "category": 3, "meaning": "City / Market", "onyomi": "シ", "kunyomi": "いち", "examples": [{ "word": "市民", "reading": "しみん", "meaning": "citizen" }, { "word": "市場", "reading": "いちば", "meaning": "market" }] },
-  { "kanji": "町", "category": 3, "meaning": "Town", "onyomi": "チョウ", "kunyomi": "まち", "examples": [{ "word": "町長", "reading": "ちょうちょう", "meaning": "town head" }, { "word": "下町", "reading": "したまち", "meaning": "downtown" }] },
-  { "kanji": "村", "category": 3, "meaning": "Village", "onyomi": "ソン", "kunyomi": "むら", "examples": [{ "word": "村長", "reading": "そんちょう", "meaning": "village head" }, { "word": "漁村", "reading": "ぎょそん", "meaning": "fishing village" }] },
+        body {
+            font-family: 'Quicksand', 'M PLUS Rounded 1c', sans-serif;
+            background: var(--bg-body);
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='500' height='500'%3E%3Cstyle%3Etext%7Bfont-family:'M PLUS Rounded 1c',sans-serif;fill:rgba(83,83,83,0.06);font-weight:700;%7D%3C/style%3E<text x='136' y='103' font-size='28' transform='rotate(18 136 103)'>僕</text><text x='111' y='28' font-size='24' transform='rotate(27 111 28)'>は</text><text x='431' y='191' font-size='27' transform='rotate(20 431 191)'>三</text><text x='303' y='225' font-size='31' transform='rotate(2 303 225)'>十</text><text x='196' y='216' font-size='27' transform='rotate(19 196 216)'>七</text><text x='389' y='50' font-size='20' transform='rotate(12 389 50)'>歳</text><text x='438' y='285' font-size='22' transform='rotate(-25 438 285)'>で</text><text x='265' y='34' font-size='24' transform='rotate(8 265 34)'>、</text><text x='279' y='281' font-size='31' transform='rotate(-13 279 281)'>そ</text><text x='461' y='385' font-size='28' transform='rotate(-19 461 385)'>の</text><text x='268' y='456' font-size='27' transform='rotate(29 268 456)'>と</text><text x='206' y='56' font-size='29' transform='rotate(20 206 56)'>き</text><text x='22' y='271' font-size='23' transform='rotate(-11 22 271)'>ボ</text><text x='104' y='236' font-size='23' transform='rotate(22 104 236)'>ー</text><text x='378' y='457' font-size='25' transform='rotate(24 378 457)'>イ</text><text x='24' y='33' font-size='23' transform='rotate(3 24 33)'>ン</text><text x='41' y='401' font-size='22' transform='rotate(-6 41 401)'>グ</text><text x='63' y='130' font-size='20' transform='rotate(-24 63 130)'>7</text><text x='432' y='470' font-size='25' transform='rotate(17 432 470)'>4</text><text x='346' y='207' font-size='26' transform='rotate(29 346 207)'>7</text><text x='228' y='315' font-size='28' transform='rotate(-29 228 315)'>の</text><text x='213' y='131' font-size='27' transform='rotate(-13 213 131)'>シ</text><text x='349' y='376' font-size='31' transform='rotate(-2 349 376)'>ー</text><text x='473' y='117' font-size='22' transform='rotate(0 473 117)'>ト</text><text x='392' y='149' font-size='27' transform='rotate(-12 392 149)'>に</text><text x='125' y='444' font-size='26' transform='rotate(15 125 444)'>座</text><text x='218' y='381' font-size='23' transform='rotate(-29 218 381)'>っ</text><text x='344' y='319' font-size='29' transform='rotate(22 344 319)'>て</text><text x='109' y='356' font-size='31' transform='rotate(22 109 356)'>い</text><text x='14' y='462' font-size='29' transform='rotate(-25 14 462)'>た</text><text x='134' y='276' font-size='26' transform='rotate(-1 134 276)'>。</text>%3C/svg%3E");
+            background-repeat: repeat;
+            color: var(--text-main);
+            min-height: 100vh;
+            padding-bottom: 50px;
+        }
 
-  // CATEGORY 4: States & Properties (状態・性質) - 100 Kanji
-  { "kanji": "良", "category": 4, "meaning": "Good", "onyomi": "リョウ", "kunyomi": "よ(い)", "examples": [{ "word": "良好", "reading": "りょうこう", "meaning": "favorable" }, { "word": "良心", "reading": "りょうしん", "meaning": "conscience" }] },
-  { "kanji": "悪", "category": 4, "meaning": "Bad", "onyomi": "アク", "kunyomi": "わる(い)", "examples": [{ "word": "最悪", "reading": "さいあく", "meaning": "worst" }, { "word": "悪夢", "reading": "あくむ", "meaning": "nightmare" }] },
-  { "kanji": "正", "category": 4, "meaning": "Correct / Right", "onyomi": "セイ", "kunyomi": "ただ(しい)", "examples": [{ "word": "正直", "reading": "しょうじき", "meaning": "honest" }, { "word": "正確", "reading": "せいかく", "meaning": "accurate" }] },
-  { "kanji": "誤", "category": 4, "meaning": "Mistake / Error", "onyomi": "ゴ", "kunyomi": "あやま(る)", "examples": [{ "word": "誤解", "reading": "ごかい", "meaning": "misunderstanding" }, { "word": "誤差", "reading": "ごさ", "meaning": "error" }] },
-  { "kanji": "真", "category": 4, "meaning": "True / Just", "onyomi": "シン", "kunyomi": "ま", "examples": [{ "word": "真実", "reading": "しんじつ", "meaning": "truth" }, { "word": "真正", "reading": "しんせい", "meaning": "genuine" }] },
-  { "kanji": "実", "category": 4, "meaning": "Real / Fruit", "onyomi": "ジツ", "kunyomi": "み", "examples": [{ "word": "実行", "reading": "じっこう", "meaning": "execution" }, { "word": "現実", "reading": "げんじつ", "meaning": "reality" }] },
-  { "kanji": "確", "category": 4, "meaning": "Certain", "onyomi": "カク", "kunyomi": "たし(か)", "examples": [{ "word": "確認", "reading": "かくにん", "meaning": "confirm" }, { "word": "確実", "reading": "かくじつ", "meaning": "certain" }] },
-  { "kanji": "認", "category": 4, "meaning": "Recognize", "onyomi": "ニン", "kunyomi": "みと(める)", "examples": [{ "word": "認定", "reading": "にんてい", "meaning": "certification" }, { "word": "認識", "reading": "にんしき", "meaning": "awareness" }] },
-  { "kanji": "定", "category": 4, "meaning": "Fix / Determine", "onyomi": "テイ", "kunyomi": "さだ(める)", "examples": [{ "word": "決定", "reading": "けってい", "meaning": "decision" }, { "word": "予定", "reading": "よてい", "meaning": "plan" }] },
-  { "kanji": "決", "category": 4, "meaning": "Decide", "onyomi": "ケツ", "kunyomi": "き(める)", "examples": [{ "word": "決算", "reading": "けっさん", "meaning": "settlement" }, { "word": "対決", "reading": "たいけつ", "meaning": "confrontation" }] },
-  { "kanji": "説", "category": 4, "meaning": "Explain / Theory", "onyomi": "セツ", "kunyomi": "と(く)", "examples": [{ "word": "説明", "reading": "せつめい", "meaning": "explanation" }, { "word": "説得", "reading": "せっとく", "meaning": "persuasion" }] },
-  { "kanji": "解", "category": 4, "meaning": "Solve / Untie", "onyomi": "カイ", "kunyomi": "と(く)", "examples": [{ "word": "解説", "reading": "かいせつ", "meaning": "explanation" }, { "word": "解決", "reading": "かいけつ", "meaning": "solution" }] },
-  { "kanji": "難", "category": 4, "meaning": "Difficult", "onyomi": "ナン", "kunyomi": "むずか(しい)", "examples": [{ "word": "困難", "reading": "こんなん", "meaning": "difficulty" }, { "word": "非難", "reading": "ひなん", "meaning": "criticism" }] },
-  { "kanji": "易", "category": 4, "meaning": "Easy", "onyomi": "エキ", "kunyomi": "やさ(しい)", "examples": [{ "word": "容易", "reading": "ようい", "meaning": "easy" }, { "word": "簡易", "reading": "かんい", "meaning": "simple" }] },
-  { "kanji": "低", "category": 4, "meaning": "Low", "onyomi": "テイ", "kunyomi": "ひく(い)", "examples": [{ "word": "低下", "reading": "ていか", "meaning": "decline" }, { "word": "最低", "reading": "さいてい", "meaning": "lowest/worst" }] },
-  { "kanji": "高", "category": 4, "meaning": "High / Tall", "onyomi": "コウ", "kunyomi": "たか(い)", "examples": [{ "word": "最高", "reading": "さいこう", "meaning": "best" }, { "word": "高度", "reading": "こうど", "meaning": "altitude" }] },
-  { "kanji": "軽", "category": 4, "meaning": "Light (Weight)", "onyomi": "ケイ", "kunyomi": "かる(い)", "examples": [{ "word": "軽食", "reading": "けいしょく", "meaning": "snack" }, { "word": "軽視", "reading": "けいし", "meaning": "neglect" }] },
-  { "kanji": "重", "category": 4, "meaning": "Heavy / Layer", "onyomi": "ジュウ", "kunyomi": "おも(い)", "examples": [{ "word": "体重", "reading": "たいじゅう", "meaning": "body weight" }, { "word": "重要", "reading": "じゅうよう", "meaning": "important" }] },
-  { "kanji": "深", "category": 4, "meaning": "Deep", "onyomi": "シン", "kunyomi": "ふか(い)", "examples": [{ "word": "深夜", "reading": "しんや", "meaning": "midnight" }, { "word": "深海", "reading": "しんかい", "meaning": "deep sea" }] },
-  { "kanji": "浅", "category": 4, "meaning": "Shallow", "onyomi": "セン", "kunyomi": "あさ(い)", "examples": [{ "word": "浅薄", "reading": "せんぱく", "meaning": "shallow" }, { "word": "浅草", "reading": "あさくさ", "meaning": "Asakusa" }] },
-  { "kanji": "冷", "category": 4, "meaning": "Cold (Obj)", "onyomi": "レイ", "kunyomi": "つめ(たい)", "examples": [{ "word": "冷蔵庫", "reading": "れいぞうこ", "meaning": "fridge" }, { "word": "冷酷", "reading": "れいこく", "meaning": "cruel" }] },
-  { "kanji": "温", "category": 4, "meaning": "Warm (Obj)", "onyomi": "オン", "kunyomi": "あたた(かい)", "examples": [{ "word": "温度", "reading": "おんど", "meaning": "temp" }, { "word": "温厚", "reading": "おんこう", "meaning": "gentle" }] },
-  { "kanji": "暑", "category": 4, "meaning": "Hot (Weather)", "onyomi": "ショ", "kunyomi": "あつ(い)", "examples": [{ "word": "猛暑", "reading": "もうしょ", "meaning": "heatwave" }, { "word": "残暑", "reading": "ざんしょ", "meaning": "late heat" }] },
-  { "kanji": "寒", "category": 4, "meaning": "Cold (Weather)", "onyomi": "カン", "kunyomi": "さむ(い)", "examples": [{ "word": "寒波", "reading": "かんぱ", "meaning": "cold wave" }, { "word": "悪寒", "reading": "おかん", "meaning": "chill" }] },
-  { "kanji": "熱", "category": 4, "meaning": "Hot (Obj / Fever)", "onyomi": "ネツ", "kunyomi": "あつ(い)", "examples": [{ "word": "熱心", "reading": "ねっしん", "meaning": "enthusiastic" }, { "word": "高熱", "reading": "こうねつ", "meaning": "high fever" }] },
-  { "kanji": "涼", "category": 4, "meaning": "Cool", "onyomi": "リョウ", "kunyomi": "すず(しい)", "examples": [{ "word": "清涼", "reading": "せいりょう", "meaning": "refreshing" }, { "word": "涼風", "reading": "りょうふう", "meaning": "cool breeze" }] },
-  { "kanji": "忙", "category": 4, "meaning": "Busy", "onyomi": "ボウ", "kunyomi": "いそが(しい)", "examples": [{ "word": "多忙", "reading": "たぼう", "meaning": "very busy" }, { "word": "繁忙", "reading": "はんぼう", "meaning": "busy" }] },
-  { "kanji": "静", "category": 4, "meaning": "Quiet", "onyomi": "セイ", "kunyomi": "しず(か)", "examples": [{ "word": "静止", "reading": "せいし", "meaning": "stillness" }, { "word": "静脈", "reading": "じょうみゃく", "meaning": "vein" }] },
-  { "kanji": "全", "category": 4, "meaning": "All", "onyomi": "ゼン", "kunyomi": "まった(く)", "examples": [{ "word": "全部", "reading": "ぜんぶ", "meaning": "all" }, { "word": "安全", "reading": "あんぜん", "meaning": "safety" }] },
-  { "kanji": "半", "category": 4, "meaning": "Half", "onyomi": "ハン", "kunyomi": "なか(ば)", "examples": [{ "word": "半分", "reading": "はんぶん", "meaning": "half" }, { "word": "半径", "reading": "はんけい", "meaning": "radius" }] },
-  { "kanji": "個", "category": 4, "meaning": "Individual", "onyomi": "コ", "kunyomi": "-", "examples": [{ "word": "個人", "reading": "こじん", "meaning": "individual" }, { "word": "三個", "reading": "さんこ", "meaning": "3 pieces" }] },
-  { "kanji": "別", "category": 4, "meaning": "Separate", "onyomi": "ベツ", "kunyomi": "わか(れる)", "examples": [{ "word": "特別", "reading": "とくべつ", "meaning": "special" }, { "word": "差別", "reading": "さべつ", "meaning": "discrim." }] },
-  { "kanji": "常", "category": 4, "meaning": "Normal / Always", "onyomi": "ジョウ", "kunyomi": "つね", "examples": [{ "word": "日常", "reading": "にちじょう", "meaning": "daily" }, { "word": "通常", "reading": "つうじょう", "meaning": "usual" }] },
-  { "kanji": "平", "category": 4, "meaning": "Flat / Calm", "onyomi": "ヘイ", "kunyomi": "たい(ら)", "examples": [{ "word": "平等", "reading": "びょうどう", "meaning": "equality" }, { "word": "平和", "reading": "へいわ", "meaning": "peace" }] },
-  { "kanji": "等", "category": 4, "meaning": "Equal / Etc.", "onyomi": "トウ", "kunyomi": "ひと(しい)", "examples": [{ "word": "均等", "reading": "きんとう", "meaning": "uniform" }, { "word": "同等", "reading": "どうとう", "meaning": "equivalent" }] },
-  { "kanji": "直", "category": 4, "meaning": "Straight / Fix", "onyomi": "チョク", "kunyomi": "なお(す)", "examples": [{ "word": "直接", "reading": "ちょくせつ", "meaning": "direct" }, { "word": "正直", "reading": "しょうじき", "meaning": "honest" }] },
-  { "kanji": "曲", "category": 4, "meaning": "Bend / Music", "onyomi": "キョク", "kunyomi": "ま(がる)", "examples": [{ "word": "曲線", "reading": "きょくせん", "meaning": "curve" }, { "word": "作曲", "reading": "さっきょく", "meaning": "comp. music" }] },
-  { "kanji": "太", "category": 4, "meaning": "Fat / Thick", "onyomi": "タイ", "kunyomi": "ふと(い)", "examples": [{ "word": "太陽", "reading": "たいよう", "meaning": "sun" }, { "word": "丸太", "reading": "まるた", "meaning": "log" }] },
-  { "kanji": "細", "category": 4, "meaning": "Thin / Detail", "onyomi": "サイ", "kunyomi": "ほそ(い)", "examples": [{ "word": "細胞", "reading": "さいぼう", "meaning": "cell" }, { "word": "細工", "reading": "さいく", "meaning": "craft" }] },
-  { "kanji": "丸", "category": 4, "meaning": "Round", "onyomi": "ガン", "kunyomi": "まる(い)", "examples": [{ "word": "弾丸", "reading": "だんがん", "meaning": "bullet" }, { "word": "日の丸", "reading": "ひのまる", "meaning": "Rising Sun" }] },
-  { "kanji": "角", "category": 4, "meaning": "Angle / Corner", "onyomi": "カク", "kunyomi": "かど", "examples": [{ "word": "角度", "reading": "かくど", "meaning": "angle" }, { "word": "四角", "reading": "しかく", "meaning": "square" }] },
-  { "kanji": "点", "category": 4, "meaning": "Point / Dot", "onyomi": "テン", "kunyomi": "-", "examples": [{ "word": "得点", "reading": "とくてん", "meaning": "score" }, { "word": "欠点", "reading": "けってん", "meaning": "flaw" }] },
-  { "kanji": "線", "category": 4, "meaning": "Line", "onyomi": "セン", "kunyomi": "-", "examples": [{ "word": "直線", "reading": "ちょくせん", "meaning": "straight line" }, { "word": "脱線", "reading": "だっせん", "meaning": "derail" }] },
-  { "kanji": "面", "category": 4, "meaning": "Surface", "onyomi": "メン", "kunyomi": "おもて", "examples": [{ "word": "画面", "reading": "がめん", "meaning": "screen" }, { "word": "表面", "reading": "ひょうめん", "meaning": "surface" }] },
-  { "kanji": "向", "category": 4, "meaning": "Toward", "onyomi": "コウ", "kunyomi": "む(く)", "examples": [{ "word": "方向", "reading": "ほうこう", "meaning": "direction" }, { "word": "傾向", "reading": "けいこう", "meaning": "tendency" }] },
-  { "kanji": "量", "category": 4, "meaning": "Quantity", "onyomi": "リョウ", "kunyomi": "はか(る)", "examples": [{ "word": "重量", "reading": "じゅうりょう", "meaning": "weight" }, { "word": "容量", "reading": "ようりょう", "meaning": "capacity" }] },
-  { "kanji": "数", "category": 4, "meaning": "Number", "onyomi": "スウ", "kunyomi": "かず", "examples": [{ "word": "数学", "reading": "すうがく", "meaning": "math" }, { "word": "回数", "reading": "かいすう", "meaning": "frequency" }] },
-  { "kanji": "計", "category": 4, "meaning": "Measure / Plan", "onyomi": "ケイ", "kunyomi": "はか(る)", "examples": [{ "word": "時計", "reading": "とけい", "meaning": "clock" }, { "word": "合計", "reading": "ごうけい", "meaning": "total" }] },
-  { "kanji": "率", "category": 4, "meaning": "Rate / Lead", "onyomi": "リツ", "kunyomi": "ひき(いる)", "examples": [{ "word": "効率", "reading": "こうりつ", "meaning": "efficiency" }, { "word": "倍率", "reading": "ばいりつ", "meaning": "magnification" }] },
-  { "kanji": "度", "category": 4, "meaning": "Degree / Times", "onyomi": "ド", "kunyomi": "たび", "examples": [{ "word": "温度", "reading": "おんど", "meaning": "temp" }, { "word": "程度", "reading": "ていど", "meaning": "degree" }] },
-  { "kanji": "号", "category": 4, "meaning": "Number / Signal", "onyomi": "ゴウ", "kunyomi": "-", "examples": [{ "word": "信号", "reading": "しんごう", "meaning": "signal" }, { "word": "番号", "reading": "ばんごう", "meaning": "number" }] },
-  { "kanji": "順", "category": 4, "meaning": "Order", "onyomi": "ジュン", "kunyomi": "-", "examples": [{ "word": "順番", "reading": "じゅんばん", "meaning": "order" }, { "word": "順調", "reading": "じゅんちょう", "meaning": "smooth" }] },
-  { "kanji": "番", "category": 4, "meaning": "Turn / Number", "onyomi": "バン", "kunyomi": "-", "examples": [{ "word": "一番", "reading": "いちばん", "meaning": "No. 1" }, { "word": "番組", "reading": "ばんぐみ", "meaning": "program" }] },
-  { "kanji": "組", "category": 4, "meaning": "Set / Team", "onyomi": "ソ", "kunyomi": "く(む)", "examples": [{ "word": "組織", "reading": "そしき", "meaning": "organ." }, { "word": "組合", "reading": "くみあい", "meaning": "union" }] },
-  { "kanji": "質", "category": 4, "meaning": "Quality / Substance", "onyomi": "シツ", "kunyomi": "-", "examples": [{ "word": "性質", "reading": "せいしつ", "meaning": "nature" }, { "word": "素質", "reading": "そしつ", "meaning": "talent" }] },
-  { "kanji": "状", "category": 4, "meaning": "Status / Letter", "onyomi": "ジョウ", "kunyomi": "-", "examples": [{ "word": "状況", "reading": "じょうきょう", "meaning": "situation" }, { "word": "賞状", "reading": "しょうじょう", "meaning": "cert." }] },
-  { "kanji": "態", "category": 4, "meaning": "State / Appearance", "onyomi": "タイ", "kunyomi": "-", "examples": [{ "word": "状態", "reading": "じょうたい", "meaning": "state" }, { "word": "態度", "reading": "たいど", "meaning": "attitude" }] },
-  { "kanji": "美", "category": 4, "meaning": "Beautiful", "onyomi": "ビ", "kunyomi": "うつく(しい)", "examples": [{ "word": "美人", "reading": "びじん", "meaning": "beauty" }, { "word": "美容", "reading": "びよう", "meaning": "beauty care" }] },
-  { "kanji": "優", "category": 4, "meaning": "Superior / Kind", "onyomi": "ユウ", "kunyomi": "やさ(しい)", "examples": [{ "word": "優秀", "reading": "ゆうしゅう", "meaning": "excellent" }, { "word": "優先", "reading": "ゆうせん", "meaning": "priority" }] },
-  { "kanji": "秀", "category": 4, "meaning": "Excel", "onyomi": "シュウ", "kunyomi": "ひい(でる)", "examples": [{ "word": "優秀", "reading": "ゆうしゅう", "meaning": "superb" }, { "word": "秀才", "reading": "しゅうさい", "meaning": "bright person" }] },
-  { "kanji": "賢", "category": 4, "meaning": "Wise", "onyomi": "ケン", "kunyomi": "かしこ(い)", "examples": [{ "word": "賢明", "reading": "けんめい", "meaning": "wise" }, { "word": "先賢", "reading": "せんけん", "meaning": "anc. sage" }] },
-  { "kanji": "愚", "category": 4, "meaning": "Foolish", "onyomi": "グ", "kunyomi": "おろ(か)", "examples": [{ "word": "愚痴", "reading": "ぐち", "meaning": "complaint" }, { "word": "愚問", "reading": "ぐもん", "meaning": "silly question" }] },
-  { "kanji": "徳", "category": 4, "meaning": "Virtue", "onyomi": "トク", "kunyomi": "-", "examples": [{ "word": "道徳", "reading": "どうとく", "meaning": "moral" }, { "word": "人徳", "reading": "じんとく", "meaning": "char. virtue" }] },
-  { "kanji": "聖", "category": 4, "meaning": "Holy / Saint", "onyomi": "セイ", "kunyomi": "-", "examples": [{ "word": "聖書", "reading": "せいしょ", "meaning": "Bible" }, { "word": "神聖", "reading": "しんせい", "meaning": "sacred" }] },
+        /* Header Section */
+        header {
+            padding: 40px 20px;
+            text-align: center;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
 
-  // CATEGORY 5: Work & Abstract (仕事・経済・抽象) - 100 Kanji
-  { "kanji": "事", "category": 5, "meaning": "Matter / Thing", "onyomi": "ジ", "kunyomi": "こと", "examples": [{ "word": "仕事", "reading": "しごと", "meaning": "work" }, { "word": "事故", "reading": "じこ", "meaning": "accident" }] },
-  { "kanji": "職", "category": 5, "meaning": "Employment", "onyomi": "ショク", "kunyomi": "-", "examples": [{ "word": "職業", "reading": "しょくぎょう", "meaning": "occupation" }, { "word": "転職", "reading": "てんしょく", "meaning": "job change" }] },
-  { "kanji": "業", "category": 5, "meaning": "Business / Task", "onyomi": "ギョウ", "kunyomi": "わざ", "examples": [{ "word": "授業", "reading": "じゅぎょう", "meaning": "lesson" }, { "word": "卒業", "reading": "そつぎょう", "meaning": "grad." }] },
-  { "kanji": "産", "category": 5, "meaning": "Produce / Product", "onyomi": "サン", "kunyomi": "う(む)", "examples": [{ "word": "生産", "reading": "せいさん", "meaning": "production" }, { "word": "産業", "reading": "さんぎょう", "meaning": "industry" }] },
-  { "kanji": "務", "category": 5, "meaning": "Duty", "onyomi": "ム", "kunyomi": "つと(める)", "examples": [{ "word": "義務", "reading": "ぎむ", "meaning": "obligation" }, { "word": "事務", "reading": "じむ", "meaning": "office work" }] },
-  { "kanji": "役", "category": 5, "meaning": "Role / Service", "onyomi": "ヤク", "kunyomi": "-", "examples": [{ "word": "役割", "reading": "やくわり", "meaning": "role" }, { "word": "市役所", "reading": "しやくしょ", "meaning": "city hall" }] },
-  { "kanji": "員", "category": 5, "meaning": "Member", "onyomi": "イン", "kunyomi": "-", "examples": [{ "word": "会社員", "reading": "かいしゃいん", "meaning": "employee" }, { "word": "定員", "reading": "ていいん", "meaning": "capacity" }] },
-  { "kanji": "企", "category": 5, "meaning": "Plan / Scheme", "onyomi": "キ", "kunyomi": "くわだ(てる)", "examples": [{ "word": "企業", "reading": "きぎょう", "meaning": "enterprise" }, { "word": "企画", "reading": "きかく", "meaning": "project plan" }] },
-  { "kanji": "商", "category": 5, "meaning": "Commerce / Trade", "onyomi": "ショウ", "kunyomi": "あきな(う)", "examples": [{ "word": "商品", "reading": "しょうひん", "meaning": "merchandise" }, { "word": "商談", "reading": "しょうだん", "meaning": "biz talk" }] },
-  { "kanji": "品", "category": 5, "meaning": "Goods", "onyomi": "ヒン", "kunyomi": "しな", "examples": [{ "word": "作品", "reading": "さくひん", "meaning": "work of art" }, { "word": "品質", "reading": "ひんしつ", "meaning": "quality" }] },
-  { "kanji": "料", "category": 5, "meaning": "Fee / Material", "onyomi": "リョウ", "kunyomi": "-", "examples": [{ "word": "資料", "reading": "しりょう", "meaning": "data/docs" }, { "word": "原料", "reading": "げんりょう", "meaning": "raw mat." }] },
-  { "kanji": "給", "category": 5, "meaning": "Supply / Wage", "onyomi": "キュウ", "kunyomi": "たま(う)", "examples": [{ "word": "給料", "reading": "きゅうりょう", "meaning": "salary" }, { "word": "供給", "reading": "きょうきゅう", "meaning": "supply" }] },
-  { "kanji": "営", "category": 5, "meaning": "Manage / Run", "onyomi": "エイ", "kunyomi": "いとな(む)", "examples": [{ "word": "経営", "reading": "けいえい", "meaning": "management" }, { "word": "営業", "reading": "えいぎょう", "meaning": "sales/biz" }] },
-  { "kanji": "資", "category": 5, "meaning": "Capital / Resource", "onyomi": "シ", "kunyomi": "-", "examples": [{ "word": "資金", "reading": "しきん", "meaning": "funds" }, { "word": "資格", "reading": "しかく", "meaning": "qualif." }] },
-  { "kanji": "源", "category": 5, "meaning": "Source / Origin", "onyomi": "ゲン", "kunyomi": "みなもと", "examples": [{ "word": "資源", "reading": "しげん", "meaning": "resources" }, { "word": "源泉", "reading": "げんせん", "meaning": "source" }] },
-  { "kanji": "財", "category": 5, "meaning": "Wealth / Finance", "onyomi": "ザイ", "kunyomi": "-", "examples": [{ "word": "財産", "reading": "ざいさん", "meaning": "assets" }, { "word": "財布", "reading": "さいふ", "meaning": "wallet" }] },
-  { "kanji": "税", "category": 5, "meaning": "Tax", "onyomi": "ゼイ", "kunyomi": "-", "examples": [{ "word": "消費税", "reading": "しょうひぜい", "meaning": "sales tax" }, { "word": "減税", "reading": "げんぜい", "meaning": "tax cut" }] },
-  { "kanji": "収", "category": 5, "meaning": "Income / Take in", "onyomi": "シュウ", "kunyomi": "おさ(める)", "examples": [{ "word": "収入", "reading": "しゅうにゅう", "meaning": "income" }, { "word": "吸収", "reading": "きゅうしゅう", "meaning": "absorp." }] },
-  { "kanji": "支", "category": 5, "meaning": "Support / Branch", "onyomi": "シ", "kunyomi": "ささ(える)", "examples": [{ "word": "支払", "reading": "しはらい", "meaning": "payment" }, { "word": "支店", "reading": "してん", "meaning": "branch shop" }] },
-  { "kanji": "払", "category": 5, "meaning": "Pay / Sweep", "onyomi": "フツ", "kunyomi": "はら(う)", "examples": [{ "word": "前払い", "reading": "まえはらい", "meaning": "prepayment" }, { "word": "払拭", "reading": "ふっしょく", "meaning": "wipe out" }] },
-  { "kanji": "値", "category": 5, "meaning": "Value / Price", "onyomi": "チ", "kunyomi": "あたい", "examples": [{ "word": "値段", "reading": "ねだん", "meaning": "price" }, { "word": "価値", "reading": "かち", "meaning": "value" }] },
-  { "kanji": "段", "category": 5, "meaning": "Step / Grade", "onyomi": "ダン", "kunyomi": "-", "examples": [{ "word": "階段", "reading": "かいだん", "meaning": "stairs" }, { "word": "段階", "reading": "だんかい", "meaning": "stage" }] },
-  { "kanji": "階", "category": 5, "meaning": "Floor / Stair", "onyomi": "カイ", "kunyomi": "-", "examples": [{ "word": "三階", "reading": "さんがい", "meaning": "3rd floor" }, { "word": "階級", "reading": "かいきゅう", "meaning": "class" }] },
-  { "kanji": "価", "category": 5, "meaning": "Price / Value", "onyomi": "カ", "kunyomi": "あたい", "examples": [{ "word": "価格", "reading": "かかく", "meaning": "price" }, { "word": "評価", "reading": "ひょうか", "meaning": "eval." }] },
-  { "kanji": "評", "category": 5, "meaning": "Critique / Eval", "onyomi": "ヒョウ", "kunyomi": "-", "examples": [{ "word": "評判", "reading": "ひょうばん", "meaning": "reputation" }, { "word": "評論", "reading": "ひょうろん", "meaning": "critique" }] },
-  { "kanji": "判", "category": 5, "meaning": "Judge / Stamp", "onyomi": "ハン", "kunyomi": "わか(る)", "examples": [{ "word": "判断", "reading": "はんだん", "meaning": "judgment" }, { "word": "判子", "reading": "はんこ", "meaning": "seal/stamp" }] },
-  { "kanji": "断", "category": 5, "meaning": "Decide / Cut off", "onyomi": "ダン", "kunyomi": "ことわ(る)", "examples": [{ "word": "決断", "reading": "けつだん", "meaning": "decision" }, { "word": "断絶", "reading": "だんぜつ", "meaning": "severance" }] },
-  { "kanji": "技", "category": 5, "meaning": "Skill", "onyomi": "ギ", "kunyomi": "わざ", "examples": [{ "word": "技術", "reading": "ぎじゅつ", "meaning": "tech" }, { "word": "特技", "reading": "とくぎ", "meaning": "special skill" }] },
-  { "kanji": "術", "category": 5, "meaning": "Technique", "onyomi": "ジュツ", "kunyomi": "すべ", "examples": [{ "word": "芸術", "reading": "げいじゅつ", "meaning": "art" }, { "word": "手術", "reading": "しゅじゅつ", "meaning": "surgery" }] },
-  { "kanji": "能", "category": 5, "meaning": "Ability / Noh", "onyomi": "ノウ", "kunyomi": "-", "examples": [{ "word": "能力", "reading": "のうりょく", "meaning": "ability" }, { "word": "可能", "reading": "かのう", "meaning": "possible" }] },
-  { "kanji": "用", "category": 5, "meaning": "Use / Biz", "onyomi": "ヨウ", "kunyomi": "もち(いる)", "examples": [{ "word": "使用", "reading": "しよう", "meaning": "use" }, { "word": "用意", "reading": "ようい", "meaning": "prep" }] },
-  { "kanji": "使", "category": 5, "meaning": "Use", "onyomi": "シ", "kunyomi": "つか(う)", "examples": [{ "word": "大使館", "reading": "たいしかん", "meaning": "embassy" }, { "word": "天使", "reading": "てんし", "meaning": "angel" }] },
-  { "kanji": "的", "category": 5, "meaning": "Target / -ish", "onyomi": "テキ", "kunyomi": "まと", "examples": [{ "word": "目的", "reading": "もくてき", "meaning": "purpose" }, { "word": "積極的", "reading": "せっきょくてき", "meaning": "pos." }] },
-  { "kanji": "意", "category": 5, "meaning": "Mind / Meaning", "onyomi": "イ", "kunyomi": "-", "examples": [{ "word": "注意", "reading": "ちゅうい", "meaning": "caution" }, { "word": "意外", "reading": "いがい", "meaning": "unexpected" }] },
-  { "kanji": "内", "category": 5, "meaning": "Inside", "onyomi": "ナイ", "kunyomi": "うち", "examples": [{ "word": "内容", "reading": "ないよう", "meaning": "content" }, { "word": "内緒", "reading": "ないしょ", "meaning": "secret" }] },
-  { "kanji": "容", "category": 5, "meaning": "Contain / Form", "onyomi": "ヨウ", "kunyomi": "-", "examples": [{ "word": "美容", "reading": "びよう", "meaning": "beauty" }, { "word": "容積", "reading": "ようせき", "meaning": "volume" }] },
-  { "kanji": "器", "category": 5, "meaning": "Vessel / Tool", "onyomi": "キ", "kunyomi": "うつわ", "examples": [{ "word": "楽器", "reading": "がっき", "meaning": "instr." }, { "word": "器用", "reading": "きよう", "meaning": "skillful" }] },
-  { "kanji": "機", "category": 5, "meaning": "Machine", "onyomi": "キ", "kunyomi": "はた", "examples": [{ "word": "機会", "reading": "きかい", "meaning": "opportunity" }, { "word": "飛行機", "reading": "ひこうき", "meaning": "airplane" }] },
-  { "kanji": "械", "category": 5, "meaning": "Apparatus", "onyomi": "カイ", "kunyomi": "-", "examples": [{ "word": "機械", "reading": "きかい", "meaning": "machine" }, { "word": "器械", "reading": "きかい", "meaning": "device" }] },
-  { "kanji": "設", "category": 5, "meaning": "Establish", "onyomi": "セツ", "kunyomi": "もう(ける)", "examples": [{ "word": "設計", "reading": "せっけい", "meaning": "design" }, { "word": "設定", "reading": "せってい", "meaning": "settings" }] },
-  { "kanji": "備", "category": 5, "meaning": "Equip / Provide", "onyomi": "ビ", "kunyomi": "そな(える)", "examples": [{ "word": "準備", "reading": "じゅんび", "meaning": "prep" }, { "word": "設備", "reading": "せつび", "meaning": "equipment" }] },
-  { "kanji": "管", "category": 5, "meaning": "Pipe / Control", "onyomi": "カン", "kunyomi": "くだ", "examples": [{ "word": "管理", "reading": "かんり", "meaning": "management" }, { "word": "管轄", "reading": "かんかつ", "meaning": "jurisdict." }] },
-  { "kanji": "統", "category": 5, "meaning": "Unite / Control", "onyomi": "トウ", "kunyomi": "す(べる)", "examples": [{ "word": "統計", "reading": "とうけい", "meaning": "stats" }, { "word": "統治", "reading": "とうち", "meaning": "rule" }] },
-  { "kanji": "制", "category": 5, "meaning": "System / Control", "onyomi": "セイ", "kunyomi": "-", "examples": [{ "word": "制度", "reading": "せいど", "meaning": "system" }, { "word": "制限", "reading": "せいげん", "meaning": "limit" }] },
-  { "kanji": "限", "category": 5, "meaning": "Limit", "onyomi": "ゲン", "kunyomi": "かぎ(る)", "examples": [{ "word": "限界", "reading": "げんかい", "meaning": "limit" }, { "word": "限定", "reading": "げんてい", "meaning": "limited" }] },
-  { "kanji": "衛", "category": 5, "meaning": "Guard / Defend", "onyomi": "エイ", "kunyomi": "-", "examples": [{ "word": "衛生", "reading": "えいせい", "meaning": "hygiene" }, { "word": "防衛", "reading": "ぼうえい", "meaning": "defense" }] },
-  { "kanji": "保", "category": 5, "meaning": "Keep / Protect", "onyomi": "ホ", "kunyomi": "たも(つ)", "examples": [{ "word": "保存", "reading": "ほぞん", "meaning": "preserv." }, { "word": "保証", "reading": "ほしょう", "meaning": "guarant." }] },
-  { "kanji": "存", "category": 5, "meaning": "Exist / Know", "onyomi": "ゾン", "kunyomi": "-", "examples": [{ "word": "存在", "reading": "そんざい", "meaning": "exist" }, { "word": "保存", "reading": "ほぞん", "meaning": "save" }] },
-  { "kanji": "在", "category": 5, "meaning": "Be at / Exist", "onyomi": "ザイ", "kunyomi": "あ(る)", "examples": [{ "word": "現在", "reading": "げんざい", "meaning": "current" }, { "word": "在宅", "reading": "ざいたく", "meaning": "at home" }] },
-  { "kanji": "現", "category": 5, "meaning": "Appear / Present", "onyomi": "ゲン", "kunyomi": "あらわ(れる)", "examples": [{ "word": "現実", "reading": "げんじつ", "meaning": "reality" }, { "word": "表現", "reading": "ひょうげん", "meaning": "exp." }] },
-  { "kanji": "象", "category": 5, "meaning": "Elephant / Image", "onyomi": "ゾウ", "kunyomi": "-", "examples": [{ "word": "対象", "reading": "たいしょう", "meaning": "target" }, { "word": "象徴", "reading": "しょうちょう", "meaning": "symbol" }] },
-  { "kanji": "徴", "category": 5, "meaning": "Sign / Collect", "onyomi": "チョウ", "kunyomi": "-", "examples": [{ "word": "特徴", "reading": "とくちょう", "meaning": "feature" }, { "word": "徴収", "reading": "ちょうしゅう", "meaning": "collect" }] },
-  { "kanji": "特", "category": 5, "meaning": "Special", "onyomi": "トク", "kunyomi": "-", "examples": [{ "word": "特別", "reading": "とくべつ", "meaning": "special" }, { "word": "特急", "reading": "トッキュウ", "meaning": "lim. exp." }] },
-  { "kanji": "属", "category": 5, "meaning": "Belong", "onyomi": "ゾク", "kunyomi": "-", "examples": [{ "word": "所属", "reading": "しょぞく", "meaning": "affil." }, { "word": "金属", "reading": "きんぞく", "meaning": "metal" }] },
-  { "kanji": "性", "category": 5, "meaning": "Nature / Gender", "onyomi": "セイ", "kunyomi": "さが", "examples": [{ "word": "性格", "reading": "せいかく", "meaning": "char." }, { "word": "根性", "reading": "こんじょう", "meaning": "guts" }] },
-  { "kanji": "格", "category": 5, "meaning": "Status / Rule", "onyomi": "カク", "kunyomi": "-", "examples": [{ "word": "合格", "reading": "ごうかく", "meaning": "pass" }, { "word": "資格", "reading": "しかく", "meaning": "qualif." }] },
-  { "kanji": "規", "category": 5, "meaning": "Standard", "onyomi": "キ", "kunyomi": "-", "examples": [{ "word": "規則", "reading": "きそく", "meaning": "rule" }, { "word": "規定", "reading": "きてい", "meaning": "regul." }] },
-  { "kanji": "則", "category": 5, "meaning": "Rule", "onyomi": "ソク", "kunyomi": "のっと(る)", "examples": [{ "word": "反則", "reading": "はんそく", "meaning": "foul" }, { "word": "原則", "reading": "げんそく", "meaning": "principle" }] },
-  { "kanji": "原", "category": 5, "meaning": "Origin / Field", "onyomi": "ゲン", "kunyomi": "はら", "examples": [{ "word": "原因", "reading": "げんいん", "meaning": "cause" }, { "word": "原子", "reading": "げんし", "meaning": "atom" }] },
-  { "kanji": "因", "category": 5, "meaning": "Cause / Factor", "onyomi": "イン", "kunyomi": "よ(る)", "examples": [{ "word": "要因", "reading": "よういん", "meaning": "factor" }, { "word": "因縁", "reading": "いんねん", "meaning": "fate" }] },
-  { "kanji": "果", "category": 5, "meaning": "Fruit / Result", "onyomi": "カ", "kunyomi": "は(たす)", "examples": [{ "word": "結果", "reading": "けっか", "meaning": "result" }, { "word": "成果", "reading": "せいか", "meaning": "outcome" }] },
-  { "kanji": "結", "category": 5, "meaning": "Tie / Conclude", "onyomi": "ケツ", "kunyomi": "むす(ぶ)", "examples": [{ "word": "結婚", "reading": "けっこん", "meaning": "marriage" }, { "word": "結局", "reading": "けっきょく", "meaning": "after all" }] },
-  { "kanji": "識", "category": 5, "meaning": "Discern / Know", "onyomi": "シキ", "kunyomi": "-", "examples": [{ "word": "意識", "reading": "いしき", "meaning": "aware" }, { "word": "知識", "reading": "ちしき", "meaning": "knowl." }] },
-  { "kanji": "慮", "category": 5, "meaning": "Consider", "onyomi": "リョ", "kunyomi": "-", "examples": [{ "word": "配慮", "reading": "はいりょ", "meaning": "consider." }, { "word": "考慮", "reading": "こうりょ", "meaning": "taking into acct" }] },
-  { "kanji": "配", "category": 5, "meaning": "Distribute", "onyomi": "ハイ", "kunyomi": "くば(る)", "examples": [{ "word": "配達", "reading": "はいたつ", "meaning": "delivery" }, { "word": "支配", "reading": "しはい", "meaning": "control" }] },
-  { "kanji": "達", "category": 5, "meaning": "Attain / Plural", "onyomi": "タツ", "kunyomi": "-", "examples": [{ "word": "友達", "reading": "ともだち", "meaning": "friends" }, { "word": "発達", "reading": "はったつ", "meaning": "develop." }] },
-  { "kanji": "発", "category": 5, "meaning": "Emit / Start", "onyomi": "ハツ", "kunyomi": "-", "examples": [{ "word": "発見", "reading": "はっけん", "meaning": "discovery" }, { "word": "出発", "reading": "しゅっぱつ", "meaning": "departure" }] },
-  { "kanji": "展", "category": 5, "meaning": "Expand / Exhibit", "onyomi": "テン", "kunyomi": "-", "examples": [{ "word": "展開", "reading": "てんかい", "meaning": "develop." }, { "word": "展示", "reading": "てんじ", "meaning": "exhibit" }] },
-  { "kanji": "示", "category": 5, "meaning": "Show / Indicate", "onyomi": "ジ", "kunyomi": "しめ(す)", "examples": [{ "word": "指示", "reading": "しじ", "meaning": "instr." }, { "word": "展示", "reading": "てんじ", "meaning": "show" }] },
-  { "kanji": "指", "category": 5, "meaning": "Finger / Point", "onyomi": "シ", "kunyomi": "ゆび", "examples": [{ "word": "指導", "reading": "しどう", "meaning": "guidance" }, { "word": "指揮", "reading": "しき", "meaning": "command" }] },
-  { "kanji": "導", "category": 5, "meaning": "Guide / Lead", "onyomi": "ドウ", "kunyomi": "みちび(く)", "examples": [{ "word": "導入", "reading": "どうにゅう", "meaning": "intro." }, { "word": "盲導犬", "reading": "もうどうけん", "meaning": "guide dog" }] },
-  { "kanji": "建", "category": 5, "meaning": "Build", "onyomi": "ケン", "kunyomi": "た(てる)", "examples": [{ "word": "建築", "reading": "けんちく", "meaning": "arch." }, { "word": "建設", "reading": "けんせつ", "meaning": "constr." }] },
-  { "kanji": "設", "category": 5, "meaning": "Setup / Install", "onyomi": "セツ", "kunyomi": "もう(ける)", "examples": [{ "word": "設置", "reading": "せっち", "meaning": "install" }, { "word": "新設", "reading": "しんせつ", "meaning": "new setup" }] },
-  { "kanji": "置", "category": 5, "meaning": "Place / Put", "onyomi": "チ", "kunyomi": "お(く)", "examples": [{ "word": "位置", "reading": "いち", "meaning": "pos." }, { "word": "処置", "reading": "しょち", "meaning": "treatment" }] },
-  { "kanji": "案", "category": 5, "meaning": "Plan / Proposal", "onyomi": "アン", "kunyomi": "-", "examples": [{ "word": "提案", "reading": "ていあん", "meaning": "proposal" }, { "word": "案内", "reading": "あんない", "meaning": "guidance" }] },
-  { "kanji": "各", "category": 5, "meaning": "Each", "onyomi": "カク", "kunyomi": "おのおの", "examples": [{ "word": "各自", "reading": "かくじ", "meaning": "each person" }, { "word": "各国", "reading": "かっこく", "meaning": "each nation" }] },
-  { "kanji": "別", "category": 5, "meaning": "Separate / Special", "onyomi": "ベツ", "kunyomi": "わか(れる)", "examples": [{ "word": "別荘", "reading": "べっそう", "meaning": "villa" }, { "word": "区別", "reading": "くべつ", "meaning": "distinction" }] },
-  { "kanji": "特", "category": 5, "meaning": "Special", "onyomi": "トク", "kunyomi": "-", "examples": [{ "word": "特色", "reading": "とくしょく", "meaning": "feature" }, { "word": "特許", "reading": "とっきょ", "meaning": "patent" }] },
-  { "kanji": "有", "category": 5, "meaning": "Exist / Have", "onyomi": "ユウ", "kunyomi": "あ(る)", "examples": [{ "word": "有名", "reading": "ゆうめい", "meaning": "famous" }, { "word": "有利", "reading": "ゆうり", "meaning": "advantageous" }] },
-  { "kanji": "無", "category": 5, "meaning": "Nothing / Nil", "onyomi": "ム", "kunyomi": "な(い)", "examples": [{ "word": "無料", "reading": "むりょう", "meaning": "free" }, { "word": "無理", "reading": "むり", "meaning": "impossible" }] },
-  { "kanji": "限", "category": 5, "meaning": "Limit", "onyomi": "ゲン", "kunyomi": "かぎ(る)", "examples": [{ "word": "期限", "reading": "きげん", "meaning": "deadline" }, { "word": "制限", "reading": "せいげん", "meaning": "limit" }] },
-  { "kanji": "様", "category": 5, "meaning": "State / Honorific", "onyomi": "ヨウ", "kunyomi": "さま", "examples": [{ "word": "様子", "reading": "ようす", "meaning": "state" }, { "word": "皆様", "reading": "みなさま", "meaning": "everyone" }] },
-  { "kanji": "式", "category": 5, "meaning": "Style / Ceremony", "onyomi": "シキ", "kunyomi": "-", "examples": [{ "word": "公式", "reading": "こうしき", "meaning": "formula" }, { "word": "結婚式", "reading": "けっこんしき", "meaning": "wedding" }] },
-  { "kanji": "由", "category": 5, "meaning": "Cause / Reason", "onyomi": "ユ", "kunyomi": "よし", "examples": [{ "word": "自由", "reading": "じゆう", "meaning": "freedom" }, { "word": "理由", "reading": "りゆう", "meaning": "reason" }] },
-  { "kanji": "申", "category": 5, "meaning": "Say / Humble", "onyomi": "シン", "kunyomi": "もう(す)", "examples": [{ "word": "申請", "reading": "しんせい", "meaning": "appl." }, { "word": "申し込む", "reading": "もうしこむ", "meaning": "apply" }] },
-  { "kanji": "請", "category": 5, "meaning": "Request", "onyomi": "セイ", "kunyomi": "こ(う)", "examples": [{ "word": "請求", "reading": "せいきゅう", "meaning": "claim" }, { "word": "請負", "reading": "うけおい", "meaning": "contract" }] },
-  { "kanji": "願", "category": 5, "meaning": "Wish / Ask", "onyomi": "ガン", "kunyomi": "ねが(う)", "examples": [{ "word": "願書", "reading": "がんしょ", "meaning": "appl. form" }, { "word": "念願", "reading": "ねんがん", "meaning": "desire" }] },
-  { "kanji": "件", "category": 5, "meaning": "Matter / Case", "onyomi": "ケン", "kunyomi": "-", "examples": [{ "word": "事件", "reading": "じけん", "meaning": "incident" }, { "word": "用件", "reading": "ようけん", "meaning": "biz" }] },
-  { "kanji": "資", "category": 5, "meaning": "Capital", "onyomi": "シ", "kunyomi": "-", "examples": [{ "word": "資料", "reading": "しりょう", "meaning": "data" }, { "word": "資源", "reading": "しげん", "meaning": "resources" }] },
-  { "kanji": "格", "category": 5, "meaning": "Status / Rule", "onyomi": "カク", "kunyomi": "-", "examples": [{ "word": "価格", "reading": "かかく", "meaning": "price" }, { "word": "性格", "reading": "せいかく", "meaning": "char." }] },
-  { "kanji": "期", "category": 5, "meaning": "Period", "onyomi": "キ", "kunyomi": "-", "examples": [{ "word": "期間", "reading": "きかん", "meaning": "period" }, { "word": "学期", "reading": "がっき", "meaning": "term" }] },
-  { "kanji": "限", "category": 5, "meaning": "Limit", "onyomi": "ゲン", "kunyomi": "かぎ(る)", "examples": [{ "word": "限定", "reading": "げんてい", "meaning": "limit" }, { "word": "期限", "reading": "きげん", "meaning": "deadline" }] },
-  { "kanji": "続", "category": 5, "meaning": "Continue", "onyomi": "ゾク", "kunyomi": "つづ(く)", "examples": [{ "word": "接続", "reading": "せつぞく", "meaning": "connect" }, { "word": "連続", "reading": "れんぞく", "meaning": "contin." }] },
-  { "kanji": "保", "category": 5, "meaning": "Keep", "onyomi": "ホ", "kunyomi": "たも(つ)", "examples": [{ "word": "保持", "reading": "ほうじ", "meaning": "retention" }, { "word": "保守", "reading": "ほしゅ", "meaning": "maint." }] },
-  { "kanji": "護", "category": 5, "meaning": "Protect", "onyomi": "ゴ", "kunyomi": "まも(る)", "examples": [{ "word": "保護", "reading": "ほご", "meaning": "prot." }, { "word": "看護", "reading": "かんご", "meaning": "nursing" }] },
-  { "kanji": "備", "category": 5, "meaning": "Provide", "onyomi": "ビ", "kunyomi": "そな(える)", "examples": [{ "word": "設備", "reading": "せつび", "meaning": "facil." }, { "word": "守備", "reading": "しゅび", "meaning": "defense" }] },
-  { "kanji": "確", "category": 5, "meaning": "Certain", "onyomi": "カク", "kunyomi": "たし(か)", "examples": [{ "word": "確認", "reading": "かくにん", "meaning": "confirm" }, { "word": "確信", "reading": "かくしん", "meaning": "convict." }] },
-  { "kanji": "認", "category": 5, "meaning": "Recognize", "onyomi": "ニン", "kunyomi": "みと(める)", "examples": [{ "word": "認識", "reading": "にんしき", "meaning": "recognit." }, { "word": "公認", "reading": "こうにん", "meaning": "official" }] },
-  { "kanji": "証", "category": 5, "meaning": "Proof", "onyomi": "ショウ", "kunyomi": "あかし", "examples": [{ "word": "証明", "reading": "しょうめい", "meaning": "proof" }, { "word": "保証", "reading": "ほしょう", "meaning": "guarantee" }] },
-  { "kanji": "査", "category": 5, "meaning": "Investigate", "onyomi": "サ", "kunyomi": "-", "examples": [{ "word": "調査", "reading": "ちょうさ", "meaning": "survey" }, { "word": "検査", "reading": "けんさ", "meaning": "insp." }] },
-  { "kanji": "検", "category": 5, "meaning": "Examine", "onyomi": "ケン", "kunyomi": "-", "examples": [{ "word": "検察", "reading": "けんさつ", "meaning": "prosec." }, { "word": "検診", "reading": "けんしん", "meaning": "checkup" }] },
-  { "kanji": "察", "category": 5, "meaning": "Guess / Observe", "onyomi": "サツ", "kunyomi": "-", "examples": [{ "word": "警察", "reading": "けいさつ", "meaning": "police" }, { "word": "観察", "reading": "かんさつ", "meaning": "obs." }] },
-  { "kanji": "審", "category": 5, "meaning": "Examine / Judge", "onyomi": "シン", "kunyomi": "-", "examples": [{ "word": "審判", "reading": "しんぱん", "meaning": "referee" }, { "word": "審査", "reading": "しんさ", "meaning": "screen." }] },
-  { "kanji": "裁", "category": 5, "meaning": "Judge / Tailor", "onyomi": "サイ", "kunyomi": "さば(く)", "examples": [{ "word": "裁判", "reading": "さいばん", "meaning": "trial" }, { "word": "裁決", "reading": "さいけつ", "meaning": "ruling" }] },
-  { "kanji": "判", "category": 5, "meaning": "Judge / Stamp", "onyomi": "ハン", "kunyomi": "わか(る)", "examples": [{ "word": "判決", "reading": "はんけつ", "meaning": "verdict" }, { "word": "審判", "reading": "しんぱん", "meaning": "umpire" }] },
-  { "kanji": "権", "category": 5, "meaning": "Right / Power", "onyomi": "ケン", "kunyomi": "-", "examples": [{ "word": "権利", "reading": "けんり", "meaning": "right" }, { "word": "特権", "reading": "とっけん", "meaning": "privilege" }] },
-  { "kanji": "利", "category": 5, "meaning": "Profit", "onyomi": "リ", "kunyomi": "き(く)", "examples": [{ "word": "利益", "reading": "りえき", "meaning": "profit" }, { "word": "利用", "reading": "りよう", "meaning": "util." }] },
-  { "kanji": "便", "category": 5, "meaning": "Convenient / Excrement", "onyomi": "ベン", "kunyomi": "たよ(り)", "examples": [{ "word": "便利", "reading": "べんり", "meaning": "convenient" }, { "word": "郵便", "reading": "ゆうびん", "meaning": "mail" }] },
-  { "kanji": "輸", "category": 5, "meaning": "Transport", "onyomi": "ユ", "kunyomi": "-", "examples": [{ "word": "輸出", "reading": "ゆしゅつ", "meaning": "export" }, { "word": "輸入", "reading": "ゆにゅう", "meaning": "import" }] },
-  { "kanji": "貿", "category": 5, "meaning": "Trade", "onyomi": "ボウ", "kunyomi": "-", "examples": [{ "word": "貿易", "reading": "ぼうえき", "meaning": "trade" }, { "word": "貿易風", "reading": "ぼうえきふう", "meaning": "trade wind" }] },
-  { "kanji": "資", "category": 5, "meaning": "Capital", "onyomi": "シ", "kunyomi": "-", "examples": [{ "word": "投資", "reading": "とうし", "meaning": "invest." }, { "word": "資産", "reading": "しさん", "meaning": "assets" }] },
-  { "kanji": "産", "category": 5, "meaning": "Produce", "onyomi": "サン", "kunyomi": "う(む)", "examples": [{ "word": "不動産", "reading": "ふどうさん", "meaning": "real estate" }, { "word": "生産", "reading": "せいさん", "meaning": "prod." }] },
-  { "kanji": "税", "category": 5, "meaning": "Tax", "onyomi": "ゼイ", "kunyomi": "-", "examples": [{ "word": "脱税", "reading": "だつぜい", "meaning": "tax evasion" }, { "word": "徴税", "reading": "ちょうぜい", "meaning": "tax collect." }] },
-  { "kanji": "収", "category": 5, "meaning": "Income", "onyomi": "シュウ", "kunyomi": "おさ(める)", "examples": [{ "word": "回収", "reading": "かいしゅう", "meaning": "collect" }, { "word": "年収", "reading": "ねんしゅう", "meaning": "annual income" }] },
-  { "kanji": "支", "category": 5, "meaning": "Support", "onyomi": "シ", "kunyomi": "ささ(える)", "examples": [{ "word": "支配", "reading": "しはい", "meaning": "rule" }, { "word": "支度", "reading": "したく", "meaning": "prep" }] },
-  { "kanji": "払", "category": 5, "meaning": "Pay", "onyomi": "フツ", "kunyomi": "はら(う)", "examples": [{ "word": "月払い", "reading": "つきばらい", "meaning": "monthly pay" }, { "word": "払込", "reading": "はらいこみ", "meaning": "payment" }] },
-  { "kanji": "企", "category": 5, "meaning": "Plan", "onyomi": "キ", "kunyomi": "くわだ(てる)", "examples": [{ "word": "公企業", "reading": "こうきぎょう", "meaning": "public corp" }, { "word": "共企画", "reading": "きょうきかく", "meaning": "joint plan" }] },
-  { "kanji": "商", "category": 5, "meaning": "Trade", "onyomi": "ショウ", "kunyomi": "あきな(う)", "examples": [{ "word": "商店", "reading": "しょうてん", "meaning": "shop" }, { "word": "商売", "reading": "しょうばい", "meaning": "biz" }] },
-  { "kanji": "務", "category": 5, "meaning": "Duty", "onyomi": "ム", "kunyomi": "つと(める)", "examples": [{ "word": "業務", "reading": "ぎょうむ", "meaning": "biz operations" }, { "word": "職務", "reading": "しょくむ", "meaning": "job duty" }] },
-  { "kanji": "労", "category": 5, "meaning": "Labor", "onyomi": "ロウ", "kunyomi": "つか(れる)", "examples": [{ "word": "労働", "reading": "ろうどう", "meaning": "labor" }, { "word": "苦労", "reading": "くろう", "meaning": "hardship" }] },
-  { "kanji": "勤", "category": 5, "meaning": "Diligence / Work", "onyomi": "キン", "kunyomi": "つと(める)", "examples": [{ "word": "出勤", "reading": "しゅっきん", "meaning": "going to work" }, { "word": "通勤", "reading": "つうきん", "meaning": "commute" }] },
-  { "kanji": "雇", "category": 5, "meaning": "Employ", "onyomi": "コ", "kunyomi": "やと(う)", "examples": [{ "word": "雇用", "reading": "こよう", "meaning": "employment" }, { "word": "解雇", "reading": "かいこ", "meaning": "dismissal" }] },
-  { "kanji": "給", "category": 5, "meaning": "Supply / Wage", "onyomi": "キュウ", "kunyomi": "たま(う)", "examples": [{ "word": "支給", "reading": "しきゅう", "meaning": "payment" }, { "word": "補給", "reading": "ほきゅう", "meaning": "supply" }] },
-  { "kanji": "退", "category": 5, "meaning": "Retreat", "onyomi": "タイ", "kunyomi": "しりぞ(く)", "examples": [{ "word": "退職", "reading": "たいしょく", "meaning": "retire" }, { "word": "退院", "reading": "たいいん", "meaning": "leave hosp." }] },
-  { "kanji": "職", "category": 5, "meaning": "Job", "onyomi": "ショク", "kunyomi": "-", "examples": [{ "word": "就職", "reading": "しゅうしょく", "meaning": "finding job" }, { "word": "職員", "reading": "しょくいん", "meaning": "staff" }] },
-  { "kanji": "員", "category": 5, "meaning": "Member", "onyomi": "イン", "kunyomi": "-", "examples": [{ "word": "店員", "reading": "てんいん", "meaning": "clerk" }, { "word": "会員", "reading": "かいいん", "meaning": "member" }] },
-  { "kanji": "演", "category": 5, "meaning": "Perform", "onyomi": "エン", "kunyomi": "-", "examples": [{ "word": "公演", "reading": "こうえん", "meaning": "public perf." }, { "word": "演劇", "reading": "えんげき", "meaning": "drama" }] },
-  { "kanji": "奏", "category": 5, "meaning": "Play (music)", "onyomi": "ソウ", "kunyomi": "かな(でる)", "examples": [{ "word": "演奏", "reading": "えんそう", "meaning": "perf. music" }, { "word": "奏鳴曲", "reading": "そなねきょく", "meaning": "sonata" }] },
-  { "kanji": "覧", "category": 5, "meaning": "View / Look", "onyomi": "ラン", "kunyomi": "-", "examples": [{ "word": "閲覧", "reading": "えつらん", "meaning": "browsing" }, { "word": "展覧会", "reading": "てんらんかい", "meaning": "exhibition" }] },
-  { "kanji": "掲", "category": 5, "meaning": "Post / Display", "onyomi": "ケイ", "kunyomi": "かか(げる)", "examples": [{ "word": "掲示板", "reading": "けいじばん", "meaning": "bulletin board" }, { "word": "掲載", "reading": "けいさい", "meaning": "publishing" }] },
-  { "kanji": "載", "category": 5, "meaning": "Publish / Load", "onyomi": "サイ", "kunyomi": "の(せる)", "examples": [{ "word": "記載", "reading": "きさい", "meaning": "mention" }, { "word": "積載", "reading": "せきさい", "meaning": "loading" }] },
-  { "kanji": "録", "category": 5, "meaning": "Record", "onyomi": "ロク", "kunyomi": "-", "examples": [{ "word": "記録", "reading": "きろく", "meaning": "record" }, { "word": "登録", "reading": "とうろく", "meaning": "registration" }] },
-  { "kanji": "編", "category": 5, "meaning": "Edit / Knit", "onyomi": "ヘン", "kunyomi": "あ(む)", "examples": [{ "word": "編集", "reading": "へんしゅう", "meaning": "editing" }, { "word": "編み物", "reading": "あみもの", "meaning": "knitting" }] },
-  { "kanji": "集", "category": 5, "meaning": "Collect / Gather", "onyomi": "シュウ", "kunyomi": "あつ(める)", "examples": [{ "word": "集合", "reading": "しゅうごう", "meaning": "gathering" }, { "word": "集中", "reading": "しゅうちゅう", "meaning": "concentration" }] },
-  { "kanji": "選", "category": 5, "meaning": "Choose / Elect", "onyomi": "セン", "kunyomi": "えら(ぶ)", "examples": [{ "word": "選択", "reading": "せんたく", "meaning": "choice" }, { "word": "選挙", "reading": "せんきょ", "meaning": "election" }] },
-  { "kanji": "挙", "category": 5, "meaning": "Raise / Nominate", "onyomi": "キョ", "kunyomi": "あ(げる)", "examples": [{ "word": "挙手", "reading": "きょしゅ", "meaning": "show of hands" }, { "word": "列挙", "reading": "れっきょ", "meaning": "enumerable" }] },
-  { "kanji": "票", "category": 5, "meaning": "Vote / Slip", "onyomi": "ヒョウ", "kunyomi": "-", "examples": [{ "word": "投票", "reading": "とうひょう", "meaning": "voting" }, { "word": "伝票", "reading": "でんぴょう", "meaning": "slip/invoice" }] },
-  { "kanji": "領", "category": 5, "meaning": "Territory / Lead", "onyomi": "リョウ", "kunyomi": "-", "examples": [{ "word": "領土", "reading": "りょうど", "meaning": "territory" }, { "word": "領収書", "reading": "りょうしゅうしょ", "meaning": "receipt" }] },
-  { "kanji": "域", "category": 5, "meaning": "Area / Zone", "onyomi": "イキ", "kunyomi": "-", "examples": [{ "word": "地域", "reading": "ちいき", "meaning": "region" }, { "word": "区域", "reading": "くいき", "meaning": "zone" }] },
-  { "kanji": "境", "category": 5, "meaning": "Boundary", "onyomi": "キョウ", "kunyomi": "さかい", "examples": [{ "word": "国境", "reading": "こっきょう", "meaning": "border" }, { "word": "環境", "reading": "かんきょう", "meaning": "environment" }] },
-  { "kanji": "際", "category": 5, "meaning": "Edge / Occasion", "onyomi": "サイ", "kunyomi": "きわ", "examples": [{ "word": "国際", "reading": "こくさい", "meaning": "international" }, { "word": "実際", "reading": "じっさい", "meaning": "actually" }] },
-  { "kanji": "障", "category": 5, "meaning": "Hinder", "onyomi": "ショウ", "kunyomi": "さわ(る)", "examples": [{ "word": "障害", "reading": "しょうがい", "meaning": "obstacle" }, { "word": "故障", "reading": "こしょう", "meaning": "breakdown" }] },
-  { "kanji": "災", "category": 5, "meaning": "Disaster", "onyomi": "サイ", "kunyomi": "わざわ(い)", "examples": [{ "word": "災害", "reading": "さいがい", "meaning": "disaster" }, { "word": "火災", "reading": "かさい", "meaning": "fire" }] },
-  { "kanji": "険", "category": 5, "meaning": "Steep / Danger", "onyomi": "ケン", "kunyomi": "けわ(しい)", "examples": [{ "word": "危険", "reading": "きけん", "meaning": "danger" }, { "word": "険悪", "reading": "けんあく", "meaning": "threatening" }] },
-  { "kanji": "危", "category": 5, "meaning": "Danger / Fear", "onyomi": "キ", "kunyomi": "あぶ(ない)", "examples": [{ "word": "危機", "reading": "きき", "meaning": "crisis" }, { "word": "危惧", "reading": "きぐ", "meaning": "apprehension" }] },
-  { "kanji": "震", "category": 5, "meaning": "Shake / Quake", "onyomi": "シン", "kunyomi": "ふる(える)", "examples": [{ "word": "地震", "reading": "じしん", "meaning": "earthquake" }, { "word": "震動", "reading": "しんどう", "meaning": "vibration" }] },
-  { "kanji": "激", "category": 5, "meaning": "Violent / Fierce", "onyomi": "ゲキ", "kunyomi": "はげ(しい)", "examples": [{ "word": "激増", "reading": "げきぞう", "meaning": "sharp increase" }, { "word": "感激", "reading": "かんげき", "meaning": "deep emotion" }] },
-  { "kanji": "烈", "category": 5, "meaning": "Ardent / Violent", "onyomi": "レツ", "kunyomi": "-", "examples": [{ "word": "強烈", "reading": "きょうれつ", "meaning": "strong/intense" }, { "word": "猛烈", "reading": "もうれつ", "meaning": "fierce" }] },
-  { "kanji": "勇", "category": 5, "meaning": "Courage", "onyomi": "ユウ", "kunyomi": "いさ(む)", "examples": [{ "word": "勇気", "reading": "ゆうき", "meaning": "courage" }, { "word": "勇敢", "reading": "ゆうかん", "meaning": "brave" }] },
-  { "kanji": "猛", "category": 5, "meaning": "Fierce", "onyomi": "モウ", "kunyomi": "-", "examples": [{ "word": "猛暑", "reading": "もうしょ", "meaning": "heatwave" }, { "word": "猛獣", "reading": "もうじゅう", "meaning": "wild beast" }] },
-  { "kanji": "華", "category": 5, "meaning": "Flower / Splendid", "onyomi": "カ", "kunyomi": "はな", "examples": [{ "word": "豪華", "reading": "ごうか", "meaning": "luxurious" }, { "word": "華道", "reading": "かどう", "meaning": "flower arrangement" }] },
-  { "kanji": "麗", "category": 5, "meaning": "Beautiful", "onyomi": "レイ", "kunyomi": "うるわ(しい)", "examples": [{ "word": "綺麗", "reading": "きれい", "meaning": "beautiful/clean" }, { "word": "華麗", "reading": "かれい", "meaning": "splendid" }] },
-  { "kanji": "豊", "category": 5, "meaning": "Abundant", "onyomi": "ホウ", "kunyomi": "ゆた(か)", "examples": [{ "word": "豊富", "reading": "ほうふ", "meaning": "abundant" }, { "word": "豊作", "reading": "ほうさく", "meaning": "rich harvest" }] },
-  { "kanji": "裕", "category": 5, "meaning": "Affluent", "onyomi": "ユウ", "kunyomi": "-", "examples": [{ "word": "余裕", "reading": "よゆう", "meaning": "leeway/surplus" }, { "word": "富裕", "reading": "ふゆう", "meaning": "wealthy" }] },
-  { "kanji": "乏", "category": 5, "meaning": "Scanty / Lacking", "onyomi": "ボウ", "kunyomi": "とぼ(しい)", "examples": [{ "word": "貧乏", "reading": "びんぼう", "meaning": "poor" }, { "word": "欠乏", "reading": "けつぼう", "meaning": "lack" }] },
-  { "kanji": "貧", "category": 5, "meaning": "Poor", "onyomi": "ヒン", "kunyomi": "まず(しい)", "examples": [{ "word": "貧血", "reading": "ひんけつ", "meaning": "anemia" }, { "word": "貧困", "reading": "ひんこん", "meaning": "poverty" }] },
-  { "kanji": "困", "category": 5, "meaning": "Troubled", "onyomi": "コン", "kunyomi": "こま(る)", "examples": [{ "word": "困難", "reading": "こんなん", "meaning": "difficulty" }, { "word": "困惑", "reading": "こんわく", "meaning": "bewilderment" }] },
-  { "kanji": "束", "category": 5, "meaning": "Bundle / Bind", "onyomi": "ソク", "kunyomi": "たば", "examples": [{ "word": "約束", "reading": "やくそく", "meaning": "promise" }, { "word": "花束", "reading": "はなたば", "meaning": "bouquet" }] },
-  { "kanji": "約", "category": 5, "meaning": "Promise / Approx", "onyomi": "ヤク", "kunyomi": "-", "examples": [{ "word": "約百人", "reading": "やくひゃくにん", "meaning": "approx 100 ppl" }, { "word": "要約", "reading": "ようやく", "meaning": "summary" }] },
-  { "kanji": "誓", "category": 5, "meaning": "Vow / Oath", "onyomi": "セイ", "kunyomi": "ちか(う)", "examples": [{ "word": "誓約", "reading": "せいやく", "meaning": "pledge" }, { "word": "宣誓", "reading": "せんせい", "meaning": "oath" }] },
-  { "kanji": "契", "category": 5, "meaning": "Pledge / Contract", "onyomi": "ケイ", "kunyomi": "ちぎ(る)", "examples": [{ "word": "契約", "reading": "けいやく", "meaning": "contract" }, { "word": "契機", "reading": "けいき", "meaning": "opportunity" }] },
-  { "kanji": "盟", "category": 5, "meaning": "Alliance / Oath", "onyomi": "メイ", "kunyomi": "-", "examples": [{ "word": "同盟", "reading": "どうめい", "meaning": "alliance" }, { "word": "連盟", "reading": "れんめい", "meaning": "league" }] },
-  { "kanji": "敵", "category": 5, "meaning": "Enemy", "onyomi": "テキ", "kunyomi": "かたき", "examples": [{ "word": "強敵", "reading": "きょうてき", "meaning": "strong enemy" }, { "word": "油断大敵", "reading": "ゆだんたいてき", "meaning": "carelessness is enemy" }] },
-  { "kanji": "奪", "category": 5, "meaning": "Rob / Snatch", "onyomi": "ダツ", "kunyomi": "うば(う)", "examples": [{ "word": "略奪", "reading": "りゃくだつ", "meaning": "looting" }, { "word": "奪還", "reading": "だっかん", "meaning": "recovery" }] },
-  { "kanji": "援", "category": 5, "meaning": "Aid / Support", "onyomi": "エン", "kunyomi": "-", "examples": [{ "word": "援助", "reading": "えんじょ", "meaning": "assistance" }, { "word": "応援", "reading": "おうえん", "meaning": "support/cheer" }] },
-  { "kanji": "介", "category": 5, "meaning": "Mediate", "onyomi": "カイ", "kunyomi": "-", "examples": [{ "word": "紹介", "reading": "しょうかい", "meaning": "introduction" }, { "word": "介護", "reading": "かいご", "meaning": "nursing care" }] },
-  { "kanji": "師", "category": 5, "meaning": "Teacher / Master", "onyomi": "シ", "kunyomi": "-", "examples": [{ "word": "医師", "reading": "いし", "meaning": "doctor" }, { "word": "講師", "reading": "こうし", "meaning": "lecturer" }] },
-  { "kanji": "塾", "category": 5, "meaning": "Cram school", "onyomi": "ジュク", "kunyomi": "-", "examples": [{ "word": "学習塾", "reading": "がくしゅうじゅく", "meaning": "cram school" }, { "word": "塾生", "reading": "じゅくせい", "meaning": "juku student" }] },
-  { "kanji": "籍", "category": 5, "meaning": "Register", "onyomi": "セキ", "kunyomi": "-", "examples": [{ "word": "国籍", "reading": "こくせき", "meaning": "nationality" }, { "word": "書籍", "reading": "しょせき", "meaning": "books" }] },
-  { "kanji": "典", "category": 5, "meaning": "Classic / Code", "onyomi": "テン", "kunyomi": "-", "examples": [{ "word": "辞典", "reading": "じてん", "meaning": "dictionary" }, { "word": "特典", "reading": "とくてん", "meaning": "bonus/privilege" }] },
-  { "kanji": "祝", "category": 5, "meaning": "Celebrate", "onyomi": "シュク", "kunyomi": "いわ(う)", "examples": [{ "word": "祝日", "reading": "しゅくじつ", "meaning": "holiday" }, { "word": "祝福", "reading": "しゅくふく", "meaning": "blessing" }] },
-  { "kanji": "縁", "category": 5, "meaning": "Fate / Rim", "onyomi": "エン", "kunyomi": "ふち", "examples": [{ "word": "縁起", "reading": "えんぎ", "meaning": "omen" }, { "word": "縁側", "reading": "えんがわ", "meaning": "veranda" }] },
-  { "kanji": "婦", "category": 5, "meaning": "Lady / Wife", "onyomi": "フ", "kunyomi": "-", "examples": [{ "word": "夫婦", "reading": "ふうふ", "meaning": "married couple" }, { "word": "婦人", "reading": "ふじん", "meaning": "woman/lady" }] },
-  { "kanji": "妻", "category": 5, "meaning": "Wife", "onyomi": "サイ", "kunyomi": "つま", "examples": [{ "word": "愛妻", "reading": "あいさい", "meaning": "beloved wife" }, { "word": "妻子", "reading": "さいし", "meaning": "wife and child" }] },
-  { "kanji": "娘", "category": 5, "meaning": "Daughter / Girl", "onyomi": "ジョウ", "kunyomi": "むすめ", "examples": [{ "word": "箱入り娘", "reading": "はこいりむすめ", "meaning": "sheltered daughter" }, { "word": "小娘", "reading": "こむすめ", "meaning": "young girl" }] },
-  { "kanji": "児", "category": 5, "meaning": "Child / Newborn", "onyomi": "ジ", "kunyomi": "-", "examples": [{ "word": "児童", "reading": "じどう", "meaning": "child" }, { "word": "育児", "reading": "いくじ", "meaning": "childcare" }] },
-  { "kanji": "童", "category": 5, "meaning": "Juvenile / Child", "onyomi": "ドウ", "kunyomi": "わらべ", "examples": [{ "word": "童話", "reading": "どうわ", "meaning": "fairy tale" }, { "word": "童心", "reading": "どうしん", "meaning": "child's heart" }] },
-  { "kanji": "幼", "category": 5, "meaning": "Infancy / Young", "onyomi": "ヨウ", "kunyomi": "おさな(い)", "examples": [{ "word": "幼稚園", "reading": "ようちえん", "meaning": "kindergarten" }, { "word": "幼馴染", "reading": "おさななじみ", "meaning": "childhood friend" }] },
-  { "kanji": "稚", "category": 5, "meaning": "Immature", "onyomi": "チ", "kunyomi": "-", "examples": [{ "word": "稚拙", "reading": "ちせつ", "meaning": "unskillful" }, { "word": "幼稚", "reading": "ようち", "meaning": "childish" }] },
-  { "kanji": "齢", "category": 5, "meaning": "Age", "onyomi": "レイ", "kunyomi": "-", "examples": [{ "word": "年齢", "reading": "ねんれい", "meaning": "age" }, { "word": "高齢者", "reading": "こうれいしゃ", "meaning": "senior citizens" }] },
-  { "kanji": "寿", "category": 5, "meaning": "Longevity / Congrat", "onyomi": "ジュ", "kunyomi": "ことぶき", "examples": [{ "word": "寿司", "reading": "すし", "meaning": "Sushi" }, { "word": "寿命", "reading": "じゅみょう", "meaning": "lifespan" }] },
-  { "kanji": "誠", "category": 5, "meaning": "Sincerity", "onyomi": "セイ", "kunyomi": "まこと", "examples": [{ "word": "誠実", "reading": "せいじつ", "meaning": "sincere" }, { "word": "忠誠", "reading": "ちゅうせい", "meaning": "loyalty" }] },
-  { "kanji": "忠", "category": 5, "meaning": "Loyalty", "onyomi": "チュウ", "kunyomi": "-", "examples": [{ "word": "忠告", "reading": "ちゅうこく", "meaning": "advice" }, { "word": "忠犬", "reading": "ちゅうけん", "meaning": "loyal dog" }] },
-  { "kanji": "信", "category": 5, "meaning": "Faith", "onyomi": "シン", "kunyomi": "-", "examples": [{ "word": "信用", "reading": "しんよう", "meaning": "trust" }, { "word": "信念", "reading": "しんねん", "meaning": "belief" }] },
-  { "kanji": "念", "category": 5, "meaning": "Thought / Wish", "onyomi": "ネン", "kunyomi": "-", "examples": [{ "word": "記念", "reading": "きねん", "meaning": "commemoration" }, { "word": "残念", "reading": "ざんねん", "meaning": "regrettable" }] },
-  { "kanji": "専", "category": 5, "meaning": "Specialty / Exclusive", "onyomi": "セン", "kunyomi": "もっぱ(ら)", "examples": [{ "word": "専門", "reading": "せんもん", "meaning": "specialty" }, { "word": "専念", "reading": "せんねん", "meaning": "dedication" }] },
-  { "kanji": "門", "category": 5, "meaning": "Gate", "onyomi": "モン", "kunyomi": "かど", "examples": [{ "word": "校門", "reading": "こうもん", "meaning": "school gate" }, { "word": "名門", "reading": "めいもん", "meaning": "prestigious" }] },
-  { "kanji": "衆", "category": 5, "meaning": "Masses", "onyomi": "シュウ", "kunyomi": "-", "examples": [{ "word": "公衆", "reading": "こうしゅう", "meaning": "public" }, { "word": "観衆", "reading": "かんしゅう", "meaning": "audience" }] },
-  { "kanji": "各", "category": 5, "meaning": "Every / Each", "onyomi": "カク", "kunyomi": "おのおの", "examples": [{ "word": "各自", "reading": "かくじ", "meaning": "each person" }, { "word": "各地", "reading": "かくち", "meaning": "each region" }] },
-  { "kanji": "格", "category": 5, "meaning": "Standard / Case", "onyomi": "カク", "kunyomi": "-", "examples": [{ "word": "人格", "reading": "じんかく", "meaning": "personality" }, { "word": "合格", "reading": "ごうかく", "meaning": "passing" }] },
-  { "kanji": "段", "category": 5, "meaning": "Level / Grade", "onyomi": "ダン", "kunyomi": "-", "examples": [{ "word": "特段", "reading": "とくだん", "meaning": "particular" }, { "word": "段落", "reading": "だんらく", "meaning": "paragraph" }] },
-  { "kanji": "階", "category": 5, "meaning": "Class / Floor", "onyomi": "カイ", "kunyomi": "-", "examples": [{ "word": "階層", "reading": "かいそう", "meaning": "stratum/layer" }, { "word": "階段", "reading": "かいだん", "meaning": "stairs" }] }
-];
+        .back-home {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: transform 0.2s;
+        }
+        .back-home:hover { transform: translateX(-5px); }
+
+        h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            letter-spacing: -1px;
+            background: linear-gradient(135deg, var(--primary), #ff4d5a);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 15px;
+        }
+
+        .subtitle {
+            color: var(--text-sub);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto 30px;
+        }
+
+        /* Search & Filter Bar */
+        .controls {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            max-width: 1000px;
+            margin: 0 auto 40px;
+            padding: 0 20px;
+            position: sticky;
+            top: 20px;
+            z-index: 100;
+        }
+
+        .search-container {
+            position: relative;
+            width: 100%;
+        }
+
+        #searchKanji {
+            width: 100%;
+            padding: 18px 25px 18px 50px;
+            border-radius: 20px;
+            border: 1px solid var(--glass-border);
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            font-size: 1.1rem;
+            box-shadow: var(--shadow-premium);
+            outline: none;
+            transition: all 0.3s ease;
+        }
+
+        #searchKanji:focus {
+            border-color: var(--primary);
+            box-shadow: 0 15px 30px rgba(255, 117, 31, 0.1);
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            opacity: 0.4;
+        }
+
+        .filter-tabs {
+            display: flex;
+            gap: 10px;
+            overflow-x: auto;
+            padding: 5px 0 15px;
+            scrollbar-width: none;
+        }
+        .filter-tabs::-webkit-scrollbar { display: none; }
+
+        .filter-btn {
+            white-space: nowrap;
+            padding: 10px 20px;
+            border-radius: 30px;
+            border: 1px solid var(--glass-border);
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            cursor: pointer;
+            font-weight: 600;
+            color: var(--text-sub);
+            transition: all 0.3s;
+            font-family: inherit;
+        }
+
+        .filter-btn.active {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+            box-shadow: 0 10px 20px rgba(255, 117, 31, 0.2);
+        }
+
+        /* Kanji Grid */
+        .kanji-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .category-section {
+            margin-bottom: 60px;
+        }
+
+        .category-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .category-title::before {
+            content: '';
+            width: 8px;
+            height: 30px;
+            border-radius: 4px;
+        }
+
+        #cat-title-1::before { background: var(--cat1); }
+        #cat-title-2::before { background: var(--cat2); }
+        #cat-title-3::before { background: var(--cat3); }
+        #cat-title-4::before { background: var(--cat4); }
+        #cat-title-5::before { background: var(--cat5); }
+
+        .kanji-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        /* Kanji Card */
+        .kanji-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(8px);
+            border: 1px solid var(--glass-border);
+            border-radius: 24px;
+            padding: 24px;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+        }
+
+        .kanji-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 30px 50px rgba(0, 0, 0, 0.08);
+            background: white;
+            border-color: rgba(255, 117, 31, 0.2);
+        }
+
+        .char {
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: var(--text-main);
+            margin-bottom: 5px;
+            line-height: 1;
+            font-family: 'Quicksand', 'M PLUS Rounded 1c', sans-serif;
+        }
+
+        .meanings {
+            font-weight: 700;
+            color: var(--primary);
+            font-size: 1rem;
+            margin-bottom: 12px;
+            text-transform: capitalize;
+        }
+
+        .readings {
+            width: 100%;
+            margin-bottom: 12px;
+            font-size: 0.85rem;
+            color: var(--text-sub);
+            padding: 10px 0;
+            border-top: 1px dashed #eee;
+        }
+
+        .readings .label {
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: block;
+            margin-bottom: 2px;
+            opacity: 0.6;
+        }
+
+        .onyomi { margin-bottom: 8px; }
+
+        .examples {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            margin-top: auto;
+        }
+
+        .example-item {
+            font-size: 0.75rem;
+            background: #f1f2f6;
+            padding: 6px 10px;
+            border-radius: 8px;
+            text-align: left;
+            transition: background 0.2s;
+        }
+
+        .example-item:hover { background: #e8eaed; }
+
+        .ex-word { font-weight: 700; color: #333; }
+        .ex-read { color: var(--text-sub); font-size: 0.7rem;}
+        .ex-mean { display: block; font-size: 0.7rem; color: var(--text-sub); font-weight: normal; margin-top: 2px;}
+
+        /* Audio Indicator */
+        .audio-btn {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            opacity: 0.1;
+            transition: opacity 0.3s;
+            font-size: 1.2rem;
+        }
+        .kanji-card:hover .audio-btn { opacity: 0.6; }
+        .audio-btn:hover { opacity: 1 !important; }
+
+        /* Print Style */
+        @media print {
+            .controls, .back-home, .audio-btn { display: none !important; }
+            body { background: white; padding: 0; }
+            .kanji-grid { grid-template-columns: repeat(4, 1fr); gap: 10px; }
+            .kanji-card { box-shadow: none; border: 1px solid #ccc; break-inside: avoid; }
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            h1 { font-size: 2rem; }
+            .kanji-grid { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); }
+            .char { font-size: 2.5rem; }
+            .kanji-card { padding: 15px; }
+        }
+
+        /* Save Button */
+        .save-btn {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            opacity: 0.3;
+            transition: all 0.3s;
+            font-size: 1.2rem;
+            cursor: pointer;
+            z-index: 5;
+            filter: grayscale(1);
+        }
+        .kanji-card:hover .save-btn { opacity: 0.8; }
+        .save-btn:hover { 
+            opacity: 1 !important; 
+            transform: scale(1.2);
+            filter: grayscale(0);
+        }
+        .save-btn.active {
+            opacity: 1 !important;
+            filter: grayscale(0);
+            color: #ffb800; /* Gold */
+        }
+
+        /* Saved Feedback */
+        .save-btn::after {
+            content: 'Saved!';
+            position: absolute;
+            top: -25px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--text-main);
+            color: white;
+            padding: 4px 8px;
+            border-radius: 6px;
+            font-size: 0.6rem;
+            opacity: 0;
+            pointer-events: none;
+            transition: all 0.3s;
+        }
+        .save-btn.flash::after {
+            opacity: 1;
+            top: -35px;
+        }
+
+        /* Empty state */
+        .no-results {
+            text-align: center;
+            padding: 100px 0;
+            font-size: 1.2rem;
+            color: var(--text-sub);
+            display: none;
+        }
+
+        /* Unified Navigation Styles */
+        :root {
+            --primary-color: #ff751f;
+            --secondary-color: #535353;
+            --bg-color: #F8F9FA;
+            --white: #FFFFFF;
+        }
+
+        header.global-header {
+            text-align: center;
+            padding: 40px 20px;
+            background: #FFFFFF;
+            border-bottom: 4px solid var(--primary-color);
+            margin-bottom: 40px;
+            position: relative;
+            font-family: 'Quicksand', 'M PLUS Rounded 1c', sans-serif;
+            -webkit-text-fill-color: initial; /* Reset for kanji page gradient */
+            max-width: none !important;
+        }
+
+        .header-actions {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            gap: 10px;
+        }
+
+        .header-action-btn {
+            background: #fcfcfc;
+            border: 1px solid #eee;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            color: var(--secondary-color);
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            text-decoration: none;
+            font-family: 'Quicksand', 'M PLUS Rounded 1c', sans-serif;
+        }
+
+        .header-action-btn:hover {
+            background: #fff;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transform: translateY(-1px);
+        }
+
+        .logo-trigger {
+            cursor: pointer;
+            display: inline-block;
+            transition: all 0.3s ease;
+            padding: 10px 20px;
+            border-radius: 15px;
+            user-select: none;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .logo-trigger:hover {
+            background-color: transparent;
+            transform: translateY(-2px);
+        }
+
+        .logo-trigger h1 {
+            margin: 0;
+            font-size: 2.2rem;
+            letter-spacing: 2px;
+            color: var(--primary-color);
+            background: none; /* Reset gradient */
+            -webkit-background-clip: initial;
+            -webkit-text-fill-color: var(--primary-color);
+        }
+
+        .logo-trigger p {
+            font-weight: bold;
+            opacity: 0.8;
+            color: var(--secondary-color);
+            margin-top: 5px;
+            font-size: 0.9rem;
+        }
+
+        .tabs {
+            display: flex;
+            justify-content: center;
+            flex-wrap: nowrap;
+            gap: 20px;
+            margin-bottom: 50px;
+            font-family: 'Quicksand', 'M PLUS Rounded 1c', sans-serif;
+        }
+
+        @media (max-width: 850px) {
+            .tabs {
+                flex-wrap: wrap;
+                gap: 15px;
+            }
+        }
+
+        .tab-btn {
+            display: inline-block;
+            box-sizing: border-box;
+            background: #FFFFFF;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+            padding: 12px 30px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            outline: none;
+            text-decoration: none;
+            font-family: 'Quicksand', 'M PLUS Rounded 1c', sans-serif;
+            text-align: center;
+        }
+
+        .tab-btn:hover {
+            background: #ffe6e6;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 10px rgba(255, 117, 31, 0.1);
+        }
+
+        .tab-btn.active {
+            background: var(--primary-color);
+            color: #FFFFFF;
+            box-shadow: 0 6px 12px rgba(255, 117, 31, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .nav-item {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%) translateY(10px);
+            background: #ffffff;
+            min-width: 220px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            border-radius: 15px;
+            padding: 10px;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            z-index: 1000;
+            border: 1px solid #eee;
+            max-height: 450px;
+            overflow-y: auto;
+        }
+
+        .nav-item:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(-50%) translateY(5px);
+        }
+
+        .dropdown-item {
+            display: block;
+            padding: 12px 15px;
+            color: var(--secondary-color);
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 10px;
+            transition: background 0.2s, color 0.2s;
+            text-align: left;
+            font-size: 0.95rem;
+            cursor: pointer;
+            border: none;
+            background: none;
+            width: 100%;
+        }
+
+        .dropdown-item:hover {
+            background: #fff5f5;
+            color: var(--primary-color);
+        }
+
+        .dropdown-divider {
+            height: 1px;
+            background: #eee;
+            margin: 8px 0;
+        }
+    
+
+
+                /* Unified Mobile Optimization */
+        @media (max-width: 768px) {
+            header.global-header {
+                padding: 15px 10px !important;
+            }
+            .header-actions {
+                position: relative !important;
+                top: 0 !important;
+                right: 0 !important;
+                display: flex;
+                flex-direction: row !important;
+                justify-content: flex-start !important;
+                flex-wrap: wrap;
+                gap: 6px !important;
+                margin-bottom: 15px;
+                padding: 0 10px !important;
+                width: 100%;
+                box-sizing: border-box;
+            }
+            .header-action-btn {
+                width: auto !important;
+                justify-content: center;
+                padding: 4px 10px !important;
+                font-size: 0.7rem !important;
+                border-width: 1px !important;
+            }
+            .logo-trigger h1 {
+                font-size: 2rem !important;
+                letter-spacing: -1px !important;
+                margin-top: 5px !important;
+            }
+            .logo-trigger p {
+                font-size: 0.75rem !important;
+                padding: 0 5px;
+                line-height: 1.3;
+            }
+            .tabs {
+                flex-direction: column !important;
+                gap: 8px !important;
+                padding: 0 10px !important;
+            }
+            .tab-btn {
+                width: 100% !important;
+                padding: 10px !important;
+                font-size: 0.95rem !important;
+            }
+            .container {
+                padding: 0 10px !important;
+                width: 100% !important;
+                box-sizing: border-box !important;
+            }
+            /* Roadmap Fixes */
+            .roadmap::before { display: none !important; }
+            .step.left, .step.right {
+                width: 100% !important;
+                float: none !important;
+                margin: 0 0 15px 0 !important;
+                padding: 15px !important;
+                border-radius: 16px !important;
+            }
+            /* Table Fixes */
+            table {
+                display: block !important;
+                overflow-x: auto !important;
+                -webkit-overflow-scrolling: touch;
+                width: 100% !important;
+            }
+            /* Modal Fixes */
+            .modal-content, .search-modal-content {
+                width: 95% !important;
+                margin: 5px auto !important;
+                padding: 15px 10px !important;
+                border-radius: 16px !important;
+            }
+            /* Grid Fixes */
+            .cycle-grid {
+                grid-template-columns: 1fr !important;
+                gap: 15px !important;
+                margin: 20px auto !important;
+            }
+            .cycle-item {
+                width: 100% !important;
+                margin: 0 !important;
+                padding: 15px !important;
+                border-radius: 16px !important;
+            }
+            .starthere-card {
+                padding: 20px 10px !important;
+                border-radius: 20px !important;
+            }
+            .starthere-title {
+                font-size: 1.5rem !important;
+            }
+            .cta-btn-premium {
+                padding: 15px 40px !important;
+                font-size: 1.1rem !important;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <header class="global-header">
+        <div class="header-actions">
+            <a href="index.html?search=true" class="header-action-btn" style="text-decoration: none;">🔍 Search</a>
+            <a href="myvocab.html" class="header-action-btn" style="text-decoration: none;"><svg style="width: 18px; height: 18px; margin-right: 6px; vertical-align: text-bottom;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>Saved Words</a>
+            <a href="https://discord.gg/ZgkKXdpt" target="_blank" class="header-action-btn" style="text-decoration: none;">💬 24/7 Chat Support</a>
+        </div>
+        <a href="index.html" class="logo-trigger">
+            <h1 style="font-size: 4rem; font-weight: 800; color: var(--primary-color); font-family: 'Quicksand', 'M PLUS Rounded 1c', sans-serif; letter-spacing: -2px; margin-bottom: 5px; margin-top: 10px; text-shadow: 2px 2px 4px rgba(0,0,0,0.05);">Hanace</h1>
+            <p>Hanace [Ha-na-su]-Trace your path to bloom, Speak with confidence.</p>
+        </a>
+    </header>
+
+    <div class="tabs">
+        <a href="index.html?tab=roadmap" class="tab-btn">Roadmap</a>
+        <a href="index.html?tab=resources" class="tab-btn active">Resources</a>
+        <a href="index.html?tab=booking" class="tab-btn">Book a Lesson</a>
+    </div>
+
+    <header>
+        <h1>Daily Kanji 500</h1>
+        <p class="subtitle">Categorized roadmap to mastering 500 essential Japanese characters for daily life. Search, learn, and master! ✨</p>
+    </header>
+
+    <div class="controls">
+        <div class="search-container">
+            <span class="search-icon">🔍</span>
+            <input type="text" id="searchKanji" placeholder="Search by Kanji, Reading, or Meaning...">
+        </div>
+        <div class="filter-tabs">
+            <button class="filter-btn active" data-filter="all">All Kanji</button>
+            <button class="filter-btn" data-filter="1">1. Super Basic</button>
+            <button class="filter-btn" data-filter="2">2. Nature & Life</button>
+            <button class="filter-btn" data-filter="3">3. Society & Emotion</button>
+            <button class="filter-btn" data-filter="4">4. States & Property</button>
+            <button class="filter-btn" data-filter="5">5. Work & Abstract</button>
+        </div>
+    </div>
+
+    <div class="kanji-container" id="kanjiContainer">
+        <!-- Rendered by JS -->
+    </div>
+
+    <div class="no-results" id="noResults">
+        No kanji found matching your search. Try something else! 🌸
+    </div>
+
+    <!-- Data is loaded from resources/kanji_data.js -->
+    <script src="resources/kanji_data.js"></script>
+    <script>
+        const container = document.getElementById('kanjiContainer');
+        const searchInput = document.getElementById('searchKanji');
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const noResults = document.getElementById('noResults');
+
+        const catNames = {
+            1: "超基本 (Super Basic)",
+            2: "自然・生活・動作 (Nature & Life)",
+            3: "社会・学校・感情 (Society & Emotion)",
+            4: "状態・性質 (States & Properties)",
+            5: "仕事・経済・抽象 (Work & Economy)"
+        };
+
+        function renderKanji(filter = 'all', search = '') {
+            container.innerHTML = '';
+            let hasResults = false;
+            search = search.toLowerCase();
+
+            // Create category sections
+            const categories = filter === 'all' ? [1, 2, 3, 4, 5] : [parseInt(filter)];
+
+            categories.forEach(catId => {
+                const sectionItems = kanjiData.filter(item => {
+                    const matchesCat = item.category === catId;
+                    const matchesSearch = !search || 
+                        item.kanji.includes(search) || 
+                        item.onyomi.toLowerCase().includes(search) || 
+                        item.kunyomi.toLowerCase().includes(search) || 
+                        item.meaning.toLowerCase().includes(search);
+                    return matchesCat && matchesSearch;
+                });
+
+                if (sectionItems.length > 0) {
+                    hasResults = true;
+                    const section = document.createElement('div');
+                    section.className = 'category-section';
+                    section.innerHTML = `
+                        <h2 class="category-title" id="cat-title-${catId}">${catNames[catId]}</h2>
+                        <div class="kanji-grid"></div>
+                    `;
+                    const grid = section.querySelector('.kanji-grid');
+                    
+                    sectionItems.forEach(item => {
+                        const saved = isSaved(item.kanji);
+                        const card = document.createElement('div');
+                        card.className = 'kanji-card';
+                        card.innerHTML = `
+                            <div class="save-btn ${saved ? 'active' : ''}" onclick="event.stopPropagation(); toggleSave(this, '${item.kanji}', '${item.meaning}', '${item.onyomi}', '${item.kunyomi}')"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--primary-color, #ff751f)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg></div>
+                            <div class="audio-btn" onclick="event.stopPropagation(); speak('${item.kanji}')"><svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: text-bottom;"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg></div>
+                            <div class="char">${item.kanji}</div>
+                            <div class="meanings">${item.meaning}</div>
+                            <div class="readings">
+                                <div class="onyomi"><span class="label">On</span>${item.onyomi}</div>
+                                <div class="kunyomi"><span class="label">Kun</span>${item.kunyomi}</div>
+                            </div>
+                            <div class="examples">
+                                ${item.examples.map(ex => `
+                                    <div class="example-item">
+                                        <span class="ex-word">${ex.word}</span> <span class="ex-read">(${ex.reading})</span>
+                                        <span class="ex-mean">${ex.meaning}</span>
+                                    </div>
+                                `).join('')}
+                            </div>
+                        `;
+                        card.onclick = () => speak(item.kanji);
+                        card.style.borderTop = `5px solid var(--cat${catId})`;
+                        grid.appendChild(card);
+                    });
+                    container.appendChild(section);
+                }
+            });
+
+            noResults.style.display = hasResults ? 'none' : 'block';
+        }
+
+        searchInput.addEventListener('input', (e) => {
+            const activeFilter = document.querySelector('.filter-btn.active').dataset.filter;
+            renderKanji(activeFilter, e.target.value);
+        });
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                renderKanji(btn.dataset.filter, searchInput.value);
+            });
+        });
+
+        function speak(text) {
+            if ('speechSynthesis' in window) {
+                window.speechSynthesis.cancel();
+                const msg = new SpeechSynthesisUtterance(text);
+                msg.lang = 'ja-JP';
+                window.speechSynthesis.speak(msg);
+            }
+        }
+
+        // SAVE LOGIC
+        function isSaved(kanji) {
+            const saved = JSON.parse(localStorage.getItem('hanaBananaSavedVocab') || '[]');
+            return saved.some(item => item.word === kanji);
+        }
+
+        function toggleSave(btn, kanji, meaning, onyomi, kunyomi) {
+            let saved = JSON.parse(localStorage.getItem('hanaBananaSavedVocab') || '[]');
+            const existsIndex = saved.findIndex(item => item.word === kanji);
+
+            if (existsIndex > -1) {
+                // Remove
+                saved.splice(existsIndex, 1);
+                btn.classList.remove('active');
+            } else {
+                // Add
+                const formattedMeaning = `${meaning} (On: ${onyomi} / Kun: ${kunyomi})`;
+                saved.push({
+                    word: kanji,
+                    meaning: formattedMeaning,
+                    date: new Date().toISOString()
+                });
+                btn.classList.add('active');
+                
+                // Flash feedback
+                btn.classList.add('flash');
+                setTimeout(() => btn.classList.remove('flash'), 1500);
+            }
+
+            localStorage.setItem('hanaBananaSavedVocab', JSON.stringify(saved));
+        }
+
+        window.onload = () => {
+            if (typeof kanjiData !== 'undefined') {
+                renderKanji();
+            } else {
+                console.warn('kanjiData not loaded yet');
+                // Retry in case of slow load
+                setTimeout(renderKanji, 500);
+            }
+        };
+    </script>
+</body>
+</html>
