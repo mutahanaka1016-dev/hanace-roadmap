@@ -5,7 +5,7 @@
     <script>
       const password = "hanace.nihongo";
       if (sessionStorage.getItem('auth') !== 'true') {
-        const input = prompt("会員専用パスワードを入力してください");
+        const input = prompt("Password");
         if (input === password) {
           sessionStorage.setItem('auth', 'true');
         } else {
