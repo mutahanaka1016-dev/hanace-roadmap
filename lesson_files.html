@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson Files | Hana Banana Japanese</title>
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500;700;800&family=Quicksand:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #ff751f; 
+            --secondary-color: #555555; 
+            --text-color: #2D3436;
+            --bg-color: #F8F9FA;
+            --card-bg: #FFFFFF;
+            --shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+
+        body { 
+            font-family: 'Quicksand', 'M PLUS Rounded 1c', sans-serif; 
+            background-color: var(--bg-color);
+            color: var(--text-color); 
+            margin: 0; 
+            padding: 0; 
+            line-height: 1.6; 
+        }
+
+        header.global-header {
+            text-align: center;
+            padding: 40px 20px;
+            background: #FFFFFF;
+            border-bottom: 4px solid var(--primary-color);
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .header-actions {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            gap: 10px;
+        }
+
+        .header-action-btn {
+            background: #fcfcfc;
+            border: 1px solid #eee;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            color: var(--secondary-color);
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .header-action-btn:hover {
+            background: #fff;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transform: translateY(-1px);
+        }
+
+        .logo-trigger {
+            cursor: pointer;
+            display: inline-block;
+            text-decoration: none;
+        }
+
+        .logo-trigger h1 {
+            margin: 0;
+            font-size: 2.2rem;
+            letter-spacing: -2px;
+            color: var(--primary-color);
+        }
+
+        .logo-trigger p {
+            font-weight: bold;
+            opacity: 0.8;
+            color: var(--secondary-color);
+            margin-top: 5px;
+            font-size: 0.9rem;
+        }
+
+        .container { 
+            max-width: 800px; 
+            margin: 0 auto 100px; 
+            padding: 20px; 
+        }
+
+        .title-section {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .title-section h2 {
+            color: var(--primary-color);
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .title-section p {
+            color: var(--secondary-color);
+            font-size: 1.1rem;
+        }
+
+        .lesson-list {
+            background: var(--card-bg);
+            border-radius: 24px;
+            padding: 40px;
+            box-shadow: var(--shadow);
+        }
+
+        .lesson-list ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .lesson-list li {
+            margin-bottom: 15px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 15px;
+        }
+
+        .lesson-list li:last-child {
+            margin-bottom: 0;
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .lesson-list a {
+            text-decoration: none;
+            color: var(--primary-color);
+            font-size: 1.2rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: opacity 0.2s;
+        }
+
+        .lesson-list a:hover {
+            opacity: 0.7;
+        }
+
+        .lesson-list a::before {
+            content: '📄';
+            font-size: 1.5rem;
+        }
+
+        .btn-back {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 12px 24px;
+            background: #FFF;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+            text-decoration: none;
+            border-radius: 12px;
+            font-weight: bold;
+            transition: all 0.2s;
+            text-align: center;
+        }
+
+        .btn-back:hover {
+            background: var(--primary-color);
+            color: #FFF;
+        }
+
+        @media (max-width: 768px) {
+            header.global-header {
+                padding: 15px 10px;
+            }
+            .header-actions {
+                position: relative;
+                top: 0;
+                right: 0;
+                justify-content: flex-start;
+                margin-bottom: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="global-header">
+        <div class="header-actions">
+            <a href="index.html?search=true" class="header-action-btn">🔍 Search</a>
+            <a href="myvocab.html" class="header-action-btn"><svg style="width: 18px; height: 18px; margin-right: 6px; vertical-align: text-bottom;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>Saved Words</a>
+            <a href="https://discord.gg/ZgkKXdpt" target="_blank" class="header-action-btn">💬 24/7 Chat Support</a>
+        </div>
+        <a href="index.html" class="logo-trigger">
+            <h1>Hanace</h1>
+            <p>Hanace [Ha-na-su]-Trace your path to bloom, Speak with confidence.</p>
+        </a>
+    </header>
+
+    <div class="container">
+        <div class="title-section">
+            <h2>Beginner Lesson Files</h2>
+            <p>Download the PDFs for Chapters 1 to 11 to study offline!</p>
+            <button onclick="downloadAll()" style="margin-top: 15px; padding: 12px 30px; background-color: var(--primary-color); color: white; border: none; border-radius: 30px; font-size: 1.1rem; font-weight: bold; cursor: pointer; transition: 0.3s; box-shadow: 0 4px 6px rgba(255, 117, 31, 0.3); font-family: 'Quicksand', 'M PLUS Rounded 1c', sans-serif;">⬇️ Download All</button>
+        </div>
+
+        <div class="lesson-list">
+            <ul>
+                <li><a href="beginner step PDF/chapter1.pdf" download="chapter1.pdf">Chapter 1</a></li>
+                <li><a href="beginner step PDF/chapter2.pdf" download="chapter2.pdf">Chapter 2</a></li>
+                <li><a href="beginner step PDF/chapter3.pdf" download="chapter3.pdf">Chapter 3</a></li>
+                <li><a href="beginner step PDF/chapter4.pdf" download="chapter4.pdf">Chapter 4</a></li>
+                <li><a href="beginner step PDF/chapter5.pdf" download="chapter5.pdf">Chapter 5</a></li>
+                <li><a href="beginner step PDF/chapter6.pdf" download="chapter6.pdf">Chapter 6</a></li>
+                <li><a href="beginner step PDF/chapter7.pdf" download="chapter7.pdf">Chapter 7</a></li>
+                <li><a href="beginner step PDF/chapter8.pdf" download="chapter8.pdf">Chapter 8</a></li>
+                <li><a href="beginner step PDF/chapter9.pdf" download="chapter9.pdf">Chapter 9</a></li>
+                <li><a href="beginner step PDF/chapter10.pdf" download="chapter10.pdf">Chapter 10</a></li>
+                <li><a href="beginner step PDF/chapter11.pdf" download="chapter11.pdf">Chapter 11</a></li>
+            </ul>
+        </div>
+        
+        <div style="text-align: center;">
+            <a href="index.html" class="btn-back">← Back to Roadmap</a>
+        </div>
+    </div>
+
+    <script>
+        function downloadAll() {
+            const link = document.createElement("a");
+            link.href = "Beginner_Lesson_Files.zip";
+            link.download = "Beginner_Lesson_Files.zip";
+            document.body.appendChild(link);
+            link.clic
