@@ -714,6 +714,7 @@
     </div>
 </div>
 
+<script src="dictionary.js"></script>
 <script>
     let savedVocab = [];
     let reviewQueue = [];
@@ -754,9 +755,27 @@
             const originalIndex = savedVocab.length - 1 - index;
             const displayWord = item.word || item.kanji || 'Unknown';
             
+            let kana = item.kana || '';
+            let romaji = item.romaji || '';
+            
+            if (typeof hanaBananaDictionary !== 'undefined' && hanaBananaDictionary[displayWord]) {
+                kana = kana || hanaBananaDictionary[displayWord].kana || '';
+                romaji = romaji || hanaBananaDictionary[displayWord].romaji || '';
+            }
+
+            let readingHtml = '';
+            if (kana || romaji) {
+                let text = kana;
+                if (romaji) {
+                    text += text ? ` / ${romaji}` : romaji;
+                }
+                readingHtml = `<div class="reading" style="color: #888; font-size: 0.95rem; margin-bottom: 5px; font-weight: 600;">${text}</div>`;
+            }
+
             li.innerHTML = `
                 <button class="delete-btn" onclick="deleteWord(${originalIndex})" title="Remove">×</button>
                 <div class="word">${displayWord}</div>
+                ${readingHtml}
                 <div class="meaning">${item.meaning}</div>
             `;
             listEl.appendChild(li);
