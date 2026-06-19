@@ -1366,7 +1366,7 @@
             <div class="sub-tabs">
                 <button class="sub-tab-btn active" onclick="switchSubTab('beginner', this)">🍌 Beginner Steps</button>
                 <button class="sub-tab-btn" onclick="switchSubTab('intermediate', this)">🍌🍌 Intermediate Steps</button>
-                <button class="sub-tab-btn" onclick="switchSubTab('practical', this)">🍌🍌🍌 Practical Steps</button>
+                <button class="sub-tab-btn" onclick="switchSubTab('advanced', this)">🍌🍌🍌 Advanced Steps</button>
             </div>
 
             <!-- 初級ロードマップ -->
@@ -1556,13 +1556,104 @@
             </div>
 
             <!-- 実戦ロードマップ -->
-            <div id="practical" class="sub-roadmap-content">
-                <div style="background: var(--card-bg); padding: 50px 30px; border-radius: 24px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); text-align: center; border: 1px solid rgba(255,117,31,0.1); margin-top: 20px;">
-                    <h2 style="color: var(--primary-color); font-size: 2.2rem; margin-bottom: 15px;">🚧 Coming Soon! 🚧</h2>
-                    <p style="font-size: 1.2rem; color: var(--secondary-color); line-height: 1.6;">
-                        このセクションは現在構築中です。<br>
-                        公開までもう少しお待ちください！
-                    </p>
+            <div id="advanced" class="sub-roadmap-content">
+                <div class="vocab-link-container">
+                    <a href="vocab.html#advanced-vocab" class="vocab-link">🍌🍌🍌 View Advanced Vocabulary List</a>
+                </div>
+                <div class="vocab-link-container" style="margin-top: 15px;">
+                    <a href="https://drive.google.com/drive/folders/1uTlnLbtc9bbxdsN2dKtBS-S4U8Ie1Km8" target="_blank" class="vocab-link">📂 Lesson Files download</a>
+                </div>
+                <div class="roadmap clearfix">
+                    <div class="step left" id="pracStep01">
+                        <span class="badge">STEP 01</span>
+                        <h3>は vs が Advanced Usage</h3>
+                        <p>Understand the deep nuances and differences between topic and subject markers.</p>
+                        <button class="learn-btn" onclick="openModal('pracStep01')">Start Learning</button>
+                    </div>
+
+                    <div class="step right" id="pracStep02">
+                        <span class="badge">STEP 02</span>
+                        <h3>Comparisons</h3>
+                        <p>Learn how to compare things using yori, hou ga, and ichiban.</p>
+                        <button class="learn-btn" onclick="openModal('pracStep02')">Start Learning</button>
+                    </div>
+
+                    <div class="step left" id="pracStep03">
+                        <span class="badge">STEP 03</span>
+                        <h3>Potential Form</h3>
+                        <p>Express ability and possibility using the potential verb form.</p>
+                        <button class="learn-btn" onclick="openModal('pracStep03')">Start Learning</button>
+                    </div>
+
+                    <div class="step right" id="pracStep04">
+                        <span class="badge">STEP 04</span>
+                        <h3>Conditionals "If" Forms</h3>
+                        <p>Master the four conditional forms: to, ba, tara, and nara.</p>
+                        <button class="learn-btn" onclick="openModal('pracStep04')">Start Learning</button>
+                    </div>
+
+                    <div class="step left" id="pracStep05">
+                        <span class="badge">STEP 05</span>
+                        <h3>Conjunctions - Connecting Sentences</h3>
+                        <p>Connect ideas logically using advanced conjunctions and transitional phrases.</p>
+                        <button class="learn-btn" onclick="openModal('pracStep05')">Start Learning</button>
+                    </div>
+
+                    <div class="step right" id="pracStep06">
+                        <span class="badge">STEP 06</span>
+                        <h3>てForm Idioms</h3>
+                        <p>Express states, preparations, and regrets using ~te iru, ~te oku, and ~te shimau.</p>
+                        <button class="learn-btn" onclick="openModal('pracStep06')">Start Learning</button>
+                    </div>
+
+                    <div class="step left" id="pracStep07">
+                        <span class="badge">STEP 07</span>
+                        <h3>Giving & Receiving</h3>
+                        <p>Master the verbs of giving and receiving: ageru, morau, and kureru.</p>
+                        <button class="learn-btn" onclick="openModal('pracStep07')">Start Learning</button>
+                    </div>
+
+                    <div class="step right" id="pracStep08">
+                        <span class="badge">STEP 08</span>
+                        <h3>Transitive & Intransitive Verbs</h3>
+                        <p>Distinguish between actions you do and actions that happen naturally.</p>
+                        <button class="learn-btn" onclick="openModal('pracStep08')">Start Learning</button>
+                    </div>
+
+                    <div class="step left" id="pracStep09">
+                        <span class="badge">STEP 09</span>
+                        <h3>Hearsay & Conjecture</h3>
+                        <p>Express what you've heard and your guesses using sou, you, and rashii.</p>
+                        <button class="learn-btn" onclick="openModal('pracStep09')">Start Learning</button>
+                    </div>
+
+                    <div class="step right" id="pracStep10">
+                        <span class="badge">STEP 10</span>
+                        <h3>Passive, Causative, Causative-Passive</h3>
+                        <p>Learn to express passive situations and making/letting someone do something.</p>
+                        <button class="learn-btn" onclick="openModal('pracStep10')">Start Learning</button>
+                    </div>
+
+                    <div class="step left" id="pracStep11">
+                        <span class="badge">STEP 11</span>
+                        <h3>Honorific Language - けいご</h3>
+                        <p>Master Keigo (Sonkeigo, Kenjougo, Teineigo) for formal situations.</p>
+                        <button class="learn-btn" onclick="openModal('pracStep11')">Start Learning</button>
+                    </div>
+
+                    <div class="step right" id="pracStep12">
+                        <span class="badge">STEP 12</span>
+                        <h3>Handling Trouble & Explaining Situations</h3>
+                        <p>Learn how to explain problems and ask for help naturally using ~n desu.</p>
+                        <button class="learn-btn" onclick="openModal('pracStep12')">Start Learning</button>
+                    </div>
+
+                    <div class="step left" id="pracStep13">
+                        <span class="badge">STEP 13</span>
+                        <h3>Discussion & Opinion</h3>
+                        <p>Express your opinions clearly and engage in deeper discussions.</p>
+                        <button class="learn-btn" onclick="openModal('pracStep13')">Start Learning</button>
+                    </div>
                 </div>
             </div>
 
@@ -1875,6 +1966,313 @@
 
         // グローバル単語辞書（名詞と形容詞のみ）
         const GLOBAL_VOCAB = {
+            "ありがとうございます": "[Phrase] Thank you",
+            "ありがとうございました": "[Phrase] Thank you (past)",
+            "<ruby>行<rt>い</rt></ruby>きます": "[V] Go",
+            "<ruby>行<rt>い</rt></ruby>きました": "[V] Went",
+            "<ruby>行<rt>い</rt></ruby>ってみたいと": "[V] Want to try going",
+            "<ruby>行<rt>い</rt></ruby>くつもりです": "[V] Intend to go",
+            "<ruby>行<rt>い</rt></ruby>ったことがあります": "[V] Have been to",
+            "<ruby>行<rt>い</rt></ruby>かなきゃ": "[V] Must go",
+            "<ruby>見<rt>み</rt></ruby>ます": "[V] Watch / See",
+            "<ruby>見<rt>み</rt></ruby>ました": "[V] Watched / Saw",
+            "<ruby>見<rt>み</rt></ruby>たことがあります": "[V] Have seen",
+            "<ruby>見<rt>み</rt></ruby>ることです": "[V] To watch",
+            "<ruby>食<rt>た</rt></ruby>べます": "[V] Eat",
+            "<ruby>食<rt>た</rt></ruby>べました": "[V] Ate",
+            "<ruby>食<rt>た</rt></ruby>べないで": "[V] Without eating",
+            "<ruby>食<rt>た</rt></ruby>べたことがあります": "[V] Have eaten",
+            "<ruby>食<rt>た</rt></ruby>べたことがありません": "[V] Have not eaten",
+            "<ruby>食<rt>た</rt></ruby>べませんか": "[V] Won't you eat?",
+            "<ruby>飲<rt>の</rt></ruby>みません": "[V] Do not drink",
+            "<ruby>休<rt>やす</rt></ruby>みます": "[V] Rest / Take a day off",
+            "<ruby>浴<rt>あび</rt></ruby>て": "[V] Bathe (te-form)",
+            "<ruby>話<rt>はな</rt></ruby>してください": "[V] Please speak",
+            "<ruby>住<rt>す</rt></ruby>んでいます": "[V] Living",
+            "<ruby>出<rt>だ</rt></ruby>さなければならない": "[V] Must submit / Must turn in",
+            "<ruby>寝<rt>ね</rt></ruby>ないで": "[V] Without sleeping",
+            "<ruby>寝<rt>ね</rt></ruby>ます": "[V] Sleep",
+            "<ruby>降<rt>ふ</rt></ruby>ると": "[V] Fall (rain, snow)",
+            "<ruby>降<rt>ふ</rt></ruby>っているから": "[V] Because it is raining",
+            "<ruby>言<rt>い</rt></ruby>っていました": "[V] Was saying",
+            "<ruby>言<rt>い</rt></ruby>っていたので": "[V] Because they said",
+            "<ruby>手伝<rt>てつだ</rt></ruby>ってほしいです": "[V] Want you to help",
+            "<ruby>治<rt>なお</rt></ruby>ってほしいです": "[V] Want it to heal / recover",
+            "<ruby>作<rt>つく</rt></ruby>ることが": "[V] Making (cooking)",
+            "<ruby>弾<rt>ひ</rt></ruby>きます": "[V] Play (instrument)",
+            "<ruby>始<rt>はじ</rt></ruby>めました": "[V] Started",
+            "<ruby>出<rt>で</rt></ruby>かけます": "[V] Go out",
+            "<ruby>決<rt>き</rt></ruby>めていません": "[V] Have not decided",
+            "<ruby>選<rt>えら</rt></ruby>びました": "[V] Chose",
+            "<ruby>食<rt>た</rt></ruby>べません": "[V] Do not eat",
+            "<ruby>思<rt>おも</rt></ruby>います": "[V] Think",
+            "みつかりました": "[V] Was found",
+            "ありました": "[V] Was / Existed",
+            "おいしくない": "[Adj] Not delicious",
+            "<ruby>頭<rt>あたま</rt></ruby>がいい": "[Adj] Smart",
+            "<ruby>勉強<rt>べんきょう</rt></ruby>すれば": "[Phrase] If you study",
+            "するほど": "[Phrase] The more you do",
+            "<ruby>上手<rt>じょうず</rt></ruby>になります": "[Phrase] Become good at",
+            "<ruby>怠<rt>なま</rt></ruby>ける": "[V] To slack off",
+            "<ruby>話<rt>はな</rt></ruby>す": "[V] To speak",
+            "<ruby>弾<rt>ひ</rt></ruby>けます": "[V] Can play",
+            "<ruby>行<rt>い</rt></ruby>く<ruby>前<rt>まえ</rt></ruby>": "[Phrase] Before going",
+            "<ruby>話<rt>はな</rt></ruby>せませんでした": "[V] Could not speak",
+            "<ruby>食<rt>た</rt></ruby>べられます": "[V] Can eat",
+            "<ruby>回<rt>まわ</rt></ruby>ると": "[Phrase] If you turn",
+            "<ruby>旅行<rt>りょこう</rt></ruby>したい": "[Phrase] Want to travel",
+            "<ruby>行<rt>い</rt></ruby>くなら": "[Phrase] If you go",
+            "<ruby>絶対<rt>ぜったい</rt></ruby>に<ruby>行<rt>い</rt></ruby>": "[Adv] Definitely go",
+            "<ruby>行<rt>い</rt></ruby>ったほうがいい": "[Phrase] Should go",
+            "<ruby>書<rt>か</rt></ruby>けば": "[Phrase] If you write",
+            "うまくなります": "[Phrase] Will become good",
+            "<ruby>遅<rt>おく</rt></ruby>れました": "[V] Was late",
+            "<ruby>遅刻<rt>ちこく</rt></ruby>しました": "[V] Was late",
+            "<ruby>足<rt>た</rt></ruby>りません": "[V] Is not enough",
+            "<ruby>近<rt>ちか</rt></ruby>い": "[Adj] Near",
+            "<ruby>安<rt>やす</rt></ruby>い": "[Adj] Cheap",
+            "<ruby>楽<rt>たの</rt></ruby>しい": "[Adj] Fun",
+            "<ruby>欠<rt>か</rt></ruby>かしません": "[V] Do not miss",
+            "<ruby>来<rt>き</rt></ruby>てくださって": "[Phrase] Thank you for coming",
+            "あけてある": "[Phrase] Is left open",
+            "<ruby>予約<rt>よやく</rt></ruby>しておきました": "[Phrase] Made a reservation in advance",
+            "<ruby>食<rt>た</rt></ruby>べてしまいました": "[Phrase] Ate completely",
+            "くれました": "[V] Gave to me",
+            "もらいました": "[V] Received",
+            "いただきました": "[V] Received (humble)",
+            "<ruby>引<rt>ひ</rt></ruby>っ<ruby>越<rt>こ</rt></ruby>す": "[V] To move",
+            "<ruby>手伝<rt>てつだ</rt></ruby>ってもらえますか": "[Phrase] Can you help me",
+            "<ruby>壊<rt>こわ</rt></ruby>れました": "[V] Broke (intransitive)",
+            "<ruby>壊<rt>こわ</rt></ruby>しました": "[V] Broke (transitive)",
+            "<ruby>開<rt>あ</rt></ruby>けてあります": "[Phrase] Is left open",
+            "<ruby>開<rt>あ</rt></ruby>いています": "[Phrase] Is open",
+            "<ruby>降<rt>ふ</rt></ruby>りそうです": "[Phrase] Looks like it will rain",
+            "<ruby>移動<rt>いどう</rt></ruby>するそうです": "[Phrase] I heard will move",
+            "<ruby>結婚<rt>けっこん</rt></ruby>するらしい": "[Phrase] Seems will marry",
+            "<ruby>連絡<rt>れんらく</rt></ruby>した": "[V] Contacted",
+            "つながらなくて": "[Phrase] Couldn't connect",
+            "ひいたみたい": "[Phrase] Looks like caught (a cold)",
+            "<ruby>食<rt>た</rt></ruby>べられました": "[V] Was eaten",
+            "<ruby>考<rt>かんが</rt></ruby>えさせて": "[Phrase] Let me think",
+            "<ruby>練習<rt>れんしゅう</rt></ruby>させられました": "[Phrase] Was made to practice",
+            "<ruby>言<rt>い</rt></ruby>われてしまいました": "[Phrase] Was told regretfully",
+            "おもちいたします": "[Phrase] Will carry (humble)",
+            "おうかがいしてもよろしいでしょうか": "[Phrase] May I ask (humble)",
+            "お<ruby>世話<rt>せわ</rt></ruby>になっております": "[Phrase] Indebted / Thank you for your support",
+            "<ruby>提出<rt>ていしゅつ</rt></ruby>していただけますか": "[Phrase] Could you submit",
+            "<ruby>壊<rt>こわ</rt></ruby>れてしまいまして": "[Phrase] Broke regretfully",
+            "<ruby>残業<rt>ざんぎょう</rt></ruby>させられた": "[Phrase] Was made to work overtime",
+            "<ruby>遅<rt>おく</rt></ruby>れてしまいました": "[Phrase] Was late regretfully",
+            "とっておきました": "[Phrase] Kept in advance",
+            "<ruby>発達<rt>はったつ</rt></ruby>すれば": "[Phrase] If develop",
+            "<ruby>減<rt>へ</rt></ruby>っていく": "[Phrase] Will decrease",
+            "<ruby>考<rt>かん</rt></ruby>がえます": "[V] Think",
+            "<ruby>話<rt>はな</rt></ruby>せるならば": "[Phrase] If can speak",
+            "<ruby>与<rt>あた</rt></ruby>える": "[V] To give",
+            "<ruby>比<rt>くら</rt></ruby>べると": "[Phrase] Compared to",
+            "<ruby>発達<rt>はったつ</rt></ruby>している": "[Phrase] Is developed",
+            "<ruby>考<rt>かんが</rt></ruby>えさせてください": "[Phrase] Please let me think",
+            "手伝って": "[V] To help (te-form)",
+            "<ruby>運<rt>はこ</rt></ruby>んで": "[V] To carry (te-form)",
+            "<ruby>提出<rt>ていしゅつ</rt></ruby>いたします": "[Phrase] Will submit (humble)",
+            "<ruby>取<rt>と</rt></ruby>りかからせられて": "[Phrase] Was forced to start",
+
+
+
+            "あげました": "[V] Gave",
+            "ひいたので": "[V] Because I caught (a cold)",
+            "できませんでした": "[V] Could not do",
+            "みつかりました": "[V] Was found",
+            "ありました": "[V] Was / Existed",
+            "おいしくない": "[Adj] Not delicious",
+            "クラス": "[N] Class",
+            "するほど": "[Phrase] The more you do",
+            "ピアノ": "[N] Piano",
+            "なっとう": "[N] Natto",
+            "うまくなります": "[Phrase] Will become good",
+            "アパート": "[N] Apartment",
+            "あけてある": "[Phrase] Is left open",
+            "ホテル": "[N] Hotel",
+            "ケーキ": "[N] Cake",
+            "くれました": "[V] Gave to me",
+            "アドバイス": "[N] Advice",
+            "もらいました": "[V] Received",
+            "いただきました": "[V] Received (humble)",
+            "おもちゃ": "[N] Toy",
+            "つながらなくて": "[Phrase] Couldn't connect",
+            "ひいたみたい": "[Phrase] Looks like caught (a cold)",
+            "ひどいこと": "[N] Terrible thing",
+            "おもちいたします": "[Phrase] Will carry (humble)",
+            "おうかがいしてもよろしいでしょうか": "[Phrase] May I ask (humble)",
+            "レポート": "[N] Report",
+            "とっておきました": "[Phrase] Kept in advance",
+            "バックアップ": "[N] Backup",
+            "テクノロジー": "[N] Technology",
+
+
+            "あります": "[V] Is / Exist / Have (inanimate)",
+            "います": "[V] Is / Exist (animate)",
+            "ひいたので": "[V] Because I caught (a cold)",
+            "します": "[V] Do",
+            "しました": "[V] Did",
+            "しています": "[V] Am doing / Have been doing",
+            "できませんでした": "[V] Could not do",
+            "あげました": "[V] Gave",
+
+            "映画": "[N] Movie",
+            "私": "[Pron.] I / Me",
+            "選びました": "[V] Chose",
+            "刺身": "[N] Sashimi",
+            "食べます": "[V] Eat",
+            "肉": "[N] Meat",
+            "食べません": "[V] Do not eat",
+            "日本語": "[N] Japanese",
+            "難しい": "[Adj] Difficult",
+            "思います": "[V] Think",
+            "実は": "[Adv] Actually / To tell the truth",
+            "財布": "[N] Wallet",
+            "みつかりました": "[V] Was found",
+            "駅": "[N] Station",
+            "交番": "[N] Police box",
+            "ありました": "[V] Was / Existed",
+            "東京": "[N] Tokyo",
+            "大阪": "[N] Osaka",
+            "食べ物": "[N] Food",
+            "おいしくない": "[Adj] Not delicious",
+            "クラス": "[N] Class",
+            "田中": "[N] Tanaka",
+            "頭がいい": "[Adj] Smart",
+            "勉強": "[N] Study",
+            "勉強すれば": "[Phrase] If you study",
+            "するほど": "[Phrase] The more you do",
+            "上手になります": "[Phrase] Become good at",
+            "便利": "[Adj] Convenient",
+            "人間": "[N] Human",
+            "怠ける": "[V] To slack off",
+            "話す": "[V] To speak",
+            "ピアノ": "[N] Piano",
+            "弾けます": "[V] Can play",
+            "日本": "[N] Japan",
+            "行く前": "[Phrase] Before going",
+            "話せませんでした": "[V] Could not speak",
+            "なっとう": "[N] Natto",
+            "食べられます": "[V] Can eat",
+            "右": "[N] Right",
+            "回ると": "[Phrase] If you turn",
+            "郵便局": "[N] Post office",
+            "お金": "[N] Money",
+            "旅行したい": "[Phrase] Want to travel",
+            "行くなら": "[Phrase] If you go",
+            "京都": "[N] Kyoto",
+            "絶対に": "[Adv] Definitely",
+            "行ったほうがいい": "[Phrase] Should go",
+            "毎日": "[Adv] Every day",
+            "日記": "[N] Diary",
+            "書けば": "[Phrase] If you write",
+            "うまくなります": "[Phrase] Will become good",
+            "電車": "[N] Train",
+            "遅れました": "[V] Was late",
+            "会議": "[N] Meeting",
+            "遅刻しました": "[V] Was late",
+            "計画": "[N] Plan",
+            "予算": "[N] Budget",
+            "足りません": "[V] Is not enough",
+            "アパート": "[N] Apartment",
+            "近い": "[Adj] Near",
+            "安い": "[Adj] Cheap",
+            "楽しい": "[Adj] Fun",
+            "練習": "[N] Practice",
+            "欠かしません": "[V] Do not miss",
+            "わざわざ": "[Adv] Taking the trouble",
+            "来てくださって": "[Phrase] Thank you for coming",
+            "窓": "[N] Window",
+            "あけてある": "[Phrase] Is left open",
+            "旅行": "[N] Travel",
+            "ホテル": "[N] Hotel",
+            "予約しておきました": "[Phrase] Made a reservation in advance",
+            "全部": "[Adv] All",
+            "食べてしまいました": "[Phrase] Ate completely",
+            "先生": "[N] Teacher",
+            "アドバイス": "[N] Advice",
+            "くれました": "[V] Gave to me",
+            "もらいました": "[V] Received",
+            "いただきました": "[V] Received (humble)",
+            "今度": "[N] Next time",
+            "引っ越す": "[V] To move",
+            "手伝ってもらえますか": "[Phrase] Can you help me",
+            "おもちゃ": "[N] Toy",
+            "壊れました": "[V] Broke (intransitive)",
+            "壊しました": "[V] Broke (transitive)",
+            "開けてあります": "[Phrase] Is left open",
+            "開いています": "[Phrase] Is open",
+            "雨": "[N] Rain",
+            "降りそうです": "[Phrase] Looks like it will rain",
+            "来年": "[N] Next year",
+            "会社": "[N] Company",
+            "移動するそうです": "[Phrase] I heard will move",
+            "彼女": "[N] She",
+            "来週": "[N] Next week",
+            "結婚するらしい": "[Phrase] Seems will marry",
+            "携帯": "[N] Mobile phone",
+            "連絡した": "[V] Contacted",
+            "つながらなくて": "[Phrase] Couldn't connect",
+            "風邪": "[N] Cold",
+            "ひいたみたい": "[Phrase] Looks like caught (a cold)",
+            "友達": "[N] Friend",
+            "ケーキ": "[N] Cake",
+            "食べられました": "[V] Was eaten",
+            "少し": "[Adv] A little",
+            "考えさせて": "[Phrase] Let me think",
+            "子ども": "[N] Child",
+            "練習させられました": "[Phrase] Was made to practice",
+            "上司": "[N] Boss",
+            "ひどいこと": "[N] Terrible thing",
+            "言われてしまいました": "[Phrase] Was told regretfully",
+            "おもちいたします": "[Phrase] Will carry (humble)",
+            "名前": "[N] Name",
+            "おうかがいしてもよろしいでしょうか": "[Phrase] May I ask (humble)",
+            "お世話になっております": "[Phrase] Indebted / Thank you for your support",
+            "レポート": "[N] Report",
+            "提出していただけますか": "[Phrase] Could you submit",
+            "機械": "[N] Machine",
+            "壊れてしまいまして": "[Phrase] Broke regretfully",
+            "残業させられた": "[Phrase] Was made to work overtime",
+            "連絡": "[N] Contact",
+            "遅れてしまいました": "[Phrase] Was late regretfully",
+            "予約": "[N] Reservation",
+            "バックアップ": "[N] Backup",
+            "とっておきました": "[Phrase] Kept in advance",
+            "テクノロジー": "[N] Technology",
+            "発達すれば": "[Phrase] If develop",
+            "仕事": "[N] Work",
+            "減っていく": "[Phrase] Will decrease",
+            "考えます": "[V] Think",
+            "世界中": "[N] All over the world",
+            "話せるならば": "[Phrase] If can speak",
+            "文化交流": "[N] Cultural exchange",
+            "盛ん": "[Adj] Active / Prosperous",
+            "若者": "[N] Young people",
+            "悪い": "[Adj] Bad",
+            "<ruby>影響<rt>えいきょう</rt></ruby>": "[N] Influence",
+            "与える": "[V] To give",
+            "国": "[N] Country",
+            "比べると": "[Phrase] Compared to",
+            "公共交通": "[N] Public transportation",
+            "発達している": "[Phrase] Is developed",
+
+            "みつかりました": "To be found (past polite)",
+            "手伝って": "To help (te-form)",
+            "こわれました": "Broke (intransitive)",
+            "おちて": "Dropped/fell (te-form)",
+            "われて": "Broke/cracked (te-form)",
+            "たべられました": "Was eaten (passive)",
+            "考えさせて": "Let me think (causative te-form)",
+            "れんしゅうさせられました": "Was forced to practice (causative-passive)",
+            "やめさせられそうに": "Almost forced to quit",
+            "おもちいたします": "I will carry (humble)",
+            "おうかがいしても": "May I ask (humble)",
+            "おせわに": "Being taken care of",
+            "かしこまりました": "Understood (highly formal)",
             // --- Nouns (名詞) ---
             // People & Pronouns
             "私": "I / me", "あなた": "you", "彼": "he", "彼女": "she", "みんな": "everyone",
@@ -1938,177 +2336,27 @@
             "丁寧": "polite / careful", "大変": "tough / hard",
 
             // --- Exact HTML Expression Chunks for Tooltips (Verbs, Adverbs, Pronouns) ---
-            "<ruby>私<rt>わたし</rt></ruby>": "I / me",
-            "<ruby>学生<rt>がくせい</rt></ruby>": "student",
-            "<ruby>彼<rt>かれ</rt></ruby>": "he",
-            "<ruby>医者<rt>いしゃ</rt></ruby>": "doctor",
             "これ": "this",
-            "<ruby>本<rt>ほん</rt></ruby>": "book",
-            "<ruby>昨日<rt>きのう</rt></ruby>": "yesterday",
-            "<ruby>雨<rt>あめ</rt></ruby>": "rain",
-            "<ruby>日曜日<rt>にちようび</rt></ruby>": "Sunday",
-            "<ruby>一昨日<rt>おととい</rt></ruby>": "day before yesterday",
-            "<ruby>休<rt>やす</rt></ruby>み": "holiday / rest",
             "その": "that",
-            "<ruby>鞄<rt>かばん</rt></ruby>": "bag",
-            "<ruby>誰<rt>だれ</rt></ruby>": "who",
             "あそこ": "over there",
-            "<ruby>病院<rt>びょういん</rt></ruby>": "hospital",
             "この": "this",
             "ケーキ": "cake",
-            "<ruby>美味<rt>おい</rt></ruby>しいです": "is delicious",
-            "<ruby>美味<rt>おい</rt></ruby>しい": "delicious",
-            "<ruby>靴<rt>くつ</rt></ruby>": "shoes",
-            "<ruby>高<rt>たか</rt></ruby>くありません": "is not expensive",
-            "<ruby>今日<rt>きょう</rt></ruby>": "today",
             "とても": "very",
-            "<ruby>暑<rt>あつ</rt></ruby>いです": "is hot",
-            "<ruby>寒<rt>さむ</rt></ruby>かったです": "was cold",
-            "<ruby>忙<rt>いそが</rt></ruby>しくありませんでした": "was not busy",
-            "<ruby>先週<rt>せんしゅう</rt></ruby>": "last week",
-            "<ruby>旅行<rt>りょこう</rt></ruby>": "trip / travel",
-            "<ruby>楽<rt>たの</rt></ruby>しかったです": "was fun",
-            "<ruby>町<rt>まち</rt></ruby>": "town / city",
-            "<ruby>静<rt>しず</rt></ruby>かです": "is quiet",
-            "<ruby>静<rt>しず</rt></ruby>か": "quiet",
-            "<ruby>有名<rt>ゆうめい</rt></ruby>": "famous",
-            "<ruby>部屋<rt>へや</rt></ruby>": "room",
             "あまり": "not very",
-            "<ruby>綺麗<rt>きれい</rt></ruby>": "beautiful / clean",
-            "<ruby>彼女<rt>かのじょ</rt></ruby>": "she",
-            "<ruby>暇<rt>ひま</rt></ruby>": "free (time)",
-            "<ruby>昔<rt>むかし</rt></ruby>": "old days / in the past",
-            "<ruby>不便<rt>ふべん</rt></ruby>": "inconvenient",
-            "<ruby>初<rt>はじ</rt></ruby>めまして": "Nice to meet you",
-            "<ruby>田中<rt>たなか</rt></ruby>": "Tanaka (name)",
-            "<ruby>申<rt>もう</rt></ruby>します": "am called",
-            "<ruby>日本<rt>にほん</rt></ruby>": "Japan",
-            "<ruby>来<rt>き</rt></ruby>ました": "came",
-            "どうぞよろしくお<ruby>願<rt>ねが</rt></ruby>いします": "Pleased to meet you / Please treat me well",
             "すみません": "Excuse me / I'm sorry",
             "メニュー": "menu",
-            "お<ruby>水<rt>みず</rt></ruby>": "water (polite)",
             "ください": "please give me",
-            "<ruby>注文<rt>ちゅうもん</rt></ruby>": "order",
-            "<ruby>毎日<rt>まいにち</rt></ruby>": "every day",
             "りんご": "apple",
-            "<ruby>食<rt>た</rt></ruby>べます": "eat",
-            "お<ruby>茶<rt>ちゃ</rt></ruby>": "tea",
-            "<ruby>飲<rt>の</rt></ruby>みます": "drink",
             "テニス": "tennis",
             "します": "do / play",
-            "<ruby>日本語<rt>にほんご</rt></ruby>": "Japanese",
-            "<ruby>勉強<rt>べんきょう</rt></ruby>しました": "studied",
-            "<ruby>映画<rt>えいが</rt></ruby>": "movie",
-            "<ruby>見<rt>み</rt></ruby>ました": "watched",
-            "<ruby>朝御飯<rt>あさごはん</rt></ruby>": "breakfast",
-            "<ruby>食<rt>た</rt></ruby>べませんでした": "did not eat",
             "ここ": "here",
             "あります": "there is / exist",
             "レストラン": "restaurant",
             "ごはん": "meal / cooked rice",
-            "<ruby>学校<rt>がっこう</rt></ruby>": "school",
-            "<ruby>行<rt>い</rt></ruby>きます": "go",
-            "<ruby>行<rt>い</rt></ruby>きません": "will not go",
             "コーヒー": "coffee",
-            "<ruby>飲<rt>の</rt></ruby>みません": "will not drink",
             "テレビ": "TV",
-            "<ruby>見<rt>み</rt></ruby>ています": "am watching",
-            "<ruby>食<rt>た</rt></ruby>べて": "eat and...",
-            "<ruby>寝<rt>ね</rt></ruby>ます": "sleep",
-            "<ruby>読<rt>よ</rt></ruby>んでいます": "am reading",
-            "<ruby>傘<rt>かさ</rt></ruby>": "umbrella",
-            "<ruby>持<rt>も</rt></ruby>たないで": "without bringing/holding",
-            "<ruby>出<rt>で</rt></ruby>かけました": "went out",
-            "<ruby>早<rt>はや</rt></ruby>く": "early / fast",
-            "<ruby>寝<rt>ね</rt></ruby>なければなりません": "must sleep",
-            "<ruby>薬<rt>くすり</rt></ruby>": "medicine",
-            "<ruby>飲<rt>の</rt></ruby>まなくてはいけません": "must take (medicine)",
-            "<ruby>行<rt>い</rt></ruby>ったことがあります": "have been to",
-            "<ruby>刺身<rt>さしみ</rt></ruby>": "sashimi",
-            "<ruby>食<rt>た</rt></ruby>べたことがあります": "have eaten",
-            "<ruby>富士山<rt>ふじさん</rt></ruby>": "Mt. Fuji",
-            "<ruby>登<rt>のぼ</rt></ruby>ったことがありません": "have never climbed",
-            "<ruby>明日<rt>あした</rt></ruby>": "tomorrow",
-            "<ruby>思<rt>おも</rt></ruby>います": "think",
-            "<ruby>疲<rt>つか</rt></ruby>れた": "tired",
-            "<ruby>言<rt>い</rt></ruby>っていました": "was saying",
-            "<ruby>水<rt>みず</rt></ruby>": "water",
-            "<ruby>飲<rt>の</rt></ruby>みたいです": "want to drink",
-            "<ruby>行<rt>い</rt></ruby>ってほしいです": "want (someone) to go",
-            "<ruby>友達<rt>ともだち</rt></ruby>": "friend",
-            "<ruby>来<rt>き</rt></ruby>てほしいです": "want (someone) to come",
-            "<ruby>忙<rt>いそが</rt></ruby>しい": "busy",
-            "<ruby>行<rt>い</rt></ruby>けません": "cannot go",
-            "<ruby>危<rt>あぶ</rt></ruby>ない": "dangerous",
-            "<ruby>注意<rt>ちゅうい</rt></ruby>してください": "please be careful",
-            "<ruby>読<rt>よ</rt></ruby>むこと": "reading",
-            "<ruby>好<rt>す</rt></ruby>きです": "like",
-            "<ruby>趣味<rt>しゅみ</rt></ruby>": "hobby",
-            "<ruby>見<rt>み</rt></ruby>ること": "watching",
-            "<ruby>料理<rt>りょうり</rt></ruby>": "cooking",
             "すること": "doing",
-            "<ruby>上手<rt>じょうず</rt></ruby>です": "am good at",
-            "<ruby>上手<rt>じょうず</rt></ruby>": "good at / skillful",
-            "<ruby>週末<rt>しゅうまつ</rt></ruby>": "weekend",
-            "<ruby>時間<rt>じかん</rt></ruby>": "time",
             "ある": "is there? / exist (casual)",
-            "<ruby>見<rt>み</rt></ruby>に": "to see / watch",
-            "<ruby>行<rt>い</rt></ruby>くつもりです": "intend to go",
-            "<ruby>来月<rt>らいげつ</rt></ruby>": "next month",
-            "<ruby>帰<rt>かえ</rt></ruby>る": "return / go home",
-            "<ruby>予定<rt>よてい</rt></ruby>": "schedule / plan",
-            "<ruby>勉強<rt>べんきょう</rt></ruby>します": "study",
-            "<ruby>見<rt>み</rt></ruby>ます": "watch / see",
-            "<ruby>毎朝<rt>まいあさ</rt></ruby>": "every morning",
-            "<ruby>酒<rt>さけ</rt></ruby>": "alcohol",
-            "<ruby>先週<rt>せんしゅう</rt></ruby>": "last week",
-            "<ruby>年<rt>ねん</rt></ruby>": "year",
-            "<ruby>前<rt>まえ</rt></ruby>": "before / ago",
-            "<ruby>京都<rt>きょうと</rt></ruby>": "Kyoto",
-            "<ruby>昼<rt>ひる</rt></ruby>": "noon / lunch",
-            "<ruby>食<rt>た</rt></ruby>べました": "ate",
-            "<ruby>図書館<rt>としょかん</rt></ruby>": "library",
-            "<ruby>駅<rt>えき</rt></ruby>": "station",
-            "<ruby>自転車<rt>じてんしゃ</rt></ruby>": "bicycle",
-            "<ruby>財布<rt>さいふ</rt></ruby>": "wallet",
-            "<ruby>猫<rt>ねこ</rt></ruby>": "cat",
-            "<ruby>作<rt>つく</rt></ruby>りました": "made",
-            "<ruby>時間<rt>じかん</rt></ruby>が<ruby>少し<rt>すこし</rt></ruby>しかありません": "only have a little time",
-            "<ruby>風邪<rt>かぜ</rt></ruby>をひいたので": "because I caught a cold",
-            "<ruby>会社<rt>かいしゃ</rt></ruby>": "company",
-            "<ruby>休<rt>やす</rt></ruby>みます": "take a rest / day off",
-            "<ruby>好<rt>す</rt></ruby>きなので": "because I like",
-            "<ruby>浴<rt>あび</rt></ruby>て": "take (a shower) and...",
-            "<ruby>話<rt>はな</rt></ruby>してください": "please speak",
-            "<ruby>勉強<rt>べんきょう</rt></ruby>しています": "am studying",
-            "<ruby>住<rt>す</rt></ruby>んでいます": "live in",
-            "<ruby>朝<rt>あさ</rt></ruby>": "morning",
-            "<ruby>食<rt>た</rt></ruby>べないで": "without eating",
-            "<ruby>出<rt>だ</rt></ruby>さなければならない": "must submit",
-            "<ruby>行<rt>い</rt></ruby>かなきゃ": "must go (casual)",
-            "<ruby>全然<rt>ぜんぜん</rt></ruby>": "not at all",
-            "<ruby>寝<rt>ね</rt></ruby>ないで": "without sleeping",
-            "<ruby>一度<rt>いちど</rt></ruby>も": "not even once",
-            "<ruby>寿司<rt>すし</rt></ruby>": "sushi",
-            "<ruby>何度<rt>なんど</rt></ruby>も": "many times",
-            "<ruby>納豆<rt>なっとう</rt></ruby>": "natto",
-            "<ruby>降<rt>ふ</rt></ruby>ると": "if/when it rains",
-            "<ruby>美味<rt>おい</rt></ruby>しいと": "that it is delicious",
-            "<ruby>行<rt>い</rt></ruby>ってみたい": "want to try going",
-            "<ruby>勉強<rt>べんきょう</rt></ruby>したい": "want to study",
-            "<ruby>手伝<rt>てつだ</rt></ruby>ってほしい": "want someone to help",
-            "<ruby>治<rt>なお</rt></ruby>ってほしい": "want to get better",
-            "<ruby>連絡<rt>れんらく</rt></ruby>": "contact",
-            "<ruby>試験<rt>しけん</rt></ruby>": "exam",
-            "<ruby>作<rt>つく</rt></ruby>ることが": "making (something)",
-            "<ruby>弾<rt>ひ</rt></ruby>きます": "play (instrument)",
-            "<ruby>最近<rt>さいきん</rt></ruby>": "recently",
-            "<ruby>始<rt>はじ</rt></ruby>めました": "started",
-            "<ruby>見<rt>み</rt></ruby>に": "to see/watch",
-            "<ruby>一緒<rt>いっしょ</rt></ruby>": "together",
-            "<ruby>出<rt>で</rt></ruby>かけます": "go out",
-            "<ruby>決<rt>き</rt></ruby>めていません": "haven't decided",
             "シャワー": "shower",
             "プレゼント": "present",
             "ギター": "guitar",
@@ -2118,15 +2366,6 @@
             "カフェ": "café",
             "スイッチ": "Switch",
             "メニュー": "menu",
-            "<ruby>東京<rt>とうきょう</rt></ruby>": "Tokyo",
-            "<ruby>京都<rt>きょうと</rt></ruby>": "Kyoto",
-            "<ruby>家<rt>いえ</rt></ruby>": "house / home",
-            "<ruby>外<rt>そと</rt></ruby>": "outside",
-            "<ruby>中<rt>なか</rt></ruby>": "inside",
-            "<ruby>上<rt>うえ</rt></ruby>": "up / above",
-            "<ruby>下<rt>した</rt></ruby>": "down / below",
-            "<ruby>前<rt>まえ</rt></ruby>": "front / before",
-            "<ruby>後<rt>うし</rt></ruby>ろ": "back / behind",
             "います": "is / exist (living)",
             "あります": "is / exist (non-living)",
             "から": "because / from",
@@ -2136,15 +2375,6 @@
             "それから": "after that",
             "だから": "so / therefore",
             "なので": "so / because",
-            "<ruby>降<rt>ふ</rt></ruby>っている": "is raining / falling",
-            "<ruby>寝<rt>ね</rt></ruby>ないで": "without sleeping",
-            "<ruby>食<rt>た</rt></ruby>べないで": "without eating",
-            "<ruby>何回<rt>なんかい</rt></ruby>も": "many times",
-            "<ruby>一度<rt>いちど</rt></ruby>": "once",
-            "<ruby>一緒<rt>いっしょ</rt></ruby>": "together",
-            "<ruby>治<rt>なお</rt></ruby>ってほしい": "want to get better",
-            "<ruby>手伝<rt>てつだ</rt></ruby>ってほしい": "want (someone) to help",
-            "<ruby>勉強<rt>べんきょう</rt></ruby>したい": "want to study"
         };
 
         const lessonData = {
@@ -2628,7 +2858,7 @@
                     { jp: '<ruby>私<rt>わたし</rt></ruby>も<ruby>行<rt>い</rt></ruby>きます。', romaji: 'Watashi mo ikimasu.', en: 'I will go too.' },
                     { jp: '<ruby>時間<rt>じかん</rt></ruby>が<ruby>少し<rt>すこし</rt></ruby>しかありません。', romaji: 'Jikan ga sukoshi shika arimasen.', en: 'I only have a little time.' },
                     { jp: '<ruby>風邪<rt>かぜ</rt></ruby>をひいたので、<ruby>会社<rt>かいしゃ</rt></ruby>を<ruby>休<rt>やす</rt></ruby>みます。', romaji: 'Kaze o hiita node, kaisha o yasumimasu.', en: 'Because I caught a cold, I will take the day off.' },
-                    { jp: '<ruby>日本語<rt>にほんご</rt></ruby>が<ruby>好<rt>す</rt></ruby>きなので、<ruby>毎日<rt>まいにち</rt></ruby><ruby>勉強<rt>べんきょう</rt></ruby>します。', romaji: 'Nihongo ga suki na node, mainichi benkyou shimasu.', en: 'Because I like Japanese, I study every day.' }
+                    { jp: '<ruby>日本語<rt>にほんご</rt></ruby>が<ruby>好<rt>す</rt></ruby>きなので、<ruby>毎日<rt>まいにち</rt></ruby>勉強します。', romaji: 'Nihongo ga suki na node, mainichi benkyou shimasu.', en: 'Because I like Japanese, I study every day.' }
                 ],
                 quizzes: [
                     { question: 'Which particle means "only" (used with positive verbs)?', options: ['も', 'しか', 'だけ', 'ので'], answer: 2 },
@@ -2867,7 +3097,21 @@
                     { question: 'How do you say "I plan to"?', options: ['~予定です', '~つもりです', '~たいです', '~ましょう'], answer: 0 },
                     { question: 'What form precedes "tsumori"?', options: ['Masu form', 'Dictionary form', 'Te form', 'Nai form'], answer: 1 }
                 ]
-            }
+            },
+            pracStep01: {"title": "は vs が Advanced Usage", "videoUrl": "", "vocabulary": [{"kana": "しゅだい", "kanji": "主題", "romaji": "", "meaning": "Topic"}, {"kana": "たいひ", "kanji": "対比", "romaji": "", "meaning": "Contrast"}, {"kana": "しゅご", "kanji": "主語", "romaji": "", "meaning": "Subject"}, {"kana": "しんじょうほう", "kanji": "新情報", "romaji": "", "meaning": "New Information"}, {"kana": "じゅうぞくせつ", "kanji": "従属節", "romaji": "", "meaning": "Subordinate Clause"}, {"kana": "ぎもんし", "kanji": "疑問詞", "romaji": "", "meaning": "Question Words"}, {"kana": "ふしぎ", "kanji": "不思議", "romaji": "", "meaning": "Mysterious"}, {"kana": "こうばん", "kanji": "交番", "romaji": "", "meaning": "Police Box"}, {"kana": "かいぎしつ", "kanji": "会議室", "romaji": "", "meaning": "Meeting Room"}, {"kana": "えらぶ", "kanji": "選ぶ", "romaji": "", "meaning": "To choose"}, {"kana": "みつかる", "kanji": "見つかる", "romaji": "", "meaning": "To be found"}, {"kana": "むかしむかし", "kanji": "昔々", "romaji": "", "meaning": "Once upon a time"}], "examples": [{"jp": "この<ruby>映画<rt>えいが</rt></ruby>は<ruby>私<rt>わたし</rt></ruby>が<ruby>選<rt>えら</rt></ruby>びました。", "romaji": "", "en": ""}, {"jp": "<ruby>刺身<rt>さしみ</rt></ruby>は<ruby>食<rt>た</rt></ruby>べます。<ruby>肉<rt>にく</rt></ruby>は<ruby>食<rt>た</rt></ruby>べません。", "romaji": "", "en": ""}, {"jp": "<ruby>私<rt>わたし</rt></ruby>は<ruby>日本語<rt>にほんご</rt></ruby>が<ruby>難<rt>むずか</rt></ruby>しいと<ruby>思<rt>おも</rt></ruby>います。", "romaji": "", "en": ""}, {"jp": "<ruby>実<rt>じつ</rt></ruby>は、<ruby>財布<rt>さいふ</rt></ruby>がみつかりました！<ruby>財布<rt>さいふ</rt></ruby>は<ruby>駅<rt>えき</rt></ruby>の<ruby>交番<rt>こうばん</rt></ruby>にありました。", "romaji": "", "en": ""}], "quizzes": [{"question": "Which particle marks new information or the subject of a subordinate clause?", "options": ["が", "は", "を", "に"], "answer": 0}, {"question": "Which particle is used for contrast?", "options": ["は", "が", "に", "で"], "answer": 0}]},
+            pracStep02: {"title": "Comparisons", "videoUrl": "", "vocabulary": [{"kana": "ひかく", "kanji": "比較", "romaji": "", "meaning": "Comparisons"}, {"kana": "さいじょうきゅう", "kanji": "最上級", "romaji": "", "meaning": "Superlative"}, {"kana": "ばけい", "kanji": "ば形", "romaji": "", "meaning": "Ba-form"}, {"kana": "うまくなる", "kanji": "上手くなる", "romaji": "", "meaning": "To improve"}, {"kana": "べんりになる", "kanji": "便利になる", "romaji": "", "meaning": "To become convenient"}, {"kana": "なまける", "kanji": "怠ける", "romaji": "", "meaning": "To be lazy"}, {"kana": "どちらのほうが", "kanji": "", "romaji": "", "meaning": "Which is more"}, {"kana": "せがたかい", "kanji": "背が高い", "romaji": "", "meaning": "Tall (stature)"}, {"kana": "あたまがいい", "kanji": "頭がいい", "romaji": "", "meaning": "Smart"}, {"kana": "せかい", "kanji": "世界", "romaji": "", "meaning": "World"}, {"kana": "にんげん", "kanji": "人間", "romaji": "", "meaning": "Human"}, {"kana": "こうきょうこうつう", "kanji": "公共交通", "romaji": "", "meaning": "Public transportation"}], "examples": [{"jp": "<ruby>東京<rt>とうきょう</rt></ruby>は<ruby>大阪<rt>おおさか</rt></ruby>ほど<ruby>食<rt>た</rt></ruby>べ<ruby>物<rt>もの</rt></ruby>がおいしくない。", "romaji": "", "en": ""}, {"jp": "このクラスのなかで、<ruby>田中<rt>たなか</rt></ruby>さんがいちばん<ruby>頭<rt>あたま</rt></ruby>がいいです。", "romaji": "", "en": ""}, {"jp": "<ruby>勉強<rt>べんきょう</rt></ruby>すればするほど、<ruby>日本語<rt>にほんご</rt></ruby>が<ruby>上手<rt>じょうず</rt></ruby>になります。", "romaji": "", "en": ""}, {"jp": "<ruby>便利<rt>べんり</rt></ruby>になればなるほど、<ruby>人間<rt>にんげん</rt></ruby>は<ruby>怠<rt>なま</rt></ruby>けるようになります。", "romaji": "", "en": ""}], "quizzes": [{"question": "How do you ask 'Which one is more...'?", "options": ["どちらのほうが", "どれ", "だれ", "どこ"], "answer": 0}, {"question": "How do you say 'A is not as good as B'?", "options": ["AはBほどよくない", "AはBよりいい", "AとBは同じ", "BはAほどよくない"], "answer": 0}]},
+            
+            pracStep03: {"title": "Potential Form", "videoUrl": "", "vocabulary": [{"kana": "かのうけい", "kanji": "可能形", "romaji": "", "meaning": "Potential Form"}, {"kana": "のうりょく", "kanji": "能力", "romaji": "", "meaning": "Ability"}, {"kana": "かのうせい", "kanji": "可能性", "romaji": "", "meaning": "Possibility"}, {"kana": "らぬきことば", "kanji": "ら抜き言葉", "romaji": "", "meaning": "Colloquial shortcut"}, {"kana": "うんてんする", "kanji": "運転する", "romaji": "", "meaning": "To drive"}, {"kana": "はじめは", "kanji": "", "romaji": "", "meaning": "At first"}, {"kana": "ざんねん", "kanji": "残念", "romaji": "", "meaning": "Unfortunately"}, {"kana": "ぺらぺら", "kanji": "", "romaji": "", "meaning": "Fluent"}, {"kana": "かんじ", "kanji": "漢字", "romaji": "", "meaning": "Kanji"}, {"kana": "およぐ", "kanji": "泳ぐ", "romaji": "", "meaning": "To swim"}, {"kana": "ひく", "kanji": "弾く", "romaji": "", "meaning": "To play (piano"}, {"kana": "子どものころ", "kanji": "", "romaji": "", "meaning": "Childhood"}], "examples": [{"jp": "<ruby>日本語<rt>にほんご</rt></ruby>を<ruby>話<rt>はな</rt></ruby>すことができます。", "romaji": "", "en": ""}, {"jp": "ピアノが<ruby>弾<rt>ひ</rt></ruby>けます", "romaji": "", "en": ""}, {"jp": "<ruby>日本<rt>にほん</rt></ruby>に<ruby>行<rt>い</rt></ruby>く<ruby>前<rt>まえ</rt></ruby>は、<ruby>日本語<rt>にほんご</rt></ruby>が<ruby>話<rt>はな</rt></ruby>せませんでした。", "romaji": "", "en": ""}, {"jp": "なっとうが<ruby>食<rt>た</rt></ruby>べられますか？", "romaji": "", "en": ""}], "quizzes": [{"question": "What is the potential form of 食べる?", "options": ["食べられる", "食べる", "食べた", "食べない"], "answer": 0}, {"question": "What is the potential form of 行く?", "options": ["行ける", "行かれる", "行きたい", "行こう"], "answer": 0}]},
+            pracStep04: {"title": "Conditionals \"If\" Forms", "videoUrl": "", "vocabulary": [{"kana": "じょうけんけい", "kanji": "条件形", "romaji": "", "meaning": "Conditionals"}, {"kana": "しぜんのじじつ", "kanji": "自然の事実", "romaji": "", "meaning": "Natural Consequence"}, {"kana": "かてい", "kanji": "仮定", "romaji": "", "meaning": "Hypothetical Condition"}, {"kana": "じゅんばん", "kanji": "順番", "romaji": "", "meaning": "Sequential Condition"}, {"kana": "ぶんみゃく", "kanji": "文脈", "romaji": "", "meaning": "Contextual Condition"}, {"kana": "もし", "kanji": "", "romaji": "", "meaning": "By any chance"}, {"kana": "ごうかくする", "kanji": "合格する", "romaji": "", "meaning": "To pass"}, {"kana": "まにあう", "kanji": "間に合う", "romaji": "", "meaning": "To make it in time"}, {"kana": "りゅうがくする", "kanji": "留学する", "romaji": "", "meaning": "To study abroad"}, {"kana": "おすすめ", "kanji": "", "romaji": "", "meaning": "Recommended"}, {"kana": "ぜったいに", "kanji": "絶対に", "romaji": "", "meaning": "Definitely"}, {"kana": "おかねもち", "kanji": "お金持ち", "romaji": "", "meaning": "Rich person"}], "examples": [{"jp": "<ruby>右<rt>みぎ</rt></ruby>に<ruby>回<rt>まわ</rt></ruby>ると、<ruby>郵便局<rt>ゆうびんきょく</rt></ruby>があります。", "romaji": "", "en": ""}, {"jp": "お<ruby>金<rt>かね</rt></ruby>があれば、<ruby>旅行<rt>りょこう</rt></ruby>したいです。", "romaji": "", "en": ""}, {"jp": "<ruby>日本<rt>にほん</rt></ruby>に<ruby>行<rt>い</rt></ruby>くなら、<ruby>京都<rt>きょうと</rt></ruby>は<ruby>絶対<rt>ぜったい</rt></ruby>に<ruby>行<rt>い</rt></ruby>ったほうがいいですよ。", "romaji": "", "en": ""}, {"jp": "<ruby>毎日<rt>まいにち</rt></ruby><ruby>日本語<rt>にほんご</rt></ruby>で<ruby>日記<rt>にっき</rt></ruby>を<ruby>書<rt>か</rt></ruby>けば、<ruby>絶対<rt>ぜったい</rt></ruby>にうまくなりますよ！", "romaji": "", "en": ""}], "quizzes": [{"question": "Which word is often used with conditional forms to mean 'If by any chance'?", "options": ["もし", "いつも", "まだ", "もう"], "answer": 0}, {"question": "Which conditional is often used for giving contextual advice?", "options": ["なら", "と", "ば", "て"], "answer": 0}]},
+            pracStep05: {"title": "Conjunctions - Connecting Sentences", "videoUrl": "", "vocabulary": [{"kana": "せつぞくし", "kanji": "接続詞", "romaji": "", "meaning": "Conjunctions"}, {"kana": "ぎゃくせつ", "kanji": "逆接", "romaji": "", "meaning": "Contrast"}, {"kana": "ついか", "kanji": "追加", "romaji": "", "meaning": "Addition"}, {"kana": "しゅかんてき", "kanji": "主観的", "romaji": "", "meaning": "Personal"}, {"kana": "きゃっかんてき", "kanji": "客観的", "romaji": "", "meaning": "Objective"}, {"kana": "よさん", "kanji": "予算", "romaji": "", "meaning": "よさんが足りない"}, {"kana": "けいざい", "kanji": "経済", "romaji": "", "meaning": "せいちょう"}, {"kana": "ぶっか", "kanji": "物価", "romaji": "", "meaning": "Prices (cost of living)"}, {"kana": "しかも", "kanji": "", "romaji": "", "meaning": "What's more"}, {"kana": "ぜんたいてき", "kanji": "全体的", "romaji": "", "meaning": "Overall"}, {"kana": "まんぞく", "kanji": "満足", "romaji": "", "meaning": "Satisfaction"}, {"kana": "ちゅうし", "kanji": "中止", "romaji": "", "meaning": "Cancellation"}], "examples": [{"jp": "<ruby>電車<rt>でんしゃ</rt></ruby>が<ruby>遅<rt>おく</rt></ruby>れました。それで、<ruby>会議<rt>かいぎ</rt></ruby>に<ruby>遅刻<rt>ちこく</rt></ruby>しました。", "romaji": "", "en": ""}, {"jp": "この<ruby>計画<rt>けいかく</rt></ruby>はいいと<ruby>思<rt>おも</rt></ruby>います。けれど、<ruby>予算<rt>よさん</rt></ruby>が<ruby>足<rt>た</rt></ruby>りません。", "romaji": "", "en": ""}, {"jp": "このアパートは<ruby>駅<rt>えき</rt></ruby>に<ruby>近<rt>ちか</rt></ruby>いです。しかも、<ruby>安<rt>やす</rt></ruby>いです！", "romaji": "", "en": ""}, {"jp": "<ruby>日本語<rt>にほんご</rt></ruby>は<ruby>難<rt>むずか</rt></ruby>しいです。けれど、とても<ruby>楽<rt>たの</rt></ruby>しいです。さらに、<ruby>勉強<rt>べんきょう</rt></ruby>すればするほど、<ruby>上手<rt>じょうず</rt></ruby>になります。だから、<ruby>毎日<rt>まいにち</rt></ruby><ruby>練習<rt>れんしゅう</rt></ruby>を<ruby>欠<rt>か</rt></ruby>かしません。", "romaji": "", "en": ""}], "quizzes": [{"question": "Which conjunction means 'What\'s more / Moreover'?", "options": ["しかも", "けれど", "だから", "すると"], "answer": 0}, {"question": "Which conjunction is used for contrast ('However')?", "options": ["けれど", "それで", "だから", "さらに"], "answer": 0}]},
+            pracStep06: {"title": "てForm Idioms", "videoUrl": "", "vocabulary": [{"kana": "いと", "kanji": "意図", "romaji": "", "meaning": "Deliberate action"}, {"kana": "じゅんび", "kanji": "準備", "romaji": "", "meaning": "Preparation"}, {"kana": "かんりょう", "kanji": "完了", "romaji": "", "meaning": "Completion"}, {"kana": "こうかい", "kanji": "後悔", "romaji": "", "meaning": "Regret"}, {"kana": "かんじょうのはんのう", "kanji": "感情の反応", "romaji": "", "meaning": "Emotional reaction"}, {"kana": "わざわざ", "kanji": "", "romaji": "", "meaning": "Going out of one's way"}, {"kana": "ひみつ", "kanji": "秘密", "romaji": "", "meaning": "Secret"}, {"kana": "おぼえていてくれて", "kanji": "", "romaji": "", "meaning": "I'm glad you remembered"}, {"kana": "はずかしい", "kanji": "恥ずかしい", "romaji": "", "meaning": "Embarrassed"}, {"kana": "さびしい", "kanji": "寂しい", "romaji": "", "meaning": "Lonely"}, {"kana": "いんさつする", "kanji": "印刷する", "romaji": "", "meaning": "To print"}, {"kana": "うかってくれて", "kanji": "", "romaji": "", "meaning": "I'm glad you passed"}], "examples": [{"jp": "わざわざ<ruby>来<rt>き</rt></ruby>てくださってありがとうございます。", "romaji": "", "en": ""}, {"jp": "<ruby>窓<rt>まど</rt></ruby>があけてある。", "romaji": "", "en": ""}, {"jp": "<ruby>旅行<rt>りょこう</rt></ruby>の<ruby>前<rt>まえ</rt></ruby>に、ホテルを<ruby>予約<rt>よやく</rt></ruby>しておきました。", "romaji": "", "en": ""}, {"jp": "ケーキを<ruby>全部<rt>ぜんぶ</rt></ruby><ruby>食<rt>た</rt></ruby>べてしまいました。", "romaji": "", "en": ""}], "quizzes": [{"question": "Which idiom means 'to do something in advance'?", "options": ["〜ておく", "〜てしまう", "〜てある", "〜ている"], "answer": 0}, {"question": "Which idiom means 'to complete something' or 'to do regrettably'?", "options": ["〜てしまう", "〜ておく", "〜てある", "〜ている"], "answer": 0}]},
+            pracStep07: {"title": "Giving & Receiving", "videoUrl": "", "vocabulary": [{"kana": "じゅじゅひょうげん", "kanji": "授受表現", "romaji": "", "meaning": "Giving & Receiving expressions"}, {"kana": "してん", "kanji": "視点", "romaji": "", "meaning": "Perspective"}, {"kana": "うちわ", "kanji": "内輪", "romaji": "", "meaning": "In-group"}, {"kana": "しんせつなこうどう", "kanji": "親切な行動", "romaji": "", "meaning": "Kind action"}, {"kana": "さしあげる", "kanji": "", "romaji": "", "meaning": "To give (humble)"}, {"kana": "くださる", "kanji": "", "romaji": "", "meaning": "To give (honorific)"}, {"kana": "いただく", "kanji": "", "romaji": "", "meaning": "To receive (humble)"}, {"kana": "おんけい", "kanji": "恩恵", "romaji": "", "meaning": "Benefit"}, {"kana": "アドバイス", "kanji": "", "romaji": "", "meaning": "Advice"}, {"kana": "さくぶん", "kanji": "作文", "romaji": "", "meaning": "Essay"}, {"kana": "ひっこす", "kanji": "引っ越す", "romaji": "", "meaning": "To move"}, {"kana": "はこぶ", "kanji": "運ぶ", "romaji": "", "meaning": "To carry"}], "examples": [{"jp": "<ruby>先生<rt>せんせい</rt></ruby>は<ruby>私<rt>わたし</rt></ruby>にアドバイスをくれました。", "romaji": "", "en": ""}, {"jp": "<ruby>私<rt>わたし</rt></ruby>は<ruby>先生<rt>せんせい</rt></ruby>にアドバイスをもらいました。", "romaji": "", "en": ""}, {"jp": "<ruby>先生<rt>せんせい</rt></ruby>にアドバイスをいただきました。", "romaji": "", "en": ""}, {"jp": "<ruby>今度<rt>こんど</rt></ruby>、<ruby>引<rt>ひ</rt></ruby>っ<ruby>越<rt>こ</rt></ruby>すんですが、<ruby>手伝<rt>てつだ</rt></ruby>ってもらえますか？", "romaji": "", "en": ""}], "quizzes": [{"question": "Which is the humble form of 'to receive'?", "options": ["いただく", "くださる", "さしあげる", "もらう"], "answer": 0}, {"question": "Which is the honorific form of 'to give' (someone gives to me)?", "options": ["くださる", "いただく", "さしあげる", "くれる"], "answer": 0}]},
+            pracStep08: {"title": "Transitive & Intransitive Verbs", "videoUrl": "", "vocabulary": [{"kana": "たどうし", "kanji": "他動詞", "romaji": "", "meaning": "Transitive verb"}, {"kana": "じどうし", "kanji": "自動詞", "romaji": "", "meaning": "Intransitive verb"}, {"kana": "いとてきなけっか", "kanji": "意図的な結果", "romaji": "", "meaning": "Deliberate result"}, {"kana": "げんざいのじょうたい", "kanji": "現在の状態", "romaji": "", "meaning": "Current state"}, {"kana": "せきにんをさける", "kanji": "責任を避ける", "romaji": "", "meaning": "Avoid assigning blame"}, {"kana": "ビジネスぶんか", "kanji": "ビジネス文化", "romaji": "", "meaning": "Business culture"}, {"kana": "こわす", "kanji": "壊す", "romaji": "", "meaning": "壊れる（こわれる）"}, {"kana": "おとす", "kanji": "落とす", "romaji": "", "meaning": "落ちる（おちる）"}, {"kana": "わる", "kanji": "割る", "romaji": "", "meaning": "割れる（われる）"}, {"kana": "けす", "kanji": "消す", "romaji": "", "meaning": "消える（きえる）"}, {"kana": "プロジェクター", "kanji": "", "romaji": "", "meaning": "Projector"}, {"kana": "じゅんび", "kanji": "準備", "romaji": "", "meaning": "Ready"}], "examples": [{"jp": "おもちゃが<ruby>壊<rt>こわ</rt></ruby>れました。", "romaji": "", "en": ""}, {"jp": "おもちゃを<ruby>壊<rt>こわ</rt></ruby>しました。", "romaji": "", "en": ""}, {"jp": "<ruby>窓<rt>まど</rt></ruby>が<ruby>開<rt>あ</rt></ruby>けてあります。", "romaji": "", "en": ""}, {"jp": "<ruby>窓<rt>まど</rt></ruby>が<ruby>開<rt>あ</rt></ruby>いています。", "romaji": "", "en": ""}], "quizzes": [{"question": "Which is the intransitive verb for 'to break'?", "options": ["壊れる", "壊す", "落ちる", "落とす"], "answer": 0}, {"question": "The sentence '窓が開けてあります' uses which type of verb?", "options": ["Transitive", "Intransitive", "Passive", "Causative"], "answer": 0}]},
+            pracStep09: {"title": "Hearsay & Conjecture", "videoUrl": "", "vocabulary": [{"kana": "すいりょう", "kanji": "推量", "romaji": "", "meaning": "Conjecture"}, {"kana": "でんぶん", "kanji": "伝聞", "romaji": "", "meaning": "Hearsay"}, {"kana": "がいけん", "kanji": "外見", "romaji": "", "meaning": "Appearance"}, {"kana": "こんきょ", "kanji": "根拠", "romaji": "", "meaning": "Basis"}, {"kana": "しょうこ", "kanji": "証拠", "romaji": "", "meaning": "Evidence"}, {"kana": "かくじつせい", "kanji": "確実性", "romaji": "", "meaning": "Certainty"}, {"kana": "いどう", "kanji": "移動", "romaji": "", "meaning": "Relocation"}, {"kana": "けっこん", "kanji": "結婚", "romaji": "", "meaning": "Marriage"}, {"kana": "れんらく", "kanji": "連絡", "romaji": "", "meaning": "Contact"}, {"kana": "かぜ", "kanji": "風邪", "romaji": "", "meaning": "Cold"}, {"kana": "くも", "kanji": "雲", "romaji": "", "meaning": "Cloud"}, {"kana": "うわさ", "kanji": "噂", "romaji": "", "meaning": "Rumor"}], "examples": [{"jp": "<ruby>雨<rt>あめ</rt></ruby>が<ruby>降<rt>ふ</rt></ruby>りそうです。", "romaji": "", "en": ""}, {"jp": "<ruby>来年<rt>らいねん</rt></ruby>、<ruby>会社<rt>かいしゃ</rt></ruby>が<ruby>移動<rt>いどう</rt></ruby>するそうです。", "romaji": "", "en": ""}, {"jp": "<ruby>彼女<rt>かのじょ</rt></ruby>は<ruby>来週<rt>らいしゅう</rt></ruby><ruby>結婚<rt>けっこん</rt></ruby>するらしいです。", "romaji": "", "en": ""}, {"jp": "<ruby>携帯<rt>けいたい</rt></ruby>に<ruby>連絡<rt>れんらく</rt></ruby>したんですが、つながらなくて、<ruby>風邪<rt>かぜ</rt></ruby>をひいたみたいです。", "romaji": "", "en": ""}], "quizzes": [{"question": "Which phrase indicates hearsay (I heard that...)?", "options": ["〜そうです (Dictionary form +)", "〜みたいです", "〜はずです", "〜そうです (Stem +)"], "answer": 0}, {"question": "'雨が降りそうです' means?", "options": ["It looks like it will rain", "I heard it will rain", "It is raining", "It rained"], "answer": 0}]},
+            pracStep10: {"title": "Passive, Causative, Causative-Passive", "videoUrl": "", "vocabulary": [{"kana": "うけみけい", "kanji": "受身形", "romaji": "", "meaning": "Passive Form"}, {"kana": "しえきけい", "kanji": "使役形", "romaji": "", "meaning": "Causative Form"}, {"kana": "しえきうけみけい", "kanji": "使役受身形", "romaji": "", "meaning": "Causative-Passive Form"}, {"kana": "かんせつうけみ", "kanji": "間接受身", "romaji": "", "meaning": "Indirect"}, {"kana": "きょうせい", "kanji": "強制", "romaji": "", "meaning": "Forcing someone"}, {"kana": "きょか", "kanji": "許可", "romaji": "", "meaning": "Permitting"}, {"kana": "ふまん", "kanji": "不満", "romaji": "", "meaning": "Dissatisfaction"}, {"kana": "ざんぎょう", "kanji": "残業", "romaji": "", "meaning": "Overtime work"}, {"kana": "むりやり", "kanji": "無理やり", "romaji": "", "meaning": "Forced by someone"}, {"kana": "しかる", "kanji": "叱る", "romaji": "", "meaning": "To scold"}, {"kana": "じょうし", "kanji": "上司", "romaji": "", "meaning": "Boss"}, {"kana": "やめさせられそうに", "kanji": "", "romaji": "", "meaning": "Was almost forced to quit"}], "examples": [{"jp": "<ruby>私<rt>わたし</rt></ruby>は<ruby>友達<rt>ともだち</rt></ruby>にケーキを<ruby>食<rt>た</rt></ruby>べられました。", "romaji": "", "en": ""}, {"jp": "もう<ruby>少<rt>すこ</rt></ruby>し<ruby>考<rt>かんが</rt></ruby>えさせてください。", "romaji": "", "en": ""}, {"jp": "<ruby>子<rt>こ</rt></ruby>どものころ、<ruby>毎日<rt>まいにち</rt></ruby>ピアノを<ruby>練習<rt>れんしゅう</rt></ruby>させられました。", "romaji": "", "en": ""}, {"jp": "<ruby>実<rt>じつ</rt></ruby>は、<ruby>上司<rt>じょうし</rt></ruby>にひどいことを<ruby>言<rt>い</rt></ruby>われてしまいました。", "romaji": "", "en": ""}], "quizzes": [{"question": "What is the passive form of 食べる?", "options": ["食べられる", "食べさせる", "食べさせられる", "食べたい"], "answer": 0}, {"question": "What form is '練習させられました' (was forced to practice)?", "options": ["Causative-Passive", "Passive", "Causative", "Potential"], "answer": 0}]},
+            pracStep11: {"title": "Honorific Language - けいご", "videoUrl": "", "vocabulary": [{"kana": "けいご", "kanji": "敬語", "romaji": "", "meaning": "Honorific Language"}, {"kana": "そんけいご", "kanji": "尊敬語", "romaji": "", "meaning": "Honorific (elevating others)"}, {"kana": "けんじょうご", "kanji": "謙譲語", "romaji": "", "meaning": "Humble (lowering yourself)"}, {"kana": "びかご", "kanji": "美化語", "romaji": "", "meaning": "Polite prefixes (O"}, {"kana": "おっしゃる", "kanji": "", "romaji": "", "meaning": "To say (honorific)"}, {"kana": "めしあがる", "kanji": "召し上がる", "romaji": "", "meaning": "To eat"}, {"kana": "もうす", "kanji": "", "romaji": "", "meaning": "To say (humble)"}, {"kana": "うかがう", "kanji": "伺う", "romaji": "", "meaning": "To visit"}, {"kana": "さいわいです", "kanji": "幸いです", "romaji": "", "meaning": "I would be grateful if ~"}, {"kana": "申し訳ございません", "kanji": "", "romaji": "", "meaning": "I am terribly sorry"}, {"kana": "かしこまりました", "kanji": "", "romaji": "", "meaning": "Understood (highly formal)"}, {"kana": "ていしゅつする", "kanji": "提出する", "romaji": "", "meaning": "To submit"}], "examples": [{"jp": "<ruby>私<rt>わたし</rt></ruby>がおもちいたします。", "romaji": "", "en": ""}, {"jp": "お<ruby>名前<rt>なまえ</rt></ruby>をおうかがいしてもよろしいでしょうか？", "romaji": "", "en": ""}, {"jp": "いつもお<ruby>世話<rt>せわ</rt></ruby>になっております。", "romaji": "", "en": ""}, {"jp": "レポートを<ruby>来週<rt>らいしゅう</rt></ruby>までに<ruby>提出<rt>ていしゅつ</rt></ruby>していただけますか？", "romaji": "", "en": ""}], "quizzes": [{"question": "What is the honorific form of 食べる?", "options": ["召し上がる", "いただく", "おっしゃる", "参る"], "answer": 0}, {"question": "What is the humble form of 言う?", "options": ["申す", "おっしゃる", "伺う", "拝見する"], "answer": 0}]},
+            pracStep12: {"title": "Handling Trouble & Explaining Situations", "videoUrl": "", "vocabulary": [{"kana": "じょうきょうせつめい", "kanji": "状況説明", "romaji": "", "meaning": "Explaining situations"}, {"kana": "ふかこうりょく", "kanji": "不可抗力", "romaji": "", "meaning": "External pressure"}, {"kana": "〜のため", "kanji": "", "romaji": "", "meaning": "〜により"}, {"kana": "〜にもかかわらず", "kanji": "", "romaji": "", "meaning": "Despite ~"}, {"kana": "クッション言葉", "kanji": "", "romaji": "", "meaning": "Transitional phrase (~te shimaimashite)"}, {"kana": "うけたまわる", "kanji": "承る", "romaji": "", "meaning": "To receive (humble)"}, {"kana": "ごようい", "kanji": "ご用意", "romaji": "", "meaning": "Preparation"}, {"kana": "ごめいわく", "kanji": "ご迷惑", "romaji": "", "meaning": "Inconvenience"}, {"kana": "きゅうきょ", "kanji": "急遽", "romaji": "", "meaning": "Suddenly"}, {"kana": "とりかかる", "kanji": "取りかかる", "romaji": "", "meaning": "To start working on"}, {"kana": "ほうこくしょ", "kanji": "報告書", "romaji": "", "meaning": "Report"}, {"kana": "かいけつさく", "kanji": "解決策", "romaji": "", "meaning": "Solution"}], "examples": [{"jp": "<ruby>機械<rt>きかい</rt></ruby>が<ruby>壊<rt>こわ</rt></ruby>れてしまいまして･･･", "romaji": "", "en": ""}, {"jp": "<ruby>上司<rt>じょうし</rt></ruby>に<ruby>残業<rt>ざんぎょう</rt></ruby>させられたため、<ruby>連絡<rt>れんらく</rt></ruby>が<ruby>遅<rt>おく</rt></ruby>れてしまいました。", "romaji": "", "en": ""}, {"jp": "<ruby>予約<rt>よやく</rt></ruby>はしてあります。", "romaji": "", "en": ""}, {"jp": "バックアップはとっておきました。", "romaji": "", "en": ""}], "quizzes": [{"question": "What phrase is often used to apologize for inconvenience?", "options": ["ご迷惑をおかけしました", "お世話になっております", "ありがとうございます", "かしこまりました"], "answer": 0}, {"question": "How do you formally say 'Due to ~' or 'Because of ~'?", "options": ["〜のため", "〜にもかかわらず", "〜だから", "〜から"], "answer": 0}]},
+            pracStep13: {"title": "Discussion & Opinion", "videoUrl": "", "vocabulary": [{"kana": "ろんりてき", "kanji": "論理的", "romaji": "", "meaning": "Logical"}, {"kana": "せっとくりょく", "kanji": "説得力", "romaji": "", "meaning": "Pershesiveness"}, {"kana": "はんたいいけん", "kanji": "反対意見", "romaji": "", "meaning": "Opposing view"}, {"kana": "かくしんど", "kanji": "確信度", "romaji": "", "meaning": "Degree of certainty"}, {"kana": "なぜなら〜だからです", "kanji": "", "romaji": "", "meaning": "This is because ~"}, {"kana": "したがって", "kanji": "", "romaji": "", "meaning": "Therefore"}, {"kana": "ひつようふかけつ", "kanji": "必要不可欠", "romaji": "", "meaning": "Indispensable"}, {"kana": "じこひょうか", "kanji": "自己評価", "romaji": "", "meaning": "Self-esteem"}, {"kana": "きせい", "kanji": "規制", "romaji": "", "meaning": "Regulation"}, {"kana": "そうぞうせい", "kanji": "創造性", "romaji": "", "meaning": "きょうかん"}, {"kana": "きょうそん", "kanji": "共存", "romaji": "", "meaning": "Coexist"}, {"kana": "〜ではないでしょうか", "kanji": "", "romaji": "", "meaning": "Isn't it the case that ~? (Rhetorical)"}], "examples": [{"jp": "テクノロジーが<ruby>発達<rt>はったつ</rt></ruby>すればするほど、<ruby>人間<rt>にんげん</rt></ruby>の<ruby>仕事<rt>しごと</rt></ruby>が<ruby>減<rt>へ</rt></ruby>っていくと<ruby>考<rt>かんが</rt></ruby>えます。", "romaji": "", "en": ""}, {"jp": "もし<ruby>世界中<rt>せかいじゅう</rt></ruby>が<ruby>日本語<rt>にほんご</rt></ruby>を<ruby>話<rt>はな</rt></ruby>せるならば、<ruby>文化交流<rt>ぶんかこうりゅう</rt></ruby>がより<ruby>盛<rt>さか</rt></ruby>んになるでしょう。", "romaji": "", "en": ""}, {"jp": "<ruby>私<rt>わたし</rt></ruby>はSNSは<ruby>若者<rt>わかもの</rt></ruby>に<ruby>悪<rt>わる</rt></ruby>い<ruby>影響<rt>えいきょう</rt></ruby>を<ruby>与<rt>あた</rt></ruby>えると<ruby>考<rt>かんが</rt></ruby>えます。", "romaji": "", "en": ""}, {"jp": "<ruby>私<rt>わたし</rt></ruby>の<ruby>国<rt>くに</rt></ruby>と<ruby>比<rt>くら</rt></ruby>べると、<ruby>日本<rt>にほん</rt></ruby>のほうが <ruby>公共交通<rt>こうきょうこうつう</rt></ruby>が<ruby>発達<rt>はったつ</rt></ruby>していると<ruby>思<rt>おも</rt></ruby>います。", "romaji": "", "en": ""}], "quizzes": [{"question": "What phrase means 'I think / consider that ~' in a formal discussion?", "options": ["〜と考えます", "〜かもしれません", "〜べきです", "〜でしょう"], "answer": 0}, {"question": "How do you say 'Therefore'?", "options": ["したがって", "なぜなら", "けれど", "しかも"], "answer": 0}]}
         };
 
         // 품詞(品詞)の自動判定関数
@@ -2915,29 +3159,35 @@
             const videoThumbnail = document.getElementById('video-thumbnail');
             const lessonVideo = document.getElementById('lesson-video');
             
-            // YouTube IDを抽出
-            let videoId = 'bOUqVC4XkOY';
-            if (data.videoUrl.includes('embed/')) {
-                videoId = data.videoUrl.split('embed/')[1].split('?')[0];
-            }
-            
-            videoThumbnail.src = `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`;
-            videoThumbnail.onerror = function() {
-                this.src = `https://img.youtube.com/vi/${videoId}/mqdefault.jpg`;
-            };
-            
-            videoPlaceholder.style.display = 'flex';
-            lessonVideo.style.display = 'none';
-            lessonVideo.src = ''; 
+            const modalVideoContainer = document.getElementById('modal-video-container');
+            if (!data.videoUrl) {
+                if (modalVideoContainer) modalVideoContainer.style.display = 'none';
+            } else {
+                if (modalVideoContainer) modalVideoContainer.style.display = 'block';
+                // YouTube IDを抽出
+                let videoId = 'bOUqVC4XkOY';
+                if (data.videoUrl.includes('embed/')) {
+                    videoId = data.videoUrl.split('embed/')[1].split('?')[0];
+                }
+                
+                videoThumbnail.src = `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`;
+                videoThumbnail.onerror = function() {
+                    this.src = `https://img.youtube.com/vi/${videoId}/mqdefault.jpg`;
+                };
+                
+                videoPlaceholder.style.display = 'flex';
+                lessonVideo.style.display = 'none';
+                lessonVideo.src = ''; 
 
-            // クリック時に動画をロードして再生
-            document.getElementById('modal-video-container').onclick = function() {
-                videoPlaceholder.style.display = 'none';
-                lessonVideo.style.display = 'block';
-                // autoplayを確実に有効にするためにURLをセット
-                const finalUrl = data.videoUrl + (data.videoUrl.includes('?') ? '&' : '?') + 'autoplay=1';
-                lessonVideo.src = finalUrl;
-            };
+                // クリック時に動画をロードして再生
+                modalVideoContainer.onclick = function() {
+                    videoPlaceholder.style.display = 'none';
+                    lessonVideo.style.display = 'block';
+                    // autoplayを確実に有効にするためにURLをセット
+                    const finalUrl = data.videoUrl + (data.videoUrl.includes('?') ? '&' : '?') + 'autoplay=1';
+                    lessonVideo.src = finalUrl;
+                };
+            }
 
 
             // メイン動画コンテナは元の比率サイズに戻しておく
@@ -3000,7 +3250,7 @@
                         li.innerHTML = `
                         <div style="display: flex; justify-content: space-between; align-items: center;">
                             <div>
-                                <div style="font-size: 1.1rem; color: var(--text-color);">${word.kanji ? word.kanji : word.kana} <span style="font-size: 0.9rem; color: var(--secondary-color);">${word.kanji ? '(' + word.kana + ')' : ''}</span></div>
+                                <div style="font-size: 1.1rem; color: var(--text-color);">${word.kanji ? word.kanji : word.kana} <span style="font-size: 0.9rem; color: var(--secondary-color);">${(word.kanji && word.kanji !== word.kana) ? '(' + word.kana + ')' : ''}</span></div>
                                 <div style="font-size: 0.85rem; color: #888; font-weight: normal; margin-top: 2px;">${word.romaji}</div>
                             </div>
                             <div style="font-size: 1rem; color: var(--primary-color); text-align: right; width: 45%;">${getPosTag(word.kana ? word.kana : word.kanji, word.meaning)}</div>
@@ -3062,9 +3312,15 @@
                 examplesContainer.style.display = 'none';
             }
 
-            currentQuizData = data.quizzes;
+            currentQuizData = data.quizzes || [];
             currentQuestionIndex = 0;
-            renderQuiz();
+            const quizSection = document.querySelector('.quiz-section');
+            if (currentQuizData.length > 0) {
+                if (quizSection) quizSection.style.display = 'block';
+                renderQuiz();
+            } else {
+                if (quizSection) quizSection.style.display = 'none';
+            }
 
             document.getElementById('lesson-modal').classList.add('active');
             document.body.style.overflow = 'hidden'; // 背景スクロール固定
@@ -3347,7 +3603,7 @@
                 const subMap = {
                     'beginner': 0,
                     'intermediate': 1,
-                    'practical': 2
+                    'advanced': 2
                 };
                 const sIdx = subMap[sub];
                 if (sIdx !== undefined) {
