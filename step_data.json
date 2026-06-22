@@ -1,0 +1,2267 @@
+{
+  "step01": {
+    "vocabulary": [
+      {
+        "kana": "ひらがな",
+        "kanji": "",
+        "romaji": "hiragana",
+        "meaning": "Hiragana"
+      },
+      {
+        "kana": "カタカナ",
+        "kanji": "",
+        "romaji": "katakana",
+        "meaning": "Katakana"
+      },
+      {
+        "kana": "かんじ",
+        "kanji": "漢字",
+        "romaji": "kanji",
+        "meaning": "Kanji"
+      },
+      {
+        "kana": "えき",
+        "kanji": "",
+        "romaji": "eki",
+        "meaning": "train station"
+      },
+      {
+        "kana": "おかね",
+        "kanji": "",
+        "romaji": "okane",
+        "meaning": "money"
+      },
+      {
+        "kana": "コーヒー",
+        "kanji": "",
+        "romaji": "koohii",
+        "meaning": "coffee"
+      },
+      {
+        "kana": "ひ",
+        "kanji": "日",
+        "romaji": "hi",
+        "meaning": "sun / day"
+      },
+      {
+        "kana": "つき",
+        "kanji": "月",
+        "romaji": "tsuki",
+        "meaning": "moon / month"
+      },
+      {
+        "kana": "ひと",
+        "kanji": "人",
+        "romaji": "hito",
+        "meaning": "person"
+      },
+      {
+        "kana": "にほん",
+        "kanji": "日本",
+        "romaji": "nihon",
+        "meaning": "Japan"
+      }
+    ],
+    "examples": [
+      {
+        "jp": "<ruby>山<rt>やま</rt></ruby>の<ruby>水<rt>みず</rt></ruby>はきれいです。",
+        "romaji": "Yama no mizu wa kirei desu.",
+        "en": "The water in the mountain is clean."
+      },
+      {
+        "jp": "<ruby>今日<rt>きょう</rt></ruby>は<ruby>東京<rt>とうきょう</rt></ruby>で<ruby>火<rt>ひ</rt></ruby>まつりがあります。",
+        "romaji": "Kyou wa Toukyou de himatsuri ga arimasu.",
+        "en": "Today there is a fire festival in Tokyo."
+      },
+      {
+        "jp": "<ruby>日本<rt>にほん</rt></ruby>の<ruby>人口<rt>じんこう</rt></ruby>はおおいです。",
+        "romaji": "Nihon no jinkou wa ooi desu.",
+        "en": "Japan has a large population."
+      }
+    ]
+  },
+  "step02": {
+    "vocabulary": [
+      {
+        "kana": "じかん",
+        "kanji": "時間",
+        "romaji": "jikan",
+        "meaning": "time"
+      },
+      {
+        "kana": "ひづけ",
+        "kanji": "日付",
+        "romaji": "hizuke",
+        "meaning": "date"
+      },
+      {
+        "kana": "いくら",
+        "kanji": "",
+        "romaji": "ikura",
+        "meaning": "how much"
+      },
+      {
+        "kana": "じ",
+        "kanji": "時",
+        "romaji": "ji",
+        "meaning": "hour / o'clock"
+      },
+      {
+        "kana": "ふん・ぷん",
+        "kanji": "分",
+        "romaji": "fun / pun",
+        "meaning": "minute"
+      },
+      {
+        "kana": "がつ",
+        "kanji": "月",
+        "romaji": "gatsu",
+        "meaning": "month"
+      },
+      {
+        "kana": "にち・か",
+        "kanji": "日",
+        "romaji": "nichi / ka",
+        "meaning": "day"
+      },
+      {
+        "kana": "こ",
+        "kanji": "個",
+        "romaji": "ko",
+        "meaning": "counter for small objects"
+      },
+      {
+        "kana": "はい",
+        "kanji": "杯",
+        "romaji": "hai",
+        "meaning": "counter for cups / bowls"
+      },
+      {
+        "kana": "にん",
+        "kanji": "人",
+        "romaji": "nin",
+        "meaning": "counter for people"
+      },
+      {
+        "kana": "りんご",
+        "kanji": "",
+        "romaji": "ringo",
+        "meaning": "apple"
+      },
+      {
+        "kana": "ごはん",
+        "kanji": "",
+        "romaji": "gohan",
+        "meaning": "rice / meal"
+      }
+    ],
+    "examples": [
+      {
+        "jp": "いくらですか？",
+        "romaji": "Ikura desuka?",
+        "en": "How much is it?"
+      },
+      {
+        "jp": "<ruby>何時<rt>なんじ</rt></ruby>ですか？",
+        "romaji": "Nanji desuka?",
+        "en": "What time is it?"
+      },
+      {
+        "jp": "りんご<ruby>三個<rt>さんこ</rt></ruby>",
+        "romaji": "Ringo sanko",
+        "en": "three apples"
+      },
+      {
+        "jp": "<ruby>三人<rt>さんにん</rt></ruby>",
+        "romaji": "Sannin",
+        "en": "three people"
+      }
+    ]
+  },
+  "step03": {
+    "vocabulary": [
+      {
+        "kana": "これ",
+        "kanji": "",
+        "romaji": "kore",
+        "meaning": "this"
+      },
+      {
+        "kana": "あれ",
+        "kanji": "",
+        "romaji": "are",
+        "meaning": "that"
+      },
+      {
+        "kana": "がくせい",
+        "kanji": "学生",
+        "romaji": "gakusei",
+        "meaning": "student"
+      },
+      {
+        "kana": "せんせい",
+        "kanji": "先生",
+        "romaji": "sensei",
+        "meaning": "teacher"
+      },
+      {
+        "kana": "いしゃ",
+        "kanji": "医者",
+        "romaji": "isha",
+        "meaning": "doctor"
+      },
+      {
+        "kana": "エンジニア",
+        "kanji": "",
+        "romaji": "enjinia",
+        "meaning": "engineer"
+      },
+      {
+        "kana": "にほんじん",
+        "kanji": "日本人",
+        "romaji": "nihonjin",
+        "meaning": "Japanese person"
+      },
+      {
+        "kana": "ほん",
+        "kanji": "本",
+        "romaji": "hon",
+        "meaning": "book"
+      },
+      {
+        "kana": "です",
+        "kanji": "",
+        "romaji": "desu",
+        "meaning": "am / is / are"
+      },
+      {
+        "kana": "じゃないです",
+        "kanji": "",
+        "romaji": "janaidesu",
+        "meaning": "am not / is not / are not"
+      }
+    ],
+    "examples": [
+      {
+        "jp": "<ruby>私<rt>わたし</rt></ruby>は<ruby>学生<rt>がくせい</rt></ruby>です。",
+        "romaji": "Watashi wa gakusei desu.",
+        "en": "I am a student."
+      },
+      {
+        "jp": "<ruby>私<rt>わたし</rt></ruby>はアメリカ<ruby>人<rt>じん</rt></ruby>です。",
+        "romaji": "Watashi wa amerikajin desu.",
+        "en": "I am American."
+      },
+      {
+        "jp": "あれは<ruby>車<rt>くるま</rt></ruby>です。",
+        "romaji": "Are wa kuruma desu.",
+        "en": "That is a car."
+      },
+      {
+        "jp": "<ruby>私<rt>わたし</rt></ruby>は<ruby>医者<rt>いしゃ</rt></ruby>ではありません。",
+        "romaji": "Watashi wa isha dewa arimasen.",
+        "en": "I am not a doctor."
+      }
+    ]
+  },
+  "step04": {
+    "vocabulary": [
+      {
+        "kana": "かんごし",
+        "kanji": "看護師",
+        "romaji": "kangoshi",
+        "meaning": "nurse"
+      },
+      {
+        "kana": "かいしゃいん",
+        "kanji": "会社員",
+        "romaji": "kaishain",
+        "meaning": "office worker"
+      },
+      {
+        "kana": "りょうりにん",
+        "kanji": "料理人",
+        "romaji": "ryourinin",
+        "meaning": "chef / cook"
+      },
+      {
+        "kana": "けいさつかん",
+        "kanji": "警察官",
+        "romaji": "keisatsukan",
+        "meaning": "police officer"
+      },
+      {
+        "kana": "うんてんしゅ",
+        "kanji": "運転手",
+        "romaji": "untenshu",
+        "meaning": "driver"
+      },
+      {
+        "kana": "りゅうがくせい",
+        "kanji": "留学生",
+        "romaji": "ryuugakusei",
+        "meaning": "international student"
+      },
+      {
+        "kana": "くるま",
+        "kanji": "車",
+        "romaji": "kuruma",
+        "meaning": "car"
+      },
+      {
+        "kana": "でした",
+        "kanji": "",
+        "romaji": "deshita",
+        "meaning": "was / were"
+      },
+      {
+        "kana": "じゃなかったです",
+        "kanji": "",
+        "romaji": "janakatta desu",
+        "meaning": "was not / were not"
+      },
+      {
+        "kana": "ではありません",
+        "kanji": "",
+        "romaji": "dewa arimasen",
+        "meaning": "formal negative"
+      }
+    ],
+    "examples": [
+      {
+        "jp": "<ruby>私<rt>わたし</rt></ruby>は<ruby>学生<rt>がくせい</rt></ruby>でした。",
+        "romaji": "Watashi wa gakusei deshita.",
+        "en": "I was a student."
+      },
+      {
+        "jp": "あれは<ruby>車<rt>くるま</rt></ruby>でした。",
+        "romaji": "Are wa kuruma deshita.",
+        "en": "That was a car."
+      },
+      {
+        "jp": "<ruby>私<rt>わたし</rt></ruby>は<ruby>医者<rt>いしゃ</rt></ruby>ではありませんでした。",
+        "romaji": "Watashi wa isha dewa arimasen deshita.",
+        "en": "I was not a doctor."
+      },
+      {
+        "jp": "これは<ruby>本<rt>ほん</rt></ruby>ではありませんでした。",
+        "romaji": "Kore wa hon dewa arimasen deshita.",
+        "en": "This was not a book."
+      }
+    ]
+  },
+  "step05": {
+    "vocabulary": [
+      {
+        "kana": "あなた",
+        "kanji": "",
+        "romaji": "anata",
+        "meaning": "you"
+      },
+      {
+        "kana": "わたしの",
+        "kanji": "私の",
+        "romaji": "watashi no",
+        "meaning": "mine"
+      },
+      {
+        "kana": "あなたの",
+        "kanji": "",
+        "romaji": "anata no",
+        "meaning": "yours"
+      },
+      {
+        "kana": "だれの",
+        "kanji": "誰の",
+        "romaji": "dare no",
+        "meaning": "whose"
+      },
+      {
+        "kana": "なん",
+        "kanji": "何",
+        "romaji": "nan",
+        "meaning": "what"
+      },
+      {
+        "kana": "かばん",
+        "kanji": "鞄",
+        "romaji": "kaban",
+        "meaning": "bag"
+      },
+      {
+        "kana": "たてもの",
+        "kanji": "建物",
+        "romaji": "tatemono",
+        "meaning": "building"
+      },
+      {
+        "kana": "びょういん",
+        "kanji": "病院",
+        "romaji": "byouin",
+        "meaning": "hospital"
+      },
+      {
+        "kana": "きれい",
+        "kanji": "綺麗",
+        "romaji": "kirei",
+        "meaning": "beautiful / clean"
+      },
+      {
+        "kana": "おもしろい",
+        "kanji": "面白い",
+        "romaji": "omoshiroi",
+        "meaning": "interesting"
+      }
+    ],
+    "examples": [
+      {
+        "jp": "これは ペンです。",
+        "romaji": "Kore wa pen desu.",
+        "en": "This is a pen."
+      },
+      {
+        "jp": "その<ruby>本<rt>ほん</rt></ruby> <ruby>面白<rt>おもしろ</rt></ruby>いです。",
+        "romaji": "Sono hon omoshiroi desu.",
+        "en": "That book is interesting."
+      },
+      {
+        "jp": "あの<ruby>建物<rt>たてもの</rt></ruby>は<ruby>何<rt>なん</rt></ruby>ですか？",
+        "romaji": "Ano tatemono wa nan desuka?",
+        "en": "What is that building over there?"
+      },
+      {
+        "jp": "あれは<ruby>病院<rt>びょういん</rt></ruby>です。",
+        "romaji": "Are wa byouin desu.",
+        "en": "That is a hospital."
+      }
+    ]
+  },
+  "step06": {
+    "vocabulary": [
+      {
+        "kana": "おいしい",
+        "kanji": "美味しい",
+        "romaji": "oishii",
+        "meaning": "delicious"
+      },
+      {
+        "kana": "たかい",
+        "kanji": "高い",
+        "romaji": "takai",
+        "meaning": "expensive / tall"
+      },
+      {
+        "kana": "やすい",
+        "kanji": "安い",
+        "romaji": "yasui",
+        "meaning": "cheap"
+      },
+      {
+        "kana": "おおきい",
+        "kanji": "大きい",
+        "romaji": "ookii",
+        "meaning": "big"
+      },
+      {
+        "kana": "ちいさい",
+        "kanji": "小さい",
+        "romaji": "chiisai",
+        "meaning": "small"
+      },
+      {
+        "kana": "むずかしい",
+        "kanji": "難しい",
+        "romaji": "muzukashii",
+        "meaning": "difficult"
+      },
+      {
+        "kana": "あつい",
+        "kanji": "暑い",
+        "romaji": "atsui",
+        "meaning": "hot"
+      },
+      {
+        "kana": "さむい",
+        "kanji": "寒い",
+        "romaji": "samui",
+        "meaning": "cold"
+      },
+      {
+        "kana": "すこし",
+        "kanji": "少し",
+        "romaji": "sukoshi",
+        "meaning": "a little"
+      },
+      {
+        "kana": "でも",
+        "kanji": "",
+        "romaji": "demo",
+        "meaning": "but"
+      },
+      {
+        "kana": "きょう",
+        "kanji": "今日",
+        "romaji": "kyou",
+        "meaning": "weather / today"
+      }
+    ],
+    "examples": [
+      {
+        "jp": "このらーめんは <ruby>美味<rt>おい</rt></ruby>しいです。",
+        "romaji": "Kono raamen wa oishii desu.",
+        "en": "This ramen is delicious."
+      },
+      {
+        "jp": "このらーめんは <ruby>美味<rt>おい</rt></ruby>しくないです。",
+        "romaji": "Kono raamen wa oishikunai desu.",
+        "en": "This ramen is not delicious."
+      },
+      {
+        "jp": "<ruby>日本語<rt>にほんご</rt></ruby>は<ruby>難<rt>むずか</rt></ruby>しいですか？",
+        "romaji": "Nihongo wa muzukashii desuka?",
+        "en": "Is Japanese difficult?"
+      },
+      {
+        "jp": "<ruby>少<rt>すこ</rt></ruby>し<ruby>難<rt>むずか</rt></ruby>しいです。でも<ruby>楽<rt>たの</rt></ruby>しいです。",
+        "romaji": "Sukoshi muzukashii desu. Demo tanoshii desu.",
+        "en": "It is a little difficult. But it is fun."
+      }
+    ]
+  },
+  "step07": {
+    "vocabulary": [
+      {
+        "kana": "たのしい",
+        "kanji": "楽しい",
+        "romaji": "tanoshii",
+        "meaning": "fun"
+      },
+      {
+        "kana": "むずかしい",
+        "kanji": "難しい",
+        "romaji": "muzukashii",
+        "meaning": "difficult"
+      },
+      {
+        "kana": "あたたかい",
+        "kanji": "暖かい",
+        "romaji": "atatakai",
+        "meaning": "warm"
+      },
+      {
+        "kana": "やさしい",
+        "kanji": "易しい",
+        "romaji": "yasashii",
+        "meaning": "easy"
+      },
+      {
+        "kana": "ながい",
+        "kanji": "長い",
+        "romaji": "nagai",
+        "meaning": "long"
+      },
+      {
+        "kana": "きのう",
+        "kanji": "昨日",
+        "romaji": "kinou",
+        "meaning": "yesterday"
+      },
+      {
+        "kana": "なつやすみ",
+        "kanji": "夏休み",
+        "romaji": "natsuyasumi",
+        "meaning": "summer vacation"
+      },
+      {
+        "kana": "りょこう",
+        "kanji": "旅行",
+        "romaji": "ryokou",
+        "meaning": "trip"
+      },
+      {
+        "kana": "テスト",
+        "kanji": "",
+        "romaji": "tesuto",
+        "meaning": "test"
+      },
+      {
+        "kana": "てんき",
+        "kanji": "天気",
+        "romaji": "tenki",
+        "meaning": "weather"
+      }
+    ],
+    "examples": [
+      {
+        "jp": "このらーめんは <ruby>美味<rt>おい</rt></ruby>しかったです。",
+        "romaji": "Kono raamen wa oishikatta desu.",
+        "en": "This ramen was delicious."
+      },
+      {
+        "jp": "このらーめんは <ruby>美味<rt>おい</rt></ruby>しくなかったです。",
+        "romaji": "Kono raamen wa oishikunakatta desu.",
+        "en": "This ramen was not delicious."
+      },
+      {
+        "jp": "<ruby>昨日<rt>きのう</rt></ruby>は<ruby>寒<rt>さむ</rt></ruby>かったですか？",
+        "romaji": "Kinou wa samukatta desuka?",
+        "en": "Was it cold yesterday?"
+      },
+      {
+        "jp": "いいえ、<ruby>寒<rt>さむ</rt></ruby>くなかったです。<ruby>暖<rt>あたた</rt></ruby>かかったです。",
+        "romaji": "Iie, samukunakatta desu. Atatakakatta desu.",
+        "en": "No, it was not cold. It was warm."
+      }
+    ]
+  },
+  "step08": {
+    "vocabulary": [
+      {
+        "kana": "きれい",
+        "kanji": "綺麗",
+        "romaji": "kirei",
+        "meaning": "beautiful / clean"
+      },
+      {
+        "kana": "しずか",
+        "kanji": "静か",
+        "romaji": "shizuka",
+        "meaning": "quiet"
+      },
+      {
+        "kana": "にぎやか",
+        "kanji": "賑やか",
+        "romaji": "nigiyaka",
+        "meaning": "lively / bustling"
+      },
+      {
+        "kana": "しんせつ",
+        "kanji": "親切",
+        "romaji": "shinsetsu",
+        "meaning": "kind"
+      },
+      {
+        "kana": "すき",
+        "kanji": "好き",
+        "romaji": "suki",
+        "meaning": "like / fond of"
+      },
+      {
+        "kana": "きらい",
+        "kanji": "嫌い",
+        "romaji": "kirai",
+        "meaning": "dislike"
+      },
+      {
+        "kana": "げんき",
+        "kanji": "元気",
+        "romaji": "genki",
+        "meaning": "healthy / energetic"
+      },
+      {
+        "kana": "ひま",
+        "kanji": "暇",
+        "romaji": "hima",
+        "meaning": "free / not busy"
+      },
+      {
+        "kana": "まじめ",
+        "kanji": "真面目",
+        "romaji": "majime",
+        "meaning": "serious / hardworking"
+      },
+      {
+        "kana": "じょうず",
+        "kanji": "上手",
+        "romaji": "jouzu",
+        "meaning": "good at"
+      },
+      {
+        "kana": "へた",
+        "kanji": "下手",
+        "romaji": "heta",
+        "meaning": "bad at"
+      },
+      {
+        "kana": "ゆうめい",
+        "kanji": "有名",
+        "romaji": "yuumei",
+        "meaning": "famous"
+      }
+    ],
+    "examples": [
+      {
+        "jp": "<ruby>彼女<rt>かのじょ</rt></ruby>は<ruby>親切<rt>しんせつ</rt></ruby>です",
+        "romaji": "Kanojo wa shinsetsu desu",
+        "en": "She is kind."
+      },
+      {
+        "jp": "<ruby>彼女<rt>かのじょ</rt></ruby>は<ruby>親切<rt>しんせつ</rt></ruby>じゃないです。",
+        "romaji": "Kanojo wa shinsetsu janaidesu.",
+        "en": "She is not kind."
+      },
+      {
+        "jp": "<ruby>日本語<rt>にほんご</rt></ruby>は<ruby>好<rt>す</rt></ruby>きですか？",
+        "romaji": "Nihongo wa suki desuka?",
+        "en": "Do you like Japanese?"
+      },
+      {
+        "jp": "はい、<ruby>大好<rt>だいす</rt></ruby>きです。",
+        "romaji": "Hai, daisuki desu.",
+        "en": "Yes, I love it."
+      }
+    ]
+  },
+  "step09": {
+    "vocabulary": [
+      {
+        "kana": "べんり",
+        "kanji": "便利",
+        "romaji": "benri",
+        "meaning": "convenient"
+      },
+      {
+        "kana": "ふべん",
+        "kanji": "不便",
+        "romaji": "fuben",
+        "meaning": "inconvenient"
+      },
+      {
+        "kana": "たいへん",
+        "kanji": "大変",
+        "romaji": "taihen",
+        "meaning": "tough / hard"
+      },
+      {
+        "kana": "たいせつ",
+        "kanji": "大切",
+        "romaji": "taisetsu",
+        "meaning": "important"
+      },
+      {
+        "kana": "こうえん",
+        "kanji": "公園",
+        "romaji": "kouen",
+        "meaning": "park"
+      },
+      {
+        "kana": "まち",
+        "kanji": "町",
+        "romaji": "machi",
+        "meaning": "town"
+      },
+      {
+        "kana": "しごと",
+        "kanji": "仕事",
+        "romaji": "shigoto",
+        "meaning": "job"
+      },
+      {
+        "kana": "しょうがっこう",
+        "kanji": "小学校",
+        "romaji": "shougakkou",
+        "meaning": "elementary school"
+      },
+      {
+        "kana": "むかし",
+        "kanji": "昔",
+        "romaji": "mukashi",
+        "meaning": "past / long ago"
+      },
+      {
+        "kana": "まえの",
+        "kanji": "前の",
+        "romaji": "mae no",
+        "meaning": "previous / former"
+      }
+    ],
+    "examples": [
+      {
+        "jp": "この<ruby>仕事<rt>しごと</rt></ruby>は<ruby>大変<rt>たいへん</rt></ruby>でした。",
+        "romaji": "Kono shigoto wa taihen deshita.",
+        "en": "This job was tough."
+      },
+      {
+        "jp": "この<ruby>仕事<rt>しごと</rt></ruby>は<ruby>大変<rt>たいへん</rt></ruby>じゃなかったです。",
+        "romaji": "Kono shigoto wa taihen janakatta desu.",
+        "en": "This job was not tough."
+      },
+      {
+        "jp": "<ruby>小学校<rt>しょうがっこう</rt></ruby>の<ruby>先生<rt>せんせい</rt></ruby>は<ruby>親切<rt>しんせつ</rt></ruby>でしたか？",
+        "romaji": "Shougakkou no sensei wa shinsetsu deshita ka?",
+        "en": "Was your elementary school teacher kind?"
+      },
+      {
+        "jp": "はい、とても<ruby>親切<rt>しんせつ</rt></ruby>でした。",
+        "romaji": "Hai, totemo shinsetsu deshita.",
+        "en": "Yes, they were very kind."
+      }
+    ]
+  },
+  "step10": {
+    "vocabulary": [
+      {
+        "kana": "じこしょうかい",
+        "kanji": "自己紹介",
+        "romaji": "jikoshoukai",
+        "meaning": "self introduction"
+      },
+      {
+        "kana": "なまえ",
+        "kanji": "名前",
+        "romaji": "namae",
+        "meaning": "name"
+      },
+      {
+        "kana": "しごと",
+        "kanji": "仕事",
+        "romaji": "shigoto",
+        "meaning": "job"
+      },
+      {
+        "kana": "ねんれい",
+        "kanji": "年齢",
+        "romaji": "nenrei",
+        "meaning": "age"
+      },
+      {
+        "kana": "しゅっしんち",
+        "kanji": "出身地",
+        "romaji": "shusshinchi",
+        "meaning": "hometown"
+      },
+      {
+        "kana": "さい",
+        "kanji": "歳",
+        "romaji": "sai",
+        "meaning": "years old"
+      },
+      {
+        "kana": "から",
+        "kanji": "",
+        "romaji": "kara",
+        "meaning": "from"
+      },
+      {
+        "kana": "はじめまして",
+        "kanji": "",
+        "romaji": "hajimemashite",
+        "meaning": "nice to meet you"
+      },
+      {
+        "kana": "よろしくおねがいします",
+        "kanji": "",
+        "romaji": "yoroshiku onegaishimasu",
+        "meaning": "please treat me well / nice to meet you"
+      },
+      {
+        "kana": "いま",
+        "kanji": "今",
+        "romaji": "ima",
+        "meaning": "now / currently"
+      },
+      {
+        "kana": "はたらいています",
+        "kanji": "働いています",
+        "romaji": "hataraiteimasu",
+        "meaning": "work"
+      },
+      {
+        "kana": "べんきょうしています",
+        "kanji": "勉強しています",
+        "romaji": "benkyou shiteimasu",
+        "meaning": "study"
+      }
+    ],
+    "examples": [
+      {
+        "jp": "<ruby>私<rt>わたし</rt></ruby>の<ruby>名前<rt>なまえ</rt></ruby>はサラです。",
+        "romaji": "Watashi no namae wa Sara desu.",
+        "en": "My name is Sara."
+      },
+      {
+        "jp": "<ruby>私<rt>わたし</rt></ruby>はアメリカ<ruby>人<rt>じん</rt></ruby>です。",
+        "romaji": "Watashi wa amerikajin desu.",
+        "en": "I am American."
+      },
+      {
+        "jp": "<ruby>私<rt>わたし</rt></ruby>はニューヨークから<ruby>来<rt>き</rt></ruby>ました。",
+        "romaji": "Watashi wa Nyuuyooku kara kimashita.",
+        "en": "I am from New York."
+      },
+      {
+        "jp": "<ruby>日本語<rt>にほんご</rt></ruby>を<ruby>勉強<rt>べんきょう</rt></ruby>しています。",
+        "romaji": "Nihongo o benkyou shiteimasu.",
+        "en": "I am studying Japanese."
+      }
+    ]
+  },
+  "step11": {
+    "vocabulary": [
+      {
+        "kana": "レストラン",
+        "kanji": "",
+        "romaji": "resutoran",
+        "meaning": "restaurant"
+      },
+      {
+        "kana": "ちゅうもん",
+        "kanji": "注文",
+        "romaji": "chuumon",
+        "meaning": "order"
+      },
+      {
+        "kana": "りょうり",
+        "kanji": "料理",
+        "romaji": "ryouri",
+        "meaning": "dish / food"
+      },
+      {
+        "kana": "のみもの",
+        "kanji": "飲み物",
+        "romaji": "nomimono",
+        "meaning": "drink"
+      },
+      {
+        "kana": "おみず",
+        "kanji": "お水",
+        "romaji": "omizu",
+        "meaning": "water"
+      },
+      {
+        "kana": "おてあらい",
+        "kanji": "お手洗い",
+        "romaji": "otearai",
+        "meaning": "restroom"
+      },
+      {
+        "kana": "おかいけい",
+        "kanji": "お会計",
+        "romaji": "okaikei",
+        "meaning": "bill / check"
+      },
+      {
+        "kana": "おすすめ",
+        "kanji": "",
+        "romaji": "osusume",
+        "meaning": "recommendation"
+      },
+      {
+        "kana": "にく",
+        "kanji": "肉",
+        "romaji": "niku",
+        "meaning": "meat"
+      },
+      {
+        "kana": "さかな",
+        "kanji": "魚",
+        "romaji": "魚",
+        "meaning": "fish"
+      },
+      {
+        "kana": "いただきます",
+        "kanji": "",
+        "romaji": "itadakimasu",
+        "meaning": "let’s eat"
+      },
+      {
+        "kana": "ごちそうさま",
+        "kanji": "",
+        "romaji": "gochisousama",
+        "meaning": "thank you for the meal"
+      }
+    ],
+    "examples": [
+      {
+        "jp": "<ruby>水<rt>みず</rt></ruby>をください",
+        "romaji": "Mizu o kudasai",
+        "en": "Water, please."
+      },
+      {
+        "jp": "おすすめは<ruby>何<rt>なん</rt></ruby>ですか？",
+        "romaji": "Osusume wa nan desuka?",
+        "en": "What do you recommend?"
+      },
+      {
+        "jp": "<ruby>私<rt>わたし</rt></ruby>はナッツアレルギーが あります。",
+        "romaji": "Watashi wa nattsu arerugii ga arimasu.",
+        "en": "I have a nut allergy."
+      },
+      {
+        "jp": "お<ruby>会計<rt>かいけい</rt></ruby>お<ruby>願<rt>ねが</rt></ruby>いします。",
+        "romaji": "Okaikei onegaishimasu.",
+        "en": "Check, please."
+      }
+    ]
+  },
+  "intStep01": {
+    "vocabulary": [
+      {
+        "kana": "たべる",
+        "kanji": "食べる",
+        "romaji": "taberu",
+        "meaning": "to eat"
+      },
+      {
+        "kana": "たべます",
+        "kanji": "食べます",
+        "romaji": "tabemasu",
+        "meaning": "to eat"
+      },
+      {
+        "kana": "みる",
+        "kanji": "見る",
+        "romaji": "miru",
+        "meaning": "to see / watch"
+      },
+      {
+        "kana": "みます",
+        "kanji": "見ます",
+        "romaji": "mimasu",
+        "meaning": "to see / watch"
+      },
+      {
+        "kana": "ねる",
+        "kanji": "寝る",
+        "romaji": "neru",
+        "meaning": "to sleep"
+      },
+      {
+        "kana": "べんきょうする",
+        "kanji": "勉強する",
+        "romaji": "benkyou suru",
+        "meaning": "to study"
+      },
+      {
+        "kana": "べんきょうします",
+        "kanji": "勉強します",
+        "romaji": "benkyou shimasu",
+        "meaning": "to study"
+      },
+      {
+        "kana": "いく",
+        "kanji": "行く",
+        "romaji": "iku",
+        "meaning": "to go"
+      },
+      {
+        "kana": "のむ",
+        "kanji": "飲む",
+        "romaji": "nomu",
+        "meaning": "to drink"
+      },
+      {
+        "kana": "のみません",
+        "kanji": "飲みません",
+        "romaji": "nomimasen",
+        "meaning": "do not drink"
+      },
+      {
+        "kana": "にほんご",
+        "kanji": "日本語",
+        "romaji": "nihongo",
+        "meaning": "Japanese language"
+      },
+      {
+        "kana": "ごはん",
+        "kanji": "ご飯",
+        "romaji": "gohan",
+        "meaning": "meal / rice"
+      },
+      {
+        "kana": "ともだち",
+        "kanji": "友達",
+        "romaji": "tomodachi",
+        "meaning": "friend"
+      },
+      {
+        "kana": "えいが",
+        "kanji": "映画",
+        "romaji": "eiga",
+        "meaning": "movie"
+      },
+      {
+        "kana": "まいにち",
+        "kanji": "毎日",
+        "romaji": "mainichi",
+        "meaning": "every day"
+      },
+      {
+        "kana": "まいあさ",
+        "kanji": "毎朝",
+        "romaji": "maiasa",
+        "meaning": "every morning"
+      },
+      {
+        "kana": "あした",
+        "kanji": "明日",
+        "romaji": "ashita",
+        "meaning": "tomorrow"
+      },
+      {
+        "kana": "わたし",
+        "kanji": "私",
+        "romaji": "watashi",
+        "meaning": "I / me"
+      },
+      {
+        "kana": "おさけ",
+        "kanji": "お酒",
+        "romaji": "osake",
+        "meaning": "alcohol"
+      }
+    ],
+    "examples": [
+      {
+        "jp": "<ruby>毎日<rt>まいにち</rt></ruby><ruby>日本語<rt>にほんご</rt></ruby>を<ruby>勉強します<rt>べんきょうします</rt></ruby>。",
+        "romaji": "Mainichi nihongo o benkyou shimasu.",
+        "en": "I study Japanese every day."
+      },
+      {
+        "jp": "<ruby>明日<rt>あした</rt></ruby><ruby>友達<rt>ともだち</rt></ruby>と<ruby>映画<rt>えいが</rt></ruby>を<ruby>見ます<rt>みます</rt></ruby>。",
+        "romaji": "Ashita tomodachi to eiga o mimasu.",
+        "en": "Tomorrow I will watch a movie with a friend."
+      },
+      {
+        "jp": "<ruby>毎朝<rt>まいあさ</rt></ruby>ごはんを<ruby>食べます<rt>たべます</rt></ruby>。",
+        "romaji": "Maiasa gohan o tabemasu.",
+        "en": "I eat breakfast every morning."
+      },
+      {
+        "jp": "<ruby>私<rt>わたし</rt></ruby>はお<ruby>酒<rt>さけ</rt></ruby>を<ruby>飲みません<rt>のみません</rt></ruby>。",
+        "romaji": "Watashi wa osake o nomimasen.",
+        "en": "I don't drink alcohol."
+      }
+    ]
+  },
+  "intStep02": {
+    "vocabulary": [
+      {
+        "kana": "きのう",
+        "kanji": "昨日",
+        "romaji": "kinou",
+        "meaning": "yesterday"
+      },
+      {
+        "kana": "せんしゅう",
+        "kanji": "先週",
+        "romaji": "senshuu",
+        "meaning": "last week"
+      },
+      {
+        "kana": "〜まえに",
+        "kanji": "〜前に",
+        "romaji": "... mae ni",
+        "meaning": "... ago"
+      },
+      {
+        "kana": "もう",
+        "kanji": "もう",
+        "romaji": "mou",
+        "meaning": "already"
+      },
+      {
+        "kana": "なつやすみ",
+        "kanji": "夏休み",
+        "romaji": "natsuyasumi",
+        "meaning": "summer vacation"
+      },
+      {
+        "kana": "しごと",
+        "kanji": "仕事",
+        "romaji": "shigoto",
+        "meaning": "work / job"
+      },
+      {
+        "kana": "ひるごはん",
+        "kanji": "昼ごはん",
+        "romaji": "hirugohan",
+        "meaning": "lunch"
+      },
+      {
+        "kana": "いきました",
+        "kanji": "行きました",
+        "romaji": "ikimashita",
+        "meaning": "went"
+      },
+      {
+        "kana": "みました",
+        "kanji": "見ました",
+        "romaji": "mimashita",
+        "meaning": "watched / saw"
+      },
+      {
+        "kana": "たべました",
+        "kanji": "食べました",
+        "romaji": "tabemashita",
+        "meaning": "ate"
+      },
+      {
+        "kana": "べんきょうしました",
+        "kanji": "勉強しました",
+        "romaji": "benkyou shimashita",
+        "meaning": "studied"
+      },
+      {
+        "kana": "きれい",
+        "kanji": "綺麗",
+        "romaji": "kirei",
+        "meaning": "beautiful / clean"
+      }
+    ],
+    "examples": [
+      {
+        "jp": "<ruby>昨日<rt>きのう</rt></ruby><ruby>映画<rt>えいが</rt></ruby>を<ruby>見<rt>み</rt></ruby>ました。",
+        "romaji": "Kinou eiga o mimashita.",
+        "en": "I watched a movie yesterday."
+      },
+      {
+        "jp": "3<ruby>年<rt>ねん</rt></ruby><ruby>前<rt>まえ</rt></ruby>に<ruby>日本語<rt>にほんご</rt></ruby>を<ruby>勉強<rt>べんきょう</rt></ruby>しました。",
+        "romaji": "San-nen mae ni nihongo o benkyou shimashita.",
+        "en": "I studied Japanese 3 years ago."
+      },
+      {
+        "jp": "<ruby>夏休み<rt>なつやすみ</rt></ruby>に<ruby>京都<rt>きょうと</rt></ruby>に<ruby>行<rt>い</rt></ruby>きました。とても<ruby>綺麗<rt>きれい</rt></ruby>でした！",
+        "romaji": "Natsuyasumi ni Kyoto ni ikimashita. Totemo kirei deshita!",
+        "en": "I went to Kyoto during summer vacation. It was very beautiful!"
+      },
+      {
+        "jp": "<ruby>昼<rt>ひる</rt></ruby>ごはんを<ruby>食<rt>た</rt></ruby>べましたか？ ーー はい、もう<ruby>食<rt>た</rt></ruby>べました。",
+        "romaji": "Hirugohan o tabemashita ka? -- Hai, mou tabemashita.",
+        "en": "Did you eat lunch? -- Yes, I already ate."
+      }
+    ]
+  },
+  "intStep03": {
+    "vocabulary": [
+      {
+        "kana": "としょかん",
+        "kanji": "図書館",
+        "romaji": "toshokan",
+        "meaning": "library"
+      },
+      {
+        "kana": "えき",
+        "kanji": "駅",
+        "romaji": "eki",
+        "meaning": "station"
+      },
+      {
+        "kana": "じてんしゃ",
+        "kanji": "自転車",
+        "romaji": "jitensha",
+        "meaning": "bicycle"
+      },
+      {
+        "kana": "プレゼント",
+        "kanji": "プレゼント",
+        "romaji": "purezento",
+        "meaning": "present / gift"
+      },
+      {
+        "kana": "さいふ",
+        "kanji": "財布",
+        "romaji": "saifu",
+        "meaning": "wallet"
+      },
+      {
+        "kana": "あります",
+        "kanji": "あります",
+        "romaji": "arimasu",
+        "meaning": "there is (non-living)"
+      },
+      {
+        "kana": "います",
+        "kanji": "います",
+        "romaji": "imasu",
+        "meaning": "there is (living)"
+      },
+      {
+        "kana": "あげました",
+        "kanji": "あげました",
+        "romaji": "agemashita",
+        "meaning": "gave"
+      },
+      {
+        "kana": "つくりました",
+        "kanji": "作りました",
+        "romaji": "tsukurimashita",
+        "meaning": "made"
+      },
+      {
+        "kana": "おいしい",
+        "kanji": "美味しい",
+        "romaji": "oishii",
+        "meaning": "delicious"
+      },
+      {
+        "kana": "どこで",
+        "kanji": "どこで",
+        "romaji": "doko de",
+        "meaning": "where (location of action)"
+      },
+      {
+        "kana": "なにで",
+        "kanji": "なにで",
+        "romaji": "nani de",
+        "meaning": "how / by what means"
+      }
+    ],
+    "examples": [
+      {
+        "jp": "<ruby>図書館<rt>としょかん</rt></ruby>で<ruby>勉強<rt>べんきょう</rt></ruby>します。",
+        "romaji": "Toshokan de benkyou shimasu.",
+        "en": "I study at the library."
+      },
+      {
+        "jp": "<ruby>自転車<rt>じてんしゃ</rt></ruby>で<ruby>駅<rt>えき</rt></ruby>に<ruby>行<rt>い</rt></ruby>きます。",
+        "romaji": "Jitensha de eki ni ikimasu.",
+        "en": "I go to the station by bicycle."
+      },
+      {
+        "jp": "<ruby>部屋<rt>へや</rt></ruby>に<ruby>猫<rt>ねこ</rt></ruby>がいます。",
+        "romaji": "Heya ni neko ga imasu.",
+        "en": "There is a cat in the room."
+      },
+      {
+        "jp": "<ruby>友達<rt>ともだち</rt></ruby>にプレゼントをあげました。",
+        "romaji": "Tomodachi ni purezento o agemashita.",
+        "en": "I gave a present to my friend."
+      }
+    ]
+  },
+  "intStep04": {
+    "vocabulary": [
+      {
+        "kana": "も",
+        "kanji": "も",
+        "romaji": "mo",
+        "meaning": "also / too"
+      },
+      {
+        "kana": "しか",
+        "kanji": "しか",
+        "romaji": "shika",
+        "meaning": "only (negative)"
+      },
+      {
+        "kana": "だけ",
+        "kanji": "だけ",
+        "romaji": "dake",
+        "meaning": "only / just (neutral)"
+      },
+      {
+        "kana": "ので",
+        "kanji": "ので",
+        "romaji": "node",
+        "meaning": "because / so"
+      },
+      {
+        "kana": "おかね",
+        "kanji": "お金",
+        "romaji": "okane",
+        "meaning": "money"
+      },
+      {
+        "kana": "じかん",
+        "kanji": "時間",
+        "romaji": "jikan",
+        "meaning": "time"
+      },
+      {
+        "kana": "かぜ",
+        "kanji": "風邪",
+        "romaji": "kaze",
+        "meaning": "cold (illness)"
+      },
+      {
+        "kana": "びょうき",
+        "kanji": "病気",
+        "romaji": "byouki",
+        "meaning": "sickness"
+      },
+      {
+        "kana": "やすみます",
+        "kanji": "休みます",
+        "romaji": "yasumimasu",
+        "meaning": "to take a day off / rest"
+      },
+      {
+        "kana": "はなせます",
+        "kanji": "話せます",
+        "romaji": "hanasemasu",
+        "meaning": "can speak"
+      },
+      {
+        "kana": "ふっています",
+        "kanji": "降っています",
+        "romaji": "futteimasu",
+        "meaning": "is raining"
+      },
+      {
+        "kana": "すこし",
+        "kanji": "少し",
+        "romaji": "sukoshi",
+        "meaning": "a little"
+      }
+    ],
+    "examples": [
+      {
+        "jp": "<ruby>私<rt>わたし</rt></ruby>も<ruby>行<rt>い</rt></ruby>きます。",
+        "romaji": "Watashi mo ikimasu.",
+        "en": "I will go too."
+      },
+      {
+        "jp": "<ruby>時間<rt>じかん</rt></ruby>が<ruby>少し<rt>すこし</rt></ruby>しかありません。",
+        "romaji": "Jikan ga sukoshi shika arimasen.",
+        "en": "I only have a little time."
+      },
+      {
+        "jp": "<ruby>風邪<rt>かぜ</rt></ruby>をひいたので、<ruby>会社<rt>かいしゃ</rt></ruby>を<ruby>休<rt>やす</rt></ruby>みます。",
+        "romaji": "Kaze o hiita node, kaisha o yasumimasu.",
+        "en": "Because I caught a cold, I will take the day off."
+      },
+      {
+        "jp": "<ruby>日本語<rt>にほんご</rt></ruby>が<ruby>好<rt>す</rt></ruby>きなので、<ruby>毎日<rt>まいにち</rt></ruby>勉強します。",
+        "romaji": "Nihongo ga suki na node, mainichi benkyou shimasu.",
+        "en": "Because I like Japanese, I study every day."
+      }
+    ]
+  },
+  "intStep05": {
+    "vocabulary": [
+      {
+        "kana": "〜てください",
+        "kanji": "〜てください",
+        "romaji": "... te kudasai",
+        "meaning": "Please do..."
+      },
+      {
+        "kana": "〜ています",
+        "kanji": "〜ています",
+        "romaji": "... te imasu",
+        "meaning": "is doing / state"
+      },
+      {
+        "kana": "シャワー",
+        "kanji": "シャワー",
+        "romaji": "shawaa",
+        "meaning": "shower"
+      },
+      {
+        "kana": "けっこん",
+        "kanji": "結婚",
+        "romaji": "kekkon",
+        "meaning": "marriage"
+      },
+      {
+        "kana": "ふく",
+        "kanji": "服",
+        "romaji": "fuku",
+        "meaning": "clothes"
+      },
+      {
+        "kana": "くに",
+        "kanji": "国",
+        "romaji": "kuni",
+        "meaning": "country"
+      },
+      {
+        "kana": "ゆっくり",
+        "kanji": "ゆっくり",
+        "romaji": "yukkuri",
+        "meaning": "slowly"
+      },
+      {
+        "kana": "もういちど",
+        "kanji": "もう一度",
+        "romaji": "mou ichido",
+        "meaning": "one more time"
+      },
+      {
+        "kana": "あびて",
+        "kanji": "浴びて",
+        "romaji": "abite",
+        "meaning": "taking (a shower)"
+      },
+      {
+        "kana": "すんでいます",
+        "kanji": "住んでいます",
+        "romaji": "sundeimasu",
+        "meaning": "live in"
+      },
+      {
+        "kana": "きていています",
+        "kanji": "着ています",
+        "romaji": "kiteimasu",
+        "meaning": "wearing"
+      },
+      {
+        "kana": "いま",
+        "kanji": "今",
+        "romaji": "ima",
+        "meaning": "now"
+      }
+    ],
+    "examples": [
+      {
+        "jp": "シャワーを<ruby>浴<rt>あび</rt></ruby>て、ごはんを<ruby>食<rt>た</rt></ruby>べました。",
+        "romaji": "Shawaa o abite, gohan o tabemashita.",
+        "en": "I took a shower and then ate."
+      },
+      {
+        "jp": "ゆっくり<ruby>話<rt>はな</rt></ruby>してください。",
+        "romaji": "Yukkuri hanashite kudasai.",
+        "en": "Please speak slowly."
+      },
+      {
+        "jp": "<ruby>今<rt>いま</rt></ruby><ruby>日本語<rt>にほんご</rt></ruby>を<ruby>勉強<rt>べんきょう</rt></ruby>しています。",
+        "romaji": "Ima nihongo o benkyou shiteimasu.",
+        "en": "I am studying Japanese right now."
+      },
+      {
+        "jp": "<ruby>東京<rt>とうきょう</rt></ruby>に<ruby>住<rt>す</rt></ruby>んでいます。",
+        "romaji": "Toukyou ni sundeimasu.",
+        "en": "I live in Tokyo."
+      }
+    ]
+  },
+  "intStep06": {
+    "vocabulary": [
+      {
+        "kana": "しゅくだい",
+        "kanji": "宿題",
+        "romaji": "shukudai",
+        "meaning": "homework"
+      },
+      {
+        "kana": "やさい",
+        "kanji": "野菜",
+        "romaji": "yasai",
+        "meaning": "vegetables"
+      },
+      {
+        "kana": "ダイエット",
+        "kanji": "ダイエット",
+        "romaji": "daietto",
+        "meaning": "diet"
+      },
+      {
+        "kana": "〜ない",
+        "kanji": "〜ない",
+        "romaji": "... nai",
+        "meaning": "casual negative"
+      },
+      {
+        "kana": "〜た",
+        "kanji": "〜た",
+        "romaji": "... ta",
+        "meaning": "casual past"
+      },
+      {
+        "kana": "〜ないで",
+        "kanji": "〜ないで",
+        "romaji": "... naide",
+        "meaning": "without doing"
+      },
+      {
+        "kana": "〜なければならない",
+        "kanji": "〜なければならない",
+        "romaji": "... nakereba naranai",
+        "meaning": "must / have to"
+      },
+      {
+        "kana": "〜なきゃ",
+        "kanji": "〜なきゃ",
+        "romaji": "... nakya",
+        "meaning": "casual \"have to\""
+      },
+      {
+        "kana": "ぜんぜん",
+        "kanji": "全然",
+        "romaji": "zenzen",
+        "meaning": "not at all"
+      },
+      {
+        "kana": "ちゃんと",
+        "kanji": "ちゃんと",
+        "romaji": "chanto",
+        "meaning": "properly / correctly"
+      },
+      {
+        "kana": "だします",
+        "kanji": "出します",
+        "romaji": "dashimasu",
+        "meaning": "to submit / put out"
+      },
+      {
+        "kana": "ある → ない",
+        "kanji": "ある → ない",
+        "romaji": "aru -> nai",
+        "meaning": "don't have (exception)"
+      }
+    ],
+    "examples": [
+      {
+        "jp": "<ruby>朝<rt>あさ</rt></ruby>ごはんを<ruby>食<rt>た</rt></ruby>べないで、<ruby>学校<rt>がっこう</rt></ruby>に<ruby>行<rt>い</rt></ruby>きました。",
+        "romaji": "Asagohan o tabenaide, gakkou ni ikimashita.",
+        "en": "I went to school without eating breakfast."
+      },
+      {
+        "jp": "<ruby>明日<rt>あした</rt></ruby>までに<ruby>宿題<rt>しゅくだい</rt></ruby>を<ruby>出<rt>だ</rt></ruby>さなければならない。",
+        "romaji": "Ashita made ni shukudai o dasanakereba naranai.",
+        "en": "I have to submit my homework by tomorrow."
+      },
+      {
+        "jp": "<ruby>行<rt>い</rt></ruby>かなきゃ！",
+        "romaji": "Ikanakya!",
+        "en": "I have to go!"
+      },
+      {
+        "jp": "<ruby>全然<rt>ぜんぜん</rt></ruby><ruby>寝<rt>ね</rt></ruby>ないで<ruby>仕事<rt>しごと</rt></ruby>をしました。",
+        "romaji": "Zenzen nenaide shigoto o shimashita.",
+        "en": "I worked without sleeping at all."
+      }
+    ]
+  },
+  "intStep07": {
+    "vocabulary": [
+      {
+        "kana": "がいこく",
+        "kanji": "外国",
+        "romaji": "gaikoku",
+        "meaning": "foreign country"
+      },
+      {
+        "kana": "なっとう",
+        "kanji": "納豆",
+        "romaji": "nattou",
+        "meaning": "natto"
+      },
+      {
+        "kana": "スカイダイビング",
+        "kanji": "スカイダイビング",
+        "romaji": "sukaidaibingu",
+        "meaning": "skydiving"
+      },
+      {
+        "kana": "マラソン",
+        "kanji": "マラソン",
+        "romaji": "marason",
+        "meaning": "marathon"
+      },
+      {
+        "kana": "〜たことが あります",
+        "kanji": "〜たことがあります",
+        "romaji": "... ta koto ga arimasu",
+        "meaning": "have done before"
+      },
+      {
+        "kana": "〜たことが ありません",
+        "kanji": "〜たことがありません",
+        "romaji": "... ta koto ga arimasen",
+        "meaning": "have never done"
+      },
+      {
+        "kana": "いちど",
+        "kanji": "一度",
+        "romaji": "ichido",
+        "meaning": "once"
+      },
+      {
+        "kana": "なんども",
+        "kanji": "何度も",
+        "romaji": "nandome",
+        "meaning": "many times"
+      },
+      {
+        "kana": "いちども",
+        "kanji": "一度も",
+        "romaji": "ichidomo",
+        "meaning": "not even once"
+      },
+      {
+        "kana": "こわい",
+        "kanji": "怖い",
+        "romaji": "kowai",
+        "meaning": "scary"
+      },
+      {
+        "kana": "あまり",
+        "kanji": "あまり",
+        "romaji": "amari",
+        "meaning": "not very"
+      },
+      {
+        "kana": "すごく",
+        "kanji": "すごく",
+        "romaji": "sugoku",
+        "meaning": "very / really"
+      }
+    ],
+    "examples": [
+      {
+        "jp": "<ruby>日本<rt>にほん</rt></ruby>に<ruby>行<rt>い</rt></ruby>ったことがあります。",
+        "romaji": "Nihon ni itta koto ga arimasu.",
+        "en": "I have been to Japan before."
+      },
+      {
+        "jp": "<ruby>一度<rt>いちど</rt></ruby>も<ruby>寿司<rt>すし</rt></ruby>を<ruby>食<rt>た</rt></ruby>べたことがありません。",
+        "romaji": "Ichidomo sushi o tabeta koto ga arimasen.",
+        "en": "I have not eaten sushi even once."
+      },
+      {
+        "jp": "この<ruby>映画<rt>えいが</rt></ruby>を<ruby>何度<rt>なんど</rt></ruby>も<ruby>見<rt>み</rt></ruby>たことがあります。",
+        "romaji": "Kono eiga o nando mo mita koto ga arimasu.",
+        "en": "I have watched this movie many times."
+      },
+      {
+        "jp": "<ruby>納豆<rt>なっとう</rt></ruby>を<ruby>食<rt>た</rt></ruby>べたことがありますが、あまり<ruby>好<rt>す</rt></ruby>きじゃなかったです。",
+        "romaji": "Nattou o tabeta koto ga arimasu ga, amari suki janakatta desu.",
+        "en": "I have eaten natto once, but I didn't really like it."
+      }
+    ]
+  },
+  "intStep08": {
+    "vocabulary": [
+      {
+        "kana": "おもいます",
+        "kanji": "思います",
+        "romaji": "omoimasu",
+        "meaning": "to think"
+      },
+      {
+        "kana": "といっていました",
+        "kanji": "と言っていました",
+        "romaji": "to itte imashita",
+        "meaning": "said (reported)"
+      },
+      {
+        "kana": "テスト",
+        "kanji": "テスト",
+        "romaji": "tesuto",
+        "meaning": "test"
+      },
+      {
+        "kana": "カフェ",
+        "kanji": "カフェ",
+        "romaji": "kafe",
+        "meaning": "café"
+      },
+      {
+        "kana": "おもしろい",
+        "kanji": "面白い",
+        "romaji": "omoshiroi",
+        "meaning": "interesting"
+      },
+      {
+        "kana": "つまらない",
+        "kanji": "つまらない",
+        "romaji": "tsumaranai",
+        "meaning": "boring"
+      },
+      {
+        "kana": "しずか",
+        "kanji": "静か",
+        "romaji": "shizuka",
+        "meaning": "quiet"
+      },
+      {
+        "kana": "にほんじん",
+        "kanji": "日本人",
+        "romaji": "nihonjin",
+        "meaning": "Japanese person"
+      },
+      {
+        "kana": "ふる",
+        "kanji": "降る",
+        "romaji": "furu",
+        "meaning": "to rain / to fall"
+      },
+      {
+        "kana": "そんなに",
+        "kanji": "そんなに",
+        "romaji": "sonna ni",
+        "meaning": "that much / so much"
+      },
+      {
+        "kana": "たのしい",
+        "kanji": "楽しい",
+        "romaji": "tanoshii",
+        "meaning": "fun"
+      },
+      {
+        "kana": "まだ",
+        "kanji": "まだ",
+        "romaji": "mada",
+        "meaning": "not yet"
+      }
+    ],
+    "examples": [
+      {
+        "jp": "<ruby>明日<rt>あした</rt></ruby>は<ruby>雨<rt>あめ</rt></ruby>が<ruby>降<rt>ふ</rt></ruby>ると<ruby>思<rt>おも</rt></ruby>います。",
+        "romaji": "Ashita wa ame ga furu to omoimasu.",
+        "en": "I think it will rain tomorrow."
+      },
+      {
+        "jp": "<ruby>日本語<rt>にほんご</rt></ruby>は<ruby>難<rt>むずか</rt></ruby>しいですが、<ruby>楽<rt>たの</rt></ruby>しいと<ruby>思<rt>おも</rt></ruby>います。",
+        "romaji": "Nihongo wa muzukashii desu ga, tanoshii to omoimasu.",
+        "en": "Japanese is difficult, but I think it's fun."
+      },
+      {
+        "jp": "<ruby>田中<rt>たなか</rt></ruby>さんは<ruby>風邪<rt>かぜ</rt></ruby>をひいたと<ruby>言<rt>い</rt></ruby>っていました。",
+        "romaji": "Tanaka-san wa kaze o hiita to itte imashita.",
+        "en": "Tanaka-san said that they caught a cold."
+      },
+      {
+        "jp": "<ruby>友達<rt>ともだち</rt></ruby>が<ruby>美味<rt>おい</rt></ruby>しいと<ruby>言<rt>い</rt></ruby>っていたので、<ruby>行<rt>い</rt></ruby>ってみたいと<ruby>思<rt>おも</rt></ruby>います。",
+        "romaji": "Tomodachi ga oishii to itte ita node, itte mitai to omoimasu.",
+        "en": "My friend said it was delicious, so I think I want to go."
+      }
+    ]
+  },
+  "intStep09": {
+    "vocabulary": [
+      {
+        "kana": "〜たい",
+        "kanji": "〜たい",
+        "romaji": "... tai",
+        "meaning": "want to do (self)"
+      },
+      {
+        "kana": "〜ほしい",
+        "kanji": "〜ほしい",
+        "romaji": "... hoshii",
+        "meaning": "want (a thing)"
+      },
+      {
+        "kana": "〜てほしい",
+        "kanji": "〜てほしい",
+        "romaji": "... te hoshii",
+        "meaning": "want someone else to do"
+      },
+      {
+        "kana": "しょうらい",
+        "kanji": "将来",
+        "romaji": "shourai",
+        "meaning": "future"
+      },
+      {
+        "kana": "スイッチ",
+        "kanji": "スイッチ",
+        "romaji": "suitchi",
+        "meaning": "Switch (Nintendo)"
+      },
+      {
+        "kana": "くるま",
+        "kanji": "車",
+        "romaji": "kuruma",
+        "meaning": "car"
+      },
+      {
+        "kana": "じかん",
+        "kanji": "時間",
+        "romaji": "jikan",
+        "meaning": "time"
+      },
+      {
+        "kana": "はたらきたい",
+        "kanji": "働きたい",
+        "romaji": "hatarakitai",
+        "meaning": "want to work"
+      },
+      {
+        "kana": "てつだう",
+        "kanji": "手伝う",
+        "romaji": "tetsudau",
+        "meaning": "to help"
+      },
+      {
+        "kana": "れんらくする",
+        "kanji": "連絡する",
+        "romaji": "renraku suru",
+        "meaning": "to contact"
+      },
+      {
+        "kana": "はやく",
+        "kanji": "早く",
+        "romaji": "hayaku",
+        "meaning": "quickly / soon"
+      },
+      {
+        "kana": "もっと",
+        "kanji": "もっと",
+        "romaji": "motto",
+        "meaning": "more"
+      }
+    ],
+    "examples": [
+      {
+        "jp": "<ruby>日本語<rt>にほんご</rt></ruby>をもっと<ruby>勉強<rt>べんきょう</rt></ruby>したいです。",
+        "romaji": "Nihongo o motto benkyou shitai desu.",
+        "en": "I want to study Japanese more."
+      },
+      {
+        "jp": "もっと<ruby>時間<rt>じかん</rt></ruby>がほしいです。",
+        "romaji": "Motto jikan ga hoshii desu.",
+        "en": "I want more time."
+      },
+      {
+        "jp": "<ruby>友達<rt>ともだち</rt></ruby>に<ruby>手伝<rt>てつだ</rt></ruby>ってほしいです。",
+        "romaji": "Tomodachi ni tetsudatte hoshii desu.",
+        "en": "I want my friend to help me."
+      },
+      {
+        "jp": "<ruby>早<rt>はや</rt></ruby>く<ruby>治<rt>なお</rt></ruby>ってほしいです。",
+        "romaji": "Hayaku naotte hoshii desu.",
+        "en": "I want it to get better soon."
+      }
+    ]
+  },
+  "intStep10": {
+    "vocabulary": [
+      {
+        "kana": "から / だから",
+        "kanji": "から / だから",
+        "romaji": "kara / dakara",
+        "meaning": "because / so (casual)"
+      },
+      {
+        "kana": "ので / なので",
+        "kanji": "ので / なので",
+        "romaji": "node / nanode",
+        "meaning": "because / so (polite)"
+      },
+      {
+        "kana": "よてい",
+        "kanji": "予定",
+        "romaji": "yotei",
+        "meaning": "plan / schedule"
+      },
+      {
+        "kana": "しゅうまつ",
+        "kanji": "週末",
+        "romaji": "shuumatsu",
+        "meaning": "weekend"
+      },
+      {
+        "kana": "ざんぎょう",
+        "kanji": "残業",
+        "romaji": "zangyou",
+        "meaning": "overtime work"
+      },
+      {
+        "kana": "かいぎ",
+        "kanji": "会議",
+        "romaji": "kaigi",
+        "meaning": "meeting"
+      },
+      {
+        "kana": "かぞく",
+        "kanji": "家族",
+        "romaji": "kazoku",
+        "meaning": "family"
+      },
+      {
+        "kana": "いそがしい",
+        "kanji": "忙しい",
+        "romaji": "isogashii",
+        "meaning": "busy"
+      },
+      {
+        "kana": "やすい",
+        "kanji": "安い",
+        "romaji": "yasui",
+        "meaning": "cheap"
+      },
+      {
+        "kana": "いけません",
+        "kanji": "行けません",
+        "romaji": "ikemasen",
+        "meaning": "cannot go"
+      },
+      {
+        "kana": "できませんでした",
+        "kanji": "できませんでした",
+        "romaji": "dekimasen deshita",
+        "meaning": "couldn't do"
+      },
+      {
+        "kana": "れんらく",
+        "kanji": "連絡",
+        "romaji": "renraku",
+        "meaning": "contact"
+      }
+    ],
+    "examples": [
+      {
+        "jp": "<ruby>雨<rt>あめ</rt></ruby>が<ruby>降<rt>ふ</rt></ruby>っているから、<ruby>家<rt>いえ</rt></ruby>にいます。",
+        "romaji": "Ame ga futte iru kara, ie ni imasu.",
+        "en": "Because it is raining, I am at home."
+      },
+      {
+        "jp": "<ruby>病気<rt>びょうき</rt></ruby>なので、<ruby>会社<rt>かいしゃ</rt></ruby>を<ruby>休<rt>やす</rt></ruby>みます。",
+        "romaji": "Byouki na node, kaisha o yasumimasu.",
+        "en": "Because I am sick, I will take the day off."
+      },
+      {
+        "jp": "<ruby>昨日<rt>きのう</rt></ruby>は<ruby>忙<rt>いそが</rt></ruby>しかったです。だから、<ruby>連絡<rt>れんらく</rt></ruby>できませんでした。",
+        "romaji": "Kinou wa isogashikatta desu. Dakara, renraku dekimasen deshita.",
+        "en": "I was busy yesterday. So I couldn't contact you."
+      },
+      {
+        "jp": "<ruby>明日<rt>あした</rt></ruby>は<ruby>試験<rt>しけん</rt></ruby>です。なので、<ruby>今日<rt>きょう</rt></ruby>は<ruby>早<rt>はや</rt></ruby>く<ruby>寝<rt>ね</rt></ruby>ます。",
+        "romaji": "Ashita wa shiken desu. Nanode, kyou wa hayaku nemasu.",
+        "en": "Tomorrow is an exam. So I will sleep early tonight."
+      }
+    ]
+  },
+  "intStep11": {
+    "vocabulary": [
+      {
+        "kana": "しゅみ",
+        "kanji": "趣味",
+        "romaji": "shumi",
+        "meaning": "hobby"
+      },
+      {
+        "kana": "おんがく",
+        "kanji": "音楽",
+        "romaji": "ongaku",
+        "meaning": "music"
+      },
+      {
+        "kana": "りょうり",
+        "kanji": "料理",
+        "romaji": "ryouri",
+        "meaning": "cooking / dish"
+      },
+      {
+        "kana": "りょこう",
+        "kanji": "旅行",
+        "romaji": "ryokou",
+        "meaning": "travel"
+      },
+      {
+        "kana": "しゃしん",
+        "kanji": "写真",
+        "romaji": "shashin",
+        "meaning": "photo"
+      },
+      {
+        "kana": "～こと",
+        "kanji": "～こと",
+        "romaji": "... koto",
+        "meaning": "turning verbs into nouns"
+      },
+      {
+        "kana": "～ことが すきです",
+        "kanji": "～ことが好きです",
+        "romaji": "... koto ga suki desu",
+        "meaning": "like doing ~"
+      },
+      {
+        "kana": "ひく",
+        "kanji": "弾く",
+        "romaji": "hiku",
+        "meaning": "to play (instrument)"
+      },
+      {
+        "kana": "とる",
+        "kanji": "撮る",
+        "romaji": "toru",
+        "meaning": "to take (photo)"
+      },
+      {
+        "kana": "しゅうに いちど",
+        "kanji": "週に一度",
+        "romaji": "shuu ni ichido",
+        "meaning": "once a week"
+      },
+      {
+        "kana": "さいきん",
+        "kanji": "最近",
+        "romaji": "saikin",
+        "meaning": "recently"
+      },
+      {
+        "kana": "どんな",
+        "kanji": "どんな",
+        "romaji": "donna",
+        "meaning": "what kind of"
+      }
+    ],
+    "examples": [
+      {
+        "jp": "<ruby>私<rt>わたし</rt></ruby>の<ruby>趣味<rt>しゅみ</rt></ruby>は<ruby>映画<rt>えいが</rt></ruby>を<ruby>見<rt>み</rt></ruby>ることです。",
+        "romaji": "Watashi no shumi wa eiga o miru koto desu.",
+        "en": "My hobby is watching movies."
+      },
+      {
+        "jp": "<ruby>私<rt>わたし</rt></ruby>は<ruby>料理<rt>りょうり</rt></ruby>を<ruby>作<rt>つく</rt></ruby>ることが<ruby>好<rt>す</rt></ruby>きです。",
+        "romaji": "Watashi wa ryouri o tsukuru koto ga suki desu.",
+        "en": "I like cooking."
+      },
+      {
+        "jp": "<ruby>週<rt>しゅう</rt></ruby>に<ruby>二度<rt>にど</rt></ruby>くらいギターを<ruby>弾<rt>ひ</rt></ruby>きます。",
+        "romaji": "Shuu ni nido kurai gitaa o hikimasu.",
+        "en": "I play the guitar about twice a week."
+      },
+      {
+        "jp": "<ruby>趣味<rt>しゅみ</rt></ruby>はなんですか？ ーー <ruby>最近<rt>さいきん</rt></ruby>ヨガを<ruby>始<rt>はじ</rt></ruby>めました。",
+        "romaji": "Shumi wa nan desu ka? -- Saikin yoga o hajimemashita.",
+        "en": "What is your hobby? -- I recently started yoga."
+      }
+    ]
+  },
+  "intStep12": {
+    "vocabulary": [
+      {
+        "kana": "しゅうまつ",
+        "kanji": "週末",
+        "romaji": "shuumatsu",
+        "meaning": "weekend"
+      },
+      {
+        "kana": "よてい",
+        "kanji": "予定",
+        "romaji": "yotei",
+        "meaning": "plan / schedule"
+      },
+      {
+        "kana": "えいがかん",
+        "kanji": "映画館",
+        "romaji": "eigakan",
+        "meaning": "cinema"
+      },
+      {
+        "kana": "～つもりです",
+        "kanji": "～つもりです",
+        "romaji": "... tsumori desu",
+        "meaning": "plan to / intend to"
+      },
+      {
+        "kana": "～に いきます",
+        "kanji": "～に行きます",
+        "romaji": "... ni ikimasu",
+        "meaning": "go to do (purpose)"
+      },
+      {
+        "kana": "きめる / きめていません",
+        "kanji": "決める / 決めていません",
+        "romaji": "kimeru / kimeteimasen",
+        "meaning": "to decide / haven\\'t decided"
+      },
+      {
+        "kana": "あう",
+        "kanji": "会う",
+        "romaji": "au",
+        "meaning": "to meet"
+      },
+      {
+        "kana": "よく",
+        "kanji": "よく",
+        "romaji": "yoku",
+        "meaning": "often"
+      },
+      {
+        "kana": "ときどき",
+        "kanji": "時々",
+        "romaji": "tokidoki",
+        "meaning": "sometimes"
+      },
+      {
+        "kana": "～ませんか？",
+        "kanji": "～ませんか？",
+        "romaji": "... masen ka?",
+        "meaning": "Would you like to...?"
+      },
+      {
+        "kana": "～ましょう！",
+        "kanji": "～ましょう！",
+        "romaji": "... mashou!",
+        "meaning": "Let's do...!"
+      },
+      {
+        "kana": "たのしみにしています",
+        "kanji": "楽しみにしています",
+        "romaji": "tanoshimi ni shiteimasu",
+        "meaning": "looking forward to it"
+      }
+    ],
+    "examples": [
+      {
+        "jp": "<ruby>週末<rt>しゅうまつ</rt></ruby>に<ruby>映画<rt>えいが</rt></ruby>を<ruby>見<rt>み</rt></ruby>に<ruby>行<rt>い</rt></ruby>くつもりです。",
+        "romaji": "Shuumatsu ni eiga o mi ni iku tsumori desu.",
+        "en": "I plan to go watch a movie this weekend."
+      },
+      {
+        "jp": "<ruby>一緒<rt>いっしょ</rt></ruby>にごはんを<ruby>食<rt>た</rt></ruby>べませんか？",
+        "romaji": "Issho ni gohan o tabemasen ka?",
+        "en": "Would you like to eat together?"
+      },
+      {
+        "jp": "<ruby>週末<rt>しゅうまつ</rt></ruby>はよく<ruby>友達<rt>ともだち</rt></ruby>と<ruby>出<rt>で</rt></ruby>かけます。",
+        "romaji": "Shuumatsu wa yoku tomodachi to dekakemasu.",
+        "en": "On weekends I often go out with friends."
+      },
+      {
+        "jp": "まだ<ruby>決<rt>き</rt></ruby>めていません。<ruby>特<rt>とく</rt></ruby>に<ruby>予定<rt>よてい</rt></ruby>はありません。",
+        "romaji": "Mada kimeteimasen. Toku ni yotei wa arimasen.",
+        "en": "I haven't decided yet. I don't have any particular plans."
+      }
+    ]
+  },
+  "pracStep01": {
+    "vocabulary": [],
+    "examples": []
+  },
+  "pracStep02": {
+    "vocabulary": [],
+    "examples": []
+  },
+  "pracStep03": {
+    "vocabulary": [],
+    "examples": []
+  },
+  "pracStep04": {
+    "vocabulary": [],
+    "examples": []
+  },
+  "pracStep05": {
+    "vocabulary": [],
+    "examples": []
+  },
+  "pracStep06": {
+    "vocabulary": [],
+    "examples": []
+  },
+  "pracStep07": {
+    "vocabulary": [],
+    "examples": []
+  },
+  "pracStep08": {
+    "vocabulary": [],
+    "examples": []
+  },
+  "pracStep09": {
+    "vocabulary": [],
+    "examples": []
+  },
+  "pracStep10": {
+    "vocabulary": [],
+    "examples": []
+  },
+  "pracStep11": {
+    "vocabulary": [],
+    "examples": []
+  },
+  "pracStep12": {
+    "vocabulary": [],
+    "examples": []
+  },
+  "pracStep13": {
+    "vocabulary": [],
+    "examples": []
+  }
+}
