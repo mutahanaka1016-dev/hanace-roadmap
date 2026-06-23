@@ -73,8 +73,8 @@ vocabulary
 追加（ついか） / Addition
 主観的（しゅかんてき） / Personal / Subjective
 客観的（かいかんてき） / Objective
-予算（よさん） / よさんが足りない / Budget / Insufficient budget
-経済（けいざい） / せいちょう / Economy / Growth
+予算（よさん） / Budget / Insufficient budget
+経済（けいざい） / Economy / Growth
 物価（ぶっか） / Prices (cost of living)
 しかも / What's more
 けれど / But / However
@@ -206,7 +206,7 @@ vocabulary
 必要不可欠（ひつようふかけつ） / Indispensable
 自己評価（じこひょうか） / Self-esteem
 規制（きせい） / Regulation
-創造性（そうぞうせい） / きょうかん / Creativity / Empathy
+創造性（そうぞうせい） / Creativity / Empathy
 共存（きょうそん） / Coexist
 〜ではないでしょうか / Isn't it the case that ~?
 """
