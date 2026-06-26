@@ -217,4 +217,50 @@ onAuthStateChanged(auth, async (user) => {
             const docSnap = await getDoc(userRef);
             let needsReload = false;
             
-            if (docSnap.exi
+            if (docSnap.exists()) {
+                const data = docSnap.data();
+                
+                // Check cheat sheet progress
+                if (data.cheatSheetProgress) {
+                    const cloudCheat = JSON.stringify(data.cheatSheetProgress);
+                    const localCheat = localStorage.getItem('hanaBananaCheatSheetProgress');
+                    if (cloudCheat !== localCheat) {
+                        originalSetItem.call(localStorage, 'hanaBananaCheatSheetProgress', cloudCheat);
+                        needsReload = true;
+                    }
+                }
+                
+                // Check saved vocab
+                if (data.savedVocab) {
+                    const cloudVocab = JSON.stringify(data.savedVocab);
+                    const localVocab = localStorage.getItem('hanaBananaSavedVocab');
+                    if (cloudVocab !== localVocab) {
+                        originalSetItem.call(localStorage, 'hanaBananaSavedVocab', cloudVocab);
+                        needsReload = true;
+                    }
+                }
+            } else {
+                // First login, push local data to Firebase
+                const localCheat = localStorage.getItem('hanaBananaCheatSheetProgress');
+                const localVocab = localStorage.getItem('hanaBananaSavedVocab');
+                const updates = {};
+                if (localCheat) updates.cheatSheetProgress = JSON.parse(localCheat);
+                if (localVocab) updates.savedVocab = JSON.parse(localVocab);
+                if (Object.keys(updates).length > 0) {
+                    await setDoc(userRef, updates);
+                }
+            }
+            
+            if (needsReload) {
+                window.location.reload();
+            }
+        } catch (e) {
+            console.error("Error syncing Firebase data", e);
+        }
+
+    } else {
+        window.HanaAuth.user = null;
+        window.hanaAuthOverlay.style.display = 'flex';
+        showAuthModal();
+    }
+});
