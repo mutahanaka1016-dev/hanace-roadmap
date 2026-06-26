@@ -21,6 +21,9 @@ window.HanaAuth = {
     user: null,
     logout() {
         signOut(auth).then(() => {
+            localStorage.removeItem('hanaBananaCheatSheetProgress');
+            localStorage.removeItem('hanaBananaSavedVocab');
+            sessionStorage.removeItem('hanaSyncDone');
             window.location.reload();
         });
     }
@@ -211,6 +214,9 @@ onAuthStateChanged(auth, async (user) => {
             actionsDiv.appendChild(logoutBtn);
         }
         
+        // Skip sync if already done in this session
+        if (sessionStorage.getItem('hanaSyncDone')) return;
+        
         // Sync from Firebase
         try {
             const userRef = doc(db, "users", user.uid);
@@ -220,21 +226,21 @@ onAuthStateChanged(auth, async (user) => {
             if (docSnap.exists()) {
                 const data = docSnap.data();
                 
-                // Check cheat sheet progress
+                // Only pull from cloud if local is empty, or if we want to force merge
+                // Actually, since this is a new session, we assume Cloud is the source of truth
+                // unless local has data that isn't pushed yet.
+                // Safest: always accept Cloud data on a fresh session start.
                 if (data.cheatSheetProgress) {
                     const cloudCheat = JSON.stringify(data.cheatSheetProgress);
-                    const localCheat = localStorage.getItem('hanaBananaCheatSheetProgress');
-                    if (cloudCheat !== localCheat) {
+                    if (cloudCheat !== localStorage.getItem('hanaBananaCheatSheetProgress')) {
                         originalSetItem.call(localStorage, 'hanaBananaCheatSheetProgress', cloudCheat);
                         needsReload = true;
                     }
                 }
                 
-                // Check saved vocab
                 if (data.savedVocab) {
                     const cloudVocab = JSON.stringify(data.savedVocab);
-                    const localVocab = localStorage.getItem('hanaBananaSavedVocab');
-                    if (cloudVocab !== localVocab) {
+                    if (cloudVocab !== localStorage.getItem('hanaBananaSavedVocab')) {
                         originalSetItem.call(localStorage, 'hanaBananaSavedVocab', cloudVocab);
                         needsReload = true;
                     }
@@ -251,9 +257,9 @@ onAuthStateChanged(auth, async (user) => {
                 }
             }
             
-            if (needsReload) {
-                window.location.reload();
-            }
+            sessionStorage.setItem('hanaSyncDone', 'true');
+            if (needsReload) window.location.reload();
+            
         } catch (e) {
             console.error("Error syncing Firebase data", e);
         }
