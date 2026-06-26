@@ -226,23 +226,37 @@ onAuthStateChanged(auth, async (user) => {
             if (docSnap.exists()) {
                 const data = docSnap.data();
                 
-                // Only pull from cloud if local is empty, or if we want to force merge
-                // Actually, since this is a new session, we assume Cloud is the source of truth
-                // unless local has data that isn't pushed yet.
-                // Safest: always accept Cloud data on a fresh session start.
+                // Check cheat sheet progress
                 if (data.cheatSheetProgress) {
-                    const cloudCheat = JSON.stringify(data.cheatSheetProgress);
-                    if (cloudCheat !== localStorage.getItem('hanaBananaCheatSheetProgress')) {
-                        originalSetItem.call(localStorage, 'hanaBananaCheatSheetProgress', cloudCheat);
-                        needsReload = true;
+                    const localCheatStr = localStorage.getItem('hanaBananaCheatSheetProgress');
+                    const localCheatObj = localCheatStr ? JSON.parse(localCheatStr) : {};
+                    const cloudCheatKeys = Object.keys(data.cheatSheetProgress).length;
+                    const localCheatKeys = Object.keys(localCheatObj).length;
+                    
+                    if (cloudCheatKeys >= localCheatKeys) {
+                        const cloudCheatStr = JSON.stringify(data.cheatSheetProgress);
+                        if (cloudCheatStr !== localCheatStr) {
+                            originalSetItem.call(localStorage, 'hanaBananaCheatSheetProgress', cloudCheatStr);
+                            needsReload = true;
+                        }
+                    } else {
+                        setDoc(userRef, { cheatSheetProgress: localCheatObj }, { merge: true });
                     }
                 }
                 
+                // Check saved vocab
                 if (data.savedVocab) {
-                    const cloudVocab = JSON.stringify(data.savedVocab);
-                    if (cloudVocab !== localStorage.getItem('hanaBananaSavedVocab')) {
-                        originalSetItem.call(localStorage, 'hanaBananaSavedVocab', cloudVocab);
-                        needsReload = true;
+                    const localVocabStr = localStorage.getItem('hanaBananaSavedVocab');
+                    const localVocabArr = localVocabStr ? JSON.parse(localVocabStr) : [];
+                    
+                    if (data.savedVocab.length >= localVocabArr.length) {
+                        const cloudVocabStr = JSON.stringify(data.savedVocab);
+                        if (cloudVocabStr !== localVocabStr) {
+                            originalSetItem.call(localStorage, 'hanaBananaSavedVocab', cloudVocabStr);
+                            needsReload = true;
+                        }
+                    } else {
+                        setDoc(userRef, { savedVocab: localVocabArr }, { merge: true });
                     }
                 }
             } else {
