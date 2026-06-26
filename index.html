@@ -2,18 +2,7 @@
 <html lang="ja">
 
 <head>
-    <script>
-      const password = "hanace.nihongo";
-      if (sessionStorage.getItem('auth') !== 'true') {
-        const input = prompt("Password");
-        if (input === password) {
-          sessionStorage.setItem('auth', 'true');
-        } else {
-          alert("パスワードが違います。");
-          window.location.reload();
-        }
-      }
-    </script>
+    <script src="auth.js" type="module"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Roadmap | Hana Banana Japanese</title>
