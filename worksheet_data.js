@@ -3,1566 +3,1566 @@ const worksheetData = {
     {
       "id": "beginner_v_1",
       "category": "vocab",
-      "question": "What is the meaning of '<ruby>犬<rt>いぬ</rt></ruby>'?",
+      "question": "What is the meaning of '<ruby>私<rt>わたし</rt></ruby>'?",
       "options": [
-        "New",
-        "School",
-        "Dog",
-        "Yesterday"
+        "I / myself",
+        "person",
+        "window",
+        "heavy"
       ],
-      "answer": 2,
-      "explanation": "'<ruby>犬<rt>いぬ</rt></ruby>' means 'Dog'."
+      "answer": 0,
+      "explanation": "'<ruby>私<rt>わたし</rt></ruby>' means 'I / myself'."
     },
     {
       "id": "beginner_v_2",
       "category": "vocab",
-      "question": "What is the meaning of '<ruby>猫<rt>ねこ</rt></ruby>'?",
+      "question": "What is the meaning of '<ruby>人<rt>ひと</rt></ruby>'?",
       "options": [
-        "Teacher",
-        "School",
-        "Cat",
-        "Dog"
+        "person",
+        "bag",
+        "cooking / cuisine",
+        "student"
       ],
-      "answer": 2,
-      "explanation": "'<ruby>猫<rt>ねこ</rt></ruby>' means 'Cat'."
+      "answer": 0,
+      "explanation": "'<ruby>人<rt>ひと</rt></ruby>' means 'person'."
     },
     {
       "id": "beginner_v_3",
       "category": "vocab",
-      "question": "What is the meaning of '<ruby>食<rt>た</rt></ruby>べる'?",
+      "question": "What is the meaning of '<ruby>男<rt>おとこ</rt></ruby>'?",
       "options": [
-        "Old",
-        "Small",
-        "Cheap",
-        "To eat"
+        "far",
+        "man",
+        "early / fast",
+        "dog"
       ],
-      "answer": 3,
-      "explanation": "'<ruby>食<rt>た</rt></ruby>べる' means 'To eat'."
+      "answer": 1,
+      "explanation": "'<ruby>男<rt>おとこ</rt></ruby>' means 'man'."
     },
     {
       "id": "beginner_v_4",
       "category": "vocab",
-      "question": "What is the meaning of '<ruby>飲<rt>の</rt></ruby>む'?",
+      "question": "What is the meaning of '<ruby>女<rt>おんな</rt></ruby>'?",
       "options": [
-        "Old",
-        "Book",
-        "Cat",
-        "To drink"
+        "woman",
+        "library",
+        "light (weight)",
+        "big"
       ],
-      "answer": 3,
-      "explanation": "'<ruby>飲<rt>の</rt></ruby>む' means 'To drink'."
+      "answer": 0,
+      "explanation": "'<ruby>女<rt>おんな</rt></ruby>' means 'woman'."
     },
     {
       "id": "beginner_v_5",
       "category": "vocab",
-      "question": "What is the meaning of '<ruby>行<rt>い</rt></ruby>く'?",
+      "question": "What is the meaning of '<ruby>子<rt>こ</rt></ruby>'?",
       "options": [
-        "To go",
-        "Dog",
-        "Book",
-        "To eat"
+        "ship / boat",
+        "cold (things)",
+        "child",
+        "glasses"
       ],
-      "answer": 0,
-      "explanation": "'<ruby>行<rt>い</rt></ruby>く' means 'To go'."
+      "answer": 2,
+      "explanation": "'<ruby>子<rt>こ</rt></ruby>' means 'child'."
     },
     {
       "id": "beginner_v_6",
       "category": "vocab",
-      "question": "What is the meaning of '<ruby>本<rt>ほん</rt></ruby>'?",
+      "question": "What is the meaning of '<ruby>友達<rt>ともだち</rt></ruby>'?",
       "options": [
-        "Book",
-        "Old",
-        "Car",
-        "Yesterday"
+        "difficult",
+        "friend",
+        "ship / boat",
+        "bank"
       ],
-      "answer": 0,
-      "explanation": "'<ruby>本<rt>ほん</rt></ruby>' means 'Book'."
+      "answer": 1,
+      "explanation": "'<ruby>友達<rt>ともだち</rt></ruby>' means 'friend'."
     },
     {
       "id": "beginner_v_7",
       "category": "vocab",
-      "question": "What is the meaning of '<ruby>車<rt>くるま</rt></ruby>'?",
+      "question": "What is the meaning of '<ruby>学生<rt>がくせい</rt></ruby>'?",
       "options": [
-        "Tomorrow",
-        "Car",
-        "Cat",
-        "To go"
+        "egg",
+        "student",
+        "station",
+        "painful"
       ],
       "answer": 1,
-      "explanation": "'<ruby>車<rt>くるま</rt></ruby>' means 'Car'."
+      "explanation": "'<ruby>学生<rt>がくせい</rt></ruby>' means 'student'."
     },
     {
       "id": "beginner_v_8",
       "category": "vocab",
-      "question": "What is the meaning of '<ruby>水<rt>みず</rt></ruby>'?",
+      "question": "What is the meaning of '<ruby>先生<rt>せんせい</rt></ruby>'?",
       "options": [
-        "Book",
-        "Big",
-        "Water",
-        "High/Expensive"
+        "beautiful / clean",
+        "teacher",
+        "newspaper",
+        "interesting"
       ],
-      "answer": 2,
-      "explanation": "'<ruby>水<rt>みず</rt></ruby>' means 'Water'."
+      "answer": 1,
+      "explanation": "'<ruby>先生<rt>せんせい</rt></ruby>' means 'teacher'."
     },
     {
       "id": "beginner_v_9",
       "category": "vocab",
-      "question": "What is the meaning of '<ruby>先生<rt>せんせい</rt></ruby>'?",
+      "question": "What is the meaning of '<ruby>学校<rt>がっこう</rt></ruby>'?",
       "options": [
-        "Yesterday",
-        "Teacher",
-        "To go",
-        "Cat"
+        "easy",
+        "school",
+        "color",
+        "child"
       ],
       "answer": 1,
-      "explanation": "'<ruby>先生<rt>せんせい</rt></ruby>' means 'Teacher'."
+      "explanation": "'<ruby>学校<rt>がっこう</rt></ruby>' means 'school'."
     },
     {
       "id": "beginner_v_10",
       "category": "vocab",
-      "question": "What is the meaning of '<ruby>学生<rt>がくせい</rt></ruby>'?",
+      "question": "What is the meaning of '<ruby>本<rt>ほん</rt></ruby>'?",
       "options": [
-        "Student",
-        "Big",
-        "To go",
-        "Tomorrow"
+        "subway",
+        "ship / boat",
+        "shop / store",
+        "book"
       ],
-      "answer": 0,
-      "explanation": "'<ruby>学生<rt>がくせい</rt></ruby>' means 'Student'."
+      "answer": 3,
+      "explanation": "'<ruby>本<rt>ほん</rt></ruby>' means 'book'."
     },
     {
       "id": "beginner_v_11",
       "category": "vocab",
-      "question": "What is the meaning of '<ruby>学校<rt>がっこう</rt></ruby>'?",
+      "question": "What is the meaning of '<ruby>辞書<rt>じしょ</rt></ruby>'?",
       "options": [
-        "To eat",
-        "Teacher",
-        "School",
-        "Yesterday"
+        "new",
+        "dictionary",
+        "late / slow",
+        "good"
       ],
-      "answer": 2,
-      "explanation": "'<ruby>学校<rt>がっこう</rt></ruby>' means 'School'."
+      "answer": 1,
+      "explanation": "'<ruby>辞書<rt>じしょ</rt></ruby>' means 'dictionary'."
     },
     {
       "id": "beginner_v_12",
       "category": "vocab",
-      "question": "What is the meaning of '<ruby>今日<rt>きょう</rt></ruby>'?",
+      "question": "What is the meaning of '<ruby>雑誌<rt>ざっし</rt></ruby>'?",
       "options": [
-        "Water",
-        "Today",
-        "Big",
-        "Cheap"
+        "fun",
+        "black",
+        "busy",
+        "magazine"
       ],
-      "answer": 1,
-      "explanation": "'<ruby>今日<rt>きょう</rt></ruby>' means 'Today'."
+      "answer": 3,
+      "explanation": "'<ruby>雑誌<rt>ざっし</rt></ruby>' means 'magazine'."
     },
     {
       "id": "beginner_v_13",
       "category": "vocab",
-      "question": "What is the meaning of '<ruby>明日<rt>あした</rt></ruby>'?",
+      "question": "What is the meaning of '<ruby>新聞<rt>しんぶん</rt></ruby>'?",
       "options": [
-        "Tomorrow",
-        "Cheap",
-        "School",
-        "Old"
+        "umbrella",
+        "light (weight)",
+        "quiet",
+        "newspaper"
       ],
-      "answer": 0,
-      "explanation": "'<ruby>明日<rt>あした</rt></ruby>' means 'Tomorrow'."
+      "answer": 3,
+      "explanation": "'<ruby>新聞<rt>しんぶん</rt></ruby>' means 'newspaper'."
     },
     {
       "id": "beginner_v_14",
       "category": "vocab",
-      "question": "What is the meaning of '<ruby>昨日<rt>きのう</rt></ruby>'?",
+      "question": "What is the meaning of '<ruby>ノート<rt>のーと</rt></ruby>'?",
       "options": [
-        "High/Expensive",
-        "Cheap",
-        "Yesterday",
-        "Today"
+        "cooked rice / meal",
+        "I / myself",
+        "notebook",
+        "person"
       ],
       "answer": 2,
-      "explanation": "'<ruby>昨日<rt>きのう</rt></ruby>' means 'Yesterday'."
+      "explanation": "'<ruby>ノート<rt>のーと</rt></ruby>' means 'notebook'."
     },
     {
       "id": "beginner_v_15",
       "category": "vocab",
-      "question": "What is the meaning of '<ruby>大<rt>おお</rt></ruby>きい'?",
+      "question": "What is the meaning of '<ruby>手帳<rt>てちょう</rt></ruby>'?",
       "options": [
-        "Big",
-        "To drink",
-        "Cat",
-        "Dog"
+        "fish",
+        "far",
+        "pocket notebook",
+        "to dislike"
       ],
-      "answer": 0,
-      "explanation": "'<ruby>大<rt>おお</rt></ruby>きい' means 'Big'."
+      "answer": 2,
+      "explanation": "'<ruby>手帳<rt>てちょう</rt></ruby>' means 'pocket notebook'."
     },
     {
       "id": "beginner_v_16",
       "category": "vocab",
-      "question": "What is the meaning of '<ruby>小<rt>ちい</rt></ruby>さい'?",
+      "question": "What is the meaning of '<ruby>名刺<rt>めいし</rt></ruby>'?",
       "options": [
-        "Water",
-        "Old",
-        "Dog",
-        "Small"
+        "cooked rice / meal",
+        "business card",
+        "ship / boat",
+        "room"
       ],
-      "answer": 3,
-      "explanation": "'<ruby>小<rt>ちい</rt></ruby>さい' means 'Small'."
+      "answer": 1,
+      "explanation": "'<ruby>名刺<rt>めいし</rt></ruby>' means 'business card'."
     },
     {
       "id": "beginner_v_17",
       "category": "vocab",
-      "question": "What is the meaning of '<ruby>新<rt>あたら</rt></ruby>しい'?",
+      "question": "What is the meaning of '<ruby>鉛筆<rt>えんぴつ</rt></ruby>'?",
       "options": [
-        "Tomorrow",
-        "New",
-        "Yesterday",
-        "To drink"
+        "dog",
+        "pencil",
+        "heavy",
+        "meat"
       ],
       "answer": 1,
-      "explanation": "'<ruby>新<rt>あたら</rt></ruby>しい' means 'New'."
+      "explanation": "'<ruby>鉛筆<rt>えんぴつ</rt></ruby>' means 'pencil'."
     },
     {
       "id": "beginner_v_18",
       "category": "vocab",
-      "question": "What is the meaning of '<ruby>古<rt>ふる</rt></ruby>い'?",
+      "question": "What is the meaning of '<ruby>時計<rt>とけい</rt></ruby>'?",
       "options": [
-        "Student",
-        "Cheap",
-        "Old",
-        "High/Expensive"
+        "airplane",
+        "watch / clock",
+        "magazine",
+        "spicy"
       ],
-      "answer": 2,
-      "explanation": "'<ruby>古<rt>ふる</rt></ruby>い' means 'Old'."
+      "answer": 1,
+      "explanation": "'<ruby>時計<rt>とけい</rt></ruby>' means 'watch / clock'."
     },
     {
       "id": "beginner_v_19",
       "category": "vocab",
-      "question": "What is the meaning of '<ruby>高<rt>たか</rt></ruby>い'?",
+      "question": "What is the meaning of '<ruby>傘<rt>かさ</rt></ruby>'?",
       "options": [
-        "High/Expensive",
-        "To eat",
-        "Teacher",
-        "Cat"
+        "bag",
+        "umbrella",
+        "old",
+        "cheap"
       ],
-      "answer": 0,
-      "explanation": "'<ruby>高<rt>たか</rt></ruby>い' means 'High/Expensive'."
+      "answer": 1,
+      "explanation": "'<ruby>傘<rt>かさ</rt></ruby>' means 'umbrella'."
     },
     {
       "id": "beginner_v_20",
       "category": "vocab",
-      "question": "What is the meaning of '<ruby>安<rt>やす</rt></ruby>い'?",
+      "question": "What is the meaning of '<ruby>鞄<rt>かばん</rt></ruby>'?",
       "options": [
-        "Yesterday",
-        "Cheap",
-        "Cat",
-        "Today"
+        "bad",
+        "bread",
+        "bag",
+        "egg"
       ],
-      "answer": 1,
-      "explanation": "'<ruby>安<rt>やす</rt></ruby>い' means 'Cheap'."
+      "answer": 2,
+      "explanation": "'<ruby>鞄<rt>かばん</rt></ruby>' means 'bag'."
     },
     {
       "id": "beginner_g_1",
       "category": "grammar",
-      "question": "Choose the correct particle: わたし ___ <ruby>学生<rt>がくせい</rt></ruby>です。",
+      "question": "Translate: '<ruby>山<rt>やま</rt></ruby>の<ruby>水<rt>みず</rt></ruby>はきれいです。'",
       "options": [
-        "を",
-        "が",
-        "は",
-        "に"
+        "That was a car.",
+        "This was not a book.",
+        "This ramen was delicious.",
+        "The water in the mountain is clean."
       ],
-      "answer": 2,
-      "explanation": "The particle 'は' (wa) marks the topic of the sentence."
+      "answer": 3,
+      "explanation": "'<ruby>山<rt>やま</rt></ruby>の<ruby>水<rt>みず</rt></ruby>はきれいです。' translates to 'The water in the mountain is clean.'."
     },
     {
       "id": "beginner_g_2",
       "category": "grammar",
-      "question": "How do you say 'It is not a dog'?",
+      "question": "Translate: '<ruby>今日<rt>きょう</rt></ruby>は<ruby>東京<rt>とうきょう</rt></ruby>で<ruby>火<rt>ひ</rt></ruby>まつりがあります。'",
       "options": [
-        "<ruby>犬<rt>いぬ</rt></ruby>ではありませんでした",
-        "<ruby>犬<rt>いぬ</rt></ruby>でした",
-        "<ruby>犬<rt>いぬ</rt></ruby>です",
-        "<ruby>犬<rt>いぬ</rt></ruby>ではありません"
+        "What do you recommend?",
+        "She is kind.",
+        "Yes, they were very kind.",
+        "Today there is a fire festival in Tokyo."
       ],
       "answer": 3,
-      "explanation": "'ではありません' is the present negative form for nouns."
+      "explanation": "'<ruby>今日<rt>きょう</rt></ruby>は<ruby>東京<rt>とうきょう</rt></ruby>で<ruby>火<rt>ひ</rt></ruby>まつりがあります。' translates to 'Today there is a fire festival in Tokyo.'."
     },
     {
       "id": "beginner_g_3",
       "category": "grammar",
-      "question": "What is the past tense of '<ruby>食<rt>た</rt></ruby>べる' (to eat) in polite form?",
+      "question": "Translate: '<ruby>日本<rt>にほん</rt></ruby>の<ruby>人口<rt>じんこう</rt></ruby>はおおいです。'",
       "options": [
-        "<ruby>食<rt>た</rt></ruby>べません",
-        "<ruby>食<rt>た</rt></ruby>べます",
-        "<ruby>食<rt>た</rt></ruby>べました",
-        "<ruby>食<rt>た</rt></ruby>べませんでした"
+        "Check, please.",
+        "That is a hospital.",
+        "Japan has a large population.",
+        "She is not kind."
       ],
       "answer": 2,
-      "explanation": "'ました' is the polite past tense suffix."
+      "explanation": "'<ruby>日本<rt>にほん</rt></ruby>の<ruby>人口<rt>じんこう</rt></ruby>はおおいです。' translates to 'Japan has a large population.'."
     },
     {
       "id": "beginner_g_4",
       "category": "grammar",
-      "question": "Choose the correct particle: りんご ___ <ruby>食<rt>た</rt></ruby>べます。",
+      "question": "Translate: 'いくらですか？'",
       "options": [
-        "に",
-        "が",
-        "は",
-        "を"
+        "Was it cold yesterday?",
+        "I have a nut allergy.",
+        "That was a car.",
+        "How much is it?"
       ],
       "answer": 3,
-      "explanation": "The particle 'を' (o) marks the direct object."
+      "explanation": "'いくらですか？' translates to 'How much is it?'."
     },
     {
       "id": "beginner_g_5",
       "category": "grammar",
-      "question": "What is the past negative of '<ruby>学生<rt>がくせい</rt></ruby>です'?",
+      "question": "Translate: '<ruby>何時<rt>なんじ</rt></ruby>ですか？'",
       "options": [
-        "<ruby>学生<rt>がくせい</rt></ruby>ではありません",
-        "<ruby>学生<rt>がくせい</rt></ruby>でした",
-        "<ruby>学生<rt>がくせい</rt></ruby>です",
-        "<ruby>学生<rt>がくせい</rt></ruby>ではありませんでした"
+        "That was a car.",
+        "What time is it?",
+        "This was not a book.",
+        "This is a pen."
       ],
-      "answer": 3,
-      "explanation": "'ではありませんでした' is the past negative form for nouns."
+      "answer": 1,
+      "explanation": "'<ruby>何時<rt>なんじ</rt></ruby>ですか？' translates to 'What time is it?'."
     },
     {
       "id": "beginner_g_6",
       "category": "grammar",
-      "question": "Translate: 'I went to the school.'",
+      "question": "Translate: 'りんご<ruby>三個<rt>さんこ</rt></ruby>'",
       "options": [
-        "<ruby>学校<rt>がっこう</rt></ruby>に<ruby>行<rt>い</rt></ruby>きます。",
-        "<ruby>学校<rt>がっこう</rt></ruby>に<ruby>来<rt>き</rt></ruby>ました。",
-        "<ruby>学校<rt>がっこう</rt></ruby>に<ruby>行<rt>い</rt></ruby>きました。",
-        "<ruby>学校<rt>がっこう</rt></ruby>に<ruby>行<rt>い</rt></ruby>きません。"
+        "No, it was not cold. It was warm.",
+        "What time is it?",
+        "That book is interesting.",
+        "three apples"
       ],
-      "answer": 2,
-      "explanation": "<ruby>行<rt>い</rt></ruby>きました is the past tense of 'to go'."
+      "answer": 3,
+      "explanation": "'りんご<ruby>三個<rt>さんこ</rt></ruby>' translates to 'three apples'."
     },
     {
       "id": "beginner_g_7",
       "category": "grammar",
-      "question": "Which particle indicates destination?",
+      "question": "Translate: '<ruby>三人<rt>さんにん</rt></ruby>'",
       "options": [
-        "が",
-        "の",
-        "を",
-        "に"
+        "I am not a doctor.",
+        "That is a hospital.",
+        "This ramen was delicious.",
+        "three people"
       ],
       "answer": 3,
-      "explanation": "'に' or 'へ' marks the destination of movement."
+      "explanation": "'<ruby>三人<rt>さんにん</rt></ruby>' translates to 'three people'."
     },
     {
       "id": "beginner_g_8",
       "category": "grammar",
-      "question": "How do you say 'Let's eat!'?",
+      "question": "Translate: '<ruby>私<rt>わたし</rt></ruby>は<ruby>学生<rt>がくせい</rt></ruby>です。'",
       "options": [
-        "<ruby>食<rt>た</rt></ruby>べましょう",
-        "<ruby>食<rt>た</rt></ruby>べます",
-        "<ruby>食<rt>た</rt></ruby>べたい",
-        "<ruby>食<rt>た</rt></ruby>べて"
+        "It is a little difficult. But it is fun.",
+        "I am a student.",
+        "I am not a doctor.",
+        "Today there is a fire festival in Tokyo."
       ],
-      "answer": 0,
-      "explanation": "'〜ましょう' means 'Let's ~'."
+      "answer": 1,
+      "explanation": "'<ruby>私<rt>わたし</rt></ruby>は<ruby>学生<rt>がくせい</rt></ruby>です。' translates to 'I am a student.'."
     },
     {
       "id": "beginner_g_9",
       "category": "grammar",
-      "question": "Translate: 'This is my book.'",
+      "question": "Translate: '<ruby>私<rt>わたし</rt></ruby>はアメリカ<ruby>人<rt>じん</rt></ruby>です。'",
       "options": [
-        "これは<ruby>本<rt>ほん</rt></ruby>わたしです。",
-        "これはわたし<ruby>本<rt>ほん</rt></ruby>です。",
-        "これはわたしの<ruby>本<rt>ほん</rt></ruby>です。",
-        "わたしはこれの<ruby>本<rt>ほん</rt></ruby>です。"
+        "I am from New York.",
+        "This ramen was delicious.",
+        "I am studying Japanese.",
+        "I am American."
       ],
-      "answer": 2,
-      "explanation": "'の' connects nouns to show possession."
+      "answer": 3,
+      "explanation": "'<ruby>私<rt>わたし</rt></ruby>はアメリカ<ruby>人<rt>じん</rt></ruby>です。' translates to 'I am American.'."
     },
     {
       "id": "beginner_g_10",
       "category": "grammar",
-      "question": "Which adjective means 'delicious'?",
+      "question": "Translate: 'あれは<ruby>車<rt>くるま</rt></ruby>です。'",
       "options": [
-        "<ruby>大<rt>おお</rt></ruby>きい",
-        "たのしい",
-        "おいしい",
-        "むずかしい"
+        "That is a car.",
+        "Japan has a large population.",
+        "I was not a doctor.",
+        "I am not a doctor."
       ],
-      "answer": 2,
-      "explanation": "'おいしい' means delicious."
+      "answer": 0,
+      "explanation": "'あれは<ruby>車<rt>くるま</rt></ruby>です。' translates to 'That is a car.'."
     },
     {
       "id": "beginner_g_11",
       "category": "grammar",
-      "question": "What is the Te-form of '<ruby>食<rt>た</rt></ruby>べる'?",
+      "question": "Translate: '<ruby>私<rt>わたし</rt></ruby>は<ruby>医者<rt>いしゃ</rt></ruby>ではありません。'",
       "options": [
-        "<ruby>食<rt>た</rt></ruby>べって",
-        "<ruby>食<rt>た</rt></ruby>べんで",
-        "<ruby>食<rt>た</rt></ruby>べて",
-        "<ruby>食<rt>た</rt></ruby>べいて"
+        "I was a student.",
+        "I am not a doctor.",
+        "Is Japanese difficult?",
+        "Do you like Japanese?"
       ],
-      "answer": 2,
-      "explanation": "Ru-verbs like '<ruby>食<rt>た</rt></ruby>べる' simply replace 'る' with 'て'."
+      "answer": 1,
+      "explanation": "'<ruby>私<rt>わたし</rt></ruby>は<ruby>医者<rt>いしゃ</rt></ruby>ではありません。' translates to 'I am not a doctor.'."
     },
     {
       "id": "beginner_g_12",
       "category": "grammar",
-      "question": "What is the Te-form of '<ruby>飲<rt>の</rt></ruby>む'?",
+      "question": "Translate: '<ruby>私<rt>わたし</rt></ruby>は<ruby>学生<rt>がくせい</rt></ruby>でした。'",
       "options": [
-        "<ruby>飲<rt>の</rt></ruby>みて",
-        "<ruby>飲<rt>の</rt></ruby>って",
-        "<ruby>飲<rt>の</rt></ruby>いて",
-        "<ruby>飲<rt>の</rt></ruby>んで"
+        "I was a student.",
+        "I am from New York.",
+        "It is a little difficult. But it is fun.",
+        "Is Japanese difficult?"
       ],
-      "answer": 3,
-      "explanation": "Verbs ending in 'む' become 'んで' in Te-form."
+      "answer": 0,
+      "explanation": "'<ruby>私<rt>わたし</rt></ruby>は<ruby>学生<rt>がくせい</rt></ruby>でした。' translates to 'I was a student.'."
     },
     {
       "id": "beginner_g_13",
       "category": "grammar",
-      "question": "Choose the correct particle: <ruby>東京<rt>とうきょう</rt></ruby> ___ <ruby>行<rt>い</rt></ruby>きます。",
+      "question": "Translate: 'あれは<ruby>車<rt>くるま</rt></ruby>でした。'",
       "options": [
-        "に",
-        "を",
-        "が",
-        "で"
+        "I am American.",
+        "That was a car.",
+        "It is a little difficult. But it is fun.",
+        "No, it was not cold. It was warm."
       ],
-      "answer": 0,
-      "explanation": "Particle 'に' indicates destination."
+      "answer": 1,
+      "explanation": "'あれは<ruby>車<rt>くるま</rt></ruby>でした。' translates to 'That was a car.'."
     },
     {
       "id": "beginner_g_14",
       "category": "grammar",
-      "question": "Translate: 'Please eat.'",
+      "question": "Translate: '<ruby>私<rt>わたし</rt></ruby>は<ruby>医者<rt>いしゃ</rt></ruby>ではありませんでした。'",
       "options": [
-        "<ruby>食<rt>た</rt></ruby>べましょう",
-        "<ruby>食<rt>た</rt></ruby>べてください",
-        "<ruby>食<rt>た</rt></ruby>べたい",
-        "<ruby>食<rt>た</rt></ruby>べます"
+        "How much is it?",
+        "That is a car.",
+        "I was not a doctor.",
+        "The water in the mountain is clean."
       ],
-      "answer": 1,
-      "explanation": "Te-form + ください means 'Please do ~'."
+      "answer": 2,
+      "explanation": "'<ruby>私<rt>わたし</rt></ruby>は<ruby>医者<rt>いしゃ</rt></ruby>ではありませんでした。' translates to 'I was not a doctor.'."
     },
     {
       "id": "beginner_g_15",
       "category": "grammar",
-      "question": "How do you say 'want to eat'?",
+      "question": "Translate: 'これは<ruby>本<rt>ほん</rt></ruby>ではありませんでした。'",
       "options": [
-        "<ruby>食<rt>た</rt></ruby>べましょう",
-        "<ruby>食<rt>た</rt></ruby>べて",
-        "<ruby>食<rt>た</rt></ruby>べます",
-        "<ruby>食<rt>た</rt></ruby>べたい"
+        "I am American.",
+        "This was not a book.",
+        "I have a nut allergy.",
+        "That is a hospital."
       ],
-      "answer": 3,
-      "explanation": "Stem + 'たい' expresses desire."
+      "answer": 1,
+      "explanation": "'これは<ruby>本<rt>ほん</rt></ruby>ではありませんでした。' translates to 'This was not a book.'."
     },
     {
       "id": "beginner_g_16",
       "category": "grammar",
-      "question": "Choose the correct counter for small objects (like an apple): りんごを２___ください。",
+      "question": "Translate: 'これは ペンです。'",
       "options": [
-        "<ruby>人<rt>にん</rt></ruby>",
-        "<ruby>枚<rt>まい</rt></ruby>",
-        "<ruby>本<rt>ほん</rt></ruby>",
-        "つ"
+        "This is a pen.",
+        "This ramen is not delicious.",
+        "Yes, they were very kind.",
+        "Was it cold yesterday?"
       ],
-      "answer": 3,
-      "explanation": "'つ' is the general counter for small or abstract objects."
+      "answer": 0,
+      "explanation": "'これは ペンです。' translates to 'This is a pen.'."
     },
     {
       "id": "beginner_g_17",
       "category": "grammar",
-      "question": "How do you say 'I am currently eating'?",
+      "question": "Translate: 'その<ruby>本<rt>ほん</rt></ruby> <ruby>面白<rt>おもしろ</rt></ruby>いです。'",
       "options": [
-        "<ruby>食<rt>た</rt></ruby>べました",
-        "<ruby>食<rt>た</rt></ruby>べます",
-        "<ruby>食<rt>た</rt></ruby>べたいです",
-        "<ruby>食<rt>た</rt></ruby>べています"
+        "That book is interesting.",
+        "What do you recommend?",
+        "This ramen was delicious.",
+        "This ramen is not delicious."
       ],
-      "answer": 3,
-      "explanation": "Te-form + 'います' expresses ongoing action."
+      "answer": 0,
+      "explanation": "'その<ruby>本<rt>ほん</rt></ruby> <ruby>面白<rt>おもしろ</rt></ruby>いです。' translates to 'That book is interesting.'."
     },
     {
       "id": "beginner_g_18",
       "category": "grammar",
-      "question": "What is the negative form of 'おいしい' (delicious)?",
+      "question": "Translate: 'あの<ruby>建物<rt>たてもの</rt></ruby>は<ruby>何<rt>なん</rt></ruby>ですか？'",
       "options": [
-        "おいしくありませんでした",
-        "おいしいじゃない",
-        "おいしいくない",
-        "おいしくない"
+        "Was it cold yesterday?",
+        "What is that building over there?",
+        "three apples",
+        "I am American."
       ],
-      "answer": 3,
-      "explanation": "For i-adjectives, drop 'い' and add 'くない'."
+      "answer": 1,
+      "explanation": "'あの<ruby>建物<rt>たてもの</rt></ruby>は<ruby>何<rt>なん</rt></ruby>ですか？' translates to 'What is that building over there?'."
     },
     {
       "id": "beginner_g_19",
       "category": "grammar",
-      "question": "Translate: 'It was fun.' (たのしい)",
+      "question": "Translate: 'あれは<ruby>病院<rt>びょういん</rt></ruby>です。'",
       "options": [
-        "たのしかったです",
-        "たのしいでした",
-        "たのしくないです",
-        "たのしかった"
+        "That is a hospital.",
+        "The water in the mountain is clean.",
+        "I am studying Japanese.",
+        "What time is it?"
       ],
       "answer": 0,
-      "explanation": "For i-adjectives, past tense is formed by dropping 'い' and adding 'かった'."
+      "explanation": "'あれは<ruby>病院<rt>びょういん</rt></ruby>です。' translates to 'That is a hospital.'."
     },
     {
       "id": "beginner_g_20",
       "category": "grammar",
-      "question": "Choose the correct particle: ペン ___ <ruby>書<rt>か</rt></ruby>きます。",
+      "question": "Translate: 'このらーめんは <ruby>美味<rt>おい</rt></ruby>しいです。'",
       "options": [
-        "に",
-        "が",
-        "を",
-        "で"
+        "Check, please.",
+        "She is not kind.",
+        "I am American.",
+        "This ramen is delicious."
       ],
       "answer": 3,
-      "explanation": "Particle 'で' indicates the tool or means used."
+      "explanation": "'このらーめんは <ruby>美味<rt>おい</rt></ruby>しいです。' translates to 'This ramen is delicious.'."
     }
   ],
   "intermediate": [
     {
       "id": "intermediate_v_1",
       "category": "vocab",
-      "question": "What is the meaning of '<ruby>経済<rt>けいざい</rt></ruby>'?",
+      "question": "What is the meaning of '<ruby>家族<rt>かぞく</rt></ruby>'?",
       "options": [
-        "Travel",
-        "Plan",
-        "Question",
-        "Economy"
+        "to go",
+        "glad/happy",
+        "family",
+        "simple/easy"
       ],
-      "answer": 3,
-      "explanation": "'<ruby>経済<rt>けいざい</rt></ruby>' means 'Economy'."
+      "answer": 2,
+      "explanation": "'<ruby>家族<rt>かぞく</rt></ruby>' means 'family'."
     },
     {
       "id": "intermediate_v_2",
       "category": "vocab",
-      "question": "What is the meaning of '<ruby>政治<rt>せいじ</rt></ruby>'?",
+      "question": "What is the meaning of '<ruby>両親<rt>りょうしん</rt></ruby>'?",
       "options": [
-        "Politics",
-        "Problem",
-        "Question",
-        "Environment"
+        "family",
+        "safe",
+        "parents",
+        "history"
       ],
-      "answer": 0,
-      "explanation": "'<ruby>政治<rt>せいじ</rt></ruby>' means 'Politics'."
+      "answer": 2,
+      "explanation": "'<ruby>両親<rt>りょうしん</rt></ruby>' means 'parents'."
     },
     {
       "id": "intermediate_v_3",
       "category": "vocab",
-      "question": "What is the meaning of '<ruby>経験<rt>けいけん</rt></ruby>'?",
+      "question": "What is the meaning of '<ruby>兄弟<rt>きょうだい</rt></ruby>'?",
       "options": [
-        "Environment",
-        "Travel",
-        "Experience",
-        "Result"
+        "lifestyle / daily life",
+        "siblings",
+        "peace",
+        "to teach"
       ],
-      "answer": 2,
-      "explanation": "'<ruby>経験<rt>けいけん</rt></ruby>' means 'Experience'."
+      "answer": 1,
+      "explanation": "'<ruby>兄弟<rt>きょうだい</rt></ruby>' means 'siblings'."
     },
     {
       "id": "intermediate_v_4",
       "category": "vocab",
-      "question": "What is the meaning of '<ruby>理由<rt>りゆう</rt></ruby>'?",
+      "question": "What is the meaning of '<ruby>仕事<rt>しごと</rt></ruby>'?",
       "options": [
-        "Economy",
-        "Purpose",
-        "Hobby",
-        "Reason"
+        "meeting",
+        "job / work",
+        "politics",
+        "embarrassing"
       ],
-      "answer": 3,
-      "explanation": "'<ruby>理由<rt>りゆう</rt></ruby>' means 'Reason'."
+      "answer": 1,
+      "explanation": "'<ruby>仕事<rt>しごと</rt></ruby>' means 'job / work'."
     },
     {
       "id": "intermediate_v_5",
       "category": "vocab",
-      "question": "What is the meaning of '<ruby>意見<rt>いけん</rt></ruby>'?",
+      "question": "What is the meaning of '<ruby>会社<rt>かいしゃ</rt></ruby>'?",
       "options": [
-        "Politics",
-        "Reason",
-        "Opinion",
-        "Plan"
+        "to wake up",
+        "company",
+        "meeting",
+        "result"
       ],
-      "answer": 2,
-      "explanation": "'<ruby>意見<rt>いけん</rt></ruby>' means 'Opinion'."
+      "answer": 1,
+      "explanation": "'<ruby>会社<rt>かいしゃ</rt></ruby>' means 'company'."
     },
     {
       "id": "intermediate_v_6",
       "category": "vocab",
-      "question": "What is the meaning of '<ruby>結果<rt>けっか</rt></ruby>'?",
+      "question": "What is the meaning of '<ruby>経済<rt>けいざい</rt></ruby>'?",
       "options": [
-        "Experience",
-        "Environment",
-        "Result",
-        "Politics"
+        "enough / sufficient",
+        "economy",
+        "to send",
+        "to teach"
       ],
-      "answer": 2,
-      "explanation": "'<ruby>結果<rt>けっか</rt></ruby>' means 'Result'."
+      "answer": 1,
+      "explanation": "'<ruby>経済<rt>けいざい</rt></ruby>' means 'economy'."
     },
     {
       "id": "intermediate_v_7",
       "category": "vocab",
-      "question": "What is the meaning of '<ruby>計画<rt>けいかく</rt></ruby>'?",
+      "question": "What is the meaning of '<ruby>政治<rt>せいじ</rt></ruby>'?",
       "options": [
-        "Promise / Appointment",
-        "Travel",
-        "Plan",
-        "Lifestyle / Daily life"
+        "politics",
+        "problem",
+        "to swim",
+        "parents"
       ],
-      "answer": 2,
-      "explanation": "'<ruby>計画<rt>けいかく</rt></ruby>' means 'Plan'."
+      "answer": 0,
+      "explanation": "'<ruby>政治<rt>せいじ</rt></ruby>' means 'politics'."
     },
     {
       "id": "intermediate_v_8",
       "category": "vocab",
-      "question": "What is the meaning of '<ruby>問題<rt>もんだい</rt></ruby>'?",
+      "question": "What is the meaning of '<ruby>文化<rt>ぶんか</rt></ruby>'?",
       "options": [
-        "Result",
-        "Opinion",
-        "Problem",
-        "Culture"
+        "answer",
+        "politics",
+        "to have/hold",
+        "culture"
       ],
-      "answer": 2,
-      "explanation": "'<ruby>問題<rt>もんだい</rt></ruby>' means 'Problem'."
+      "answer": 3,
+      "explanation": "'<ruby>文化<rt>ぶんか</rt></ruby>' means 'culture'."
     },
     {
       "id": "intermediate_v_9",
       "category": "vocab",
-      "question": "What is the meaning of '<ruby>質問<rt>しつもん</rt></ruby>'?",
+      "question": "What is the meaning of '<ruby>科学<rt>かがく</rt></ruby>'?",
       "options": [
-        "Plan",
-        "Economy",
-        "Purpose",
-        "Question"
+        "rare",
+        "science",
+        "to have/hold",
+        "reason"
       ],
-      "answer": 3,
-      "explanation": "'<ruby>質問<rt>しつもん</rt></ruby>' means 'Question'."
+      "answer": 1,
+      "explanation": "'<ruby>科学<rt>かがく</rt></ruby>' means 'science'."
     },
     {
       "id": "intermediate_v_10",
       "category": "vocab",
-      "question": "What is the meaning of '<ruby>答<rt>こた</rt></ruby>え'?",
+      "question": "What is the meaning of '<ruby>自然<rt>しぜん</rt></ruby>'?",
       "options": [
-        "Economy",
-        "Answer",
-        "Result",
-        "Question"
+        "meal",
+        "opinion",
+        "nature",
+        "science"
       ],
-      "answer": 1,
-      "explanation": "'<ruby>答<rt>こた</rt></ruby>え' means 'Answer'."
+      "answer": 2,
+      "explanation": "'<ruby>自然<rt>しぜん</rt></ruby>' means 'nature'."
     },
     {
       "id": "intermediate_v_11",
       "category": "vocab",
-      "question": "What is the meaning of '<ruby>旅行<rt>りょこう</rt></ruby>'?",
+      "question": "What is the meaning of '<ruby>社会<rt>しゃかい</rt></ruby>'?",
       "options": [
-        "Experience",
-        "Travel",
-        "Culture",
-        "Problem"
+        "opinion",
+        "match / game",
+        "society",
+        "to rest/take a break"
       ],
-      "answer": 1,
-      "explanation": "'<ruby>旅行<rt>りょこう</rt></ruby>' means 'Travel'."
+      "answer": 2,
+      "explanation": "'<ruby>社会<rt>しゃかい</rt></ruby>' means 'society'."
     },
     {
       "id": "intermediate_v_12",
       "category": "vocab",
-      "question": "What is the meaning of '<ruby>準備<rt>じゅんび</rt></ruby>'?",
+      "question": "What is the meaning of '<ruby>歴史<rt>れきし</rt></ruby>'?",
       "options": [
-        "Promise / Appointment",
-        "Economy",
-        "Preparation",
-        "Reason"
+        "history",
+        "to close",
+        "to read",
+        "to have/hold"
       ],
-      "answer": 2,
-      "explanation": "'<ruby>準備<rt>じゅんび</rt></ruby>' means 'Preparation'."
+      "answer": 0,
+      "explanation": "'<ruby>歴史<rt>れきし</rt></ruby>' means 'history'."
     },
     {
       "id": "intermediate_v_13",
       "category": "vocab",
-      "question": "What is the meaning of '<ruby>約束<rt>やくそく</rt></ruby>'?",
+      "question": "What is the meaning of '<ruby>理由<rt>りゆう</rt></ruby>'?",
       "options": [
-        "Plan",
-        "Environment",
-        "Promise / Appointment",
-        "Preparation"
+        "reason",
+        "simple/easy",
+        "safe",
+        "rare"
       ],
-      "answer": 2,
-      "explanation": "'<ruby>約束<rt>やくそく</rt></ruby>' means 'Promise / Appointment'."
+      "answer": 0,
+      "explanation": "'<ruby>理由<rt>りゆう</rt></ruby>' means 'reason'."
     },
     {
       "id": "intermediate_v_14",
       "category": "vocab",
-      "question": "What is the meaning of '<ruby>趣味<rt>しゅみ</rt></ruby>'?",
+      "question": "What is the meaning of '<ruby>原因<rt>げんいん</rt></ruby>'?",
       "options": [
-        "Preparation",
-        "Lifestyle / Daily life",
-        "Hobby",
-        "Travel"
+        "dangerous",
+        "cause",
+        "to eat",
+        "free (na-adj)"
       ],
-      "answer": 2,
-      "explanation": "'<ruby>趣味<rt>しゅみ</rt></ruby>' means 'Hobby'."
+      "answer": 1,
+      "explanation": "'<ruby>原因<rt>げんいん</rt></ruby>' means 'cause'."
     },
     {
       "id": "intermediate_v_15",
       "category": "vocab",
-      "question": "What is the meaning of '<ruby>目的<rt>もくてき</rt></ruby>'?",
+      "question": "What is the meaning of '<ruby>結果<rt>けっか</rt></ruby>'?",
       "options": [
-        "Hobby",
-        "Purpose",
-        "Politics",
-        "Experience"
+        "free (na-adj)",
+        "culture",
+        "result",
+        "answer"
       ],
-      "answer": 1,
-      "explanation": "'<ruby>目的<rt>もくてき</rt></ruby>' means 'Purpose'."
+      "answer": 2,
+      "explanation": "'<ruby>結果<rt>けっか</rt></ruby>' means 'result'."
     },
     {
       "id": "intermediate_v_16",
       "category": "vocab",
-      "question": "What is the meaning of '<ruby>文化<rt>ぶんか</rt></ruby>'?",
+      "question": "What is the meaning of '<ruby>目的<rt>もくてき</rt></ruby>'?",
       "options": [
-        "Society",
-        "Culture",
-        "Question",
-        "Politics"
+        "preparation",
+        "meaning",
+        "practice",
+        "purpose"
       ],
-      "answer": 1,
-      "explanation": "'<ruby>文化<rt>ぶんか</rt></ruby>' means 'Culture'."
+      "answer": 3,
+      "explanation": "'<ruby>目的<rt>もくてき</rt></ruby>' means 'purpose'."
     },
     {
       "id": "intermediate_v_17",
       "category": "vocab",
-      "question": "What is the meaning of '<ruby>社会<rt>しゃかい</rt></ruby>'?",
+      "question": "What is the meaning of '<ruby>方法<rt>ほうほう</rt></ruby>'?",
       "options": [
-        "Question",
-        "Society",
-        "Lifestyle / Daily life",
-        "Preparation"
+        "method",
+        "reason",
+        "correct",
+        "politics"
       ],
-      "answer": 1,
-      "explanation": "'<ruby>社会<rt>しゃかい</rt></ruby>' means 'Society'."
+      "answer": 0,
+      "explanation": "'<ruby>方法<rt>ほうほう</rt></ruby>' means 'method'."
     },
     {
       "id": "intermediate_v_18",
       "category": "vocab",
-      "question": "What is the meaning of '<ruby>自然<rt>しぜん</rt></ruby>'?",
+      "question": "What is the meaning of '<ruby>問題<rt>もんだい</rt></ruby>'?",
       "options": [
-        "Nature",
-        "Result",
-        "Lifestyle / Daily life",
-        "Politics"
+        "travel / trip",
+        "problem",
+        "history",
+        "to remember/memorize"
       ],
-      "answer": 0,
-      "explanation": "'<ruby>自然<rt>しぜん</rt></ruby>' means 'Nature'."
+      "answer": 1,
+      "explanation": "'<ruby>問題<rt>もんだい</rt></ruby>' means 'problem'."
     },
     {
       "id": "intermediate_v_19",
       "category": "vocab",
-      "question": "What is the meaning of '<ruby>環境<rt>かんきょう</rt></ruby>'?",
+      "question": "What is the meaning of '<ruby>質問<rt>しつもん</rt></ruby>'?",
       "options": [
-        "Preparation",
-        "Hobby",
-        "Environment",
-        "Lifestyle / Daily life"
+        "question",
+        "research",
+        "to buy",
+        "simple/easy"
       ],
-      "answer": 2,
-      "explanation": "'<ruby>環境<rt>かんきょう</rt></ruby>' means 'Environment'."
+      "answer": 0,
+      "explanation": "'<ruby>質問<rt>しつもん</rt></ruby>' means 'question'."
     },
     {
       "id": "intermediate_v_20",
       "category": "vocab",
-      "question": "What is the meaning of '<ruby>生活<rt>せいかつ</rt></ruby>'?",
+      "question": "What is the meaning of '<ruby>答え<rt>こたえ</rt></ruby>'?",
       "options": [
-        "Society",
-        "Answer",
-        "Lifestyle / Daily life",
-        "Hobby"
+        "correct",
+        "peace",
+        "purpose",
+        "answer"
       ],
-      "answer": 2,
-      "explanation": "'<ruby>生活<rt>せいかつ</rt></ruby>' means 'Lifestyle / Daily life'."
+      "answer": 3,
+      "explanation": "'<ruby>答え<rt>こたえ</rt></ruby>' means 'answer'."
     },
     {
       "id": "intermediate_g_1",
       "category": "grammar",
-      "question": "Which conjunction means 'However'?",
+      "question": "Translate: '<ruby>毎日<rt>まいにち</rt></ruby><ruby>日本語<rt>にほんご</rt></ruby>を<ruby>勉強します<rt>べんきょうします</rt></ruby>。'",
       "options": [
-        "だから",
-        "しかし",
-        "すると",
-        "そして"
+        "I study at the library.",
+        "I study Japanese every day.",
+        "I have to go!",
+        "I play the guitar about twice a week."
       ],
       "answer": 1,
-      "explanation": "'しかし' translates to 'however'."
+      "explanation": "'<ruby>毎日<rt>まいにち</rt></ruby><ruby>日本語<rt>にほんご</rt></ruby>を<ruby>勉強します<rt>べんきょうします</rt></ruby>。' translates to 'I study Japanese every day.'."
     },
     {
       "id": "intermediate_g_2",
       "category": "grammar",
-      "question": "How do you say 'I can speak Japanese'?",
+      "question": "Translate: '<ruby>明日<rt>あした</rt></ruby><ruby>友達<rt>ともだち</rt></ruby>と<ruby>映画<rt>えいが</rt></ruby>を<ruby>見ます<rt>みます</rt></ruby>。'",
       "options": [
-        "<ruby>日本語<rt>にほんご</rt></ruby>を<ruby>話<rt>はな</rt></ruby>します",
-        "<ruby>日本語<rt>にほんご</rt></ruby>が<ruby>話<rt>はな</rt></ruby>せます",
-        "<ruby>日本語<rt>にほんご</rt></ruby>を<ruby>話<rt>はな</rt></ruby>せます",
-        "<ruby>日本語<rt>にほんご</rt></ruby>が<ruby>話<rt>はな</rt></ruby>します"
+        "Tomorrow I will watch a movie with a friend.",
+        "I go to the station by bicycle.",
+        "My friend said it was delicious, so I think I want to go.",
+        "I studied Japanese 3 years ago."
       ],
-      "answer": 1,
-      "explanation": "The potential form '<ruby>話<rt>はな</rt></ruby>せる' takes the particle 'が'."
+      "answer": 0,
+      "explanation": "'<ruby>明日<rt>あした</rt></ruby><ruby>友達<rt>ともだち</rt></ruby>と<ruby>映画<rt>えいが</rt></ruby>を<ruby>見ます<rt>みます</rt></ruby>。' translates to 'Tomorrow I will watch a movie with a friend.'."
     },
     {
       "id": "intermediate_g_3",
       "category": "grammar",
-      "question": "Translate: 'If it rains, I won't go.'",
+      "question": "Translate: '<ruby>毎朝<rt>まいあさ</rt></ruby>ごはんを<ruby>食べます<rt>たべます</rt></ruby>。'",
       "options": [
-        "<ruby>雨<rt>あめ</rt></ruby>が<ruby>降<rt>ふ</rt></ruby>るのに、<ruby>行<rt>い</rt></ruby>きません",
-        "<ruby>雨<rt>あめ</rt></ruby>が<ruby>降<rt>ふ</rt></ruby>っても、<ruby>行<rt>い</rt></ruby>きません",
-        "<ruby>雨<rt>あめ</rt></ruby>が<ruby>降<rt>ふ</rt></ruby>るので、<ruby>行<rt>い</rt></ruby>きません",
-        "<ruby>雨<rt>あめ</rt></ruby>が<ruby>降<rt>ふ</rt></ruby>ったら、<ruby>行<rt>い</rt></ruby>きません"
+        "I don't drink alcohol.",
+        "I studied Japanese 3 years ago.",
+        "I eat breakfast every morning.",
+        "I am studying Japanese right now."
       ],
-      "answer": 3,
-      "explanation": "'〜たら' is the conditional 'if'."
+      "answer": 2,
+      "explanation": "'<ruby>毎朝<rt>まいあさ</rt></ruby>ごはんを<ruby>食べます<rt>たべます</rt></ruby>。' translates to 'I eat breakfast every morning.'."
     },
     {
       "id": "intermediate_g_4",
       "category": "grammar",
-      "question": "What does '〜ても' mean?",
+      "question": "Translate: '<ruby>私<rt>わたし</rt></ruby>はお<ruby>酒<rt>さけ</rt></ruby>を<ruby>飲みません<rt>のみません</rt></ruby>。'",
       "options": [
-        "Even if",
-        "When",
-        "Because",
-        "If"
+        "I am studying Japanese right now.",
+        "I plan to go watch a movie this weekend.",
+        "I don't drink alcohol.",
+        "I want it to get better soon."
       ],
-      "answer": 0,
-      "explanation": "'〜ても' expresses 'even if / even though'."
+      "answer": 2,
+      "explanation": "'<ruby>私<rt>わたし</rt></ruby>はお<ruby>酒<rt>さけ</rt></ruby>を<ruby>飲みません<rt>のみません</rt></ruby>。' translates to 'I don't drink alcohol.'."
     },
     {
       "id": "intermediate_g_5",
       "category": "grammar",
-      "question": "How do you say 'I must study'?",
+      "question": "Translate: '<ruby>昨日<rt>きのう</rt></ruby><ruby>映画<rt>えいが</rt></ruby>を<ruby>見<rt>み</rt></ruby>ました。'",
       "options": [
-        "<ruby>勉強<rt>べんきょう</rt></ruby>してはいけません",
-        "<ruby>勉強<rt>べんきょう</rt></ruby>するつもりです",
-        "<ruby>勉強<rt>べんきょう</rt></ruby>しなければなりません",
-        "<ruby>勉強<rt>べんきょう</rt></ruby>してもいいです"
+        "I worked without sleeping at all.",
+        "Tanaka-san said that they caught a cold.",
+        "I watched a movie yesterday.",
+        "Please speak slowly."
       ],
       "answer": 2,
-      "explanation": "'〜なければなりません' means 'must do'."
+      "explanation": "'<ruby>昨日<rt>きのう</rt></ruby><ruby>映画<rt>えいが</rt></ruby>を<ruby>見<rt>み</rt></ruby>ました。' translates to 'I watched a movie yesterday.'."
     },
     {
       "id": "intermediate_g_6",
       "category": "grammar",
-      "question": "Which verb is intransitive?",
+      "question": "Translate: '3<ruby>年<rt>ねん</rt></ruby><ruby>前<rt>まえ</rt></ruby>に<ruby>日本語<rt>にほんご</rt></ruby>を<ruby>勉強<rt>べんきょう</rt></ruby>しました。'",
       "options": [
-        "<ruby>閉<rt>し</rt></ruby>める",
-        "<ruby>壊<rt>こわ</rt></ruby>す",
-        "<ruby>開<rt>あ</rt></ruby>く",
-        "<ruby>開<rt>あ</rt></ruby>ける"
+        "I studied Japanese 3 years ago.",
+        "I haven't decided yet. I don't have any particular plans.",
+        "Because I am sick, I will take the day off.",
+        "I study at the library."
       ],
-      "answer": 2,
-      "explanation": "'<ruby>開<rt>あ</rt></ruby>く' (to open by itself) is intransitive."
+      "answer": 0,
+      "explanation": "'3<ruby>年<rt>ねん</rt></ruby><ruby>前<rt>まえ</rt></ruby>に<ruby>日本語<rt>にほんご</rt></ruby>を<ruby>勉強<rt>べんきょう</rt></ruby>しました。' translates to 'I studied Japanese 3 years ago.'."
     },
     {
       "id": "intermediate_g_7",
       "category": "grammar",
-      "question": "Translate: 'The window is left open (intentionally).'",
+      "question": "Translate: '<ruby>夏休み<rt>なつやすみ</rt></ruby>に<ruby>京都<rt>きょうと</rt></ruby>に<ruby>行<rt>い</rt></ruby>きました。とても<ruby>綺麗<rt>きれい</rt></ruby>でした！'",
       "options": [
-        "<ruby>窓<rt>まど</rt></ruby>が<ruby>開<rt>あ</rt></ruby>いています",
-        "<ruby>窓<rt>まど</rt></ruby>が<ruby>開<rt>あ</rt></ruby>きます",
-        "<ruby>窓<rt>まど</rt></ruby>が<ruby>開<rt>あ</rt></ruby>けます",
-        "<ruby>窓<rt>まど</rt></ruby>が<ruby>開<rt>あ</rt></ruby>けてあります"
+        "I studied Japanese 3 years ago.",
+        "I went to Kyoto during summer vacation. It was very beautiful!",
+        "I want my friend to help me.",
+        "I want more time."
       ],
-      "answer": 3,
-      "explanation": "Transitive Te-form + 'ある' indicates a state resulting from an intentional action."
+      "answer": 1,
+      "explanation": "'<ruby>夏休み<rt>なつやすみ</rt></ruby>に<ruby>京都<rt>きょうと</rt></ruby>に<ruby>行<rt>い</rt></ruby>きました。とても<ruby>綺麗<rt>きれい</rt></ruby>でした！' translates to 'I went to Kyoto during summer vacation. It was very beautiful!'."
     },
     {
       "id": "intermediate_g_8",
       "category": "grammar",
-      "question": "Translate: 'I received a book from the teacher.' (Humble)",
+      "question": "Translate: '<ruby>昼<rt>ひる</rt></ruby>ごはんを<ruby>食<rt>た</rt></ruby>べましたか？ ーー はい、もう<ruby>食<rt>た</rt></ruby>べました。'",
       "options": [
-        "<ruby>先生<rt>せんせい</rt></ruby>に<ruby>本<rt>ほん</rt></ruby>をくれました",
-        "<ruby>先生<rt>せんせい</rt></ruby>に<ruby>本<rt>ほん</rt></ruby>をもらいました",
-        "<ruby>先生<rt>せんせい</rt></ruby>に<ruby>本<rt>ほん</rt></ruby>をいただきました",
-        "<ruby>先生<rt>せんせい</rt></ruby>に<ruby>本<rt>ほん</rt></ruby>をあげました"
+        "I only have a little time.",
+        "I have not eaten sushi even once.",
+        "I live in Tokyo.",
+        "Did you eat lunch? -- Yes, I already ate."
       ],
-      "answer": 2,
-      "explanation": "'いただく' is the humble form of 'もらう' (to receive)."
+      "answer": 3,
+      "explanation": "'<ruby>昼<rt>ひる</rt></ruby>ごはんを<ruby>食<rt>た</rt></ruby>べましたか？ ーー はい、もう<ruby>食<rt>た</rt></ruby>べました。' translates to 'Did you eat lunch? -- Yes, I already ate.'."
     },
     {
       "id": "intermediate_g_9",
       "category": "grammar",
-      "question": "Translate: 'The teacher gave me a book.' (Honorific)",
+      "question": "Translate: '<ruby>図書館<rt>としょかん</rt></ruby>で<ruby>勉強<rt>べんきょう</rt></ruby>します。'",
       "options": [
-        "<ruby>先生<rt>せんせい</rt></ruby>が<ruby>本<rt>ほん</rt></ruby>をくれました",
-        "<ruby>先生<rt>せんせい</rt></ruby>が<ruby>本<rt>ほん</rt></ruby>をくださいました",
-        "<ruby>先生<rt>せんせい</rt></ruby>が<ruby>本<rt>ほん</rt></ruby>をあげました",
-        "<ruby>先生<rt>せんせい</rt></ruby>が<ruby>本<rt>ほん</rt></ruby>をいただきました"
+        "I go to the station by bicycle.",
+        "I want to study Japanese more.",
+        "I want my friend to help me.",
+        "I study at the library."
       ],
-      "answer": 1,
-      "explanation": "'くださる' is the honorific form of 'くれる' (to give to me)."
+      "answer": 3,
+      "explanation": "'<ruby>図書館<rt>としょかん</rt></ruby>で<ruby>勉強<rt>べんきょう</rt></ruby>します。' translates to 'I study at the library.'."
     },
     {
       "id": "intermediate_g_10",
       "category": "grammar",
-      "question": "How do you say 'It seems to be raining' (Conjecture based on evidence)?",
+      "question": "Translate: '<ruby>自転車<rt>じてんしゃ</rt></ruby>で<ruby>駅<rt>えき</rt></ruby>に<ruby>行<rt>い</rt></ruby>きます。'",
       "options": [
-        "<ruby>雨<rt>あめ</rt></ruby>が<ruby>降<rt>ふ</rt></ruby>るはずです",
-        "<ruby>雨<rt>あめ</rt></ruby>が<ruby>降<rt>ふ</rt></ruby>っているようです",
-        "<ruby>雨<rt>あめ</rt></ruby>が<ruby>降<rt>ふ</rt></ruby>るかもしれません",
-        "<ruby>雨<rt>あめ</rt></ruby>が<ruby>降<rt>ふ</rt></ruby>るそうです"
+        "I have been to Japan before.",
+        "I studied Japanese 3 years ago.",
+        "My hobby is watching movies.",
+        "I go to the station by bicycle."
       ],
-      "answer": 1,
-      "explanation": "'〜ようです' indicates a conjecture based on observation."
+      "answer": 3,
+      "explanation": "'<ruby>自転車<rt>じてんしゃ</rt></ruby>で<ruby>駅<rt>えき</rt></ruby>に<ruby>行<rt>い</rt></ruby>きます。' translates to 'I go to the station by bicycle.'."
     },
     {
       "id": "intermediate_g_11",
       "category": "grammar",
-      "question": "Translate: 'I heard that it will rain tomorrow.' (Hearsay)",
+      "question": "Translate: '<ruby>部屋<rt>へや</rt></ruby>に<ruby>猫<rt>ねこ</rt></ruby>がいます。'",
       "options": [
-        "<ruby>明日<rt>あした</rt></ruby>は<ruby>雨<rt>あめ</rt></ruby>が<ruby>降<rt>ふ</rt></ruby>るはずです",
-        "<ruby>明日<rt>あした</rt></ruby>は<ruby>雨<rt>あめ</rt></ruby>が<ruby>降<rt>ふ</rt></ruby>るかもしれません",
-        "<ruby>明日<rt>あした</rt></ruby>は<ruby>雨<rt>あめ</rt></ruby>が<ruby>降<rt>ふ</rt></ruby>るそうです",
-        "<ruby>明日<rt>あした</rt></ruby>は<ruby>雨<rt>あめ</rt></ruby>が<ruby>降<rt>ふ</rt></ruby>るようです"
+        "I live in Tokyo.",
+        "There is a cat in the room.",
+        "I play the guitar about twice a week.",
+        "I will go too."
       ],
-      "answer": 2,
-      "explanation": "'〜そうです' attached to plain form expresses hearsay ('I heard that...')."
+      "answer": 1,
+      "explanation": "'<ruby>部屋<rt>へや</rt></ruby>に<ruby>猫<rt>ねこ</rt></ruby>がいます。' translates to 'There is a cat in the room.'."
     },
     {
       "id": "intermediate_g_12",
       "category": "grammar",
-      "question": "Which expresses 'Which is larger, A or B?'",
+      "question": "Translate: '<ruby>友達<rt>ともだち</rt></ruby>にプレゼントをあげました。'",
       "options": [
-        "Aの<ruby>中<rt>なか</rt></ruby>でBが<ruby>一番大<rt>いちばんおお</rt></ruby>きいです",
-        "AはBほど<ruby>大<rt>おお</rt></ruby>きくないです",
-        "AとBとどちらが<ruby>大<rt>おお</rt></ruby>きいですか",
-        "AはBより<ruby>大<rt>おお</rt></ruby>きいです"
+        "I live in Tokyo.",
+        "I want my friend to help me.",
+        "My hobby is watching movies.",
+        "I gave a present to my friend."
       ],
-      "answer": 2,
-      "explanation": "To compare two items, use 'AとBとどちらが〜'"
+      "answer": 3,
+      "explanation": "'<ruby>友達<rt>ともだち</rt></ruby>にプレゼントをあげました。' translates to 'I gave a present to my friend.'."
     },
     {
       "id": "intermediate_g_13",
       "category": "grammar",
-      "question": "Translate: 'A is larger than B.'",
+      "question": "Translate: '<ruby>私<rt>わたし</rt></ruby>も<ruby>行<rt>い</rt></ruby>きます。'",
       "options": [
-        "BはAより<ruby>大<rt>おお</rt></ruby>きいです",
-        "AはBほど<ruby>大<rt>おお</rt></ruby>きくないです",
-        "AはBより<ruby>大<rt>おお</rt></ruby>きいです",
-        "AとBとどちらが<ruby>大<rt>おお</rt></ruby>きいです"
+        "I watched a movie yesterday.",
+        "Tomorrow is an exam. So I will sleep early tonight.",
+        "I will go too.",
+        "I don't drink alcohol."
       ],
       "answer": 2,
-      "explanation": "'AはBより〜' means 'A is more ~ than B'."
+      "explanation": "'<ruby>私<rt>わたし</rt></ruby>も<ruby>行<rt>い</rt></ruby>きます。' translates to 'I will go too.'."
     },
     {
       "id": "intermediate_g_14",
       "category": "grammar",
-      "question": "Translate: 'I am planning to go to Japan.'",
+      "question": "Translate: '<ruby>時間<rt>じかん</rt></ruby>が<ruby>少し<rt>すこし</rt></ruby>しかありません。'",
       "options": [
-        "<ruby>日本<rt>にほん</rt></ruby>へ<ruby>行<rt>い</rt></ruby>くそうです",
-        "<ruby>日本<rt>にほん</rt></ruby>へ<ruby>行<rt>い</rt></ruby>くつもりです",
-        "<ruby>日本<rt>にほん</rt></ruby>へ<ruby>行<rt>い</rt></ruby>くはずです",
-        "<ruby>日本<rt>にほん</rt></ruby>へ<ruby>行<rt>い</rt></ruby>くかもしれません"
+        "I only have a little time.",
+        "I think it will rain tomorrow.",
+        "Would you like to eat together?",
+        "I went to Kyoto during summer vacation. It was very beautiful!"
       ],
-      "answer": 1,
-      "explanation": "'〜つもりです' expresses an intention or plan."
+      "answer": 0,
+      "explanation": "'<ruby>時間<rt>じかん</rt></ruby>が<ruby>少し<rt>すこし</rt></ruby>しかありません。' translates to 'I only have a little time.'."
     },
     {
       "id": "intermediate_g_15",
       "category": "grammar",
-      "question": "Translate: 'You had better go to the hospital.'",
+      "question": "Translate: '<ruby>風邪<rt>かぜ</rt></ruby>をひいたので、<ruby>会社<rt>かいしゃ</rt></ruby>を<ruby>休<rt>やす</rt></ruby>みます。'",
       "options": [
-        "<ruby>病院<rt>びょういん</rt></ruby>に<ruby>行<rt>い</rt></ruby>くはずです",
-        "<ruby>病院<rt>びょういん</rt></ruby>に<ruby>行<rt>い</rt></ruby>くかもしれません",
-        "<ruby>病院<rt>びょういん</rt></ruby>に<ruby>行<rt>い</rt></ruby>かないほうがいいですよ",
-        "<ruby>病院<rt>びょういん</rt></ruby>に<ruby>行<rt>い</rt></ruby>ったほうがいいですよ"
+        "I gave a present to my friend.",
+        "My hobby is watching movies.",
+        "I want to study Japanese more.",
+        "Because I caught a cold, I will take the day off."
       ],
       "answer": 3,
-      "explanation": "Past plain form + 'ほうがいい' means 'You had better...'."
+      "explanation": "'<ruby>風邪<rt>かぜ</rt></ruby>をひいたので、<ruby>会社<rt>かいしゃ</rt></ruby>を<ruby>休<rt>やす</rt></ruby>みます。' translates to 'Because I caught a cold, I will take the day off.'."
     },
     {
       "id": "intermediate_g_16",
       "category": "grammar",
-      "question": "Translate: 'It might rain.'",
+      "question": "Translate: '<ruby>日本語<rt>にほんご</rt></ruby>が<ruby>好<rt>す</rt></ruby>きなので、<ruby>毎日<rt>まいにち</rt></ruby>勉強します。'",
       "options": [
-        "<ruby>雨<rt>あめ</rt></ruby>が<ruby>降<rt>ふ</rt></ruby>るそうです",
-        "<ruby>雨<rt>あめ</rt></ruby>が<ruby>降<rt>ふ</rt></ruby>るかもしれません",
-        "<ruby>雨<rt>あめ</rt></ruby>が<ruby>降<rt>ふ</rt></ruby>るはずです",
-        "<ruby>雨<rt>あめ</rt></ruby>が<ruby>降<rt>ふ</rt></ruby>るようです"
+        "Would you like to eat together?",
+        "I went to Kyoto during summer vacation. It was very beautiful!",
+        "There is a cat in the room.",
+        "Because I like Japanese, I study every day."
       ],
-      "answer": 1,
-      "explanation": "'〜かもしれません' means 'might / maybe'."
+      "answer": 3,
+      "explanation": "'<ruby>日本語<rt>にほんご</rt></ruby>が<ruby>好<rt>す</rt></ruby>きなので、<ruby>毎日<rt>まいにち</rt></ruby>勉強します。' translates to 'Because I like Japanese, I study every day.'."
     },
     {
       "id": "intermediate_g_17",
       "category": "grammar",
-      "question": "How do you say 'I accidentally broke the cup'?",
+      "question": "Translate: 'シャワーを<ruby>浴<rt>あび</rt></ruby>て、ごはんを<ruby>食<rt>た</rt></ruby>べました。'",
       "options": [
-        "コップを<ruby>割<rt>わ</rt></ruby>っておきました",
-        "コップを<ruby>割<rt>わ</rt></ruby>っていました",
-        "コップを<ruby>割<rt>わ</rt></ruby>ってありました",
-        "コップを<ruby>割<rt>わ</rt></ruby>ってしまいました"
+        "I live in Tokyo.",
+        "My hobby is watching movies.",
+        "I took a shower and then ate.",
+        "I like cooking."
       ],
-      "answer": 3,
-      "explanation": "Te-form + 'しまう' expresses regret or accidental completion."
+      "answer": 2,
+      "explanation": "'シャワーを<ruby>浴<rt>あび</rt></ruby>て、ごはんを<ruby>食<rt>た</rt></ruby>べました。' translates to 'I took a shower and then ate.'."
     },
     {
       "id": "intermediate_g_18",
       "category": "grammar",
-      "question": "How do you say 'I booked the hotel in advance'?",
+      "question": "Translate: 'ゆっくり<ruby>話<rt>はな</rt></ruby>してください。'",
       "options": [
-        "ホテルを<ruby>予約<rt>よやく</rt></ruby>しておきました",
-        "ホテルを<ruby>予約<rt>よやく</rt></ruby>してしまいました",
-        "ホテルを<ruby>予約<rt>よやく</rt></ruby>しています",
-        "ホテルを<ruby>予約<rt>よやく</rt></ruby>してありました"
+        "I want more time.",
+        "Would you like to eat together?",
+        "Please speak slowly.",
+        "I want it to get better soon."
       ],
-      "answer": 0,
-      "explanation": "Te-form + 'おく' means doing something in advance for preparation."
+      "answer": 2,
+      "explanation": "'ゆっくり<ruby>話<rt>はな</rt></ruby>してください。' translates to 'Please speak slowly.'."
     },
     {
       "id": "intermediate_g_19",
       "category": "grammar",
-      "question": "Translate: 'Because it was cold, I didn't go out.'",
+      "question": "Translate: '<ruby>今<rt>いま</rt></ruby><ruby>日本語<rt>にほんご</rt></ruby>を<ruby>勉強<rt>べんきょう</rt></ruby>しています。'",
       "options": [
-        "<ruby>寒<rt>さむ</rt></ruby>くても、<ruby>出<rt>で</rt></ruby>かけませんでした",
-        "<ruby>寒<rt>さむ</rt></ruby>かったので、<ruby>出<rt>で</rt></ruby>かけませんでした",
-        "<ruby>寒<rt>さむ</rt></ruby>かったのに、<ruby>出<rt>で</rt></ruby>かけませんでした",
-        "<ruby>寒<rt>さむ</rt></ruby>いから、<ruby>出<rt>で</rt></ruby>かけます"
+        "I like cooking.",
+        "There is a cat in the room.",
+        "Tomorrow I will watch a movie with a friend.",
+        "I am studying Japanese right now."
       ],
-      "answer": 1,
-      "explanation": "'〜ので' is a polite way to express a reason ('because')."
+      "answer": 3,
+      "explanation": "'<ruby>今<rt>いま</rt></ruby><ruby>日本語<rt>にほんご</rt></ruby>を<ruby>勉強<rt>べんきょう</rt></ruby>しています。' translates to 'I am studying Japanese right now.'."
     },
     {
       "id": "intermediate_g_20",
       "category": "grammar",
-      "question": "Translate: 'Even though I studied, I failed the test.'",
+      "question": "Translate: '<ruby>東京<rt>とうきょう</rt></ruby>に<ruby>住<rt>す</rt></ruby>んでいます。'",
       "options": [
-        "<ruby>勉強<rt>べんきょう</rt></ruby>したら、テストに<ruby>落<rt>お</rt></ruby>ちました",
-        "<ruby>勉強<rt>べんきょう</rt></ruby>したのに、テストに<ruby>落<rt>お</rt></ruby>ちました",
-        "<ruby>勉強<rt>べんきょう</rt></ruby>したので、テストに<ruby>落<rt>お</rt></ruby>ちました",
-        "<ruby>勉強<rt>べんきょう</rt></ruby>すれば、テストに<ruby>落<rt>お</rt></ruby>ちました"
+        "I live in Tokyo.",
+        "I only have a little time.",
+        "I have to submit my homework by tomorrow.",
+        "I gave a present to my friend."
       ],
-      "answer": 1,
-      "explanation": "'〜のに' expresses 'even though / despite'."
+      "answer": 0,
+      "explanation": "'<ruby>東京<rt>とうきょう</rt></ruby>に<ruby>住<rt>す</rt></ruby>んでいます。' translates to 'I live in Tokyo.'."
     }
   ],
   "advanced": [
     {
       "id": "advanced_v_1",
       "category": "vocab",
-      "question": "What is the meaning of '<ruby>抽象的<rt>ちゅうしょうてき</rt></ruby>'?",
+      "question": "What is the meaning of '<ruby>連絡<rt>れんらく</rt></ruby>'?",
       "options": [
-        "Values",
-        "Ethics",
-        "Responsibility",
-        "Abstract"
+        "to be surprised",
+        "hindrance/nuisance",
+        "contact/communication",
+        "information"
       ],
-      "answer": 3,
-      "explanation": "'<ruby>抽象的<rt>ちゅうしょうてき</rt></ruby>' means 'Abstract'."
+      "answer": 2,
+      "explanation": "'<ruby>連絡<rt>れんらく</rt></ruby>' means 'contact/communication'."
     },
     {
       "id": "advanced_v_2",
       "category": "vocab",
-      "question": "What is the meaning of '<ruby>具体的<rt>ぐたいてき</rt></ruby>'?",
+      "question": "What is the meaning of '<ruby>情報<rt>じょうほう</rt></ruby>'?",
       "options": [
-        "Duty / Obligation",
-        "Ethics",
-        "Phenomenon",
-        "Concrete / Specific"
+        "to look for",
+        "information",
+        "temperature",
+        "to get angry"
       ],
-      "answer": 3,
-      "explanation": "'<ruby>具体的<rt>ぐたいてき</rt></ruby>' means 'Concrete / Specific'."
+      "answer": 1,
+      "explanation": "'<ruby>情報<rt>じょうほう</rt></ruby>' means 'information'."
     },
     {
       "id": "advanced_v_3",
       "category": "vocab",
-      "question": "What is the meaning of '<ruby>矛盾<rt>むじゅん</rt></ruby>'?",
+      "question": "What is the meaning of '<ruby>説明<rt>せつめい</rt></ruby>'?",
       "options": [
-        "Structure",
-        "Concrete / Specific",
-        "Contradiction",
-        "Ethics"
+        "explanation",
+        "feeling",
+        "health",
+        "to commute"
       ],
-      "answer": 2,
-      "explanation": "'<ruby>矛盾<rt>むじゅん</rt></ruby>' means 'Contradiction'."
+      "answer": 0,
+      "explanation": "'<ruby>説明<rt>せつめい</rt></ruby>' means 'explanation'."
     },
     {
       "id": "advanced_v_4",
       "category": "vocab",
-      "question": "What is the meaning of '<ruby>妥協<rt>だきょう</rt></ruby>'?",
+      "question": "What is the meaning of '<ruby>注意<rt>ちゅうい</rt></ruby>'?",
       "options": [
-        "Values",
-        "Influence / Effect",
-        "Structure",
-        "Compromise"
+        "to laugh/smile",
+        "to believe",
+        "to remain",
+        "attention/caution"
       ],
       "answer": 3,
-      "explanation": "'<ruby>妥協<rt>だきょう</rt></ruby>' means 'Compromise'."
+      "explanation": "'<ruby>注意<rt>ちゅうい</rt></ruby>' means 'attention/caution'."
     },
     {
       "id": "advanced_v_5",
       "category": "vocab",
-      "question": "What is the meaning of '<ruby>貢献<rt>こうけん</rt></ruby>'?",
+      "question": "What is the meaning of '<ruby>気持ち<rt>きもち</rt></ruby>'?",
       "options": [
-        "Structure",
-        "Compromise",
-        "Abstract",
-        "Contribution"
+        "hindrance/nuisance",
+        "enthusiastic/eager",
+        "success",
+        "feeling"
       ],
       "answer": 3,
-      "explanation": "'<ruby>貢献<rt>こうけん</rt></ruby>' means 'Contribution'."
+      "explanation": "'<ruby>気持ち<rt>きもち</rt></ruby>' means 'feeling'."
     },
     {
       "id": "advanced_v_6",
       "category": "vocab",
-      "question": "What is the meaning of '<ruby>影響<rt>えいきょう</rt></ruby>'?",
+      "question": "What is the meaning of '<ruby>興味<rt>きょうみ</rt></ruby>'?",
       "options": [
-        "Influence / Effect",
-        "Compromise",
-        "Phenomenon",
-        "Abstract"
+        "hindrance/nuisance",
+        "to remember/recall",
+        "contact/communication",
+        "interest"
       ],
-      "answer": 0,
-      "explanation": "'<ruby>影響<rt>えいきょう</rt></ruby>' means 'Influence / Effect'."
+      "answer": 3,
+      "explanation": "'<ruby>興味<rt>きょうみ</rt></ruby>' means 'interest'."
     },
     {
       "id": "advanced_v_7",
       "category": "vocab",
-      "question": "What is the meaning of '<ruby>象徴<rt>しょうちょう</rt></ruby>'?",
+      "question": "What is the meaning of '<ruby>種類<rt>しゅるい</rt></ruby>'?",
       "options": [
-        "Symbol",
-        "Standard / Criteria",
-        "Contradiction",
-        "Right / Privilege"
+        "to tidy up",
+        "to be surprised",
+        "kind/type",
+        "to enjoy"
       ],
-      "answer": 0,
-      "explanation": "'<ruby>象徴<rt>しょうちょう</rt></ruby>' means 'Symbol'."
+      "answer": 2,
+      "explanation": "'<ruby>種類<rt>しゅるい</rt></ruby>' means 'kind/type'."
     },
     {
       "id": "advanced_v_8",
       "category": "vocab",
-      "question": "What is the meaning of '<ruby>傾向<rt>けいこう</rt></ruby>'?",
+      "question": "What is the meaning of '<ruby>最近<rt>さいきん</rt></ruby>'?",
       "options": [
-        "Responsibility",
-        "Ethics",
-        "Tendency / Trend",
-        "Right / Privilege"
+        "to remain",
+        "to believe",
+        "recently",
+        "article/news"
       ],
       "answer": 2,
-      "explanation": "'<ruby>傾向<rt>けいこう</rt></ruby>' means 'Tendency / Trend'."
+      "explanation": "'<ruby>最近<rt>さいきん</rt></ruby>' means 'recently'."
     },
     {
       "id": "advanced_v_9",
       "category": "vocab",
-      "question": "What is the meaning of '<ruby>評価<rt>ひょうか</rt></ruby>'?",
+      "question": "What is the meaning of '<ruby>昔<rt>むかし</rt></ruby>'?",
       "options": [
-        "System / Institution",
-        "Contribution",
-        "Right / Privilege",
-        "Evaluation"
+        "to choose",
+        "pharmacy",
+        "interest",
+        "old days/past"
       ],
       "answer": 3,
-      "explanation": "'<ruby>評価<rt>ひょうか</rt></ruby>' means 'Evaluation'."
+      "explanation": "'<ruby>昔<rt>むかし</rt></ruby>' means 'old days/past'."
     },
     {
       "id": "advanced_v_10",
       "category": "vocab",
-      "question": "What is the meaning of '<ruby>責任<rt>せきにん</rt></ruby>'?",
+      "question": "What is the meaning of '<ruby>将来<rt>しょうらい</rt></ruby>'?",
       "options": [
-        "Abstract",
-        "Responsibility",
-        "Contribution",
-        "Philosophy"
+        "to change",
+        "future (personal)",
+        "accident",
+        "to enjoy"
       ],
       "answer": 1,
-      "explanation": "'<ruby>責任<rt>せきにん</rt></ruby>' means 'Responsibility'."
+      "explanation": "'<ruby>将来<rt>しょうらい</rt></ruby>' means 'future (personal)'."
     },
     {
       "id": "advanced_v_11",
       "category": "vocab",
-      "question": "What is the meaning of '<ruby>権利<rt>けんり</rt></ruby>'?",
+      "question": "What is the meaning of '<ruby>機械<rt>きかい</rt></ruby>'?",
       "options": [
-        "Abstract",
-        "Right / Privilege",
-        "Contradiction",
-        "Tendency / Trend"
+        "to investigate/look up",
+        "to compare",
+        "machine",
+        "to be surprised"
       ],
-      "answer": 1,
-      "explanation": "'<ruby>権利<rt>けんり</rt></ruby>' means 'Right / Privilege'."
+      "answer": 2,
+      "explanation": "'<ruby>機械<rt>きかい</rt></ruby>' means 'machine'."
     },
     {
       "id": "advanced_v_12",
       "category": "vocab",
-      "question": "What is the meaning of '<ruby>義務<rt>ぎむ</rt></ruby>'?",
+      "question": "What is the meaning of '<ruby>技術<rt>ぎじゅつ</rt></ruby>'?",
       "options": [
-        "Abstract",
-        "Responsibility",
-        "Duty / Obligation",
-        "Concept"
+        "to enjoy",
+        "technology/skill",
+        "accident",
+        "to get used to"
       ],
-      "answer": 2,
-      "explanation": "'<ruby>義務<rt>ぎむ</rt></ruby>' means 'Duty / Obligation'."
+      "answer": 1,
+      "explanation": "'<ruby>技術<rt>ぎじゅつ</rt></ruby>' means 'technology/skill'."
     },
     {
       "id": "advanced_v_13",
       "category": "vocab",
-      "question": "What is the meaning of '<ruby>価値観<rt>かちかん</rt></ruby>'?",
+      "question": "What is the meaning of '<ruby>教育<rt>きょういく</rt></ruby>'?",
       "options": [
-        "Ethics",
-        "Values",
-        "Responsibility",
-        "Compromise"
+        "to remain",
+        "strict/severe",
+        "education",
+        "to change"
       ],
-      "answer": 1,
-      "explanation": "'<ruby>価値観<rt>かちかん</rt></ruby>' means 'Values'."
+      "answer": 2,
+      "explanation": "'<ruby>教育<rt>きょういく</rt></ruby>' means 'education'."
     },
     {
       "id": "advanced_v_14",
       "category": "vocab",
-      "question": "What is the meaning of '<ruby>現象<rt>げんしょう</rt></ruby>'?",
+      "question": "What is the meaning of '<ruby>法律<rt>ほうりつ</rt></ruby>'?",
       "options": [
-        "Phenomenon",
-        "System / Institution",
-        "Evaluation",
-        "Symbol"
+        "to win",
+        "law",
+        "technology/skill",
+        "to tidy up"
       ],
-      "answer": 0,
-      "explanation": "'<ruby>現象<rt>げんしょう</rt></ruby>' means 'Phenomenon'."
+      "answer": 1,
+      "explanation": "'<ruby>法律<rt>ほうりつ</rt></ruby>' means 'law'."
     },
     {
       "id": "advanced_v_15",
       "category": "vocab",
-      "question": "What is the meaning of '<ruby>概念<rt>がいねん</rt></ruby>'?",
+      "question": "What is the meaning of '<ruby>環境<rt>かんきょう</rt></ruby>'?",
       "options": [
-        "Influence / Effect",
-        "Concept",
-        "Right / Privilege",
-        "Concrete / Specific"
+        "to lose",
+        "shallow",
+        "environment",
+        "to continue"
       ],
-      "answer": 1,
-      "explanation": "'<ruby>概念<rt>がいねん</rt></ruby>' means 'Concept'."
+      "answer": 2,
+      "explanation": "'<ruby>環境<rt>かんきょう</rt></ruby>' means 'environment'."
     },
     {
       "id": "advanced_v_16",
       "category": "vocab",
-      "question": "What is the meaning of '<ruby>基準<rt>きじゅん</rt></ruby>'?",
+      "question": "What is the meaning of '<ruby>記事<rt>きじ</rt></ruby>'?",
       "options": [
-        "Concept",
-        "System / Institution",
-        "Structure",
-        "Standard / Criteria"
+        "education",
+        "article/news",
+        "to fall/drop",
+        "hindrance/nuisance"
       ],
-      "answer": 3,
-      "explanation": "'<ruby>基準<rt>きじゅん</rt></ruby>' means 'Standard / Criteria'."
+      "answer": 1,
+      "explanation": "'<ruby>記事<rt>きじ</rt></ruby>' means 'article/news'."
     },
     {
       "id": "advanced_v_17",
       "category": "vocab",
-      "question": "What is the meaning of '<ruby>構造<rt>こうぞう</rt></ruby>'?",
+      "question": "What is the meaning of '<ruby>番組<rt>ばんぐみ</rt></ruby>'?",
       "options": [
-        "Duty / Obligation",
-        "Influence / Effect",
-        "Tendency / Trend",
-        "Structure"
+        "to choose",
+        "to get angry",
+        "to commute",
+        "TV program"
       ],
       "answer": 3,
-      "explanation": "'<ruby>構造<rt>こうぞう</rt></ruby>' means 'Structure'."
+      "explanation": "'<ruby>番組<rt>ばんぐみ</rt></ruby>' means 'TV program'."
     },
     {
       "id": "advanced_v_18",
       "category": "vocab",
-      "question": "What is the meaning of '<ruby>制度<rt>せいど</rt></ruby>'?",
+      "question": "What is the meaning of '<ruby>広告<rt>こうこく</rt></ruby>'?",
       "options": [
-        "Contradiction",
-        "Phenomenon",
-        "System / Institution",
-        "Responsibility"
+        "hindrance/nuisance",
+        "to look for",
+        "advertisement",
+        "to choose"
       ],
       "answer": 2,
-      "explanation": "'<ruby>制度<rt>せいど</rt></ruby>' means 'System / Institution'."
+      "explanation": "'<ruby>広告<rt>こうこく</rt></ruby>' means 'advertisement'."
     },
     {
       "id": "advanced_v_19",
       "category": "vocab",
-      "question": "What is the meaning of '<ruby>哲学<rt>てつがく</rt></ruby>'?",
+      "question": "What is the meaning of '<ruby>事故<rt>じこ</rt></ruby>'?",
       "options": [
-        "Standard / Criteria",
-        "Philosophy",
-        "Influence / Effect",
-        "Contradiction"
+        "to win",
+        "accident",
+        "to collect/gather",
+        "to get angry"
       ],
       "answer": 1,
-      "explanation": "'<ruby>哲学<rt>てつがく</rt></ruby>' means 'Philosophy'."
+      "explanation": "'<ruby>事故<rt>じこ</rt></ruby>' means 'accident'."
     },
     {
       "id": "advanced_v_20",
       "category": "vocab",
-      "question": "What is the meaning of '<ruby>倫理<rt>りんり</rt></ruby>'?",
+      "question": "What is the meaning of '<ruby>事件<rt>じけん</rt></ruby>'?",
       "options": [
-        "Contradiction",
-        "Compromise",
-        "Contribution",
-        "Ethics"
+        "to pray",
+        "to collect/gather",
+        "incident/case",
+        "air/atmosphere"
       ],
-      "answer": 3,
-      "explanation": "'<ruby>倫理<rt>りんり</rt></ruby>' means 'Ethics'."
+      "answer": 2,
+      "explanation": "'<ruby>事件<rt>じけん</rt></ruby>' means 'incident/case'."
     },
     {
       "id": "advanced_g_1",
       "category": "grammar",
-      "question": "Choose the correct usage of '〜ざるを<ruby>得<rt>え</rt></ruby>ない'.",
+      "question": "What does the grammar pattern '〜てほしい' express?",
       "options": [
-        "<ruby>彼<rt>かれ</rt></ruby>が<ruby>来<rt>こ</rt></ruby>ないなら、<ruby>私<rt>わたし</rt></ruby>が<ruby>行<rt>い</rt></ruby>きざるを<ruby>得<rt>え</rt></ruby>ない。",
-        "<ruby>彼<rt>かれ</rt></ruby>が<ruby>来<rt>こ</rt></ruby>ないなら、<ruby>私<rt>わたし</rt></ruby>が<ruby>行<rt>い</rt></ruby>こざるを<ruby>得<rt>え</rt></ruby>ない。",
-        "<ruby>彼<rt>かれ</rt></ruby>が<ruby>来<rt>こ</rt></ruby>ないなら、<ruby>私<rt>わたし</rt></ruby>が<ruby>行<rt>い</rt></ruby>かざるを<ruby>得<rt>え</rt></ruby>ない。",
-        "<ruby>彼<rt>かれ</rt></ruby>が<ruby>来<rt>こ</rt></ruby>ないなら、<ruby>私<rt>わたし</rt></ruby>が<ruby>行<rt>い</rt></ruby>くざるを<ruby>得<rt>え</rt></ruby>ない。"
+        "plan to do ~",
+        "if ~ (conditional)",
+        "must not do ~",
+        "want someone to do"
       ],
-      "answer": 2,
-      "explanation": "'〜ざるを<ruby>得<rt>え</rt></ruby>ない' means 'have no choice but to'. It attaches to the Nai-stem of verbs."
+      "answer": 3,
+      "explanation": "'〜てほしい' expresses 'want someone to do'."
     },
     {
       "id": "advanced_g_2",
       "category": "grammar",
-      "question": "What does '〜に<ruby>違<rt>ちが</rt></ruby>いない' mean?",
+      "question": "What does the grammar pattern '〜なければいけない' express?",
       "options": [
-        "Must be / Without a doubt",
-        "Should not be",
-        "Might be",
-        "Used to be"
+        "must do / have to do",
+        "when ~",
+        "in order to / for",
+        "it is a rule/scheduled that ~"
       ],
       "answer": 0,
-      "explanation": "'〜に<ruby>違<rt>ちが</rt></ruby>いない' expresses strong conviction or certainty."
+      "explanation": "'〜なければいけない' expresses 'must do / have to do'."
     },
     {
       "id": "advanced_g_3",
       "category": "grammar",
-      "question": "Translate: 'Depending on the person, opinions differ.'",
+      "question": "What does the grammar pattern '〜たい' express?",
       "options": [
-        "<ruby>人<rt>ひと</rt></ruby>によって<ruby>意見<rt>いけん</rt></ruby>が<ruby>違<rt>ちが</rt></ruby>う。",
-        "<ruby>人<rt>ひと</rt></ruby>について<ruby>意見<rt>いけん</rt></ruby>が<ruby>違<rt>ちが</rt></ruby>う。",
-        "<ruby>人<rt>ひと</rt></ruby>として<ruby>意見<rt>いけん</rt></ruby>が<ruby>違<rt>ちが</rt></ruby>う。",
-        "<ruby>人<rt>ひと</rt></ruby>にとって<ruby>意見<rt>いけん</rt></ruby>が<ruby>違<rt>ちが</rt></ruby>う。"
+        "difficult to ~",
+        "want to do",
+        "if / when (natural consequence)",
+        "reach the point where ~"
       ],
-      "answer": 0,
-      "explanation": "'〜によって' means 'depending on' or 'due to'."
+      "answer": 1,
+      "explanation": "'〜たい' expresses 'want to do'."
     },
     {
       "id": "advanced_g_4",
       "category": "grammar",
-      "question": "Translate: 'For me, this book is difficult.'",
+      "question": "What does the grammar pattern '〜てください' express?",
       "options": [
-        "<ruby>私<rt>わたし</rt></ruby>として、この<ruby>本<rt>ほん</rt></ruby>は<ruby>難<rt>むずか</rt></ruby>しい。",
-        "<ruby>私<rt>わたし</rt></ruby>にとって、この<ruby>本<rt>ほん</rt></ruby>は<ruby>難<rt>むずか</rt></ruby>しい。",
-        "<ruby>私<rt>わたし</rt></ruby>によって、この<ruby>本<rt>ほん</rt></ruby>は<ruby>難<rt>むずか</rt></ruby>しい。",
-        "<ruby>私<rt>わたし</rt></ruby>について、この<ruby>本<rt>ほん</rt></ruby>は<ruby>難<rt>むずか</rt></ruby>しい。"
+        "whether or not",
+        "called / named ~",
+        "please do ~",
+        "if it is the case that ~"
       ],
-      "answer": 1,
-      "explanation": "'〜にとって' means 'for / from the perspective of'."
+      "answer": 2,
+      "explanation": "'〜てください' expresses 'please do ~'."
     },
     {
       "id": "advanced_g_5",
       "category": "grammar",
-      "question": "Choose the correct usage of '〜にかかわらず'.",
+      "question": "What does the grammar pattern '〜てもいいですか' express?",
       "options": [
-        "<ruby>天候<rt>てんこう</rt></ruby>にかかわらず、<ruby>試合<rt>しあい</rt></ruby>は<ruby>行<rt>おこな</rt></ruby>われます。",
-        "<ruby>天候<rt>てんこう</rt></ruby>にかかわらずで、<ruby>試合<rt>しあい</rt></ruby>は<ruby>行<rt>おこな</rt></ruby>われます。",
-        "<ruby>天候<rt>てんこう</rt></ruby>にかかわって、<ruby>試合<rt>しあい</rt></ruby>は<ruby>行<rt>おこな</rt></ruby>われます。",
-        "<ruby>天候<rt>てんこう</rt></ruby>にかかわりなくは、<ruby>試合<rt>しあい</rt></ruby>は<ruby>行<rt>おこな</rt></ruby>われます。"
+        "decide to do ~",
+        "if / when (after)",
+        "may I do ~?",
+        "too much ~"
       ],
-      "answer": 0,
-      "explanation": "'〜にかかわらず' means 'regardless of'."
+      "answer": 2,
+      "explanation": "'〜てもいいですか' expresses 'may I do ~?'."
     },
     {
       "id": "advanced_g_6",
       "category": "grammar",
-      "question": "What does '〜つつある' imply?",
+      "question": "What does the grammar pattern '〜てはいけない' express?",
       "options": [
-        "An action will never happen.",
-        "An action is impossible to do.",
-        "An action is currently in progress or changing.",
-        "An action was completed in the past."
+        "must not do ~",
+        "if / when (natural consequence)",
+        "too much ~",
+        "while doing ~"
       ],
-      "answer": 2,
-      "explanation": "'〜つつある' shows that a change is ongoing (e.g., 'improving', 'decreasing')."
+      "answer": 0,
+      "explanation": "'〜てはいけない' expresses 'must not do ~'."
     },
     {
       "id": "advanced_g_7",
       "category": "grammar",
-      "question": "Translate: 'As soon as I arrived at the station, the train left.'",
+      "question": "What does the grammar pattern '〜たことがある' express?",
       "options": [
-        "<ruby>駅<rt>えき</rt></ruby>に<ruby>着<rt>つ</rt></ruby>き<ruby>次第<rt>しだい</rt></ruby>、<ruby>電車<rt>でんしゃ</rt></ruby>が<ruby>発車<rt>はっしゃ</rt></ruby>した。",
-        "<ruby>駅<rt>えき</rt></ruby>に<ruby>着<rt>つ</rt></ruby>くか<ruby>着<rt>つ</rt></ruby>かないうちに、<ruby>電車<rt>でんしゃ</rt></ruby>が<ruby>発車<rt>はっしゃ</rt></ruby>した。",
-        "<ruby>駅<rt>えき</rt></ruby>に<ruby>着<rt>つ</rt></ruby>いたとたん、<ruby>電車<rt>でんしゃ</rt></ruby>が<ruby>発車<rt>はっしゃ</rt></ruby>した。",
-        "<ruby>駅<rt>えき</rt></ruby>に<ruby>着<rt>つ</rt></ruby>いて<ruby>以来<rt>いらい</rt></ruby>、<ruby>電車<rt>でんしゃ</rt></ruby>が<ruby>発車<rt>はっしゃ</rt></ruby>した。"
+        "make an effort to ~",
+        "easy to ~",
+        "before doing ~",
+        "have done ~ before"
       ],
-      "answer": 2,
-      "explanation": "'〜たとたん' means 'as soon as / the moment that' something happened."
+      "answer": 3,
+      "explanation": "'〜たことがある' expresses 'have done ~ before'."
     },
     {
       "id": "advanced_g_8",
       "category": "grammar",
-      "question": "Which grammar point means 'from the standpoint of' or 'as'?",
+      "question": "What does the grammar pattern '〜ほうがいい' express?",
       "options": [
-        "〜によって",
-        "〜として",
-        "〜について",
-        "〜にとって"
+        "had better do ~",
+        "it is a rule/scheduled that ~",
+        "must not do ~",
+        "have done ~ before"
       ],
-      "answer": 1,
-      "explanation": "'〜として' means 'in the capacity of' or 'as'."
+      "answer": 0,
+      "explanation": "'〜ほうがいい' expresses 'had better do ~'."
     },
     {
       "id": "advanced_g_9",
       "category": "grammar",
-      "question": "What does '〜にすぎない' mean?",
+      "question": "What does the grammar pattern '〜つもりだ' express?",
       "options": [
-        "Impossible",
-        "Too much",
-        "Nothing more than / Just",
-        "Without a doubt"
+        "reach the point where ~",
+        "plan to do ~",
+        "probably",
+        "difficult to ~"
       ],
-      "answer": 2,
-      "explanation": "'〜にすぎない' emphasizes that something is merely or only that thing."
+      "answer": 1,
+      "explanation": "'〜つもりだ' expresses 'plan to do ~'."
     },
     {
       "id": "advanced_g_10",
       "category": "grammar",
-      "question": "Translate: 'There is a fear/concern that prices will rise.'",
+      "question": "What does the grammar pattern '〜かもしれない' express?",
       "options": [
-        "<ruby>物価<rt>ぶっか</rt></ruby>が<ruby>上<rt>あ</rt></ruby>がるわけがない。",
-        "<ruby>物価<rt>ぶっか</rt></ruby>が<ruby>上<rt>あ</rt></ruby>がるおそれがある。",
-        "<ruby>物価<rt>ぶっか</rt></ruby>が<ruby>上<rt>あ</rt></ruby>がるどころではない。",
-        "<ruby>物価<rt>ぶっか</rt></ruby>が<ruby>上<rt>あ</rt></ruby>がるはずがない。"
+        "please do ~",
+        "explanatory/emphasis",
+        "might be",
+        "have done ~ before"
       ],
-      "answer": 1,
-      "explanation": "'〜おそれがある' means 'there is a fear/risk that...'."
+      "answer": 2,
+      "explanation": "'〜かもしれない' expresses 'might be'."
     },
     {
       "id": "advanced_g_11",
       "category": "grammar",
-      "question": "Translate: 'It is not necessarily true that expensive things are good.'",
+      "question": "What does the grammar pattern '〜でしょう' express?",
       "options": [
-        "<ruby>高<rt>たか</rt></ruby>いものがいいとは<ruby>限<rt>かぎ</rt></ruby>らない。",
-        "<ruby>高<rt>たか</rt></ruby>いものがいいわけがない。",
-        "<ruby>高<rt>たか</rt></ruby>いものがいいはずがない。",
-        "<ruby>高<rt>たか</rt></ruby>いものがいいに<ruby>違<rt>ちが</rt></ruby>いない。"
+        "make an effort to ~",
+        "decide to do ~",
+        "probably",
+        "have done ~ before"
       ],
-      "answer": 0,
-      "explanation": "'〜とは<ruby>限<rt>かぎ</rt></ruby>らない' means 'not necessarily ~'."
+      "answer": 2,
+      "explanation": "'〜でしょう' expresses 'probably'."
     },
     {
       "id": "advanced_g_12",
       "category": "grammar",
-      "question": "Translate: 'I can't possibly know that.'",
+      "question": "What does the grammar pattern '〜ために' express?",
       "options": [
-        "そんなこと、<ruby>知<rt>し</rt></ruby>るわけがない。",
-        "そんなこと、<ruby>知<rt>し</rt></ruby>るおそれがある。",
-        "そんなこと、<ruby>知<rt>し</rt></ruby>るに<ruby>違<rt>ちが</rt></ruby>いない。",
-        "そんなこと、<ruby>知<rt>し</rt></ruby>るはずがある。"
+        "please do ~",
+        "may I do ~?",
+        "difficult to ~",
+        "in order to / for"
       ],
-      "answer": 0,
-      "explanation": "'〜わけがない' strongly denies a possibility ('there is no way')."
+      "answer": 3,
+      "explanation": "'〜ために' expresses 'in order to / for'."
     },
     {
       "id": "advanced_g_13",
       "category": "grammar",
-      "question": "What does '〜かねない' mean?",
+      "question": "What does the grammar pattern '〜ながら' express?",
       "options": [
-        "Must do.",
-        "Cannot possibly do.",
-        "There is a possibility of (something bad) happening.",
-        "Have no choice but to do."
+        "difficult to ~",
+        "while doing ~",
+        "in order to / for",
+        "make an effort to ~"
       ],
-      "answer": 2,
-      "explanation": "'〜かねない' is used when there's a risk of a negative outcome."
+      "answer": 1,
+      "explanation": "'〜ながら' expresses 'while doing ~'."
     },
     {
       "id": "advanced_g_14",
       "category": "grammar",
-      "question": "Translate: 'While we are at it, let's clean the room.'",
+      "question": "What does the grammar pattern '<ruby>〜前に<rt>〜まえに</rt></ruby>' express?",
       "options": [
-        "うえに、<ruby>部屋<rt>へや</rt></ruby>を<ruby>掃除<rt>そうじ</rt></ruby>しよう。",
-        "かわりに、<ruby>部屋<rt>へや</rt></ruby>を<ruby>掃除<rt>そうじ</rt></ruby>しよう。",
-        "くせに、<ruby>部屋<rt>へや</rt></ruby>を<ruby>掃除<rt>そうじ</rt></ruby>しよう。",
-        "ついでに、<ruby>部屋<rt>へや</rt></ruby>を<ruby>掃除<rt>そうじ</rt></ruby>しよう。"
+        "please do ~",
+        "if ~ (conditional)",
+        "before doing ~",
+        "decide to do ~"
       ],
-      "answer": 3,
-      "explanation": "'〜ついでに' means 'while doing X, taking the opportunity to do Y'."
+      "answer": 2,
+      "explanation": "'<ruby>〜前に<rt>〜まえに</rt></ruby>' expresses 'before doing ~'."
     },
     {
       "id": "advanced_g_15",
       "category": "grammar",
-      "question": "What does '〜くせに' express?",
+      "question": "What does the grammar pattern '<ruby>〜後で<rt>〜あとで</rt></ruby>' express?",
       "options": [
-        "Objective reason.",
-        "Gratitude.",
-        "Apology.",
-        "Criticism or blame (even though / despite)."
+        "after doing ~",
+        "explanatory/emphasis",
+        "might be",
+        "plan to do ~"
       ],
-      "answer": 3,
-      "explanation": "'〜くせに' implies reproach or dissatisfaction (e.g., 'Even though he knows nothing, he acts smart')."
+      "answer": 0,
+      "explanation": "'<ruby>〜後で<rt>〜あとで</rt></ruby>' expresses 'after doing ~'."
     },
     {
       "id": "advanced_g_16",
       "category": "grammar",
-      "question": "Choose the correct usage of '〜おかげで'.",
+      "question": "What does the grammar pattern '<ruby>〜時<rt>〜とき</rt></ruby>' express?",
       "options": [
-        "<ruby>先生<rt>せんせい</rt></ruby>の<ruby>代<rt>か</rt></ruby>わりに、<ruby>合格<rt>ごうかく</rt></ruby>できました。",
-        "<ruby>先生<rt>せんせい</rt></ruby>のうえに、<ruby>合格<rt>ごうかく</rt></ruby>できました。",
-        "<ruby>先生<rt>せんせい</rt></ruby>のおかげで、<ruby>合格<rt>ごうかく</rt></ruby>できました。",
-        "<ruby>先生<rt>せんせい</rt></ruby>のせいで、<ruby>合格<rt>ごうかく</rt></ruby>できました。"
+        "if / when (natural consequence)",
+        "want someone to do",
+        "when ~",
+        "might be"
       ],
       "answer": 2,
-      "explanation": "'〜おかげで' is used to express gratitude for a positive result."
+      "explanation": "'<ruby>〜時<rt>〜とき</rt></ruby>' expresses 'when ~'."
     },
     {
       "id": "advanced_g_17",
       "category": "grammar",
-      "question": "Choose the correct usage of '〜せいで'.",
+      "question": "What does the grammar pattern '〜と' express?",
       "options": [
-        "<ruby>雨<rt>あめ</rt></ruby>のうえに、<ruby>試合<rt>しあい</rt></ruby>が<ruby>中止<rt>ちゅうし</rt></ruby>になった。",
-        "<ruby>雨<rt>あめ</rt></ruby>の<ruby>代<rt>か</rt></ruby>わりに、<ruby>試合<rt>しあい</rt></ruby>が<ruby>中止<rt>ちゅうし</rt></ruby>になった。",
-        "<ruby>雨<rt>あめ</rt></ruby>のおかげで、<ruby>試合<rt>しあい</rt></ruby>が<ruby>中止<rt>ちゅうし</rt></ruby>になった。",
-        "<ruby>雨<rt>あめ</rt></ruby>のせいで、<ruby>試合<rt>しあい</rt></ruby>が<ruby>中止<rt>ちゅうし</rt></ruby>になった。"
+        "after doing ~",
+        "make an effort to ~",
+        "if / when (natural consequence)",
+        "must do / have to do"
       ],
-      "answer": 3,
-      "explanation": "'〜せいで' is used to blame something for a negative result."
+      "answer": 2,
+      "explanation": "'〜と' expresses 'if / when (natural consequence)'."
     },
     {
       "id": "advanced_g_18",
       "category": "grammar",
-      "question": "What does '〜をはじめ(として)' mean?",
+      "question": "What does the grammar pattern '〜ば' express?",
       "options": [
-        "Without",
-        "Instead of",
-        "At the very end",
-        "Starting with / Representative example"
+        "difficult to ~",
+        "when ~",
+        "if ~ (conditional)",
+        "want someone to do"
       ],
-      "answer": 3,
-      "explanation": "'〜をはじめ' gives a primary example of a larger group."
+      "answer": 2,
+      "explanation": "'〜ば' expresses 'if ~ (conditional)'."
     },
     {
       "id": "advanced_g_19",
       "category": "grammar",
-      "question": "Translate: 'I read the book until the very end.'",
+      "question": "What does the grammar pattern '〜たら' express?",
       "options": [
-        "その<ruby>本<rt>ほん</rt></ruby>を<ruby>最後<rt>さいご</rt></ruby>まで<ruby>読<rt>よ</rt></ruby>み<ruby>抜<rt>ぬ</rt></ruby>いた。",
-        "その<ruby>本<rt>ほん</rt></ruby>を<ruby>最後<rt>さいご</rt></ruby>まで<ruby>読<rt>よ</rt></ruby>み<ruby>切<rt>き</rt></ruby>った。",
-        "その<ruby>本<rt>ほん</rt></ruby>を<ruby>最後<rt>さいご</rt></ruby>まで<ruby>読<rt>よ</rt></ruby>みかけた。",
-        "その<ruby>本<rt>ほん</rt></ruby>を<ruby>最後<rt>さいご</rt></ruby>まで<ruby>読<rt>よ</rt></ruby>み<ruby>直<rt>なお</rt></ruby>した。"
+        "if / when (natural consequence)",
+        "it is a rule/scheduled that ~",
+        "if / when (after)",
+        "difficult to ~"
       ],
-      "answer": 0,
-      "explanation": "Both <ruby>読<rt>よ</rt></ruby>み<ruby>抜<rt>ぬ</rt></ruby>く and <ruby>読<rt>よ</rt></ruby>み<ruby>切<rt>き</rt></ruby>る can mean to read to the end, but '<ruby>抜<rt>ぬ</rt></ruby>く' emphasizes enduring a difficulty to the end."
+      "answer": 2,
+      "explanation": "'〜たら' expresses 'if / when (after)'."
     },
     {
       "id": "advanced_g_20",
       "category": "grammar",
-      "question": "What does '〜からいうと' mean?",
+      "question": "What does the grammar pattern '〜なら' express?",
       "options": [
-        "From the perspective of / Judging from",
-        "Since",
-        "In order to",
-        "Because of"
+        "if it is the case that ~",
+        "must do / have to do",
+        "if / when (natural consequence)",
+        "too much ~"
       ],
       "answer": 0,
-      "explanation": "'〜からいうと' means 'judging from the standpoint of'."
+      "explanation": "'〜なら' expresses 'if it is the case that ~'."
     }
   ]
 };

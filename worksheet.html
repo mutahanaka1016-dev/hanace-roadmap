@@ -323,8 +323,26 @@
                 <div class="score-circle" id="finalScore">
                     40/40
                 </div>
+                
+                <div class="score-breakdown" style="display: flex; justify-content: center; gap: 20px; margin-bottom: 20px;">
+                    <div style="background: #fff; border: 1px solid #efefef; border-radius: 12px; padding: 15px; flex: 1; max-width: 200px;">
+                        <h4 style="margin: 0 0 10px; color: var(--primary-color);">Vocabulary</h4>
+                        <div id="vocabScoreEl" style="font-size: 1.5rem; font-weight: bold; color: var(--secondary-color);">0/20</div>
+                    </div>
+                    <div style="background: #fff; border: 1px solid #efefef; border-radius: 12px; padding: 15px; flex: 1; max-width: 200px;">
+                        <h4 style="margin: 0 0 10px; color: var(--primary-color);">Grammar</h4>
+                        <div id="grammarScoreEl" style="font-size: 1.5rem; font-weight: bold; color: var(--secondary-color);">0/20</div>
+                    </div>
+                </div>
+
                 <p class="worksheet-desc" id="scoreMessage">Perfect score! You have mastered this level!</p>
-                <button class="start-btn" onclick="window.location.href='index.html'">Return to Roadmap</button>
+                
+                <div id="mistakesContainer" style="margin-top: 30px; text-align: left; display: none;">
+                    <h3 style="color: var(--wrong-color); border-bottom: 2px solid #ffebee; padding-bottom: 10px;">Mistakes Review</h3>
+                    <div id="mistakesList" style="margin-top: 20px;"></div>
+                </div>
+
+                <button class="start-btn" onclick="window.location.href='index.html'" style="margin-top: 30px;">Return to Roadmap</button>
             </div>
 
         </div>

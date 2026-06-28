@@ -54,7 +54,18 @@ document.addEventListener('DOMContentLoaded', () => {
     // Quiz State
     let currentQuestionIndex = 0;
     let score = 0;
+    let vocabScore = 0;
+    let grammarScore = 0;
+    let vocabTotal = 0;
+    let grammarTotal = 0;
+    const mistakes = [];
+    
     const totalQuestions = quizData.length;
+
+    quizData.forEach(q => {
+        if (q.category === 'vocab') vocabTotal++;
+        else grammarTotal++;
+    });
 
     // Shuffle questions so vocab and grammar are mixed? 
     // The user asked for "それぞれ２０問ずつのトータル４０問になるように" 
@@ -115,15 +126,27 @@ document.addEventListener('DOMContentLoaded', () => {
         allBtns.forEach(btn => btn.disabled = true);
 
         const isCorrect = (selectedIndex === correctIndex);
+        const q = quizData[currentQuestionIndex];
 
         if (isCorrect) {
             selectedBtn.classList.add('correct');
             score++;
+            if (q.category === 'vocab') vocabScore++;
+            else grammarScore++;
             showFeedback(true, explanation);
         } else {
             selectedBtn.classList.add('wrong');
             // highlight correct one
             allBtns[correctIndex].classList.add('correct');
+            
+            // Record mistake
+            mistakes.push({
+                question: q.question,
+                yourAnswer: q.options[selectedIndex],
+                correctAnswer: q.options[correctIndex],
+                explanation: explanation
+            });
+            
             showFeedback(false, explanation);
         }
     }
@@ -150,6 +173,9 @@ document.addEventListener('DOMContentLoaded', () => {
         progressFillEl.style.width = '100%';
 
         finalScoreEl.textContent = `${score}/${totalQuestions}`;
+        
+        document.getElementById('vocabScoreEl').textContent = `${vocabScore}/${vocabTotal}`;
+        document.getElementById('grammarScoreEl').textContent = `${grammarScore}/${grammarTotal}`;
 
         const percentage = score / totalQuestions;
         if (percentage === 1) {
@@ -160,6 +186,29 @@ document.addEventListener('DOMContentLoaded', () => {
             scoreMessageEl.textContent = 'Good effort! A little more review and you will be perfect. 💪';
         } else {
             scoreMessageEl.textContent = 'Keep practicing! Reviewing the lessons will help you improve. 📚';
+        }
+        
+        if (mistakes.length > 0) {
+            const mistakesContainer = document.getElementById('mistakesContainer');
+            const mistakesList = document.getElementById('mistakesList');
+            mistakesContainer.style.display = 'block';
+            
+            mistakes.forEach((m, idx) => {
+                const div = document.createElement('div');
+                div.style.marginBottom = '20px';
+                div.style.padding = '15px';
+                div.style.background = '#fff';
+                div.style.borderRadius = '8px';
+                div.style.borderLeft = '4px solid var(--wrong-color)';
+                
+                div.innerHTML = `
+                    <div style="font-weight: bold; margin-bottom: 10px;">Q${idx + 1}. ${m.question}</div>
+                    <div style="color: var(--wrong-color); margin-bottom: 5px;">Your Answer: ${m.yourAnswer}</div>
+                    <div style="color: var(--correct-color); margin-bottom: 10px;">Correct Answer: ${m.correctAnswer}</div>
+                    <div style="color: var(--secondary-color); font-size: 0.95rem;"><em>${m.explanation}</em></div>
+                `;
+                mistakesList.appendChild(div);
+            });
         }
     }
 
