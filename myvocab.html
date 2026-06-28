@@ -629,10 +629,6 @@
 
     <div class="container" style="margin-top: 0;">
 
-    <div class="action-bar">
-        <div style="flex: 1;"></div>
-        <button class="btn btn-outline" onclick="exportCSV()" id="export-btn" style="display:none;">📥 Export CSV</button>
-    </div>
 
     <div id="review-hub" class="review-hub" style="display: none;">
         <div class="review-card" onclick="startFlashcards()">
@@ -724,6 +720,61 @@
     let quizScore = 0;
     let fallbackMeanings = ['Water', 'Student', 'Teacher', 'Medicine', 'Friend', 'Family', 'Book', 'Car', 'Train', 'Food', 'School', 'Work', 'Home', 'Money', 'Time', 'Life', 'Eat', 'Drink', 'Run', 'Sleep'];
 
+    function generateRuby(word, reading) {
+        if (!word || !reading || word === reading) return word;
+        
+        // If the word doesn't contain any Kanji, return the word as-is
+        const hasKanji = /[一-龠]/;
+        if (!hasKanji.test(word)) {
+            return word;
+        }
+        
+        // Align from start and end to find the kanji parts
+        let start = 0;
+        while (start < word.length && start < reading.length && word[start] === reading[start]) {
+            start++;
+        }
+        
+        let endWord = word.length - 1;
+        let endReading = reading.length - 1;
+        while (endWord >= start && endReading >= start && word[endWord] === reading[endReading]) {
+            endWord--;
+            endReading--;
+        }
+        
+        // Extract the middle parts
+        const prefix = word.substring(0, start);
+        const suffix = word.substring(endWord + 1);
+        
+        const middleWord = word.substring(start, endWord + 1);
+        const middleReading = reading.substring(start, endReading + 1);
+        
+        if (middleWord && middleReading) {
+            return `${prefix}<ruby>${middleWord}<rt>${middleReading}</rt></ruby>${suffix}`;
+        }
+        return word;
+    }
+
+    function getWordReading(word, item) {
+        let kana = item.kana || '';
+        if (!kana && typeof hanaBananaDictionary !== 'undefined' && hanaBananaDictionary[word]) {
+            kana = hanaBananaDictionary[word].kana || '';
+        }
+        return kana;
+    }
+
+    function getFuriganaHtml(item) {
+        const displayWord = item.word || item.kanji || 'Unknown';
+        if (displayWord.includes('<ruby>')) {
+            return displayWord;
+        }
+        const reading = getWordReading(displayWord, item);
+        if (reading) {
+            return generateRuby(displayWord, reading);
+        }
+        return displayWord;
+    }
+
     function init() {
         savedVocab = JSON.parse(localStorage.getItem('hanaBananaSavedVocab') || '[]');
         renderList();
@@ -734,7 +785,6 @@
         const listEl = document.getElementById('saved-list');
         const emptyState = document.getElementById('empty-state');
         const countEl = document.getElementById('vocab-count');
-        const exportBtn = document.getElementById('export-btn');
         const clearContainer = document.getElementById('clear-container');
 
         listEl.innerHTML = '';
@@ -742,13 +792,11 @@
 
         if (savedVocab.length === 0) {
             emptyState.style.display = 'block';
-            exportBtn.style.display = 'none';
             clearContainer.style.display = 'none';
             return;
         }
 
         emptyState.style.display = 'none';
-        exportBtn.style.display = 'inline-flex';
         clearContainer.style.display = 'block';
 
         [...savedVocab].reverse().forEach((item, index) => {
@@ -829,7 +877,7 @@
 
         const card = reviewQueue[currentReviewIndex];
         document.getElementById('fc-progress').innerText = `${currentReviewIndex + 1}/${reviewQueue.length}`;
-        document.getElementById('fc-word').innerHTML = card.word || card.kanji || 'Unknown';
+        document.getElementById('fc-word').innerHTML = getFuriganaHtml(card);
         document.getElementById('fc-meaning').innerHTML = card.meaning;
         
         document.getElementById('fc-meaning').style.opacity = '0';
@@ -869,7 +917,7 @@
 
         const card = reviewQueue[currentReviewIndex];
         document.getElementById('quiz-progress').innerText = `${currentReviewIndex + 1}/${reviewQueue.length}`;
-        document.getElementById('quiz-word').innerHTML = card.word || card.kanji || 'Unknown';
+        document.getElementById('quiz-word').innerHTML = getFuriganaHtml(card);
         
         const optionsContainer = document.getElementById('quiz-options');
         optionsContainer.innerHTML = '';
@@ -948,24 +996,6 @@
         document.getElementById('result-message').innerText = msg;
     }
 
-    /* --- CSV EXPORT --- */
-    function exportCSV() {
-        if (savedVocab.length === 0) return;
-        let csvContent = "data:text/csv;charset=utf-8,\uFEFF"; 
-        savedVocab.forEach(item => {
-            let displayWord = item.word || item.kanji || '';
-            let wordStr = displayWord.replace(/"/g, '""');
-            let meanStr = item.meaning.replace(/"/g, '""');
-            csvContent += `"${wordStr}","${meanStr}"\r\n`;
-        });
-        const encodedUri = encodeURI(csvContent);
-        const link = document.createElement("a");
-        link.setAttribute("href", encodedUri);
-        link.setAttribute("download", "hana_banana_vocab.csv");
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-    }
 
     function handleActionParams() {
         const params = new URLSearchParams(window.location.search);
