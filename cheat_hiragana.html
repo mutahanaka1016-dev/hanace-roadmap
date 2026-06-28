@@ -602,7 +602,115 @@
                 font-size: 1.1rem !important;
             }
         }
+        /* Flashcard Feature */
+        .flashcard-section {
+            text-align: center;
+            margin-bottom: 50px;
+            background: #fffafa;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: inset 0 0 15px rgba(0,0,0,0.02);
+            border: 2px dashed var(--light-red);
+        }
 
+        .flashcard-controls {
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .flashcard-select {
+            padding: 10px 20px;
+            border-radius: 30px;
+            border: 2px solid var(--primary-red);
+            background: #fff;
+            color: var(--primary-red);
+            font-size: 1rem;
+            font-weight: bold;
+            font-family: inherit;
+            cursor: pointer;
+            outline: none;
+            box-shadow: 0 4px 6px rgba(255, 117, 31, 0.1);
+        }
+
+        .flashcard-btn {
+            padding: 10px 25px;
+            border-radius: 30px;
+            border: none;
+            background: var(--primary-red);
+            color: #fff;
+            font-size: 1rem;
+            font-weight: bold;
+            font-family: inherit;
+            cursor: pointer;
+            transition: all 0.2s;
+            box-shadow: 0 4px 6px rgba(255, 117, 31, 0.2);
+        }
+        
+        .flashcard-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(255, 117, 31, 0.3);
+        }
+
+        .flashcard-btn:active {
+            transform: translateY(0);
+        }
+
+        .flashcard-container {
+            perspective: 1000px;
+            width: 250px;
+            height: 300px;
+            margin: 0 auto 20px;
+            cursor: pointer;
+        }
+
+        .flashcard {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            transition: transform 0.6s cubic-bezier(0.4, 0.0, 0.2, 1);
+            transform-style: preserve-3d;
+        }
+
+        .flashcard.flipped {
+            transform: rotateY(180deg);
+        }
+
+        .flashcard-face {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 7rem;
+            font-weight: bold;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+        }
+
+        .flashcard-front {
+            background: #fff;
+            color: var(--dark-red);
+            border: 4px solid var(--primary-red);
+        }
+
+        .flashcard-back {
+            background: var(--primary-red);
+            color: #fff;
+            transform: rotateY(180deg);
+            border: 4px solid var(--primary-red);
+            font-size: 5rem; /* Smaller font for romaji */
+        }
+
+        .flashcard-progress {
+            font-weight: bold;
+            color: #888;
+            font-size: 1.1rem;
+        }
     </style>
 </head>
 <body>
@@ -629,6 +737,46 @@
 
         <div style="text-align: center;">
             <div class="audio-tip"><svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: text-bottom;"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg> Click on any character to hear the pronunciation!</div>
+
+            <!-- Tracing Practice PDF Section -->
+            <div style="margin-bottom: 40px; display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
+                <a href="hiragana_practice.pdf" target="_blank" class="print-btn" style="text-decoration: none; display: inline-flex; align-items: center; gap: 10px; font-size: 1rem; padding: 12px 25px;">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                    Hiragana Tracing Practice PDF
+                </a>
+                <a href="katakana_practice.pdf" target="_blank" class="print-btn" style="text-decoration: none; display: inline-flex; align-items: center; gap: 10px; font-size: 1rem; padding: 12px 25px; background-color: #1976d2;">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                    Katakana Tracing Practice PDF
+                </a>
+            </div>
+
+            <!-- Flashcard Section -->
+            <div class="flashcard-section" id="flashcardSection">
+                <h2 style="font-size: 1.2rem; margin-bottom: 20px; background: transparent; color: var(--primary-red); box-shadow: none; padding: 0;">Practice Flashcards</h2>
+                
+                <div class="flashcard-controls">
+                    <select id="flashcardMode" class="flashcard-select">
+                        <option value="hiragana">Hiragana Only</option>
+                        <option value="katakana">Katakana Only</option>
+                        <option value="mix">Mixed</option>
+                    </select>
+                </div>
+
+                <div class="flashcard-container" onclick="flipCard()">
+                    <div class="flashcard" id="flashcard">
+                        <div class="flashcard-face flashcard-front" id="fc-front">あ</div>
+                        <div class="flashcard-face flashcard-back" id="fc-back">a</div>
+                    </div>
+                </div>
+
+                <div class="flashcard-controls">
+                    <button class="flashcard-btn" onclick="prevCard()">Previous</button>
+                    <button class="flashcard-btn" onclick="flipCard()">Flip</button>
+                    <button class="flashcard-btn" onclick="nextCard()">Next</button>
+                </div>
+                
+                <div class="flashcard-progress" id="fc-progress">1 / 46</div>
+            </div>
         </div>
 
         <!-- Hiragana Section -->
@@ -810,6 +958,87 @@
                 window.speechSynthesis.speak(utterance);
             }
         }
-</script>
+    </script>
+    <script>
+        const kanaData = [
+            { h: 'あ', k: 'ア', r: 'a' }, { h: 'い', k: 'イ', r: 'i' }, { h: 'う', k: 'ウ', r: 'u' }, { h: 'え', k: 'エ', r: 'e' }, { h: 'お', k: 'オ', r: 'o' },
+            { h: 'か', k: 'カ', r: 'ka' }, { h: 'き', k: 'キ', r: 'ki' }, { h: 'く', k: 'ク', r: 'ku' }, { h: 'け', k: 'ケ', r: 'ke' }, { h: 'こ', k: 'コ', r: 'ko' },
+            { h: 'さ', k: 'サ', r: 'sa' }, { h: 'し', k: 'シ', r: 'shi' }, { h: 'す', k: 'ス', r: 'su' }, { h: 'せ', k: 'セ', r: 'se' }, { h: 'そ', k: 'ソ', r: 'so' },
+            { h: 'た', k: 'タ', r: 'ta' }, { h: 'ち', k: 'チ', r: 'chi' }, { h: 'つ', k: 'ツ', r: 'tsu' }, { h: 'て', k: 'テ', r: 'te' }, { h: 'と', k: 'ト', r: 'to' },
+            { h: 'な', k: 'ナ', r: 'na' }, { h: 'に', k: 'ニ', r: 'ni' }, { h: 'ぬ', k: 'ヌ', r: 'nu' }, { h: 'ね', k: 'ネ', r: 'ne' }, { h: 'の', k: 'ノ', r: 'no' },
+            { h: 'は', k: 'ハ', r: 'ha' }, { h: 'ひ', k: 'ヒ', r: 'hi' }, { h: 'ふ', k: 'フ', r: 'fu' }, { h: 'へ', k: 'ヘ', r: 'he' }, { h: 'ほ', k: 'ホ', r: 'ho' },
+            { h: 'ま', k: 'マ', r: 'ma' }, { h: 'み', k: 'ミ', r: 'mi' }, { h: 'む', k: 'ム', r: 'mu' }, { h: 'め', k: 'メ', r: 'me' }, { h: 'も', k: 'モ', r: 'mo' },
+            { h: 'や', k: 'ヤ', r: 'ya' }, { h: 'ゆ', k: 'ユ', r: 'yu' }, { h: 'よ', k: 'ヨ', r: 'yo' },
+            { h: 'ら', k: 'ラ', r: 'ra' }, { h: 'り', k: 'リ', r: 'ri' }, { h: 'る', k: 'ル', r: 'ru' }, { h: 'れ', k: 'レ', r: 're' }, { h: 'ろ', k: 'ロ', r: 'ro' },
+            { h: 'わ', k: 'ワ', r: 'wa' }, { h: 'を', k: 'ヲ', r: 'wo' },
+            { h: 'ん', k: 'ン', r: 'n' }
+        ];
+
+        let deck = [];
+        let currentIndex = 0;
+        const flashcard = document.getElementById('flashcard');
+        const fcFront = document.getElementById('fc-front');
+        const fcBack = document.getElementById('fc-back');
+        const fcProgress = document.getElementById('fc-progress');
+        const modeSelect = document.getElementById('flashcardMode');
+
+        function shuffle(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+            return array;
+        }
+
+        function buildDeck() {
+            const mode = modeSelect.value;
+            deck = [];
+            kanaData.forEach(item => {
+                if (mode === 'hiragana' || mode === 'mix') {
+                    deck.push({ char: item.h, romaji: item.r });
+                }
+                if (mode === 'katakana' || mode === 'mix') {
+                    deck.push({ char: item.k, romaji: item.r });
+                }
+            });
+            deck = shuffle(deck);
+            currentIndex = 0;
+            updateCard();
+        }
+
+        function updateCard() {
+            if (flashcard.classList.contains('flipped')) {
+                flashcard.classList.remove('flipped');
+                setTimeout(() => {
+                    fcFront.textContent = deck[currentIndex].char;
+                    fcBack.textContent = deck[currentIndex].romaji;
+                    fcProgress.textContent = `${currentIndex + 1} / ${deck.length}`;
+                }, 300); // wait for flip animation to hide text
+            } else {
+                fcFront.textContent = deck[currentIndex].char;
+                fcBack.textContent = deck[currentIndex].romaji;
+                fcProgress.textContent = `${currentIndex + 1} / ${deck.length}`;
+            }
+        }
+
+        function flipCard() {
+            flashcard.classList.toggle('flipped');
+        }
+
+        function nextCard() {
+            currentIndex = (currentIndex + 1) % deck.length;
+            updateCard();
+        }
+
+        function prevCard() {
+            currentIndex = (currentIndex - 1 + deck.length) % deck.length;
+            updateCard();
+        }
+
+        modeSelect.addEventListener('change', buildDeck);
+
+        // Initialize
+        buildDeck();
+    </script>
 </body>
 </html>
