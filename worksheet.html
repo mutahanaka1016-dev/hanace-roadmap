@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Review Worksheet | Hana Banana Japanese</title>
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500;700;800&family=Quicksand:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #ff751f;
+            --secondary-color: #555555;
+            --text-color: #535353;
+            --bg-color: #FAFAFA;
+            --card-bg: rgba(255, 255, 255, 0.95);
+            --correct-color: #4CAF50;
+            --wrong-color: #F44336;
+        }
+
+        body {
+            font-family: 'Quicksand', 'M PLUS Rounded 1c', sans-serif;
+            background-color: var(--bg-color);
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='500' height='500'%3E%3Cstyle%3Etext%7Bfont-family:'M PLUS Rounded 1c',sans-serif;fill:rgba(83,83,83,0.06);font-weight:700;%7D%3C/style%3E<text x='136' y='103' font-size='28' transform='rotate(18 136 103)'>僕</text><text x='111' y='28' font-size='24' transform='rotate(27 111 28)'>は</text><text x='431' y='191' font-size='27' transform='rotate(20 431 191)'>三</text><text x='303' y='225' font-size='31' transform='rotate(2 303 225)'>十</text><text x='196' y='216' font-size='27' transform='rotate(19 196 216)'>七</text><text x='389' y='50' font-size='20' transform='rotate(12 389 50)'>歳</text><text x='438' y='285' font-size='22' transform='rotate(-25 438 285)'>で</text><text x='265' y='34' font-size='24' transform='rotate(8 265 34)'>、</text><text x='279' y='281' font-size='31' transform='rotate(-13 279 281)'>そ</text><text x='461' y='385' font-size='28' transform='rotate(-19 461 385)'>の</text><text x='268' y='456' font-size='27' transform='rotate(29 268 456)'>と</text><text x='206' y='56' font-size='29' transform='rotate(20 206 56)'>き</text><text x='22' y='271' font-size='23' transform='rotate(-11 22 271)'>ボ</text><text x='104' y='236' font-size='23' transform='rotate(22 104 236)'>ー</text><text x='378' y='457' font-size='25' transform='rotate(24 378 457)'>イ</text><text x='24' y='33' font-size='23' transform='rotate(3 24 33)'>ン</text><text x='41' y='401' font-size='22' transform='rotate(-6 41 401)'>グ</text><text x='63' y='130' font-size='20' transform='rotate(-24 63 130)'>7</text><text x='432' y='470' font-size='25' transform='rotate(17 432 470)'>4</text><text x='346' y='207' font-size='26' transform='rotate(29 346 207)'>7</text><text x='228' y='315' font-size='28' transform='rotate(-29 228 315)'>の</text><text x='213' y='131' font-size='27' transform='rotate(-13 213 131)'>シ</text><text x='349' y='376' font-size='31' transform='rotate(-2 349 376)'>ー</text><text x='473' y='117' font-size='22' transform='rotate(0 473 117)'>ト</text><text x='392' y='149' font-size='27' transform='rotate(-12 392 149)'>に</text><text x='125' y='444' font-size='26' transform='rotate(15 125 444)'>座</text><text x='218' y='381' font-size='23' transform='rotate(-29 218 381)'>っ</text><text x='344' y='319' font-size='29' transform='rotate(22 344 319)'>て</text><text x='109' y='356' font-size='31' transform='rotate(22 109 356)'>い</text><text x='14' y='462' font-size='29' transform='rotate(-25 14 462)'>た</text><text x='134' y='276' font-size='26' transform='rotate(-1 134 276)'>。</text>%3C/svg%3E");
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        header.global-header {
+            text-align: center;
+            padding: 20px;
+            background: #FFFFFF;
+            border-bottom: 4px solid var(--primary-color);
+            position: relative;
+        }
+
+        .back-btn {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            text-decoration: none;
+            color: var(--primary-color);
+            font-weight: bold;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            transition: transform 0.2s;
+        }
+
+        .back-btn:hover {
+            transform: translateX(-5px);
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+
+        .worksheet-card {
+            background: var(--card-bg);
+            border-radius: 24px;
+            padding: 40px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+            text-align: center;
+            border: 1px solid rgba(255,117,31,0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .illustration {
+            width: 100%;
+            max-width: 400px;
+            height: auto;
+            border-radius: 16px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        h1.worksheet-title {
+            color: var(--primary-color);
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+        }
+
+        p.worksheet-desc {
+            font-size: 1.2rem;
+            color: var(--secondary-color);
+            margin-bottom: 30px;
+        }
+
+        .start-btn, .next-btn {
+            background: linear-gradient(135deg, var(--primary-color), #ff4d5a);
+            color: #fff;
+            border: none;
+            padding: 16px 40px;
+            font-size: 1.3rem;
+            font-weight: bold;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 8px 20px rgba(255, 117, 31, 0.3);
+            font-family: inherit;
+        }
+
+        .start-btn:hover, .next-btn:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 12px 25px rgba(255, 117, 31, 0.4);
+        }
+
+        .quiz-container {
+            display: none;
+            text-align: left;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 10px;
+            background: #eee;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: var(--primary-color);
+            width: 0%;
+            transition: width 0.3s ease;
+        }
+
+        .progress-text {
+            font-weight: bold;
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .category-badge {
+            background: #ffebee;
+            color: #d32f2f;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: bold;
+        }
+
+        .category-badge.grammar {
+            background: #e3f2fd;
+            color: #1976d2;
+        }
+
+        .question-text {
+            font-size: 1.4rem;
+            font-weight: bold;
+            margin-bottom: 30px;
+            line-height: 1.5;
+        }
+
+        .options-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .option-btn {
+            background: #fff;
+            border: 2px solid #efefef;
+            padding: 18px 20px;
+            font-size: 1.1rem;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.2s;
+            text-align: left;
+            font-weight: bold;
+            color: var(--text-color);
+            font-family: inherit;
+        }
+
+        .option-btn:hover:not(:disabled) {
+            border-color: var(--primary-color);
+            background: #fffafa;
+            transform: translateX(5px);
+        }
+
+        .option-btn:disabled {
+            cursor: default;
+        }
+
+        .option-btn.correct {
+            background: #e8f5e9;
+            border-color: var(--correct-color);
+            color: #2e7d32;
+        }
+
+        .option-btn.wrong {
+            background: #ffebee;
+            border-color: var(--wrong-color);
+            color: #c62828;
+        }
+
+        .feedback-container {
+            display: none;
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            animation: fadeIn 0.4s;
+            text-align: center;
+        }
+
+        .feedback-container.correct {
+            background: #e8f5e9;
+            border: 1px solid #c8e6c9;
+        }
+
+        .feedback-container.wrong {
+            background: #ffebee;
+            border: 1px solid #ffcdd2;
+        }
+
+        .feedback-icon {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+
+        .feedback-text {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .explanation {
+            font-size: 1rem;
+            color: var(--secondary-color);
+        }
+
+        .result-container {
+            display: none;
+            text-align: center;
+        }
+
+        .score-circle {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background: #fff;
+            border: 8px solid var(--primary-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            margin: 0 auto 30px;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 600px) {
+            .worksheet-card {
+                padding: 20px;
+            }
+            .question-text {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="global-header">
+        <a href="index.html" class="back-btn">← Back to Roadmap</a>
+        <h2 style="margin:0; color:var(--primary-color);">Hana Banana Japanese</h2>
+    </header>
+
+    <div class="container">
+        <div class="worksheet-card">
+            
+            <!-- Start Screen -->
+            <div id="startScreen">
+                <img id="worksheetIllustration" src="beginner_quiz.png" alt="Quiz Illustration" class="illustration">
+                <h1 class="worksheet-title" id="worksheetTitle">Beginner Review Worksheet</h1>
+
+                <button class="start-btn" id="startBtn">Start Quiz!</button>
+            </div>
+
+            <!-- Quiz Screen -->
+            <div id="quizScreen" class="quiz-container">
+                <div class="progress-text">
+                    <span id="questionCount">Question 1 / 40</span>
+                    <span id="categoryBadge" class="category-badge">Vocabulary</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+
+                <div class="question-text" id="questionText">
+                    Loading question...
+                </div>
+
+                <div class="options-grid" id="optionsGrid">
+                    <!-- Options injected here -->
+                </div>
+
+                <div id="feedbackContainer" class="feedback-container">
+                    <div id="feedbackIcon" class="feedback-icon">⭕️</div>
+                    <div id="feedbackText" class="feedback-text">Correct!</div>
+                    <div id="explanationText" class="explanation">Explanation here.</div>
+                    <button class="next-btn" id="nextBtn" style="margin-top: 20px;">Next Question</button>
+                </div>
+            </div>
+
+            <!-- Result Screen -->
+            <div id="resultScreen" class="result-container">
+                <h1 class="worksheet-title">Quiz Complete!</h1>
+                <p class="worksheet-desc">Great job finishing the review worksheet!</p>
+                <div class="score-circle" id="finalScore">
+                    40/40
+                </div>
+                <p class="worksheet-desc" id="scoreMessage">Perfect score! You have mastered this level!</p>
+                <button class="start-btn" onclick="window.location.href='index.html'">Return to Roadmap</button>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="worksheet_data.js"></script>
+    <script src="worksheet.js"></script>
+</body>
+</html>
