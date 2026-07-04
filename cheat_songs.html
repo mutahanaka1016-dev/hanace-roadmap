@@ -426,26 +426,189 @@
             }
         }
 
+        /* START INJECTED HEADER CSS */
+        .hamburger-btn {
+            display: block;
+            position: absolute;
+            top: 25px;
+            left: 20px;
+            background: none;
+            border: none;
+            font-size: 32px;
+            cursor: pointer;
+            color: var(--secondary-color);
+            z-index: 1000;
+        }
+
+        .triangle-btn {
+            display: block;
+            position: absolute;
+            top: 25px;
+            right: 20px;
+            background: none;
+            border: none;
+            font-size: 20px;
+            cursor: pointer;
+            color: var(--secondary-color);
+            z-index: 1000;
+        }
+
+        .header-actions {
+            display: none;
+            flex-direction: column;
+            position: absolute;
+            top: 60px;
+            right: 20px;
+            background: white;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            padding: 10px;
+            z-index: 999;
+            width: 240px;
+            gap: 10px;
+        }
+        
+        .header-actions.show-actions {
+            display: flex !important;
+        }
+
+        .header-action-btn {
+            background: #fcfcfc;
+            border: 1px solid #eee;
+            padding: 12px 15px;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            width: 100%;
+            box-sizing: border-box;
+            color: var(--secondary-color);
+            font-weight: bold;
+            font-family: 'Quicksand', 'M PLUS Rounded 1c', sans-serif;
+            gap: 5px;
+        }
+
+        .tabs {
+            display: none;
+            flex-direction: column;
+            position: absolute;
+            top: 70px;
+            left: 20px;
+            background: white;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            padding: 10px;
+            z-index: 999;
+            width: 200px;
+            gap: 10px;
+        }
+
+        .tabs.show-menu {
+            display: flex !important;
+        }
+
+        .tab-btn {
+            display: block;
+            box-sizing: border-box;
+            background: #FFFFFF;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+            padding: 10px 15px;
+            font-size: 1rem;
+            font-weight: bold;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+            width: 100%;
+        }
+        
+        .hide-on-mobile {
+            display: inline;
+        }
+
+        @media (max-width: 768px) {
+            .header-actions {
+                position: absolute !important;
+                top: 15px !important;
+                left: 10px !important;
+                right: auto !important;
+                display: flex !important;
+                flex-direction: row !important;
+                justify-content: flex-start !important;
+                flex-wrap: nowrap !important;
+                gap: 8px !important;
+                margin: 0 !important;
+                padding: 0 !important;
+                width: auto !important;
+                background: transparent !important;
+                box-shadow: none !important;
+            }
+            .header-action-btn {
+                width: auto !important;
+                justify-content: center;
+                padding: 4px 10px !important;
+                font-size: 0.7rem !important;
+                border-width: 1px !important;
+                border-radius: 50% !important;
+                width: 36px !important;
+                height: 36px !important;
+            }
+            .header-action-btn svg { margin-right: 0 !important; }
+            .hide-on-mobile { display: none !important; }
+            .triangle-btn { display: none !important; }
+            .hamburger-btn {
+                position: absolute;
+                top: 15px;
+                right: 15px;
+                left: auto !important;
+                background: none;
+                border: none;
+                font-size: 28px;
+                cursor: pointer;
+                color: var(--secondary-color);
+                z-index: 1000;
+            }
+            .tabs {
+                top: 60px;
+                right: 15px;
+                left: auto !important;
+            }
+            .logo-trigger h1 { font-size: 2rem !important; letter-spacing: -1px !important; margin-top: 5px !important; }
+            .logo-trigger p { font-size: 0.75rem !important; padding: 0 5px; line-height: 1.3; }
+        }
+        /* END INJECTED HEADER CSS */
+
+
     </style>
 </head>
 <body>
+    
     <header class="global-header">
+        <button class="hamburger-btn" onclick="document.querySelector('.tabs').classList.toggle('show-menu')">☰</button>
+        <button class="triangle-btn" onclick="document.querySelector('.header-actions').classList.toggle('show-actions')">▼</button>
         <div class="header-actions">
-            <a href="index.html?search=true" class="header-action-btn" style="text-decoration: none;">🔍 Search</a>
-            <a href="myvocab.html" class="header-action-btn" style="text-decoration: none;"><svg style="width: 18px; height: 18px; margin-right: 6px; vertical-align: text-bottom;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>Saved Words</a>
-            <a href="https://discord.gg/yxM44qY67" target="_blank" class="header-action-btn" style="text-decoration: none;">💬 24/7 Chat Support</a>
+            <a href="index.html?search=true" class="header-action-btn" style="text-decoration: none;">🔍 <span class="hide-on-mobile">Search</span></a>
+            <a href="myvocab.html" class="header-action-btn" style="text-decoration: none;"><svg style="width: 18px; height: 18px; margin-right: 6px; vertical-align: text-bottom;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg><span class="hide-on-mobile">Saved Words</span></a>
+            <a href="https://discord.gg/yxM44qY67" target="_blank" class="header-action-btn" style="text-decoration: none;">💬 <span class="hide-on-mobile">24/7 Chat Support</span></a>
         </div>
         <a href="index.html" class="logo-trigger">
             <h1 style="font-weight: 800; color: var(--primary-color); font-family: 'Quicksand', 'M PLUS Rounded 1c', sans-serif; letter-spacing: -2px; margin-bottom: 5px; margin-top: 10px; text-shadow: 2px 2px 4px rgba(0,0,0,0.05);">Hanace</h1>
-            <p>Hanace [Ha-na-su]-Trace your path to bloom, Speak with confidence.</p>
         </a>
     </header>
 
     <div class="tabs">
-        <a href="index.html?tab=roadmap" class="tab-btn">Roadmap</a>
-        <a href="index.html?tab=resources" class="tab-btn active">Resources</a>
-        <a href="index.html?tab=booking" class="tab-btn">Book a Lesson</a>
+        <button class="tab-btn" onclick="location.href='index.html?tab=roadmap'">Roadmap</button>
+        <button class="tab-btn" onclick="location.href='index.html?tab=resources'">Resources</button>
+        <button class="tab-btn" onclick="location.href='index.html?tab=booking'">Book a Lesson</button>
     </div>
+
+
+    
 
     <div class="page-container">
 
@@ -506,4 +669,10 @@
 
         <div class="print-btn-container" style="margin-top: 60px; padding-top: 40px; border-top: 2px dashed #eee;">
             <button class="print-btn" onclick="window.print()">🖨️ Print to PDF</button>
-            <p style="margin-top: 15px; color: #666; font-size: 0.95rem;">Tip: Use your browser's print function and select <strong>"Save as PDF"</strong
+            <p style="margin-top: 15px; color: #666; font-size: 0.95rem;">Tip: Use your browser's print function and select <strong>"Save as PDF"</strong>.</p>
+        </div>
+
+    </div>
+
+</body>
+</html>
