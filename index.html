@@ -6,41 +6,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Roadmap | Hana Banana Japanese</title>
-    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500;700;800&family=Quicksand:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500;700;800&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary-color: #ff751f;
-            /* 赤 */
-            --secondary-color: #555555;
-            /* サブテキスト */
-            --text-color: #535353;
-            --bg-color: #FAFAFA;
-            --card-bg: rgba(255, 255, 255, 0.85);
-            --completed-bg: #e0e0e0;
-            --completed-text: #7a7a7a;
+            --primary-color: #FF7A00;
+            --primary-dark: #E06B00;
+            --primary-soft: #FFF1E4;
+            --secondary-color: #6F6F6F;
+            --text-color: #303030;
+            --bg-color: #FFFFFF;
+            --card-bg: #FFFFFF;
+            --line-color: #E8E8E8;
+            --green: #58CC02;
+            --green-dark: #46A302;
+            --completed-bg: #F5F5F5;
+            --completed-text: #9E9E9E;
         }
 
         body {
-            font-family: 'Quicksand', 'M PLUS Rounded 1c', sans-serif;
+            font-family: 'Nunito', 'M PLUS Rounded 1c', sans-serif;
             background-color: var(--bg-color);
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='500' height='500'%3E%3Cstyle%3Etext%7Bfont-family:'M PLUS Rounded 1c',sans-serif;fill:rgba(83,83,83,0.06);font-weight:700;%7D%3C/style%3E<text x='136' y='103' font-size='28' transform='rotate(18 136 103)'>僕</text><text x='111' y='28' font-size='24' transform='rotate(27 111 28)'>は</text><text x='431' y='191' font-size='27' transform='rotate(20 431 191)'>三</text><text x='303' y='225' font-size='31' transform='rotate(2 303 225)'>十</text><text x='196' y='216' font-size='27' transform='rotate(19 196 216)'>七</text><text x='389' y='50' font-size='20' transform='rotate(12 389 50)'>歳</text><text x='438' y='285' font-size='22' transform='rotate(-25 438 285)'>で</text><text x='265' y='34' font-size='24' transform='rotate(8 265 34)'>、</text><text x='279' y='281' font-size='31' transform='rotate(-13 279 281)'>そ</text><text x='461' y='385' font-size='28' transform='rotate(-19 461 385)'>の</text><text x='268' y='456' font-size='27' transform='rotate(29 268 456)'>と</text><text x='206' y='56' font-size='29' transform='rotate(20 206 56)'>き</text><text x='22' y='271' font-size='23' transform='rotate(-11 22 271)'>ボ</text><text x='104' y='236' font-size='23' transform='rotate(22 104 236)'>ー</text><text x='378' y='457' font-size='25' transform='rotate(24 378 457)'>イ</text><text x='24' y='33' font-size='23' transform='rotate(3 24 33)'>ン</text><text x='41' y='401' font-size='22' transform='rotate(-6 41 401)'>グ</text><text x='63' y='130' font-size='20' transform='rotate(-24 63 130)'>7</text><text x='432' y='470' font-size='25' transform='rotate(17 432 470)'>4</text><text x='346' y='207' font-size='26' transform='rotate(29 346 207)'>7</text><text x='228' y='315' font-size='28' transform='rotate(-29 228 315)'>の</text><text x='213' y='131' font-size='27' transform='rotate(-13 213 131)'>シ</text><text x='349' y='376' font-size='31' transform='rotate(-2 349 376)'>ー</text><text x='473' y='117' font-size='22' transform='rotate(0 473 117)'>ト</text><text x='392' y='149' font-size='27' transform='rotate(-12 392 149)'>に</text><text x='125' y='444' font-size='26' transform='rotate(15 125 444)'>座</text><text x='218' y='381' font-size='23' transform='rotate(-29 218 381)'>っ</text><text x='344' y='319' font-size='29' transform='rotate(22 344 319)'>て</text><text x='109' y='356' font-size='31' transform='rotate(22 109 356)'>い</text><text x='14' y='462' font-size='29' transform='rotate(-25 14 462)'>た</text><text x='134' y='276' font-size='26' transform='rotate(-1 134 276)'>。</text>%3C/svg%3E");
-            background-repeat: repeat;
             color: var(--text-color);
             margin: 0;
             padding: 0;
             line-height: 1.6;
             overflow-y: scroll;
-            /* コンテンツ切り替え時のガタつき防止 */
+            -webkit-font-smoothing: antialiased;
         }
 
         header.global-header {
             text-align: center;
-            padding: 40px 20px;
+            padding: 32px 20px 28px;
             background: #FFFFFF;
-            border-bottom: 4px solid var(--primary-color);
-            margin-bottom: 40px;
+            border-bottom: 2px solid var(--line-color);
+            margin-bottom: 16px;
             position: relative;
-            font-family: 'Quicksand', 'M PLUS Rounded 1c', sans-serif;
+            font-family: 'Nunito', 'M PLUS Rounded 1c', sans-serif;
             line-height: 1.2;
         }
 
@@ -53,32 +54,34 @@
         }
 
         .header-action-btn {
-            background: #fcfcfc;
-            border: 1px solid #eee;
-            padding: 8px 15px;
-            border-radius: 20px;
+            background: #fff;
+            border: 2px solid var(--line-color);
+            padding: 8px 16px;
+            border-radius: 12px;
             font-size: 0.9rem;
             cursor: pointer;
-            transition: all 0.3s ease;
+            transition: all 0.15s ease;
             color: var(--secondary-color);
-            font-weight: bold;
+            font-weight: 700;
             display: flex;
             align-items: center;
             gap: 5px;
             text-decoration: none;
-            font-family: 'Quicksand', 'M PLUS Rounded 1c', sans-serif;
+            font-family: 'Nunito', 'M PLUS Rounded 1c', sans-serif;
+            box-shadow: 0 2px 0 var(--line-color);
         }
 
         .header-action-btn:hover {
-            background: #fff;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-            transform: translateY(-1px);
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+            background: var(--primary-soft);
+            box-shadow: 0 2px 0 var(--primary-color);
         }
 
         .logo-trigger {
             cursor: pointer;
             display: inline-block;
-            transition: all 0.3s ease;
+            transition: transform 0.2s ease;
             padding: 10px 20px;
             border-radius: 24px;
             user-select: none;
@@ -94,7 +97,8 @@
         .logo-trigger h1 {
             margin: 0;
             font-size: 2.2rem;
-            letter-spacing: 2px;
+            font-weight: 900;
+            letter-spacing: -0.5px;
             color: var(--primary-color);
             border-bottom: none;
             padding: 0;
@@ -102,39 +106,35 @@
         }
 
         .logo-trigger p {
-            font-weight: bold;
-            opacity: 0.8;
+            font-weight: 700;
             color: var(--secondary-color);
-            margin-top: 5px;
+            margin-top: 6px;
             font-size: 0.9rem;
-        }
-
-        .logo-trigger:hover {
-            background-color: transparent;
-            transform: translateY(-2px);
         }
 
         .container {
             max-width: 1000px;
             margin: 0 auto 100px;
-            padding: 20px;
+            padding: 4px 20px 20px;
         }
 
-        /* タブのスタイル */
+        /* タブのスタイル（ハンバーガーメニュー） */
         .tabs {
             display: none;
             flex-direction: column;
             position: absolute;
             top: 70px;
             left: 20px;
-            background: white;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-            border-radius: 8px;
+            background: #fff;
+            border: 2px solid var(--line-color);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+            border-radius: 16px;
             padding: 10px;
             z-index: 999;
-            width: 200px;
-            gap: 10px;
+            width: 210px;
+            gap: 8px;
         }
+
         .tabs.show-menu {
             display: flex !important;
         }
@@ -144,60 +144,59 @@
             width: 100%;
             box-sizing: border-box;
             background: #FFFFFF;
-            border: 2px solid var(--primary-color);
-            color: var(--primary-color);
-            padding: 10px;
+            border: 2px solid var(--line-color);
+            color: var(--secondary-color);
+            padding: 12px;
             font-size: 1rem;
-            font-weight: bold;
-            border-radius: 8px;
+            font-weight: 800;
+            border-radius: 12px;
             cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            transition: all 0.15s ease;
             outline: none;
             text-decoration: none;
-            font-family: 'Quicksand', 'M PLUS Rounded 1c', sans-serif;
+            font-family: 'Nunito', 'M PLUS Rounded 1c', sans-serif;
             text-align: center;
         }
 
         .tab-btn:hover {
-            background: #ffe6e6;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 10px rgba(255, 117, 31, 0.1);
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+            background: var(--primary-soft);
         }
 
         .tab-btn.active {
             background: var(--primary-color);
+            border-color: var(--primary-color);
             color: #FFFFFF;
-            box-shadow: 0 6px 12px rgba(255, 117, 31, 0.2);
-            transform: translateY(-2px);
+            box-shadow: 0 3px 0 var(--primary-dark);
         }
 
-        /* サブタブメニュー - プレミアムデザイン */
+        /* サブタブメニュー（セグメントコントロール風） */
         .sub-tabs {
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
-            gap: 5px;
+            gap: 4px;
             margin-bottom: 40px;
-            background: #f5f5f5;
-            padding: 6px;
-            border-radius: 50px;
+            background: #fff;
+            border: 2px solid var(--line-color);
+            padding: 5px;
+            border-radius: 16px;
             max-width: fit-content;
             margin-left: auto;
             margin-right: auto;
-            box-shadow: inset 0 2px 5px rgba(0,0,0,0.05);
         }
 
         .sub-tab-btn {
             background: transparent;
             border: none;
-            color: #666;
-            padding: 12px 28px;
+            color: var(--secondary-color);
+            padding: 12px 26px;
             font-size: 1rem;
-            font-weight: 700;
-            border-radius: 40px;
+            font-weight: 800;
+            border-radius: 11px;
             cursor: pointer;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: all 0.2s ease;
             outline: none;
             display: flex;
             align-items: center;
@@ -210,18 +209,16 @@
             top: 100%;
             left: 50%;
             transform: translateX(-50%) translateY(10px);
-            background: rgba(255, 255, 255, 0.9);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
+            background: #fff;
             min-width: 220px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
-            border-radius: 15px;
-            padding: 10px;
+            border: 2px solid var(--line-color);
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+            border-radius: 16px;
+            padding: 8px;
             opacity: 0;
             visibility: hidden;
-            transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            transition: all 0.2s ease;
             z-index: 1000;
-            border: 1px solid rgba(255,255,255,0.4);
             max-height: 450px;
             overflow-y: auto;
         }
@@ -238,9 +235,9 @@
             padding: 12px 15px;
             color: var(--secondary-color);
             text-decoration: none;
-            font-weight: bold;
+            font-weight: 700;
             border-radius: 10px;
-            transition: background 0.2s, color 0.2s;
+            transition: background 0.15s, color 0.15s;
             text-align: left;
             font-size: 0.95rem;
             cursor: pointer;
@@ -251,19 +248,18 @@
         }
 
         .dropdown-item:hover {
-            background: #fff5f5;
+            background: var(--primary-soft);
             color: var(--primary-color);
         }
 
         .sub-tab-btn:hover {
             color: var(--primary-color);
-            background: rgba(255, 117, 31, 0.05);
+            background: var(--primary-soft);
         }
 
         .sub-tab-btn.active {
             background: var(--primary-color);
             color: #fff;
-            box-shadow: 0 4px 15px rgba(255, 117, 31, 0.3);
         }
 
         /* ロードマップコンテンツ */
@@ -294,36 +290,35 @@
             left: 50%;
             top: 20px;
             bottom: 20px;
-            width: 4px;
-            background: var(--primary-color);
+            width: 3px;
+            background: var(--line-color);
             transform: translateX(-50%);
             border-radius: 2px;
         }
 
         /* 各ステップのカード */
-        
         .step {
             position: relative;
             width: 45%;
             margin-bottom: 50px;
-            padding: 30px;
+            padding: 28px;
             background: var(--card-bg);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border-radius: 24px;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
-            transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.5s ease;
-            border: 1px solid rgba(255,255,255,0.5);
+            border-radius: 20px;
+            border: 2px solid var(--line-color);
+            box-sizing: border-box;
+            transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
         }
 
         .step:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
+            transform: translateY(-4px);
+            border-color: #FFC896;
+            box-shadow: 0 12px 24px rgba(255, 122, 0, 0.08);
         }
 
         /* 完了したステップのスタイル */
         .step.completed {
             background: var(--completed-bg);
+            border-color: var(--completed-bg);
             box-shadow: none;
         }
 
@@ -333,13 +328,13 @@
         }
 
         .step.completed .badge {
-            background: var(--secondary-color);
-            opacity: 0.8;
+            background: #E0E0E0;
+            color: var(--completed-text);
         }
 
         .step.completed .learn-btn {
-            background: var(--secondary-color);
-            opacity: 0.8;
+            background: #BDBDBD;
+            box-shadow: 0 3px 0 #9E9E9E;
         }
 
         .step.completed .learn-btn::after {
@@ -347,42 +342,37 @@
             font-size: 0.8rem;
         }
 
-        /* --- Start Here Premium UI --- */
+        /* --- Start Here --- */
         .starthere-card {
-            background: linear-gradient(135deg, #ffffff, #fffafa);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 117, 31, 0.08);
+            background: #fff;
+            border: 2px solid var(--line-color);
             padding: 60px 40px;
-            border-radius: 32px;
-            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.06);
+            border-radius: 24px;
             text-align: center;
             margin-bottom: 50px;
-            animation: slideUpFade 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+            animation: slideUpFade 0.7s cubic-bezier(0.22, 1, 0.36, 1);
         }
 
         @keyframes slideUpFade {
-            0% { opacity: 0; transform: translateY(40px); }
+            0% { opacity: 0; transform: translateY(30px); }
             100% { opacity: 1; transform: translateY(0); }
         }
 
         .starthere-title {
-            background: linear-gradient(to bottom right, #ff751f, #ff4757);
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-            font-size: 2.2rem;
-            font-weight: 800;
+            color: var(--primary-color);
+            font-size: 2.4rem;
+            font-weight: 900;
             margin-bottom: 20px;
             letter-spacing: -1px;
             line-height: 1.2;
         }
 
         .starthere-description {
-            font-size: 1.25rem;
-            color: #555;
+            font-size: 1.15rem;
+            color: var(--secondary-color);
             max-width: 680px;
             margin: 0 auto 50px;
-            line-height: 1.65;
+            line-height: 1.7;
         }
 
         .cycle-grid {
@@ -392,7 +382,7 @@
             padding: 20px 0;
             display: flex;
             flex-direction: column;
-            gap: 40px;
+            gap: 24px;
         }
 
         .cycle-grid::before {
@@ -401,36 +391,37 @@
             top: 0;
             bottom: 0;
             left: 30px;
-            width: 4px;
-            background: #ffe6e6;
+            width: 3px;
+            background: var(--line-color);
             border-radius: 4px;
             z-index: 0;
         }
 
         .cycle-item {
-            background: var(--card-bg);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            padding: 40px 30px;
-            border-radius: 24px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
-            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            background: #fff;
+            padding: 28px 28px;
+            border-radius: 20px;
+            border: 2px solid var(--line-color);
+            transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
             position: relative;
             overflow: visible;
-            border: 1px solid #f8f8f8;
             margin-left: 80px;
             width: calc(100% - 80px);
+            box-sizing: border-box;
+            text-align: left;
         }
 
         .cycle-item:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 25px 50px rgba(255, 117, 31, 0.12);
+            transform: translateY(-4px);
+            border-color: #FFC896;
+            box-shadow: 0 12px 24px rgba(255, 122, 0, 0.08);
         }
 
         .cycle-item h3 {
             margin-top: 0;
-            font-size: 1.4rem;
-            margin-bottom: 15px;
+            font-size: 1.3rem;
+            font-weight: 800;
+            margin-bottom: 10px;
             color: var(--text-color);
             display: flex;
             align-items: center;
@@ -439,25 +430,23 @@
 
         .cycle-item p {
             margin: 0;
-            font-size: 1.05rem;
+            font-size: 1rem;
             color: var(--secondary-color);
             line-height: 1.7;
         }
 
-        /* Top colored bar */
+        /* Left accent bar */
         .cycle-item::before {
             content: '';
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 6px;
+            top: 16px;
+            bottom: 16px;
+            left: -2px;
+            width: 5px;
             background: var(--primary-color);
-            border-top-left-radius: 24px;
-            border-top-right-radius: 24px;
+            border-radius: 0 4px 4px 0;
         }
 
-        /* Timeline dot removed as requested */
         .cycle-item::after {
             display: none;
         }
@@ -468,33 +457,35 @@
             .cycle-item {
                 margin-left: 50px;
                 width: calc(100% - 50px);
-                padding: 30px 20px;
+                padding: 24px 20px;
             }
         }
 
-        /* Step Colors - Unified to Primary Orange */
-
         .cta-btn-premium {
-            background: linear-gradient(135deg, var(--primary-color), #ff4d5a);
+            background: var(--primary-color);
             color: #ffffff;
-            font-size: 1.4rem;
-            padding: 22px 70px;
-            border-radius: 60px;
+            font-size: 1.25rem;
+            padding: 18px 60px;
+            border-radius: 16px;
             border: none;
             cursor: pointer;
-            font-weight: 700;
-            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            box-shadow: 0 15px 35px rgba(255, 117, 31, 0.35);
+            font-weight: 800;
+            font-family: inherit;
+            letter-spacing: 0.5px;
+            transition: filter 0.15s ease, transform 0.1s ease, box-shadow 0.1s ease;
+            box-shadow: 0 5px 0 var(--primary-dark);
             display: inline-block;
             text-decoration: none;
         }
 
         .cta-btn-premium:hover {
-            transform: translateY(-5px) scale(1.05);
-            box-shadow: 0 25px 50px rgba(255, 117, 31, 0.45);
+            filter: brightness(1.06);
         }
 
-        /* 左側のステップ（奇数） */
+        .cta-btn-premium:active {
+            transform: translateY(5px);
+            box-shadow: 0 0 0 var(--primary-dark);
+        }
 
         /* 左側のステップ（奇数） */
         .step.left {
@@ -541,7 +532,7 @@
             bottom: 125%;
             left: 50%;
             transform: translateX(-50%) scale(0.8);
-            background: rgba(40, 40, 40, 0.95);
+            background: #303030;
             color: #fff;
             padding: 6px 12px;
             border-radius: 8px;
@@ -551,7 +542,7 @@
             opacity: 0;
             visibility: hidden;
             transition: all 0.2s ease;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
             pointer-events: none;
             font-weight: normal;
         }
@@ -563,7 +554,7 @@
             left: 50%;
             transform: translateX(-50%);
             border: 6px solid transparent;
-            border-top-color: rgba(40, 40, 40, 0.95);
+            border-top-color: #303030;
             z-index: 1000;
             opacity: 0;
             visibility: hidden;
@@ -584,20 +575,28 @@
 
         .step h3 {
             margin-top: 0;
+            margin-bottom: 8px;
             color: var(--text-color);
             display: inline-block;
-            padding-bottom: 5px;
-            border-bottom: 2px solid var(--primary-color);
+            font-weight: 800;
+            font-size: 1.25rem;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        .step p {
+            color: var(--secondary-color);
+            margin-top: 0;
         }
 
         .badge {
             display: inline-block;
-            background: var(--primary-color);
-            color: #FFFFFF;
+            background: var(--primary-soft);
+            color: var(--primary-color);
             padding: 4px 12px;
             border-radius: 20px;
-            font-size: 0.85rem;
-            font-weight: bold;
+            font-size: 0.8rem;
+            font-weight: 800;
             margin-bottom: 12px;
             letter-spacing: 1px;
         }
@@ -616,7 +615,6 @@
                 margin-top: 0 !important;
                 margin-bottom: 30px;
             }
-
 
             .tabs {
                 flex-direction: column;
@@ -640,7 +638,7 @@
             }
 
             .starthere-description {
-                font-size: 1.1rem;
+                font-size: 1.05rem;
                 margin-bottom: 40px;
             }
         }
@@ -655,7 +653,7 @@
             text-align: center;
             padding: 40px;
             font-size: 0.9rem;
-            opacity: 0.6;
+            color: #AAAAAA;
             margin-top: 50px;
             clear: both;
         }
@@ -667,7 +665,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.7);
+            background: rgba(20, 20, 20, 0.55);
             z-index: 1000;
             display: flex;
             align-items: center;
@@ -683,18 +681,18 @@
         }
 
         .modal-content {
-            background: var(--card-bg);
+            background: #fff;
             width: 90%;
             max-width: 700px;
             max-height: 90vh;
-            border-radius: 24px;
+            border-radius: 20px;
             padding: 30px;
             position: relative;
-            transform: translateY(50px);
+            transform: translateY(40px);
             opacity: 0;
-            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.4s ease;
+            transition: transform 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.35s ease;
             overflow-y: auto;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 24px 60px rgba(0, 0, 0, 0.2);
         }
 
         .modal-overlay.active .modal-content {
@@ -708,7 +706,7 @@
             right: 20px;
             font-size: 1.8rem;
             cursor: pointer;
-            color: #999;
+            color: #BBB;
             transition: color 0.2s;
             line-height: 1;
         }
@@ -723,7 +721,7 @@
             /* 16:9 Aspect Ratio */
             height: 0;
             overflow: hidden;
-            border-radius: 10px;
+            border-radius: 14px;
             margin-bottom: 25px;
             background: #eee;
         }
@@ -739,15 +737,15 @@
 
         /* クイズのスタイル */
         .quiz-section {
-            background: var(--bg-color);
+            background: #FAFAFA;
             padding: 20px;
-            border-radius: 10px;
-            border: 2px solid #efefef;
+            border-radius: 16px;
+            border: 2px solid var(--line-color);
         }
 
         .quiz-question {
             font-size: 1.1rem;
-            font-weight: bold;
+            font-weight: 800;
             margin-bottom: 15px;
             color: var(--text-color);
         }
@@ -760,35 +758,46 @@
 
         .quiz-btn {
             background: #FFFFFF;
-            border: 2px solid #ddd;
+            border: 2px solid var(--line-color);
             padding: 12px;
-            border-radius: 8px;
+            border-radius: 12px;
             font-size: 1rem;
+            font-weight: 700;
+            font-family: inherit;
             cursor: pointer;
-            transition: all 0.2s;
+            transition: all 0.12s ease;
             color: var(--text-color);
+            box-shadow: 0 3px 0 var(--line-color);
         }
 
         .quiz-btn:hover {
             border-color: var(--primary-color);
-            background: #fffafa;
+            background: var(--primary-soft);
+            box-shadow: 0 3px 0 var(--primary-color);
+        }
+
+        .quiz-btn:active {
+            transform: translateY(3px);
+            box-shadow: none;
         }
 
         .quiz-btn.correct {
-            background: #e8f5e9;
-            border-color: #4CAF50;
-            color: #2e7d32;
+            background: #E7F8DC;
+            border-color: var(--green);
+            color: var(--green-dark);
+            box-shadow: 0 3px 0 var(--green);
         }
 
         .quiz-btn.wrong {
-            background: #ffebee;
+            background: #FFEBEE;
             border-color: #F44336;
             color: #c62828;
+            box-shadow: 0 3px 0 #F44336;
         }
 
         .quiz-feedback {
             margin-top: 15px;
-            font-weight: bold;
+            font-weight: 800;
             text-align: center;
             font-size: 1.1rem;
             min-height: 24px;
@@ -798,30 +807,37 @@
         .learn-btn {
             display: inline-block;
             margin-top: 15px;
-            padding: 8px 20px;
+            padding: 10px 22px;
             background: var(--primary-color);
             color: #FFF;
             border: none;
-            border-radius: 20px;
+            border-radius: 12px;
             cursor: pointer;
-            font-weight: bold;
-            transition: background 0.2s, transform 0.2s;
+            font-weight: 800;
+            font-family: inherit;
+            font-size: 0.95rem;
+            letter-spacing: 0.3px;
+            transition: filter 0.15s ease, transform 0.1s ease, box-shadow 0.1s ease;
+            box-shadow: 0 3px 0 var(--primary-dark);
         }
 
         .learn-btn:hover {
-            background: #e65100;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(255, 117, 31, 0.3);
+            filter: brightness(1.06);
+        }
+
+        .learn-btn:active {
+            transform: translateY(3px);
+            box-shadow: none;
         }
 
         /* 単語リスト・資料ダウンロードのコンテナ */
         .resource-links-row {
             display: flex;
             justify-content: center;
-            gap: 15px;
+            gap: 12px;
             margin-top: 15px;
             margin-bottom: 25px;
-            flex-wrap: wrap; /* スマホなどで幅が足りない場合は折り返す */
+            flex-wrap: wrap;
         }
 
         .vocab-link {
@@ -829,48 +845,48 @@
             align-items: center;
             gap: 8px;
             padding: 8px 20px;
-            background: transparent;
+            background: #fff;
             color: var(--secondary-color);
-            border: 1px solid #ddd;
-            border-radius: 30px;
-            font-weight: 600;
+            border: 2px solid var(--line-color);
+            border-radius: 12px;
+            font-weight: 700;
             font-size: 0.85rem;
             text-decoration: none;
-            transition: all 0.2s ease;
-            box-shadow: none;
+            transition: all 0.15s ease;
+            box-shadow: 0 2px 0 var(--line-color);
         }
 
         .vocab-link:hover {
-            background: #f9f9f9;
             color: var(--primary-color);
-            transform: translateY(-1px);
-            border-color: #ccc;
+            border-color: var(--primary-color);
+            background: var(--primary-soft);
+            box-shadow: 0 2px 0 var(--primary-color);
         }
-        
+
         .vocab-link::after {
             content: '→';
             font-size: 0.9rem;
             transition: transform 0.2s ease;
         }
-        
+
         .vocab-link:hover::after {
             transform: translateX(3px);
         }
 
-
         /* モーダル内の単語リスト */
         .vocab-section {
-            background: #fdfdfd;
+            background: #FAFAFA;
             padding: 20px;
-            border-radius: 10px;
-            border: 2px solid #efefef;
+            border-radius: 16px;
+            border: 2px solid var(--line-color);
             margin-bottom: 25px;
         }
 
         .vocab-section h3 {
             margin-top: 0;
             color: var(--text-color);
-            border-bottom: 2px solid var(--primary-color);
+            font-weight: 800;
+            border-bottom: 2px solid var(--line-color);
             padding-bottom: 10px;
             font-size: 1.2rem;
             margin-bottom: 15px;
@@ -888,10 +904,10 @@
         .vocab-list li {
             background: #ffffff;
             padding: 10px 15px;
-            border-radius: 8px;
+            border-radius: 10px;
+            border: 2px solid var(--line-color);
             border-left: 4px solid var(--primary-color);
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.02);
-            font-weight: bold;
+            font-weight: 700;
             font-size: 1.05rem;
         }
 
@@ -906,9 +922,9 @@
             text-align: center;
             font-size: 1.1rem;
             background: #fff;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-            border-radius: 10px;
+            border-radius: 12px;
             overflow: hidden;
+            border: 2px solid var(--line-color);
         }
 
         .custom-chart th,
@@ -918,25 +934,25 @@
         }
 
         .custom-chart th {
-            background: #fffafa;
+            background: var(--primary-soft);
             color: var(--primary-color);
-            font-weight: bold;
+            font-weight: 800;
         }
 
         .romaji {
             display: block;
             font-size: 0.8rem;
-            color: #777;
+            color: #999;
             margin-top: 2px;
             font-weight: normal;
         }
 
         /* Booking Form Styles */
         .booking-form {
-            background: var(--card-bg);
-            border-radius: 24px;
+            background: #fff;
+            border-radius: 20px;
+            border: 2px solid var(--line-color);
             padding: 30px;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
             max-width: 600px;
             margin: 0 auto 50px;
         }
@@ -948,20 +964,20 @@
 
         .form-group label {
             display: block;
-            font-weight: bold;
+            font-weight: 800;
             color: var(--text-color);
             margin-bottom: 8px;
         }
 
         .form-control {
             width: 100%;
-            padding: 12px;
-            border: 2px solid #efefef;
-            border-radius: 8px;
+            padding: 12px 14px;
+            border: 2px solid var(--line-color);
+            border-radius: 12px;
             font-size: 1rem;
             font-family: inherit;
             box-sizing: border-box;
-            transition: border-color 0.3s;
+            transition: border-color 0.2s;
         }
 
         .form-control:focus {
@@ -975,19 +991,23 @@
             background: var(--primary-color);
             color: #fff;
             font-size: 1.1rem;
-            font-weight: bold;
+            font-weight: 800;
+            font-family: inherit;
             border: none;
-            border-radius: 30px;
+            border-radius: 14px;
             cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 6px rgba(255, 117, 31, 0.2);
+            transition: filter 0.15s ease, transform 0.1s ease, box-shadow 0.1s ease;
+            box-shadow: 0 4px 0 var(--primary-dark);
             margin-top: 10px;
         }
 
         .submit-btn:hover {
-            background: #cc0010;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 12px rgba(255, 117, 31, 0.3);
+            filter: brightness(1.06);
+        }
+
+        .submit-btn:active {
+            transform: translateY(4px);
+            box-shadow: none;
         }
 
         .triangle-btn {
@@ -1010,29 +1030,29 @@
             top: 60px;
             right: 20px;
             background: white;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-            border-radius: 8px;
+            border: 2px solid var(--line-color);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+            border-radius: 16px;
             padding: 10px;
             z-index: 999;
             width: 240px;
             gap: 10px;
         }
-        
+
         .header-actions.show-actions {
             display: flex !important;
         }
 
         .header-action-btn {
             background: #fff;
-            color: var(--primary-color);
-            border: 2px solid #fff;
-            padding: 6px 14px;
-            border-radius: 30px;
-            font-weight: bold;
+            color: var(--secondary-color);
+            border: 2px solid var(--line-color);
+            padding: 8px 14px;
+            border-radius: 12px;
+            font-weight: 700;
             font-size: 0.85rem;
             cursor: pointer;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
+            transition: all 0.15s ease;
             text-decoration: none;
             display: flex;
             align-items: center;
@@ -1041,9 +1061,9 @@
         }
 
         .header-action-btn:hover {
-            background: var(--primary-color);
-            color: #fff;
-            transform: translateY(-2px);
+            background: var(--primary-soft);
+            color: var(--primary-color);
+            border-color: var(--primary-color);
         }
 
         @media (max-width: 768px) {
@@ -1054,6 +1074,7 @@
                 padding: 0 20px;
             }
         }
+
         /* 検索ボタン */
         .search-trigger {
             position: fixed;
@@ -1070,13 +1091,13 @@
             font-size: 1.5rem;
             cursor: pointer;
             z-index: 999;
-            box-shadow: 0 4px 15px rgba(255, 117, 31, 0.3);
-            transition: all 0.3s ease;
+            box-shadow: 0 4px 0 var(--primary-dark);
+            transition: all 0.15s ease;
         }
 
         .search-trigger:hover {
-            transform: scale(1.1);
-            box-shadow: 0 6px 20px rgba(255, 117, 31, 0.4);
+            filter: brightness(1.06);
+            transform: scale(1.05);
         }
 
         /* 検索モーダル固有のスタイル */
@@ -1100,10 +1121,12 @@
             width: 100%;
             padding: 15px 20px;
             font-size: 1.1rem;
-            border: 2px solid #eee;
-            border-radius: 24px;
+            font-family: inherit;
+            border: 2px solid var(--line-color);
+            border-radius: 14px;
             outline: none;
-            transition: border-color 0.3s;
+            box-sizing: border-box;
+            transition: border-color 0.2s;
         }
 
         .search-input:focus {
@@ -1120,16 +1143,16 @@
             padding: 15px;
             border-bottom: 1px solid #f5f5f5;
             cursor: pointer;
-            transition: background 0.2s;
+            transition: background 0.15s;
             border-radius: 10px;
         }
 
         .search-result-item:hover {
-            background: #fff5f5;
+            background: var(--primary-soft);
         }
 
         .search-result-title {
-            font-weight: bold;
+            font-weight: 800;
             color: var(--primary-color);
             margin-bottom: 5px;
         }
@@ -1157,24 +1180,27 @@
                 height: 45px;
             }
         }
+
         .cheat-sheet-checkbox {
             appearance: none;
             width: 22px;
             height: 22px;
             border: 2px solid var(--primary-color);
-            border-radius: 6px;
+            border-radius: 7px;
             cursor: pointer;
             position: relative;
             margin-right: 15px;
-            transition: all 0.2s;
+            transition: all 0.15s;
             background: #fff;
             flex-shrink: 0;
             display: inline-block;
             vertical-align: middle;
         }
+
         .cheat-sheet-checkbox:checked {
             background-color: var(--primary-color);
         }
+
         .cheat-sheet-checkbox:checked::after {
             content: '✓';
             position: absolute;
@@ -1185,11 +1211,12 @@
             transform: translate(-50%, -50%);
             font-weight: bold;
         }
+
         .cheat-sheet-checkbox:hover {
-            box-shadow: 0 0 5px rgba(255, 117, 31, 0.3);
+            box-shadow: 0 0 0 3px var(--primary-soft);
             transform: scale(1.05);
         }
-    
+
         .hamburger-btn {
             display: block;
             position: absolute;
@@ -1231,13 +1258,14 @@
                 padding: 0 !important;
                 width: auto !important;
                 background: transparent !important;
+                border: none !important;
                 box-shadow: none !important;
             }
             .header-action-btn {
-                width: auto !important; /* 幅を自動に */
+                width: auto !important;
                 justify-content: center;
-                padding: 4px 10px !important; /* さらに小さく */
-                font-size: 0.7rem !important; /* フォントサイズを縮小 */
+                padding: 4px 10px !important;
+                font-size: 0.7rem !important;
                 border-width: 1px !important;
             }
             .logo-trigger h1 {
@@ -1253,7 +1281,7 @@
             .tabs {
                 flex-direction: column !important;
                 gap: 8px !important;
-                padding: 0 10px !important;
+                padding: 10px !important;
             }
             .tab-btn {
                 width: 100% !important;
@@ -1271,7 +1299,7 @@
                 width: 100% !important;
                 float: none !important;
                 margin: 0 0 15px 0 !important;
-                padding: 15px !important;
+                padding: 18px !important;
                 border-radius: 16px !important;
             }
             /* Table Fixes */
@@ -1297,15 +1325,15 @@
             .cycle-item {
                 width: 100% !important;
                 margin: 0 !important;
-                padding: 15px !important;
+                padding: 18px !important;
                 border-radius: 16px !important;
             }
             .starthere-card {
-                padding: 20px 10px !important;
+                padding: 24px 12px !important;
                 border-radius: 20px !important;
             }
             .starthere-title {
-                font-size: 2rem !important;
+                font-size: 1.9rem !important;
             }
             .cta-btn-premium {
                 padding: 15px 40px !important;
@@ -1314,7 +1342,6 @@
             .hide-on-mobile {
                 display: none !important;
             }
-            /* Removed redundant header-actions override */
             .triangle-btn {
                 display: none !important;
             }
@@ -1334,7 +1361,7 @@
                 position: absolute;
                 top: 15px;
                 right: 15px;
-                left: auto !important; /* override desktop */
+                left: auto !important;
                 background: none;
                 border: none;
                 font-size: 28px;
@@ -1344,12 +1371,373 @@
             }
             .tabs {
                 top: 60px;
-                right: 15px; /* Mobile right */
-                left: auto !important; /* override desktop left */
+                right: 15px;
+                left: auto !important;
             }
         }
 
+    
+        /* ===== Engagement UI (continue / progress / streak / celebration) ===== */
+        .continue-banner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            flex-wrap: wrap;
+            background: #FFF9F2;
+            border: 2px solid #FFDCBB;
+            border-radius: 20px;
+            padding: 18px 24px;
+            margin-bottom: 30px;
+            animation: slideUpFade 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        .cb-title { font-weight: 800; font-size: 1.05rem; color: #303030; }
+        .cb-sub { color: #6F6F6F; font-size: 0.95rem; font-weight: 700; }
+        .cb-btn { margin-top: 0; white-space: nowrap; }
+        .level-progress { max-width: 560px; margin: 0 auto 28px; }
+        .level-progress-label {
+            display: flex;
+            justify-content: space-between;
+            font-weight: 800;
+            font-size: 0.9rem;
+            color: #6F6F6F;
+            margin-bottom: 6px;
+        }
+        .level-progress-bar {
+            height: 12px;
+            background: #F0F0F0;
+            border-radius: 999px;
+            overflow: hidden;
+        }
+        .level-progress-fill {
+            height: 100%;
+            background: var(--primary-color);
+            border-radius: 999px;
+            transition: width 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        .level-progress.lp-done .level-progress-fill { background: var(--green); }
+        .streak-chip {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            margin-top: 8px;
+            padding: 5px 14px;
+            border-radius: 999px;
+            background: var(--primary-soft);
+            border: 2px solid #FFDCBB;
+            color: var(--primary-dark);
+            font-weight: 800;
+            font-size: 0.85rem;
+            cursor: default;
+        }
+        .streak-chip.streak-idle {
+            background: #F5F5F5;
+            border-color: #E8E8E8;
+            color: #9E9E9E;
+        }
+        .step-highlight { animation: hanacePulse 0.9s ease 3; }
+        @keyframes hanacePulse {
+            0%, 100% { border-color: var(--line-color); box-shadow: none; }
+            50% { border-color: var(--primary-color); box-shadow: 0 0 0 6px rgba(255, 122, 0, 0.15); }
+        }
+        .hanace-petal {
+            position: fixed;
+            top: -40px;
+            z-index: 3000;
+            pointer-events: none;
+            animation: hanaceFall linear forwards;
+        }
+        @keyframes hanaceFall {
+            to { transform: translateY(110vh) rotate(660deg); opacity: 0.7; }
+        }
+        .hanace-toast {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translate(-50%, 80px);
+            background: #fff;
+            border: 2px solid var(--primary-color);
+            color: #303030;
+            font-weight: 800;
+            padding: 14px 26px;
+            border-radius: 16px;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+            z-index: 3001;
+            transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.35s;
+            opacity: 0;
+        }
+        .hanace-toast.show { transform: translate(-50%, 0); opacity: 1; }
+        @media (max-width: 768px) {
+            .continue-banner { padding: 14px 16px !important; }
+            .cb-btn { width: 100%; text-align: center; }
+        }
 
+    
+        .review-chip {
+            margin-left: 8px;
+            text-decoration: none;
+            background: #fff;
+            color: var(--primary-color);
+            border-color: #FFDCBB;
+            cursor: pointer;
+        }
+        .review-chip:hover { background: var(--primary-soft); }
+    
+        /* ===== Mobile Bottom Tab Nav ===== */
+        .hanace-bottom-nav { display: none; }
+        @media (max-width: 768px) {
+            body { padding-bottom: 74px !important; }
+            .hanace-bottom-nav {
+                display: flex;
+                position: fixed;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                z-index: 2000;
+                background: #fff;
+                border-top: 2px solid #E8E8E8;
+                padding: 6px 4px calc(6px + env(safe-area-inset-bottom));
+                justify-content: space-around;
+            }
+            .hanace-bottom-nav a {
+                flex: 1;
+                text-align: center;
+                text-decoration: none;
+                color: #9E9E9E;
+                font-size: 0.62rem;
+                font-weight: 800;
+                font-family: 'Nunito', 'M PLUS Rounded 1c', sans-serif;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 2px;
+                position: relative;
+            }
+            .hanace-bottom-nav a .bn-icon { font-size: 1.25rem; line-height: 1.2; }
+            .hanace-bottom-nav a.active { color: #FF7A00; }
+            .hanace-bottom-nav .bn-dot {
+                position: absolute;
+                top: -2px;
+                right: 50%;
+                margin-right: -18px;
+                width: 8px;
+                height: 8px;
+                border-radius: 50%;
+                background: #FF4757;
+                display: none;
+            }
+        }
+    
+        /* ===== Mobile header/menu adjustments ===== */
+        .menu-mobile-item { display: none; }
+        @media (max-width: 768px) {
+            .tab-roadmap, .tab-booking { display: none !important; }
+            .menu-mobile-item { display: block; }
+            .ha-search, .ha-chat, .ha-saved { display: none !important; }
+        }
+    
+        .vocab-save-daisy {
+            cursor: pointer;
+            font-size: 1.15rem;
+            opacity: 0.25;
+            margin-left: 10px;
+            flex-shrink: 0;
+            user-select: none;
+            transition: opacity 0.2s, transform 0.2s;
+        }
+        .vocab-save-daisy:hover { opacity: 1; transform: scale(1.2); }
+        .vocab-save-daisy.active { opacity: 1; filter: drop-shadow(0 0 6px #FFDF70); }
+    
+        #hanace-continue { display: none; }
+        body.roadmap-active #hanace-continue { display: flex; }
+    
+        /* unified Hanace logo size */
+        .logo-trigger h1 { font-size: 35px !important; }
+        @media (max-width: 768px) {
+            .logo-trigger h1 { font-size: 28px !important; }
+        }
+    
+        .sp-only { display: none; }
+        @media (max-width: 768px) {
+            .sp-only { display: inline; }
+        }
+    
+        /* rich tooltips (examples): element-based popup with POS badge */
+        .tooltip-word.rich::after,
+        .tooltip-word.rich::before { display: none; }
+        .tooltip-word .tt-pop {
+            position: absolute;
+            bottom: 125%;
+            left: 50%;
+            transform: translateX(-50%) scale(0.8);
+            background: #303030;
+            color: #fff;
+            padding: 6px 12px;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            font-weight: normal;
+            white-space: nowrap;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.2s ease;
+            pointer-events: none;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+        .tooltip-word .tt-pop::after {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            border: 6px solid transparent;
+            border-top-color: #303030;
+        }
+        .tooltip-word:hover .tt-pop {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(-50%) scale(1);
+        }
+        .tt-pop .pos {
+            display: inline-block;
+            font-size: 0.62rem;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+            background: rgba(255, 255, 255, 0.22);
+            padding: 1px 6px;
+            border-radius: 4px;
+            margin-right: 7px;
+            vertical-align: middle;
+        }
+    
+        /* ===== PC: persistent left sidebar ===== */
+        .hanace-sidebar { display: none; }
+        @media (min-width: 1025px) {
+            body { padding-left: 250px; }
+            .hamburger-btn { display: none !important; }
+            .triangle-btn { display: none !important; }
+            .hanace-sidebar {
+                display: flex;
+                flex-direction: column;
+                position: fixed;
+                top: 0;
+                left: 0;
+                bottom: 0;
+                width: 250px;
+                box-sizing: border-box;
+                background: #fff;
+                border-right: 2px solid #E8E8E8;
+                padding: 24px 16px;
+                overflow-y: auto;
+                z-index: 900;
+                font-family: 'Nunito', 'M PLUS Rounded 1c', sans-serif;
+            }
+            .hs-brand {
+                font-weight: 900;
+                font-size: 1.3rem;
+                color: #FF7A00;
+                letter-spacing: -0.5px;
+                margin: 0 8px 18px;
+                text-decoration: none;
+                display: block;
+            }
+            .hs-label {
+                font-size: 0.68rem;
+                font-weight: 800;
+                letter-spacing: 1.5px;
+                text-transform: uppercase;
+                color: #B5B5B5;
+                margin: 14px 8px 6px;
+            }
+            .hanace-sidebar a.hs-item {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                padding: 9px 10px;
+                border-radius: 10px;
+                text-decoration: none;
+                color: #6F6F6F;
+                font-weight: 700;
+                font-size: 0.92rem;
+                transition: background 0.15s, color 0.15s;
+                cursor: pointer;
+            }
+            .hanace-sidebar a.hs-item:hover {
+                background: #FFF1E4;
+                color: #FF7A00;
+            }
+            .hanace-sidebar a.hs-item.active {
+                background: #FF7A00;
+                color: #fff;
+            }
+            .hs-sections a.hs-item {
+                font-size: 0.85rem;
+                padding: 7px 10px;
+            }
+            .hs-divider {
+                height: 2px;
+                background: #F0F0F0;
+                border-radius: 2px;
+                margin: 12px 4px;
+            }
+        }
+    
+        /* ===== Hanace logo wordmark ===== */
+        .hanace-logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0;
+            margin: 10px 0 5px;
+            letter-spacing: -1.5px;
+            font-weight: 900;
+            font-family: 'Nunito', 'M PLUS Rounded 1c', sans-serif;
+            line-height: 1;
+        }
+        .hanace-logo .logo-daisy {
+            width: 0.92em;
+            height: 0.92em;
+            flex-shrink: 0;
+            margin-right: 9px;
+            transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        .logo-trigger:hover .logo-daisy { transform: rotate(180deg); }
+        .logo-hana { color: #FF7A00; }
+        .logo-ce { color: #303030; }
+        .hs-brand {
+            display: flex !important;
+            align-items: center;
+            gap: 0;
+            font-weight: 900;
+            letter-spacing: -0.8px;
+            line-height: 1;
+        }
+        .hs-brand .logo-daisy {
+            width: 21px;
+            height: 21px;
+            margin-right: 7px;
+            transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        .hs-brand:hover .logo-daisy { transform: rotate(180deg); }
+    
+        /* ===== unified header band height (all pages) ===== */
+        header.global-header {
+            display: flex !important;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            box-sizing: border-box;
+            min-height: 118px;
+            padding: 8px 20px !important;
+            margin-bottom: 16px !important;
+        }
+        header.global-header .logo-trigger { padding: 6px 20px; }
+        @media (max-width: 768px) {
+            header.global-header {
+                min-height: 110px;
+                padding: 6px 10px !important;
+            }
+        }
     </style>
 </head>
 
@@ -1359,20 +1747,22 @@
         <button class="hamburger-btn" onclick="document.querySelector('.tabs').classList.toggle('show-menu')">☰</button>
         <button class="triangle-btn" onclick="document.querySelector('.header-actions').classList.toggle('show-actions')">▼</button>
         <div class="header-actions">
-            <a href="index.html?search=true" class="header-action-btn" style="text-decoration: none;">🔍 <span class="hide-on-mobile">Search</span></a>
-            <a href="myvocab.html" class="header-action-btn" style="text-decoration: none;"><svg style="width: 18px; height: 18px; margin-right: 6px; vertical-align: text-bottom;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg><span class="hide-on-mobile">Saved Words</span></a>
-            <a href="https://discord.gg/yxM44qY67" target="_blank" class="header-action-btn" style="text-decoration: none;">💬 <span class="hide-on-mobile">24/7 Chat Support</span></a>
+            <a href="index.html?search=true" class="header-action-btn ha-search" style="text-decoration: none;">🔍 <span class="hide-on-mobile">Search</span></a>
+            <a href="myvocab.html" class="header-action-btn ha-saved" style="text-decoration: none;"><span class="sw-icon" style="font-size: 17px; line-height: 1; margin-right: 6px;">🌼</span><span class="hide-on-mobile">Saved Words</span></a>
+            <a href="https://discord.gg/yxM44qY67" target="_blank" class="header-action-btn ha-chat" style="text-decoration: none;">💬 <span class="hide-on-mobile">24/7 Chat Support</span></a>
         </div>
         <a href="index.html" class="logo-trigger">
-            <h1 style="font-weight: 800; color: var(--primary-color); font-family: 'Quicksand', 'M PLUS Rounded 1c', sans-serif; letter-spacing: -2px; margin-bottom: 5px; margin-top: 10px; text-shadow: 2px 2px 4px rgba(0,0,0,0.05);">Hanace</h1>
-            <p>Hanace [Ha-na-su]-Trace your path to bloom, Speak with confidence.</p>
+            <h1 class="hanace-logo"><svg class="logo-daisy" viewBox="0 0 48 48" aria-hidden="true"><g fill="#FF7A00"><ellipse cx="24" cy="10" rx="6" ry="10"/><ellipse cx="24" cy="10" rx="6" ry="10" transform="rotate(45 24 24)"/><ellipse cx="24" cy="10" rx="6" ry="10" transform="rotate(90 24 24)"/><ellipse cx="24" cy="10" rx="6" ry="10" transform="rotate(135 24 24)"/><ellipse cx="24" cy="10" rx="6" ry="10" transform="rotate(180 24 24)"/><ellipse cx="24" cy="10" rx="6" ry="10" transform="rotate(225 24 24)"/><ellipse cx="24" cy="10" rx="6" ry="10" transform="rotate(270 24 24)"/><ellipse cx="24" cy="10" rx="6" ry="10" transform="rotate(315 24 24)"/></g><circle cx="24" cy="24" r="8.5" fill="#FFC94D"/><circle cx="24" cy="24" r="8.5" fill="none" stroke="#F0A830" stroke-width="1"/></svg><span class="logo-hana">Hana</span><span class="logo-ce">ce</span></h1>
+            <p>Hanace [Ha-na-su]-Trace your path to bloom,<br class="sp-only"> Speak with confidence.</p>
         </a>
     </header>
 
     <div class="tabs">
-        <button class="tab-btn active" onclick="showRoadmap('roadmap', this)">Roadmap</button>
+        <button class="tab-btn active tab-roadmap" onclick="showRoadmap('roadmap', this)">Roadmap</button>
         <button class="tab-btn" onclick="showRoadmap('resources', this)">Resources</button>
-        <button class="tab-btn" onclick="showRoadmap('booking', this)">Book a Lesson</button>
+        <button class="tab-btn tab-booking" onclick="showRoadmap('booking', this)">Book a Lesson</button>
+        <a href="index.html?search=true" class="tab-btn menu-mobile-item">Search</a>
+        <a href="https://discord.gg/yxM44qY67" target="_blank" class="tab-btn menu-mobile-item">24/7 Chat Support</a>
     </div>
 
     <div class="container">
@@ -1393,7 +1783,7 @@
                     Ready? Off you go! (Itterasshai!)
                 </p>
 
-                <h3 style="text-align: center; color: var(--primary-color); margin-top: 50px; margin-bottom: 0px; font-size: 1.8rem; font-family: 'Quicksand', 'M PLUS Rounded 1c', sans-serif;">Your 6-Step Success Roadmap</h3>
+                <h3 style="text-align: center; color: var(--primary-color); margin-top: 50px; margin-bottom: 0px; font-size: 1.8rem; font-family: 'Nunito', 'M PLUS Rounded 1c', sans-serif;">Your 6-Step Success Roadmap</h3>
 
                 <div class="cycle-grid">
                     <!-- 1. Vocab -->
@@ -1764,11 +2154,11 @@
 
             <!-- Cheat Sheets Section -->
             <div
-                style="background: var(--card-bg); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.5); padding: 30px; border-radius: 24px; margin-bottom: 40px; box-shadow: 0 8px 16px rgba(0,0,0,0.05);">
+                style="background: #fff; border: 2px solid var(--line-color); padding: 30px; border-radius: 20px; margin-bottom: 40px;">
                 <h2
                     style="color: var(--primary-color); font-size: 1.8rem; margin-top: 0; border-bottom: none; margin-bottom: 20px;">
                     Helpful Cheat Sheets</h2>
-                <div id="cheat-sheet-badge-container" style="background: rgba(255, 117, 31, 0.1); padding: 15px; border-radius: 16px; margin-bottom: 20px; text-align: center; border: 1px dashed var(--primary-color);">
+                <div id="cheat-sheet-badge-container" style="background: var(--primary-soft); padding: 15px; border-radius: 16px; margin-bottom: 20px; text-align: center; border: 1px dashed var(--primary-color);">
                     <div style="font-size: 0.9rem; color: var(--secondary-color); margin-bottom: 5px;">Your Explorer Rank</div>
                     <div id="cheat-sheet-badge" style="font-size: 1.5rem; font-weight: bold; color: var(--primary-color);">
                         Beginner 🍌
@@ -1806,7 +2196,7 @@
 
             <!-- プロフィール部分 -->
             <div
-                style="position: relative; overflow: hidden; background: #fff; border: 1px solid rgba(255,255,255,0.5); border-radius: 24px; padding: 40px; box-shadow: 0 10px 20px rgba(0,0,0,0.05); margin-bottom: 50px; display: flex; flex-wrap: wrap; gap: 30px; align-items: center;">
+                style="position: relative; overflow: hidden; background: #fff; border: 2px solid var(--line-color); border-radius: 20px; padding: 40px; margin-bottom: 50px; display: flex; flex-wrap: wrap; gap: 30px; align-items: center;">
 
 
                 <div style="position: relative; z-index: 1; flex: 1 1 200px; text-align: center;">
@@ -1851,7 +2241,7 @@
 
             <div style="text-align: center; margin-bottom: 50px;">
                 <a href="https://calendar.app.google/myabjs8iudaMkzds8" target="_blank" 
-                   style="display: inline-block; background: var(--primary-color); color: #fff; padding: 18px 40px; border-radius: 30px; font-size: 1.3rem; font-weight: bold; text-decoration: none; box-shadow: 0 5px 15px rgba(255, 117, 31, 0.3); transition: transform 0.2s;">
+                   style="display: inline-block; background: var(--primary-color); color: #fff; padding: 18px 44px; border-radius: 16px; font-size: 1.3rem; font-weight: 800; text-decoration: none; box-shadow: 0 5px 0 var(--primary-dark); transition: filter 0.15s;">
                    🗓️ Schedule a Lesson
                 </a>
             </div>
@@ -1907,7 +2297,7 @@
             <div class="video-container" id="modal-video-container" style="position: relative; cursor: pointer; background: #000; border-radius: 12px; overflow: hidden;">
                 <div id="video-placeholder" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 10; display: flex; align-items: center; justify-content: center; background: #000;">
                     <img id="video-thumbnail" src="" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.7; pointer-events: none;">
-                    <div style="position: absolute; width: 70px; height: 70px; background: #FF751F; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 30px; box-shadow: 0 0 20px rgba(0,0,0,0.3); pointer-events: none;">
+                    <div style="position: absolute; width: 70px; height: 70px; background: #FF7A00; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 30px; box-shadow: 0 0 20px rgba(0,0,0,0.3); pointer-events: none;">
                         <span style="margin-left: 5px;">▶</span>
                     </div>
                 </div>
@@ -2060,6 +2450,9 @@
             if (btnElement) {
                 btnElement.classList.add('active');
             }
+
+            // 「Welcome back!」バナーはRoadmapタブのみ表示
+            document.body.classList.toggle('roadmap-active', level === 'roadmap');
         }
 
         /* モーダルとクイズの制御 */
@@ -2509,11 +2902,11 @@
                 ],
                 vocabulary: [
                     { kana: 'ひらがな', kanji: '', romaji: 'hiragana', meaning: 'Hiragana' },
-                    { kana: 'カタカナ', kanji: '', romaji: 'katakana', meaning: 'Katakana' },
+                    { kana: 'もじ', kanji: '文字', romaji: 'moji', meaning: 'letter / character' },
                     { kana: 'かんじ', kanji: '漢字', romaji: 'kanji', meaning: 'Kanji' },
-                    { kana: 'えき', kanji: '', romaji: 'eki', meaning: 'train station' },
-                    { kana: 'おかね', kanji: '', romaji: 'okane', meaning: 'money' },
-                    { kana: 'コーヒー', kanji: '', romaji: 'koohii', meaning: 'coffee' },
+                    { kana: 'つくえ', kanji: '', romaji: 'tsukue', meaning: 'desk' },
+                    { kana: 'くつ', kanji: '', romaji: 'kutsu', meaning: 'shoes' },
+                    { kana: 'おちゃ', kanji: 'お茶', romaji: 'ocha', meaning: 'green tea' },
                     { kana: 'ひ', kanji: '日', romaji: 'hi', meaning: 'sun / day' },
                     { kana: 'つき', kanji: '月', romaji: 'tsuki', meaning: 'moon / month' },
                     { kana: 'ひと', kanji: '人', romaji: 'hito', meaning: 'person' },
@@ -2562,7 +2955,7 @@
                     { kana: 'はい', kanji: '杯', romaji: 'hai', meaning: 'counter for cups / bowls' },
                     { kana: 'にん', kanji: '人', romaji: 'nin', meaning: 'counter for people' },
                     { kana: 'りんご', kanji: '', romaji: 'ringo', meaning: 'apple' },
-                    { kana: 'ごはん', kanji: '', romaji: 'gohan', meaning: 'rice / meal' }
+                    { kana: 'たまご', kanji: '', romaji: 'tamago', meaning: 'egg' }
                 ],
                 examples: [
                     { jp: '<span class="tooltip-word" data-tooltip="how much" onclick="saveWordClick(this)">いくら</span>ですか？', romaji: 'Ikura desuka?', en: 'How much is it?' },
@@ -2583,7 +2976,7 @@
                     { kana: 'がくせい', kanji: '学生', romaji: 'gakusei', meaning: 'student' },
                     { kana: 'せんせい', kanji: '先生', romaji: 'sensei', meaning: 'teacher' },
                     { kana: 'いしゃ', kanji: '医者', romaji: 'isha', meaning: 'doctor' },
-                    { kana: 'エンジニア', kanji: '', romaji: 'enjinia', meaning: 'engineer' },
+                    { kana: 'きょうし', kanji: '教師', romaji: 'kyoushi', meaning: 'teacher (profession)' },
                     { kana: 'にほんじん', kanji: '日本人', romaji: 'nihonjin', meaning: 'Japanese person' },
                     { kana: 'ほん', kanji: '本', romaji: 'hon', meaning: 'book' },
                     { kana: 'です', kanji: '', romaji: 'desu', meaning: 'am / is / are' },
@@ -2643,7 +3036,7 @@
                     { kana: 'かばん', kanji: '鞄', romaji: 'kaban', meaning: 'bag' },
                     { kana: 'たてもの', kanji: '建物', romaji: 'tatemono', meaning: 'building' },
                     { kana: 'びょういん', kanji: '病院', romaji: 'byouin', meaning: 'hospital' },
-                    { kana: 'きれい', kanji: '綺麗', romaji: 'kirei', meaning: 'beautiful / clean' },
+                    { kana: 'めがね', kanji: '眼鏡', romaji: 'megane', meaning: 'glasses' },
                     { kana: 'おもしろい', kanji: '面白い', romaji: 'omoshiroi', meaning: 'interesting' }
                 ],
                 examples: [
@@ -2677,7 +3070,7 @@
                     { kana: 'あつい', kanji: '暑い', romaji: 'atsui', meaning: 'hot' },
                     { kana: 'さむい', kanji: '寒い', romaji: 'samui', meaning: 'cold' },
                     { kana: 'とても', kana_kanji: '', romaji: 'totemo', meaning: 'very' },
-                    { kana: 'すこし', kanji: '少し', romaji: 'sukoshi', meaning: 'a little' },
+                    { kana: 'ひろい', kanji: '広い', romaji: 'hiroi', meaning: 'spacious / wide' },
                     { kana: 'でも', kanji: '', romaji: 'demo', meaning: 'but' },
                     { kana: 'きょう', kanji: '今日', romaji: 'kyou', meaning: 'weather / today' }
                 ],
@@ -2698,14 +3091,14 @@
                 videoUrl: 'https://www.youtube.com/embed/X4KuMrCIrrg',
                 vocabulary: [
                     { kana: 'たのしい', kanji: '楽しい', romaji: 'tanoshii', meaning: 'fun' },
-                    { kana: 'むずかしい', kanji: '難しい', romaji: 'muzukashii', meaning: 'difficult' },
+                    { kana: 'かなしい', kanji: '悲しい', romaji: 'kanashii', meaning: 'sad' },
                     { kana: 'あたたかい', kanji: '暖かい', romaji: 'atatakai', meaning: 'warm' },
                     { kana: 'やさしい', kanji: '易しい', romaji: 'yasashii', meaning: 'easy' },
                     { kana: 'ながい', kanji: '長い', romaji: 'nagai', meaning: 'long' },
-                    { kana: 'きのう', kanji: '昨日', romaji: 'kinou', meaning: 'yesterday' },
-                    { kana: 'なつやすみ', kanji: '夏休み', romaji: 'natsuyasumi', meaning: 'summer vacation' },
-                    { kana: 'りょこう', kanji: '旅行', romaji: 'ryokou', meaning: 'trip' },
-                    { kana: 'テスト', kanji: '', romaji: 'tesuto', meaning: 'test' },
+                    { kana: 'おととい', kanji: '一昨日', romaji: 'ototoi', meaning: 'day before yesterday' },
+                    { kana: 'まつり', kanji: '祭り', romaji: 'matsuri', meaning: 'festival' },
+                    { kana: 'おんせん', kanji: '温泉', romaji: 'onsen', meaning: 'hot spring' },
+                    { kana: 'じゅぎょう', kanji: '授業', romaji: 'jugyou', meaning: 'class / lesson' },
                     { kana: 'てんき', kanji: '天気', romaji: 'tenki', meaning: 'weather' }
                 ],
                 examples: [
@@ -2762,7 +3155,7 @@
                     { kana: 'たいせつ', kanji: '大切', romaji: 'taisetsu', meaning: 'important' },
                     { kana: 'こうえん', kanji: '公園', romaji: 'kouen', meaning: 'park' },
                     { kana: 'まち', kanji: '町', romaji: 'machi', meaning: 'town' },
-                    { kana: 'しごと', kanji: '仕事', romaji: 'shigoto', meaning: 'job' },
+                    { kana: 'しあい', kanji: '試合', romaji: 'shiai', meaning: 'match / game' },
                     { kana: 'しょうがっこう', kanji: '小学校', romaji: 'shougakkou', meaning: 'elementary school' },
                     { kana: 'むかし', kanji: '昔', romaji: 'mukashi', meaning: 'past / long ago' },
                     { kana: 'まえの', kanji: '前の', romaji: 'mae no', meaning: 'previous / former' }
@@ -2795,9 +3188,9 @@
                     { kana: 'から', kanji: '', romaji: 'kara', meaning: 'from' },
                     { kana: 'はじめまして', kanji: '', romaji: 'hajimemashite', meaning: 'nice to meet you' },
                     { kana: 'よろしくおねがいします', kanji: '', romaji: 'yoroshiku onegaishimasu', meaning: 'please treat me well / nice to meet you' },
-                    { kana: 'いま', kanji: '今', romaji: 'ima', meaning: 'now / currently' },
-                    { kana: 'はたらいています', kanji: '働いています', romaji: 'hataraiteimasu', meaning: 'work' },
-                    { kana: 'べんきょうしています', kanji: '勉強しています', romaji: 'benkyou shiteimasu', meaning: 'study' }
+                    { kana: 'しゅっしん', kanji: '出身', romaji: 'shusshin', meaning: 'hometown / origin' },
+                    { kana: 'はたらく', kanji: '働く', romaji: 'hataraku', meaning: 'to work' },
+                    { kana: 'かよう', kanji: '通う', romaji: 'kayou', meaning: 'to commute / attend' }
                 ],
                 examples: [
                     { jp: '<span class="tooltip-word" data-tooltip="I / me" onclick="saveWordClick(this)"><ruby>私<rt>わたし</rt></ruby></span>の<span class="tooltip-word" data-tooltip="name" onclick="saveWordClick(this)"><ruby>名前<rt>なまえ</rt></ruby></span>は<span class="tooltip-word" data-tooltip="Sarah" onclick="saveWordClick(this)">サラ</span>です。', romaji: 'Watashi no namae wa Sara desu.', en: 'My name is Sara.' },
@@ -2822,7 +3215,7 @@
                     'https://www.instagram.com/p/DVZtu46jlu6/embed/'
                 ],
                 vocabulary: [
-                    { kana: 'レストラン', kanji: '', romaji: 'resutoran', meaning: 'restaurant' },
+                    { kana: 'しょくどう', kanji: '食堂', romaji: 'shokudou', meaning: 'casual restaurant / diner' },
                     { kana: 'ちゅうもん', kanji: '注文', romaji: 'chuumon', meaning: 'order' },
                     { kana: 'りょうり', kanji: '料理', romaji: 'ryouri', meaning: 'dish / food' },
                     { kana: 'のみもの', kanji: '飲み物', romaji: 'nomimono', meaning: 'drink' },
@@ -2855,15 +3248,15 @@
                 ],
                 vocabulary: [
                     { kana: 'たべる', kanji: '食べる', romaji: 'taberu', meaning: 'to eat' },
-                    { kana: 'たべます', kanji: '食べます', romaji: 'tabemasu', meaning: 'to eat' },
+                    { kana: 'あらう', kanji: '洗う', romaji: 'arau', meaning: 'to wash' },
                     { kana: 'みる', kanji: '見る', romaji: 'miru', meaning: 'to see / watch' },
-                    { kana: 'みます', kanji: '見ます', romaji: 'mimasu', meaning: 'to see / watch' },
+                    { kana: 'はなす', kanji: '話す', romaji: 'hanasu', meaning: 'to speak' },
                     { kana: 'ねる', kanji: '寝る', romaji: 'neru', meaning: 'to sleep' },
                     { kana: 'べんきょうする', kanji: '勉強する', romaji: 'benkyou suru', meaning: 'to study' },
-                    { kana: 'べんきょうします', kanji: '勉強します', romaji: 'benkyou shimasu', meaning: 'to study' },
+                    { kana: 'くる', kanji: '来る', romaji: 'kuru', meaning: 'to come (irregular)' },
                     { kana: 'いく', kanji: '行く', romaji: 'iku', meaning: 'to go' },
                     { kana: 'のむ', kanji: '飲む', romaji: 'nomu', meaning: 'to drink' },
-                    { kana: 'のみません', kanji: '飲みません', romaji: 'nomimasen', meaning: 'do not drink' },
+                    { kana: 'およぐ', kanji: '泳ぐ', romaji: 'oyogu', meaning: 'to swim' },
                     { kana: 'にほんご', kanji: '日本語', romaji: 'nihongo', meaning: 'Japanese language' },
                     { kana: 'ごはん', kanji: 'ご飯', romaji: 'gohan', meaning: 'meal / rice' },
                     { kana: 'ともだち', kanji: '友達', romaji: 'tomodachi', meaning: 'friend' },
@@ -2893,15 +3286,15 @@
                     { kana: 'きのう', kanji: '昨日', romaji: 'kinou', meaning: 'yesterday' },
                     { kana: 'せんしゅう', kanji: '先週', romaji: 'senshuu', meaning: 'last week' },
                     { kana: '〜まえに', kanji: '〜前に', romaji: '... mae ni', meaning: '... ago' },
-                    { kana: 'もう', kanji: 'もう', romaji: 'mou', meaning: 'already' },
+                    { kana: 'もう', kanji: '', romaji: 'mou', meaning: 'already' },
                     { kana: 'なつやすみ', kanji: '夏休み', romaji: 'natsuyasumi', meaning: 'summer vacation' },
-                    { kana: 'しごと', kanji: '仕事', romaji: 'shigoto', meaning: 'work / job' },
+                    { kana: 'やきゅう', kanji: '野球', romaji: 'yakyuu', meaning: 'baseball' },
                     { kana: 'ひるごはん', kanji: '昼ごはん', romaji: 'hirugohan', meaning: 'lunch' },
-                    { kana: 'いきました', kanji: '行きました', romaji: 'ikimashita', meaning: 'went' },
-                    { kana: 'みました', kanji: '見ました', romaji: 'mimashita', meaning: 'watched / saw' },
-                    { kana: 'たべました', kanji: '食べました', romaji: 'tabemashita', meaning: 'ate' },
-                    { kana: 'べんきょうしました', kanji: '勉強しました', romaji: 'benkyou shimashita', meaning: 'studied' },
-                    { kana: 'きれい', kanji: '綺麗', romaji: 'kirei', meaning: 'beautiful / clean' }
+                    { kana: 'かえる', kanji: '帰る', romaji: 'kaeru', meaning: 'go home / return' },
+                    { kana: 'よむ', kanji: '読む', romaji: 'yomu', meaning: 'read' },
+                    { kana: 'かく', kanji: '書く', romaji: 'kaku', meaning: 'write' },
+                    { kana: 'うたう', kanji: '歌う', romaji: 'utau', meaning: 'sing' },
+                    { kana: 'うみ', kanji: '海', romaji: 'umi', meaning: 'sea / beach' }
                 ],
                 examples: [
                     { jp: '<span class="tooltip-word" data-tooltip="yesterday" onclick="saveWordClick(this)"><ruby>昨日<rt>きのう</rt></ruby></span><span class="tooltip-word" data-tooltip="movie" onclick="saveWordClick(this)"><ruby>映画<rt>えいが</rt></ruby></span>を<span class="tooltip-word" data-tooltip="Watched / Saw" onclick="saveWordClick(this)"><ruby>見<rt>み</rt></ruby>ました</span>。', romaji: 'Kinou eiga o mimashita.', en: 'I watched a movie yesterday.' },
@@ -2922,15 +3315,15 @@
                     { kana: 'としょかん', kanji: '図書館', romaji: 'toshokan', meaning: 'library' },
                     { kana: 'えき', kanji: '駅', romaji: 'eki', meaning: 'station' },
                     { kana: 'じてんしゃ', kanji: '自転車', romaji: 'jitensha', meaning: 'bicycle' },
-                    { kana: 'プレゼント', kanji: 'プレゼント', romaji: 'purezento', meaning: 'present / gift' },
+                    { kana: 'おくりもの', kanji: '贈り物', romaji: 'okurimono', meaning: 'gift / present' },
                     { kana: 'さいふ', kanji: '財布', romaji: 'saifu', meaning: 'wallet' },
-                    { kana: 'あります', kanji: 'あります', romaji: 'arimasu', meaning: 'there is (non-living)' },
-                    { kana: 'います', kanji: 'います', romaji: 'imasu', meaning: 'there is (living)' },
-                    { kana: 'あげました', kanji: 'あげました', romaji: 'agemashita', meaning: 'gave' },
-                    { kana: 'つくりました', kanji: '作りました', romaji: 'tsukurimashita', meaning: 'made' },
-                    { kana: 'おいしい', kanji: '美味しい', romaji: 'oishii', meaning: 'delicious' },
-                    { kana: 'どこで', kanji: 'どこで', romaji: 'doko de', meaning: 'where (location of action)' },
-                    { kana: 'なにで', kanji: 'なにで', romaji: 'nani de', meaning: 'how / by what means' }
+                    { kana: 'ある', kanji: '', romaji: 'aru', meaning: 'there is (non-living)' },
+                    { kana: 'いる', kanji: '', romaji: 'iru', meaning: 'there is (living)' },
+                    { kana: 'あげる', kanji: '', romaji: 'ageru', meaning: 'give' },
+                    { kana: 'つくる', kanji: '作る', romaji: 'tsukuru', meaning: 'make' },
+                    { kana: 'あまい', kanji: '甘い', romaji: 'amai', meaning: 'sweet' },
+                    { kana: 'どこで', kanji: '', romaji: 'doko de', meaning: 'where (location of action)' },
+                    { kana: 'なにで', kanji: '', romaji: 'nani de', meaning: 'how / by what means' }
                 ],
                 examples: [
                     { jp: '<span class="tooltip-word" data-tooltip="library" onclick="saveWordClick(this)"><ruby>図書館<rt>としょかん</rt></ruby></span>で<span class="tooltip-word" data-tooltip="to study" onclick="saveWordClick(this)"><ruby>勉強<rt>べんきょう</rt></ruby>します</span>。', romaji: 'Toshokan de benkyou shimasu.', en: 'I study at the library.' },
@@ -2951,17 +3344,17 @@
                     'https://www.instagram.com/reel/DVKeeG2jrB1/embed/'
                 ],
                 vocabulary: [
-                    { kana: 'も', kanji: 'も', romaji: 'mo', meaning: 'also / too' },
-                    { kana: 'しか', kanji: 'しか', romaji: 'shika', meaning: 'only (negative)' },
-                    { kana: 'だけ', kanji: 'だけ', romaji: 'dake', meaning: 'only / just (neutral)' },
-                    { kana: 'ので', kanji: 'ので', romaji: 'node', meaning: 'because / so' },
+                    { kana: 'も', kanji: '', romaji: 'mo', meaning: 'also / too' },
+                    { kana: 'しか', kanji: '', romaji: 'shika', meaning: 'only (negative)' },
+                    { kana: 'だけ', kanji: '', romaji: 'dake', meaning: 'only / just (neutral)' },
+                    { kana: 'ので', kanji: '', romaji: 'node', meaning: 'because / so' },
                     { kana: 'おかね', kanji: 'お金', romaji: 'okane', meaning: 'money' },
-                    { kana: 'じかん', kanji: '時間', romaji: 'jikan', meaning: 'time' },
+                    { kana: 'おかし', kanji: 'お菓子', romaji: 'okashi', meaning: 'sweets / snacks' },
                     { kana: 'かぜ', kanji: '風邪', romaji: 'kaze', meaning: 'cold (illness)' },
                     { kana: 'びょうき', kanji: '病気', romaji: 'byouki', meaning: 'sickness' },
-                    { kana: 'やすみます', kanji: '休みます', romaji: 'yasumimasu', meaning: 'to take a day off / rest' },
-                    { kana: 'はなせます', kanji: '話せます', romaji: 'hanasemasu', meaning: 'can speak' },
-                    { kana: 'ふっています', kanji: '降っています', romaji: 'futteimasu', meaning: 'is raining' },
+                    { kana: 'やすむ', kanji: '休む', romaji: 'yasumu', meaning: 'to take a day off / rest' },
+                    { kana: 'はなせる', kanji: '話せる', romaji: 'hanaseru', meaning: 'can speak' },
+                    { kana: 'はれる', kanji: '晴れる', romaji: 'hareru', meaning: 'to clear up' },
                     { kana: 'すこし', kanji: '少し', romaji: 'sukoshi', meaning: 'a little' }
                 ],
                 examples: [
@@ -2980,17 +3373,17 @@
                 title: 'Te-form & Continuous Action',
                 videoUrl: 'https://www.youtube.com/embed/7VD2CZF_emw',
                 vocabulary: [
-                    { kana: '〜てください', kanji: '〜てください', romaji: '... te kudasai', meaning: 'Please do...' },
-                    { kana: '〜ています', kanji: '〜ています', romaji: '... te imasu', meaning: 'is doing / state' },
-                    { kana: 'シャワー', kanji: 'シャワー', romaji: 'shawaa', meaning: 'shower' },
+                    { kana: '〜てください', kanji: '', romaji: '... te kudasai', meaning: 'Please do...' },
+                    { kana: '〜ています', kanji: '', romaji: '... te imasu', meaning: 'is doing / state' },
+                    { kana: 'おふろ', kanji: 'お風呂', romaji: 'ofuro', meaning: 'bath' },
                     { kana: 'けっこん', kanji: '結婚', romaji: 'kekkon', meaning: 'marriage' },
                     { kana: 'ふく', kanji: '服', romaji: 'fuku', meaning: 'clothes' },
                     { kana: 'くに', kanji: '国', romaji: 'kuni', meaning: 'country' },
-                    { kana: 'ゆっくり', kanji: 'ゆっくり', romaji: 'yukkuri', meaning: 'slowly' },
+                    { kana: 'ゆっくり', kanji: '', romaji: 'yukkuri', meaning: 'slowly' },
                     { kana: 'もういちど', kanji: 'もう一度', romaji: 'mou ichido', meaning: 'one more time' },
-                    { kana: 'あびて', kanji: '浴びて', romaji: 'abite', meaning: 'taking (a shower)' },
-                    { kana: 'すんでいます', kanji: '住んでいます', romaji: 'sundeimasu', meaning: 'live in' },
-                    { kana: 'きていています', kanji: '着ています', romaji: 'kiteimasu', meaning: 'wearing' },
+                    { kana: 'あびる', kanji: '浴びる', romaji: 'abiru', meaning: 'to take (a shower / bath)' },
+                    { kana: 'すむ', kanji: '住む', romaji: 'sumu', meaning: 'to live / reside' },
+                    { kana: 'きる', kanji: '着る', romaji: 'kiru', meaning: 'to wear' },
                     { kana: 'いま', kanji: '今', romaji: 'ima', meaning: 'now' }
                 ],
                 examples: [
@@ -3011,15 +3404,15 @@
                 vocabulary: [
                     { kana: 'しゅくだい', kanji: '宿題', romaji: 'shukudai', meaning: 'homework' },
                     { kana: 'やさい', kanji: '野菜', romaji: 'yasai', meaning: 'vegetables' },
-                    { kana: 'ダイエット', kanji: 'ダイエット', romaji: 'daietto', meaning: 'diet' },
-                    { kana: '〜ない', kanji: '〜ない', romaji: '... nai', meaning: 'casual negative' },
-                    { kana: '〜た', kanji: '〜た', romaji: '... ta', meaning: 'casual past' },
-                    { kana: '〜ないで', kanji: '〜ないで', romaji: '... naide', meaning: 'without doing' },
-                    { kana: '〜なければならない', kanji: '〜なければならない', romaji: '... nakereba naranai', meaning: 'must / have to' },
-                    { kana: '〜なきゃ', kanji: '〜なきゃ', romaji: '... nakya', meaning: 'casual "have to"' },
+                    { kana: 'うんどう', kanji: '運動', romaji: 'undou', meaning: 'exercise' },
+                    { kana: '〜ない', kanji: '', romaji: '... nai', meaning: 'casual negative' },
+                    { kana: '〜た', kanji: '', romaji: '... ta', meaning: 'casual past' },
+                    { kana: '〜ないで', kanji: '', romaji: '... naide', meaning: 'without doing' },
+                    { kana: '〜なければならない', kanji: '', romaji: '... nakereba naranai', meaning: 'must / have to' },
+                    { kana: '〜なきゃ', kanji: '', romaji: '... nakya', meaning: 'casual "have to"' },
                     { kana: 'ぜんぜん', kanji: '全然', romaji: 'zenzen', meaning: 'not at all' },
-                    { kana: 'ちゃんと', kanji: 'ちゃんと', romaji: 'chanto', meaning: 'properly / correctly' },
-                    { kana: 'だします', kanji: '出します', romaji: 'dashimasu', meaning: 'to submit / put out' },
+                    { kana: 'ちゃんと', kanji: '', romaji: 'chanto', meaning: 'properly / correctly' },
+                    { kana: 'だす', kanji: '出す', romaji: 'dasu', meaning: 'to submit / put out' },
                     { kana: 'ある → ない', kanji: 'ある → ない', romaji: 'aru -> nai', meaning: "don't have (exception)" }
                 ],
                 examples: [
@@ -3040,16 +3433,16 @@
                 vocabulary: [
                     { kana: 'がいこく', kanji: '外国', romaji: 'gaikoku', meaning: 'foreign country' },
                     { kana: 'なっとう', kanji: '納豆', romaji: 'nattou', meaning: 'natto' },
-                    { kana: 'スカイダイビング', kanji: 'スカイダイビング', romaji: 'sukaidaibingu', meaning: 'skydiving' },
-                    { kana: 'マラソン', kanji: 'マラソン', romaji: 'marason', meaning: 'marathon' },
-                    { kana: '〜たことが あります', kanji: '〜たことがあります', romaji: '... ta koto ga arimasu', meaning: 'have done before' },
-                    { kana: '〜たことが ありません', kanji: '〜たことがありません', romaji: '... ta koto ga arimasen', meaning: 'have never done' },
+                    { kana: 'とざん', kanji: '登山', romaji: 'tozan', meaning: 'mountain climbing' },
+                    { kana: 'かぶき', kanji: '歌舞伎', romaji: 'kabuki', meaning: 'kabuki theater' },
+                    { kana: '〜たことがあります', kanji: '', romaji: '... ta koto ga arimasu', meaning: 'have done before' },
+                    { kana: '〜たことがありません', kanji: '', romaji: '... ta koto ga arimasen', meaning: 'have never done' },
                     { kana: 'いちど', kanji: '一度', romaji: 'ichido', meaning: 'once' },
                     { kana: 'なんども', kanji: '何度も', romaji: 'nandome', meaning: 'many times' },
                     { kana: 'いちども', kanji: '一度も', romaji: 'ichidomo', meaning: 'not even once' },
                     { kana: 'こわい', kanji: '怖い', romaji: 'kowai', meaning: 'scary' },
-                    { kana: 'あまり', kanji: 'あまり', romaji: 'amari', meaning: 'not very' },
-                    { kana: 'すごく', kanji: 'すごく', romaji: 'sugoku', meaning: 'very / really' }
+                    { kana: 'あまり', kanji: '', romaji: 'amari', meaning: 'not very' },
+                    { kana: 'すごく', kanji: '', romaji: 'sugoku', meaning: 'very / really' }
                 ],
                 examples: [
                     { jp: '<span class="tooltip-word" data-tooltip="Japan" onclick="saveWordClick(this)"><ruby>日本<rt>にほん</rt></ruby></span>に<span class="tooltip-word" data-tooltip="Have been to" onclick="saveWordClick(this)"><ruby>行<rt>い</rt></ruby>ったことがあります</span>。', romaji: 'Nihon ni itta koto ga arimasu.', en: 'I have been to Japan before.' },
@@ -3067,18 +3460,18 @@
                 title: 'Thoughts & Quotations',
                 videoUrl: 'https://www.youtube.com/embed/cqdbA2QrYYs',
                 vocabulary: [
-                    { kana: 'おもいます', kanji: '思います', romaji: 'omoimasu', meaning: 'to think' },
-                    { kana: 'といっていました', kanji: 'と言っていました', romaji: 'to itte imashita', meaning: 'said (reported)' },
-                    { kana: 'テスト', kanji: 'テスト', romaji: 'tesuto', meaning: 'test' },
-                    { kana: 'カフェ', kanji: 'カフェ', romaji: 'kafe', meaning: 'café' },
-                    { kana: 'おもしろい', kanji: '面白い', romaji: 'omoshiroi', meaning: 'interesting' },
-                    { kana: 'つまらない', kanji: 'つまらない', romaji: 'tsumaranai', meaning: 'boring' },
-                    { kana: 'しずか', kanji: '静か', romaji: 'shizuka', meaning: 'quiet' },
-                    { kana: 'にほんじん', kanji: '日本人', romaji: 'nihonjin', meaning: 'Japanese person' },
+                    { kana: 'おもう', kanji: '思う', romaji: 'omou', meaning: 'to think' },
+                    { kana: 'という', kanji: 'と言う', romaji: 'to iu', meaning: 'say (quote)' },
+                    { kana: 'はっぴょう', kanji: '発表', romaji: 'happyou', meaning: 'presentation' },
+                    { kana: 'きっさてん', kanji: '喫茶店', romaji: 'kissaten', meaning: 'coffee shop' },
+                    { kana: 'すばらしい', kanji: '素晴らしい', romaji: 'subarashii', meaning: 'wonderful' },
+                    { kana: 'つまらない', kanji: '', romaji: 'tsumaranai', meaning: 'boring' },
+                    { kana: 'すてき', kanji: '素敵', romaji: 'suteki', meaning: 'lovely / wonderful' },
+                    { kana: 'かのじょ', kanji: '彼女', romaji: 'kanojo', meaning: 'she / girlfriend' },
                     { kana: 'ふる', kanji: '降る', romaji: 'furu', meaning: 'to rain / to fall' },
-                    { kana: 'そんなに', kanji: 'そんなに', romaji: 'sonna ni', meaning: 'that much / so much' },
-                    { kana: 'たのしい', kanji: '楽しい', romaji: 'tanoshii', meaning: 'fun' },
-                    { kana: 'まだ', kanji: 'まだ', romaji: 'mada', meaning: 'not yet' }
+                    { kana: 'そんなに', kanji: '', romaji: 'sonna ni', meaning: 'that much / so much' },
+                    { kana: 'うれしい', kanji: '嬉しい', romaji: 'ureshii', meaning: 'happy / glad' },
+                    { kana: 'まだ', kanji: '', romaji: 'mada', meaning: 'not yet' }
                 ],
                 examples: [
                     { jp: '<span class="tooltip-word" data-tooltip="tomorrow" onclick="saveWordClick(this)"><ruby>明日<rt>あした</rt></ruby></span>は<span class="tooltip-word" data-tooltip="rain" onclick="saveWordClick(this)"><ruby>雨<rt>あめ</rt></ruby></span>が<span class="tooltip-word" data-tooltip="Fall (rain, snow)" onclick="saveWordClick(this)"><ruby>降<rt>ふ</rt></ruby>ると</span><span class="tooltip-word" data-tooltip="Think" onclick="saveWordClick(this)"><ruby>思<rt>おも</rt></ruby>います</span>。', romaji: 'Ashita wa ame ga furu to omoimasu.', en: 'I think it will rain tomorrow.' },
@@ -3096,18 +3489,18 @@
                 title: 'Expressing Desires (Want)',
                 videoUrl: 'https://www.youtube.com/embed/UEyEY7IXcE4',
                 vocabulary: [
-                    { kana: '〜たい', kanji: '〜たい', romaji: '... tai', meaning: 'want to do (self)' },
-                    { kana: '〜ほしい', kanji: '〜ほしい', romaji: '... hoshii', meaning: 'want (a thing)' },
-                    { kana: '〜てほしい', kanji: '〜てほしい', romaji: '... te hoshii', meaning: 'want someone else to do' },
+                    { kana: '〜たい', kanji: '', romaji: '... tai', meaning: 'want to do (self)' },
+                    { kana: '〜ほしい', kanji: '', romaji: '... hoshii', meaning: 'want (a thing)' },
+                    { kana: '〜てほしい', kanji: '', romaji: '... te hoshii', meaning: 'want someone else to do' },
                     { kana: 'しょうらい', kanji: '将来', romaji: 'shourai', meaning: 'future' },
-                    { kana: 'スイッチ', kanji: 'スイッチ', romaji: 'suitchi', meaning: 'Switch (Nintendo)' },
-                    { kana: 'くるま', kanji: '車', romaji: 'kuruma', meaning: 'car' },
-                    { kana: 'じかん', kanji: '時間', romaji: 'jikan', meaning: 'time' },
+                    { kana: 'とけい', kanji: '時計', romaji: 'tokei', meaning: 'watch / clock' },
+                    { kana: 'いえ', kanji: '家', romaji: 'ie', meaning: 'house / home' },
+                    { kana: 'やすみ', kanji: '休み', romaji: 'yasumi', meaning: 'day off' },
                     { kana: 'はたらきたい', kanji: '働きたい', romaji: 'hatarakitai', meaning: 'want to work' },
                     { kana: 'てつだう', kanji: '手伝う', romaji: 'tetsudau', meaning: 'to help' },
                     { kana: 'れんらくする', kanji: '連絡する', romaji: 'renraku suru', meaning: 'to contact' },
                     { kana: 'はやく', kanji: '早く', romaji: 'hayaku', meaning: 'quickly / soon' },
-                    { kana: 'もっと', kanji: 'もっと', romaji: 'motto', meaning: 'more' }
+                    { kana: 'もっと', kanji: '', romaji: 'motto', meaning: 'more' }
                 ],
                 examples: [
                     { jp: '<span class="tooltip-word" data-tooltip="Japanese language" onclick="saveWordClick(this)"><ruby>日本語<rt>にほんご</rt></ruby></span>を<span class="tooltip-word" data-tooltip="more" onclick="saveWordClick(this)">もっと</span><span class="tooltip-word" data-tooltip="want to study" onclick="saveWordClick(this)"><ruby>勉強<rt>べんきょう</rt></ruby>したい</span>です。', romaji: 'Nihongo o motto benkyou shitai desu.', en: 'I want to study Japanese more.' },
@@ -3125,16 +3518,16 @@
                 title: 'Giving Reasons (Because)',
                 videoUrl: 'https://www.youtube.com/embed/ZvcusH2za8Q',
                 vocabulary: [
-                    { kana: 'から / だから', kanji: 'から / だから', romaji: 'kara / dakara', meaning: 'because / so (casual)' },
-                    { kana: 'ので / なので', kanji: 'ので / なので', romaji: 'node / nanode', meaning: 'because / so (polite)' },
-                    { kana: 'よてい', kanji: '予定', romaji: 'yotei', meaning: 'plan / schedule' },
-                    { kana: 'しゅうまつ', kanji: '週末', romaji: 'shuumatsu', meaning: 'weekend' },
+                    { kana: 'から / だから', kanji: '', romaji: 'kara / dakara', meaning: 'because / so (casual)' },
+                    { kana: 'ので / なので', kanji: '', romaji: 'node / nanode', meaning: 'because / so (polite)' },
+                    { kana: 'りゆう', kanji: '理由', romaji: 'riyuu', meaning: 'reason' },
+                    { kana: 'きゅうじつ', kanji: '休日', romaji: 'kyuujitsu', meaning: 'day off / holiday' },
                     { kana: 'ざんぎょう', kanji: '残業', romaji: 'zangyou', meaning: 'overtime work' },
                     { kana: 'かいぎ', kanji: '会議', romaji: 'kaigi', meaning: 'meeting' },
                     { kana: 'かぞく', kanji: '家族', romaji: 'kazoku', meaning: 'family' },
                     { kana: 'いそがしい', kanji: '忙しい', romaji: 'isogashii', meaning: 'busy' },
-                    { kana: 'やすい', kanji: '安い', romaji: 'yasui', meaning: 'cheap' },
-                    { kana: 'いけません', kanji: '行けません', romaji: 'ikemasen', meaning: 'cannot go' },
+                    { kana: 'ねむい', kanji: '眠い', romaji: 'nemui', meaning: 'sleepy' },
+                    { kana: 'いける', kanji: '行ける', romaji: 'ikeru', meaning: 'can go' },
                     { kana: 'できませんでした', kanji: 'できませんでした', romaji: 'dekimasen deshita', meaning: "couldn't do" },
                     { kana: 'れんらく', kanji: '連絡', romaji: 'renraku', meaning: 'contact' }
                 ],
@@ -3156,16 +3549,16 @@
                 vocabulary: [
                     { kana: 'しゅみ', kanji: '趣味', romaji: 'shumi', meaning: 'hobby' },
                     { kana: 'おんがく', kanji: '音楽', romaji: 'ongaku', meaning: 'music' },
-                    { kana: 'りょうり', kanji: '料理', romaji: 'ryouri', meaning: 'cooking / dish' },
+                    { kana: 'つり', kanji: '釣り', romaji: 'tsuri', meaning: 'fishing' },
                     { kana: 'りょこう', kanji: '旅行', romaji: 'ryokou', meaning: 'travel' },
                     { kana: 'しゃしん', kanji: '写真', romaji: 'shashin', meaning: 'photo' },
-                    { kana: '～こと', kanji: '～こと', romaji: '... koto', meaning: 'turning verbs into nouns' },
+                    { kana: '～こと', kanji: '', romaji: '... koto', meaning: 'turning verbs into nouns' },
                     { kana: '～ことが すきです', kanji: '～ことが好きです', romaji: '... koto ga suki desu', meaning: 'like doing ~' },
                     { kana: 'ひく', kanji: '弾く', romaji: 'hiku', meaning: 'to play (instrument)' },
                     { kana: 'とる', kanji: '撮る', romaji: 'toru', meaning: 'to take (photo)' },
                     { kana: 'しゅうに いちど', kanji: '週に一度', romaji: 'shuu ni ichido', meaning: 'once a week' },
                     { kana: 'さいきん', kanji: '最近', romaji: 'saikin', meaning: 'recently' },
-                    { kana: 'どんな', kanji: 'どんな', romaji: 'donna', meaning: 'what kind of' }
+                    { kana: 'どんな', kanji: '', romaji: 'donna', meaning: 'what kind of' }
                 ],
                 examples: [
                     { jp: '<span class="tooltip-word" data-tooltip="I / me" onclick="saveWordClick(this)"><ruby>私<rt>わたし</rt></ruby></span>の<span class="tooltip-word" data-tooltip="hobby" onclick="saveWordClick(this)"><ruby>趣味<rt>しゅみ</rt></ruby></span>は<span class="tooltip-word" data-tooltip="movie" onclick="saveWordClick(this)"><ruby>映画<rt>えいが</rt></ruby></span>を<span class="tooltip-word" data-tooltip="To watch" onclick="saveWordClick(this)"><ruby>見<rt>み</rt></ruby>ることです</span>。', romaji: 'Watashi no shumi wa eiga o miru koto desu.', en: 'My hobby is watching movies.' },
@@ -3186,13 +3579,13 @@
                     { kana: 'しゅうまつ', kanji: '週末', romaji: 'shuumatsu', meaning: 'weekend' },
                     { kana: 'よてい', kanji: '予定', romaji: 'yotei', meaning: 'plan / schedule' },
                     { kana: 'えいがかん', kanji: '映画館', romaji: 'eigakan', meaning: 'cinema' },
-                    { kana: '～つもりです', kanji: '～つもりです', romaji: '... tsumori desu', meaning: 'plan to / intend to' },
+                    { kana: '～つもりです', kanji: '', romaji: '... tsumori desu', meaning: 'plan to / intend to' },
                     { kana: '～に いきます', kanji: '～に行きます', romaji: '... ni ikimasu', meaning: 'go to do (purpose)' },
                     { kana: 'きめる / きめていません', kanji: '決める / 決めていません', romaji: 'kimeru / kimeteimasen', meaning: 'to decide / haven\'t decided' },
                     { kana: 'あう', kanji: '会う', romaji: 'au', meaning: 'to meet' },
-                    { kana: 'よく', kanji: 'よく', romaji: 'yoku', meaning: 'often' },
+                    { kana: 'よく', kanji: '', romaji: 'yoku', meaning: 'often' },
                     { kana: 'ときどき', kanji: '時々', romaji: 'tokidoki', meaning: 'sometimes' },
-                    { kana: '～ませんか？', kanji: '～ませんか？', romaji: '... masen ka?', meaning: 'Would you like to...?' },
+                    { kana: '～ませんか？', kanji: '', romaji: '... masen ka?', meaning: 'Would you like to...?' },
                     { kana: '～ましょう！', kanji: '～ましょう！', romaji: '... mashou!', meaning: "Let's do...!" },
                     { kana: 'たのしみにしています', kanji: '楽しみにしています', romaji: 'tanoshimi ni shiteimasu', meaning: 'looking forward to it' }
                 ],
@@ -3225,6 +3618,95 @@
         };
 
         // 품詞(品詞)の自動判定関数
+        /* 助詞・コピュラ辞書（例文ツールチップ用） */
+        const PARTICLE_VOCAB = {
+            'ではありません': '[Cop] is not (polite)',
+            'じゃありません': '[Cop] is not',
+            'でした': '[Cop] was / were (polite)',
+            'ですか': '[Cop] is it? (question)',
+            'です': '[Cop] is / am / are (polite)',
+            'ください': '[Phr] please (request)',
+            'から': '[Prt] from / because',
+            'まで': '[Prt] until / as far as',
+            'より': '[Prt] than',
+            'だけ': '[Prt] only / just',
+            'しか': '[Prt] only (with negative)',
+            'ので': '[Prt] because / so',
+            'けど': '[Prt] but / though',
+            'は': '[Prt] topic marker',
+            'が': '[Prt] subject marker / but',
+            'を': '[Prt] object marker',
+            'に': '[Prt] to / at / in (time・place)',
+            'で': '[Prt] at / by (place・means)',
+            'へ': '[Prt] to / toward',
+            'と': '[Prt] and / with / quote',
+            'も': '[Prt] also / too',
+            'の': '[Prt] of / possessive',
+            'か': '[Prt] question marker',
+            'ね': '[Prt] right? / isn\'t it',
+            'よ': '[Prt] emphasis',
+            'な': '[Prt] na-adjective connector'
+        };
+
+        const POS_SHORT = { 'Pron.': 'Pron', 'Adj.': 'Adj', 'adj': 'Adj', 'Phrase': 'Phr', 'Greeting': 'Grt', 'Adv.': 'Adv' };
+
+        function hanaceTipSpan(word, tagged) {
+            tagged = tagged || '';
+            const m = tagged.match(/^\[([^\]]+)\]\s*(.*)$/);
+            let pos = m ? m[1] : '';
+            const rest = m ? m[2] : tagged;
+            pos = POS_SHORT[pos] || pos;
+            const plain = tagged.replace(/"/g, '&quot;');
+            const posHtml = pos ? '<span class="pos">' + pos + '</span>' : '';
+            return '<span class="tooltip-word rich" data-tooltip="' + plain + '" onclick="saveWordClick(this)">' + word +
+                '<span class="tt-pop">' + posHtml + rest + '</span></span>';
+        }
+
+        function addParticleTooltips(html) {
+            const keys = Object.keys(PARTICLE_VOCAB).sort((a, b) => b.length - a.length);
+            const pattern = new RegExp('(' + keys.join('|') + ')', 'g');
+            const parts = html.split(/(<[^>]+>)/);
+            let inRt = 0, inTip = 0;
+            for (let i = 0; i < parts.length; i++) {
+                const t = parts[i];
+                if (t.startsWith('<')) {
+                    if (/^<rt/i.test(t)) inRt++;
+                    else if (/^<\/rt/i.test(t)) inRt = Math.max(0, inRt - 1);
+                    else if (t.startsWith('<span')) { if (inTip > 0 || t.indexOf('tooltip-word') > -1) inTip++; }
+                    else if (t.startsWith('</span')) { if (inTip > 0) inTip--; }
+                    continue;
+                }
+                if (inRt > 0 || inTip > 0 || !t) continue;
+                parts[i] = t.replace(pattern, mm => hanaceTipSpan(mm, PARTICLE_VOCAB[mm]));
+            }
+            return parts.join('');
+        }
+
+        /* 既存の埋め込みツールチップを品詞バッジ付きリッチ形式へ変換 */
+        function hanaceUpgradeTips(html) {
+            const box = document.createElement('div');
+            box.innerHTML = html;
+            box.querySelectorAll('.tooltip-word').forEach(el => {
+                if (el.classList.contains('rich')) return;
+                let meaning = el.getAttribute('data-tooltip') || '';
+                if (!/^\[/.test(meaning)) {
+                    const clone = el.cloneNode(true);
+                    clone.querySelectorAll('rt').forEach(r => r.remove());
+                    meaning = getPosTag(clone.textContent.trim(), meaning);
+                    el.setAttribute('data-tooltip', meaning);
+                }
+                const m = meaning.match(/^\[([^\]]+)\]\s*(.*)$/);
+                const pos = m ? (POS_SHORT[m[1]] || m[1]) : '';
+                const rest = m ? m[2] : meaning;
+                const pop = document.createElement('span');
+                pop.className = 'tt-pop';
+                pop.innerHTML = (pos ? '<span class="pos">' + pos + '</span>' : '') + rest;
+                el.classList.add('rich');
+                el.appendChild(pop);
+            });
+            return box.innerHTML;
+        }
+
         function getPosTag(kana, meaning) {
             if (!meaning) return "";
             if (meaning.includes("[") && meaning.includes("]")) return meaning; 
@@ -3368,6 +3850,16 @@
                     } else {
                         li.innerText = word;
                     }
+                    if (typeof word === 'object') {
+                        const row = li.firstElementChild;
+                        const daisy = document.createElement('span');
+                        daisy.className = 'vocab-save-daisy';
+                        daisy.textContent = '🌼';
+                        daisy.title = 'Save to Saved Words';
+                        if (hanaceIsWordSaved(word)) daisy.classList.add('active');
+                        daisy.onclick = () => hanaceToggleWordSave(daisy, word);
+                        if (row) row.appendChild(daisy);
+                    }
                     vocabList.appendChild(li);
                 });
             } else {
@@ -3404,12 +3896,16 @@
                     const li = document.createElement('li');
                     let jpContent = example.jp;
 
-                    // 単語をツールチップで強調
+                    // 単語をツールチップで強調（品詞バッジ付き）
                     if (vocabPattern && !jpContent.includes('tooltip-word')) {
-                        jpContent = jpContent.replace(vocabPattern, (match) => {
-                            return `<span class="tooltip-word" data-tooltip="${vocabMap[match]}" onclick="saveWordClick(this)">${match}</span>`;
-                        });
+                        jpContent = jpContent.replace(vocabPattern, (match) => hanaceTipSpan(match, vocabMap[match]));
                     }
+                    // 既にアノテーション済みの例文はリッチ形式に変換
+                    if (jpContent.includes('tooltip-word')) {
+                        jpContent = hanaceUpgradeTips(jpContent);
+                    }
+                    // 助詞・コピュラにもツールチップを付与
+                    jpContent = addParticleTooltips(jpContent);
 
                     li.innerHTML = `
                         <div style="font-size: 1.15rem; color: var(--text-color); font-weight: bold; margin-bottom: 5px;">${jpContent}</div>
@@ -3488,6 +3984,17 @@
             } else {
                 feedback.innerText = '❌ Incorrect! Watch the video again to review. The correct answer is "' + quiz.options[quiz.answer] + '".';
                 feedback.style.color = '#c62828';
+                if (window.hanaceAddMistake) {
+                    const ld = (typeof lessonData !== 'undefined' && lessonData[activeStepId]) || {};
+                    hanaceAddMistake({
+                        question: quiz.question,
+                        options: quiz.options,
+                        answer: quiz.answer,
+                        explanation: 'Correct answer: ' + quiz.options[quiz.answer],
+                        topic: ld.title || 'Lesson Quiz',
+                        link: 'index.html?step=' + activeStepId
+                    });
+                }
             }
 
             // 判定後の処理: 次の問題へ or 完了
@@ -3509,6 +4016,14 @@
                 if (stepElement) {
                     stepElement.classList.add('completed');
                 }
+                const done = JSON.parse(localStorage.getItem('hanaceCompletedSteps') || '{}');
+                if (!done[activeStepId]) {
+                    done[activeStepId] = new Date().toISOString();
+                    localStorage.setItem('hanaceCompletedSteps', JSON.stringify(done));
+                    if (window.hanaceCelebrate) hanaceCelebrate();
+                }
+                if (window.hanaceRecordStudy) hanaceRecordStudy();
+                if (window.hanaceRefreshUI) hanaceRefreshUI();
             }
             closeModal();
         }
@@ -3653,9 +4168,35 @@
             }
         });
 
+        /* レッスン単語リストの🌼保存 */
+        function hanaceIsWordSaved(w) {
+            const key = w.kanji || w.kana;
+            if (!key) return false;
+            const saved = JSON.parse(localStorage.getItem('hanaBananaSavedVocab') || '[]');
+            return saved.some(v => (v.kanji || v.word) === key);
+        }
+
+        function hanaceToggleWordSave(el, w) {
+            const key = w.kanji || w.kana;
+            if (!key) return;
+            let saved = JSON.parse(localStorage.getItem('hanaBananaSavedVocab') || '[]');
+            const idx = saved.findIndex(v => (v.kanji || v.word) === key);
+            if (idx === -1) {
+                saved.push({ word: key, kanji: key, kana: w.kana || '', romaji: w.romaji || '', meaning: w.meaning || '', date: new Date().toISOString() });
+                el.classList.add('active');
+            } else {
+                saved.splice(idx, 1);
+                el.classList.remove('active');
+            }
+            localStorage.setItem('hanaBananaSavedVocab', JSON.stringify(saved));
+        }
+
         /* マイ単語帳への保存ロジック */
         function saveWordClick(element) {
-            const wordHTML = element.innerHTML;
+            const clone = element.cloneNode(true);
+            const pop = clone.querySelector('.tt-pop');
+            if (pop) pop.remove();
+            const wordHTML = clone.innerHTML;
             const meaning = element.getAttribute('data-tooltip');
             
             let saved = JSON.parse(localStorage.getItem('hanaBananaSavedVocab') || '[]');
@@ -3799,6 +4340,268 @@
             });
         });
 
+    </script>
+
+
+    <script>
+        /* ===== Hanace Engagement: continue, progress, streak, celebration ===== */
+        (function () {
+            const LEVELS = [
+                { id: 'beginner', label: 'Beginner', sub: 0 },
+                { id: 'intermediate', label: 'Intermediate', sub: 1 },
+                { id: 'advanced', label: 'Advanced', sub: 2 }
+            ];
+            const todayStr = d => d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0');
+
+            function getDone() { return JSON.parse(localStorage.getItem('hanaceCompletedSteps') || '{}'); }
+
+            function lessonSteps(levelId) {
+                const c = document.getElementById(levelId);
+                if (!c) return [];
+                const LD = (typeof lessonData !== 'undefined') ? lessonData : null;
+                return Array.from(c.querySelectorAll('.step')).filter(el => LD && LD[el.id]);
+            }
+
+            /* ---- Streak ---- */
+            window.hanaceRecordStudy = function () {
+                const st = JSON.parse(localStorage.getItem('hanaceStreak') || '{"count":0,"last":""}');
+                const now = new Date();
+                const today = todayStr(now);
+                if (st.last === today) return;
+                const yesterday = todayStr(new Date(now.getTime() - 86400000));
+                st.count = (st.last === yesterday) ? st.count + 1 : 1;
+                st.last = today;
+                localStorage.setItem('hanaceStreak', JSON.stringify(st));
+                renderStreak();
+            };
+
+            function renderStreak() {
+                const chip = document.getElementById('hanace-streak');
+                if (chip) chip.remove();
+            }
+
+            /* ---- Progress bars ---- */
+            function renderProgress() {
+                const done = getDone();
+                LEVELS.forEach(lv => {
+                    const steps = lessonSteps(lv.id);
+                    if (!steps.length) return;
+                    const total = steps.length;
+                    const count = steps.filter(el => done[el.id]).length;
+                    const pct = Math.round(100 * count / total);
+                    let box = document.getElementById('lp-' + lv.id);
+                    if (!box) {
+                        box = document.createElement('div');
+                        box.id = 'lp-' + lv.id;
+                        const anchor = document.getElementById(lv.id).querySelector('.resource-links-row');
+                        if (anchor) anchor.insertAdjacentElement('beforebegin', box);
+                        else document.getElementById(lv.id).prepend(box);
+                    }
+                    box.className = 'level-progress' + (count === total ? ' lp-done' : '');
+                    box.innerHTML = '<div class="level-progress-label"><span>' + lv.label + (count === total ? ' — Complete! 🎉' : '') +
+                        '</span><span>🌼 ' + count + '/' + total + '</span></div>' +
+                        '<div class="level-progress-bar"><div class="level-progress-fill" style="width:' + pct + '%"></div></div>';
+                });
+            }
+
+            /* ---- Continue banner ---- */
+            function nextStep() {
+                const done = getDone();
+                for (const lv of LEVELS) {
+                    for (const el of lessonSteps(lv.id)) {
+                        if (!done[el.id]) return { level: lv, el: el };
+                    }
+                }
+                return null;
+            }
+
+            function renderContinue() {
+                const done = getDone();
+                const started = Object.keys(done).length > 0;
+                let banner = document.getElementById('hanace-continue');
+                if (!started) { if (banner) banner.remove(); return; }
+                if (!banner) {
+                    banner = document.createElement('div');
+                    banner.id = 'hanace-continue';
+                    banner.className = 'continue-banner';
+                    const container = document.querySelector('.container');
+                    container.insertBefore(banner, container.firstElementChild);
+                }
+                const nxt = nextStep();
+                if (nxt) {
+                    const badge = nxt.el.querySelector('.badge');
+                    const h3 = nxt.el.querySelector('h3');
+                    const label = (badge ? badge.textContent.trim() + ' · ' : '') + (h3 ? h3.textContent.trim() : '');
+                    banner.innerHTML = '<div class="cb-text"><div class="cb-title">Welcome back! 🌼</div>' +
+                        '<div class="cb-sub">Next up: ' + nxt.level.label + ' — ' + label + '</div></div>' +
+                        '<button class="learn-btn cb-btn" id="hanace-continue-btn">Continue →</button>';
+                    document.getElementById('hanace-continue-btn').onclick = () => goToStep(nxt);
+                } else {
+                    banner.remove();
+                }
+            }
+
+            function goToStep(nxt) {
+                const tabBtns = document.querySelectorAll('.tab-btn');
+                if (tabBtns[0]) tabBtns[0].click();
+                const subBtns = document.querySelectorAll('.sub-tab-btn');
+                if (subBtns[nxt.level.sub]) subBtns[nxt.level.sub].click();
+                setTimeout(() => {
+                    nxt.el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    nxt.el.classList.remove('step-highlight');
+                    void nxt.el.offsetWidth;
+                    nxt.el.classList.add('step-highlight');
+                }, 350);
+            }
+
+            /* ---- Celebration ---- */
+            window.hanaceCelebrate = function () {
+                const petals = ['🌼', '🌼', '🌼', '🌼', '✨'];
+                for (let i = 0; i < 28; i++) {
+                    const p = document.createElement('span');
+                    p.className = 'hanace-petal';
+                    p.textContent = petals[Math.floor(Math.random() * petals.length)];
+                    p.style.left = Math.random() * 100 + 'vw';
+                    p.style.fontSize = (16 + Math.random() * 16) + 'px';
+                    p.style.animationDuration = (1.8 + Math.random() * 1.4) + 's';
+                    p.style.animationDelay = (Math.random() * 0.5) + 's';
+                    document.body.appendChild(p);
+                    setTimeout(() => p.remove(), 4000);
+                }
+                const t = document.createElement('div');
+                t.className = 'hanace-toast';
+                t.textContent = '🌼 Step complete! Your Japanese is blooming!';
+                document.body.appendChild(t);
+                requestAnimationFrame(() => t.classList.add('show'));
+                setTimeout(() => { t.classList.remove('show'); setTimeout(() => t.remove(), 400); }, 2600);
+            };
+
+            /* ---- Review queue ---- */
+            window.hanaceAddMistake = function (item) {
+                try {
+                    const q = JSON.parse(localStorage.getItem('hanaceReviewQueue') || '[]');
+                    if (!q.some(x => x.question === item.question)) {
+                        item.addedAt = new Date().toISOString();
+                        q.push(item);
+                        localStorage.setItem('hanaceReviewQueue', JSON.stringify(q));
+                    }
+                    renderReviewChip();
+                } catch (e) {}
+            };
+
+            function renderReviewChip() {
+                let q = [];
+                try { q = JSON.parse(localStorage.getItem('hanaceReviewQueue') || '[]'); } catch (e) {}
+                let chip = document.getElementById('hanace-review-chip');
+                if (!q.length) { if (chip) chip.remove(); return; }
+                if (!chip) {
+                    chip = document.createElement('a');
+                    chip.id = 'hanace-review-chip';
+                    chip.href = 'mistakes.html';
+                    const header = document.querySelector('header.global-header');
+                    if (header) header.appendChild(chip);
+                }
+                chip.className = 'streak-chip review-chip';
+                chip.textContent = '📝 ' + q.length + ' to review';
+                chip.title = 'Questions you missed — tap to review them!';
+            }
+
+            window.hanaceRefreshUI = function () {
+                renderProgress();
+                renderContinue();
+                renderStreak();
+                renderReviewChip();
+            };
+
+            document.addEventListener('DOMContentLoaded', () => {
+                // restore completed steps from storage
+                const done = getDone();
+                Object.keys(done).forEach(id => {
+                    const el = document.getElementById(id);
+                    if (el) el.classList.add('completed');
+                });
+                hanaceRefreshUI();
+
+                // any quiz answer counts as "studied today"
+                if (typeof window.checkAnswer === 'function') {
+                    const orig = window.checkAnswer;
+                    window.checkAnswer = function () {
+                        hanaceRecordStudy();
+                        return orig.apply(this, arguments);
+                    };
+                }
+            });
+        })();
+    </script>
+
+
+    <nav class="hanace-bottom-nav">
+        <a href="index.html?tab=roadmap" class="active"><span class="bn-icon">🗺️</span>Roadmap</a>
+        <a href="vocab.html"><span class="bn-icon">📚</span>Vocab</a>
+        <a href="myvocab.html"><span class="bn-icon">🌼</span>Saved</a>
+        <a href="mistakes.html"><span class="bn-icon">📝</span>Review<span class="bn-dot"></span></a>
+        <a href="index.html?tab=booking"><span class="bn-icon">📅</span>Lesson</a>
+    </nav>
+    <script>
+        (function () {
+            try {
+                var q = JSON.parse(localStorage.getItem('hanaceReviewQueue') || '[]');
+                var d = document.querySelector('.hanace-bottom-nav .bn-dot');
+                if (d && q.length) d.style.display = 'block';
+            } catch (e) {}
+        })();
+    </script>
+
+
+    <aside class="hanace-sidebar">
+        <a href="index.html" class="hs-brand"><svg class="logo-daisy" viewBox="0 0 48 48" aria-hidden="true"><g fill="#FF7A00"><ellipse cx="24" cy="10" rx="6" ry="10"/><ellipse cx="24" cy="10" rx="6" ry="10" transform="rotate(45 24 24)"/><ellipse cx="24" cy="10" rx="6" ry="10" transform="rotate(90 24 24)"/><ellipse cx="24" cy="10" rx="6" ry="10" transform="rotate(135 24 24)"/><ellipse cx="24" cy="10" rx="6" ry="10" transform="rotate(180 24 24)"/><ellipse cx="24" cy="10" rx="6" ry="10" transform="rotate(225 24 24)"/><ellipse cx="24" cy="10" rx="6" ry="10" transform="rotate(270 24 24)"/><ellipse cx="24" cy="10" rx="6" ry="10" transform="rotate(315 24 24)"/></g><circle cx="24" cy="24" r="8.5" fill="#FFC94D"/><circle cx="24" cy="24" r="8.5" fill="none" stroke="#F0A830" stroke-width="1"/></svg><span class="logo-hana">Hana</span><span class="logo-ce">ce</span></a>
+        <div class="hs-label">Menu</div>
+        <a class="hs-item" data-page="roadmap" data-tab="roadmap" href="index.html?tab=roadmap">🗺️ Roadmap</a>
+        <a class="hs-item" data-page="resources" data-tab="resources" href="index.html?tab=resources">📦 Resources</a>
+        <a class="hs-item" data-page="vocab" href="vocab.html">📚 Vocabulary</a>
+        <a class="hs-item" data-page="saved" href="myvocab.html">🌼 Saved Words</a>
+        <a class="hs-item" data-page="review" href="mistakes.html">📝 Review</a>
+        <a class="hs-item" data-page="booking" data-tab="booking" href="index.html?tab=booking">📅 Book a Lesson</a>
+        <div class="hs-divider"></div>
+        <a class="hs-item" href="index.html?search=true">🔍 Search</a>
+        <a class="hs-item" href="https://discord.gg/yxM44qY67" target="_blank">💬 Chat Support</a>
+    </aside>
+    <script>
+        (function () {
+            const side = document.querySelector('.hanace-sidebar');
+            if (!side) return;
+            const file = (location.pathname.split('/').pop() || 'index.html').toLowerCase();
+            const isIndex = file === '' || file === 'index.html';
+
+            // active menu item
+            const pageMap = { 'vocab.html': 'vocab', 'myvocab.html': 'saved', 'mistakes.html': 'review' };
+            let active = pageMap[file] || (isIndex ? 'roadmap' : null);
+            if (isIndex) {
+                const tab = new URLSearchParams(location.search).get('tab');
+                if (tab === 'resources' || tab === 'booking') active = tab;
+            }
+            if (active) {
+                const el = side.querySelector('a.hs-item[data-page="' + active + '"]');
+                if (el) el.classList.add('active');
+            }
+
+            // on index: switch tabs without reload + keep active state in sync
+            if (isIndex && typeof showRoadmap === 'function') {
+                side.querySelectorAll('a.hs-item[data-tab]').forEach(a => {
+                    a.addEventListener('click', e => {
+                        e.preventDefault();
+                        const tab = a.getAttribute('data-tab');
+                        const idx = { roadmap: 0, resources: 1, booking: 2 }[tab];
+                        const btns = document.querySelectorAll('.tab-btn');
+                        if (btns[idx]) btns[idx].click();
+                        side.querySelectorAll('a.hs-item.active').forEach(x => x.classList.remove('active'));
+                        a.classList.add('active');
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                    });
+                });
+            }
+
+        })();
     </script>
 
 </body>
