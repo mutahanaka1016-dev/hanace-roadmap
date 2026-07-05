@@ -23,6 +23,9 @@ window.HanaAuth = {
         signOut(auth).then(() => {
             localStorage.removeItem('hanaBananaCheatSheetProgress');
             localStorage.removeItem('hanaBananaSavedVocab');
+            localStorage.removeItem('hanaceCompletedSteps');
+            localStorage.removeItem('hanaceReviewQueue');
+            localStorage.removeItem('hanaceStreak');
             sessionStorage.removeItem('hanaSyncDone');
             window.location.reload();
         });
@@ -39,6 +42,12 @@ localStorage.setItem = function(key, value) {
             try { setDoc(userRef, { cheatSheetProgress: JSON.parse(value) }, { merge: true }); } catch (e) {}
         } else if (key === 'hanaBananaSavedVocab') {
             try { setDoc(userRef, { savedVocab: JSON.parse(value) }, { merge: true }); } catch (e) {}
+        } else if (key === 'hanaceCompletedSteps') {
+            try { setDoc(userRef, { completedSteps: JSON.parse(value) }, { merge: true }); } catch (e) {}
+        } else if (key === 'hanaceReviewQueue') {
+            try { setDoc(userRef, { reviewQueue: JSON.parse(value) }, { merge: true }); } catch (e) {}
+        } else if (key === 'hanaceStreak') {
+            try { setDoc(userRef, { streak: JSON.parse(value) }, { merge: true }); } catch (e) {}
         }
     }
 };
@@ -54,7 +63,7 @@ const authStyles = `
         justify-content: center;
         align-items: center;
         z-index: 999999;
-        font-family: 'Quicksand', 'M PLUS Rounded 1c', sans-serif;
+        font-family: 'Nunito', 'M PLUS Rounded 1c', sans-serif;
     }
     #hana-auth-modal {
         background: #fff;
@@ -66,7 +75,7 @@ const authStyles = `
         text-align: center;
     }
     #hana-auth-modal h2 {
-        color: #ff751f;
+        color: #FF7A00;
         margin-top: 0;
         margin-bottom: 20px;
         font-size: 1.8rem;
@@ -82,25 +91,30 @@ const authStyles = `
         transition: all 0.3s;
     }
     .hana-auth-input:focus {
-        border-color: #ff751f;
+        border-color: #FF7A00;
         outline: none;
     }
     .hana-auth-btn {
         width: 100%;
         padding: 12px;
-        background: #ff751f;
+        background: #FF7A00;
         color: white;
         border: none;
         border-radius: 12px;
         font-size: 1.1rem;
         font-weight: bold;
         cursor: pointer;
-        transition: all 0.3s;
+        transition: filter 0.15s ease, transform 0.1s ease, box-shadow 0.1s ease;
+        box-shadow: 0 4px 0 #E06B00;
         margin-bottom: 10px;
     }
     .hana-auth-btn:hover {
-        background: #e66a1c;
-        transform: translateY(-2px);
+        background: #FF7A00;
+        filter: brightness(1.06);
+    }
+    .hana-auth-btn:active {
+        transform: translateY(4px);
+        box-shadow: none;
     }
     .hana-auth-toggle {
         background: none;
@@ -154,6 +168,7 @@ function showAuthModal() {
             <form id="auth-form">
                 <input type="email" id="auth-email" class="hana-auth-input" placeholder="Email Address" required />
                 <input type="password" id="auth-password" class="hana-auth-input" placeholder="Password" required />
+                <input type="password" id="auth-password-confirm" class="hana-auth-input" placeholder="Confirm Password" style="display: none;" />
                 <button type="submit" id="auth-submit" class="hana-auth-btn">Log In</button>
             </form>
             <button id="auth-toggle" class="hana-auth-toggle">Need an account? Sign Up</button>
@@ -166,18 +181,31 @@ function showAuthModal() {
     const submitBtn = document.getElementById('auth-submit');
     const errorDiv = document.getElementById('auth-error');
     
+    const confirmInput = document.getElementById('auth-password-confirm');
+
     toggle.addEventListener('click', () => {
         isLogin = !isLogin;
         title.innerText = isLogin ? "Log In" : "Sign Up";
         submitBtn.innerText = isLogin ? "Log In" : "Sign Up";
         toggle.innerText = isLogin ? "Need an account? Sign Up" : "Already have an account? Log In";
         errorDiv.style.display = 'none';
+        confirmInput.style.display = isLogin ? 'none' : 'block';
+        confirmInput.required = !isLogin;
+        confirmInput.value = '';
     });
     
     form.addEventListener('submit', async (e) => {
         e.preventDefault();
         const email = document.getElementById('auth-email').value;
         const password = document.getElementById('auth-password').value;
+        if (!isLogin) {
+            const confirm = document.getElementById('auth-password-confirm').value;
+            if (password !== confirm) {
+                errorDiv.innerText = 'Passwords do not match. Please try again. (パスワードが一致しません)';
+                errorDiv.style.display = 'block';
+                return;
+            }
+        }
         submitBtn.disabled = true;
         submitBtn.innerText = "Processing...";
         errorDiv.style.display = 'none';
@@ -259,13 +287,70 @@ onAuthStateChanged(auth, async (user) => {
                         setDoc(userRef, { savedVocab: localVocabArr }, { merge: true });
                     }
                 }
+                // Roadmap progress (union merge)
+                {
+                    const localStr = localStorage.getItem('hanaceCompletedSteps');
+                    const localObj = localStr ? JSON.parse(localStr) : {};
+                    const cloudObj = data.completedSteps || {};
+                    const merged = Object.assign({}, cloudObj, localObj);
+                    const mergedStr = JSON.stringify(merged);
+                    if (mergedStr !== localStr) {
+                        originalSetItem.call(localStorage, 'hanaceCompletedSteps', mergedStr);
+                        needsReload = true;
+                    }
+                    if (JSON.stringify(cloudObj) !== mergedStr) {
+                        setDoc(userRef, { completedSteps: merged }, { merge: true });
+                    }
+                }
+
+                // Review queue (union by question)
+                {
+                    const localStr = localStorage.getItem('hanaceReviewQueue');
+                    const localArr = localStr ? JSON.parse(localStr) : [];
+                    const cloudArr = data.reviewQueue || [];
+                    const merged = cloudArr.slice();
+                    localArr.forEach(it => {
+                        if (!merged.some(x => x.question === it.question)) merged.push(it);
+                    });
+                    const mergedStr = JSON.stringify(merged);
+                    if (mergedStr !== localStr) {
+                        originalSetItem.call(localStorage, 'hanaceReviewQueue', mergedStr);
+                        needsReload = true;
+                    }
+                    if (JSON.stringify(cloudArr) !== mergedStr) {
+                        setDoc(userRef, { reviewQueue: merged }, { merge: true });
+                    }
+                }
+
+                // Streak (most recent study date wins)
+                {
+                    const localStr = localStorage.getItem('hanaceStreak');
+                    const localSt = localStr ? JSON.parse(localStr) : { count: 0, last: '' };
+                    const cloudSt = data.streak || { count: 0, last: '' };
+                    let winner = localSt;
+                    if (cloudSt.last > localSt.last) winner = cloudSt;
+                    else if (cloudSt.last === localSt.last && cloudSt.count > localSt.count) winner = cloudSt;
+                    const winStr = JSON.stringify(winner);
+                    if (winStr !== localStr) {
+                        originalSetItem.call(localStorage, 'hanaceStreak', winStr);
+                    }
+                    if (JSON.stringify(cloudSt) !== winStr) {
+                        setDoc(userRef, { streak: winner }, { merge: true });
+                    }
+                }
             } else {
                 // First login, push local data to Firebase
                 const localCheat = localStorage.getItem('hanaBananaCheatSheetProgress');
                 const localVocab = localStorage.getItem('hanaBananaSavedVocab');
+                const localSteps = localStorage.getItem('hanaceCompletedSteps');
+                const localQueue = localStorage.getItem('hanaceReviewQueue');
+                const localStreak = localStorage.getItem('hanaceStreak');
                 const updates = {};
                 if (localCheat) updates.cheatSheetProgress = JSON.parse(localCheat);
                 if (localVocab) updates.savedVocab = JSON.parse(localVocab);
+                if (localSteps) updates.completedSteps = JSON.parse(localSteps);
+                if (localQueue) updates.reviewQueue = JSON.parse(localQueue);
+                if (localStreak) updates.streak = JSON.parse(localStreak);
                 if (Object.keys(updates).length > 0) {
                     await setDoc(userRef, updates);
                 }
