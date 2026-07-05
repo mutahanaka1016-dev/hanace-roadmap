@@ -6,19 +6,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lesson Files | Hana Banana Japanese</title>
-    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500;700;800&family=Quicksand:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500;700;800&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary-color: #ff751f; 
+            --primary-color: #FF7A00; 
             --secondary-color: #555555; 
             --text-color: #2D3436;
-            --bg-color: #F8F9FA;
+            --bg-color: #FFFFFF;
             --card-bg: #FFFFFF;
             --shadow: 0 10px 30px rgba(0,0,0,0.05);
         }
 
         body { 
-            font-family: 'Quicksand', 'M PLUS Rounded 1c', sans-serif; 
+            font-family: 'Nunito', 'M PLUS Rounded 1c', sans-serif; 
             background-color: var(--bg-color);
             color: var(--text-color); 
             margin: 0; 
@@ -246,7 +246,7 @@
             box-sizing: border-box;
             color: var(--secondary-color);
             font-weight: bold;
-            font-family: 'Quicksand', 'M PLUS Rounded 1c', sans-serif;
+            font-family: 'Nunito', 'M PLUS Rounded 1c', sans-serif;
             gap: 5px;
         }
 
@@ -341,6 +341,349 @@
         }
         /* END INJECTED HEADER CSS */
 
+    
+        /* ===== Modern Minimal Theme Overrides (matches index.html) ===== */
+        body {
+            background: #FFFFFF;
+            font-family: 'Nunito', 'M PLUS Rounded 1c', sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+        header.global-header {
+            background: #fff;
+            border-bottom: 2px solid #E8E8E8;
+            box-shadow: none;
+        }
+        .logo-trigger h1 {
+            color: #FF7A00;
+            font-weight: 900;
+            letter-spacing: -0.5px;
+            text-shadow: none;
+            background: none;
+        }
+        .logo-trigger p { color: #6F6F6F; font-weight: 700; }
+        .tabs {
+            background: #fff;
+            border: 2px solid #E8E8E8;
+            border-radius: 16px;
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+        }
+        .tab-btn {
+            background: #fff;
+            border: 2px solid #E8E8E8;
+            color: #6F6F6F;
+            border-radius: 12px;
+            font-weight: 800;
+            font-family: 'Nunito', 'M PLUS Rounded 1c', sans-serif;
+            box-shadow: none;
+        }
+        .tab-btn:hover {
+            border-color: #FF7A00;
+            color: #FF7A00;
+            background: #FFF1E4;
+            transform: none;
+            box-shadow: none;
+        }
+        .tab-btn.active {
+            background: #FF7A00;
+            border-color: #FF7A00;
+            color: #fff;
+            box-shadow: 0 3px 0 #E06B00;
+            transform: none;
+        }
+        .header-action-btn {
+            background: #fff;
+            border: 2px solid #E8E8E8;
+            border-radius: 12px;
+            color: #6F6F6F;
+            font-weight: 700;
+            font-family: 'Nunito', 'M PLUS Rounded 1c', sans-serif;
+            box-shadow: 0 2px 0 #E8E8E8;
+        }
+        .header-action-btn:hover {
+            border-color: #FF7A00;
+            color: #FF7A00;
+            background: #FFF1E4;
+            box-shadow: 0 2px 0 #FF7A00;
+            transform: none;
+        }
+        .dropdown-menu {
+            background: #fff;
+            border: 2px solid #E8E8E8;
+            border-radius: 16px;
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+        }
+        .dropdown-item { font-weight: 700; border-radius: 10px; }
+        .dropdown-item:hover { background: #FFF1E4; color: #FF7A00; }
+        .sub-tabs {
+            background: #fff;
+            border: 2px solid #E8E8E8;
+            border-radius: 16px;
+            box-shadow: none;
+        }
+        .sub-tab-btn { font-weight: 800; border-radius: 11px; }
+        .sub-tab-btn:hover { color: #FF7A00; background: #FFF1E4; }
+        .sub-tab-btn.active { background: #FF7A00; color: #fff; box-shadow: none; }
+
+        /* Primary buttons: flat, pressable */
+        .learn-btn, .cta-btn-premium, .print-btn, .btn-primary, .download-btn,
+        .start-btn, .next-quiz-btn, .submit-btn {
+            background: #FF7A00;
+            background-image: none;
+            border: none;
+            color: #fff;
+            font-weight: 800;
+            font-family: inherit;
+            border-radius: 14px;
+            box-shadow: 0 4px 0 #E06B00;
+            transition: filter 0.15s ease, transform 0.1s ease, box-shadow 0.1s ease;
+        }
+        .learn-btn:hover, .cta-btn-premium:hover, .print-btn:hover, .btn-primary:hover,
+        .download-btn:hover, .start-btn:hover, .next-quiz-btn:hover,
+        .submit-btn:hover {
+            background: #FF7A00;
+            filter: brightness(1.06);
+            transform: none;
+            box-shadow: 0 4px 0 #E06B00;
+        }
+        .learn-btn:active, .cta-btn-premium:active, .print-btn:active, .btn-primary:active,
+        .download-btn:active, .start-btn:active, .next-quiz-btn:active,
+        .submit-btn:active {
+            transform: translateY(4px);
+            box-shadow: none;
+        }
+        .btn-outline {
+            background: #fff;
+            border: 2px solid #E8E8E8;
+            color: #6F6F6F;
+            font-weight: 800;
+            border-radius: 14px;
+            box-shadow: 0 2px 0 #E8E8E8;
+        }
+        .btn-outline:hover {
+            border-color: #FF7A00;
+            color: #FF7A00;
+            background: #FFF1E4;
+            box-shadow: 0 2px 0 #FF7A00;
+        }
+
+        /* Quiz answer buttons: flat white with pressable edge */
+        .option-btn, .quiz-btn {
+            background: #fff;
+            border: 2px solid #E8E8E8;
+            border-radius: 12px;
+            font-weight: 700;
+            box-shadow: 0 3px 0 #E8E8E8;
+            transition: all 0.12s ease;
+        }
+        .option-btn:hover, .quiz-btn:hover {
+            border-color: #FF7A00;
+            background: #FFF1E4;
+            box-shadow: 0 3px 0 #FF7A00;
+            transform: none;
+        }
+
+        /* Cards: flat borders instead of heavy shadows */
+        .chart-section, .worksheet-card, .quiz-card, .quiz-container, .review-card,
+        .review-hub, .results-screen, .page-header, .intro, .lesson-list,
+        .starthere-card, .cycle-item, .step {
+            box-shadow: none;
+            border: 2px solid #E8E8E8;
+        }
+        .vocab-item {
+            box-shadow: none;
+            border: 2px solid #E8E8E8;
+        }
+        footer, .footer { color: #AAAAAA; opacity: 1; }
+        @media (max-width: 768px) { .header-action-btn .sw-icon { margin-right: 0 !important; } }
+
+    
+        /* ===== Mobile Bottom Tab Nav ===== */
+        .hanace-bottom-nav { display: none; }
+        @media (max-width: 768px) {
+            body { padding-bottom: 74px !important; }
+            .hanace-bottom-nav {
+                display: flex;
+                position: fixed;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                z-index: 2000;
+                background: #fff;
+                border-top: 2px solid #E8E8E8;
+                padding: 6px 4px calc(6px + env(safe-area-inset-bottom));
+                justify-content: space-around;
+            }
+            .hanace-bottom-nav a {
+                flex: 1;
+                text-align: center;
+                text-decoration: none;
+                color: #9E9E9E;
+                font-size: 0.62rem;
+                font-weight: 800;
+                font-family: 'Nunito', 'M PLUS Rounded 1c', sans-serif;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 2px;
+                position: relative;
+            }
+            .hanace-bottom-nav a .bn-icon { font-size: 1.25rem; line-height: 1.2; }
+            .hanace-bottom-nav a.active { color: #FF7A00; }
+            .hanace-bottom-nav .bn-dot {
+                position: absolute;
+                top: -2px;
+                right: 50%;
+                margin-right: -18px;
+                width: 8px;
+                height: 8px;
+                border-radius: 50%;
+                background: #FF4757;
+                display: none;
+            }
+        }
+    
+        /* ===== Mobile header/menu adjustments ===== */
+        .menu-mobile-item { display: none; }
+        @media (max-width: 768px) {
+            .tab-roadmap, .tab-booking { display: none !important; }
+            .menu-mobile-item { display: block; }
+            .ha-search, .ha-chat, .ha-saved { display: none !important; }
+        }
+    
+        /* unified Hanace logo size */
+        .logo-trigger h1 { font-size: 35px !important; }
+        @media (max-width: 768px) {
+            .logo-trigger h1 { font-size: 28px !important; }
+        }
+    
+        /* ===== PC: persistent left sidebar ===== */
+        .hanace-sidebar { display: none; }
+        @media (min-width: 1025px) {
+            body { padding-left: 250px; }
+            .hamburger-btn { display: none !important; }
+            .triangle-btn { display: none !important; }
+            .hanace-sidebar {
+                display: flex;
+                flex-direction: column;
+                position: fixed;
+                top: 0;
+                left: 0;
+                bottom: 0;
+                width: 250px;
+                box-sizing: border-box;
+                background: #fff;
+                border-right: 2px solid #E8E8E8;
+                padding: 24px 16px;
+                overflow-y: auto;
+                z-index: 900;
+                font-family: 'Nunito', 'M PLUS Rounded 1c', sans-serif;
+            }
+            .hs-brand {
+                font-weight: 900;
+                font-size: 1.3rem;
+                color: #FF7A00;
+                letter-spacing: -0.5px;
+                margin: 0 8px 18px;
+                text-decoration: none;
+                display: block;
+            }
+            .hs-label {
+                font-size: 0.68rem;
+                font-weight: 800;
+                letter-spacing: 1.5px;
+                text-transform: uppercase;
+                color: #B5B5B5;
+                margin: 14px 8px 6px;
+            }
+            .hanace-sidebar a.hs-item {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                padding: 9px 10px;
+                border-radius: 10px;
+                text-decoration: none;
+                color: #6F6F6F;
+                font-weight: 700;
+                font-size: 0.92rem;
+                transition: background 0.15s, color 0.15s;
+                cursor: pointer;
+            }
+            .hanace-sidebar a.hs-item:hover {
+                background: #FFF1E4;
+                color: #FF7A00;
+            }
+            .hanace-sidebar a.hs-item.active {
+                background: #FF7A00;
+                color: #fff;
+            }
+            .hs-sections a.hs-item {
+                font-size: 0.85rem;
+                padding: 7px 10px;
+            }
+            .hs-divider {
+                height: 2px;
+                background: #F0F0F0;
+                border-radius: 2px;
+                margin: 12px 4px;
+            }
+        }
+    
+        /* ===== Hanace logo wordmark ===== */
+        .hanace-logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0;
+            margin: 10px 0 5px;
+            letter-spacing: -1.5px;
+            font-weight: 900;
+            font-family: 'Nunito', 'M PLUS Rounded 1c', sans-serif;
+            line-height: 1;
+        }
+        .hanace-logo .logo-daisy {
+            width: 0.92em;
+            height: 0.92em;
+            flex-shrink: 0;
+            margin-right: 9px;
+            transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        .logo-trigger:hover .logo-daisy { transform: rotate(180deg); }
+        .logo-hana { color: #FF7A00; }
+        .logo-ce { color: #303030; }
+        .hs-brand {
+            display: flex !important;
+            align-items: center;
+            gap: 0;
+            font-weight: 900;
+            letter-spacing: -0.8px;
+            line-height: 1;
+        }
+        .hs-brand .logo-daisy {
+            width: 21px;
+            height: 21px;
+            margin-right: 7px;
+            transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        .hs-brand:hover .logo-daisy { transform: rotate(180deg); }
+    
+        /* ===== unified header band height (all pages) ===== */
+        header.global-header {
+            display: flex !important;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            box-sizing: border-box;
+            min-height: 118px;
+            padding: 8px 20px !important;
+            margin-bottom: 16px !important;
+        }
+        header.global-header .logo-trigger { padding: 6px 20px; }
+        @media (max-width: 768px) {
+            header.global-header {
+                min-height: 110px;
+                padding: 6px 10px !important;
+            }
+        }
     </style>
 </head>
 <body>
@@ -349,19 +692,21 @@
         <button class="hamburger-btn" onclick="document.querySelector('.tabs').classList.toggle('show-menu')">☰</button>
         <button class="triangle-btn" onclick="document.querySelector('.header-actions').classList.toggle('show-actions')">▼</button>
         <div class="header-actions">
-            <a href="index.html?search=true" class="header-action-btn" style="text-decoration: none;">🔍 <span class="hide-on-mobile">Search</span></a>
-            <a href="myvocab.html" class="header-action-btn" style="text-decoration: none;"><svg style="width: 18px; height: 18px; margin-right: 6px; vertical-align: text-bottom;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg><span class="hide-on-mobile">Saved Words</span></a>
-            <a href="https://discord.gg/yxM44qY67" target="_blank" class="header-action-btn" style="text-decoration: none;">💬 <span class="hide-on-mobile">24/7 Chat Support</span></a>
+            <a href="index.html?search=true" class="header-action-btn ha-search" style="text-decoration: none;">🔍 <span class="hide-on-mobile">Search</span></a>
+            <a href="myvocab.html" class="header-action-btn ha-saved" style="text-decoration: none;"><span class="sw-icon" style="font-size: 17px; line-height: 1; margin-right: 6px;">🌼</span><span class="hide-on-mobile">Saved Words</span></a>
+            <a href="https://discord.gg/yxM44qY67" target="_blank" class="header-action-btn ha-chat" style="text-decoration: none;">💬 <span class="hide-on-mobile">24/7 Chat Support</span></a>
         </div>
         <a href="index.html" class="logo-trigger">
-            <h1 style="font-weight: 800; color: var(--primary-color); font-family: 'Quicksand', 'M PLUS Rounded 1c', sans-serif; letter-spacing: -2px; margin-bottom: 5px; margin-top: 10px; text-shadow: 2px 2px 4px rgba(0,0,0,0.05);">Hanace</h1>
+            <h1 class="hanace-logo"><svg class="logo-daisy" viewBox="0 0 48 48" aria-hidden="true"><g fill="#FF7A00"><ellipse cx="24" cy="10" rx="6" ry="10"/><ellipse cx="24" cy="10" rx="6" ry="10" transform="rotate(45 24 24)"/><ellipse cx="24" cy="10" rx="6" ry="10" transform="rotate(90 24 24)"/><ellipse cx="24" cy="10" rx="6" ry="10" transform="rotate(135 24 24)"/><ellipse cx="24" cy="10" rx="6" ry="10" transform="rotate(180 24 24)"/><ellipse cx="24" cy="10" rx="6" ry="10" transform="rotate(225 24 24)"/><ellipse cx="24" cy="10" rx="6" ry="10" transform="rotate(270 24 24)"/><ellipse cx="24" cy="10" rx="6" ry="10" transform="rotate(315 24 24)"/></g><circle cx="24" cy="24" r="8.5" fill="#FFC94D"/><circle cx="24" cy="24" r="8.5" fill="none" stroke="#F0A830" stroke-width="1"/></svg><span class="logo-hana">Hana</span><span class="logo-ce">ce</span></h1>
         </a>
     </header>
 
     <div class="tabs">
-        <button class="tab-btn" onclick="location.href='index.html?tab=roadmap'">Roadmap</button>
+        <button class="tab-btn tab-roadmap" onclick="location.href='index.html?tab=roadmap'">Roadmap</button>
         <button class="tab-btn" onclick="location.href='index.html?tab=resources'">Resources</button>
-        <button class="tab-btn" onclick="location.href='index.html?tab=booking'">Book a Lesson</button>
+        <button class="tab-btn tab-booking" onclick="location.href='index.html?tab=booking'">Book a Lesson</button>
+        <a href="index.html?search=true" class="tab-btn menu-mobile-item">Search</a>
+        <a href="https://discord.gg/yxM44qY67" target="_blank" class="tab-btn menu-mobile-item">24/7 Chat Support</a>
     </div>
 
 
@@ -373,17 +718,17 @@
 
         <div class="lesson-list">
             <ul>
-                <li><a href="/beginner%20step%20PDF/chapter1.pdf" download="chapter1.pdf">Chapter 1</a></li>
-                <li><a href="/beginner%20step%20PDF/chapter2.pdf" download="chapter2.pdf">Chapter 2</a></li>
-                <li><a href="/beginner%20step%20PDF/chapter3.pdf" download="chapter3.pdf">Chapter 3</a></li>
-                <li><a href="/beginner%20step%20PDF/chapter4.pdf" download="chapter4.pdf">Chapter 4</a></li>
-                <li><a href="/beginner%20step%20PDF/chapter5.pdf" download="chapter5.pdf">Chapter 5</a></li>
-                <li><a href="/beginner%20step%20PDF/chapter6.pdf" download="chapter6.pdf">Chapter 6</a></li>
-                <li><a href="/beginner%20step%20PDF/chapter7.pdf" download="chapter7.pdf">Chapter 7</a></li>
-                <li><a href="/beginner%20step%20PDF/chapter8.pdf" download="chapter8.pdf">Chapter 8</a></li>
-                <li><a href="/beginner%20step%20PDF/chapter9.pdf" download="chapter9.pdf">Chapter 9</a></li>
-                <li><a href="/beginner%20step%20PDF/chapter10.pdf" download="chapter10.pdf">Chapter 10</a></li>
-                <li><a href="/beginner%20step%20PDF/chapter11.pdf" download="chapter11.pdf">Chapter 11</a></li>
+                <li><a href="beginner%20step%20PDF/chapter1.pdf" download="chapter1.pdf">Chapter 1</a></li>
+                <li><a href="beginner%20step%20PDF/chapter2.pdf" download="chapter2.pdf">Chapter 2</a></li>
+                <li><a href="beginner%20step%20PDF/chapter3.pdf" download="chapter3.pdf">Chapter 3</a></li>
+                <li><a href="beginner%20step%20PDF/chapter4.pdf" download="chapter4.pdf">Chapter 4</a></li>
+                <li><a href="beginner%20step%20PDF/chapter5.pdf" download="chapter5.pdf">Chapter 5</a></li>
+                <li><a href="beginner%20step%20PDF/chapter6.pdf" download="chapter6.pdf">Chapter 6</a></li>
+                <li><a href="beginner%20step%20PDF/chapter7.pdf" download="chapter7.pdf">Chapter 7</a></li>
+                <li><a href="beginner%20step%20PDF/chapter8.pdf" download="chapter8.pdf">Chapter 8</a></li>
+                <li><a href="beginner%20step%20PDF/chapter9.pdf" download="chapter9.pdf">Chapter 9</a></li>
+                <li><a href="beginner%20step%20PDF/chapter10.pdf" download="chapter10.pdf">Chapter 10</a></li>
+                <li><a href="beginner%20step%20PDF/chapter11.pdf" download="chapter11.pdf">Chapter 11</a></li>
             </ul>
         </div>
         
@@ -391,5 +736,75 @@
             <a href="index.html" class="btn-back">← Back to Roadmap</a>
         </div>
     </div>
+
+    <nav class="hanace-bottom-nav">
+        <a href="index.html?tab=roadmap"><span class="bn-icon">🗺️</span>Roadmap</a>
+        <a href="vocab.html"><span class="bn-icon">📚</span>Vocab</a>
+        <a href="myvocab.html"><span class="bn-icon">🌼</span>Saved</a>
+        <a href="mistakes.html"><span class="bn-icon">📝</span>Review<span class="bn-dot"></span></a>
+        <a href="index.html?tab=booking"><span class="bn-icon">📅</span>Lesson</a>
+    </nav>
+    <script>
+        (function () {
+            try {
+                var q = JSON.parse(localStorage.getItem('hanaceReviewQueue') || '[]');
+                var d = document.querySelector('.hanace-bottom-nav .bn-dot');
+                if (d && q.length) d.style.display = 'block';
+            } catch (e) {}
+        })();
+    </script>
+
+
+    <aside class="hanace-sidebar">
+        <a href="index.html" class="hs-brand"><svg class="logo-daisy" viewBox="0 0 48 48" aria-hidden="true"><g fill="#FF7A00"><ellipse cx="24" cy="10" rx="6" ry="10"/><ellipse cx="24" cy="10" rx="6" ry="10" transform="rotate(45 24 24)"/><ellipse cx="24" cy="10" rx="6" ry="10" transform="rotate(90 24 24)"/><ellipse cx="24" cy="10" rx="6" ry="10" transform="rotate(135 24 24)"/><ellipse cx="24" cy="10" rx="6" ry="10" transform="rotate(180 24 24)"/><ellipse cx="24" cy="10" rx="6" ry="10" transform="rotate(225 24 24)"/><ellipse cx="24" cy="10" rx="6" ry="10" transform="rotate(270 24 24)"/><ellipse cx="24" cy="10" rx="6" ry="10" transform="rotate(315 24 24)"/></g><circle cx="24" cy="24" r="8.5" fill="#FFC94D"/><circle cx="24" cy="24" r="8.5" fill="none" stroke="#F0A830" stroke-width="1"/></svg><span class="logo-hana">Hana</span><span class="logo-ce">ce</span></a>
+        <div class="hs-label">Menu</div>
+        <a class="hs-item" data-page="roadmap" data-tab="roadmap" href="index.html?tab=roadmap">🗺️ Roadmap</a>
+        <a class="hs-item" data-page="resources" data-tab="resources" href="index.html?tab=resources">📦 Resources</a>
+        <a class="hs-item" data-page="vocab" href="vocab.html">📚 Vocabulary</a>
+        <a class="hs-item" data-page="saved" href="myvocab.html">🌼 Saved Words</a>
+        <a class="hs-item" data-page="review" href="mistakes.html">📝 Review</a>
+        <a class="hs-item" data-page="booking" data-tab="booking" href="index.html?tab=booking">📅 Book a Lesson</a>
+        <div class="hs-divider"></div>
+        <a class="hs-item" href="index.html?search=true">🔍 Search</a>
+        <a class="hs-item" href="https://discord.gg/yxM44qY67" target="_blank">💬 Chat Support</a>
+    </aside>
+    <script>
+        (function () {
+            const side = document.querySelector('.hanace-sidebar');
+            if (!side) return;
+            const file = (location.pathname.split('/').pop() || 'index.html').toLowerCase();
+            const isIndex = file === '' || file === 'index.html';
+
+            // active menu item
+            const pageMap = { 'vocab.html': 'vocab', 'myvocab.html': 'saved', 'mistakes.html': 'review' };
+            let active = pageMap[file] || (isIndex ? 'roadmap' : null);
+            if (isIndex) {
+                const tab = new URLSearchParams(location.search).get('tab');
+                if (tab === 'resources' || tab === 'booking') active = tab;
+            }
+            if (active) {
+                const el = side.querySelector('a.hs-item[data-page="' + active + '"]');
+                if (el) el.classList.add('active');
+            }
+
+            // on index: switch tabs without reload + keep active state in sync
+            if (isIndex && typeof showRoadmap === 'function') {
+                side.querySelectorAll('a.hs-item[data-tab]').forEach(a => {
+                    a.addEventListener('click', e => {
+                        e.preventDefault();
+                        const tab = a.getAttribute('data-tab');
+                        const idx = { roadmap: 0, resources: 1, booking: 2 }[tab];
+                        const btns = document.querySelectorAll('.tab-btn');
+                        if (btns[idx]) btns[idx].click();
+                        side.querySelectorAll('a.hs-item.active').forEach(x => x.classList.remove('active'));
+                        a.classList.add('active');
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                    });
+                });
+            }
+
+        })();
+    </script>
+
 </body>
 </html>
