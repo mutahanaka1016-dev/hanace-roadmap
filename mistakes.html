@@ -984,6 +984,34 @@
                 padding: 6px 10px !important;
             }
         }
+    
+        /* ===== shared: back-to-top & print ===== */
+        .hanace-top-btn {
+            position: fixed;
+            right: 18px;
+            bottom: 92px;
+            width: 46px;
+            height: 46px;
+            border-radius: 50%;
+            background: #FF7A00;
+            color: #fff;
+            border: none;
+            font-size: 1.25rem;
+            font-weight: 800;
+            cursor: pointer;
+            box-shadow: 0 4px 0 #E06B00;
+            display: none;
+            z-index: 1500;
+        }
+        .hanace-top-btn:hover { filter: brightness(1.06); }
+        @media (min-width: 769px) { .hanace-top-btn { bottom: 24px; } }
+        @media print {
+            .tabs, .hamburger-btn, .triangle-btn, .header-actions, .hanace-bottom-nav,
+            .hanace-sidebar, .cheat-toolbar, .hanace-top-btn, .btn-back, .print-btn,
+            .learn-btn, footer { display: none !important; }
+            body { padding-left: 0 !important; padding-bottom: 0 !important; background: #fff !important; }
+            .page-container, .container { border: none !important; box-shadow: none !important; }
+        }
     </style>
 </head>
 <body>
@@ -1295,6 +1323,22 @@
                 });
             }
 
+        })();
+    </script>
+
+
+    <script>
+        /* back-to-top */
+        (function () {
+            var t = document.createElement('button');
+            t.className = 'hanace-top-btn';
+            t.textContent = '↑';
+            t.title = 'Back to top';
+            t.onclick = function () { window.scrollTo({ top: 0, behavior: 'smooth' }); };
+            document.body.appendChild(t);
+            window.addEventListener('scroll', function () {
+                t.style.display = window.scrollY > 400 ? 'block' : 'none';
+            });
         })();
     </script>
 

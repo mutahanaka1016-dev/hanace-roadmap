@@ -1,0 +1,975 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="auth.js" type="module"></script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listening Practice | Hana Banana Japanese</title>
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500;700;800&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #FF7A00; 
+            --secondary-color: #555555; 
+            --text-color: #2D3436;
+            --bg-color: #FFFFFF;
+            --card-bg: #FFFFFF;
+            --shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+
+        body { 
+            font-family: 'Nunito', 'M PLUS Rounded 1c', sans-serif; 
+            background-color: var(--bg-color);
+            color: var(--text-color); 
+            margin: 0; 
+            padding: 0; 
+            line-height: 1.6; 
+        }
+
+        header.global-header {
+            text-align: center;
+            padding: 40px 20px;
+            background: #FFFFFF;
+            border-bottom: 4px solid var(--primary-color);
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .header-actions {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            gap: 10px;
+        }
+
+        .header-action-btn {
+            background: #fcfcfc;
+            border: 1px solid #eee;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            color: var(--secondary-color);
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .header-action-btn:hover {
+            background: #fff;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transform: translateY(-1px);
+        }
+
+        .logo-trigger {
+            cursor: pointer;
+            display: inline-block;
+            text-decoration: none;
+        }
+
+        .logo-trigger h1 {
+            margin: 0;
+            font-size: 2.2rem;
+            letter-spacing: -2px;
+            color: var(--primary-color);
+        }
+
+        .logo-trigger p {
+            font-weight: bold;
+            opacity: 0.8;
+            color: var(--secondary-color);
+            margin-top: 5px;
+            font-size: 0.9rem;
+        }
+
+        .container { 
+            max-width: 800px; 
+            margin: 0 auto 100px; 
+            padding: 20px; 
+        }
+
+        .title-section {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .title-section h2 {
+            color: var(--primary-color);
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .title-section p {
+            color: var(--secondary-color);
+            font-size: 1.1rem;
+        }
+
+        .lesson-list {
+            background: var(--card-bg);
+            border-radius: 24px;
+            padding: 40px;
+            box-shadow: var(--shadow);
+        }
+
+        .lesson-list ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .lesson-list li {
+            margin-bottom: 15px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 15px;
+        }
+
+        .lesson-list li:last-child {
+            margin-bottom: 0;
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .lesson-list a {
+            text-decoration: none;
+            color: var(--primary-color);
+            font-size: 1.2rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: opacity 0.2s;
+        }
+
+        .lesson-list a:hover {
+            opacity: 0.7;
+        }
+
+        .lesson-list a::before {
+            content: '📄';
+            font-size: 1.5rem;
+        }
+
+        .btn-back {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 12px 24px;
+            background: #FFF;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+            text-decoration: none;
+            border-radius: 12px;
+            font-weight: bold;
+            transition: all 0.2s;
+            text-align: center;
+        }
+
+        .btn-back:hover {
+            background: var(--primary-color);
+            color: #FFF;
+        }
+
+        @media (max-width: 768px) {
+            header.global-header {
+                padding: 15px 10px;
+            }
+            .header-actions {
+                position: relative;
+                top: 0;
+                right: 0;
+                justify-content: flex-start;
+                margin-bottom: 15px;
+            }
+        }
+
+        /* START INJECTED HEADER CSS */
+        .hamburger-btn {
+            display: block;
+            position: absolute;
+            top: 25px;
+            left: 20px;
+            background: none;
+            border: none;
+            font-size: 32px;
+            cursor: pointer;
+            color: var(--secondary-color);
+            z-index: 1000;
+        }
+
+        .triangle-btn {
+            display: block;
+            position: absolute;
+            top: 25px;
+            right: 20px;
+            background: none;
+            border: none;
+            font-size: 20px;
+            cursor: pointer;
+            color: var(--secondary-color);
+            z-index: 1000;
+        }
+
+        .header-actions {
+            display: none;
+            flex-direction: column;
+            position: absolute;
+            top: 60px;
+            right: 20px;
+            background: white;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            padding: 10px;
+            z-index: 999;
+            width: 240px;
+            gap: 10px;
+        }
+        
+        .header-actions.show-actions {
+            display: flex !important;
+        }
+
+        .header-action-btn {
+            background: #fcfcfc;
+            border: 1px solid #eee;
+            padding: 12px 15px;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            width: 100%;
+            box-sizing: border-box;
+            color: var(--secondary-color);
+            font-weight: bold;
+            font-family: 'Nunito', 'M PLUS Rounded 1c', sans-serif;
+            gap: 5px;
+        }
+
+        .tabs {
+            display: none;
+            flex-direction: column;
+            position: absolute;
+            top: 70px;
+            left: 20px;
+            background: white;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            padding: 10px;
+            z-index: 999;
+            width: 200px;
+            gap: 10px;
+        }
+
+        .tabs.show-menu {
+            display: flex !important;
+        }
+
+        .tab-btn {
+            display: block;
+            box-sizing: border-box;
+            background: #FFFFFF;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+            padding: 10px 15px;
+            font-size: 1rem;
+            font-weight: bold;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+            width: 100%;
+        }
+        
+        .hide-on-mobile {
+            display: inline;
+        }
+
+        @media (max-width: 768px) {
+            .header-actions {
+                position: absolute !important;
+                top: 15px !important;
+                left: 10px !important;
+                right: auto !important;
+                display: flex !important;
+                flex-direction: row !important;
+                justify-content: flex-start !important;
+                flex-wrap: nowrap !important;
+                gap: 8px !important;
+                margin: 0 !important;
+                padding: 0 !important;
+                width: auto !important;
+                background: transparent !important;
+                box-shadow: none !important;
+            }
+            .header-action-btn {
+                width: auto !important;
+                justify-content: center;
+                padding: 4px 10px !important;
+                font-size: 0.7rem !important;
+                border-width: 1px !important;
+                border-radius: 50% !important;
+                width: 36px !important;
+                height: 36px !important;
+            }
+            .header-action-btn svg { margin-right: 0 !important; }
+            .hide-on-mobile { display: none !important; }
+            .triangle-btn { display: none !important; }
+            .hamburger-btn {
+                position: absolute;
+                top: 15px;
+                right: 15px;
+                left: auto !important;
+                background: none;
+                border: none;
+                font-size: 28px;
+                cursor: pointer;
+                color: var(--secondary-color);
+                z-index: 1000;
+            }
+            .tabs {
+                top: 60px;
+                right: 15px;
+                left: auto !important;
+            }
+            .logo-trigger h1 { font-size: 2rem !important; letter-spacing: -1px !important; margin-top: 5px !important; }
+            .logo-trigger p { font-size: 0.75rem !important; padding: 0 5px; line-height: 1.3; }
+        }
+        /* END INJECTED HEADER CSS */
+
+    
+        /* ===== Modern Minimal Theme Overrides (matches index.html) ===== */
+        body {
+            background: #FFFFFF;
+            font-family: 'Nunito', 'M PLUS Rounded 1c', sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+        header.global-header {
+            background: #fff;
+            border-bottom: 2px solid #E8E8E8;
+            box-shadow: none;
+        }
+        .logo-trigger h1 {
+            color: #FF7A00;
+            font-weight: 900;
+            letter-spacing: -0.5px;
+            text-shadow: none;
+            background: none;
+        }
+        .logo-trigger p { color: #6F6F6F; font-weight: 700; }
+        .tabs {
+            background: #fff;
+            border: 2px solid #E8E8E8;
+            border-radius: 16px;
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+        }
+        .tab-btn {
+            background: #fff;
+            border: 2px solid #E8E8E8;
+            color: #6F6F6F;
+            border-radius: 12px;
+            font-weight: 800;
+            font-family: 'Nunito', 'M PLUS Rounded 1c', sans-serif;
+            box-shadow: none;
+        }
+        .tab-btn:hover {
+            border-color: #FF7A00;
+            color: #FF7A00;
+            background: #FFF1E4;
+            transform: none;
+            box-shadow: none;
+        }
+        .tab-btn.active {
+            background: #FF7A00;
+            border-color: #FF7A00;
+            color: #fff;
+            box-shadow: 0 3px 0 #E06B00;
+            transform: none;
+        }
+        .header-action-btn {
+            background: #fff;
+            border: 2px solid #E8E8E8;
+            border-radius: 12px;
+            color: #6F6F6F;
+            font-weight: 700;
+            font-family: 'Nunito', 'M PLUS Rounded 1c', sans-serif;
+            box-shadow: 0 2px 0 #E8E8E8;
+        }
+        .header-action-btn:hover {
+            border-color: #FF7A00;
+            color: #FF7A00;
+            background: #FFF1E4;
+            box-shadow: 0 2px 0 #FF7A00;
+            transform: none;
+        }
+        .dropdown-menu {
+            background: #fff;
+            border: 2px solid #E8E8E8;
+            border-radius: 16px;
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+        }
+        .dropdown-item { font-weight: 700; border-radius: 10px; }
+        .dropdown-item:hover { background: #FFF1E4; color: #FF7A00; }
+        .sub-tabs {
+            background: #fff;
+            border: 2px solid #E8E8E8;
+            border-radius: 16px;
+            box-shadow: none;
+        }
+        .sub-tab-btn { font-weight: 800; border-radius: 11px; }
+        .sub-tab-btn:hover { color: #FF7A00; background: #FFF1E4; }
+        .sub-tab-btn.active { background: #FF7A00; color: #fff; box-shadow: none; }
+
+        /* Primary buttons: flat, pressable */
+        .learn-btn, .cta-btn-premium, .print-btn, .btn-primary, .download-btn,
+        .start-btn, .next-quiz-btn, .submit-btn {
+            background: #FF7A00;
+            background-image: none;
+            border: none;
+            color: #fff;
+            font-weight: 800;
+            font-family: inherit;
+            border-radius: 14px;
+            box-shadow: 0 4px 0 #E06B00;
+            transition: filter 0.15s ease, transform 0.1s ease, box-shadow 0.1s ease;
+        }
+        .learn-btn:hover, .cta-btn-premium:hover, .print-btn:hover, .btn-primary:hover,
+        .download-btn:hover, .start-btn:hover, .next-quiz-btn:hover,
+        .submit-btn:hover {
+            background: #FF7A00;
+            filter: brightness(1.06);
+            transform: none;
+            box-shadow: 0 4px 0 #E06B00;
+        }
+        .learn-btn:active, .cta-btn-premium:active, .print-btn:active, .btn-primary:active,
+        .download-btn:active, .start-btn:active, .next-quiz-btn:active,
+        .submit-btn:active {
+            transform: translateY(4px);
+            box-shadow: none;
+        }
+        .btn-outline {
+            background: #fff;
+            border: 2px solid #E8E8E8;
+            color: #6F6F6F;
+            font-weight: 800;
+            border-radius: 14px;
+            box-shadow: 0 2px 0 #E8E8E8;
+        }
+        .btn-outline:hover {
+            border-color: #FF7A00;
+            color: #FF7A00;
+            background: #FFF1E4;
+            box-shadow: 0 2px 0 #FF7A00;
+        }
+
+        /* Quiz answer buttons: flat white with pressable edge */
+        .option-btn, .quiz-btn {
+            background: #fff;
+            border: 2px solid #E8E8E8;
+            border-radius: 12px;
+            font-weight: 700;
+            box-shadow: 0 3px 0 #E8E8E8;
+            transition: all 0.12s ease;
+        }
+        .option-btn:hover, .quiz-btn:hover {
+            border-color: #FF7A00;
+            background: #FFF1E4;
+            box-shadow: 0 3px 0 #FF7A00;
+            transform: none;
+        }
+
+        /* Cards: flat borders instead of heavy shadows */
+        .chart-section, .worksheet-card, .quiz-card, .quiz-container, .review-card,
+        .review-hub, .results-screen, .page-header, .intro, .lesson-list,
+        .starthere-card, .cycle-item, .step {
+            box-shadow: none;
+            border: 2px solid #E8E8E8;
+        }
+        .vocab-item {
+            box-shadow: none;
+            border: 2px solid #E8E8E8;
+        }
+        footer, .footer { color: #AAAAAA; opacity: 1; }
+        @media (max-width: 768px) { .header-action-btn .sw-icon { margin-right: 0 !important; } }
+
+    
+        /* ===== Mobile Bottom Tab Nav ===== */
+        .hanace-bottom-nav { display: none; }
+        @media (max-width: 768px) {
+            body { padding-bottom: 74px !important; }
+            .hanace-bottom-nav {
+                display: flex;
+                position: fixed;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                z-index: 2000;
+                background: #fff;
+                border-top: 2px solid #E8E8E8;
+                padding: 6px 4px calc(6px + env(safe-area-inset-bottom));
+                justify-content: space-around;
+            }
+            .hanace-bottom-nav a {
+                flex: 1;
+                text-align: center;
+                text-decoration: none;
+                color: #9E9E9E;
+                font-size: 0.62rem;
+                font-weight: 800;
+                font-family: 'Nunito', 'M PLUS Rounded 1c', sans-serif;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 2px;
+                position: relative;
+            }
+            .hanace-bottom-nav a .bn-icon { font-size: 1.25rem; line-height: 1.2; }
+            .hanace-bottom-nav a.active { color: #FF7A00; }
+            .hanace-bottom-nav .bn-dot {
+                position: absolute;
+                top: -2px;
+                right: 50%;
+                margin-right: -18px;
+                width: 8px;
+                height: 8px;
+                border-radius: 50%;
+                background: #FF4757;
+                display: none;
+            }
+        }
+    
+        /* ===== Mobile header/menu adjustments ===== */
+        .menu-mobile-item { display: none; }
+        @media (max-width: 768px) {
+            .tab-roadmap, .tab-booking { display: none !important; }
+            .menu-mobile-item { display: block; }
+            .ha-search, .ha-chat, .ha-saved { display: none !important; }
+        }
+    
+        /* unified Hanace logo size */
+        .logo-trigger h1 { font-size: 35px !important; }
+        @media (max-width: 768px) {
+            .logo-trigger h1 { font-size: 28px !important; }
+        }
+    
+        /* ===== PC: persistent left sidebar ===== */
+        .hanace-sidebar { display: none; }
+        @media (min-width: 1025px) {
+            body { padding-left: 250px; }
+            .hamburger-btn { display: none !important; }
+            .triangle-btn { display: none !important; }
+            .hanace-sidebar {
+                display: flex;
+                flex-direction: column;
+                position: fixed;
+                top: 0;
+                left: 0;
+                bottom: 0;
+                width: 250px;
+                box-sizing: border-box;
+                background: #fff;
+                border-right: 2px solid #E8E8E8;
+                padding: 24px 16px;
+                overflow-y: auto;
+                z-index: 900;
+                font-family: 'Nunito', 'M PLUS Rounded 1c', sans-serif;
+            }
+            .hs-brand {
+                font-weight: 900;
+                font-size: 1.3rem;
+                color: #FF7A00;
+                letter-spacing: -0.5px;
+                margin: 0 8px 18px;
+                text-decoration: none;
+                display: block;
+            }
+            .hs-label {
+                font-size: 0.68rem;
+                font-weight: 800;
+                letter-spacing: 1.5px;
+                text-transform: uppercase;
+                color: #B5B5B5;
+                margin: 14px 8px 6px;
+            }
+            .hanace-sidebar a.hs-item {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                padding: 9px 10px;
+                border-radius: 10px;
+                text-decoration: none;
+                color: #6F6F6F;
+                font-weight: 700;
+                font-size: 0.92rem;
+                transition: background 0.15s, color 0.15s;
+                cursor: pointer;
+            }
+            .hanace-sidebar a.hs-item:hover {
+                background: #FFF1E4;
+                color: #FF7A00;
+            }
+            .hanace-sidebar a.hs-item.active {
+                background: #FF7A00;
+                color: #fff;
+            }
+            .hs-sections a.hs-item {
+                font-size: 0.85rem;
+                padding: 7px 10px;
+            }
+            .hs-divider {
+                height: 2px;
+                background: #F0F0F0;
+                border-radius: 2px;
+                margin: 12px 4px;
+            }
+        }
+    
+        /* ===== Hanace logo wordmark ===== */
+        .hanace-logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0;
+            margin: 10px 0 5px;
+            letter-spacing: -1.5px;
+            font-weight: 900;
+            font-family: 'Nunito', 'M PLUS Rounded 1c', sans-serif;
+            line-height: 1;
+        }
+        .hanace-logo .logo-daisy {
+            width: 0.92em;
+            height: 0.92em;
+            flex-shrink: 0;
+            margin-right: 9px;
+            transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        .logo-trigger:hover .logo-daisy { transform: rotate(180deg); }
+        .logo-hana { color: #FF7A00; }
+        .logo-ce { color: #303030; }
+        .hs-brand {
+            display: flex !important;
+            align-items: center;
+            gap: 0;
+            font-weight: 900;
+            letter-spacing: -0.8px;
+            line-height: 1;
+        }
+        .hs-brand .logo-daisy {
+            width: 21px;
+            height: 21px;
+            margin-right: 7px;
+            transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        .hs-brand:hover .logo-daisy { transform: rotate(180deg); }
+    
+        /* ===== unified header band height (all pages) ===== */
+        header.global-header {
+            display: flex !important;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            box-sizing: border-box;
+            min-height: 118px;
+            padding: 8px 20px !important;
+            margin-bottom: 16px !important;
+        }
+        @media (min-width: 1025px) {
+            header.global-header { display: none !important; }
+            .container { padding-top: 24px !important; }
+        }
+        header.global-header .logo-trigger { padding: 6px 20px; }
+        @media (max-width: 768px) {
+            header.global-header {
+                min-height: 110px;
+                padding: 6px 10px !important;
+            }
+        }
+    
+        /* ===== Listening Practice ===== */
+        .lp-score { display: inline-block; margin-top: 12px; padding: 6px 18px; border-radius: 999px; background: #FFF1E4; border: 2px solid #FFDCBB; color: #E06B00; font-weight: 800; }
+        .lp-track { background: #fff; border: 2px solid #E8E8E8; border-radius: 20px; padding: 24px 26px; margin-bottom: 24px; }
+        .lp-track-head { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin-bottom: 14px; }
+        .lp-num { font-weight: 800; color: #303030; font-size: 1.1rem; }
+        .lp-badge { font-size: 0.75rem; font-weight: 800; padding: 3px 10px; border-radius: 999px; background: #FFF1E4; color: #E06B00; }
+        .lp-topic { color: #6F6F6F; font-weight: 700; font-size: 0.9rem; }
+        .lp-controls { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 16px; }
+        .lp-btn { background: #FF7A00; color: #fff; border: none; border-radius: 12px; padding: 9px 18px; font-family: inherit; font-weight: 800; font-size: 0.9rem; cursor: pointer; box-shadow: 0 3px 0 #E06B00; transition: filter 0.15s, transform 0.1s, box-shadow 0.1s; }
+        .lp-btn:hover { filter: brightness(1.06); }
+        .lp-btn:active { transform: translateY(3px); box-shadow: none; }
+        .lp-btn.lp-secondary { background: #fff; color: #6F6F6F; border: 2px solid #E8E8E8; box-shadow: 0 3px 0 #E8E8E8; }
+        .lp-btn.lp-secondary:hover { color: #FF7A00; border-color: #FF7A00; box-shadow: 0 3px 0 #FF7A00; background: #FFF1E4; }
+        .lp-q { margin-top: 14px; }
+        .lp-q-text { font-weight: 800; margin-bottom: 8px; }
+        .lp-opts { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+        .lp-opt { background: #fff; border: 2px solid #E8E8E8; border-radius: 12px; padding: 10px; font-family: inherit; font-weight: 700; font-size: 0.95rem; cursor: pointer; box-shadow: 0 3px 0 #E8E8E8; transition: all 0.12s; }
+        .lp-opt:hover { border-color: #FF7A00; background: #FFF1E4; box-shadow: 0 3px 0 #FF7A00; }
+        .lp-opt:active { transform: translateY(3px); box-shadow: none; }
+        .lp-opt.correct { background: #E7F8DC; border-color: #58CC02; color: #46A302; box-shadow: 0 3px 0 #58CC02; }
+        .lp-opt.wrong { background: #FFEBEE; border-color: #F44336; color: #c62828; box-shadow: 0 3px 0 #F44336; }
+        .lp-script { display: none; margin-top: 16px; background: #FAFAFA; border: 2px dashed #E8E8E8; border-radius: 14px; padding: 14px 16px; }
+        .lp-script.show { display: block; }
+        .lp-script .ja { font-weight: 700; margin-bottom: 6px; }
+        .lp-script .en { color: #6F6F6F; font-size: 0.9rem; }
+        @media (max-width: 768px) {
+            .lp-opts { grid-template-columns: 1fr; }
+            .lp-track { padding: 16px 14px; }
+        }
+    
+        /* ===== shared: back-to-top & print ===== */
+        .hanace-top-btn {
+            position: fixed;
+            right: 18px;
+            bottom: 92px;
+            width: 46px;
+            height: 46px;
+            border-radius: 50%;
+            background: #FF7A00;
+            color: #fff;
+            border: none;
+            font-size: 1.25rem;
+            font-weight: 800;
+            cursor: pointer;
+            box-shadow: 0 4px 0 #E06B00;
+            display: none;
+            z-index: 1500;
+        }
+        .hanace-top-btn:hover { filter: brightness(1.06); }
+        @media (min-width: 769px) { .hanace-top-btn { bottom: 24px; } }
+        @media print {
+            .tabs, .hamburger-btn, .triangle-btn, .header-actions, .hanace-bottom-nav,
+            .hanace-sidebar, .cheat-toolbar, .hanace-top-btn, .btn-back, .print-btn,
+            .learn-btn, footer { display: none !important; }
+            body { padding-left: 0 !important; padding-bottom: 0 !important; background: #fff !important; }
+            .page-container, .container { border: none !important; box-shadow: none !important; }
+        }
+    </style>
+</head>
+<body>
+    
+    <header class="global-header">
+        <button class="hamburger-btn" onclick="document.querySelector('.tabs').classList.toggle('show-menu')">☰</button>
+        <button class="triangle-btn" onclick="document.querySelector('.header-actions').classList.toggle('show-actions')">▼</button>
+        <div class="header-actions">
+            <a href="index.html?search=true" class="header-action-btn ha-search" style="text-decoration: none;">🔍 <span class="hide-on-mobile">Search</span></a>
+            <a href="myvocab.html" class="header-action-btn ha-saved" style="text-decoration: none;"><span class="sw-icon" style="font-size: 17px; line-height: 1; margin-right: 6px;">🌼</span><span class="hide-on-mobile">Saved Words</span></a>
+            <a href="https://discord.gg/yxM44qY67" target="_blank" class="header-action-btn ha-chat" style="text-decoration: none;">💬 <span class="hide-on-mobile">24/7 Chat Support</span></a>
+        </div>
+        <a href="index.html" class="logo-trigger">
+            <h1 class="hanace-logo"><svg class="logo-daisy" viewBox="0 0 48 48" aria-hidden="true"><g fill="#FF7A00"><ellipse cx="24" cy="10" rx="6" ry="10"/><ellipse cx="24" cy="10" rx="6" ry="10" transform="rotate(45 24 24)"/><ellipse cx="24" cy="10" rx="6" ry="10" transform="rotate(90 24 24)"/><ellipse cx="24" cy="10" rx="6" ry="10" transform="rotate(135 24 24)"/><ellipse cx="24" cy="10" rx="6" ry="10" transform="rotate(180 24 24)"/><ellipse cx="24" cy="10" rx="6" ry="10" transform="rotate(225 24 24)"/><ellipse cx="24" cy="10" rx="6" ry="10" transform="rotate(270 24 24)"/><ellipse cx="24" cy="10" rx="6" ry="10" transform="rotate(315 24 24)"/></g><circle cx="24" cy="24" r="8.5" fill="#FFC94D"/><circle cx="24" cy="24" r="8.5" fill="none" stroke="#F0A830" stroke-width="1"/></svg><span class="logo-hana">Hana</span><span class="logo-ce">ce</span></h1>
+        </a>
+    </header>
+
+    <div class="tabs">
+        <button class="tab-btn tab-roadmap" onclick="location.href='index.html?tab=roadmap'">Roadmap</button>
+        <button class="tab-btn" onclick="location.href='index.html?tab=resources'">Resources</button>
+        <button class="tab-btn tab-booking" onclick="location.href='index.html?tab=booking'">Book a Lesson</button>
+        <a href="index.html?search=true" class="tab-btn menu-mobile-item">Search</a>
+        <a href="https://discord.gg/yxM44qY67" target="_blank" class="tab-btn menu-mobile-item">24/7 Chat Support</a>
+    </div>
+
+
+    <div class="container">
+        <div class="title-section">
+            <h2>🎧 Listening Practice</h2>
+            <p>Listen to the Japanese audio and answer the questions.<br>For intermediate &amp; advanced learners — the script appears after you answer!</p>
+            <div id="lp-score" class="lp-score">🌼 Score: 0 / 20</div>
+        </div>
+
+        <div id="lp-tracks"></div>
+
+        <div style="text-align: center;">
+            <a href="index.html?tab=resources" class="btn-back">← Back to Resources</a>
+        </div>
+    </div>
+
+    <nav class="hanace-bottom-nav">
+        <a href="index.html?tab=roadmap"><span class="bn-icon">🗺️</span>Roadmap</a>
+        <a href="vocab.html"><span class="bn-icon">📚</span>Vocab</a>
+        <a href="myvocab.html"><span class="bn-icon">🌼</span>Saved</a>
+        <a href="mistakes.html"><span class="bn-icon">📝</span>Review<span class="bn-dot"></span></a>
+        <a href="index.html?tab=booking"><span class="bn-icon">📅</span>Lesson</a>
+    </nav>
+    <script>
+        (function () {
+            try {
+                var q = JSON.parse(localStorage.getItem('hanaceReviewQueue') || '[]');
+                var d = document.querySelector('.hanace-bottom-nav .bn-dot');
+                if (d && q.length) d.style.display = 'block';
+            } catch (e) {}
+        })();
+    </script>
+
+
+    <aside class="hanace-sidebar">
+        <a href="index.html" class="hs-brand"><svg class="logo-daisy" viewBox="0 0 48 48" aria-hidden="true"><g fill="#FF7A00"><ellipse cx="24" cy="10" rx="6" ry="10"/><ellipse cx="24" cy="10" rx="6" ry="10" transform="rotate(45 24 24)"/><ellipse cx="24" cy="10" rx="6" ry="10" transform="rotate(90 24 24)"/><ellipse cx="24" cy="10" rx="6" ry="10" transform="rotate(135 24 24)"/><ellipse cx="24" cy="10" rx="6" ry="10" transform="rotate(180 24 24)"/><ellipse cx="24" cy="10" rx="6" ry="10" transform="rotate(225 24 24)"/><ellipse cx="24" cy="10" rx="6" ry="10" transform="rotate(270 24 24)"/><ellipse cx="24" cy="10" rx="6" ry="10" transform="rotate(315 24 24)"/></g><circle cx="24" cy="24" r="8.5" fill="#FFC94D"/><circle cx="24" cy="24" r="8.5" fill="none" stroke="#F0A830" stroke-width="1"/></svg><span class="logo-hana">Hana</span><span class="logo-ce">ce</span></a>
+        <div class="hs-label">Menu</div>
+        <a class="hs-item" data-page="roadmap" data-tab="roadmap" href="index.html?tab=roadmap">🗺️ Roadmap</a>
+        <a class="hs-item" data-page="resources" data-tab="resources" href="index.html?tab=resources">📦 Resources</a>
+        <a class="hs-item" data-page="vocab" href="vocab.html">📚 Vocabulary</a>
+        <a class="hs-item" data-page="saved" href="myvocab.html">🌼 Saved Words</a>
+        <a class="hs-item" data-page="review" href="mistakes.html">📝 Review</a>
+        <a class="hs-item" data-page="booking" data-tab="booking" href="index.html?tab=booking">📅 Book a Lesson</a>
+        <div class="hs-divider"></div>
+        <a class="hs-item" href="index.html?search=true">🔍 Search</a>
+        <a class="hs-item" href="https://discord.gg/yxM44qY67" target="_blank">💬 Chat Support</a>
+    </aside>
+    <script>
+        (function () {
+            const side = document.querySelector('.hanace-sidebar');
+            if (!side) return;
+            const file = (location.pathname.split('/').pop() || 'index.html').toLowerCase();
+            const isIndex = file === '' || file === 'index.html';
+
+            // active menu item
+            const pageMap = { 'vocab.html': 'vocab', 'myvocab.html': 'saved', 'mistakes.html': 'review' };
+            let active = pageMap[file] || (isIndex ? 'roadmap' : null);
+            if (isIndex) {
+                const tab = new URLSearchParams(location.search).get('tab');
+                if (tab === 'resources' || tab === 'booking') active = tab;
+            }
+            if (active) {
+                const el = side.querySelector('a.hs-item[data-page="' + active + '"]');
+                if (el) el.classList.add('active');
+            }
+
+            // on index: switch tabs without reload + keep active state in sync
+            if (isIndex && typeof showRoadmap === 'function') {
+                side.querySelectorAll('a.hs-item[data-tab]').forEach(a => {
+                    a.addEventListener('click', e => {
+                        e.preventDefault();
+                        const tab = a.getAttribute('data-tab');
+                        const idx = { roadmap: 0, resources: 1, booking: 2 }[tab];
+                        const btns = document.querySelectorAll('.tab-btn');
+                        if (btns[idx]) btns[idx].click();
+                        side.querySelectorAll('a.hs-item.active').forEach(x => x.classList.remove('active'));
+                        a.classList.add('active');
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                    });
+                });
+            }
+
+        })();
+    </script>
+
+
+    <script>
+        const LP_TRACKS = [{"topic": "Weather Forecast", "level": "Intermediate", "bananas": "🍌🍌", "ja": "明日は午前中は晴れますが、午後から雨が降るでしょう。出かけるときは、傘を持って行ったほうがいいですよ。気温も少し低くなるので、上着を忘れないでください。", "en": "Tomorrow it will be sunny in the morning, but it will likely rain from the afternoon. You should take an umbrella when you go out. It will also get a little colder, so do not forget a jacket.", "qs": [{"q": "明日の午後の天気は何ですか？", "o": ["晴れ", "雨", "雪", "くもり"], "a": 1}, {"q": "傘のほかに、何を忘れないでくださいと言っていますか？", "o": ["ぼうし", "くつ", "上着", "めがね"], "a": 2}]}, {"topic": "Station Announcement", "level": "Intermediate", "bananas": "🍌🍌", "ja": "まもなく、3番線に東京行きの電車が参ります。危ないですから、黄色い線の内側までお下がりください。なお、次の電車は10分後に到着します。", "en": "The train bound for Tokyo will soon arrive at platform 3. For your safety, please stand behind the yellow line. The next train will arrive in 10 minutes.", "qs": [{"q": "電車はどこ行きですか？", "o": ["大阪", "東京", "京都", "名古屋"], "a": 1}, {"q": "次の電車は何分後に来ますか？", "o": ["5分後", "10分後", "15分後", "20分後"], "a": 1}]}, {"topic": "About Tanaka-san", "level": "Intermediate", "bananas": "🍌🍌", "ja": "田中さんは先月、大阪から東京に引っ越しました。新しい仕事はとても忙しいですが、同僚が親切なので、毎日楽しく働いています。週末は、よく公園でジョギングをしています。", "en": "Tanaka-san moved from Osaka to Tokyo last month. His new job is very busy, but his coworkers are kind, so he enjoys working every day. On weekends he often goes jogging in the park.", "qs": [{"q": "田中さんはどこから引っ越しましたか？", "o": ["東京", "大阪", "福岡", "北海道"], "a": 1}, {"q": "どうして毎日楽しく働いていますか？", "o": ["仕事がひまだから", "給料がいいから", "同僚が親切だから", "家が近いから"], "a": 2}, {"q": "田中さんは週末によく何をしますか？", "o": ["買い物", "料理", "ジョギング", "映画"], "a": 2}]}, {"topic": "At a Restaurant", "level": "Intermediate", "bananas": "🍌🍌", "ja": "すみません、ランチセットをひとつお願いします。飲み物はコーヒーで。あ、すみません、やっぱり紅茶に変えてもいいですか？それから、デザートは食事のあとに持ってきてください。", "en": "Excuse me, one lunch set please. Coffee for the drink... Ah sorry, could I change that to tea after all? Also, please bring the dessert after the meal.", "qs": [{"q": "飲み物は、最終的に何を注文しましたか？", "o": ["コーヒー", "水", "紅茶", "ジュース"], "a": 2}, {"q": "デザートはいつ持ってきてほしいと言っていますか？", "o": ["すぐに", "食事のまえに", "食事といっしょに", "食事のあとに"], "a": 3}]}, {"topic": "Voicemail Message", "level": "Advanced", "bananas": "🍌🍌🍌", "ja": "もしもし、山田です。明日の会議のことですが、始まる時間が2時から3時に変更になりました。資料はこちらで印刷しておきますので、パソコンだけ持ってきてください。よろしくお願いします。", "en": "Hello, this is Yamada. About tomorrow's meeting - the start time has changed from 2 to 3 o'clock. I will print the documents on my side, so please just bring your laptop.", "qs": [{"q": "会議は何時に始まりますか？", "o": ["1時", "2時", "3時", "4時"], "a": 2}, {"q": "聞いた人は何を持っていきますか？", "o": ["資料", "パソコン", "お弁当", "ペン"], "a": 1}, {"q": "資料はだれが印刷しますか？", "o": ["聞いた人", "山田さん", "部長", "だれもしない"], "a": 1}]}, {"topic": "News Report", "level": "Advanced", "bananas": "🍌🍌🍌", "ja": "今年の夏は、例年より暑い日が続いています。熱中症で病院に運ばれる人も増えているため、専門家は、こまめに水分を取り、できるだけ涼しい場所で過ごすように呼びかけています。", "en": "This summer, days hotter than usual are continuing. As more people are being taken to hospital with heatstroke, experts are urging people to drink water frequently and spend time in cool places as much as possible.", "qs": [{"q": "今年の夏はどうだと言っていますか？", "o": ["例年より寒い", "例年と同じ", "例年より暑い", "雨が多い"], "a": 2}, {"q": "専門家は何をするように呼びかけていますか？", "o": ["運動をする", "水分を取る", "外で遊ぶ", "早く寝る"], "a": 1}]}, {"topic": "An Invitation", "level": "Advanced", "bananas": "🍌🍌🍌", "ja": "来週の土曜日、みんなで花見に行くんだけど、よかったら来ない？場所は上野公園で、11時に駅の改札に集合ね。食べ物はこっちで準備するから、飲み物だけお願いしてもいい？", "en": "Next Saturday we are all going to see the cherry blossoms - want to come? It is at Ueno Park, meeting at the station ticket gate at 11. We will prepare the food, so could you just bring the drinks?", "qs": [{"q": "何をしに行きますか？", "o": ["買い物", "花見", "山登り", "釣り"], "a": 1}, {"q": "どこに集合しますか？", "o": ["公園の入口", "駅の改札", "レストラン", "学校"], "a": 1}, {"q": "聞いた人は何を持っていきますか？", "o": ["食べ物", "お金", "飲み物", "カメラ"], "a": 2}]}, {"topic": "Japanese Culture", "level": "Advanced", "bananas": "🍌🍌🍌", "ja": "日本では、家に入るときに靴を脱ぐ習慣があります。これは、家の中を清潔に保つためだと言われています。最近では、海外でもこの習慣を取り入れる人が増えているそうです。", "en": "In Japan, there is a custom of taking off your shoes when entering a house. It is said this is to keep the inside of the house clean. Recently, more and more people overseas are also adopting this custom.", "qs": [{"q": "日本では家に入るとき、何をしますか？", "o": ["手を洗う", "靴を脱ぐ", "ぼうしを取る", "あいさつをする"], "a": 1}, {"q": "それは何のためだと言われていますか？", "o": ["家の中を清潔に保つため", "静かにするため", "安全のため", "おしゃれのため"], "a": 0}, {"q": "海外についてどう言っていますか？", "o": ["だれもしない", "取り入れる人が増えている", "禁止されている", "昔からある"], "a": 1}]}];
+
+        let lpVoice = null;
+        function lpPickVoice() {
+            const vs = speechSynthesis.getVoices().filter(v => v.lang && v.lang.startsWith('ja'));
+            lpVoice = vs.find(v => /Google|Kyoko|O-Ren|Otoya/i.test(v.name)) || vs[0] || null;
+        }
+        if ('speechSynthesis' in window) {
+            lpPickVoice();
+            speechSynthesis.onvoiceschanged = lpPickVoice;
+        }
+
+        function lpSpeak(text, rate) {
+            if (!('speechSynthesis' in window)) {
+                alert('Sorry, your browser does not support audio playback. Please try Chrome or Safari.');
+                return;
+            }
+            speechSynthesis.cancel();
+            const u = new SpeechSynthesisUtterance(text);
+            u.lang = 'ja-JP';
+            if (lpVoice) u.voice = lpVoice;
+            u.rate = rate;
+            speechSynthesis.speak(u);
+        }
+
+        let lpScore = 0, lpAnswered = 0;
+        const LP_TOTAL = LP_TRACKS.reduce((n, t) => n + t.qs.length, 0);
+        const lpDone = {};
+
+        function lpRender() {
+            const wrap = document.getElementById('lp-tracks');
+            LP_TRACKS.forEach((t, ti) => {
+                const card = document.createElement('div');
+                card.className = 'lp-track';
+                let html = '<div class="lp-track-head">' +
+                    '<span class="lp-num">Track ' + (ti + 1) + '</span>' +
+                    '<span class="lp-badge">' + t.bananas + ' ' + t.level + '</span>' +
+                    '<span class="lp-topic">' + t.topic + '</span></div>' +
+                    '<div class="lp-controls">' +
+                    '<button class="lp-btn" onclick="lpSpeak(LP_TRACKS[' + ti + '].ja, 1.0)">▶ Play</button>' +
+                    '<button class="lp-btn lp-secondary" onclick="lpSpeak(LP_TRACKS[' + ti + '].ja, 0.7)">🐢 Slow</button>' +
+                    '<button class="lp-btn lp-secondary" onclick="speechSynthesis.cancel()">⏹ Stop</button>' +
+                    '</div>';
+                t.qs.forEach((q, qi) => {
+                    html += '<div class="lp-q"><div class="lp-q-text">Q' + (qi + 1) + '. ' + q.q + '</div>' +
+                        '<div class="lp-opts">' +
+                        q.o.map((o, oi) =>
+                            '<button class="lp-opt" onclick="lpAnswer(this,' + ti + ',' + qi + ',' + oi + ')">' + o + '</button>'
+                        ).join('') + '</div></div>';
+                });
+                html += '<div class="lp-script" id="lp-script-' + ti + '">' +
+                    '<div class="ja">📜 ' + t.ja + '</div>' +
+                    '<div class="en">' + t.en + '</div></div>';
+                card.innerHTML = html;
+                wrap.appendChild(card);
+            });
+        }
+
+        function lpAnswer(btn, ti, qi, oi) {
+            const key = ti + '-' + qi;
+            if (lpDone[key]) return;
+            lpDone[key] = true;
+            const q = LP_TRACKS[ti].qs[qi];
+            const btns = btn.parentElement.querySelectorAll('.lp-opt');
+            btns.forEach(b => b.style.pointerEvents = 'none');
+            if (oi === q.a) {
+                btn.classList.add('correct');
+                lpScore++;
+            } else {
+                btn.classList.add('wrong');
+                btns[q.a].classList.add('correct');
+            }
+            lpAnswered++;
+            document.getElementById('lp-score').textContent = '🌼 Score: ' + lpScore + ' / ' + LP_TOTAL;
+            if (LP_TRACKS[ti].qs.every((_, k) => lpDone[ti + '-' + k])) {
+                document.getElementById('lp-script-' + ti).classList.add('show');
+            }
+            if (lpAnswered === LP_TOTAL && lpScore >= LP_TOTAL * 0.8) lpBurst();
+        }
+
+        function lpBurst() {
+            for (let i = 0; i < 26; i++) {
+                const p = document.createElement('span');
+                p.textContent = Math.random() < 0.85 ? '🌼' : '✨';
+                p.style.cssText = 'position:fixed;top:-40px;left:' + (Math.random() * 100) + 'vw;font-size:' +
+                    (16 + Math.random() * 16) + 'px;z-index:3000;pointer-events:none;';
+                document.body.appendChild(p);
+                p.animate(
+                    [{ transform: 'translateY(0) rotate(0deg)', opacity: 1 },
+                     { transform: 'translateY(110vh) rotate(660deg)', opacity: 0.7 }],
+                    { duration: 1800 + Math.random() * 1400, delay: Math.random() * 400, easing: 'linear', fill: 'forwards' });
+                setTimeout(() => p.remove(), 4200);
+            }
+        }
+
+        lpRender();
+    </script>
+
+
+    <script>
+        /* back-to-top */
+        (function () {
+            var t = document.createElement('button');
+            t.className = 'hanace-top-btn';
+            t.textContent = '↑';
+            t.title = 'Back to top';
+            t.onclick = function () { window.scrollTo({ top: 0, behavior: 'smooth' }); };
+            document.body.appendChild(t);
+            window.addEventListener('scroll', function () {
+                t.style.display = window.scrollY > 400 ? 'block' : 'none';
+            });
+        })();
+    </script>
+
+</body>
+</html>

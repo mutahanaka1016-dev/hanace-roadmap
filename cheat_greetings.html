@@ -1050,6 +1050,76 @@
                 padding: 6px 10px !important;
             }
         }
+    
+        /* ===== shared: back-to-top & print ===== */
+        .hanace-top-btn {
+            position: fixed;
+            right: 18px;
+            bottom: 92px;
+            width: 46px;
+            height: 46px;
+            border-radius: 50%;
+            background: #FF7A00;
+            color: #fff;
+            border: none;
+            font-size: 1.25rem;
+            font-weight: 800;
+            cursor: pointer;
+            box-shadow: 0 4px 0 #E06B00;
+            display: none;
+            z-index: 1500;
+        }
+        .hanace-top-btn:hover { filter: brightness(1.06); }
+        @media (min-width: 769px) { .hanace-top-btn { bottom: 24px; } }
+        @media print {
+            .tabs, .hamburger-btn, .triangle-btn, .header-actions, .hanace-bottom-nav,
+            .hanace-sidebar, .cheat-toolbar, .hanace-top-btn, .btn-back, .print-btn,
+            .learn-btn, footer { display: none !important; }
+            body { padding-left: 0 !important; padding-bottom: 0 !important; background: #fff !important; }
+            .page-container, .container { border: none !important; box-shadow: none !important; }
+        }
+
+        /* ===== Cheat page enhancement pack ===== */
+        .cheat-toolbar {
+            position: sticky;
+            top: 8px;
+            z-index: 600;
+            background: #fff;
+            border: 2px solid #E8E8E8;
+            border-radius: 16px;
+            padding: 10px;
+            margin: 0 0 22px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+        }
+        .cheat-toolbar input {
+            width: 100%;
+            box-sizing: border-box;
+            border: 2px solid #F0F0F0;
+            border-radius: 12px;
+            padding: 10px 14px;
+            font-size: 1rem;
+            font-family: inherit;
+            font-weight: 700;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+        .cheat-toolbar input:focus { border-color: #FF7A00; }
+        .cheat-chips { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 8px; }
+        .cheat-chip {
+            padding: 6px 14px;
+            border-radius: 999px;
+            background: #F5F5F5;
+            color: #6F6F6F;
+            font-weight: 800;
+            font-size: 0.78rem;
+            cursor: pointer;
+            border: none;
+            font-family: inherit;
+            transition: all 0.15s;
+        }
+        .cheat-chip:hover { background: #FFF1E4; color: #FF7A00; }
+        h2 { scroll-margin-top: 76px; }
+        table tr:nth-child(even) td { background: #FAFAFA; }
     </style>
 </head>
 <body>
@@ -1592,6 +1662,67 @@
             }
 
         })();
+    </script>
+
+
+    <script>
+        /* back-to-top */
+        (function () {
+            var t = document.createElement('button');
+            t.className = 'hanace-top-btn';
+            t.textContent = '↑';
+            t.title = 'Back to top';
+            t.onclick = function () { window.scrollTo({ top: 0, behavior: 'smooth' }); };
+            document.body.appendChild(t);
+            window.addEventListener('scroll', function () {
+                t.style.display = window.scrollY > 400 ? 'block' : 'none';
+            });
+        })();
+    </script>
+
+    <script>
+        /* page filter + section chips */
+        window.addEventListener('load', function () {
+            var host = document.querySelector('.page-container') || document.querySelector('.container');
+            if (!host) return;
+            var bar = document.createElement('div');
+            bar.className = 'cheat-toolbar';
+            bar.innerHTML = '<input type="text" id="cheat-filter" placeholder="🔍 Filter this page — English / 日本語 / romaji" autocomplete="off">' +
+                '<div class="cheat-chips" id="cheat-chips"></div>';
+            var hdr = host.querySelector(':scope > header, :scope > h1');
+            if (hdr) hdr.insertAdjacentElement('afterend', bar);
+            else host.insertAdjacentElement('afterbegin', bar);
+
+            // section chips from h2 headings
+            var chips = bar.querySelector('#cheat-chips');
+            var hs = Array.prototype.slice.call(document.querySelectorAll('h2')).filter(function (h) {
+                return !h.closest('.hanace-sidebar') && !h.closest('.modal-overlay') && h.offsetParent !== null;
+            }).slice(0, 10);
+            if (hs.length < 2) chips.style.display = 'none';
+            hs.forEach(function (h, i) {
+                if (!h.id) h.id = 'sec-chip-' + i;
+                var b = document.createElement('button');
+                b.className = 'cheat-chip';
+                b.textContent = h.textContent.trim().replace(/\s+/g, ' ').slice(0, 26);
+                b.onclick = function () { h.scrollIntoView({ behavior: 'smooth', block: 'start' }); };
+                chips.appendChild(b);
+            });
+
+            // live filter
+            var SEL = '.greeting-card,.verb-card,.particle-card,.onomato-card,.pair-card,.radical-card,.kanji-card,.goal-link-item,.kana-box';
+            var inp = bar.querySelector('#cheat-filter');
+            inp.addEventListener('input', function () {
+                var q = this.value.trim().toLowerCase();
+                var items = Array.prototype.slice.call(document.querySelectorAll(SEL));
+                Array.prototype.forEach.call(document.querySelectorAll('table tr'), function (tr) {
+                    if (!tr.querySelector('th')) items.push(tr);
+                });
+                items.forEach(function (el) {
+                    if (el.closest('.hanace-sidebar') || el.closest('.cheat-toolbar')) return;
+                    el.style.display = (!q || el.textContent.toLowerCase().indexOf(q) > -1) ? '' : 'none';
+                });
+            });
+        });
     </script>
 
 </body>

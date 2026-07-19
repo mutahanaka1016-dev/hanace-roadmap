@@ -1209,6 +1209,76 @@
                 padding: 6px 10px !important;
             }
         }
+    
+        /* ===== shared: back-to-top & print ===== */
+        .hanace-top-btn {
+            position: fixed;
+            right: 18px;
+            bottom: 92px;
+            width: 46px;
+            height: 46px;
+            border-radius: 50%;
+            background: #FF7A00;
+            color: #fff;
+            border: none;
+            font-size: 1.25rem;
+            font-weight: 800;
+            cursor: pointer;
+            box-shadow: 0 4px 0 #E06B00;
+            display: none;
+            z-index: 1500;
+        }
+        .hanace-top-btn:hover { filter: brightness(1.06); }
+        @media (min-width: 769px) { .hanace-top-btn { bottom: 24px; } }
+        @media print {
+            .tabs, .hamburger-btn, .triangle-btn, .header-actions, .hanace-bottom-nav,
+            .hanace-sidebar, .cheat-toolbar, .hanace-top-btn, .btn-back, .print-btn,
+            .learn-btn, footer { display: none !important; }
+            body { padding-left: 0 !important; padding-bottom: 0 !important; background: #fff !important; }
+            .page-container, .container { border: none !important; box-shadow: none !important; }
+        }
+
+        /* ===== Cheat page enhancement pack ===== */
+        .cheat-toolbar {
+            position: sticky;
+            top: 8px;
+            z-index: 600;
+            background: #fff;
+            border: 2px solid #E8E8E8;
+            border-radius: 16px;
+            padding: 10px;
+            margin: 0 0 22px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+        }
+        .cheat-toolbar input {
+            width: 100%;
+            box-sizing: border-box;
+            border: 2px solid #F0F0F0;
+            border-radius: 12px;
+            padding: 10px 14px;
+            font-size: 1rem;
+            font-family: inherit;
+            font-weight: 700;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+        .cheat-toolbar input:focus { border-color: #FF7A00; }
+        .cheat-chips { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 8px; }
+        .cheat-chip {
+            padding: 6px 14px;
+            border-radius: 999px;
+            background: #F5F5F5;
+            color: #6F6F6F;
+            font-weight: 800;
+            font-size: 0.78rem;
+            cursor: pointer;
+            border: none;
+            font-family: inherit;
+            transition: all 0.15s;
+        }
+        .cheat-chip:hover { background: #FFF1E4; color: #FF7A00; }
+        h2 { scroll-margin-top: 76px; }
+        table tr:nth-child(even) td { background: #FAFAFA; }
     </style>
 </head>
 <body>
@@ -1283,6 +1353,31 @@
                         <span class="example-en">I feel hotto-suru/relieved when I hear my mom's voice.</span>
                     </div>
                 </div>
+            
+                <div class="onomato-card" onclick="toggleCard(this)">
+                    <span class="word-ja"><span class="word-ja-text">ドキドキ</span></span>
+                    <span class="word-en">Doki-doki (Heart pounding)</span>
+                    <div class="example-container">
+                        <span class="example-ja">面接の前は、心臓が**ドキドキ**します。</span>
+                        <span class="example-en">Before an interview, my heart pounds doki-doki.</span>
+                    </div>
+                </div>
+                <div class="onomato-card" onclick="toggleCard(this)">
+                    <span class="word-ja"><span class="word-ja-text">イライラ</span></span>
+                    <span class="word-en">Ira-ira (Irritated)</span>
+                    <div class="example-container">
+                        <span class="example-ja">電車が遅れて、**イライラ**しました。</span>
+                        <span class="example-en">The train was late and I got so irritated.</span>
+                    </div>
+                </div>
+                <div class="onomato-card" onclick="toggleCard(this)">
+                    <span class="word-ja"><span class="word-ja-text">ぐっすり</span></span>
+                    <span class="word-en">Gussuri (Sound asleep)</span>
+                    <div class="example-container">
+                        <span class="example-ja">昨日は12時間**ぐっすり**寝ました。</span>
+                        <span class="example-en">I slept soundly for 12 hours yesterday.</span>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -1325,6 +1420,39 @@
                         <span class="example-en">The egg on the omelet rice is toro-toro/goey.</span>
                     </div>
                 </div>
+            
+                <div class="onomato-card" onclick="toggleCard(this)">
+                    <span class="word-ja"><span class="word-ja-text">もちもち</span></span>
+                    <span class="word-en">Mochi-mochi (Chewy)</span>
+                    <div class="example-container">
+                        <span class="example-ja">このパンは**もちもち**していて、おいしいです。</span>
+                        <span class="example-en">This bread is wonderfully chewy and delicious.</span>
+                    </div>
+                </div>
+                <div class="onomato-card" onclick="toggleCard(this)">
+                    <span class="word-ja"><span class="word-ja-text">カリカリ</span></span>
+                    <span class="word-en">Kari-kari (Crunchy)</span>
+                    <div class="example-container">
+                        <span class="example-ja">ベーコンは**カリカリ**に焼いてください。</span>
+                        <span class="example-en">Please fry the bacon until crispy.</span>
+                    </div>
+                </div>
+                <div class="onomato-card" onclick="toggleCard(this)">
+                    <span class="word-ja"><span class="word-ja-text">とろとろ</span></span>
+                    <span class="word-en">Toro-toro (Melty / Creamy)</span>
+                    <div class="example-container">
+                        <span class="example-ja">この卵は**とろとろ**で最高です！</span>
+                        <span class="example-en">This egg is melt-in-your-mouth creamy!</span>
+                    </div>
+                </div>
+                <div class="onomato-card" onclick="toggleCard(this)">
+                    <span class="word-ja"><span class="word-ja-text">ぺこぺこ</span></span>
+                    <span class="word-en">Peko-peko (Starving)</span>
+                    <div class="example-container">
+                        <span class="example-ja">朝から何も食べていないので、おなかが**ぺこぺこ**です。</span>
+                        <span class="example-en">I have not eaten since morning, so I am starving.</span>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -1365,6 +1493,39 @@
                     <div class="example-container">
                         <span class="example-ja">今日は一日中、家で**ゴロゴロ**していました。</span>
                         <span class="example-en">I spent all day goro-goro/loafing around at home.</span>
+                    </div>
+                </div>
+            
+                <div class="onomato-card" onclick="toggleCard(this)">
+                    <span class="word-ja"><span class="word-ja-text">キラキラ</span></span>
+                    <span class="word-en">Kira-kira (Sparkling)</span>
+                    <div class="example-container">
+                        <span class="example-ja">夜空の星が**キラキラ**光っています。</span>
+                        <span class="example-en">The stars are sparkling kira-kira in the night sky.</span>
+                    </div>
+                </div>
+                <div class="onomato-card" onclick="toggleCard(this)">
+                    <span class="word-ja"><span class="word-ja-text">ふわふわ</span></span>
+                    <span class="word-en">Fuwa-fuwa (Fluffy)</span>
+                    <div class="example-container">
+                        <span class="example-ja">このパンケーキは**ふわふわ**です！</span>
+                        <span class="example-en">This pancake is so fluffy!</span>
+                    </div>
+                </div>
+                <div class="onomato-card" onclick="toggleCard(this)">
+                    <span class="word-ja"><span class="word-ja-text">だらだら</span></span>
+                    <span class="word-en">Dara-dara (Lazing around)</span>
+                    <div class="example-container">
+                        <span class="example-ja">日曜日は家で**だらだら**しました。</span>
+                        <span class="example-en">On Sunday I just lazed around at home.</span>
+                    </div>
+                </div>
+                <div class="onomato-card" onclick="toggleCard(this)">
+                    <span class="word-ja"><span class="word-ja-text">こっそり</span></span>
+                    <span class="word-en">Kossori (Secretly)</span>
+                    <div class="example-container">
+                        <span class="example-ja">夜中に**こっそり**ケーキを食べました。</span>
+                        <span class="example-en">I secretly ate cake in the middle of the night.</span>
                     </div>
                 </div>
             </div>
@@ -1625,6 +1786,67 @@
             }
 
         })();
+    </script>
+
+
+    <script>
+        /* back-to-top */
+        (function () {
+            var t = document.createElement('button');
+            t.className = 'hanace-top-btn';
+            t.textContent = '↑';
+            t.title = 'Back to top';
+            t.onclick = function () { window.scrollTo({ top: 0, behavior: 'smooth' }); };
+            document.body.appendChild(t);
+            window.addEventListener('scroll', function () {
+                t.style.display = window.scrollY > 400 ? 'block' : 'none';
+            });
+        })();
+    </script>
+
+    <script>
+        /* page filter + section chips */
+        window.addEventListener('load', function () {
+            var host = document.querySelector('.page-container') || document.querySelector('.container');
+            if (!host) return;
+            var bar = document.createElement('div');
+            bar.className = 'cheat-toolbar';
+            bar.innerHTML = '<input type="text" id="cheat-filter" placeholder="🔍 Filter this page — English / 日本語 / romaji" autocomplete="off">' +
+                '<div class="cheat-chips" id="cheat-chips"></div>';
+            var hdr = host.querySelector(':scope > header, :scope > h1');
+            if (hdr) hdr.insertAdjacentElement('afterend', bar);
+            else host.insertAdjacentElement('afterbegin', bar);
+
+            // section chips from h2 headings
+            var chips = bar.querySelector('#cheat-chips');
+            var hs = Array.prototype.slice.call(document.querySelectorAll('h2')).filter(function (h) {
+                return !h.closest('.hanace-sidebar') && !h.closest('.modal-overlay') && h.offsetParent !== null;
+            }).slice(0, 10);
+            if (hs.length < 2) chips.style.display = 'none';
+            hs.forEach(function (h, i) {
+                if (!h.id) h.id = 'sec-chip-' + i;
+                var b = document.createElement('button');
+                b.className = 'cheat-chip';
+                b.textContent = h.textContent.trim().replace(/\s+/g, ' ').slice(0, 26);
+                b.onclick = function () { h.scrollIntoView({ behavior: 'smooth', block: 'start' }); };
+                chips.appendChild(b);
+            });
+
+            // live filter
+            var SEL = '.greeting-card,.verb-card,.particle-card,.onomato-card,.pair-card,.radical-card,.kanji-card,.goal-link-item,.kana-box';
+            var inp = bar.querySelector('#cheat-filter');
+            inp.addEventListener('input', function () {
+                var q = this.value.trim().toLowerCase();
+                var items = Array.prototype.slice.call(document.querySelectorAll(SEL));
+                Array.prototype.forEach.call(document.querySelectorAll('table tr'), function (tr) {
+                    if (!tr.querySelector('th')) items.push(tr);
+                });
+                items.forEach(function (el) {
+                    if (el.closest('.hanace-sidebar') || el.closest('.cheat-toolbar')) return;
+                    el.style.display = (!q || el.textContent.toLowerCase().indexOf(q) > -1) ? '' : 'none';
+                });
+            });
+        });
     </script>
 
 </body>

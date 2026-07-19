@@ -1,0 +1,992 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="auth.js" type="module"></script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pitch Accent Practice | Hana Banana Japanese</title>
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500;700;800&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #FF7A00; 
+            --secondary-color: #555555; 
+            --text-color: #2D3436;
+            --bg-color: #FFFFFF;
+            --card-bg: #FFFFFF;
+            --shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+
+        body { 
+            font-family: 'Nunito', 'M PLUS Rounded 1c', sans-serif; 
+            background-color: var(--bg-color);
+            color: var(--text-color); 
+            margin: 0; 
+            padding: 0; 
+            line-height: 1.6; 
+        }
+
+        header.global-header {
+            text-align: center;
+            padding: 40px 20px;
+            background: #FFFFFF;
+            border-bottom: 4px solid var(--primary-color);
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .header-actions {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            gap: 10px;
+        }
+
+        .header-action-btn {
+            background: #fcfcfc;
+            border: 1px solid #eee;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            color: var(--secondary-color);
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .header-action-btn:hover {
+            background: #fff;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transform: translateY(-1px);
+        }
+
+        .logo-trigger {
+            cursor: pointer;
+            display: inline-block;
+            text-decoration: none;
+        }
+
+        .logo-trigger h1 {
+            margin: 0;
+            font-size: 2.2rem;
+            letter-spacing: -2px;
+            color: var(--primary-color);
+        }
+
+        .logo-trigger p {
+            font-weight: bold;
+            opacity: 0.8;
+            color: var(--secondary-color);
+            margin-top: 5px;
+            font-size: 0.9rem;
+        }
+
+        .container { 
+            max-width: 800px; 
+            margin: 0 auto 100px; 
+            padding: 20px; 
+        }
+
+        .title-section {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .title-section h2 {
+            color: var(--primary-color);
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .title-section p {
+            color: var(--secondary-color);
+            font-size: 1.1rem;
+        }
+
+        .lesson-list {
+            background: var(--card-bg);
+            border-radius: 24px;
+            padding: 40px;
+            box-shadow: var(--shadow);
+        }
+
+        .lesson-list ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .lesson-list li {
+            margin-bottom: 15px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 15px;
+        }
+
+        .lesson-list li:last-child {
+            margin-bottom: 0;
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .lesson-list a {
+            text-decoration: none;
+            color: var(--primary-color);
+            font-size: 1.2rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: opacity 0.2s;
+        }
+
+        .lesson-list a:hover {
+            opacity: 0.7;
+        }
+
+        .lesson-list a::before {
+            content: '📄';
+            font-size: 1.5rem;
+        }
+
+        .btn-back {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 12px 24px;
+            background: #FFF;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+            text-decoration: none;
+            border-radius: 12px;
+            font-weight: bold;
+            transition: all 0.2s;
+            text-align: center;
+        }
+
+        .btn-back:hover {
+            background: var(--primary-color);
+            color: #FFF;
+        }
+
+        @media (max-width: 768px) {
+            header.global-header {
+                padding: 15px 10px;
+            }
+            .header-actions {
+                position: relative;
+                top: 0;
+                right: 0;
+                justify-content: flex-start;
+                margin-bottom: 15px;
+            }
+        }
+
+        /* START INJECTED HEADER CSS */
+        .hamburger-btn {
+            display: block;
+            position: absolute;
+            top: 25px;
+            left: 20px;
+            background: none;
+            border: none;
+            font-size: 32px;
+            cursor: pointer;
+            color: var(--secondary-color);
+            z-index: 1000;
+        }
+
+        .triangle-btn {
+            display: block;
+            position: absolute;
+            top: 25px;
+            right: 20px;
+            background: none;
+            border: none;
+            font-size: 20px;
+            cursor: pointer;
+            color: var(--secondary-color);
+            z-index: 1000;
+        }
+
+        .header-actions {
+            display: none;
+            flex-direction: column;
+            position: absolute;
+            top: 60px;
+            right: 20px;
+            background: white;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            padding: 10px;
+            z-index: 999;
+            width: 240px;
+            gap: 10px;
+        }
+        
+        .header-actions.show-actions {
+            display: flex !important;
+        }
+
+        .header-action-btn {
+            background: #fcfcfc;
+            border: 1px solid #eee;
+            padding: 12px 15px;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            width: 100%;
+            box-sizing: border-box;
+            color: var(--secondary-color);
+            font-weight: bold;
+            font-family: 'Nunito', 'M PLUS Rounded 1c', sans-serif;
+            gap: 5px;
+        }
+
+        .tabs {
+            display: none;
+            flex-direction: column;
+            position: absolute;
+            top: 70px;
+            left: 20px;
+            background: white;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            padding: 10px;
+            z-index: 999;
+            width: 200px;
+            gap: 10px;
+        }
+
+        .tabs.show-menu {
+            display: flex !important;
+        }
+
+        .tab-btn {
+            display: block;
+            box-sizing: border-box;
+            background: #FFFFFF;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+            padding: 10px 15px;
+            font-size: 1rem;
+            font-weight: bold;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+            width: 100%;
+        }
+        
+        .hide-on-mobile {
+            display: inline;
+        }
+
+        @media (max-width: 768px) {
+            .header-actions {
+                position: absolute !important;
+                top: 15px !important;
+                left: 10px !important;
+                right: auto !important;
+                display: flex !important;
+                flex-direction: row !important;
+                justify-content: flex-start !important;
+                flex-wrap: nowrap !important;
+                gap: 8px !important;
+                margin: 0 !important;
+                padding: 0 !important;
+                width: auto !important;
+                background: transparent !important;
+                box-shadow: none !important;
+            }
+            .header-action-btn {
+                width: auto !important;
+                justify-content: center;
+                padding: 4px 10px !important;
+                font-size: 0.7rem !important;
+                border-width: 1px !important;
+                border-radius: 50% !important;
+                width: 36px !important;
+                height: 36px !important;
+            }
+            .header-action-btn svg { margin-right: 0 !important; }
+            .hide-on-mobile { display: none !important; }
+            .triangle-btn { display: none !important; }
+            .hamburger-btn {
+                position: absolute;
+                top: 15px;
+                right: 15px;
+                left: auto !important;
+                background: none;
+                border: none;
+                font-size: 28px;
+                cursor: pointer;
+                color: var(--secondary-color);
+                z-index: 1000;
+            }
+            .tabs {
+                top: 60px;
+                right: 15px;
+                left: auto !important;
+            }
+            .logo-trigger h1 { font-size: 2rem !important; letter-spacing: -1px !important; margin-top: 5px !important; }
+            .logo-trigger p { font-size: 0.75rem !important; padding: 0 5px; line-height: 1.3; }
+        }
+        /* END INJECTED HEADER CSS */
+
+    
+        /* ===== Modern Minimal Theme Overrides (matches index.html) ===== */
+        body {
+            background: #FFFFFF;
+            font-family: 'Nunito', 'M PLUS Rounded 1c', sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+        header.global-header {
+            background: #fff;
+            border-bottom: 2px solid #E8E8E8;
+            box-shadow: none;
+        }
+        .logo-trigger h1 {
+            color: #FF7A00;
+            font-weight: 900;
+            letter-spacing: -0.5px;
+            text-shadow: none;
+            background: none;
+        }
+        .logo-trigger p { color: #6F6F6F; font-weight: 700; }
+        .tabs {
+            background: #fff;
+            border: 2px solid #E8E8E8;
+            border-radius: 16px;
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+        }
+        .tab-btn {
+            background: #fff;
+            border: 2px solid #E8E8E8;
+            color: #6F6F6F;
+            border-radius: 12px;
+            font-weight: 800;
+            font-family: 'Nunito', 'M PLUS Rounded 1c', sans-serif;
+            box-shadow: none;
+        }
+        .tab-btn:hover {
+            border-color: #FF7A00;
+            color: #FF7A00;
+            background: #FFF1E4;
+            transform: none;
+            box-shadow: none;
+        }
+        .tab-btn.active {
+            background: #FF7A00;
+            border-color: #FF7A00;
+            color: #fff;
+            box-shadow: 0 3px 0 #E06B00;
+            transform: none;
+        }
+        .header-action-btn {
+            background: #fff;
+            border: 2px solid #E8E8E8;
+            border-radius: 12px;
+            color: #6F6F6F;
+            font-weight: 700;
+            font-family: 'Nunito', 'M PLUS Rounded 1c', sans-serif;
+            box-shadow: 0 2px 0 #E8E8E8;
+        }
+        .header-action-btn:hover {
+            border-color: #FF7A00;
+            color: #FF7A00;
+            background: #FFF1E4;
+            box-shadow: 0 2px 0 #FF7A00;
+            transform: none;
+        }
+        .dropdown-menu {
+            background: #fff;
+            border: 2px solid #E8E8E8;
+            border-radius: 16px;
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+        }
+        .dropdown-item { font-weight: 700; border-radius: 10px; }
+        .dropdown-item:hover { background: #FFF1E4; color: #FF7A00; }
+        .sub-tabs {
+            background: #fff;
+            border: 2px solid #E8E8E8;
+            border-radius: 16px;
+            box-shadow: none;
+        }
+        .sub-tab-btn { font-weight: 800; border-radius: 11px; }
+        .sub-tab-btn:hover { color: #FF7A00; background: #FFF1E4; }
+        .sub-tab-btn.active { background: #FF7A00; color: #fff; box-shadow: none; }
+
+        /* Primary buttons: flat, pressable */
+        .learn-btn, .cta-btn-premium, .print-btn, .btn-primary, .download-btn,
+        .start-btn, .next-quiz-btn, .submit-btn {
+            background: #FF7A00;
+            background-image: none;
+            border: none;
+            color: #fff;
+            font-weight: 800;
+            font-family: inherit;
+            border-radius: 14px;
+            box-shadow: 0 4px 0 #E06B00;
+            transition: filter 0.15s ease, transform 0.1s ease, box-shadow 0.1s ease;
+        }
+        .learn-btn:hover, .cta-btn-premium:hover, .print-btn:hover, .btn-primary:hover,
+        .download-btn:hover, .start-btn:hover, .next-quiz-btn:hover,
+        .submit-btn:hover {
+            background: #FF7A00;
+            filter: brightness(1.06);
+            transform: none;
+            box-shadow: 0 4px 0 #E06B00;
+        }
+        .learn-btn:active, .cta-btn-premium:active, .print-btn:active, .btn-primary:active,
+        .download-btn:active, .start-btn:active, .next-quiz-btn:active,
+        .submit-btn:active {
+            transform: translateY(4px);
+            box-shadow: none;
+        }
+        .btn-outline {
+            background: #fff;
+            border: 2px solid #E8E8E8;
+            color: #6F6F6F;
+            font-weight: 800;
+            border-radius: 14px;
+            box-shadow: 0 2px 0 #E8E8E8;
+        }
+        .btn-outline:hover {
+            border-color: #FF7A00;
+            color: #FF7A00;
+            background: #FFF1E4;
+            box-shadow: 0 2px 0 #FF7A00;
+        }
+
+        /* Quiz answer buttons: flat white with pressable edge */
+        .option-btn, .quiz-btn {
+            background: #fff;
+            border: 2px solid #E8E8E8;
+            border-radius: 12px;
+            font-weight: 700;
+            box-shadow: 0 3px 0 #E8E8E8;
+            transition: all 0.12s ease;
+        }
+        .option-btn:hover, .quiz-btn:hover {
+            border-color: #FF7A00;
+            background: #FFF1E4;
+            box-shadow: 0 3px 0 #FF7A00;
+            transform: none;
+        }
+
+        /* Cards: flat borders instead of heavy shadows */
+        .chart-section, .worksheet-card, .quiz-card, .quiz-container, .review-card,
+        .review-hub, .results-screen, .page-header, .intro, .lesson-list,
+        .starthere-card, .cycle-item, .step {
+            box-shadow: none;
+            border: 2px solid #E8E8E8;
+        }
+        .vocab-item {
+            box-shadow: none;
+            border: 2px solid #E8E8E8;
+        }
+        footer, .footer { color: #AAAAAA; opacity: 1; }
+        @media (max-width: 768px) { .header-action-btn .sw-icon { margin-right: 0 !important; } }
+
+    
+        /* ===== Mobile Bottom Tab Nav ===== */
+        .hanace-bottom-nav { display: none; }
+        @media (max-width: 768px) {
+            body { padding-bottom: 74px !important; }
+            .hanace-bottom-nav {
+                display: flex;
+                position: fixed;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                z-index: 2000;
+                background: #fff;
+                border-top: 2px solid #E8E8E8;
+                padding: 6px 4px calc(6px + env(safe-area-inset-bottom));
+                justify-content: space-around;
+            }
+            .hanace-bottom-nav a {
+                flex: 1;
+                text-align: center;
+                text-decoration: none;
+                color: #9E9E9E;
+                font-size: 0.62rem;
+                font-weight: 800;
+                font-family: 'Nunito', 'M PLUS Rounded 1c', sans-serif;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 2px;
+                position: relative;
+            }
+            .hanace-bottom-nav a .bn-icon { font-size: 1.25rem; line-height: 1.2; }
+            .hanace-bottom-nav a.active { color: #FF7A00; }
+            .hanace-bottom-nav .bn-dot {
+                position: absolute;
+                top: -2px;
+                right: 50%;
+                margin-right: -18px;
+                width: 8px;
+                height: 8px;
+                border-radius: 50%;
+                background: #FF4757;
+                display: none;
+            }
+        }
+    
+        /* ===== Mobile header/menu adjustments ===== */
+        .menu-mobile-item { display: none; }
+        @media (max-width: 768px) {
+            .tab-roadmap, .tab-booking { display: none !important; }
+            .menu-mobile-item { display: block; }
+            .ha-search, .ha-chat, .ha-saved { display: none !important; }
+        }
+    
+        /* unified Hanace logo size */
+        .logo-trigger h1 { font-size: 35px !important; }
+        @media (max-width: 768px) {
+            .logo-trigger h1 { font-size: 28px !important; }
+        }
+    
+        /* ===== PC: persistent left sidebar ===== */
+        .hanace-sidebar { display: none; }
+        @media (min-width: 1025px) {
+            body { padding-left: 250px; }
+            .hamburger-btn { display: none !important; }
+            .triangle-btn { display: none !important; }
+            .hanace-sidebar {
+                display: flex;
+                flex-direction: column;
+                position: fixed;
+                top: 0;
+                left: 0;
+                bottom: 0;
+                width: 250px;
+                box-sizing: border-box;
+                background: #fff;
+                border-right: 2px solid #E8E8E8;
+                padding: 24px 16px;
+                overflow-y: auto;
+                z-index: 900;
+                font-family: 'Nunito', 'M PLUS Rounded 1c', sans-serif;
+            }
+            .hs-brand {
+                font-weight: 900;
+                font-size: 1.3rem;
+                color: #FF7A00;
+                letter-spacing: -0.5px;
+                margin: 0 8px 18px;
+                text-decoration: none;
+                display: block;
+            }
+            .hs-label {
+                font-size: 0.68rem;
+                font-weight: 800;
+                letter-spacing: 1.5px;
+                text-transform: uppercase;
+                color: #B5B5B5;
+                margin: 14px 8px 6px;
+            }
+            .hanace-sidebar a.hs-item {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                padding: 9px 10px;
+                border-radius: 10px;
+                text-decoration: none;
+                color: #6F6F6F;
+                font-weight: 700;
+                font-size: 0.92rem;
+                transition: background 0.15s, color 0.15s;
+                cursor: pointer;
+            }
+            .hanace-sidebar a.hs-item:hover {
+                background: #FFF1E4;
+                color: #FF7A00;
+            }
+            .hanace-sidebar a.hs-item.active {
+                background: #FF7A00;
+                color: #fff;
+            }
+            .hs-sections a.hs-item {
+                font-size: 0.85rem;
+                padding: 7px 10px;
+            }
+            .hs-divider {
+                height: 2px;
+                background: #F0F0F0;
+                border-radius: 2px;
+                margin: 12px 4px;
+            }
+        }
+    
+        /* ===== Hanace logo wordmark ===== */
+        .hanace-logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0;
+            margin: 10px 0 5px;
+            letter-spacing: -1.5px;
+            font-weight: 900;
+            font-family: 'Nunito', 'M PLUS Rounded 1c', sans-serif;
+            line-height: 1;
+        }
+        .hanace-logo .logo-daisy {
+            width: 0.92em;
+            height: 0.92em;
+            flex-shrink: 0;
+            margin-right: 9px;
+            transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        .logo-trigger:hover .logo-daisy { transform: rotate(180deg); }
+        .logo-hana { color: #FF7A00; }
+        .logo-ce { color: #303030; }
+        .hs-brand {
+            display: flex !important;
+            align-items: center;
+            gap: 0;
+            font-weight: 900;
+            letter-spacing: -0.8px;
+            line-height: 1;
+        }
+        .hs-brand .logo-daisy {
+            width: 21px;
+            height: 21px;
+            margin-right: 7px;
+            transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        .hs-brand:hover .logo-daisy { transform: rotate(180deg); }
+    
+        /* ===== unified header band height (all pages) ===== */
+        header.global-header {
+            display: flex !important;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            box-sizing: border-box;
+            min-height: 118px;
+            padding: 8px 20px !important;
+            margin-bottom: 16px !important;
+        }
+        @media (min-width: 1025px) {
+            header.global-header { display: none !important; }
+            .container { padding-top: 24px !important; }
+        }
+        header.global-header .logo-trigger { padding: 6px 20px; }
+        @media (max-width: 768px) {
+            header.global-header {
+                min-height: 110px;
+                padding: 6px 10px !important;
+            }
+        }
+    
+        /* ===== Pitch Accent page ===== */
+        .lp-score { display: inline-block; margin-top: 12px; padding: 6px 18px; border-radius: 999px; background: #FFF1E4; border: 2px solid #FFDCBB; color: #E06B00; font-weight: 800; }
+        .pa-h3 { font-weight: 800; font-size: 1.25rem; color: #303030; margin: 26px 0 14px; }
+        .pa-rules { background: #fff; border: 2px solid #E8E8E8; border-radius: 20px; padding: 8px 26px 24px; }
+        .pa-rule { display: flex; gap: 14px; align-items: flex-start; margin-bottom: 14px; line-height: 1.6; }
+        .pa-rule-num { flex-shrink: 0; width: 28px; height: 28px; border-radius: 50%; background: #FF7A00; color: #fff; font-weight: 800; display: flex; align-items: center; justify-content: center; margin-top: 2px; }
+        .pa-jp b { color: #FF7A00; }
+        .pa-table-wrap { overflow-x: auto; }
+        .pa-table { width: 100%; border-collapse: collapse; font-size: 0.92rem; }
+        .pa-table th { background: #FFF1E4; color: #E06B00; font-weight: 800; padding: 10px; border: 1px solid #F0E0D0; }
+        .pa-table td { padding: 10px; border: 1px solid #F0F0F0; vertical-align: top; }
+        .pa-card { background: #fff; border: 2px solid #E8E8E8; border-radius: 18px; padding: 20px 22px; margin-bottom: 18px; }
+        .pa-word { font-weight: 800; font-size: 1.2rem; margin-bottom: 10px; }
+        .pa-opts { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 10px; }
+        .pa-opt { background: #fff; border: 2px solid #E8E8E8; border-radius: 12px; padding: 10px; font-family: inherit; font-weight: 700; font-size: 0.92rem; cursor: pointer; box-shadow: 0 3px 0 #E8E8E8; transition: all 0.12s; }
+        .pa-opt:hover { border-color: #FF7A00; background: #FFF1E4; box-shadow: 0 3px 0 #FF7A00; }
+        .pa-opt:active { transform: translateY(3px); box-shadow: none; }
+        .pa-opt.correct { background: #E7F8DC; border-color: #58CC02; color: #46A302; box-shadow: 0 3px 0 #58CC02; }
+        .pa-opt.wrong { background: #FFEBEE; border-color: #F44336; color: #c62828; box-shadow: 0 3px 0 #F44336; }
+        .pa-btn { background: #FF7A00; color: #fff; border: none; border-radius: 12px; padding: 8px 16px; font-family: inherit; font-weight: 800; font-size: 0.88rem; cursor: pointer; box-shadow: 0 3px 0 #E06B00; transition: filter 0.15s, transform 0.1s, box-shadow 0.1s; margin-right: 6px; }
+        .pa-btn:hover { filter: brightness(1.06); }
+        .pa-btn:active { transform: translateY(3px); box-shadow: none; }
+        .pa-btn.pa-secondary { background: #fff; color: #6F6F6F; border: 2px solid #E8E8E8; box-shadow: 0 3px 0 #E8E8E8; }
+        .pa-btn.pa-secondary:hover { color: #FF7A00; border-color: #FF7A00; background: #FFF1E4; box-shadow: 0 3px 0 #FF7A00; }
+        .pa-fb { display: none; margin-top: 14px; background: #FAFAFA; border: 2px dashed #E8E8E8; border-radius: 14px; padding: 14px 16px; }
+        .pa-fb.show { display: block; }
+        .pa-pitch { display: inline-flex; align-items: flex-end; gap: 4px; height: 52px; margin-bottom: 8px; }
+        .pa-mora { display: flex; flex-direction: column; align-items: center; justify-content: flex-end; font-weight: 800; }
+        .pa-mora .dot { width: 10px; height: 10px; border-radius: 50%; background: #C9C9C9; margin-bottom: 3px; }
+        .pa-mora.hi { transform: translateY(-20px); }
+        .pa-mora.hi .dot { background: #FF7A00; }
+        .pa-fb-note { color: #6F6F6F; font-size: 0.9rem; }
+        @media (max-width: 768px) {
+            .pa-opts { grid-template-columns: 1fr; }
+            .pa-rules { padding: 4px 14px 16px; }
+            .pa-card { padding: 14px; }
+        }
+    
+        /* ===== shared: back-to-top & print ===== */
+        .hanace-top-btn {
+            position: fixed;
+            right: 18px;
+            bottom: 92px;
+            width: 46px;
+            height: 46px;
+            border-radius: 50%;
+            background: #FF7A00;
+            color: #fff;
+            border: none;
+            font-size: 1.25rem;
+            font-weight: 800;
+            cursor: pointer;
+            box-shadow: 0 4px 0 #E06B00;
+            display: none;
+            z-index: 1500;
+        }
+        .hanace-top-btn:hover { filter: brightness(1.06); }
+        @media (min-width: 769px) { .hanace-top-btn { bottom: 24px; } }
+        @media print {
+            .tabs, .hamburger-btn, .triangle-btn, .header-actions, .hanace-bottom-nav,
+            .hanace-sidebar, .cheat-toolbar, .hanace-top-btn, .btn-back, .print-btn,
+            .learn-btn, footer { display: none !important; }
+            body { padding-left: 0 !important; padding-bottom: 0 !important; background: #fff !important; }
+            .page-container, .container { border: none !important; box-shadow: none !important; }
+        }
+    </style>
+</head>
+<body>
+    
+    <header class="global-header">
+        <button class="hamburger-btn" onclick="document.querySelector('.tabs').classList.toggle('show-menu')">☰</button>
+        <button class="triangle-btn" onclick="document.querySelector('.header-actions').classList.toggle('show-actions')">▼</button>
+        <div class="header-actions">
+            <a href="index.html?search=true" class="header-action-btn ha-search" style="text-decoration: none;">🔍 <span class="hide-on-mobile">Search</span></a>
+            <a href="myvocab.html" class="header-action-btn ha-saved" style="text-decoration: none;"><span class="sw-icon" style="font-size: 17px; line-height: 1; margin-right: 6px;">🌼</span><span class="hide-on-mobile">Saved Words</span></a>
+            <a href="https://discord.gg/yxM44qY67" target="_blank" class="header-action-btn ha-chat" style="text-decoration: none;">💬 <span class="hide-on-mobile">24/7 Chat Support</span></a>
+        </div>
+        <a href="index.html" class="logo-trigger">
+            <h1 class="hanace-logo"><svg class="logo-daisy" viewBox="0 0 48 48" aria-hidden="true"><g fill="#FF7A00"><ellipse cx="24" cy="10" rx="6" ry="10"/><ellipse cx="24" cy="10" rx="6" ry="10" transform="rotate(45 24 24)"/><ellipse cx="24" cy="10" rx="6" ry="10" transform="rotate(90 24 24)"/><ellipse cx="24" cy="10" rx="6" ry="10" transform="rotate(135 24 24)"/><ellipse cx="24" cy="10" rx="6" ry="10" transform="rotate(180 24 24)"/><ellipse cx="24" cy="10" rx="6" ry="10" transform="rotate(225 24 24)"/><ellipse cx="24" cy="10" rx="6" ry="10" transform="rotate(270 24 24)"/><ellipse cx="24" cy="10" rx="6" ry="10" transform="rotate(315 24 24)"/></g><circle cx="24" cy="24" r="8.5" fill="#FFC94D"/><circle cx="24" cy="24" r="8.5" fill="none" stroke="#F0A830" stroke-width="1"/></svg><span class="logo-hana">Hana</span><span class="logo-ce">ce</span></h1>
+        </a>
+    </header>
+
+    <div class="tabs">
+        <button class="tab-btn tab-roadmap" onclick="location.href='index.html?tab=roadmap'">Roadmap</button>
+        <button class="tab-btn" onclick="location.href='index.html?tab=resources'">Resources</button>
+        <button class="tab-btn tab-booking" onclick="location.href='index.html?tab=booking'">Book a Lesson</button>
+        <a href="index.html?search=true" class="tab-btn menu-mobile-item">Search</a>
+        <a href="https://discord.gg/yxM44qY67" target="_blank" class="tab-btn menu-mobile-item">24/7 Chat Support</a>
+    </div>
+
+
+    <div class="container">
+        <div class="title-section">
+            <h2>🎵 Pitch Accent &amp; Intonation</h2>
+            <p>Japanese does not use STRESS like English — it uses PITCH (high and low).<br>Master the rules below, then test your ear with the practice quiz!</p>
+            <div id="pa-score" class="lp-score">🌼 Score: 0 / 16</div>
+        </div>
+
+        <!-- ===== Rules ===== -->
+        <div class="pa-rules">
+            <h3 class="pa-h3">🔑 The 3 Absolute Rules</h3>
+            <div class="pa-rule"><span class="pa-rule-num">1</span>
+                <div><strong>Mora 1 and mora 2 always have DIFFERENT pitch.</strong><br>
+                If the 1st mora is low, the 2nd must be high — and vice versa. (e.g. <span class="pa-jp">あ<b>なた</b></span> vs <span class="pa-jp"><b>あ</b>なた</span>)</div></div>
+            <div class="pa-rule"><span class="pa-rule-num">2</span>
+                <div><strong>Once the pitch falls, it NEVER rises again within the same word.</strong><br>
+                A word can only have ONE pitch "mountain". After the drop, it stays low until the word ends.</div></div>
+            <div class="pa-rule"><span class="pa-rule-num">3</span>
+                <div><strong>Think of particles（が・は・を…）as part of the set.</strong><br>
+                Two words can sound identical alone, but the pitch of the following particle reveals the difference (橋が vs 箸が).</div></div>
+
+            <h3 class="pa-h3">📊 The 4 Basic Patterns</h3>
+            <div class="pa-table-wrap">
+            <table class="pa-table">
+                <tr><th>Pattern</th><th>Shape</th><th>Example</th><th>Pitch (L = low, H = high)</th></tr>
+                <tr><td><strong>平板型</strong><br>Heiban</td><td>1st mora low, rises from the 2nd, particle stays HIGH.</td><td>水 (mizu)</td><td><span class="pa-jp">L - H <em>(particle H)</em></span></td></tr>
+                <tr><td><strong>頭高型</strong><br>Atamadaka</td><td>Only the 1st mora is high; everything after is low.</td><td>箸 (hashi)</td><td><span class="pa-jp">H - L <em>(particle L)</em></span></td></tr>
+                <tr><td><strong>中高型</strong><br>Nakadaka</td><td>Rises in the middle, then falls. Particle low.</td><td>あなた (anata)</td><td><span class="pa-jp">L - H - L <em>(particle L)</em></span></td></tr>
+                <tr><td><strong>尾高型</strong><br>Odaka</td><td>High until the end of the word, but the PARTICLE drops.</td><td>橋 (hashi)</td><td><span class="pa-jp">L - H <em>(particle L)</em></span></td></tr>
+            </table>
+            </div>
+        </div>
+
+        <!-- ===== Practice ===== -->
+        <h3 class="pa-h3" style="margin-top: 40px;">✏️ Practice — Which pattern is it?</h3>
+        <p style="color: #6F6F6F; font-weight: 700;">Listen to the word with が, then choose its pitch pattern. The pitch shape appears after you answer.<br><span style="font-size: 0.85rem; color: #9E9E9E;">* Audio is computer-generated — trust the rules more than the robot!</span></p>
+        <div id="pa-quiz"></div>
+
+        <div style="text-align: center;">
+            <a href="index.html?tab=resources" class="btn-back">← Back to Resources</a>
+        </div>
+    </div>
+
+    <nav class="hanace-bottom-nav">
+        <a href="index.html?tab=roadmap"><span class="bn-icon">🗺️</span>Roadmap</a>
+        <a href="vocab.html"><span class="bn-icon">📚</span>Vocab</a>
+        <a href="myvocab.html"><span class="bn-icon">🌼</span>Saved</a>
+        <a href="mistakes.html"><span class="bn-icon">📝</span>Review<span class="bn-dot"></span></a>
+        <a href="index.html?tab=booking"><span class="bn-icon">📅</span>Lesson</a>
+    </nav>
+    <script>
+        (function () {
+            try {
+                var q = JSON.parse(localStorage.getItem('hanaceReviewQueue') || '[]');
+                var d = document.querySelector('.hanace-bottom-nav .bn-dot');
+                if (d && q.length) d.style.display = 'block';
+            } catch (e) {}
+        })();
+    </script>
+
+
+    <aside class="hanace-sidebar">
+        <a href="index.html" class="hs-brand"><svg class="logo-daisy" viewBox="0 0 48 48" aria-hidden="true"><g fill="#FF7A00"><ellipse cx="24" cy="10" rx="6" ry="10"/><ellipse cx="24" cy="10" rx="6" ry="10" transform="rotate(45 24 24)"/><ellipse cx="24" cy="10" rx="6" ry="10" transform="rotate(90 24 24)"/><ellipse cx="24" cy="10" rx="6" ry="10" transform="rotate(135 24 24)"/><ellipse cx="24" cy="10" rx="6" ry="10" transform="rotate(180 24 24)"/><ellipse cx="24" cy="10" rx="6" ry="10" transform="rotate(225 24 24)"/><ellipse cx="24" cy="10" rx="6" ry="10" transform="rotate(270 24 24)"/><ellipse cx="24" cy="10" rx="6" ry="10" transform="rotate(315 24 24)"/></g><circle cx="24" cy="24" r="8.5" fill="#FFC94D"/><circle cx="24" cy="24" r="8.5" fill="none" stroke="#F0A830" stroke-width="1"/></svg><span class="logo-hana">Hana</span><span class="logo-ce">ce</span></a>
+        <div class="hs-label">Menu</div>
+        <a class="hs-item" data-page="roadmap" data-tab="roadmap" href="index.html?tab=roadmap">🗺️ Roadmap</a>
+        <a class="hs-item" data-page="resources" data-tab="resources" href="index.html?tab=resources">📦 Resources</a>
+        <a class="hs-item" data-page="vocab" href="vocab.html">📚 Vocabulary</a>
+        <a class="hs-item" data-page="saved" href="myvocab.html">🌼 Saved Words</a>
+        <a class="hs-item" data-page="review" href="mistakes.html">📝 Review</a>
+        <a class="hs-item" data-page="booking" data-tab="booking" href="index.html?tab=booking">📅 Book a Lesson</a>
+        <div class="hs-divider"></div>
+        <a class="hs-item" href="index.html?search=true">🔍 Search</a>
+        <a class="hs-item" href="https://discord.gg/yxM44qY67" target="_blank">💬 Chat Support</a>
+    </aside>
+    <script>
+        (function () {
+            const side = document.querySelector('.hanace-sidebar');
+            if (!side) return;
+            const file = (location.pathname.split('/').pop() || 'index.html').toLowerCase();
+            const isIndex = file === '' || file === 'index.html';
+
+            // active menu item
+            const pageMap = { 'vocab.html': 'vocab', 'myvocab.html': 'saved', 'mistakes.html': 'review' };
+            let active = pageMap[file] || (isIndex ? 'roadmap' : null);
+            if (isIndex) {
+                const tab = new URLSearchParams(location.search).get('tab');
+                if (tab === 'resources' || tab === 'booking') active = tab;
+            }
+            if (active) {
+                const el = side.querySelector('a.hs-item[data-page="' + active + '"]');
+                if (el) el.classList.add('active');
+            }
+
+            // on index: switch tabs without reload + keep active state in sync
+            if (isIndex && typeof showRoadmap === 'function') {
+                side.querySelectorAll('a.hs-item[data-tab]').forEach(a => {
+                    a.addEventListener('click', e => {
+                        e.preventDefault();
+                        const tab = a.getAttribute('data-tab');
+                        const idx = { roadmap: 0, resources: 1, booking: 2 }[tab];
+                        const btns = document.querySelectorAll('.tab-btn');
+                        if (btns[idx]) btns[idx].click();
+                        side.querySelectorAll('a.hs-item.active').forEach(x => x.classList.remove('active'));
+                        a.classList.add('active');
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                    });
+                });
+            }
+
+        })();
+    </script>
+
+
+    <script>
+        const PA = {"patterns": ["平板型 Heiban", "頭高型 Atamadaka", "中高型 Nakadaka", "尾高型 Odaka"], "qs": [{"word": "水（みず）", "tts": "水が。", "p": 0, "m": ["み", "ず", "が"], "pi": [0, 1, 1], "note": "Heiban: starts low, rises, and stays high — even the particle が is HIGH."}, {"word": "箸（はし・chopsticks）", "tts": "箸が。", "p": 1, "m": ["は", "し", "が"], "pi": [1, 0, 0], "note": "Atamadaka: only the 1st mora is high. Everything after, including が, is LOW."}, {"word": "橋（はし・bridge）", "tts": "橋が。", "p": 3, "m": ["は", "し", "が"], "pi": [0, 1, 0], "note": "Odaka: rises and stays high to the end of the word, but the particle が drops. Compare with 箸!"}, {"word": "あなた", "tts": "あなたが。", "p": 2, "m": ["あ", "な", "た", "が"], "pi": [0, 1, 0, 0], "note": "Nakadaka: the peak is in the middle. Once it falls on た, it never rises again."}, {"word": "桜（さくら）", "tts": "桜が。", "p": 0, "m": ["さ", "く", "ら", "が"], "pi": [0, 1, 1, 1], "note": "Heiban: low start, then high all the way — が stays HIGH."}, {"word": "猫（ねこ）", "tts": "猫が。", "p": 1, "m": ["ね", "こ", "が"], "pi": [1, 0, 0], "note": "Atamadaka: high on ね, then everything drops."}, {"word": "花（はな・flower）", "tts": "花が。", "p": 3, "m": ["は", "な", "が"], "pi": [0, 1, 0], "note": "Odaka: はな is L-H, and が falls. (Fun fact: 鼻 (nose) is Heiban — が stays high!)"}, {"word": "卵（たまご）", "tts": "卵が。", "p": 2, "m": ["た", "ま", "ご", "が"], "pi": [0, 1, 0, 0], "note": "Nakadaka: peak on ま, falls on ご, and stays low."}, {"word": "雨（あめ）", "tts": "雨が。", "p": 1, "m": ["あ", "め", "が"], "pi": [1, 0, 0], "note": "Atamadaka: high start then drop. (飴 (candy) is the opposite — Heiban!)"}, {"word": "友達（ともだち）", "tts": "友達が。", "p": 0, "m": ["と", "も", "だ", "ち", "が"], "pi": [0, 1, 1, 1, 1], "note": "Heiban: rises after the 1st mora and never falls — が included."}, {"word": "山（やま）", "tts": "山が。", "p": 3, "m": ["や", "ま", "が"], "pi": [0, 1, 0], "note": "Odaka: the word ends high, but the particle drops — that is the Odaka signature."}, {"word": "天気（てんき）", "tts": "天気が。", "p": 1, "m": ["て", "ん", "き", "が"], "pi": [1, 0, 0, 0], "note": "Atamadaka: only て is high."}, {"word": "学校（がっこう）", "tts": "学校が。", "p": 0, "m": ["が", "っ", "こ", "う", "が"], "pi": [0, 1, 1, 1, 1], "note": "Heiban: a long flat high plateau — the particle rides along HIGH."}, {"word": "先生（せんせい）", "tts": "先生が。", "p": 2, "m": ["せ", "ん", "せ", "い", "が"], "pi": [0, 1, 1, 0, 0], "note": "Nakadaka: rises on ん, falls on い. One mountain only!"}, {"word": "犬（いぬ）", "tts": "犬が。", "p": 3, "m": ["い", "ぬ", "が"], "pi": [0, 1, 0], "note": "Odaka: いぬ is L-H, then が drops to low."}, {"word": "飲み物（のみもの）", "tts": "飲み物が。", "p": 2, "m": ["の", "み", "も", "の", "が"], "pi": [0, 1, 0, 0, 0], "note": "Nakadaka: peak on み, then low until the end."}]};
+
+        let paVoice = null;
+        function paPickVoice() {
+            const vs = speechSynthesis.getVoices().filter(v => v.lang && v.lang.startsWith('ja'));
+            paVoice = vs.find(v => /Google|Kyoko|O-Ren|Otoya/i.test(v.name)) || vs[0] || null;
+        }
+        if ('speechSynthesis' in window) {
+            paPickVoice();
+            speechSynthesis.onvoiceschanged = paPickVoice;
+        }
+        function paSpeak(text, rate) {
+            if (!('speechSynthesis' in window)) { alert('Your browser does not support audio. Try Chrome or Safari.'); return; }
+            speechSynthesis.cancel();
+            const u = new SpeechSynthesisUtterance(text);
+            u.lang = 'ja-JP';
+            if (paVoice) u.voice = paVoice;
+            u.rate = rate;
+            speechSynthesis.speak(u);
+        }
+
+        let paScore = 0, paAnswered = 0;
+        const paDone = {};
+
+        function paRender() {
+            const wrap = document.getElementById('pa-quiz');
+            PA.qs.forEach((q, qi) => {
+                const card = document.createElement('div');
+                card.className = 'pa-card';
+                let html = '<div class="pa-word">Q' + (qi + 1) + '. ' + q.word + '</div>' +
+                    '<button class="pa-btn" onclick="paSpeak(PA.qs[' + qi + '].tts, 0.9)">▶ Play +が</button>' +
+                    '<button class="pa-btn pa-secondary" onclick="paSpeak(PA.qs[' + qi + '].tts, 0.6)">🐢 Slow</button>' +
+                    '<div class="pa-opts">' +
+                    PA.patterns.map((p, oi) =>
+                        '<button class="pa-opt" onclick="paAnswer(this,' + qi + ',' + oi + ')">' + p + '</button>'
+                    ).join('') + '</div>' +
+                    '<div class="pa-fb" id="pa-fb-' + qi + '"></div>';
+                card.innerHTML = html;
+                wrap.appendChild(card);
+            });
+        }
+
+        function paAnswer(btn, qi, oi) {
+            if (paDone[qi]) return;
+            paDone[qi] = true;
+            const q = PA.qs[qi];
+            const btns = btn.parentElement.querySelectorAll('.pa-opt');
+            btns.forEach(b => b.style.pointerEvents = 'none');
+            if (oi === q.p) { btn.classList.add('correct'); paScore++; }
+            else { btn.classList.add('wrong'); btns[q.p].classList.add('correct'); }
+            paAnswered++;
+            document.getElementById('pa-score').textContent = '🌼 Score: ' + paScore + ' / ' + PA.qs.length;
+
+            const fb = document.getElementById('pa-fb-' + qi);
+            const pitch = '<div class="pa-pitch">' + q.m.map((mora, k) =>
+                '<span class="pa-mora' + (q.pi[k] ? ' hi' : '') + '"><span class="dot"></span>' + mora + '</span>'
+            ).join('') + '</div>';
+            fb.innerHTML = pitch + '<div class="pa-fb-note">' + (oi === q.p ? '🌼 Correct! ' : '') + q.note + '</div>';
+            fb.classList.add('show');
+
+            if (paAnswered === PA.qs.length && paScore >= PA.qs.length * 0.8) {
+                for (let i = 0; i < 26; i++) {
+                    const p = document.createElement('span');
+                    p.textContent = Math.random() < 0.85 ? '🌼' : '✨';
+                    p.style.cssText = 'position:fixed;top:-40px;left:' + (Math.random() * 100) + 'vw;font-size:' +
+                        (16 + Math.random() * 16) + 'px;z-index:3000;pointer-events:none;';
+                    document.body.appendChild(p);
+                    p.animate(
+                        [{ transform: 'translateY(0) rotate(0deg)', opacity: 1 },
+                         { transform: 'translateY(110vh) rotate(660deg)', opacity: 0.7 }],
+                        { duration: 1800 + Math.random() * 1400, delay: Math.random() * 400, easing: 'linear', fill: 'forwards' });
+                    setTimeout(() => p.remove(), 4200);
+                }
+            }
+        }
+
+        paRender();
+    </script>
+
+
+    <script>
+        /* back-to-top */
+        (function () {
+            var t = document.createElement('button');
+            t.className = 'hanace-top-btn';
+            t.textContent = '↑';
+            t.title = 'Back to top';
+            t.onclick = function () { window.scrollTo({ top: 0, behavior: 'smooth' }); };
+            document.body.appendChild(t);
+            window.addEventListener('scroll', function () {
+                t.style.display = window.scrollY > 400 ? 'block' : 'none';
+            });
+        })();
+    </script>
+
+</body>
+</html>

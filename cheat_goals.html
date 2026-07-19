@@ -900,6 +900,76 @@
                 padding: 6px 10px !important;
             }
         }
+    
+        /* ===== shared: back-to-top & print ===== */
+        .hanace-top-btn {
+            position: fixed;
+            right: 18px;
+            bottom: 92px;
+            width: 46px;
+            height: 46px;
+            border-radius: 50%;
+            background: #FF7A00;
+            color: #fff;
+            border: none;
+            font-size: 1.25rem;
+            font-weight: 800;
+            cursor: pointer;
+            box-shadow: 0 4px 0 #E06B00;
+            display: none;
+            z-index: 1500;
+        }
+        .hanace-top-btn:hover { filter: brightness(1.06); }
+        @media (min-width: 769px) { .hanace-top-btn { bottom: 24px; } }
+        @media print {
+            .tabs, .hamburger-btn, .triangle-btn, .header-actions, .hanace-bottom-nav,
+            .hanace-sidebar, .cheat-toolbar, .hanace-top-btn, .btn-back, .print-btn,
+            .learn-btn, footer { display: none !important; }
+            body { padding-left: 0 !important; padding-bottom: 0 !important; background: #fff !important; }
+            .page-container, .container { border: none !important; box-shadow: none !important; }
+        }
+
+        /* ===== Cheat page enhancement pack ===== */
+        .cheat-toolbar {
+            position: sticky;
+            top: 8px;
+            z-index: 600;
+            background: #fff;
+            border: 2px solid #E8E8E8;
+            border-radius: 16px;
+            padding: 10px;
+            margin: 0 0 22px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+        }
+        .cheat-toolbar input {
+            width: 100%;
+            box-sizing: border-box;
+            border: 2px solid #F0F0F0;
+            border-radius: 12px;
+            padding: 10px 14px;
+            font-size: 1rem;
+            font-family: inherit;
+            font-weight: 700;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+        .cheat-toolbar input:focus { border-color: #FF7A00; }
+        .cheat-chips { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 8px; }
+        .cheat-chip {
+            padding: 6px 14px;
+            border-radius: 999px;
+            background: #F5F5F5;
+            color: #6F6F6F;
+            font-weight: 800;
+            font-size: 0.78rem;
+            cursor: pointer;
+            border: none;
+            font-family: inherit;
+            transition: all 0.15s;
+        }
+        .cheat-chip:hover { background: #FFF1E4; color: #FF7A00; }
+        h2 { scroll-margin-top: 76px; }
+        table tr:nth-child(even) td { background: #FAFAFA; }
     </style>
 </head>
 <body>
@@ -977,6 +1047,58 @@
                 <ul class="goal-links">
                     <li><div class="goal-link-item" onclick="openModal('〜てしまう (Regretful action)')">〜てしまう (Regretful action)</div></li>
                     <li><div class="goal-link-item" onclick="openModal('〜なければよかった (I wish I hadn\'t...)')">〜なければよかった (I wish I hadn\'t...)</div></li>
+                </ul>
+            </div>
+        
+            <!-- Making Plans & Invitations -->
+            <div class="goal-card">
+                <h3>Making Plans & Invitations</h3>
+                <ul class="goal-links">
+                    <li><div class="goal-link-item" onclick="openModal('〜ませんか (Shall we...?)')">〜ませんか (Shall we...?)</div></li>
+                    <li><div class="goal-link-item" onclick="openModal('〜つもりです (I intend to)')">〜つもりです (I intend to)</div></li>
+                </ul>
+            </div>
+
+            <!-- Comparing Things -->
+            <div class="goal-card">
+                <h3>Comparing Things</h3>
+                <ul class="goal-links">
+                    <li><div class="goal-link-item" onclick="openModal('AはBより〜 (More than)')">AはBより〜 (More than)</div></li>
+                    <li><div class="goal-link-item" onclick="openModal('いちばん〜 (The most)')">いちばん〜 (The most)</div></li>
+                </ul>
+            </div>
+
+            <!-- Sharing Experiences -->
+            <div class="goal-card">
+                <h3>Sharing Experiences</h3>
+                <ul class="goal-links">
+                    <li><div class="goal-link-item" onclick="openModal('〜たことがあります (Experience)')">〜たことがあります (Experience)</div></li>
+                </ul>
+            </div>
+
+            <!-- Giving Reasons -->
+            <div class="goal-card">
+                <h3>Giving Reasons</h3>
+                <ul class="goal-links">
+                    <li><div class="goal-link-item" onclick="openModal('〜から／〜ので (Because)')">〜から／〜ので (Because)</div></li>
+                </ul>
+            </div>
+
+            <!-- Permission & Rules -->
+            <div class="goal-card">
+                <h3>Permission & Rules</h3>
+                <ul class="goal-links">
+                    <li><div class="goal-link-item" onclick="openModal('〜てもいいですか (May I?)')">〜てもいいですか (May I?)</div></li>
+                    <li><div class="goal-link-item" onclick="openModal('〜てはいけません (Must not)')">〜てはいけません (Must not)</div></li>
+                </ul>
+            </div>
+
+            <!-- Expressing Wants -->
+            <div class="goal-card">
+                <h3>Expressing Wants</h3>
+                <ul class="goal-links">
+                    <li><div class="goal-link-item" onclick="openModal('〜たいです (I want to do)')">〜たいです (I want to do)</div></li>
+                    <li><div class="goal-link-item" onclick="openModal('〜がほしいです (I want a thing)')">〜がほしいです (I want a thing)</div></li>
                 </ul>
             </div>
         </div>
@@ -1101,6 +1223,96 @@
                 '<ruby>行<rt>い</rt></ruby>かなければよかった。<br><span style="font-size:0.9rem;color:#777">I wish I hadn\'t gone.</span>'
             ],
             link: 'index.html?step=intStep06'
+        },
+        '〜ませんか (Shall we...?)': {
+            kanji: '〜ませんか',
+            meaning: 'Invitation',
+            examples: [
+                'いっしょに<ruby>映画<rt>えいが</rt></ruby>を<ruby>見<rt>み</rt></ruby>ませんか。<br><span style="font-size:0.9rem;color:#777">Would you like to watch a movie together?</span>',
+                '<ruby>週末<rt>しゅうまつ</rt></ruby>、<ruby>花見<rt>はなみ</rt></ruby>に<ruby>行<rt>い</rt></ruby>きませんか。<br><span style="font-size:0.9rem;color:#777">Shall we go see the cherry blossoms this weekend?</span>',
+                'コーヒーでも<ruby>飲<rt>の</rt></ruby>みませんか。<br><span style="font-size:0.9rem;color:#777">How about a coffee or something?</span>'
+            ]
+        },
+        '〜つもりです (I intend to)': {
+            kanji: '〜つもりです',
+            meaning: 'Intention / Plan',
+            examples: [
+                '<ruby>来年<rt>らいねん</rt></ruby>、<ruby>日本<rt>にほん</rt></ruby>に<ruby>行<rt>い</rt></ruby>くつもりです。<br><span style="font-size:0.9rem;color:#777">I intend to go to Japan next year.</span>',
+                '<ruby>今晩<rt>こんばん</rt></ruby>ははやく<ruby>寝<rt>ね</rt></ruby>るつもりです。<br><span style="font-size:0.9rem;color:#777">I plan to go to bed early tonight.</span>',
+                'JLPTを<ruby>受<rt>う</rt></ruby>けるつもりです。<br><span style="font-size:0.9rem;color:#777">I intend to take the JLPT.</span>'
+            ]
+        },
+        'AはBより〜 (More than)': {
+            kanji: 'AはBより〜',
+            meaning: 'Comparison',
+            examples: [
+                '<ruby>夏<rt>なつ</rt></ruby>は<ruby>冬<rt>ふゆ</rt></ruby>より<ruby>好<rt>す</rt></ruby>きです。<br><span style="font-size:0.9rem;color:#777">I like summer more than winter.</span>',
+                '<ruby>新幹線<rt>しんかんせん</rt></ruby>はバスより<ruby>速<rt>はや</rt></ruby>いです。<br><span style="font-size:0.9rem;color:#777">The Shinkansen is faster than the bus.</span>',
+                '<ruby>今日<rt>きょう</rt></ruby>は<ruby>昨日<rt>きのう</rt></ruby>より<ruby>寒<rt>さむ</rt></ruby>いです。<br><span style="font-size:0.9rem;color:#777">Today is colder than yesterday.</span>'
+            ]
+        },
+        'いちばん〜 (The most)': {
+            kanji: 'いちばん〜',
+            meaning: 'Superlative',
+            examples: [
+                '<ruby>果物<rt>くだもの</rt></ruby>の<ruby>中<rt>なか</rt></ruby>で、いちごがいちばん<ruby>好<rt>す</rt></ruby>きです。<br><span style="font-size:0.9rem;color:#777">Among fruits, I like strawberries the best.</span>',
+                'クラスでだれがいちばん<ruby>背<rt>せ</rt></ruby>が<ruby>高<rt>たか</rt></ruby>いですか。<br><span style="font-size:0.9rem;color:#777">Who is the tallest in the class?</span>',
+                'これがいちばんおいしいラーメンです。<br><span style="font-size:0.9rem;color:#777">This is the most delicious ramen.</span>'
+            ]
+        },
+        '〜たことがあります (Experience)': {
+            kanji: '〜たことがあります',
+            meaning: 'Have done before',
+            examples: [
+                '<ruby>富士山<rt>ふじさん</rt></ruby>に<ruby>登<rt>のぼ</rt></ruby>ったことがあります。<br><span style="font-size:0.9rem;color:#777">I have climbed Mt. Fuji.</span>',
+                '<ruby>着物<rt>きもの</rt></ruby>を<ruby>着<rt>き</rt></ruby>たことがありますか。<br><span style="font-size:0.9rem;color:#777">Have you ever worn a kimono?</span>',
+                '<ruby>納豆<rt>なっとう</rt></ruby>を<ruby>食<rt>た</rt></ruby>べたことがありません。<br><span style="font-size:0.9rem;color:#777">I have never eaten natto.</span>'
+            ]
+        },
+        '〜から／〜ので (Because)': {
+            kanji: '〜から／〜ので',
+            meaning: 'Giving reasons',
+            examples: [
+                '<ruby>疲<rt>つか</rt></ruby>れたから、<ruby>今日<rt>きょう</rt></ruby>ははやく<ruby>帰<rt>かえ</rt></ruby>ります。<br><span style="font-size:0.9rem;color:#777">I am tired, so I will go home early today.</span>',
+                '<ruby>雨<rt>あめ</rt></ruby>なので、<ruby>傘<rt>かさ</rt></ruby>を<ruby>持<rt>も</rt></ruby>って<ruby>行<rt>い</rt></ruby>きます。<br><span style="font-size:0.9rem;color:#777">Since it is raining, I will take an umbrella.</span>',
+                'おいしかったので、また<ruby>来<rt>き</rt></ruby>たいです。<br><span style="font-size:0.9rem;color:#777">It was delicious, so I want to come again.</span>'
+            ]
+        },
+        '〜てもいいですか (May I?)': {
+            kanji: '〜てもいいですか',
+            meaning: 'Asking permission',
+            examples: [
+                '<ruby>写真<rt>しゃしん</rt></ruby>を<ruby>撮<rt>と</rt></ruby>ってもいいですか。<br><span style="font-size:0.9rem;color:#777">May I take a photo?</span>',
+                'ここに<ruby>座<rt>すわ</rt></ruby>ってもいいですか。<br><span style="font-size:0.9rem;color:#777">May I sit here?</span>',
+                '<ruby>窓<rt>まど</rt></ruby>を<ruby>開<rt>あ</rt></ruby>けてもいいですか。<br><span style="font-size:0.9rem;color:#777">May I open the window?</span>'
+            ]
+        },
+        '〜てはいけません (Must not)': {
+            kanji: '〜てはいけません',
+            meaning: 'Prohibition',
+            examples: [
+                'ここでたばこを<ruby>吸<rt>す</rt></ruby>ってはいけません。<br><span style="font-size:0.9rem;color:#777">You must not smoke here.</span>',
+                '<ruby>美術館<rt>びじゅつかん</rt></ruby>で<ruby>写真<rt>しゃしん</rt></ruby>を<ruby>撮<rt>と</rt></ruby>ってはいけません。<br><span style="font-size:0.9rem;color:#777">You must not take photos in the museum.</span>',
+                '<ruby>芝生<rt>しばふ</rt></ruby>に<ruby>入<rt>はい</rt></ruby>ってはいけません。<br><span style="font-size:0.9rem;color:#777">You must not walk on the grass.</span>'
+            ]
+        },
+        '〜たいです (I want to do)': {
+            kanji: '〜たいです',
+            meaning: 'Desire (action)',
+            examples: [
+                '<ruby>日本<rt>にほん</rt></ruby>で<ruby>寿司<rt>すし</rt></ruby>を<ruby>食<rt>た</rt></ruby>べたいです。<br><span style="font-size:0.9rem;color:#777">I want to eat sushi in Japan.</span>',
+                '<ruby>京都<rt>きょうと</rt></ruby>に<ruby>行<rt>い</rt></ruby>きたいです。<br><span style="font-size:0.9rem;color:#777">I want to go to Kyoto.</span>',
+                '<ruby>日本語<rt>にほんご</rt></ruby>がじょうずになりたいです。<br><span style="font-size:0.9rem;color:#777">I want to become good at Japanese.</span>'
+            ]
+        },
+        '〜がほしいです (I want a thing)': {
+            kanji: '〜がほしいです',
+            meaning: 'Desire (thing)',
+            examples: [
+                '<ruby>新<rt>あたら</rt></ruby>しいかばんがほしいです。<br><span style="font-size:0.9rem;color:#777">I want a new bag.</span>',
+                '<ruby>時間<rt>じかん</rt></ruby>がもっとほしいです。<br><span style="font-size:0.9rem;color:#777">I want more time.</span>',
+                '<ruby>誕生日<rt>たんじょうび</rt></ruby>に<ruby>何<rt>なに</rt></ruby>がほしいですか。<br><span style="font-size:0.9rem;color:#777">What do you want for your birthday?</span>'
+            ]
         }
     };
 
@@ -1194,6 +1406,67 @@
             }
 
         })();
+    </script>
+
+
+    <script>
+        /* back-to-top */
+        (function () {
+            var t = document.createElement('button');
+            t.className = 'hanace-top-btn';
+            t.textContent = '↑';
+            t.title = 'Back to top';
+            t.onclick = function () { window.scrollTo({ top: 0, behavior: 'smooth' }); };
+            document.body.appendChild(t);
+            window.addEventListener('scroll', function () {
+                t.style.display = window.scrollY > 400 ? 'block' : 'none';
+            });
+        })();
+    </script>
+
+    <script>
+        /* page filter + section chips */
+        window.addEventListener('load', function () {
+            var host = document.querySelector('.page-container') || document.querySelector('.container');
+            if (!host) return;
+            var bar = document.createElement('div');
+            bar.className = 'cheat-toolbar';
+            bar.innerHTML = '<input type="text" id="cheat-filter" placeholder="🔍 Filter this page — English / 日本語 / romaji" autocomplete="off">' +
+                '<div class="cheat-chips" id="cheat-chips"></div>';
+            var hdr = host.querySelector(':scope > header, :scope > h1');
+            if (hdr) hdr.insertAdjacentElement('afterend', bar);
+            else host.insertAdjacentElement('afterbegin', bar);
+
+            // section chips from h2 headings
+            var chips = bar.querySelector('#cheat-chips');
+            var hs = Array.prototype.slice.call(document.querySelectorAll('h2')).filter(function (h) {
+                return !h.closest('.hanace-sidebar') && !h.closest('.modal-overlay') && h.offsetParent !== null;
+            }).slice(0, 10);
+            if (hs.length < 2) chips.style.display = 'none';
+            hs.forEach(function (h, i) {
+                if (!h.id) h.id = 'sec-chip-' + i;
+                var b = document.createElement('button');
+                b.className = 'cheat-chip';
+                b.textContent = h.textContent.trim().replace(/\s+/g, ' ').slice(0, 26);
+                b.onclick = function () { h.scrollIntoView({ behavior: 'smooth', block: 'start' }); };
+                chips.appendChild(b);
+            });
+
+            // live filter
+            var SEL = '.greeting-card,.verb-card,.particle-card,.onomato-card,.pair-card,.radical-card,.kanji-card,.goal-link-item,.kana-box';
+            var inp = bar.querySelector('#cheat-filter');
+            inp.addEventListener('input', function () {
+                var q = this.value.trim().toLowerCase();
+                var items = Array.prototype.slice.call(document.querySelectorAll(SEL));
+                Array.prototype.forEach.call(document.querySelectorAll('table tr'), function (tr) {
+                    if (!tr.querySelector('th')) items.push(tr);
+                });
+                items.forEach(function (el) {
+                    if (el.closest('.hanace-sidebar') || el.closest('.cheat-toolbar')) return;
+                    el.style.display = (!q || el.textContent.toLowerCase().indexOf(q) > -1) ? '' : 'none';
+                });
+            });
+        });
     </script>
 
 </body>
