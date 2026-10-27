@@ -1213,6 +1213,7 @@
         <button class="tab-btn tab-roadmap" onclick="location.href='index.html?tab=roadmap'">Roadmap</button>
         <button class="tab-btn" onclick="location.href='index.html?tab=resources'">Resources</button>
         <button class="tab-btn tab-booking" onclick="location.href='index.html?tab=booking'">Book a Lesson</button>
+        <a href="hanas.html" class="tab-btn">🍌 Hana's Lessons</a>
         <a href="index.html?search=true" class="tab-btn menu-mobile-item">Search</a>
         <a href="https://discord.gg/yxM44qY67" target="_blank" class="tab-btn menu-mobile-item">24/7 Chat Support</a>
     </div>
@@ -1714,9 +1715,14 @@ function toggleSave(btn, kanji, meaning, kana, romaji) {
         if (card.romaji) readingText += ` / ${card.romaji}`;
         document.getElementById('fc-reading').innerHTML = readingText;
         
-        document.getElementById('fc-meaning').innerHTML = card.meaning;
-        
-        document.getElementById('fc-meaning').style.opacity = '0';
+        // Hide the meaning instantly (no fade-out) BEFORE swapping in the next
+        // card's text, so the new answer never flashes on screen.
+        const meaningEl = document.getElementById('fc-meaning');
+        meaningEl.style.transition = 'none';
+        meaningEl.style.opacity = '0';
+        meaningEl.innerHTML = card.meaning;
+        void meaningEl.offsetHeight; // force reflow so the instant hide is applied
+        meaningEl.style.transition = 'opacity 0.3s'; // restore fade-in for "Show Meaning"
         document.getElementById('fc-controls-reveal').style.display = 'flex';
         document.getElementById('fc-controls-score').style.display = 'none';
     }
@@ -1814,6 +1820,7 @@ function toggleSave(btn, kanji, meaning, kana, romaji) {
         <a class="hs-item" data-page="saved" href="myvocab.html">🌼 Saved Words</a>
         <a class="hs-item" data-page="review" href="mistakes.html">📝 Review</a>
         <a class="hs-item" data-page="booking" data-tab="booking" href="index.html?tab=booking">📅 Book a Lesson</a>
+        <a class="hs-item" data-page="hanas" href="hanas.html">🍌 Hana's Lessons</a>
         <div class="hs-divider"></div>
         <a class="hs-item" href="index.html?search=true">🔍 Search</a>
         <a class="hs-item" href="https://discord.gg/yxM44qY67" target="_blank">💬 Chat Support</a>
